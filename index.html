@@ -16651,6 +16651,10 @@
                            style="text-decoration:none;" href="#">Double Cycloid</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#dropshape"
+                           style="text-decoration:none;" href="#">Drop Shape</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#ellipse"
                            style="text-decoration:none;" href="#">Ellipse</a></td>
                 </tr>
@@ -27585,6 +27589,70 @@ N is the population size.
                             <p class="stopwrap" id="resultOfShortSideLshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfPerimeterLshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfAreaLshape" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="dropshape" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Drop Shape</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Tangent angle (α)</h5>
+                                    <p class="text-center">\[\alpha = 180\degree - \arccos \left ( 1 - \frac{h_{s}}{r} \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Arc length (l)</h5>
+                                    <p class="text-center">\[l = r \times 2 \times \arccos \left ( 1 - \frac{h_{s}}{r} \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Chord length (c)</h5>
+                                    <p class="text-center">\[c = 2 \times \sqrt{2 \times r \times h_{s} - h_{s}^{2}}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Triangle side length (a)</h5>
+                                    <p class="text-center">\[a = \frac{c}{\sin\left ( 180\degree-2\alpha \right )} \times \sin \alpha\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/drop-shape.png" class="img-fluid">
+                                    </div>
+                                    <h5 class="text-center">Height (h)</h5>
+                                    <p class="text-center">\[h = h_{s} + \sqrt {\frac{\left ( 4a^2 - c^2 \right )}{4}}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = l + 2a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \frac {r \times l + c \times \left ( h_{s} - r \right ) + c \times \sqrt {\frac{\left ( 4a^2 - c^2 \right )}{4}}}{2} \]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter the Radius of circular segment (r)"
+                                   id="dropshape-r" oninput="dropshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter the Height of circular segment (hs)"
+                                   id="dropshape-hs" oninput="dropshapesolve()">
+                            <br>
+                            <p class="stopwrap" id="tangentAngleDropshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="arcLenDropshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="chordLenDropshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="triSideLenDropshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="heightDropshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="perimeterDropshape" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="areaDropshape" style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
