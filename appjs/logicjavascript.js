@@ -19780,7 +19780,7 @@ function convertex3() {
         print += "\\[\\textbf{Converting \\space Octal \\space Code \\space to \\space Excess-3 \\space Code}\\]"
         print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space octal \\space to \\space decimal \\]";
         print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 8).toString() + "\\]";
-        input = parseInt(input, 2).toString();
+        input = parseInt(input, 8).toString();
         print +="\\[STEP \\space 2 \\space : Add \\space 3 \\space to \\space each \\space digit \\space and \\space then \\]"
         print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
         var x="_",y="";temp ="";
