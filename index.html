@@ -21167,8 +21167,12 @@
 
 <div class="collapse" id="kaps">
     <h1 style="color: white;font-family:mathfont">Kaprekar Number</h2><p>&nbsp;</p>
-    <input style="color: white; font-family:mathfont" type="text"id="kap1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-    <button class="btn btn-dark" onclick="kapfind()">FInd</button><p>&nbsp;</p>
+    <form action="">
+        <input style="color: white; font-family:mathfont" type="text"id="kap1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
+        <button class="btn btn-dark" onclick="kapfind()">FInd</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    </form>
+    <p>&nbsp;</p>
     <p style="font-family:mathfont" id="kapans"></p><br>
 </div>
 <div class="collapse" id="abundants" style="text-align: center;">
@@ -21505,10 +21509,14 @@
     <h1 >ADDITIVE INVERSE</h1>
     <p>&nbsp;</p>
     <div style="color: white; font-size: 1.3em; font-family:mathfont"> Enter number to find additive inverse: 
-    <input type="number" name="aians1" id="aians1" placeholder="Enter number">
-    <br>
-    <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="ainvcal()">Calculate</button>
-    <br>
+    <form action="">
+        <input type="number" name="aians1" id="aians1" placeholder="Enter number">
+        <br>
+        <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="ainvcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="aians">
     </div>
 </div>
@@ -21831,9 +21839,13 @@ N is the population size.
           nuclear species by emitting particles and energy), or, equivalently, the time interval
          required for the number of disintegrations per second of a radioactive material to decrease by one-half is called Half-life.</p>
          <br><br>
-   <input type="text" class="form__field" id="decay" width="5em" placeholder="Enter the decay constant">
-   <p>&nbsp;</p>
-   <button type="button" class="btn btn-outline-light" onclick="halflifeCalc()">Calculate</button>
+        <form action="">
+            <input type="text" class="form__field" id="decay" width="5em" placeholder="Enter the decay constant">
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-light" onclick="halflifeCalc()">Calculate</button>
+            <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        </form>
+   
    <p id="halflifeAns" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
 </div>
 
