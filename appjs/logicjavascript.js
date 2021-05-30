@@ -14685,6 +14685,11 @@ function apsum() {
     }
 }
 //Mean Calculators
+function calcexamsol(){
+    var a = document.getElementById("aval").value=1;
+    var c = document.getElementById("cval").value=5;
+    amsol();
+}
 function amsol() {
     var a = parseInt(document.getElementById("aval").value)
     var c = parseInt(document.getElementById("cval").value)
