@@ -23606,3 +23606,16 @@ function isAutoNum(num) {
         document.getElementById('autoans').innerHTML = num +" is an automorphic number";
     
 }
+// Pronic Number
+function isProNum(num) {
+    let flag=0;
+    for (let i = 0;i <= parseInt(Math.sqrt(num));i++)
+        if (num == i * (i + 1)){
+            flag=1;
+            break;
+        }
+    if(flag)
+        document.getElementById('proans').innerHTML = num +" is a Pronic number";
+    else
+        document.getElementById('proans').innerHTML = num +" is not a Pronic number";
+}

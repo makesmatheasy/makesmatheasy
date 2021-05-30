@@ -245,7 +245,8 @@ Other Tech/Libraries
   - Lucas series
   - Types of numbers
   - Disarium Number
-  - Automorphic Number 
+  - Automorphic Number
+  - Pronic Number 
 
 - Basic Convertors
 
