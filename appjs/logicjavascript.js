@@ -14111,7 +14111,7 @@ function gammafind() {
     // function to find gamma function of any no.
     let inpu = document.getElementById("gammain").value
     if(inpu=="")
-    {document.getElementById("gammafindans").innerHTML="Please Enter a no"}
+    {document.getElementById("gammafindans").innerHTML="Please enter a number"}
     else{
     num1=parseInt(inpu)
     var num2=num1-1;
