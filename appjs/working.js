@@ -68,6 +68,12 @@ $("#bilinearbtn").click(function(){
     closenav();
     clearall();
 });
+// Krishnamurthy Number
+$("#krishnumbtn").click(function(){
+    openit("#krishnum");
+    closenav();
+    clearall();
+});
 $("#manhat").click(function(){
     openit("#manhats");
     closenav();
@@ -641,6 +647,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#throughputbtn").click(function () {
+        openit("#throughputtest");
+        closenav();
+        clearall();
+    });  
     $("#cyclebtn").click(function () {
         openit("#cycletest");
         closenav();
@@ -708,6 +719,11 @@ $(document).ready(function () {
     });
     $("#antilogbtn").click(function () {
         openit("#antilog");
+        closenav();
+        clearall();
+    });
+    $("#logbasebtn").click(function () {
+        openit("#logbase");
         closenav();
         clearall();
     });
@@ -1585,6 +1601,11 @@ $(document).ready(function () {
     
     $("#ppvbtn").click(function () {
         openit("#ppv");
+        closenav();
+        clearall();
+    });
+    $("#npvbtn").click(function () {
+        openit("#npv");
         closenav();
         clearall();
     });
