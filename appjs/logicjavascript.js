@@ -21705,6 +21705,32 @@ function chivalue() {
         document.getElementById('concluChi').innerHTML = "The Hypothesis is Accepted. So data distribution is uniform throughout."
     }}
 }
+
+
+//lead time calculator
+function leadvalue() {
+    var num1 = document.getElementById("pre").value; 
+    var num2 = document.getElementById("pro").value;
+    var num3 = document.getElementById("post").value;
+    if(num1==""||num2=="" ||num3=="")
+    {
+        document.getElementById("leadans").innerHTML="Please fill all the fields";
+    }
+    else{
+     num1 =parseFloat(num1);
+     num2 =parseFloat(num2);
+     num3 =parseFloat(num3);
+     var lead=num1+num2+num3;
+     console.log(num1+" "+num2+" "+num3);
+     var ans="\\[Lead \\space Time \\space (manufacturing)= \\space  Pre-processing + Processing + Post-processing \\space  time \\]" 
+     ans+="\\["+num1+"+"+num3+"+"+num2+" \\]"
+     ans+="\\[ Lead \\space Time \\space (manufacturing) ="+lead.toFixed(4)+" \\space minutes \\]"
+     ans+="\\[= "+(lead*60).toFixed(4)+" \\space seconds\\]"
+     document.getElementById("leadans").innerHTML=ans;
+     renderMathInElement(document.getElementById("leadans"));
+        
+    }
+}
 //takt time calculator
 function taktvalue() {
     var num1 = document.getElementById("works").value; 
@@ -21715,21 +21741,20 @@ function taktvalue() {
         document.getElementById("taktans").innerHTML="Please fill all the fields";
     }
     else{
-     num1 =parseInt(num1);
-     num2 =parseInt(num2);
-     num3 =parseInt(num3);
+     num1 =parseFloat(num1);
+     num2 =parseFloat(num2);
+     num3 =parseFloat(num3);
      var takt=(num1-num3)/num2;
      console.log(num1+" "+num2+" "+num3);
      var ans="\\[Takt \\space Time = \\frac{Net \\space Production \\space Time}{Customer \\space Demand} \\]" 
      ans+="\\[\\frac{"+num1+"-"+num3+"}{"+num2+"} \\]"
      ans+="\\[\\frac{"+ (num1-num3) +"}{"+num2+"} \\]"
      ans+="\\[ "+takt.toFixed(4)+" \\]"
-     ans+="\\[Takt \\space Time ="+takt.toFixed(4)+" \\space min \\space per \\space unit \\]"
+     ans+="\\[Takt \\space Time ="+takt.toFixed(4)+" \\space minutes \\space per \\space unit \\]"
      document.getElementById("taktans").innerHTML=ans;
      renderMathInElement(document.getElementById("taktans"));
         
     }
-
 }
 
 
