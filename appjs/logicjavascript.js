@@ -20778,23 +20778,40 @@ function power(a, n) {
 }
 //CLOCK ANGLE CALCULATOR
 function clockcal() {
-    a = document.getElementById("hclock").value;
-    b = document.getElementById("mclock").value;
+    var a = parseFloat(document.getElementById("hclock").value);
+    var b = parseFloat(document.getElementById("mclock").value);
+    var output = document.getElementById("clockans");
     var ans = "";
-    if (a == "" || b == "") {
-        ans = "Please enter both minutes and hour to find angle";
+    if ( isNaN(a) || isNaN(b)) {
+        ans = "\\[Please \\space enter \\space valid \\space input\\]"
+
+        output.innerHTML = ans;
     }
     else {
-        a = parseFloat(a);
-        b = parseFloat(b);
         var angmin = b * 6;
         var anghour = 30 * a + 0.5 * b
+        ans += "\\[The \\space clock \\space angle \\space calculator \\space calculates, \\]"
+        ans += "\\[\\space (Angle \\space from \\space minute \\space to \\space hour \\space hands) \\space and \\space (Angle \\space from \\space hour \\space to \\space minute \\space hands)\\]"
+        ans += "\\[First, \\space we \\space calculate \\space (Minute \\space angle) \\space and \\space (Hour \\space angle)\\]"
+        ans += "\\[(Minute \\space angle) \\space = \\space "+b+" \\times 6\\]"
+        ans += "\\[\\space = \\space "+angmin.toFixed(2)+"\\]"
+        ans += "\\[(Hour \\space angle) \\space = \\space 30 \\times "+a+" + \\frac{1}{2} \\times "+b+"\\]"
+        ans += "\\[\\space = \\space 30 \\times "+a+" + 0.5 \\times "+b+"\\]"
+        ans += "\\[\\space = \\space "+(30*a)+" + "+(0.5 * b)+"\\]"
+        ans += "\\[\\space = \\space "+anghour.toFixed(2)+"\\]"
+        ans += "\\[Finally, \\space (Angle \\space from \\space minute \\space to \\space hour \\space hands) \\space will \\space be,\\]"
+        ans += "\\[\\space = \\space | "+anghour+" - "+angmin+" |\\]"
+        ans += "\\[\\space = \\space | "+(anghour - angmin).toFixed(2)+" |\\]"
+        ans += "\\[\\space = \\space "+(Math.abs(anghour - angmin)).toFixed(2)+"\\]"
+        ans += "\\[And, \\space (Angle \\space from \\space hour \\space to \\space minute \\space hands) \\space will \\space be,\\]"
+        ans += "\\[\\space = \\space |360 - |"+anghour+" - "+angmin+" ||\\]"
+        ans += "\\[\\space = \\space |360 - |"+(anghour - angmin).toFixed(2)+" ||\\]"
+        ans += "\\[\\space = \\space |360 - "+(Math.abs(anghour - angmin)).toFixed(2)+"|\\]"
+        ans += "\\[\\space = \\space "+ Math.abs(360 - Math.abs(anghour - angmin)).toFixed(2)+"\\]"
 
-        ans = "Angle from minute to hour hands: " + Math.abs(anghour - angmin) + " degree";
-        ans += "<br>"
-        ans += "Angle from hour to minute hands: " + Math.abs(360 - Math.abs(anghour - angmin)) + " degree";
+        output.innerHTML = ans;
     }
-    document.getElementById("clockans").innerHTML = ans;
+    renderMathInElement(output);
 }
 //SOLVE FOR X
 function calcexslvcal(){
