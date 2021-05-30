@@ -18152,6 +18152,10 @@
                                         style="text-decoration:none;" href="#">Pentagonal Pyramid</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#pentelongbipyramid"
+                                        style="text-decoration:none;" href="#">Elongated pentagonal bipyramid</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#pentbipyramid"
                                         style="text-decoration:none;" href="#">Pentagonal Bipyramid (Decahedron)</a></td>
                                 </tr>
@@ -33656,6 +33660,57 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="pentelongbipyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Elongated pentagonal bipyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = [\frac{5 \sqrt{3}}{2} + 5] \space a^2\]</p>
+                                    <p class="text-center">a = edge length</p>
+                                    <div class="dropdown-divider"></div>
+                                    <<h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = (2 \space \sqrt{\frac{(5 - \sqrt{5})}{10}} + 1) \space a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = [\frac{(5 + \sqrt{5})}{12} + \frac{\sqrt{25 + 10 \sqrt{5}}}{4}] \space a^3\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/elongated-pentagonal-bipyramid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                       placeholder="Enter side length (a)" id="inputpentelongbipyedge"
+                                       oninput="solvepentelongbipy();">
+                            <p class="stopwrap" id="resultofpentelongbipyarea"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpentelongbipyhei"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpentelongbipyvol"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="pentpyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">

@@ -10176,6 +10176,31 @@ function octpyramidsolve() {
 
     }
 }
+//Elongated pentagonal bipyramid
+function solvepentelongbipy() {
+    let a = document.getElementById("inputpentelongbipyedge").value;
+    let heioutput = document.getElementById("resultofpentelongbipyhei");
+    let areaoutput = document.getElementById("resultofpentelongbipyarea");
+    let voloutput = document.getElementById("resultofpentelongbipyvol");
+    var areatemp = "";
+    var heitemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline (\\frac{5 \\sqrt{3}}{2} + 5) \\space (" + a + ")^2" + "\\ = " + eval(String(9.330127 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        heitemp += "\\[Height \\space \\newline ( 2 \\space \\sqrt{\\frac{(5 - \\sqrt{5})}{10} + 1}) \\space" + a + "\\ = " + eval(String(2.0514622 * a)).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        voltemp += "\\[Volume \\space \\newline (\\frac{(5 + \\sqrt{5})}{12} + \\frac{\\sqrt{25 + 10 \\sqrt{5}}}{4}) \\space (" + a + ")^3 \\space \\newline" + "\\ = " + eval(String(2.3234831 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(heioutput);
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        heioutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
 //Pentagonal Pyramid
 function pentpyramidsolve() {
     var side = document.getElementById("inputpentpyramidside").value;
