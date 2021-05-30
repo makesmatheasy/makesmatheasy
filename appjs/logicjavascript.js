@@ -17871,12 +17871,22 @@ function polymax10find() {
 }
 
 function polymax11find(){
-    let n = parseInt(document.getElementById("polymax20").value)
-    let m = parseInt(document.getElementById("polymax21").value)
-    if (M > parseInt(N / 2)) {
-        document.getElementById("polymax11ans").innerHTML = M - parseInt(N / 2);
+    let N = parseInt(document.getElementById("polymax20").value)
+    let M = parseInt(document.getElementById("polymax21").value)
+    if(!isNaN(N)||!isNaN(M)){
+        if (M > parseInt(N / 2)) {
+            document.getElementById("polymax11exp").innerHTML = "\\[If M > N / 2: The vertex will always be M — (N / 2).\\]"
+            document.getElementById("polymax11exp").innerHTML = "\\[If M ≤ N / 2: The vertex will always be M + (N / 2).\\]"
+            document.getElementById("polymax11ans").innerHTML = M - parseInt(N / 2);
+            renderMathInElement(document.getElementById("polymax11ans"))
+        }
+        document.getElementById("polymax11exp").innerHTML = "\\[If M > N / 2: The vertex will always be M — (N / 2).\\]"
+        document.getElementById("polymax11exp").innerHTML = "\\[If M ≤ N / 2: The vertex will always be M + (N / 2).\\]"
+        document.getElementById("polymax11ans").innerHTML = M + parseInt(N / 2);
+        renderMathInElement(document.getElementById("polymax11ans"))
     }
-    document.getElementById("polymax11ans").innerHTML = M + parseInt(N / 2);
+    else
+        document.getElementById("polymax11ans").innerHTML = "Please enter valid input"
 }
 
 //Sum of numbers from 1 to N which are in Lucas Sequence
