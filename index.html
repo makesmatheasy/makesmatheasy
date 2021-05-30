@@ -8756,33 +8756,40 @@
                     <label class="form-check-label" for="enablelimit">Enable Limits</label><br>
                 </div>
             </div>
-            <div class="form-group">
-                <input type="text" id="inputintegral" class="form__field"
-                       placeholder="Enter Function"
-                       oninput='dint()'>
-            </div>
-
-            <div class="form-group">
-                <div class="collapse" id="collapselimit">
-                    <input type="text" id="upperlimit" placeholder="Upper Limit"
-                           class="form__field"
-                           style="display:inline;width:30%" oninput='dint()'>
-                    <input type="text" id="lowerlimit" placeholder="Lower Limit"
-                           class="form__field"
-                           style="display:inline;width:30%" oninput='dint()'>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" id="inputintegral" class="form__field"
+                           placeholder="Enter Function"
+                           oninput='dint()'>
                 </div>
-            </div>
-
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="plotit('inputintegral','integralplot',sint())">
-                    Solve
-                </button>
-                <button type="button" id="solveintegral" onclick="solveintegral()"
-                        class="btn btn-outline-light">Show
-                    Steps
-                </button>
-            </div>
+    
+                <div class="form-group">
+                    <div class="collapse" id="collapselimit">
+                        <input type="text" id="upperlimit" placeholder="Upper Limit"
+                               class="form__field"
+                               style="display:inline;width:30%" oninput='dint()'>
+                        <input type="text" id="lowerlimit" placeholder="Lower Limit"
+                               class="form__field"
+                               style="display:inline;width:30%" oninput='dint()'>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="plotit('inputintegral','integralplot',sint())">
+                        Solve
+                    </button>
+                    <button type="button" id="solveintegral" onclick="solveintegral()"
+                            class="btn btn-outline-light">Show
+                        Steps
+                    </button>
+                    <button type="button" onclick="this.form.reset();"
+                            class="btn btn-outline-light">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            
             <div class="form-group">
                 <p id="resultintegration"
                    style="overflow-x:scroll;overflow-y:hidden;height:100%"></p>
@@ -12654,43 +12661,63 @@
             <h2>Aliquot Sum</h2>
             <p> Aliquot Sum s(n) of a positive integer n is the sum of all proper divisors of n, that is, all divisors of n other than n itself.</p>
             <br>
-            <input type="text" id="alisum"class="form__field"placeholder="Enter the number of terms for aliquot sum">
-            <br><br>
-            <button class="btn btn-dark" onclick="alisumfind()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="alisum"class="form__field"placeholder="Enter the number of terms for aliquot sum">
+                <br><br>
+                <button class="btn btn-dark" onclick="alisumfind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="alisumans" style="font-size: 26px;"></p>
             <p id="aliexplain"></p>
             <br>
             <p>Primitive Abundant Number</p>
             <br>
-            <input type="text" id="alisum1"class="form__field"placeholder="Enter the number ">
-            <br><br>
-            <button class="btn btn-dark" onclick="alisum1find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="alisum1"class="form__field"placeholder="Enter the number ">
+                <br><br>
+                <button class="btn btn-dark" onclick="alisum1find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="alisum1ans" style="font-size: 26px;"></p>
             <br>
             <p>Check if a number can be expressed as sum two abundant numbers </p>
             <br>
-            <input type="text" id="alisum2"class="form__field"placeholder="Enter the number ">
-            <br><br>
-            <button class="btn btn-dark" onclick="alisum2find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="alisum2"class="form__field"placeholder="Enter the number ">
+                <br><br>
+                <button class="btn btn-dark" onclick="alisum2find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="alisum2ans" style="font-size: 26px;"></p>
             <br>
             <p>Hosoya’s Triangle</p>
             <br>
-            <input type="text" id="alisum3"class="form__field"placeholder="Enter the height of triangle ">
-            <br><br>
-            <button class="btn btn-dark" onclick="alisum3find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="alisum3"class="form__field"placeholder="Enter the height of triangle ">
+                <br><br>
+                <button class="btn btn-dark" onclick="alisum3find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="alisum3ans" style="font-size: 26px;"></p>
             <br>
             <p>Cassini’s Identity</p>
             <br>
-            <input type="text" id="alisum4"class="form__field"placeholder="Enter the number ">
-            <br><br>
-            <button class="btn btn-dark" onclick="alisum4find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="alisum4"class="form__field"placeholder="Enter the number ">
+                <br><br>
+                <button class="btn btn-dark" onclick="alisum4find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <p id="alisum4ans" style="font-size: 26px;"></p>
         </div>
         <!-- start of Sum of divisors  calculator -->
@@ -20840,13 +20867,19 @@ N is the population size.
     <h1 style="font-family:mathfont; text-align:center;">SOLVE FOR X</h1><br><br>
     <div class= "coll" style="margin-left:14.375rem"></div>
     <p>
-    <input type="text" id="solvex" size=5 value='' placeholder="a">X +
-    <input type="text" id="solvey" size=5 value='' placeholder="b"> =  <input type="text" id="solvez" size=5 value='' placeholder="c">
-   <br><br><br><br>
-    <button type="button" class="btn btn-light" style="width:8em" onclick=slvcal()>   Solve    </button>
-    <button type="button" class="btn btn-light" style="width:8em" onclick=calcexslvcal()>
-        Example
-    </button>
+        <form action="">
+            <input type="text" id="solvex" size=5 value='' placeholder="a">X +
+            <input type="text" id="solvey" size=5 value='' placeholder="b"> =  <input type="text" id="solvez" size=5 value='' placeholder="c">
+           <br><br><br><br>
+            <button type="button" class="btn btn-light" style="width:8em" onclick=slvcal()>   Solve    </button>
+            <button type="button" class="btn btn-light" style="width:8em" onclick=calcexslvcal()>
+                Example
+            </button>
+            <button type="button" class="btn btn-light" style="width:8em" onclick="this.form.reset();">
+                Reset
+            </button>
+        </form>
+    
     <p>&nbsp;</p>
     <div id="slvans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></div>
     </p>
@@ -23243,162 +23276,254 @@ N is the population size.
     <h2>Important Series and Sequences</h2>
     <br><br>
     <h4>Sum of the sequence x, xx, xxx, ………</h4><br>
-    <input type="text" id="impse1"class="form__field"placeholder="Enter value of x">
-    <input type="text" id="impse2"class="form__field"placeholder="Enter no. of terms"><br>
-    <button class="btn btn-dark" onclick="impsefind()">Find</button><br>
+    <form action="">
+        <input type="text" id="impse1"class="form__field"placeholder="Enter value of x">
+        <input type="text" id="impse2"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impsefind()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    
     <p id="impseans" style= "font-family:mathfont"></p><br>
     <p id="impseans1" style= "font-family:mathfont"></p><br>
     <br>
     <h4>Sum of the sequence 3, 6, 11, ………</h4><br>
-    <input type="text" id="impse32"class="form__field"placeholder="Enter no. of terms"><br>
-    <button class="btn btn-dark" onclick="impse13findd()">Find</button><br>
+    <form action="">
+        <input type="text" id="impse32"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impse13findd()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    
     <p id="impseans32" style= "font-family:mathfont"></p><br>
     <br>
     <h4>Sum of first N terms of the series 2*3*5, 3*5*7, 4*7*9, …… </h4><br>
-    <input type="text" id="impse35"class="form__field"placeholder="Enter no. of terms"><br>
-    <button class="btn btn-dark" onclick="impse36find()">Find</button><br>
+    <form action="">
+        <input type="text" id="impse35"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impse36find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    
     <p id="impseans35" style= "font-family:mathfont"></p><br>
     <br>
     <h4>Sum of series: 1 – x^2/2! + x^4/4! -…. upto nth term </h4>
     <br>
-    <input type="text" id="impse3"class="form__field"placeholder="Enter value of x">
-    <input type="text" id="impse4"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impse1find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="impse3"class="form__field"placeholder="Enter value of x">
+        <input type="text" id="impse4"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="impse1find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="impse1ans"></p>
     <br>
     <h4>Sum of the series 1 + x + x^2+ x^3+ .. + x^n</h4>
     <br>
-    <input type="text" id="impse5"class="form__field"placeholder="Enter value of x">
-    <input type="text" id="impse6"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impse2find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="impse5"class="form__field"placeholder="Enter value of x">
+        <input type="text" id="impse6"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="impse2find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="impse2ans"></p>
     <br>
     <h4>Sum of look and say sequence</h4>
     <br>
-    <input type="text" id="impse7"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impse3find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="impse7"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="impse3find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="impse3ans"></p>
     <br>
     <h4>Sum of Gould's sequence</h4><br>
-    <input type="text" id="impse8"class="form__field"placeholder="Enter no. of terms"><br>
-    <button class="btn btn-dark" onclick="impse4find()">Find</button><br>
+    <form action="">
+        <input type="text" id="impse8"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impse4find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    
     <p id="impse4ans"></p>
     <br>
     <h4>Sum of Arcuin's sequence</h4><br>
-    <input type="text" id="impse9"class="form__field"placeholder="Enter no. of terms"><br>
-    <button class="btn btn-dark" onclick="impse5find()">Find</button><br>
+    <form action="">
+        <input type="text" id="impse9"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impse5find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    
     <p id="impse5ans" style= "font-family:mathfont"></p><br>
     <p id="impse5ans1" style= "font-family:mathfont"></p><br>
 
     <h4>Sum of the series 1+22+333+4444+…… upto n terms</h4><br>
-    <input type="text" id="impse10"class="form__field"placeholder="Enter no. of terms"><br>
-    <button class="btn btn-dark" onclick="impse6find()">Find</button><br>
+    <form action="">
+        <input type="text" id="impse10"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impse6find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    
     <p id="impse6ans"></p><br>
     <p id="impse6ans1"></p><br>
 
     <h4>Sum of the series 0.X + 0.XX + 0.XXX +… upto k terms</h4><br>
-    <input type="text" id="impse1x"class="form__field"placeholder="Enter value of x"><br>
-    <input type="text" id="impse11"class="form__field"placeholder="Enter no. of terms"><br>
-    <button class="btn btn-dark" onclick="impse7find()">Find</button><br>
+    <form action="">
+        <input type="text" id="impse1x"class="form__field"placeholder="Enter value of x"><br>
+        <input type="text" id="impse11"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impse7find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    
     <p id="impse7ans" style= "font-family:mathfont"></p><br>
     <p id="impse7ans1" style= "font-family:mathfont"></p><br>
     <br>
     <h4>Gijswijt’s Sequence</h4><br>
-    <input type="text" id="impse12"class="form__field"placeholder="Enter no. of terms"><br>
-    <button class="btn btn-dark" onclick="impse8find()">Find</button><br>
+    <form action="">
+        <input type="text" id="impse12"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impse8find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    
     <p id="impse8ans"></p>
     <br>
     <h4>Juggler Sequence</h4>
     <br>
-    <input type="text" id="impse18"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impse18find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="impse18"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="impse18find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="impse18ans"></p>
     <p id="impse18exp"></p>
     <br>
     <h4>Padovan Sequence</h4>
     <br>
-    <input type="text" id="impse19"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impse19find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="impse19"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="impse19find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="impse19ans"></p>
     <p id="impse19exp"></p>
     <br>
     <h4>Recamann Sequence</h4>
     <br>
-    <input type="text" id="impse20"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impse20find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="impse20"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="impse20find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="impse20ans"></p>
     <br>
     <h4>Collatz Sequence</h4><br>
-    <input type="text" id="impse21"class="form__field"placeholder="Enter no. of terms"><br>
-    <button class="btn btn-dark" onclick="impse21find()">Find</button><br>
+    <form action="">
+        <input type="text" id="impse21"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impse21find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    
     <p id="impse21ans"></p><p id="impse21exp"></p>
     <br>
     <h4>Sum of the series 1 / 1 + (1 + 2) / (1 * 2) + (1 + 2 + 3) / (1 * 2 * 3) + – – – – – – upto n terms.</h4>
     <br>
-    <input type="text" id="impse13"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impse9find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="impse13"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="impse9find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="impse9ans"></p>
     <br>
     <h4>Sum of a Series 1/1! + 2/2! + 3/3! + 4/4! +…….+ n/n!</h4>
     <br>
-    <input type="text" id="impse14"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impse10find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="impse14"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="impse10find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="impse10ans"></p>
     <br>
     <h4>Sum of series 2/3 – 4/5 + 6/7 – 8/9 + ——- upto n terms </h4><br>
-    <input type="text" id="impse15"class="form__field"placeholder="Enter no. of terms"><br>
-    <button class="btn btn-dark" onclick="impse11find()">Find</button><br>
+    <form action="">
+        <input type="text" id="impse15"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impse11find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    
     <p id="impse11ans"></p><br>
     <h4>Sum of first n terms of Quadratic Sequence 3 + 7 + 13 + ...... upto n terms </h4>
     <br>
-    <input type="text" id="impse20"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impsefind20()">Find</button>
+    <form action="">
+        <input type="text" id="impse20"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="impsefind20()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <br>
     <p id="impseans20"></p>
     <br><h4>Sum of the series 1-2+3-4+5-6+7…….</h4><br>
-    <input type="text" id="impse16"class="form__field"placeholder="Enter no. of terms"><br>
-    <button class="btn btn-dark" onclick="impse12find()">Find</button><br>
+    <form action="">
+        <input type="text" id="impse16"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impse12find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    
     <p id="impse12ans"></p><br>
     <br>
     <h4>Sum of series 1*2*3 + 2*3*4+ 3*4*5 + . . . + n*(n+1)*(n+2)</h4>
     <br>
-    <input type="text" id="impse17"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impse13find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="impse17"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="impse13find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="impse13ans"></p>
     <br>
     <h4>Nth term of Ruler Function Series</h4>
     <br>
-    <input type="text" id="impse22"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impse22find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="impse22"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="impse22find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="impse22ans"></p>
     <br>
     <h4>Nth term of Series 12, 35, 81, 173, 357, …</h4>
     <br>
-    <input type="text" id="imp113"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="nth113find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="imp113"class="form__field"placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="nth113find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="nth113ans"></p>
 </div>
 
