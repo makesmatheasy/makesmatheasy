@@ -19838,7 +19838,7 @@ function convertex3() {
         var x = "",y="";
         var temp ="";
         if(input.length % 4 != 0 ){
-            x = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
+            result.innerHTML = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
         }else{
             x = "";
             var t = input;
@@ -19872,9 +19872,9 @@ function convertex3() {
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString(2);
             }else if(parseInt(x)<0){
-                x = "Error : Invalid input (decimal value of each digit cant subceed 0)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant subceed 0)";
             }else{
-                x = "Error : Invalid input (decimal value of each digit cant exceed 9)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant exceed 9)";
             }
             work.innerHTML = print;
             renderMathInElement(work);
