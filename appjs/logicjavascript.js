@@ -14743,7 +14743,11 @@ function mnapsum() {
     document.getElementById("printmnAP").innerHTML = sum
 
 }
-
+function calcexmnap(){
+    var m = document.getElementById("mterm99").value=5;
+    var n = document.getElementById("nterm98").value=2;
+    mnap();
+}
 function mnap() {
     var m = parseFloat(document.getElementById("mterm99").value)
     var n = parseFloat(document.getElementById("nterm98").value)
