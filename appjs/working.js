@@ -91,7 +91,12 @@ $("#cartbtn").click(function(){
     closenav();
     clearall();
 });
-
+ // Neon Number
+ $("#neonnumbtn").click(function(){
+    openit("#neonnum");
+    closenav();
+    clearall();
+});
 function closenav() {
     $('#slide-out').addClass('sidenav-close');
     setTimeout(function () {

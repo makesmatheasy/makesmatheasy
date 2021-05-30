@@ -24430,6 +24430,19 @@ function armstrongvalue(){
 
     }
 }
+// Neon Number
+function isNeonNum(num) {
+    let sq = num * num;   
+    let sum_digits = 0;
+    while (sq != 0) {
+        sum_digits = sum_digits + sq % 10;
+        sq = Math.floor(sq / 10);
+    }
+    if(sum_digits == num)
+        document.getElementById('neonans').innerHTML = num +" is a Neon number";
+    else
+        document.getElementById('neonans').innerHTML = num +" is not a Neon number";
+}
 // Disarium Number
 function isDisNum(num) {
    const res = String(num)
