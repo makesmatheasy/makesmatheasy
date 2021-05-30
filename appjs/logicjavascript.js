@@ -10589,6 +10589,31 @@ function solvepartialsphere() {
     }
 }
 
+//Elongated square bipyramid
+function solvesqelongbipy() {
+    let a = document.getElementById("inputsqelongbipyedge").value;
+    let heioutput = document.getElementById("resultofsqelongbipyhei");
+    let areaoutput = document.getElementById("resultofsqelongbipyarea");
+    let voloutput = document.getElementById("resultofsqelongbipyvol");
+    var heitemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    if (a != "") {
+        heitemp += "\\[Height \\space \\newline (\\frac{2}{\\sqrt{2}} + 1) \\space" + a + "\\ = " + eval(String(2.4142136 * a)).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        areatemp += "\\[Area \\space \\newline (4 + 2 \\sqrt{3}) \\space (" + a + ")^2" + "\\ = " + eval(String(7.4641016 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline (1 + \\frac{\\sqrt{2}}{3}) \\space (" + a + ")^3" + "\\ = " + eval(String(1.4714045 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(heioutput);
+        renderMathInElement(areaoutput); 
+        renderMathInElement(voloutput);
+    } else {
+        heioutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
 //Elongated Square Pyramid
 function solveelonsqupyr() {
     var a = document.getElementById("inputelonsqupyra").value;
