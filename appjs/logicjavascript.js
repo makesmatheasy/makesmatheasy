@@ -3299,12 +3299,20 @@ function impse20find() {
 
 function impse13find() {
     let n = parseInt(document.getElementById("impse17").value)
-    let sum = 0;
-
-    for (let i = 1; i <= n; i++)
-        sum = sum + i * (i + 1) * (i + 2);
-
-    document.getElementById("impse13ans").innerHTML = sum;
+    if(!isNaN(n)){
+        let sum = 0;
+        for (let i = 1; i <= n; i++)
+            sum = sum + i * (i + 1) * (i + 2);
+    
+        document.getElementById("impse13ans").innerHTML = sum;
+        document.getElementById("impse13exp").innerHTML = "\\[According to formula, sum of (k -1) terms is\\]"
+        document.getElementById("impse13exp").innerHTML = "\\[((k - 1) * (k) * (k + 1) * (k + 2)) / 4\\]"
+        document.getElementById("impse13exp").innerHTML = "\\[Sum of k terms = sum of k-1 terms + value of k-th term= ((k - 1) * (k) * (k + 1) * (k + 2)) / 4 + k * (k + 1) * (k + 2)\\]"
+        document.getElementById("impse13exp").innerHTML = "\\[= k * (k + 1) * (k + 2) * (k + 3)/4\\]"
+        renderMathInElement(document.getElementById("impse13exp"))
+    }
+    else 
+        document.getElementById("impse13ans").innerHTML = "Please enter valid input"
 }
 
 function find_count(ele) {
