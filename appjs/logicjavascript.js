@@ -1398,6 +1398,24 @@ function chordTangle() {
     }
 }
 
+function chordlength() {
+    // when angle in the alternate segment is given
+    var x = document.getElementById("clength1").value
+    var r = document.getElementById("clength2").value
+    if (x != "" && r!="") {
+        if(r<0){
+          document.getElementById("clengthans").innerHTML = "\\[Radius \\space cannot \\space  be \\space \\negative\\]"
+        }
+        else{
+          var l=2 * r * Math.sin(x * (3.14 / 180))
+          document.getElementById("clengthans").innerHTML = "\\[The \\space angle \\space between \\space chord \\space and \\space tangent \\space is " + l+"\\]";
+        }
+    }
+    else {
+        document.getElementById("clengthans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
+    }
+    renderMathInElement(document.getElementById("clengthans"));
+}
 function chordsub() {
     var into = document.getElementById("chsub").value
     if (into != "") {
