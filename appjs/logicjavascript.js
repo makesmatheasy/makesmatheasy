@@ -4415,10 +4415,22 @@ function convexcheckfind() {
     let a7 = parseInt(document.getElementById("convexcheckin7").value)
     var points = [[a, a1], [a2, a3], [a4, a5], [a6, a7]]
     if (!isNaN(a) && !isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(a4) && !isNaN(a5) && !isNaN(a6) && !isNaN(a7)) {
+        
+        
         if (isConvex(points)) {
+            document.getElementById("convexcheckexp").innerHTML = " \\[In a convex polygon, all interior angles are less than or equal to 180 degrees\\]"
+            document.getElementById("convexcheckexp").innerHTML = " \\[Traverse the array and check if direction of cross product of any two adjacent sides of the polygon are same or not.\\]"
+            document.getElementById("convexcheckexp").innerHTML = " \\[If found to be true, then print “Yes”.\\]"
+            document.getElementById("convexcheckexp").innerHTML = " \\[Otherwise, print “No”.\\]"
+            renderMathInElement(document.getElementById("convexcheckexp"))
             document.getElementById("convexcheckans").innerHTML = "Yes"
         }
         else {
+            document.getElementById("convexcheckexp").innerHTML = " \\[In a convex polygon, all interior angles are less than or equal to 180 degrees\\]"
+            document.getElementById("convexcheckexp").innerHTML = " \\[Traverse the array and check if direction of cross product of any two adjacent sides of the polygon are same or not.\\]"
+            document.getElementById("convexcheckexp").innerHTML = " \\[If found to be true, then print “Yes”.\\]"
+            document.getElementById("convexcheckexp").innerHTML = " \\[Otherwise, print “No”.\\]"
+            renderMathInElement(document.getElementById("convexcheckexp"))
             document.getElementById("convexcheckans").innerHTML = "No"
         }
     }
