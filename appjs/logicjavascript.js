@@ -3968,6 +3968,8 @@ function alisum1find() {
         }
         document.getElementById("alisum1ans").innerHTML = "true";
     }
+    else 
+    document.getElementById("alisum1ans").innerHTML = " Please ENer valid input"
 }
 
 function alisum3find(){
