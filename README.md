@@ -161,7 +161,11 @@ Other Tech/Libraries
   - Factors
     - Prime Factorization **( with steps for single number)**
   - Euclid GCD
+  - Antilog calculator
+  - Change Log base
   - Doubling Time
+  - Percentage change
+  - Percentage off
   - Modulo calculator
   - Sieve of Eratosthenes
   - Adam Numbers
@@ -240,7 +244,12 @@ Other Tech/Libraries
   - Dirichlet's theorem on arithmetic progressions
   - Smallest Number Divisible
   - Lucas series
-  - Types of numbers 
+  - Types of numbers
+  - Disarium Number
+  - Krishnamurthy Number
+  - Automorphic Number 
+  - Pronic Number 
+
 
 - Basic Convertors
 
@@ -310,6 +319,7 @@ Other Tech/Libraries
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
+    - Round corner
     - Rhombus
     - Triangles
     	1. Equilateral Triangle
@@ -329,15 +339,21 @@ Other Tech/Libraries
     - Stadium
     - Claw
     - Cycloid
+    - Double Cycloid
     - Parallelogram
-    - Polygons: Pentagon, Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
+    - Polygons: Pentagon, Concave Pentagon, Hexagon, Concave Hexagon, Stretched Hexagon, Heptagon, Octagon, Nonagon, Decagon, Dodecagon, Hendecagon, TriDecagon, TetraDecagon, Pentadecagon, Hexadecagon, Heptadecagon, Octadecagon, Enneadecagon, Icosagon, Polygon Calculator
     - Star Polygons: Pentagram, Hexagram, Unicursal Hexagram, Octagram, Double Star Polygon, Star of Lakshmi
     - T-Shape
     - H-Shape
+    - L-Shape
+    - X-Shape
+    - Drop Shape
     - Arbelos
+    - Spherical Triangle
 
   - Name Of 3D Shapes
   - 3D Shapes Calculator
+    - Capsule
     - Cube
     - Cuboid
     - Cylinder
@@ -365,8 +381,10 @@ Other Tech/Libraries
     - Trapezoid
     - Spheroidal Cap
     - Ellipsoidal Cap
+    - Hollow Cuboid
   - 3-D shapes Inscribed
   - 4-D Shapes Calculator
+    - Glome
     - Tesseract
     - Hypersphere
   - 3-D Geometry
@@ -449,7 +467,7 @@ Other Tech/Libraries
   - Poisson Distribution Statistics
   - Hypergeometric Distribution Statistics
   - Exponential Distribution Calculator
-
+  - Gamma Distribution Calculator
 - Statistics
 
   - Statistics Formulae
@@ -466,8 +484,11 @@ Other Tech/Libraries
   - Relative Risk Calculator
   - Negative Binomial Distribution Calculator
   - p chart Calculator
+  - p value Calculator
   - np chart Calculator
   - Confidence Interval Calculator
+  - PPV calculator
+  - NPV calculator
   - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation
