@@ -16782,8 +16782,37 @@ function minsquarefind() {
         document.getElementById("minsquareans").innerHTML = "Please enter valid input"
     }
 }
-
-
+function gcd(a , b)
+{
+    // Everything divides 0
+    if (a == 0 || b == 0)
+        return 0;
+     
+    // Base case
+    if (a == b)
+        return a;
+     
+    // a is greater
+    if (a > b)
+        return gcd(a - b, b);
+    return gcd(a, b - a);
+}
+function minsqfind() {
+    let l = parseInt(document.getElementById("minsq1").value)
+    let b = parseInt(document.getElementById("minsq2").value)
+    if(!isNaN(l) && !isNaN(b) ){
+        if (l < 0 || b < 0)
+           document.getElementById("minsqans").innerHTML = "\\[Dimension \\space cannot \\space be \\space negative\\]";
+        else{
+            var n = (l * b) / gcd(l, b);
+            document.getElementById("minsqans").innerHTML = "\\[Area \\space of \\space smallest \\space square \\space formed \\space with \\space given \\space rectangle="+n*n+"\\]";
+            }
+    }    
+    else {
+        document.getElementById("minsqans").innerHTML = "\\[Please \\space  enter \\space valid \\space input\\]";
+    }
+    renderMathInElement(document.getElementById("minsqans"))
+}
 // Standard Deviation
 function std() {
     var s = 0, ans = 0;
