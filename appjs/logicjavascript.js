@@ -2693,6 +2693,23 @@ function solvehalft() {
         voloutput.innerHTML = "";
     }
 }
+function calcexcramer(){
+    var a = document.getElementById('cab');
+    var b = document.getElementById('cab1');
+    var c = document.getElementById('cab2');
+    var d = document.getElementById('cab3');
+    var e = document.getElementById('cab4');
+    var f = document.getElementById('cab5');
+
+    a.value = 5;
+    b.value = 3;
+    c.value = 1;
+    d.value = 2;
+    e.value = 3;
+    f.value = 4;
+
+    cramer();
+}
 //Cramer's Rule Calculator
 function cramer() {
     var a = (document.getElementById('cab').value);
@@ -19358,6 +19375,7 @@ function convertdec2421() {
             }
             result.innerHTML = x;
         }result.innerHTML = x;
+}
 }
 
 
