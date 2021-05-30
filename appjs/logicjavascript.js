@@ -19694,6 +19694,7 @@ function convertbcd() {
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + parseInt(temp,2).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
                     temp = "";
                 }else{
                     temp = temp + input[i];
