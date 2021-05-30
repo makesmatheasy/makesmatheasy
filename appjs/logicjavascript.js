@@ -5986,20 +5986,25 @@ function escbrad() {
     let c = parseInt(document.getElementById('inputabc2').value)
     let r = parseInt(document.getElementById('inputabc5').value)
     var output = document.getElementById("inexans");
-    var ans = "";
-    if (!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(r)) {
+    var temp = "";
+    if (!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(r)) 
+    {
         let r1 = 4 * r * (Math.sin(((a * Math.PI) / 180) / 2) * (Math.cos((((b * Math.PI) / 180) / 2))) * (Math.cos(((c * Math.PI) / 180) / 2)))
         let r2 = 4 * r * (Math.cos(((a * Math.PI) / 180) / 2) * (Math.sin((((b * Math.PI) / 180) / 2))) * (Math.cos(((c * Math.PI) / 180) / 2)))
         let r3 = 4 * r * (Math.cos(((a * Math.PI) / 180) / 2) * (Math.cos((((b * Math.PI) / 180) / 2))) * (Math.sin(((c * Math.PI) / 180) / 2)))
-        ans += "\\[Radius \\space of \\space the \\space Escribed \\space Circles \\space of \\space a \\space Triangle \\space is \\]"
-        ans += "\\[r1 \\space = \\space 4 \\times R \\times Sin \\frac{A}{2} \\times Cos \\frac{B}{2} \\times Cos \\frac{C}{2} \\space = \\space " + r1.toFixed(4) + " \\]"
-        ans += "\\[r2 \\space = \\space 4 \\times R \\times Cos \\frac{A}{2} \\times Sin \\frac{B}{2} \\times Cos \\frac{C}{2} \\space = \\space " + r2.toFixed(4) + " \\]"
-        ans += "\\[r3 \\space = \\space 4 \\times R \\times Cos \\frac{A}{2} \\times Cos \\frac{B}{2} \\times Sin \\frac{C}{2} \\space = \\space " + r3.toFixed(4) + " \\]"
-        output.innerHTML = ans;
+        temp += "\\[Radius \\space of \\space the \\space Escribed \\space Circles \\space of \\space a \\space Triangle \\space is \\]"
+        temp += "\\[r1 \\space = \\space 4 \\times R \\times Sin \\frac{A}{2} \\times Cos \\frac{B}{2} \\times Cos \\frac{C}{2} \\space = \\space 4 \\times " + r + " \\times Sin \\frac{ " +a+ " }{2} \\times Cos \\frac{" + b + "}{2} \\times Cos \\frac{"+ c + "}{2} \\space = \\space 4 \\times " + r + " \\times Sin ( " +a/2+ " ) \\times Cos (" + b/2 + ") \\times Cos ("+ (c/2) + ") \\]"
+        temp += "\\[r1 \\space = \\space " + r1.toFixed(4) + " \\]"
+        temp += "\\[r2 \\space = \\space 4 \\times R \\times Cos \\frac{A}{2} \\times Sin \\frac{B}{2} \\times Cos \\frac{C}{2} \\space = \\space 4 \\times" + r + " \\times Cos \\frac{" + a + "}{2} \\times Sin \\frac{" + b + "}{2} \\times Cos \\frac{" + c + "}{2} \\space = \\space 4 \\times" + r + " \\times Cos (" + a/2 + ") \\times Sin (" + b/2 + ") \\times Cos (" + c/2 + ")  \\]"
+        temp += "\\[r2 \\space = \\space " + r2.toFixed(4) + " \\]"
+        temp += "\\[r3 \\space = \\space 4 \\times R \\times Cos \\frac{A}{2} \\times Cos \\frac{B}{2} \\times Sin \\frac{C}{2} \\space = \\space 4 \\times" + r + " \\times Cos \\frac{" + a + "}{2} \\times Cos \\frac{" + b + " }{2} \\times Sin \\frac{" + c + "}{2}\\space = \\space 4 \\times" + r + " \\times Cos (" + a/2 + ") \\times Cos (" + b/2 + " ) \\times Sin (" + c/2 + ")  \\]"
+        temp += "\\[r3 \\space = \\space " + r3.toFixed(4) + " \\]"
+        output.innerHTML = temp;
     }
-    else {
-        ans += "\\[Please \\space enter \\space valid \\space input \\]"
-        output.innerHTML = ans;
+    else
+     {
+        temp += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = temp;
     }
     renderMathInElement(output);
 }
