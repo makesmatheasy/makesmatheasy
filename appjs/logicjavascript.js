@@ -17740,6 +17740,12 @@ function minsquare1find() {
     var R = a * (2.0 - Math.sqrt(2));
     var area = 3.14 * R * R / 2.0;
     if (!isNaN(a)) {
+        document.getElementById("minsquare1exp").innerHTML = "\\[Given a square of side a, the task is to find the area of the largest semi-circle that can be drawn inside the square.\\]"
+        document.getElementById("minsquare1exp").innerHTML = "\\[The semicircle of maximal area inscribed in the square has its diameter parallel to a diagonal, and its radius rmax is given as:\\]"
+        document.getElementById("minsquare1exp").innerHTML = "\\[OY = r cos 45 = r/ √2\\]"
+        document.getElementById("minsquare1exp").innerHTML = "\\[r = a*2 - a √2 = a*(2-√2)\\]"
+        document.getElementById("minsquare1exp").innerHTML = "\\[Area of the required semicircle = pi * r2/2\\]"
+        document.getElementById("minsquare1exp").innerHTML = "\\[= 3.14*(a*(2-√2))2 / 2\\]"
         document.getElementById("minsquare1ans").innerHTML = area;
     }
     else {
