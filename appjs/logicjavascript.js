@@ -2836,18 +2836,42 @@ function findsectorarea() {
 }
 //Least number to be added to or subtracted from N to make it a Perfect Cube Calculator
 function addsubcfind() {
-    let n = parseInt(document.getElementById("addsubc").value)
-    let prevCube = Math.cbrt(n)
-    let nextCube = prevCube + 1
-    let ans = (n - prevCube) < (nextCube - n)
-        ? (prevCube - n)
-        : (nextCube - n)
-    if (!isNaN(n)) {
-        document.getElementById("addsubcans").innerHTML = ans;
+    var n = parseInt(document.getElementById("addsubc").value)
+    var output = document.getElementById('addsubcans');
+    var temp = "";
+
+    if (!isNaN(n)){
+        var prevCube = Math.cbrt(n)
+        var nextCube = prevCube + 1
+        temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space from \\space N \\space to \\space make \\space it \\space Perfect \\space Cube,\\]"
+        temp += "\\[First, \\space we \\space calculate \\space the \\space previous \\space and \\space the \\space next \\space Cube \\space values\\]"
+        temp += "\\[Previous \\space  Cube \\space = \\space \\sqrt[3]{n}\\]"
+        temp += "\\[\\space = \\space \\sqrt[3]{"+n+"}\\]"
+        temp += "\\[\\space = \\space "+prevCube.toFixed(2)+"\\]"
+        temp += "\\[Next \\space Cube \\space = \\space (Previous \\space Cube) + 1\\]"
+        temp += "\\[\\space = \\space "+prevCube.toFixed(2)+" + 1 \\]"
+        temp += "\\[\\space = \\space "+nextCube.toFixed(2)+"\\]"
+
+        if ((n - prevCube) < (nextCube - n)){
+            temp += "\\[Since, \\space (n - (Previous \\space Cube)) \\space is \\space less \\space than \\space ((Next \\space Cube) - n)\\]"
+            temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space will \\space be,\\]"
+            temp += "\\[Least \\space number \\space = \\space (previous \\space Cube) - n \\]"
+            temp += "\\[\\space = \\space "+prevCube+" - "+n+"\\]"
+            temp += "\\[\\space = \\space "+(prevCube - n).toFixed(3)+"\\]"
+        } else{
+            temp += "\\[Since, \\space (n - (Previous \\space Cube)) \\space is \\space greater \\space than \\space ((Next \\space Cube) - n)\\]"
+            temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space will \\space be,\\]"
+            temp += "\\[Least \\space number \\space = \\space (Next \\space Cube) - n \\]"
+            temp += "\\[\\space = \\space "+nextCube+" - "+n+"\\]"
+            temp += "\\[\\space = \\space "+(nextCube - n).toFixed(3)+"\\]"
+        }
+        output.innerHTML = temp;
+
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]"
+        output.innerHTML = temp;
     }
-    else {
-        document.getElementById('addsubcans').innerHTML = 'Please enter all Input';
-    }
+    renderMathInElement(output);
 }
 //Least number to be added to or subtracted from N to make it a Perfect Square Calculator
 function addsubsfind() {
