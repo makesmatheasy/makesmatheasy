@@ -14871,7 +14871,6 @@ function typenum15find()
     renderMathInElement(result);
 }
 
-}    
 
 
 function simpleSieve(){

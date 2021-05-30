@@ -1532,7 +1532,6 @@ function perchngCal(){
     renderMathInElement(output);
 }
 
-
 function peroffCal(){
     var original = parseInt(document.getElementById("originalPrice").value);
     var off = parseInt(document.getElementById("offper").value)/100;
