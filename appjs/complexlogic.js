@@ -1506,9 +1506,30 @@ function dbltimeCal(){
 function perchngCal(){
     var initial = parseInt(document.getElementById("initialVal").value);
     var final = parseInt(document.getElementById("finalVal").value);
-    var ans = ((final-initial)/Math.abs(initial))*100;
     var output = document.getElementById("perchngans");
-    output.innerHTML = final  + " is a " + ans + "% change of " + initial;
+    var temp = "";
+
+    if (!isNaN(initial) && !isNaN(final))
+    {
+        var ans = ((final-initial)/Math.abs(initial))*100;
+
+        temp += "\\[The \\space Percentage \\space change \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{((Final value) - (Initial value))}{ |(Initial value)| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{(("+final+") - ("+initial+"))}{ |("+initial+")| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{"+(final-initial)+"}{ |("+initial+")| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{"+(final-initial)+"}{ "+(Math.abs(initial))+" } \\times 100\\]"
+        temp += "\\[\\space = \\space "+((final-initial)/Math.abs(initial)).toFixed(2)+" \\times 100\\]"
+        temp += "\\[\\space = \\space "+ans.toFixed(3)+"\\]"
+        temp += "\\[Hence, \\space\\]"
+        temp += "\\[\\space = \\space "+final+" \\space is \\space a \\space "+ans.toFixed(2)+" \\space \\% change \\space of \\space "+initial+"\\]"
+
+        output.innerHTML = temp;
+    }
+    else
+    {
+        temp += "\\[Please \\space enter \\space valid \\space input\\]"
+    }
+    renderMathInElement(output);
 }
 
 function peroffCal(){
@@ -1554,7 +1575,19 @@ function moduloCal(){
     var x = parseInt(document.getElementById("modx").value);
     var y = parseInt(document.getElementById("mody").value);
     var r = x%y;
-    document.getElementById("moduloans").innerHTML = "x % y = " + r;
+    var output = document.getElementById("moduloans");
+    var xy = x/y;
+    var yy = y*xy;
+    
+    var step = "\\[x \\pmod y= \\space x - (frac{x}{y}) \\times y\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - (frac{"+x+"}{"+y+"}) \\times "+y+"\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - "+xy+" \\times "+y+"\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - "+yy+" \\]";
+    step += "\\[x \\pmod y= \\space "+r+" \\]";
+
+    output.innerHTML = step;
+
+    renderMathInElement(output);
 }
 
 function covcalcu(){
