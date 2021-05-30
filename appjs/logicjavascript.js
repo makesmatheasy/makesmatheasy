@@ -21583,18 +21583,30 @@ function triinsemifind() {
 
 function hexsq() {
     let a = parseFloat(document.getElementById("hexsq1").value)
-    if (!isNaN(a)) {
-        if (a < 0){
-            document.getElementById("hexsqans").innerHTML = "Side Length cannot be negative"
-    }
-    else{
+    var output = document.getElementById("hexsqans")
+    var ans = ""
+    if (!isNaN(a))
+     {
+        if (a < 0)
+        {
+            ans += "\\[Side \\space Length \\space of \\space the \\space Square \\space cannot \\space be \\space negative.\\]"  
+            output.innerHTML = ans
+     }
+    else
+    {
         var s = 0.5176 * a;
-        document.getElementById("hexsqans").innerHTML = s
+        ans += "\\[Side \\space length \\space of \\space Square \\space = \\space  " + a + " \\]"
+        ans += "\\[Length \\space of \\space the \\space side \\space of \\space Hexagon \\space (x) \\space = \\space 0.5176 \\times a \\]"
+        ans += "\\[Length \\space of \\space the \\space side \\space of \\space Hexagon \\space (x) \\space = \\space  (0.5176 \\times " + a + ") \\space = \\space " + (s).toFixed(3) + " \\]"
+        output.innerHTML = ans
     }
 }
-    else {
-        document.getElementById("hexsqans").innerHTML = "Please enter valid input"
+    else 
+    {
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans
     }
+    renderMathInElement(output)
 }
 
 function recinsemifind() {
