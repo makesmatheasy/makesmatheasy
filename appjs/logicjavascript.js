@@ -24239,14 +24239,19 @@ function npvCal() {
     let prev = document.getElementById("npvprev").value;
 
     let ans = "";
+    let steps = "";
     if(sensi=="" || speci=="" || prev==""||isNaN(sensi)||isNaN(speci)||isNaN(prev)){
         ans = "Enter valid inputs"
         document.getElementById("npvans").innerHTML = ans;
     }
     else{
         ans = (speci * (1 - prev))/(((1 - sensi) * prev) + (speci * (1 - pre)));
-       
-        document.getElementById('npvans').innerHTML = "Negative Predictive Value " + ans.toFixed(2);
+        ans = ans.toFixed(2);
+        steps += "\\[NPV =(Specificity \\times \\frac{(1 - Prevalence))}{((1 - Sensitivity) \\times Prevalence) + (Specificity \\times (1 - Prevalence))}\\]";
+        steps += "\\[=("+speci+" \\times \\frac{(1 - "+prev+"))}{((1 - "+sensi+") \\times "+prev+") + ("+speci+" \\times (1 - "+prev+"))}\\]";
+        steps += "\\[="+ans+"\\]";
+        document.getElementById('npvans').innerHTML = steps;
+        renderMathInElement(document.getElementById('npvans'));
     }
   }
 
