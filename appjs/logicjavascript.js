@@ -16571,8 +16571,25 @@ function cylinderincubefind() {
 function cubeincylinderfind() {
     let r = parseInt(document.getElementById("cubeincylinder").value)
     let h = parseInt(document.getElementById("cubeincylinder1").value)
+    var output = document.getElementById("cubeincylinderans")
+    var ans = ""
     var a = Math.pow(h, 3);
-    document.getElementById("cubeincylinderans").innerHTML = a
+    if(h<0 || r<0 ){  
+        ans += "\\[Height \\space and \\space Radius \\space of \\space the \\space Cylinder \\space cannot \\space be \\space negative.\\]"  
+        output.innerHTML = ans
+    }
+    else if(!isNaN(h) ){ 
+    ans += "\\[Side \\space of \\space the \\space Cube \\space = \\space Height \\space of \\space the \\space Cylinder \\]"
+    ans += "\\[Volume \\space = \\space (height)^{3} \\space = \\space " + h + "^{3} \\]"
+    ans += "\\[Volume \\space of \\space the \\space cube \\space that \\space can \\space be \\space inscribed \\space in \\space cylinder \\space = \\space " + a + " \\]"
+    output.innerHTML = ans
+    }
+    else{
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans
+    }
+    renderMathInElement(output)
+
 }
 
 function coneincubefind() {
