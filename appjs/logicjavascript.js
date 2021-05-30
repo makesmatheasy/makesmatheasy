@@ -14722,7 +14722,15 @@ function hmgm() {
     renderMathInElement(result);
 }
 
+function calcexmnapsum(){
+    var m = document.getElementById("mterm").value=3;
+    var n = document.getElementById("nterm").value=4;
+    var mtherm = document.getElementById("mthterm").value=6;
+    var ntherm = document.getElementById("nthterm").value=8;
+    var pterm = document.getElementById("pterm").value=5;
 
+    mnapsum();
+}
 function mnapsum() {
     var m = parseFloat(document.getElementById("mterm").value)
     var n = parseFloat(document.getElementById("nterm").value)
