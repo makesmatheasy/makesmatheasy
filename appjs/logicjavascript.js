@@ -19359,7 +19359,7 @@ function convertdec2421() {
             result.innerHTML = x;
         }result.innerHTML = x;
 }
-}
+
 
 //---------------------------------------------------------------------------
 //Function that performs conversion of grey to Decimal and viceversa
