@@ -9638,9 +9638,13 @@
         <div class="collapse" id="rootsunity">
             <h2 style="text-align: center;">Roots of Unity Calculator</h2>
             <br><br>
-            <input type="text" id="rootsunityin" placeholder="Enter no. of roots of unity" class="form__field">
-            <br>
-            <button class="btn btn-dark" onclick="rootsunityfind()">Find</button>
+            <form action="">
+                <input type="text" id="rootsunityin" placeholder="Enter no. of roots of unity" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="rootsunityfind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h4 id="rootsunityans"></h4>
         </div>
@@ -15097,70 +15101,99 @@
         <div class="collapse" id="quadeqncal">
             <h2 style="text-align:center;">Quadratic equation whose roots are K times the roots of given equation</h2>
             <br>
-            <input type="text" id="aofeqn" class="form__field" placeholder ="Enter coefficeient of x^2">
-            <input type="text" id="bofeqn" class="form__field" placeholder ="Enter coefficeient of x">
-            <input type="text" id="cofeqn" class="form__field" placeholder ="Enter constant term">
-            <input type="text" id="kofeqn" class="form__field" placeholder ="Enter K times eqn to be multiplied">
-            <br>
-            <button class="btn btn-dark" onclick="ktimes()">Find</button>
+            <form action="">
+                <input type="text" id="aofeqn" class="form__field" placeholder ="Enter coefficeient of x^2">
+                <input type="text" id="bofeqn" class="form__field" placeholder ="Enter coefficeient of x">
+                <input type="text" id="cofeqn" class="form__field" placeholder ="Enter constant term">
+                <input type="text" id="kofeqn" class="form__field" placeholder ="Enter K times eqn to be multiplied">
+                <br>
+                <button class="btn btn-dark" onclick="ktimes()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h4 id="ktimesans"></h4>
             <br>
             <h2 style="text-align:center;">Quadratic equation whose roots are reciprocal to the roots of given equation</h2>
             <br>
-            <input type="text" id="aofeqn1" class="form__field" placeholder ="Enter coefficeient of x^2">
-            <input type="text" id="bofeqn1" class="form__field" placeholder ="Enter coefficeient of x">
-            <input type="text" id="cofeqn1" class="form__field" placeholder ="Enter constant term">
-            <br>
-            <button class="btn btn-dark" onclick="recifind()">Find</button>
+            <form action="">
+                <input type="text" id="aofeqn1" class="form__field" placeholder ="Enter coefficeient of x^2">
+                <input type="text" id="bofeqn1" class="form__field" placeholder ="Enter coefficeient of x">
+                <input type="text" id="cofeqn1" class="form__field" placeholder ="Enter constant term">
+                <br>
+                <button class="btn btn-dark" onclick="recifind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="recians"></h5>
             <br>
             <h2 style="text-align:center;">Generate Quadratic Equation having given sum and product of roots</h2>
             <br>
-            <input type="text" id="sgiven" placeholder="Enter sum of roots">
-            <input type="text" id="pgiven" placeholder="Enter product of roots">
-            <br>
-            <button class="btn btn-dark" onclick="spfind()">Find</button>
+            <form action="">
+                <input type="text" id="sgiven" placeholder="Enter sum of roots">
+                <input type="text" id="pgiven" placeholder="Enter product of roots">
+                <br>
+                <button class="btn btn-dark" onclick="spfind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h5 id="spans"></h5>
             <br>
             <h2 style="text-align:center;">Common Roots</h2>
             <br>
-            <input type="text" id="a1cr" class="form__field" placeholder="Enter x^2 term of 1st eqn">
-            <input type="text" id="b1cr" class="form__field" placeholder="Enter x term of 1st eqn">
-            <input type="text" id="c1cr" class="form__field" placeholder="Enter constant term of 1st eqn">
-            <input type="text" id="a2cr" class="form__field" placeholder="Enter x^2 term of 2nd eqn">
-            <input type="text" id="b2cr" class="form__field" placeholder="Enter x term of 2nd eqn">
-            <input type="text" id="c2cr" class="form__field" placeholder="Enter constant term of 2nd eqn">
-            <br>
-            <button class="btn btn-dark" onclick="commonroots()">Check</button>
+            <form action="">
+                <input type="text" id="a1cr" class="form__field" placeholder="Enter x^2 term of 1st eqn">
+                <input type="text" id="b1cr" class="form__field" placeholder="Enter x term of 1st eqn">
+                <input type="text" id="c1cr" class="form__field" placeholder="Enter constant term of 1st eqn">
+                <input type="text" id="a2cr" class="form__field" placeholder="Enter x^2 term of 2nd eqn">
+                <input type="text" id="b2cr" class="form__field" placeholder="Enter x term of 2nd eqn">
+                <input type="text" id="c2cr" class="form__field" placeholder="Enter constant term of 2nd eqn">
+                <br>
+                <button class="btn btn-dark" onclick="commonroots()">Check</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h4 id="commonrootsans"></h4>
             <br>
             <h2>Form the Cubic equation from the given roots</h2>
             <br>
-            <input type="text" class="form__field" id="rootscubicin1" placeholder="Enter root 1">
-            <input type="text" class="form__field" id="rootscubicin2" placeholder="Enter root 2">
-            <input type="text" class="form__field" id="rootscubicin3" placeholder="Enter root 3">
-            <br>
-            <button class="btn btn-dark" onclick="rootscubicfind()">FInd</button>
+            <form action="">
+                <input type="text" class="form__field" id="rootscubicin1" placeholder="Enter root 1">
+                <input type="text" class="form__field" id="rootscubicin2" placeholder="Enter root 2">
+                <input type="text" class="form__field" id="rootscubicin3" placeholder="Enter root 3">
+                <br>
+                <button class="btn btn-dark" onclick="rootscubicfind()">FInd</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <br>
             <h4 id="rootscubicans"></h4>
             <br>
             <h2 style="text-align:center;">Maximum and Minimum value of a quadratic function</h2><br>
-            <input type="text" id="aofeqn2" class="form__field" placeholder ="Enter coefficeient of x^2">
-            <input type="text" id="bofeqn2" class="form__field" placeholder ="Enter coefficeient of x">
-            <input type="text" id="cofeqn2" class="form__field" placeholder ="Enter constant term"><br>
-            <button class="btn btn-dark" onclick="maxminquadfind()">Find</button><br>
+            <form action="">
+                <input type="text" id="aofeqn2" class="form__field" placeholder ="Enter coefficeient of x^2">
+                <input type="text" id="bofeqn2" class="form__field" placeholder ="Enter coefficeient of x">
+                <input type="text" id="cofeqn2" class="form__field" placeholder ="Enter constant term"><br>
+                <button class="btn btn-dark" onclick="maxminquadfind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <br>
             <p id="maxminquadans1" style= "font-family:mathfont"></p><br>
             <p id="maxminquadans2" style= "font-family:mathfont"></p><br>
             <br>
             <h2 style="text-align:center;">Check whether one root of the Quadratic Equation is twice of other or not</h2><br>
-            <input type="text" id="aofeqn3" class="form__field" placeholder ="Enter coefficeient of x^2">
-            <input type="text" id="bofeqn3" class="form__field" placeholder ="Enter coefficeient of x">
-            <input type="text" id="cofeqn3" class="form__field" placeholder ="Enter constant term"><br>
-            <button class="btn btn-dark" onclick="twicefind()">Find</button><br>
+            <form action="">
+                <input type="text" id="aofeqn3" class="form__field" placeholder ="Enter coefficeient of x^2">
+                <input type="text" id="bofeqn3" class="form__field" placeholder ="Enter coefficeient of x">
+                <input type="text" id="cofeqn3" class="form__field" placeholder ="Enter constant term"><br>
+                <button class="btn btn-dark" onclick="twicefind()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+            </form>
+            
             <p id="twiceans"></p><br>
         </div>
 
@@ -15168,27 +15201,30 @@
             <h2>Intercept form of Plane</h2>
             <br>
             <p id="interceptform">\[ax+by+cz+d=0\]</p>    
-
-            <div class="form-group">
-                <input type="text" style="width: 250px;" class="form__field" name="a" id="interplanex1" placeholder="Enter x1"/>
-                <input type="text" name="b" style="width: 250px;" class="form__field" id="interplaney1" placeholder="Enter y1 "/>
-                <input type="text" name="c" style="width: 250px;" class="form__field" id="interplanez1" placeholder="Enter z1"/>
-                <br>
-
-                <br>
-                <input type="text" style="width: 250px;" class="form__field" name="a" id="interplanex2" placeholder="Enter x2"/>
-                <input type="text" name="b" style="width: 250px;" class="form__field" id="interplaney2" placeholder="Enter y2 "/>
-                <input type="text" name="c" style="width: 250px;" class="form__field" id="interplanez2" placeholder="Enter z2"/>
-                <br>
-                <br>
-                <input type="text" style="width: 250px;" class="form__field" name="a" id="interplanex3" placeholder="Enter x3"/>
-                <input type="text" name="b" style="width: 250px;" class="form__field" id="interplaney3" placeholder="Enter y3 "/>
-                <input type="text" name="c" style="width: 250px;" class="form__field" id="interplanez3" placeholder="Enter z3"/>
-                <br>
-                <br>
-                <button  class = "btn btn-outline-light" onclick = "planeequation()" >Find</button>
-                <br>
-            </div>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="interplanex1" placeholder="Enter x1"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="interplaney1" placeholder="Enter y1 "/>
+                    <input type="text" name="c" style="width: 250px;" class="form__field" id="interplanez1" placeholder="Enter z1"/>
+                    <br>
+    
+                    <br>
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="interplanex2" placeholder="Enter x2"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="interplaney2" placeholder="Enter y2 "/>
+                    <input type="text" name="c" style="width: 250px;" class="form__field" id="interplanez2" placeholder="Enter z2"/>
+                    <br>
+                    <br>
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="interplanex3" placeholder="Enter x3"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="interplaney3" placeholder="Enter y3 "/>
+                    <input type="text" name="c" style="width: 250px;" class="form__field" id="interplanez3" placeholder="Enter z3"/>
+                    <br>
+                    <br>
+                    <button  class = "btn btn-outline-light" onclick = "planeequation()" >Find</button>
+                    <button  class = "btn btn-outline-light" onclick = "this.form.reset():" >Reset</button>
+                    <br>
+                </div>
+            </form>
+           
             <h2  id="interceptresult"></h2>
         </div>
 
@@ -23132,109 +23168,132 @@ N is the population size.
 <!-- Start of grey convertor -->
 <div>
     <div class="collapse" id="grey-bin">
-        <div class="col-6">
-            <div class="form-group">
-                <h4>Binary-Grey Code Converter</h4><br>
-                <h5>From</h5>
-                <select id="grey-select1" class="form__field">
-                    <option class="form_field" style="background-color: #232a36;">Grey
-                        Code
-                    </option>
-                    <option class="form_field" style="background-color: #232a36;">
-                        Binary
-                    </option>
-                </select>
-                <input type="number" id="grey-input" value="0" class="form__field">
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h4>Binary-Grey Code Converter</h4><br>
+                    <h5>From</h5>
+                    <select id="grey-select1" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">Grey
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                    </select>
+                    <input type="number" id="grey-input" value="0" class="form__field">
+                </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="form-group">
-                <h5>To</h5>
-                <button type="button" class="btn btn-light" onclick="convertgrey()">
-                    Find
-                </button>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <button type="button" class="btn btn-light" onclick="convertgrey()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="grey-result">0</label>
+                <p class="" id = "grey-working"></p>
             </div>
-            <label class="form__group" id="grey-result">0</label>
-            <p class="" id = "grey-working"></p>
-        </div>
+        </form>
         <br><br>
-        <div class="col-6">
-            <div class="form-group">
-                <h4>Decimal-Grey Code Converter</h4><br>
-                <h5>From</h5>
-                <select id="grey-select2" class="form__field">
-                    <option class="form_field" style="background-color: #232a36;">Grey
-                        Code
-                    </option>
-                    <option class="form_field" style="background-color: #232a36;">
-                        Decimal
-                    </option>
-                </select>
-                <input type="number" id="greydec-input" value="0" class="form__field">
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h4>Decimal-Grey Code Converter</h4><br>
+                    <h5>From</h5>
+                    <select id="grey-select2" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">Grey
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                    </select>
+                    <input type="number" id="greydec-input" value="0" class="form__field">
+                </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="form-group">
-                <h5>To</h5>
-                <button type="button" class="btn btn-light" onclick="convertgreydec()">
-                    Find
-                </button>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <button type="button" class="btn btn-light" onclick="convertgreydec()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="greydec2-result"></label>
+                <p class="" id = "grey-dec-working"></p>
             </div>
-            <label class="form__group" id="greydec2-result"></label>
-            <p class="" id = "grey-dec-working"></p>
-        </div>
+        </form>
+        
         <br><br>
-        <div class="col-6">
-            <div class="form-group">
-                <h4>Octal-Grey Code Converter</h4><br>
-                <h5>From</h5>
-                <select id="grey-select3" class="form__field">
-                    <option class="form_field" style="background-color: #232a36;">Grey
-                        Code
-                    </option>
-                    <option class="form_field" style="background-color: #232a36;">
-                        Octal
-                    </option>
-                </select>
-                <input type="number" id="greyoct-input" value="0" class="form__field">
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h4>Octal-Grey Code Converter</h4><br>
+                    <h5>From</h5>
+                    <select id="grey-select3" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">Grey
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                    </select>
+                    <input type="number" id="greyoct-input" value="0" class="form__field">
+                </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="form-group">
-                <h5>To</h5>
-                <button type="button" class="btn btn-light" onclick="convertgreyoct()">
-                    Find
-                </button>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <button type="button" class="btn btn-light" onclick="convertgreyoct()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="greyoct-result"></label>
+                <p class="" id = "grey-oct-working"></p>
             </div>
-            <label class="form__group" id="greyoct-result"></label>
-            <p class="" id = "grey-oct-working"></p>
-        </div>
+        </form>
+        
         <br><br>
-        <div class="col-6">
-            <div class="form-group">
-                <h4>Hexa Decimal-Grey Code Converter</h4><br>
-                <h5>From</h5>
-                <select id="grey-select4" class="form__field">
-                    <option class="form_field" style="background-color: #232a36;">Grey
-                        Code
-                    </option>
-                    <option class="form_field" style="background-color: #232a36;">
-                        Hexa Decimal
-                    </option>
-                </select>
-                <input type="" id="greyhexdec-input" value="0" class="form__field">
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h4>Hexa Decimal-Grey Code Converter</h4><br>
+                    <h5>From</h5>
+                    <select id="grey-select4" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">Grey
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type="" id="greyhexdec-input" value="0" class="form__field">
+                </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="form-group">
-                <h5>To</h5>
-                <button type="button" class="btn btn-light" onclick="convertgreyhexdec()">
-                    Find
-                </button>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <button type="button" class="btn btn-light" onclick="convertgreyhexdec()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="greyhexdec-result"></label>
+                <p class="" id = "grey-hexdec-working"></p>
             </div>
-            <label class="form__group" id="greyhexdec-result"></label>
-            <p class="" id = "grey-hexdec-working"></p>
-        </div>
+        </form>
+        
     </div>
 </div>
 <!-- End of grey convertor -->
