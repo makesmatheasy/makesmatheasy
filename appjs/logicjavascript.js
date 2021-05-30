@@ -1399,7 +1399,6 @@ function chordTangle() {
 }
 
 function chordlength() {
-    // when angle in the alternate segment is given
     var x = document.getElementById("clength1").value
     var r = document.getElementById("clength2").value
     if (x != "" && r!="") {
@@ -1407,8 +1406,8 @@ function chordlength() {
           document.getElementById("clengthans").innerHTML = "\\[Radius \\space cannot \\space  be \\space \\negative\\]"
         }
         else{
-          var l=2 * r * Math.sin(x * (3.14 / 180))
-          document.getElementById("clengthans").innerHTML = "\\[The \\space angle \\space between \\space chord \\space and \\space tangent \\space is " + l+"\\]";
+          var l=(2 * r * Math.sin(x * (3.14 / 180))).toFixed(3)
+          document.getElementById("clengthans").innerHTML = "\\[The \\space length \\space of \\space chord \\space is \\space " + l+"\\]"+"\\[Length \\space of \\space  chord \\space is \\space  given \\space  by :\\space 2*rsin(\\frac{3.14x}{180}) \\newline \\space \\space \\space =2*"+r+"*sin(\\frac{3.14*"+x+"}{180})="+l+"\\]";
         }
     }
     else {
