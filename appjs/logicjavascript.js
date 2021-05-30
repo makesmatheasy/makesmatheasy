@@ -18974,6 +18974,8 @@ function convertbcd() {
     const toCode = document.getElementById("bcd-select2").value;
     var input = document.getElementById("bcd-input").value;
     let result = document.getElementById("bcd-result");
+    var work = document.getElementById("bcd-work");
+    var print = "\\[\\underline{Working \\space Steps}\\]";
 
     if (fromCode == "BCD Code" && toCode == "BCD Code")
         result.innerHTML = input;
@@ -19115,24 +19117,39 @@ function convertbcd() {
             }
         }
     } else if (fromCode == "Hexadecimal" && toCode == "BCD Code") {
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space hexadecimal \\space to \\space decimal \\]";
+        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 16).toString() + "\\]";
         input = parseInt(input, 16).toString();
-        var x="_",y="";
+        print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
         for (var i = 0; i < input.length; i++) {
             y = parseInt(input[i]).toString(2);
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + +temp;
             }
         }
-        result.innerHTML = x;
+        print +="\\[STEP \\space 3 \\space : \\space Combine \\space the \\space nibbles \\space to \\space get \\space your \\space BCD \\space result \\]";
+        print +="\\[Result \\space in \\space BCD \\space CODE \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     } else if (fromCode == "BCD Code" && toCode == "Hexadecimal") {
         var x = "",y="";
         var temp ="";
