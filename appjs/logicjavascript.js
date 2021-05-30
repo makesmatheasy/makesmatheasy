@@ -19009,14 +19009,21 @@ function polymax1find() {
 //Count of nested polygons that can be drawn by joining vertices internally
 function polymax2find() {
     var n = document.getElementById("polymax2").value;
-    var sides = parseInt(n);
-    if (n != "") {
+    if(!isNaN(n)){
+        var sides = parseInt(n);        
         var count = 0;
         while (sides > 5) {
             sides /= 2;
             count += 1;
-        } document.getElementById("polymax2ans").innerHTML = count;
-    } else {
+        } 
+        document.getElementById("polymax2exp").innerHTML ="\\[Polygons with a number of sides less than or equal to 5 can not produce nested polygons,\\]"
+        document.getElementById("polymax2exp").innerHTML ="\\[i.e. polygons of sides ≤5 will always have at least one side overlapping with its nested polygon.\\]"
+        document.getElementById("polymax2exp").innerHTML ="\\[Each side of a nested polygon takes two consecutive sides of the immediate parent polygon.\\]"
+        document.getElementById("polymax2exp").innerHTML ="\\[we keep dividing N by 2, and increment the counter for nested polygons, until N becomes less than or equal to 5.\\]"
+        document.getElementById("polymax2ans").innerHTML = count;   
+        renderMathInElement(document.getElementById("polymax2exp"))      
+    }
+    else {
         document.getElementById("polymax2ans").innerHTML = "Please enter valid input"
     }
 }
