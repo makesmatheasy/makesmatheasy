@@ -68,6 +68,12 @@ $("#bilinearbtn").click(function(){
     closenav();
     clearall();
 });
+// Krishnamurthy Number
+$("#krishnumbtn").click(function(){
+    openit("#krishnum");
+    closenav();
+    clearall();
+});
 $("#manhat").click(function(){
     openit("#manhats");
     closenav();

@@ -24041,6 +24041,19 @@ function isDisNum(num) {
    else
    document.getElementById("disans").innerHTML = num + " is not a Disarium number";
 };
+// Krishnamurthy Number
+function isKrishnaNum(num) {
+    let sum = 0;
+    let temp = num;
+    while (temp != 0) {
+        sum = sum + fac(temp % 10);
+        temp = parseInt(temp / 10);
+    }
+    if(sum == num)
+        document.getElementById('krishans').innerHTML = num +" is a Krishnamurthy Number";
+    else
+        document.getElementById('krishans').innerHTML = num +" is not a Krishnamurthy Number";
+}
 // Automorphic Number
 function isAutoNum(num) {
     console.log(num);

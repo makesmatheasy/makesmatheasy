@@ -3040,6 +3040,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="krishnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Krishnamurthy Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Krishnamurthy Number','krishnum','c','krishnumimgfav')"><img
+                                        id="krishnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="autonumbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Automorphic number</a>
                         </td>
@@ -36701,6 +36716,31 @@ N is the population size.
         </div>
     </div>
     <!-- Disarium Number end -->
+       <!-- Krishnamurthy Number start-->
+       <div class="collapse" id="krishnum" style="text-align: center;">
+        <div class="container">
+            <h1 style="color: white;font-family:mathfont;text-align: center;">Krishnamurthy Number Checker</h2>
+            <br>
+            <p>A Krishnamurthy number is a number whose sum of the factorial of digits is equal to the number itself.</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="krishn" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="isKrishnaNum(document.getElementById('krishn').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="krishans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Krishnamurthy Number end -->
     <!-- Automorphic number start-->
     <div class="collapse" id="autonum" style="text-align: center;">
         <div class="container">
