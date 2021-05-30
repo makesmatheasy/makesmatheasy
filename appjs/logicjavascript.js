@@ -22688,15 +22688,21 @@ function qrtl() {
         return a - b;
     })
     let dataPoints
+    let steps = "";
     if (newList.length % 2 == 0) {
         dataPoints = newList.length
     } else {
         dataPoints = newList.length + 1
     }
+    steps += "\\[number\\space of \\elements =  "+dataPoints+"\\]";
     let lowerQrtl = dataPoints * (1 / 4)
+    steps += "\\[Q1\\space =  "+lowerQrtl+"\\]";
     let middleQrtl = dataPoints * (2 / 4)
+    steps += "\\[Q2\\space =  "+middleQrtl+"\\]";
     let upperQrtl = dataPoints * (3 / 4)
+    steps += "\\[Q3\\space =  "+upperQrtl+"\\]";
     document.getElementById('qrtlans').innerHTML = "Q1 = " + newList[lowerQrtl - 1] + "<br> Q2 = " + newList[middleQrtl - 1] + "<br> Q3 = " + newList[upperQrtl - 1]
+    renderMathInElement(document.getElementById('qrtlans'));
 }
 //Independent and Dependent event Probability
 function idevent() {
