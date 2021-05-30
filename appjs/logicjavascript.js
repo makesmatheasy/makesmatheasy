@@ -19767,27 +19767,27 @@ function convertex3() {
         print +="\\[STEP \\space 2 \\space : Add \\space 3 \\space to \\space each \\space digit \\space and \\space then \\]"
         print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
         var x="_",y="";temp ="";
-        r = parseInt(input, 2).toString();
-        for (var i = 0; i < r.length; i++) {
-            var y = (parseInt(r[i]) + 3).toString(2);
+
+        for (var i = 0; i < input.length; i++) {
+            var y = (parseInt(input[i]) + 3).toString(2);
             if (y.length == 1) {
                 temp =  "000" + y + "_   ";
-                print +="\\[\\rightarrow \\space  "+r[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(r[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],2) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
                 x = x + temp;
             }
             if (y.length == 2) {
                 temp = "00" + y + "_   ";
-                print +="\\[\\rightarrow \\space  "+r[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(r[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],2) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
                 x = x + temp;
             }
             if (y.length == 3) {
                 temp = "0" + y + "_   ";
-                print +="\\[\\rightarrow \\space  "+r[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(r[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],2) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
                 x = x + temp;
             }
             if (y.length == 4) {
                 temp = y + "_   ";
-                print +="\\[\\rightarrow \\space  "+r[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(r[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],2) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
                 x = x + +temp;
             }
         }
