@@ -134,6 +134,9 @@ function excircum_2() {
     var excirout = document.getElementById("excircum2");
     var excirtemp = "";
 
+
+    var result1 = R1*Math.sqrt(1+(8*cos(A1/2)*cos(B1/2)*cos(C1/2)));
+
     var result1 = R1 * Math.sqrt(1 + (8 * cos(A1 / 2) * cos(B1 / 2) * cos(C1 / 2)));
 
     if (isNaN(A1) || isNaN(R1) || isNaN(B1) || isNaN(C1)){
@@ -17477,16 +17480,23 @@ function isPrime(n) {
 }
 
 function nextPrime(num) {
+    var ans = document.getElementById("nextPrimeResult");
     if (num <= 1)
-        return 2;
+        nextPrimeResult.innerHTML += "The next prime number of " + num + " is: " + 2 + " since it is the first prime number";
+    else{
     let res = num;
     let isFound = false;
+    nextPrimeResult.innerHTML += "Check whether the next number is prime or not<br>";
     while (!isFound) {
         res++;
-        if (isPrime(res))
+        nextPrimeResult.innerHTML += "The next number is " + res + "<br>";
+        if (isPrime(res)){
             isFound = true;
+            nextPrimeResult.innerHTML += res + " is prime number<br>";
+        }
     }
-    document.getElementById("nextPrimeResult").innerHTML = "The next prime number of " + num + " is: " + res;
+    nextPrimeResult.innerHTML += "Therefore next prime number of " + num + " is: " + res;
+    }
 }
 
 //Sum of divisors Function
