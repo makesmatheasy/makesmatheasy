@@ -10050,6 +10050,37 @@ function hexpyramidsolve() {
     }
 }
 
+//Round corner
+function solveroundcorner() {
+    let a = document.getElementById("inputrndcrnradius").value;
+    let arclenoutput = document.getElementById("resultofrndcrnarclen");
+    let perioutput = document.getElementById("resultofrndcrnperi");
+    let areacrnoutput = document.getElementById("resultofrndcrnarea");
+    let areapieceoutput = document.getElementById("resultofrndcrnpiece");
+    var arclentemp = "";
+    var peritemp = "";
+    var areacrntemp = "";
+    var areapiecetemp = "";
+    if (a != "") {
+        arclentemp += "\\[Arc \\space length \\space \\newline \\frac{1}{2} \\space (3.14) \\space (" + a + ")" + "\\ = " + eval(String(1.5707963 * a)).toFixed(2) + "\\]";
+        arclenoutput.innerHTML = arclentemp;
+        peritemp += "\\[Perimeter \\space \\newline \\frac{1}{2} \\space (3.14) \\space (" + a + ")" + "+ 2 \\space ("+ a + ")" + "\\ = " + eval(String((1.5707963 * a) + (2 * a))).toFixed(2) + "\\]";
+        perioutput.innerHTML = peritemp;
+        areacrntemp += "\\[Area \\space round \\space corner \\space \\newline \\frac{1}{4} \\space (3.14) \\space (" + a + ")^2" + "\\ = " + eval(String(0.7853982 * a * a)).toFixed(2) + "\\]";
+        areacrnoutput.innerHTML = areacrntemp;
+        areapiecetemp += "\\[Area \\space missing \\space piece \\space \\newline"+ a + "^2 -" + "\\frac{1}{4} \\space (3.14) \\space (" + a + ")^2" + "\\ = " + eval(String((a * a) - (0.7853982 * a * a))).toFixed(2) + "\\]";
+        areapieceoutput.innerHTML = areapiecetemp;
+        renderMathInElement(arclenoutput);
+        renderMathInElement(perioutput);
+        renderMathInElement(areacrnoutput);
+        renderMathInElement(areapieceoutput);
+    } else {
+        arclenoutput.innerHTML = "";
+        perioutput.innerHTML = "";
+        areacrnoutput.innerHTML = "";
+        areapieceoutput.innerHTML = "";
+    }
+}
 //Wedge
 function wedgesolve() {
     var side = document.getElementById("inputwedgeside").value;
