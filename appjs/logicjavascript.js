@@ -7444,8 +7444,8 @@ function solvesine() {
 }
 //Parabolic Arch
 function solveparaArc() {
-    var height = document.getElementById("inputa").value;
-    var chord = document.getElementById("inputb").value;
+    var height = document.getElementById("inputab").value;
+    var chord = document.getElementById("inputba").value;
     var areaoutput = document.getElementById("resultofparaarea");
     var cirarcoutput = document.getElementById("resultofarc");
     var areatemp = "";
