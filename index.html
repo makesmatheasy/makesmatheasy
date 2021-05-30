@@ -5319,6 +5319,23 @@
                     </tr>
                 </table>
             </li>
+            <!-- cycle time -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="cyclebtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Cycle Time Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Cycle Time','#cylcetest','c','cycletimefav')"><img
+                                        id="cycletimefav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <!-- End of Statistics section -->
@@ -14068,7 +14085,7 @@
           Takt time is your sell rate and can easily be categorized as the heartbeat of your work process. It allows you to optimize your capacity in
           the most appropriate way to meet demand without keeping too much inventory in reserve. </p>
          <br>
-          <input class = "form__field"type="number" id="works" placeholder="Total Available Production Time (in minutes)">
+          <input class = "form__field"type="number" id="works" placeholder="Total time available at work (in minutes)">
           <br><br>
           <input class = "form__field"type="number" id="demands" placeholder="Average Customer Demand">
           <br><br>
@@ -14078,6 +14095,20 @@
           <p id="taktans"></p>
           <br>
         </div>
+
+         <!-- Cycle Time Calculator -->
+         <div class="collapse" id="cycletest">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Cycle Time Calculator</h1>
+            <p style="margin: 0 auto 6rem auto; font-style: italic;">Cycle Time is the time it takes you to complete the production process of one product,
+                 from start to finish.It’s one of the most crucial flow metrics that’ll help you run a project smoothly efficiently.  </p>
+            <input class = "form__field"type="number" id="produce" placeholder="Net Production Time (in minutes)">
+            <br><br>
+            <input class = "form__field"type="number" id="units" placeholder="Number of units produced">
+            <br><br>
+            <button class = "btn btn-light" onclick="cyclevalue()">Test</button>
+            <p id="cycleans"></p>
+            <br>
+          </div>
 
         <div class="collapse" id="dip">
             <h1 style="text-align: center; margin-bottom: 4rem;">Direct And Indirect Proportion</h1>

@@ -21732,6 +21732,29 @@ function taktvalue() {
 
 }
 
+//cycle time calculator
+function cyclevalue() {
+    var num1 = document.getElementById("produce").value; 
+    var num2 = document.getElementById("units").value;
+    if(num1==""||num2=="")
+    {
+        document.getElementById("cycleans").innerHTML="Please fill all the fields";
+    }
+    else{
+     num1 =parseInt(num1);
+     num2 =parseInt(num2);
+     var cycle=(num1)/num2;
+     var ans="\\[Cycle \\space Time = \\frac{Net \\space Production \\space Time}{Number \\space of \\space Units \\space Produced} \\]" 
+     ans+="\\[\\frac{"+num1+"}{"+num2+"} \\]"
+     ans+="\\[ "+cycle.toFixed(4)+" \\]"
+     ans+="\\[Cycle \\space Time ="+cycle.toFixed(4)+" \\space minutes \\space per \\space unit ="+(cycle*60).toFixed(4)+" \\space seconds \\space per \\space unit \\]"
+     document.getElementById("cycleans").innerHTML=ans;
+     renderMathInElement(document.getElementById("cycleans"));
+        
+    }
+
+}
+
 
 //MANHATTAN DISTANCE CALCULATOR
 function manhatcal() {
