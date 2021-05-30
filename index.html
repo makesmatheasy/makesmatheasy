@@ -5397,6 +5397,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="throughputbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Throughput Time Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Throughput Time','#throughputtest','c','throughputtimefav')"><img
+                                        id="throughtputtimefav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <!-- cycle time -->
             <li>
                 <table class="table">
@@ -14645,6 +14661,25 @@
           <p id="taktans"></p>
           <br>
         </div>
+        <!-- Throughput time calculator -->
+        <div class="collapse" id="throughputtest">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Throughput Time Calculator</h1>
+            <p style="margin-top: 2rem;">Throughput time or cycle time is the amount of time it takes for a manufacturer to make a product including process time,
+                 inspection time, move time, and wait time.Notice the process in the throughput time calculation that is considered value-added time is the process time. This is the only step that actually produces a product.
+                  The rest of the time is administrative and logistical non-value-added time.</p>
+           <br>
+            <input class = "form__field"type="number" id="process" placeholder="Process Time(in minutes)">
+            <br><br>
+            <input class = "form__field"type="number" id="inspection" placeholder="Inspection Time (in minutes)">
+            <br><br>
+            <input class = "form__field"type="number" id="move" placeholder="Move Time(in minutes)">
+            <br><br>
+            <input class = "form__field"type="number" id="queue" placeholder="Queue Time(in minutes)">
+            <br><br>
+            <button class = "btn btn-light" onclick="throughputvalue()">Test</button>
+            <p id="throughputans"></p>
+            <br>
+          </div>
 
          <!-- Cycle Time Calculator -->
          <div class="collapse" id="cycletest">

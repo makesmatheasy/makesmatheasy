@@ -647,6 +647,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#throughputbtn").click(function () {
+        openit("#throughputtest");
+        closenav();
+        clearall();
+    });  
     $("#cyclebtn").click(function () {
         openit("#cycletest");
         closenav();
