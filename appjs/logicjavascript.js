@@ -19505,31 +19505,39 @@ function convertbcd() {
             }
         }
     } else if (fromCode == "Octal" && toCode == "BCD Code") {
-        result.innerHTML += "<h4>Converting Octal to BCD</h4><br>";
-        result.innerHTML += "<h5>Step 1: Convert the given octal number to decimal number</h5><br>";
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space octal \\space to \\space decimal \\]";
+        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 8).toString() + "\\]";
         input = parseInt(input, 8).toString();
-        result.innerHTML += "Input -> "+ input;
-        result.innerHTML += "<h5>Step 2: Extract each digit of the number and convert to BCD</h5><br>"
-        var x="_",y="";
+        print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
         for (var i = 0; i < input.length; i++) {            
-            result.innerHTML += "Extract the "+(i+1)+" th element<br>";
             y = parseInt(input[i]).toString(2);
-            result.innerHTML += y + "<br>";
-            result.innerHTML += "Step 3: Depending on the length of " +y +" combine the binary form  of all the digits<br>";            
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + +temp;
             }
         }
+        print +="\\[STEP \\space 3 \\space : \\space Combine \\space the \\space nibbles \\space to \\space get \\space your \\space BCD \\space result \\]";
+        print +="\\[Result \\space in \\space BCD \\space CODE \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
         result.innerHTML += "Output -> "+ x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     } else if (fromCode == "BCD Code" && toCode == "Octal") {
         var x = "",y="";
         var temp ="";
