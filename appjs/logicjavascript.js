@@ -2851,18 +2851,43 @@ function addsubcfind() {
 }
 //Least number to be added to or subtracted from N to make it a Perfect Square Calculator
 function addsubsfind() {
-    let n = parseInt(document.getElementById("addsubs").value)
-    let prevSquare = Math.sqrt(n)
-    let nextSquare = prevSquare + 1
-    let ans = (n - prevSquare) < (nextSquare - n)
-        ? (prevSquare - n)
-        : (nextSquare - n)
-    if (!isNaN(n)) {
-        document.getElementById("addsubsans").innerHTML = ans;
+    var n = parseInt(document.getElementById("addsubs").value)
+    var output = document.getElementById('addsubsans');
+    var temp = "";
+    if (!isNaN(n)){
+        var prevSquare = Math.sqrt(n)
+        var nextSquare = prevSquare + 1
+        var ans = (n - prevSquare) < (nextSquare - n)
+            ? (prevSquare - n)
+            : (nextSquare - n)
+
+        temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space from \\space N \\space to \\space make \\space it \\space Perfect \\space Square,\\]"
+        temp += "\\[First, \\space we \\space calculate \\space the \\space previous \\space and \\space the \\space next \\space square \\space values\\]"
+        temp += "\\[Previous \\space  square \\space = \\space \\sqrt{n}\\]"
+        temp += "\\[\\space = \\space \\sqrt{"+n+"}\\]"
+        temp += "\\[\\space = \\space "+prevSquare.toFixed(2)+"\\]"
+        temp += "\\[Next \\space square \\space = \\space (Previous \\space square) + 1\\]"
+        temp += "\\[\\space = \\space "+prevSquare.toFixed(2)+" + 1 \\]"
+        temp += "\\[\\space = \\space "+nextSquare.toFixed(2)+"\\]"
+        if ((n - prevSquare) < (nextSquare - n)){
+            temp += "\\[Since, \\space (n - (Previous \\space square)) \\space is \\space less \\space than \\space ((Next \\space square) - n)\\]"
+            temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space will \\space be,\\]"
+            temp += "\\[Least \\space number \\space = \\space (previous \\space square) - n \\]"
+            temp += "\\[\\space = \\space "+prevSquare+" - "+n+"\\]"
+            temp += "\\[\\space = \\space "+(prevSquare - n).toFixed(3)+"\\]"
+        } else{
+            temp += "\\[Since, \\space (n - (Previous \\space square)) \\space is \\space greater \\space than \\space ((Next \\space square) - n)\\]"
+            temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space will \\space be,\\]"
+            temp += "\\[Least \\space number \\space = \\space (Next \\space square) - n \\]"
+            temp += "\\[\\space = \\space "+nextSquare+" - "+n+"\\]"
+            temp += "\\[\\space = \\space "+(nextSquare - n).toFixed(3)+"\\]"
+        }
+        output.innerHTML = temp;
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]"
+        output.innerHTML = temp;
     }
-    else {
-        document.getElementById('addsubsans').innerHTML = 'Please enter all Input';
-    }
+    renderMathInElement(output);
 }
 //Count numbers upto N which are both perfect square and perfect cube
 function countscfind() {
