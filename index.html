@@ -6704,6 +6704,14 @@
             
             <br>
             <h5 id="trapinsemians"></h5><br>
+            <h4>Area of inner circle which passes through center of outer circle and touches its circumference</h4>
+            <br>
+            <input type="text" id="innercir1" placeholder="Enter the radius of outer circle(R)" class="form__field">
+            <br>
+            <button class="btn btn-dark" onclick="innercir()">Find</button>
+            <br>
+            <h5 id="innercirans"></h5>
+            <br>
             <h4>Area of circle inscribed in a Isosceles Trapezoid </h4>
             <br>
             <form action="">
@@ -6973,7 +6981,6 @@
             <br>
             <h5 id="cirinsemi7ans"></h5>
             <br>
-<<<<<<< HEAD
             <h4>Area of largest isosceles triangle that can be inscribed in an Ellipse whose vertex coincides with one extremity of the major axis</h4>
             <br>
             <form action="">
@@ -6985,12 +6992,6 @@
             </form>
             
             <br>
-=======
-            <h4>Area of largest isosceles triangle that can be inscribed in an Ellipse whose vertex coincides with one extremity of the major axis</h4><br>
-            <input type="text" id="cirinsemi9in" placeholder="Enter length of major axis of ellipse" class="form__field">
-            <input type="text" id="cirinsemi10in" placeholder="Enter length of minor axis of ellipse" class="form__field"><br>
-            <button class="btn btn-dark" onclick="cirinsemi8find()">Find</button><br>
->>>>>>> f0ae35bfbbde1e54af65888c0c378abe14c2ffea
             <h5 id="cirinsemi8ans"></h5>
             <br>
             <h4>Largest triangle that can be inscribed in an ellipse</h4>
@@ -10734,7 +10735,10 @@
         <input type="text" id="cab1" size=3 value='' placeholder="b1"> y + <input type="text" id="cab2" size=3 value='' placeholder="c1"> = 0<br><br>
             Enter 2nd System of equations :   <input type="text" id="cab3" size=3 value='' placeholder="a2"> x +
         <input type="text" id="cab4" size=3 value='' placeholder="b2"> y + <input type="text" id="cab5" size=3 value='' placeholder="c2"> = 0<br><br>
-        <button type="button" class="btn btn-light" onclick=cramer()>Solve</button><br>
+        <button type="button" class="btn btn-light" onclick=cramer()>Solve</button>
+        <button type="button" class="btn btn-light" onclick=calcexcramer()>
+            Example
+        </button>
         </p>
     </div><br>
     <div class="coll" style="text-align: center;">
@@ -15560,6 +15564,16 @@
                 <h4 id="ctangleans"></h4>
                 <br><br>
             </form>
+            <h4>Length of the chord of the circle whose radius and the angle subtended at the center by the chord is given</h4><br>
+            <form action="">
+                <input type="text" class="form__field" id="clength1" placeholder="Enter angle subtended by chord at the center(x)"><br>
+                <input type="text" class="form__field" id="clength2" placeholder="Enter radius of circle(r)"><br>
+                <button type="button" class = "btn btn-dark"onclick = "chordlength()">Find</button>
+                <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
+                <h4 id="clengthinfo"></h4>
+                <h4 id="clengthans"></h4>
+                <br><br>
+            </form>
             <h4>Angle subtended by the chord when the angle subtended by another chord of same length is given</h4><br>
             <form action="">
                 <input type="text" class="form__field" id="chsub" placeholder="Enter angle subtended by another chord of same length"><br>
@@ -15576,6 +15590,15 @@
                 <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
                 <p id="chsub1info"></p>
                 <p id="chsub1ans"></p>
+                <br><br>
+            </form>
+            <h4>Angle on circumference subtended by the chord when the central angle subtended by the chord is given</h4><br>
+            <form action="">
+                <input type="text" class="form__field" id="chsub2" placeholder="Enter angle subtended by chord at centre"><br>
+                <button type="button" class = "btn btn-dark"onclick = "chordsub2()">Find angle</button>
+                <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
+                <p id="chsub2info"></p>
+                <p id="chsub2ans"></p>
                 <br><br>
             </form>
             <h4>Possibility to create a polygon with a given angle</h4><br>
@@ -19758,12 +19781,17 @@
                         <input type="number" id="cval" placeholder="Enter the last term(c) "
                      style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                      <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                         <button type="button" class="btn btn-light" onclick=amsol()>
                      Solve
                      </button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-light" onclick=calcexamsol()>
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
                         onclick="this.form.reset();">
                         Reset
@@ -19787,12 +19815,17 @@
                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                         
                        <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <button type="button" class="btn btn-light" onclick=gmsol()>
                                 Solve
                             </button>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
+                            <button type="button" class="btn btn-light" onclick=calcexgmsol()>
+                                Example
+                            </button>
+                        </div>
+                        <div class="col-4">
                             <button type="button" class="btn btn-light"
                             onclick="this.form.reset();">
                             Reset
@@ -20550,7 +20583,6 @@
             <p>&nbsp;</p>
             <form action="">
                 <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to Cartesian</p>
-<<<<<<< HEAD
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
                 <input type="number" id="cylcartp" placeholder="Enter the distance between the pole and the projected point"> 
                 <input type="number" id="cylcarto" placeholder="Enter the angle created by the line and the polar axis in degree">
@@ -20559,17 +20591,6 @@
                 <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylcartcal()">Calculate</button>
                 <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
             </form>
-=======
-                <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                    <input type="number" id="cylcartp" placeholder="Enter the distance between the pole and the projected point"> 
-                    <input type="number" id="cylcarto" placeholder="Enter the angle created by the line and the polar axis in degree">
-                    <input type="number" id="cylcartz" placeholder="Enter the vertical distance between the original point and the projected point">
-                    <p>&nbsp;</p></p>
-            <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylcartcal()">Calculate</button>
-            <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
-            </form>
-            
->>>>>>> f0ae35bfbbde1e54af65888c0c378abe14c2ffea
         <p>&nbsp;</p>
         <p id="cylcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
         <p>&nbsp;</p>
@@ -20638,7 +20659,6 @@
 <div class="collapse" id="sph">
     <h1 style=" text-align: center; font-family:mathfont">Spherical Coordinate Calculator</h1>
         <p>&nbsp;</p>
-<<<<<<< HEAD
         <form action="">
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
                 <input type="number" id="sphx" width="5em" placeholder="Enter X coordinate"> 
@@ -20649,15 +20669,6 @@
         <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
         </form>
         
-=======
-        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Spherical</p>
-        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-            <input type="number" id="cartsphx" width="5em" placeholder="Enter X coordinate"> 
-            <input type="number" id="cartsphy" width="5em" placeholder="Enter Y coordinate">
-            <input type="number" id="cartsphz" width="5em" placeholder="Enter Z coordinate">
-            <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartsphcal()">Calculate</button>
->>>>>>> f0ae35bfbbde1e54af65888c0c378abe14c2ffea
     <p>&nbsp;</p>
     <p id="cartsphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
@@ -20878,6 +20889,9 @@ N is the population size.
     <input type="text" id="solvey" size=5 value='' placeholder="b"> =  <input type="text" id="solvez" size=5 value='' placeholder="c">
    <br><br><br><br>
     <button type="button" class="btn btn-light" style="width:8em" onclick=slvcal()>   Solve    </button>
+    <button type="button" class="btn btn-light" style="width:8em" onclick=calcexslvcal()>
+        Example
+    </button>
     <p>&nbsp;</p>
     <div id="slvans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></div>
     </p>
