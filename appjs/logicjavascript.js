@@ -13647,6 +13647,33 @@ function rectrhomb() {
   renderMathInElement(output);
 }
 
+function nrec() {
+    var n = parseInt(document.getElementById("nrec1").value)
+    var output = document.getElementById("nrecans")
+    var ans="";
+    if (n<0 )
+     {
+        ans += "\\[Dimension \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
+     }
+    else if (!isNaN(length))
+     {
+        let a= 0;
+        for(let length = 1;length <= parseInt(Math.sqrt(n), 10);++length)
+                for(let height = length; height * length <= n; ++height)
+                    a++;
+                   
+        
+        ans += "\\[Number \\space of \\space unique \\space rectangles \\space formed \\space using \\space "+n+" \\space unit \\space squares= \\space " + a + " \\]"
+        output.innerHTML = ans; 
+     }
+    else
+     {
+       ans += "\\[Please \\space enter \\space all \\space input \\]"
+       output.innerHTML = ans;
+    }
+  renderMathInElement(output);
+}
 function golds2find() {
     var a = document.getElementById("golds3").value;
     var output = document.getElementById("golds2exp");
