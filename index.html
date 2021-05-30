@@ -17889,6 +17889,10 @@
                                         style="text-decoration:none;" href="#">Triangular Pyramid</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#trielongbipyramid"
+                                        style="text-decoration:none;" href="#">Elongated triangular bipyramid</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#elonpentpyr"
                                         style="text-decoration:none;" href="#">Elongated Pentagonal Pyramid</a></td>
                                 </tr>
@@ -33291,6 +33295,58 @@ N is the population size.
 
                         </div>
                         <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="trielongbipyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Elongated triangular bipyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = (2 \space \frac{\sqrt{6}}{3} + 1) \space a\]</p>
+                                    <p class="text-center">a = edge length</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = \frac{3}{2} \space (2 + \sqrt{3}) \space a^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{(2 \sqrt{2} + 3 \sqrt{3})}{12} \space a^3\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/elongated-triangular-bipyramid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                       placeholder="Enter edge length (a)" id="inputtrielongbipyedge"
+                                       oninput="solvetrielongbipy();">
+                            <p class="stopwrap" id="resultoftrielongbipyhei"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrielongbipyarea"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrielongbipyvol"
+                                style="font-family:mathfont;"></p>
+                          </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
