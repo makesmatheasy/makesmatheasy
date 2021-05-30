@@ -20100,7 +20100,7 @@ function convertdec2421() {
         }
     }
 }
-}
+
 
 //---------------------------------------------------------------------------
 //Function that performs conversion of grey to Decimal and viceversa
