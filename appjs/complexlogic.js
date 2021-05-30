@@ -2455,27 +2455,31 @@ function isPrime( n)
     {
         return (n != 0 )&& ((n & (n - 1)) == 0);
     }
- 
+
+
 function wagcal()
 {
     var num1=document.getElementById("wag1").value;
     ans="";
+    explain="";
     if(num1==""||isNaN(num1))
     {
-        ans="Please enter the number";
+        ans="\\[Please \\space enter \\space the \\space number\\]";
     }
     else
     {
         num1=parseInt(num1);
         if(isPrime(num1) && (isPowerOfTwo(num1 * 3 - 1)))
         {
-            ans=num1+" is a Wagstaff number"
+            ans="\\["+num1+" is \\space a \\space Wagstaff \\space number.\\]"
+            explain="\\["+num1+"\\space is \\space prime \\space and \\space"+num1+"="+"\\frac{2^{"+Math.log2(num1*3-1)+"}-1}{3}\\]";
         }
         else
         {
             ans=num1+" is not a Wagstaff number"   
         }
     }
-    document.getElementById("wagans").innerHTML=ans;
+    document.getElementById("wagans").innerHTML=ans+explain;
+    renderMathInElement(document.getElementById("wagans"))
 }
 
