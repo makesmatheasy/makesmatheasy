@@ -10841,17 +10841,23 @@
     <div class="text-center">
         <h2><label>Cramer's Rule Calculator</label></h2>
     </div><br><br>
-    <div class="coll">
-        <p> Enter 1st System of equations :   <input type="text" id="cab" size=3 value='' placeholder="a1">  x  +
-        <input type="text" id="cab1" size=3 value='' placeholder="b1"> y + <input type="text" id="cab2" size=3 value='' placeholder="c1"> = 0<br><br>
-            Enter 2nd System of equations :   <input type="text" id="cab3" size=3 value='' placeholder="a2"> x +
-        <input type="text" id="cab4" size=3 value='' placeholder="b2"> y + <input type="text" id="cab5" size=3 value='' placeholder="c2"> = 0<br><br>
-        <button type="button" class="btn btn-light" onclick=cramer()>Solve</button>
-        <button type="button" class="btn btn-light" onclick=calcexcramer()>
-            Example
-        </button>
-        </p>
-    </div><br>
+    <form action="">
+        <div class="coll">
+            <p> Enter 1st System of equations :   <input type="text" id="cab" size=3 value='' placeholder="a1">  x  +
+            <input type="text" id="cab1" size=3 value='' placeholder="b1"> y + <input type="text" id="cab2" size=3 value='' placeholder="c1"> = 0<br><br>
+                Enter 2nd System of equations :   <input type="text" id="cab3" size=3 value='' placeholder="a2"> x +
+            <input type="text" id="cab4" size=3 value='' placeholder="b2"> y + <input type="text" id="cab5" size=3 value='' placeholder="c2"> = 0<br><br>
+            <button type="button" class="btn btn-light" onclick=cramer()>Solve</button>
+            <button type="button" class="btn btn-light" onclick=calcexcramer()>
+                Example
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center;">
     <h5 id="cramerres" style="color: white; font-size: x-large;"></h5>
 </div>
@@ -20625,17 +20631,21 @@
 <div class="collapse" id="hypergeomeans">
     <h1 >Hypergeometric Distribution Statistics</h1>
     <p>&nbsp;</p>
-    <input type="text" name="hypergeos12" class="form__field" id="hypergeos12" width="5em" placeholder="Successes of Sample">
-    <p>&nbsp;</p>
-    <input type="text" name="hypergeos22" class="form__field" id="hypergeos22" placeholder="Sample Size">
-    <p>&nbsp;</p>
-    <input type="text" name="hypergeos32" class="form__field" id="hypergeos32" placeholder="Successes of Lot">
-    <p>&nbsp;</p>
-    <input type="text" name="hypergeos42" class="form__field" id="hypergeos42" placeholder="Lot Size">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="hypergeos2cal()">Mean</button>
-    <button type="button" class="btn btn-outline-light" onclick="hypergeosvarcal()">Variance</button>
-    <button type="button" class="btn btn-outline-light" onclick="hypergeosvar2cal()">Standard Deviation</button>
+    <form action="">
+        <input type="text" name="hypergeos12" class="form__field" id="hypergeos12" width="5em" placeholder="Successes of Sample">
+        <p>&nbsp;</p>
+        <input type="text" name="hypergeos22" class="form__field" id="hypergeos22" placeholder="Sample Size">
+        <p>&nbsp;</p>
+        <input type="text" name="hypergeos32" class="form__field" id="hypergeos32" placeholder="Successes of Lot">
+        <p>&nbsp;</p>
+        <input type="text" name="hypergeos42" class="form__field" id="hypergeos42" placeholder="Lot Size">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="hypergeos2cal()">Mean</button>
+        <button type="button" class="btn btn-outline-light" onclick="hypergeosvarcal()">Variance</button>
+        <button type="button" class="btn btn-outline-light" onclick="hypergeosvar2cal()">Standard Deviation</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p>&nbsp;</p>
     <p id="hypergeos2ans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
     
@@ -20731,15 +20741,19 @@
 <div class="collapse" id="hypergeos"> 
     <h1 >Hypergeometric Distribution PMF Calculator</h1>
     <p>&nbsp;</p>
-    <input type="text" name="hypergeos1" class="form__field" id="hypergeos1" width="5em" placeholder="Successes of Sample">
-    <p>&nbsp;</p>
-    <input type="text" name="hypergeos2" class="form__field" id="hypergeos2" placeholder="Sample Size">
-    <p>&nbsp;</p>
-    <input type="text" name="hypergeos3" class="form__field" id="hypergeos3" placeholder="Successes of Lot">
-    <p>&nbsp;</p>
-    <input type="text" name="hypergeos4" class="form__field" id="hypergeos4" placeholder="Lot Size">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="hypergeoscal()">Calculate</button>
+    <form action="">
+        <input type="text" name="hypergeos1" class="form__field" id="hypergeos1" width="5em" placeholder="Successes of Sample">
+        <p>&nbsp;</p>
+        <input type="text" name="hypergeos2" class="form__field" id="hypergeos2" placeholder="Sample Size">
+        <p>&nbsp;</p>
+        <input type="text" name="hypergeos3" class="form__field" id="hypergeos3" placeholder="Successes of Lot">
+        <p>&nbsp;</p>
+        <input type="text" name="hypergeos4" class="form__field" id="hypergeos4" placeholder="Lot Size">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="hypergeoscal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p>&nbsp;</p>
     <p id="hypergeosans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
     <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = P(X = k) 
@@ -20759,12 +20773,16 @@
     
     <h1 >Poisson Distribution Statistic</h1>
     <p>&nbsp;</p>
-    <input type="text" name="vpdsuc" class="form__field" id="vpdsuc" width="5em" placeholder="No of trials (n)">
-    <p>&nbsp;</p>
-    <input type="text" name="vpdvar" class="form__field" id="vpdvar" placeholder="Probability of Success (p)">
-    <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" onclick="vpdscal()">Variance</button>
-    <button type="button" class="btn btn-outline-light" onclick="vpds1cal()">Standard Deviation</button>
+    <form action="">
+        <input type="text" name="vpdsuc" class="form__field" id="vpdsuc" width="5em" placeholder="No of trials (n)">
+        <p>&nbsp;</p>
+        <input type="text" name="vpdvar" class="form__field" id="vpdvar" placeholder="Probability of Success (p)">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="vpdscal()">Variance</button>
+        <button type="button" class="btn btn-outline-light" onclick="vpds1cal()">Standard Deviation</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    
     <p>&nbsp;</p>
     <p id="vpdans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
     
