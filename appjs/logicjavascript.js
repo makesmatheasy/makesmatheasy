@@ -13770,7 +13770,13 @@ function sht6find() {
     let a = parseInt(document.getElementById("sht6in").value)
     if (!isNaN(a)) {
         var area = Math.sqrt(a) / 6;
+        document.getElementById("sht6exp").innerHTML = "\\[let r be the radius of circle, \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[hence it is the inradius of equilateral triangle, so r = a /(2 * √3) \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[diagonal of square, d = diameter of circle = 2 * r = a/ √3 \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[So, area of square, A = 0.5 * d * d \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[hence A = (1/2) * (a^2) / (3) = (a^2/6)\\]"
         document.getElementById("sht6ans").innerHTML = area;
+        renderMathInElement(document.getElementById("sht6exp"));
     }
     else {
         document.getElementById("sht6ans").innerHTML = "Please enter valid input"
