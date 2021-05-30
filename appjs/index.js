@@ -130,7 +130,9 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#pronum",
         "#autonum",
+        "#armnum",
         "#disnum",
         "#gammaDist",
         "#expoDist",
@@ -195,7 +197,9 @@ function openit(id) {
         "#antilog",
         "#kaps",
         "#chitest",
+        "#leadtest",
         "#takttest",
+        "#cycletest",
         "#adams",
         "#integralcollapse",
         "#integration-idencollapse",
@@ -253,6 +257,7 @@ function openit(id) {
         "#cchart",
         "#pchart",
         "#rchart",
+        "#sheppard",
         "#npchart",
         "#xchart",
         "#betagamma",
@@ -294,7 +299,7 @@ function openit(id) {
         "#eirs",
         "#tricorn",
         "#zscores",
-        "#pvalue",
+        "#pvalues",
         "#ppv",
         "#errpers",
         "#log_values",
