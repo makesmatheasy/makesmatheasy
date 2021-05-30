@@ -17503,6 +17503,14 @@ function subBinDecHexOct() {
             result.innerHTML = parseFloat(x3);
             work.innerHTML = "";
         }
+        else if(base === "Octal"){
+            x1 = calculatefrac(input1,8);
+            x2 = calculatefrac(input2,8);
+
+            x3 = x1 - x2;
+
+            result.innerHTML = fracDectoBinHexOct(x3,8);
+        }
     }else{
     if (input1.length > input2.length) {
         var p = input1.length - input2.length;
