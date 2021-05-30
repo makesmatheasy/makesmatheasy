@@ -17608,18 +17608,39 @@ function regang() {
 //-------------------------------
 
 function co_prime_calc(){
-    let n = parseInt(document.getElementById("co_num1").value);
-    let m = parseInt(document.getElementById("co_num2").value);
-    const smaller = n > m ? n : m;
-    for(let ind = 2; ind < smaller; ind++){
-      const condition1 = n % ind === 0;
-      const condition2 = m % ind === 0;
-      if(condition1 && condition2){
-         document.getElementById("co_prime_res").innerHTML = "NO the numbers "+n+" and "+m+" are not co-prime";
-      }
-   }
-   document.getElementById("co_prime_res").innerHTML = "YES the numbers "+n+" and "+m+" are co-prime";
+    var n = parseInt(document.getElementById("co_num1").value);
+    var m = parseInt(document.getElementById("co_num2").value);
+    var output = document.getElementById("co_prime_res");
+    var temp = "";
+    if (!isNaN(n) && !isNaN(m)){
+        const smaller = n < m ? n : m;
+        temp += "\\[To \\space check \\space whether \\space two \\space numbers \\space are \\space Co-prime \\space or \\space not \\space we \\space take \\space two \\space numbers,\\]"
+        temp += "\\[Here, \\space we \\space are \\space taking \\space "+n+" \\space and \\space "+m+" \\space and \\space storing \\space the \\space smaller \\space one \\space in \\space smaller \\space variable\\]"
+        temp += "\\[The \\space value \\space of \\space smaller \\space variable \\space here, \\space will \\space be, "+smaller+"\\]"
+        temp += "\\[Then \\space we \\space take \\space a \\space loop \\space from \\space 2 \\space to \\space  smaller \\space i.e. \\space "+smaller+"\\]"
 
+        for(let ind = 2; ind < smaller; ind++){
+        const condition1 = n % ind === 0;
+        const condition2 = m % ind === 0;
+        if(condition1 && condition2){
+            temp += "\\[For \\space "+ind+" \\space value \\space while \\space iterating \\space through \\space the \\space loop, \\]"
+            temp += "\\[Both \\space "+n+" \\space \\% \\space ("+ind+") \\space and \\space "+m+"\\space \\% \\space ("+ind+") \\space equals \\space to \\space 0\\]"
+            temp += "\\[Hence, \\space the \\space numbers \\space "+n+" \\space and \\space "+m+" \\space are \\space NOT \\space Co-prime\\]"
+            output.innerHTML = temp;
+            renderMathInElement(output);
+            return;
+        }
+    }
+    temp += "\\[Since, \\space after \\space iterating \\space over \\space the \\space whole \\space loop,\\]"
+    temp += "\\[Both \\space "+n+" \\space \\%  \\space (value) \\space and \\space "+m+" \\space \\% \\space  (value) \\space NEVER \\space equals \\space to \\space 0\\]"
+    temp += "\\[Hence, \\space the \\space numbers \\space "+n+" \\space and \\space "+m+" \\space are \\space Co-prime\\]"
+    output.innerHTML = temp;
+    renderMathInElement(output);
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input \\space \\]"
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
 }
 
 //Side of a regular n-sided polygon circumscribed in a circle
