@@ -21227,6 +21227,7 @@ function ssscal() {
         ans = "Error: All three sides are required to find all the angles";
     }
     else {
+        let steps = "";
         var cosa = (b * b + c * c - a * a) / (2 * b * c);
         var cosb = (a * a + c * c - b * b) / (2 * c * a);
         var cosc = (b * b + a * a - c * c) / (2 * b * a);
@@ -21234,20 +21235,22 @@ function ssscal() {
         var angb = Math.acos(cosb);
         var angc = Math.acos(cosc);
         var ab, bc, ca;
+
+        steps += "\\[Let\\space X= \\frac{"+b+" ^ 2 + "+c+" ^ 2 - "+a+" ^ 2}{2\\times "+b+" \\times "+c+"}\\]";
+        steps += "\\[Let\\space Y= \\frac{"+a+" ^ 2 + "+c+" ^ 2 - "+b+" ^ 2}{2\\times "+c+" \\times "+a+"}\\]";
+        steps += "\\[Let\\space Z= \\frac{"+b+" ^ 2 + "+a+" ^ 2 - "+c+" ^ 2}{2\\times "+b+" \\times "+a+"}\\]";
+        steps += "\\[Convert\\space X,Y\\space and Z to degrees\\]";
         ab = radians_to_degrees(anga);
         bc = radians_to_degrees(angb);
         ca = radians_to_degrees(angc);
 
-        console.log(anga);
-        console.log(angb);
-        console.log(angc);
-
         ab = ab.toPrecision(4);
         bc = bc.toPrecision(4);
         ca = ca.toPrecision(4);
-        ans = "The required angles oppsite to first side is: " + ab + " second side is: " + bc + "  third side is: " + ca;
+        steps += "\\[The\\space required\\space angles \\space oppsite\\space to\\space first\\space side\\space is:\\space "+X+" second\\space side\\space is\\space "+Y+" third\\space side\\space is\\space "+Z+" \\]";
     }
-    document.getElementById("sstans").innerHTML = ans;
+    document.getElementById("sstans").innerHTML = steps;
+    renderMathInElements(document.getElementById("sstans"));
 }
 //Euler Totient Calculators
 function etc1find() {
