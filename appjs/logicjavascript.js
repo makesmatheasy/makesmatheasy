@@ -19425,29 +19425,36 @@ function convertbcd() {
             }
         }
     }else if (fromCode == "Decimal" && toCode == "BCD Code"){
-        var x = "_";
-        var y = "";
-        result.innerHTML +="<h4>Converting Decimal to BCD</h4> &emsp;";
-        result.innerHTML += "<br><h5>Step 1: Extract each digit of decimal number and convert it to binary</h5><br>";
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
         for (var i = 0; i < input.length; i++) {
-            result.innerHTML += "Extract the "+(i+1)+" th element";
             y = parseInt(input[i]).toString(2);
-            result.innerHTML += y + "<br>";
-            result.innerHTML += "Step 2: Depending on the length of " +y +" combine the binary form  of all the digits";
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space becomes \\space " + temp + "\\space \\]";
+                x = x + +temp;
             }
         }
-        result.innerHTML += "Output -> "+ x;
+        print +="\\[STEP \\space 2 \\space : \\space Combine \\space the \\space nibbles \\space to \\space get \\space your \\space BCD \\space result \\]";
+        print +="\\[Result \\space in \\space BCD \\space CODE \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     }else if (fromCode == "Binary" && toCode == "BCD Code") {
         print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space binary \\space to \\space decimal \\]";
         print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 2).toString() + "\\]";
