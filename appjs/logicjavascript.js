@@ -13680,10 +13680,10 @@ function golds3find() {
     let a = document.getElementById("golds4").value
     let b = document.getElementById("golds5").value
     if(!isNaN(a)|| !isNaN(b)){
-        document.getElementById("golds3exp").innerHTML = "\\[Two numbers are said to be in silver ratio if \\]"
-        document.getElementById("golds3exp").innerHTML = "\\[The ratio of the sum of the smaller and twice the larger number to the larger number is the same as the ratio of the larger one to the smaller one.\\]"
-        document.getElementById("golds3exp").innerHTML = "\\[\\frac{2*A+B}{A} = \\frac{A}{B} = \\delta_{\\varsigma} = {1+ \sqrt{2}} = 2.414  \\]"
-        document.getElementById("golds3exp").innerHTML = "\\[ The idea is to find two ratios and check whether they are equal to the silver ratio(2.414).\\]"
+        document.getElementById("golds3exp").innerHTML += "\\[Two\\space numbers\\space are\\space said\\space to\\space be\\space in\\space silver\\space ratio\\space if\\space \\]"
+        document.getElementById("golds3exp").innerHTML += "\\[The\\space ratio\\space of\\space the\\space sum\\space of\\space the\\space smaller\\space and\\space twice\\space the\\space larger\\space number\\space to\\space the\\space larger\\space number\\space is\\space the\\space same\\space as\\space the\\space ratio\\space of\\space the\\space larger\\space one\\space to\\space the\\space smaller\\space one.\\]"
+        document.getElementById("golds3exp").innerHTML += "\\[\\frac{2*A+B}{A} = \\frac{A}{B} = \\delta_{\\varsigma} = {1+ \sqrt{2}} = 2.414  \\]"
+        document.getElementById("golds3exp").innerHTML += "\\[ The\\space idea\\space is\\space to\\space find\\space two\\space ratios\\space and\\space check\\space whether\\space they\\space are\\space equal\\space to\\space the\\space silver\\space ratio(2.414).\\]"
         if (a < b) {
             a = a + b;
             b = a - b;
