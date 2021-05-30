@@ -12551,12 +12551,16 @@
         <div class="collapse" id="unitcirc">
             <h2 style="text-align: center;">Unit Circle</h2> 
             <p>A unit circle is a circle with a radius of 1 (unit radius). This tool will help determine the coordinates of any point on the unit circle just by entering the angle.</p>
-            <input type="number" id="unitdeg" class="form__field" placeholder="Enter angle in deg"
-                                   style="border-bottom:0.375rem solid var(--apppink);">
-            <br>
-            <br>
-            <button class="btn btn-dark" onclick="unitcircCal()">Calculate</button>
-            <br>
+            <form action="">
+                <input type="number" id="unitdeg" class="form__field" placeholder="Enter angle in deg"
+                style="border-bottom:0.375rem solid var(--apppink);">
+                <br>
+                <br>
+                <button class="btn btn-dark" onclick="unitcircCal()">Calculate</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <br>
             <p id="unitcircxans"></p>
             <p id="unitcircyans"></p>
@@ -13584,34 +13588,47 @@
         <div class="collapse" id="circumradiusarea">
             <h2>Circum Area and External Radius</h2><br>
             <p>Area of External Triangle</p><br>
-            <p id="exterarea">\[8R^2cosA/2cosB/2cosC/2\]</p>    
+            <p id="exterarea">\[8R^2cosA/2cosB/2cosC/2\]</p>
+            <form action="">
+
+            </form>    
             <div class="form-group">
                 <input type="text" style="width: 250px;" class="form__field" name="a" id="radius" placeholder="Enter External radius"/>
                 <input type="text" name="b" style="width: 250px;" class="form__field" id="angle1" placeholder="Enter angle A "/>
                 <input type="text" name="c" style="width: 250px;" class="form__field" id="angle2" placeholder="Enter angle B"/>
                 <input type="text" name="d" style="width: 250px;" class="form__field" id="angle3" placeholder="Enter angle C"/><br><br>
                 <button  class = "btn btn-outline-light" onclick = "external_area()" >Find</button>
+                <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
                 <br>
             </div>
                 <p  id="externarea"></p><br><br>
                 <p>Circum radius of External Triangle</p><br>
                 <p id="exterarea">\[2R\]</p> 
-                <div class="form-group">
-                    <input type="text" style="width: 250px;" class="form__field" name="a" id="radius1" placeholder="Enter External radius"/>  <br><br>
-                    <button  class = "btn btn-outline-light" onclick = "external_radius()" >Find</button><br>
-                </div>
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" style="width: 250px;" class="form__field" name="a" id="radius1" placeholder="Enter External radius"/>  <br><br>
+                        <button  class = "btn btn-outline-light" onclick = "external_radius()" >Find</button>
+                        <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button><br>
+                    </div>
+                </form>
+                
                 <p  id="externradius"></p><br>
         </div>
 
 
         <div class="collapse" id="incenterexcenter">
             <h2>Distance between Incenter and Excenter of a Triangle</h2><br>
-            <p id="incenex">\[4RsinA/2\]</p>    
-            <div class="form-group">
-                <input type="text" style="width: 250px;" class="form__field" name="a" id="ex_rad" placeholder="Enter External radius"/>
-                <input type="text" name="b" style="width: 250px;" class="form__field" id="angle_1" placeholder="Enter angle A "/>  <br> <br>
-                <button  class = "btn btn-outline-light" onclick = "dist_incenex()" >Find</button> <br>
-            </div>
+            <p id="incenex">\[4RsinA/2\]</p> 
+            <form action="">
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="ex_rad" placeholder="Enter External radius"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="angle_1" placeholder="Enter angle A "/>  <br> <br>
+                    <button  class = "btn btn-outline-light" onclick = "dist_incenex()" >Find</button>
+                    <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
+                    <br>
+                </div>
+            </form>   
+            
                 <p  id="dist_inex"></p><br><br>    
         </div>
 
@@ -13619,25 +13636,33 @@
             <h2>Distance between excentre and circumcentre</h2><br>
                 <p>For OI1</p>
                 <p id="extcircum">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>    
-                <div class="form-group">
-                    <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_2" placeholder="Enter External radius"/>
-                    <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_1" placeholder="Enter angle A "/>
-                    <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_2" placeholder="Enter angle B"/>
-                    <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_3" placeholder="Enter angle C"/><br><br>
-                    <button  class = "btn btn-outline-light" onclick = "excircum_1()" >Find</button><br>
-                </div>
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_2" placeholder="Enter External radius"/>
+                        <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_1" placeholder="Enter angle A "/>
+                        <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_2" placeholder="Enter angle B"/>
+                        <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_3" placeholder="Enter angle C"/><br><br>
+                        <button  class = "btn btn-outline-light" onclick = "excircum_1()" >Find</button><br>
+                        <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
+                    </div>
+                </form>
+                
                     <p id="excircum1"></p><br><br>
 
                 <p>For OI2 and OI3</p>
                 <p id="extcircum">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>    
-                <div class="form-group">
-                    <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_3" placeholder="Enter External radius"/>
-                    <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_A" placeholder="Enter angle A "/>
-                    <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_B" placeholder="Enter angle B"/>
-                    <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_C" placeholder="Enter angle C"/><br><br>
-                    <button  class = "btn btn-outline-light" onclick = "excircum_2()" >Find</button>
-                    <br>
-                </div>
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_3" placeholder="Enter External radius"/>
+                        <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_A" placeholder="Enter angle A "/>
+                        <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_B" placeholder="Enter angle B"/>
+                        <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_C" placeholder="Enter angle C"/><br><br>
+                        <button  class = "btn btn-outline-light" onclick = "excircum_2()" >Find</button>
+                        <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
+                        <br>
+                    </div>
+                </form>
+                
                     <p  id="excircum2"></p><br><br>
         </div>
 
