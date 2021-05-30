@@ -303,6 +303,7 @@ function openit(id) {
         "#zscores",
         "#pvalues",
         "#ppv",
+        "#npv",
         "#errpers",
         "#log_values",
         "#oops",

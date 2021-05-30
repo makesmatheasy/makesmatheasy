@@ -5107,6 +5107,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="npvbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">NPV Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('NPV Calculator','#npv','c','npvfav')"><img
+                                        id="npvfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             
             <li>
                 <table class="table">
@@ -13555,6 +13571,23 @@
             <p id="ppvans"></p>
         </div>
         
+        <!-- NPV Calculator-->
+        <div class="collapse" id="npv">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">NPV Calculator</h1>
+        
+            <form action="">
+                <input class = "form__field"type="text" id="npvsensi" placeholder="Enter Sensitivity">
+                <br><br>
+                <input class = "form__field"type="text" id="npvspeci" placeholder="Enter Specificity">
+                <br><br>
+                <input class = "form__field"type="text" id="npvprev" placeholder="Enter Prevalence">
+        
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="npvCal()">Calculate</button>
+            </form>
+        
+            <p id="npvans"></p>
+        </div>
 <!-- Relative risk Calculator -->
 <div class="collapse" id="relrisk">
     <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Relative Risk Calculator</h1>
