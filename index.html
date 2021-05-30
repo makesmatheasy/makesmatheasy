@@ -5303,6 +5303,23 @@
                     </tr>
                 </table>
             </li>
+            <!-- lead time calculator -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="leadbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Lead Time Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Lead Time','#leadtest','c','leadtimefav')"><img
+                                        id="leadtimefav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -14081,11 +14098,28 @@
             <br>
             <p id="concluChi"></p>
         </div>
+        <!--Lead Time Calculator -->
+        <div class="collapse" id="leadtest">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Lead Time Calculator</h1>
+            <p style="margin-top: 2rem;">Lead Time is the delay that occurs between the initiation and completion of a process.
+                Lead Time is used in manufacturing, supply chain management, and project management.</p>
+           <br>
+           <br>
+            <input class = "form__field"type="number" id="pre" placeholder="Pre Processing Time (in minutes)">
+            <br><br>
+            <input class = "form__field"type="number" id="pro" placeholder="Processing Time(in minutes)">
+            <br><br>
+            <input class = "form__field"type="number" id="post" placeholder="Post Processing Time (in minutes)">
+            <br><br>
+            <button class = "btn btn-light" onclick="leadvalue()">Test</button>
+            <p id="leadans"></p>
+            <br>
+          </div>
         
  <!-- TaktTime Calculator -->
         <div class="collapse" id="takttest">
           <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Takt Time Calculator</h1>
-          <p style="margin: 0 auto 6rem auto; font-style: italic;">Takt time is the rate at which you need to complete a product to meet customer demand.
+          <p style="margin-top: 2rem;">Takt time is the rate at which you need to complete a product to meet customer demand.
           Takt time is your sell rate and can easily be categorized as the heartbeat of your work process. It allows you to optimize your capacity in
           the most appropriate way to meet demand without keeping too much inventory in reserve. </p>
          <br>

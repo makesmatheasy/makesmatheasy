@@ -614,7 +614,12 @@ $(document).ready(function () {
         openit("#chitest");
         closenav();
         clearall();
-    });   
+    }); 
+    $("#leadbtn").click(function () {
+        openit("#leadtest");
+        closenav();
+        clearall();
+    });    
     $("#taktbtn").click(function () {
         openit("#takttest");
         closenav();

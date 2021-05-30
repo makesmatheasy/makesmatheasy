@@ -194,6 +194,7 @@ function openit(id) {
         "#antilog",
         "#kaps",
         "#chitest",
+        "#leadtest",
         "#takttest",
         "#cycletest",
         "#adams",
