@@ -4656,19 +4656,41 @@ function solveocta() {
 }
 //Area of largest Circle inscribe in N-sided Regular polygon
 function circleinfind() {
-    let n = parseInt(document.getElementById("circleinin").value)
-    let a = parseInt(document.getElementById("circleinin1").value)
-    if (!isNaN(n) && !isNaN(a)) {
-        // degree converted to radians
-        let r = a / (2 * Math.tan((180 / n) * 3.14159 / 180));
+    var n = parseInt(document.getElementById("circleinin").value)
+    var a = parseInt(document.getElementById("circleinin1").value)
+    var output = document.getElementById("circleinans");
+    var temp = "";
 
+    if (!isNaN(n) && !isNaN(a)) 
+    {
+        // degree converted to radians
+        var r = a / (2 * Math.tan((180 / n) * 3.14159 / 180));
         // area of circle
-        let Area = (3.14) * (r) * (r);
-        document.getElementById("circleinans").innerHTML = "The area of circle is " + Area
+        var Area = (3.14) * (r) * (r);
+        temp += "\\[Area \\space of \\space largest \\space Circle \\space inscribe \\space in \\space N-sided \\space Regular \\space polygon \\space will \\space be,\\]"
+        temp += "\\[First, \\space we \\space calculate \\space the \\space Radius \\space (r)\\]"
+        temp += "\\[Radius \\space (r) \\space = \\space \\frac{(Side \\space length)}{2 \\times tan(\\frac{180}{(No. \\space of \\space sides)} \\times \\frac{3.14159}{180}) }\\]"
+        temp += "\\[\\space = \\space \\frac{"+a+"}{2 \\times tan(\\frac{180}{"+n+"} \\times \\frac{3.14159}{180}) )}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a+"}{2 \\times tan("+(180 / n).toFixed(2)+" \\times "+(3.14159 / 180).toFixed(2)+") )}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a+"}{2 \\times tan("+((180 / n) * 3.14159 / 180).toFixed(2)+")}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a+"}{2 \\times "+(Math.tan((180 / n) * 3.14159 / 180)).toFixed(2)+"}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a+"}{"+(2 * Math.tan((180 / n) * 3.14159 / 180)).toFixed(2)+"}\\]"
+        temp += "\\[\\space = \\space "+r.toFixed(3)+"\\]"
+        temp += "\\[Now,\\space the \\space area \\space of \\space the \\space circle \\space will \\space be,\\]"
+        temp += "\\[Area \\space (A) \\space = \\space \\pi \\times "+r.toFixed(2)+" \\times "+r.toFixed(2)+" \\]"
+        temp += "\\[\\space = \\space "+Area.toFixed(3)+" \\]"
+
+        output.innerHTML = temp;
     }
-    else {
-        document.getElementById("circleinans").innerHTML = "Please enter valid input"
+    else 
+    {
+        temp = "\\[Please \\space enter \\space valid \\space input\\]"
+
+        output.innerHTML = temp;
+
     }
+
+    renderMathInElement(output);
 }
 
 function solveheart() {
