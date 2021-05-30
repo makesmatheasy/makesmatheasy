@@ -17881,6 +17881,10 @@
                                         style="text-decoration:none;" href="#">Square Pyramid</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#sqelongbipyramid"
+                                        style="text-decoration:none;" href="#">Elongated square bipyramid</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#trusqpyramid"
                                         style="text-decoration:none;" href="#">Truncated Square Pyramid</a></td>
                                 </tr>
@@ -32858,6 +32862,57 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="sqelongbipyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Elongated square bipyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = (\frac{2}{\sqrt{2}} + 1) \space a\]</p>
+                                    <p class="text-center">a = edge length</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = (4 + 2 \sqrt{3}) \space a^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = (1 + \frac{\sqrt{2}}{3}) \space a^3\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/elongated-square-bipyramid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                       placeholder="Enter edge length (a)" id="inputsqelongbipyedge"
+                                       oninput="solvesqelongbipy();">
+                            <p class="stopwrap" id="resultofsqelongbipyhei"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofsqelongbipyarea"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofsqelongbipyvol"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="elonsquare" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
