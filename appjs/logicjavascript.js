@@ -21488,18 +21488,35 @@ function confivalue() {
 }
 //odds calculator
 function oddsCalc() {
-    let p = document.getElementById('forsuccess').value
-    let q = document.getElementById('agsuccess').value
-
-    if (p == "" || q == "") {
-        document.getElementById("oddsAns").innerHTML = "Enter both the inputs";
+    var p = parseFloat( document.getElementById('forsuccess').value);
+    var q = parseFloat( document.getElementById('agsuccess').value);
+    var output = document.getElementById("oddsAns");
+    var temp = "";
+    if (p == "" || q == "" || isNaN(p) || isNaN(q)) {
+        document.getElementById("oddsAns").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
     }
     else {
-        let win = (p / (p + q)).toFixed(3);
-        let fail = (q / (p + q)).toFixed(3);
-        document.getElementById("oddsAns").innerHTML = "Probability of winning: " + win + "%  " +
-            "Probability of losing: " + fail + "%";
+        var win = p / (p + q);
+        var fail = q / (p + q);
+
+        temp += "\\[Odds \\space calculator \\space calculates \\space Probability \\space of \\space winning \\space and \\space Losing\\]"
+        temp += "\\[First, \\space we \\space calculate \\space Probability \\space of \\space winning,\\]"
+        temp += "\\[\\space = \\space \\frac{p}{(p+q)}\\]"
+        temp += "\\[\\space = \\space \\frac{"+p+"}{("+p+"+ "+q+")}\\]"
+        temp += "\\[\\space = \\space \\frac{"+p+"}{("+(p+q)+")}\\]"
+        temp += "\\[\\space = \\space "+win.toFixed(3)+"\\]"
+        temp += "\\[Hence,\\space Probability \\space of \\space winning \\space = \\space" + win.toFixed(3) + "\\space \\%  \\]"
+
+        temp += "\\[Now, \\space we \\space calculate \\space Probability \\space of \\space losing,\\]"
+        temp += "\\[\\space = \\space \\frac{q}{(p+q)}\\]"
+        temp += "\\[\\space = \\space \\frac{"+q+"}{("+p+"+ "+q+")}\\]"
+        temp += "\\[\\space = \\space \\frac{"+q+"}{("+(p+q)+")}\\]"
+        temp += "\\[\\space = \\space "+fail.toFixed(3)+"\\]"
+        temp += "\\[Hence,\\space Probability \\space of \\space losing \\space = \\space" + fail.toFixed(3) + "\\space \\%  \\]"
+
+        output.innerHTML = temp; 
     }
+    renderMathInElement(output);
 }
 
 //LINEAR REGRESSION CALCULATOR
