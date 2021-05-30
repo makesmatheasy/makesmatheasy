@@ -11127,6 +11127,31 @@ function solveellipCone() {
         laoutput.innerHTML = "";
     }
 }
+
+// Truncated Cone
+
+function solvetruncone() {
+    var R = parseFloat(document.getElementById("truncone-R").value);
+    var r = parseFloat(document.getElementById("truncone-r").value);
+    var h = parseFloat(document.getElementById("truncone-h").value);
+    var slantHeightField = document.getElementById("truncone-s");
+    var latSurfaceField = document.getElementById("truncone-L");
+    var areaField = document.getElementById("truncone-A");
+    var volField = document.getElementById("truncone-V");
+    var avField = document.getElementById("truncone-AV");
+    var s = Math.sqrt(Math.pow((R-r), 2) + Math.pow(h, 2));
+    var L = (R + r) * Math.PI * s;
+    var A = L + Math.PI * r *r + Math.PI * R * R;
+    var V = h * Math.PI / 3 * ( R*R + R*r + r*r );
+    if ((!isNaN(R)) && (!isNaN(r)) && (!isNaN(h))) {
+        slantHeightField.innerHTML = `Slant Height (s) = ${s.toFixed(3)} units`;
+        latSurfaceField.innerHTML = `Lateral Surface (L) = ${L.toFixed(3)} units`;
+        areaField.innerHTML = `Surface Area (A) = ${A.toFixed(3)} sq.units`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)} cubic units`;
+        avField.innerHTML = `A/V Ratio = ${(A/V).toFixed(3)}`;
+    }
+}
+
 //Truncated Bicone
 function solvetrunBicone() {
     var r = document.getElementById("inputtrunbiconerad").value;

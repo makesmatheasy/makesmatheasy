@@ -17626,6 +17626,10 @@
                                         style="text-decoration:none;" href="#">Hollow cone</a>                    
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#truncone"
+                                        style="text-decoration:none;" href="#">Truncated Cone</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#trunbicone"
                                         style="text-decoration:none;" href="#">Truncated Bicone</a></td>
                                 </tr>
@@ -31519,6 +31523,77 @@ N is the population size.
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="truncone" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Cone</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Slant height (s)</h5>
+                                    <p class="text-center">\[s = \sqrt {\left ( R - r \right )^2 + h^2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Surface (L)</h5>
+                                    <p class="text-center">\[L = \left ( R + r \right ) \times \pi \times s\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = L + \pi r^2 + \pi R^2 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = h \times \frac{\pi}{3} \times \left ( R^2 + Rr + r^2 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truncated-cone.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface to volume ratio</h5>
+                                    <p class="text-center">\[\frac{A}{V}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter base radius (R)" id="truncone-R"
+                                       oninput="solvetruncone();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter top surface radius (r)" id="truncone-r"
+                                       oninput="solvetruncone();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter height (h)" id="truncone-h"
+                                       oninput="solvetruncone();">
+                            <p class="stopwrap" id="truncone-s"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncone-L"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncone-A"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncone-V"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncone-AV"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
 
         <div class="modal fade" id="trunbicone" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
