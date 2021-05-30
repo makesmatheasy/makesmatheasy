@@ -19847,9 +19847,9 @@ function convertex3() {
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString();
             }else if(parseInt(x)<0){
-                x = "Error : Invalid input (decimal value of each digit cant subceed 0)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant subceed 0)";
             }else{
-                x = "Error : Invalid input (decimal value of each digit cant exceed 9)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant exceed 9)";
             }
             result.innerHTML = "Answer -> " + x;
             work.innerHTML = print;
