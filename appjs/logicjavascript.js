@@ -14907,7 +14907,7 @@ function typenum15find()
     renderMathInElement(result);
 }
 
-}    
+    
 
 
 function simpleSieve(){
@@ -24246,17 +24246,11 @@ function relrisk() {
     let ans = "";
     var output = document.getElementById('relriskans');
     if (a == "" || b == "" || c == "" || d == "") {
-<<<<<<< HEAD
-        output.innerHTML = "Enter all the inputs";
-||||||| 343865d
-        document.getElementById("relriskans").innerHTML = "Enter all the inputs";
-=======
         output.innerHTML = "Enter all the inputs";
     }
     else if(isNaN(a)||isNaN(b)||isNaN(c)||isNaN(d))
     {
         document.getElementById("relriskans").innerHTML = "All inputs should be numeric";
->>>>>>> afdd3b431abaa559e8d0216341dd56b83c3ef158
     }
     else {
         let ab = a+b; 
