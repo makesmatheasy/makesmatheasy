@@ -14551,12 +14551,20 @@ let arr = Array(1001).fill(true);
 function typenum15find()
 {
     var n = parseInt(document.getElementById("typenum18").value)
-    simpleSieve();
-    var ans = find_sphene(n);
-    if (ans == 1)
-        document.getElementById("typenum15ans").innerHTML  =  "Yes"
-    else
-        document.getElementById("typenum15ans").innerHTML  =  "NO"
+    if(!isNaN(n)){
+        simpleSieve();
+        var ans = find_sphene(n);
+        if (ans == 1)
+            document.getElementById("typenum15ans").innerHTML  =  "Yes"
+        else
+            document.getElementById("typenum15ans").innerHTML  =  "NO"
+        document.getElementById("typenum15exp").innerHTML = "\\[A Sphenic Number is a positive integer n which is product of exactly three distinct primes. \\]"
+        document.getElementById("typenum15exp").innerHTML = "\\[The first few sphenic numbers are 30, 42, 66, 70, 78, 102, 105, 110, 114, … \\]"
+        document.getElementById("typenum15exp").innerHTML = "\\[Sphenic number can be checked by fact that every sphenic number will have exactly 8 divisor SPHENIC NUMBER \\]"
+        renderMathInElement(document.getElementById("typenum15exp"))
+    }
+    else 
+        document.getElementById("typenum15ans").innerHTML  = "Please enter valid input"
 }
 
 
