@@ -24197,13 +24197,21 @@ function logbaseCal(){
     let b = document.getElementById("logbaseb").value;
     let x = document.getElementById("logbasex").value;
 
+    let output = document.getElementById("logbasex");
     if(a=="" || b=="" || x==""){
         output.innerHTML = "Enter all the inputs";
     }
     else{
+        let steps = "";
         let ans = (Math.log(x) / Math.log(b))/(Math.log(a) / Math.log(b));
-        output.innerHTML =  `log base ${a} of ${x} is ${ans}`;
+        let temp1 = Math.log(x) / Math.log(b);
+        let temp2 = Math.log(a) / Math.log(b);
+        steps += "\\[log_a(x)\\space = \\frac{log_b(x)}{log_b(a)}\\]";
+        steps += "\\[log_a(x)\\space = \\frac{"+temp1+"}{"+temp2+"}\\]";
+        steps += "\\[log_a(x)\\space = "+ans+"\\]";
+        output.innerHTML =  steps;
     }
+    renderMathInElement(output);
 }
 
 function relrisk() {
