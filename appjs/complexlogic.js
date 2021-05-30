@@ -2322,28 +2322,35 @@ function ainvcal()
 
 }
 
-function hypergeos2cal()
-{
-    var num1=document.getElementById("hypergeos12").value;
-    var num2=document.getElementById("hypergeos22").value;
-    var num3=document.getElementById("hypergeos32").value;
-    var num4=document.getElementById("hypergeos42").value;
-    ans="";
-    if(num1==""||num2==""||num4==""||num3=="")
+function hypergeos2cal() {
+    var num1=parseFloat(document.getElementById("hypergeos12").value);
+    var num2=parseFloat(document.getElementById("hypergeos22").value);
+    var num3=parseFloat(document.getElementById("hypergeos32").value);
+    var num4=parseFloat(document.getElementById("hypergeos42").value);
+
+    var output = document.getElementById("hypergeos2ans");
+    var temp="";
+    var d= (num2*num3)/num4;
+
+    if(isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4))
     {
-        ans="Please fill all the field";
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
     }
     else
     {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
-      var d= (num2*num3)/num4;
-       ans="The value of hypergeometric distribution's mean is : "+d;
-   
+        var d= (num2*num3)/num4;
+        temp += "\\[The \\space value \\space of \\space hypergeometric \\space distribution \\space mean \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{(Sample \\space Size) \\times (Successes \\space of \\space Lot)}{(Lot \\space Size)}\\]"
+        temp += "\\[\\space = \\space \\frac{("+num2+") \\times ("+num3+")}{"+num4+"}\\]"
+        temp += "\\[\\space = \\space \\frac{"+(num2*num3)+"}{"+num4+"}\\]"
+        temp += "\\[\\space = \\space "+d.toFixed(3)+"\\]";
+        temp += "\\[Hence, \\space the \\space value \\space of \\space mean \\space is,\\]"
+        "\\[\\space = \\space "+d.toFixed(3)+"\\]"
+
+        output.innerHTML = temp;
     }
-    document.getElementById("hypergeos2ans").innerHTML=ans;
+    renderMathInElement(output);
 }
 
 function hypergeosvarcal()
