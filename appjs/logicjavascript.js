@@ -1242,7 +1242,7 @@ function betafind() {
     let num1 = document.getElementById("betain1").value;
     let num2 = document.getElementById("betain2").value;
     if(num1==""||num2=="")
-    { document.getElementById("betafindans")="Please enter both fields"}
+    { document.getElementById("betafindans").innerHTML="Please enter both fields"}
     else{
         num1=parseInt(num1);
         num2=parseInt(num2);
