@@ -18635,20 +18635,21 @@ function triinfind() {
     let n = parseInt(document.getElementById("triin").value)
     if (!isNaN(a)) {
         if(n<0)
-           document.getElementById("triinans").innerHTML ="Length of side of square cannot be negative";
+           document.getElementById("triinans").innerHTML ="\\[Length \\space of \\space side \\space of \\space square \\space cannot \\space be \\space negative\\]";
         else{
             let a=n/Math.sqrt(2);
             let b=Math.sqrt(n*n+n*n/4);
             let c=b;
             let s=(a+b+c)/2;
             let area=Math.sqrt(s*(s-a)*(s-b)*(s-c));
-            document.getElementById("triinans").innerHTML = area.toFixed(2);
+            document.getElementById("triinans").innerHTML = "\\[Area \\space="+area.toFixed(2)+"\\]"+"\\[Sides \\space of \\space triangle \\space formed \\space is \\space given \\space by \\space: a=\\frac{n}{\\sqrt{2}} \\space ,\\space  b=c=\\sqrt{n^{2}+(\\frac{n}{2})^{2}}\\]"+"\\[ a=\\frac{"+n+"}{\\sqrt{2}}="+a.toFixed(3)+"\\space , \\space b=c=\\sqrt{"+n+"^2+(\\frac{"+n+"}{2})^2}="+b.toFixed(3)+"\\]"+"\\[ By \\space ,Heron's \\space Formula \\space Area=\\sqrt{s(s-a)(s-b)(s-c)} \\space and \\space s=\\frac{a+b+c}{2} \\newline Area="+area.toFixed(3)+"\\]";
         }   
         
     }
     else {
-        document.getElementById("triinans").innerHTML = "Please enter valid input"
+        document.getElementById("triinans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
     }
+    renderMathInElement(document.getElementById("triinans"));
 }
 //----------------------------
 
