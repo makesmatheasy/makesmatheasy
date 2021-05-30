@@ -14648,10 +14648,15 @@ function nhp() {
     document.getElementById("nHPseries2").innerHTML = "n-Harmonic Mean: " + series.substring(0, series.length - 2)
 }
 //If number of terms and the AP is given
+function calcexapsum(){
+    var n = document.getElementById("nterms").value = 5;
+    var val = document.getElementById("ap").value ="1,2,3";
+    apsum();
+}
 function apsum() {
     var n = document.getElementById("nterms").value
     var val = document.getElementById("ap").value;
-    val = val.split(" ");
+    val = val.split(",");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
