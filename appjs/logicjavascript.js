@@ -14445,6 +14445,12 @@ function anotherap() {
     }
 }
 //Insert n-Arthimetic Mean between two numbers
+function calcexnap(){
+    var n = document.getElementById("nt1").value = 6;
+    var a = document.getElementById("ft1").value = 3;
+    var b = document.getElementById("lt1").value = 24;
+    nap();
+}
 function nap() {
     var n = parseInt(document.getElementById("nt1").value)
     var a = parseInt(document.getElementById("ft1").value)
@@ -19358,7 +19364,7 @@ function convertdec2421() {
             }
             result.innerHTML = x;
         }result.innerHTML = x;
-}
+}}
 
 
 //---------------------------------------------------------------------------
