@@ -3945,21 +3945,29 @@ function alisumfind() {
 
 function alisum1find() {
     let num = parseInt(document.getElementById("alisum1").value)
-    if (!checkAbundant(num)) {
-        document.getElementById("alisum1ans").innerHTML = "false"
-    }
-    for (let i = 2; i <= Math.sqrt(num); i++) {
-        if (num % i == 0 && i != num) {
-            if (i * i == num) {
-                if (!isDeficient(i)) {
+    if(!isNaN(num)){
+        document.getElementById("alisum1exp").innerHTML = "\\[A number N is said to be Primitive Abundant Number if N is an Abundant number and all it’s proper divisors are Deficient Numbers. \\]"
+        document.getElementById("alisum1exp").innerHTML = "\\[The first few Primitive Abundant Numbers are:\\space20, 70, 88, 104, 272, 304……… \\]"
+        document.getElementById("alisum1exp").innerHTML = "\\[Check if the number is an Abundant number or not, i.e, sum of all the proper divisors of the number denoted by sum(N) is greater than the value of the number N\\]"
+        document.getElementById("alisum1exp").innerHTML = "\\[Check if all proper divisors of N are Deficient Numbers or not, i.e, sum of all the divisors of the number denoted by divisorsSum(n) is less than twice the value of the number N.\\]"
+        document.getElementById("alisum1exp").innerHTML = "\\[If both above conditions are true print “Yes” else print “No.\\]"
+        renderMathInElement(document.getElementById("alisum1exp"))
+        if (!checkAbundant(num)) {
+            document.getElementById("alisum1ans").innerHTML = "false"
+        }
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0 && i != num) {
+                if (i * i == num) {
+                    if (!isDeficient(i)) {
+                        document.getElementById("alisum1ans").innerHTML = "false";
+                    }
+                } else if (!isDeficient(i) || !isDeficient(num / i)) {
                     document.getElementById("alisum1ans").innerHTML = "false";
                 }
-            } else if (!isDeficient(i) || !isDeficient(num / i)) {
-                document.getElementById("alisum1ans").innerHTML = "false";
             }
         }
+        document.getElementById("alisum1ans").innerHTML = "true";
     }
-    document.getElementById("alisum1ans").innerHTML = "true";
 }
 
 function alisum3find(){
