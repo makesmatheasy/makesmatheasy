@@ -13401,6 +13401,20 @@ function cirinsemi11find(){
     document.getElementById("cirinsemi11ans").innerHTML = h;
 }
 
+function countinfind(){
+    let x1 = parseInt(document.getElementById("countin1").value)
+    let y1 = parseInt(document.getElementById("countin2").value)
+    let x2 = parseInt(document.getElementById("countin3").value)
+    let y2= parseInt(document.getElementById("countin4").value)
+    if(!isNaN(x1) && !isNaN(y1) && !isNaN(x2)  && !isNaN(y2)){
+        let c=(y2 - y1 - 1) * (x2 - x1 - 1)
+        document.getElementById("countinans").innerHTML = c;
+    }
+    else{
+        document.getElementById("countinans").innerHTML = "Please enter all the fields";
+    }
+    
+}
 function pksquarefind() {
     let k = parseInt(document.getElementById("pksquare13in").value)
     let list = document.getElementById("pksquare14in").value;
