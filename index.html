@@ -16707,6 +16707,10 @@
                            style="text-decoration:none;" href="#">Rhombus</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#rightkite"
+                           style="text-decoration:none;" href="#">Right Kite</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#salinon"
                            style="text-decoration:none;" href="#">Salinon</a></td>
                 </tr>
@@ -27399,6 +27403,74 @@ N is the population size.
                             <p class="stopwrap" id="resultOfShortSideLshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfPerimeterLshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfAreaLshape" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="rightkite" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Right Kite</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Symmetry diagonal (e)</h5>
+                                    <p class="text-center">\[e = \sqrt{a^2 + b^2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Other diagonal (f)</h5>
+                                    <p class="text-center">\[f = \frac{2ab}{e}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumcircle radius (r<sub>c</sub>)</h5>
+                                    <p class="text-center">\[r_{c} = \frac{e}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Incircle radius (r<sub>i</sub>)</h5>
+                                    <p class="text-center">\[r_{i} = \frac{ab}{ a + b }\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = 2\left ( a + b \right )\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/right-kite.png" class="img-fluid">
+                                    </div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = a \times b\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Obtuse angle (α)</h5>
+                                    <p class="text-center">\[\alpha =  2 \times \arccos \left ( \frac{a^2 + e^2 - b^2}{2ae} \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Acute angle (γ)</h5>
+                                    <p class="text-center">\[\gamma =  180 \degree - \alpha\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Short side (a)"
+                                   id="rightkite-a" oninput="rightkitesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Long side (b)"
+                                   id="rightkite-b" oninput="rightkitesolve()">
+                            <br>
+                            <p class="stopwrap" id="symDiaRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="othDiaRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="circumCirRadRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="inCirRadRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="perimeterRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="areaRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="obtuseAngRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="acuteAngRightkite" style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
