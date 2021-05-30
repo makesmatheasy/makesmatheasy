@@ -14522,7 +14522,7 @@ function nap() {
     //}
     var p = document.getElementById("nAPseries2")
     var temp = ""
-    if (isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(b))) {
+    if (!isNaN(parseInt(n)) || !isNaN(parseInt(a)) || !isNaN(parseInt(b))) {
     var d = (b - a) / (n + 1);
     for (var i = 1, series = "", num = 0; i <= n; i++) {
         num = ((a) + (i * d));
