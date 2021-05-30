@@ -7882,13 +7882,20 @@ function dropshapesolve() {
         areaField.innerHTML = "";
     }
     if ((!isNaN(r)) && (!isNaN(hs))) {
-        tangentAngleField.innerHTML = `Tangent angle (α) = ${alpha.toFixed(4)}°`;
-        arcLenField.innerHTML = `Arc length (l) = ${l.toFixed(4)}`;
-        chordLenField.innerHTML = `Chord length (c) = ${c.toFixed(4)}`;
-        triSideLenField.innerHTML = `Triangle side length (a) = ${a.toFixed(4)}`;
-        heightField.innerHTML = `Height (h) = ${h.toFixed(4)}`;
-        perimeterField.innerHTML = `Perimeter (p) = ${p.toFixed(4)}`;
-        areaField.innerHTML = `Area (A) = ${A.toFixed(4)}`;
+        tangentAngleField.innerHTML = "\\[Tangent \\space angle (\\alpha) =  180\\degree - \\arccos \\left ( 1 - \\frac{"+hs.toFixed(3)+"}{"+r.toFixed(3)+"} \\right ) = "+alpha.toFixed(3)+"\\]";
+        arcLenField.innerHTML = "\\[Arc \\space length \\space (l) =  "+r.toFixed(3)+" \\times 2 \\times \\arccos \\left ( 1 - \\frac{"+hs.toFixed(3)+"}{"+r.toFixed(3)+"} \\right ) = "+l.toFixed(3)+"\\]";
+        chordLenField.innerHTML = "\\[Chord \\space length \\space (c) = 2 \\times \\sqrt{2 \\times "+r.toFixed(3)+" \\times "+hs.toFixed(3)+" - "+hs.toFixed(3)+"^{2}} = "+c.toFixed(3)+"\\]";
+        triSideLenField.innerHTML = "\\[Triangle \\space side \\space length \\space (a) = \\frac{"+c.toFixed(3)+"}{\\sin\\left ( 180\\degree-2\\times "+alpha.toFixed(3)+" \\right )} \\times \\sin \\alpha = "+a.toFixed(3)+" \\]";
+        heightField.innerHTML = "\\[Height \\space (h) = "+hs.toFixed(3)+" + \\sqrt {\\frac{\\left ( 4"+a.toFixed(3)+"^2 - "+c.toFixed(3)+"^2 \\right )}{4}} = "+h.toFixed(3)+"\\]";
+        perimeterField.innerHTML = "\\[Perimeter \\space (p) = "+l.toFixed(3)+" + 2 \\times "+a.toFixed(3)+" = "+p.toFixed(3)+"\\]";
+        areaField.innerHTML = "\\[Area \\space (A) =  \\frac {"+r.toFixed(3)+" \\times "+l.toFixed(3)+" + "+c.toFixed(3)+" \\times \\left ( "+hs.toFixed(3)+" - "+r.toFixed(3)+" \\right ) + "+c.toFixed(3)+" \\times \\sqrt {\\frac{\\left ( 4"+a.toFixed(3)+"^2 - "+c.toFixed(3)+"^2 \\right )}{4}}}{2} = "+A.toFixed(3)+"\\]";
+        renderMathInElement(tangentAngleField);
+        renderMathInElement(arcLenField);
+        renderMathInElement(chordLenField);
+        renderMathInElement(triSideLenField);
+        renderMathInElement(heightField);
+        renderMathInElement(perimeterField);
+        renderMathInElement(areaField);
     }
 }
 
@@ -13831,7 +13838,55 @@ function trirect() {
    renderMathInElement(output);
 }
 
-
+function receq1() {
+    let n = parseInt(document.getElementById("receq1").value)
+    var output = document.getElementById("receq1ans")
+    var ans = ""
+    if (n < 0 ) {
+        ans += "\\[Side \\ cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
+    }
+    else if (!isNaN(n)) {
+        if (n & 1){
+            let coun = 0, m, j, i;
+            for (i = n - 2; i >= 1; i--) {
+                if (i >= 1) {
+                    m = parseInt((n - i) / 2, 10);
+                    j = parseInt((i * (i + 1)) / 2, 10);
+                    coun += j * m;
+                }
+                else {
+                    m = parseInt(((n - 1) - i) / 2, 10);
+                    j = parseInt((i * (i + 1)) / 2, 10);
+                    coun += j * m;
+                }
+            }
+            ans += coun;
+        }
+        else{
+            let coun = 0, m, j, i;
+            for (i = n - 2; i >= 1; i--) {
+                if (i >= 1) {
+                    m = parseInt(((n - 1) - i) / 2, 10);
+                    j = parseInt((i * (i + 1)) / 2, 10);
+                    coun += j * m;
+                }
+                else {
+                    m = parseInt((n - i) / 2, 10);
+                    j = parseInt((i * (i + 1)) / 2, 10);
+                    coun += j * m;
+                }
+            }
+            ans+=coun;
+        }
+        output.innerHTML = ans; 
+    }
+    else {
+        ans += "\\[Please \\space enter \\space all \\space input \\]"
+        output.innerHTML = ans;
+     }
+   renderMathInElement(output);
+}
 function htfind() {
     let a = parseInt(document.getElementById("htin").value);
     if (!isNaN(a)) {
