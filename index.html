@@ -17811,6 +17811,10 @@
                                     style="text-decoration:none;" href="#">Truncated Tetrahedron</a></td>
                             </tr>
                             <tr>
+                                <td><a data-toggle="modal" data-target="#truncocta"
+                                    style="text-decoration:none;" href="#">Truncated Octahedron</a></td>
+                            </tr>
+                            <tr>
                                 <td><a data-toggle="modal" data-target="#tetrahexahedron"
                                        style="text-decoration:none;" href="#">Tetrahexahedron</a></td>
                             </tr>
@@ -33961,6 +33965,75 @@ N is the population size.
                             <p class="stopwrap" id="resultoftruntetravol"
                                        style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultoftruntetraarea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="truncocta" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Octahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Edge length octahedron (a')</h5>
+                                    <p class="text-center">\[a' = 3 \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 6a^2 \times \left ( 1 + 2 \sqrt 3 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = 8a^3 \times \sqrt 2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumsphere radius (r<sub>c</sub>)</h5>
+                                    <p class="text-center">\[r_{c} = \frac {a}{2} \times \sqrt {10}\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truncated-octahedron.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius (r<sub>m</sub>)</h5>
+                                    <p class="text-center">\[r_{m} = \frac{3}{2} \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface-to-volume ratio (A/V)</h5>
+                                    <p class="text-center">\[\frac{A}{V}\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Edge length (a)" id="truncocta-a"
+                                       oninput="solvetruncocta();">
+                            <p class="stopwrap" id="truncocta-ax"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncocta-A"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncocta-V"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncocta-rc"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncocta-rm"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncocta-av"
                                 style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
