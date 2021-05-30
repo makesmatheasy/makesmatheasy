@@ -3078,8 +3078,17 @@ function impse1find() {
 
 function impse20find() {
     var n = parseInt(document.getElementById("impse20").value)
-    var series = n * (Math.pow(n, 2) + 3 * n + 5) / 3;
-    document.getElementById("impse20ans").innerHTML = series;
+    if(!isNaN(n)){
+        var series = n * (Math.pow(n, 2) + 3 * n + 5) / 3;
+        document.getElementById("impse20exp").innerHTML = "\\[It is basically a function with domain and co-domain as natural numbers and 0. \\]"
+        document.getElementById("impse20exp").innerHTML = "\\[if n > 0 and the number is not already included in the sequence,\\]"
+        document.getElementById("impse20exp").innerHTML = "\\[ a(n) = a(n - 1) - n \\]"
+        document.getElementById("impse20exp").innerHTML = "\\[else a(n) = a(n-1) + n. \\]"
+        document.getElementById("impse20ans").innerHTML = series;
+        renderMathInElement(document.getElementById("impse20exp"))
+    }
+    else
+        document.getElementById("impse20ans").innerHTML = "please enter valid input"
 }
 
 function impse21find() {
