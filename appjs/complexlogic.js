@@ -1513,14 +1513,41 @@ function perchngCal(){
 
 function peroffCal(){
     var original = parseInt(document.getElementById("originalPrice").value);
-    var off = parseInt(document.getElementById("offper").value)/100;
-    var tax = parseInt(document.getElementById("salestax").value)/100;
-    var final = (original + (original*tax))*off;
-    var savings = original - final;
+    var off = parseInt(document.getElementById("offper").value);
+    var tax = parseInt(document.getElementById("salestax").value);
     var output1 = document.getElementById("peroffans1");
     var output2 = document.getElementById("peroffans2");
-    output1.innerHTML = "Final price: " + final.toFixed(2);
-    output2.innerHTML = "Your savings: " + savings;
+    var temp1 = "";
+    var temp2 = "";
+    var final = (original + (original*(tax/100)))*(off/100);
+    var savings = original - final;
+
+    if(!isNaN(original) && !isNaN(tax) && !isNaN(off)){
+
+        temp1 += "\\[The \\space Percentage \\space Off \\space will \\space be,\\]"
+        temp1 += "\\[First, \\space we \\space calculate \\space the \\space final \\space value\\]"
+        temp1 += "\\[Final \\space Price \\space = \\space (Original \\space Price) +  ( (Original \\space Price) \\times \\frac{(Tax \\space value)}{100} ) \\times \\frac{(Off \\space value)}{100}\\]"
+        temp1 += "\\[\\space = \\space ("+original+") +  ( ("+original+") \\times \\frac{("+tax+")}{100} ) \\times \\frac{("+off+")}{100}\\]"
+        temp1 += "\\[\\space = \\space ("+original+") +  ( ("+original+") \\times "+(tax/100).toFixed(2)+" ) \\times "+(off/100).toFixed(2)+"\\]"
+        temp1 += "\\[\\space = \\space ("+original+") +  ( "+(original * (tax/100)).toFixed(2)+" ) \\times "+(off/100).toFixed(2)+"\\]"
+        temp1 += "\\[\\space = \\space "+(original * (original * (tax/100))).toFixed(2)+"  \\times "+(off/100).toFixed(2)+"\\]"
+        temp1 += "\\[\\space = \\space "+final.toFixed(3)+"\\]"
+
+        output1.innerHTML = temp1;
+
+        temp2 += "\\[Finally,\\space we \\space substract \\space this \\space (Final \\space Price) \\space value \\space from \\space the \\space (Orginal \\space Price)\\]"
+        temp2 += "\\[Savings \\space = \\space (Orginal \\space Price) \\space - \\space (Final \\space Price)\\]"
+        temp2 += "\\[\\space = \\space "+original+" - "+final.toFixed(2)+"\\]"
+        temp2 += "\\[\\space = \\space "+savings.toFixed(3)+"\\]"
+
+        output2.innerHTML = temp2;
+    } else{
+        temp1 = "\\[Please \\space enter \\space valid \\space input\\]"
+        output1.innerHTML = temp1;
+        temp2 = "";
+    }
+    renderMathInElement(output1);
+    renderMathInElement(output2);
 }
 
 function moduloCal(){
@@ -1974,6 +2001,26 @@ document.getElementById("skewans").innerHTML=ans;
 }
 // kurtosis calculator
 // kurtosis calculator
+function kurt_sum(arr) {
+    let sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+function kurt_bar(arr, mean) {
+    let diff = 0
+    for (var i = 0; i < arr.length; i++) {
+        var temp = 0
+        temp = arr[i] - mean
+        temp = Math.pow(temp, 4)
+        diff += temp;
+    }
+
+    return diff
+}
 function kurtcal()
 {   var num=document.getElementById("kurtinput").value;
      var num1=document.getElementById("kurtinput2").value;
@@ -1984,18 +2031,35 @@ var ans="";
         ans="Please fill both fields"
     }
     else{
-        num = parseFloat(num);
-        num1 = parseFloat(num1);
-    ans+="\\[Measure \\space of \\space kurtosis \\space \\beta_2 = \\frac{\\mu_4}{\\sigma^{4}}\\]"
-    ans+="\\[\\beta_2 = \\frac{"+num+"}{"+num1+"^{4}}\\]"
-    ans+="\\[\\beta_2 = \\frac{"+num+"}{"+Math.pow(num1,4).toFixed(4)+"}\\]"
-    ans+="\\[\\beta_2 = "+(num/Math.pow(num1,4).toFixed(4)).toFixed(4)+"\\]"
 
-    if((num/Math.pow(num1,4).toFixed(4)).toFixed(4)==3)
+        num = num.split(" ");
+        let n1 = num.length;
+        for (var i = 0; i < n1; i++) {
+            num[i] = parseFloat(num[i]);
+        }
+        var sum=kurt_sum(num)
+        var mean=(sum/n1).toFixed(4);
+        var numer=kurt_bar(num,mean);
+        numer=numer.toFixed(4);
+        num1 = parseFloat(num1);
+    ans+="\\[In \\space the \\space below \\space formula :\\]"
+    ans+="\\[\\mu_4 => Fourth \\space central \\space moment\\]"
+    ans+="\\[\\sigma => Standard \\space deviation \\space of \\space the \\space sample\\]"
+    ans+="\\[\\bar{x} => Mean \\space of \\space the \\space sample\\]"
+    ans+="\\[N=>Sample \\space size\\]"
+
+    ans+="\\[Measure \\space of \\space kurtosis \\space \\beta_2 = \\frac{\\mu_4}{\\sigma^{4}}\\]"
+    ans+="\\[\\because \\mu_4= \\frac{\\sum_{i=1}^{n} (x_i- \\bar{x})^{4}}{N} \\]"
+    ans+="\\[\\therefore \\beta_2 = \\frac{\\sum_{i=1}^{n} (x_i- \\bar{x})^{4}}{N\\sigma^{4}} \\]"   
+    ans+="\\[\\beta_2 = \\frac{"+numer+"}{ ("+n1+") \\times"+num1+"^{4}}\\]"
+    ans+="\\[\\beta_2 = \\frac{"+numer+"}{"+(n1)+" \\times "+Math.pow(num1,4).toFixed(4)+"} \\]"
+    ans+="\\[\\beta_2 = "+(numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)+"\\]"
+
+    if((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)==3)
     ans+="\\[Since \\space \\beta_2 \\space is \\space equal \\space to \\space 3 \\space the  \\space distribution  \\space is  \\space mesokurtic. \\]"
-    else if ((num/Math.pow(num1,4).toFixed(4)).toFixed(4)>3)
+    else if ((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)>3)
     ans+="\\[Since \\space \\beta_2 \\space > \\space 3 \\space the  \\space distribution  \\space is  \\space leptokurtic. \\]"
-    else if ((num/Math.pow(num1,4).toFixed(4)).toFixed(4)<3)
+    else if ((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)<3)
     ans+="\\[Since \\space \\beta_2 \\space < \\space 3 \\space the  \\space distribution  \\space is  \\space platykurtic. \\]" 
     }
 
