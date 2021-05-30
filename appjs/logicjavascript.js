@@ -2744,26 +2744,43 @@ function calcexcramer(){
 }
 //Cramer's Rule Calculator
 function cramer() {
-    var a = (document.getElementById('cab').value);
-    var b = (document.getElementById('cab1').value);
-    var c = (document.getElementById('cab2').value);
-    var d = (document.getElementById('cab3').value);
-    var e = (document.getElementById('cab4').value);
-    var f = (document.getElementById('cab5').value);
+    var a = parseInt(document.getElementById('cab').value);
+    var b = parseInt(document.getElementById('cab1').value);
+    var c = parseInt(document.getElementById('cab2').value);
+    var d = parseInt(document.getElementById('cab3').value);
+    var e = parseInt(document.getElementById('cab4').value);
+    var f = parseInt(document.getElementById('cab5').value);
     var cramtemp = "";
     var cramoutput = document.getElementById("cramerres");
-    if (a != "" && b != "" && c != "" && d != "" && e != "" && f != "") {
-        var res = ((a * e) - (b * d));
-        var res1 = ((c * e) - (b * f));
-        var res2 = ((a * f) - (c * d));
+    if (!isNaN(a)  && !isNaN(b)  && !isNaN(c)  && !isNaN(d)  && !isNaN(e)  && !isNaN(f) ) 
+    {
+        var res = (a * e) - (b * d);
+        var res1 = (c * e) - (b * f);
+        var res2 = (a * f) - (c * d);
         var x = (res1 / res);
         var y = (res2 / res);
-        cramtemp += "\\[Δ = " + res + ",\\space Δ_x = " + res1 + ",\\space Δ_y = " + res2 + " \\]";
-        cramtemp += "\\[X = " + x + ",\\space Y = " + y + "\\]";
+        cramtemp += "\\[Frist, \\space we \\space need \\space to \\space calculate \\space Δ ,\\space  Δ_x \\space and \\space Δ_y\\]"
+        cramtemp += "\\[Δ \\space = \\space ((a \\times  e) - (b \\times d))\\]"
+        cramtemp += "\\[\\space = \\space (("+a+" \\times  "+e+") - ("+b+" \\times "+d+"))\\]"
+        cramtemp += "\\[\\space = \\space (("+(a * e)+") - ("+(b * d)+"))\\]"
+        cramtemp += "\\[\\space = \\space "+res+"\\]"
+        cramtemp += "\\[Δ_x \\space = \\space ((c \\times  e) - (b \\times f))\\]"
+        cramtemp += "\\[\\space = \\space (("+c+" \\times  "+e+") - ("+b+" \\times "+f+"))\\]"
+        cramtemp += "\\[\\space = \\space (("+(c * e)+") - ("+(b * f)+"))\\]"
+        cramtemp += "\\[\\space = \\space "+res1+"\\]"
+        cramtemp += "\\[Δ_y \\space = \\space ((a \\times  f) - (c \\times d))\\]"
+        cramtemp += "\\[\\space = \\space (("+a+" \\times  "+f+") - ("+c+" \\times "+d+"))\\]"
+        cramtemp += "\\[\\space = \\space (("+(a * f)+") - ("+(c * d)+"))\\]"
+        cramtemp += "\\[\\space = \\space "+res2+"\\]"
+        cramtemp += "\\[Finally, \\space X \\space = \\space \\frac{Δ_x}{Δ}\\]"
+        cramtemp += "\\[\\space = \\space \\frac{"+res1+"}{"+res+"} \\space = \\space "+ x + "\\]";
+        cramtemp += "\\[\\space Y \\space = \\space \\frac{Δ_y}{Δ}\\] \\]"
+        cramtemp += "\\[\\space = \\space \\frac{"+res2+"}{"+res+"} \\space Y = " + y + "\\]";
         cramtemp += "\\[The \\space solution \\space is \\space (X,Y) =  (" + x + "," + y + ") \\]";
         cramoutput.innerHTML = cramtemp;
         renderMathInElement(cramoutput);
-    } else {
+    } 
+    else {
         cramoutput.innerHTML = "\\[Please \\space enter \\space all \\space the \\space values\\]";
         renderMathInElement(cramoutput);
     }
