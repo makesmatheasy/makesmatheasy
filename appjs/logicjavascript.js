@@ -20276,8 +20276,18 @@ function cscu3find() {
 
 function cscu4find() {
     let R = parseInt(document.getElementById("cscu4").value)
-    var V = ((2 * 3.14 * Math.pow(R, 3)) / (3 * Math.sqrt(3)));
-    document.getElementById("cscu4ans").innerHTML = V;
+    if(!isNaN(R)){
+        document.getElementById("cscu4exp").innerHTML = "\\[Volume of the cylinder, V = π*r2*h\\]"
+        document.getElementById("cscu4exp").innerHTML = "\\[r2 = R2 – h2 or, V = π*(R2 – h2)*h \\]"
+        document.getElementById("cscu4exp").innerHTML = "\\[dV/dh = π*(R2 – 3*h2)\\]"
+        document.getElementById("cscu4exp").innerHTML = "\\[Setting it to zero, we get h = R/√3 \\]"
+        document.getElementById("cscu4exp").innerHTML = "\\[Vmax = 2πR3/3√3 \\]"
+        var V = ((2 * 3.14 * Math.pow(R, 3)) / (3 * Math.sqrt(3)));
+        document.getElementById("cscu4ans").innerHTML = V;
+        renderMathInElement(document.getElementById("cscu4exp"))
+    }
+    else
+        document.getElementById("cscu4ans").innerHTML = "Please enter valid input"
 }
 
 function cscu5find() {
