@@ -343,6 +343,7 @@ Other Tech/Libraries
     - L-Shape
     - X-Shape
     - Arbelos
+    - Helix
     - Spherical Triangle
 
   - Name Of 3D Shapes

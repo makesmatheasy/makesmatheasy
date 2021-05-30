@@ -16545,6 +16545,10 @@
                            style="text-decoration:none;" href="#">Heart</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#helix"
+                           style="text-decoration:none;" href="#">Helix</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#hshape"
                            style="text-decoration:none;" href="#">H - Shape</a></td>
                 </tr>
@@ -27399,6 +27403,62 @@ N is the population size.
                             <p class="stopwrap" id="resultOfShortSideLshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfPerimeterLshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfAreaLshape" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="helix" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Helix</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Slope (k)</h5>
+                                    <p class="text-center">\[k = \frac{h}{( 2 \times \pi \times r )}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Curvature (κ)</h5>
+                                    <p class="text-center">\[\kappa = \frac{1}{( r \times ( 1 + k^2 )}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Torsion (w)</h5>
+                                    <p class="text-center">\[w = \frac{k}{r \times ( 1 + k^2 )}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Arc length (s)</h5>
+                                    <p class="text-center">\[s = 2 \times \pi \times r \times \sqrt{1 + k^2} \times t\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/helix.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Radius (r)"
+                                   id="helix-r" oninput="helixsolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Height (h)"
+                                   id="helix-h" oninput="helixsolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Number of turns (t)"
+                                   id="helix-t" oninput="helixsolve()">
+                            <br>
+                            <p class="stopwrap" id="slopeHelix" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="curvatureHelix" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="torsionHelix" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="arcLenHelix" style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
