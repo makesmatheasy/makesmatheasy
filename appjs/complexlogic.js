@@ -1506,9 +1506,30 @@ function dbltimeCal(){
 function perchngCal(){
     var initial = parseInt(document.getElementById("initialVal").value);
     var final = parseInt(document.getElementById("finalVal").value);
-    var ans = ((final-initial)/Math.abs(initial))*100;
     var output = document.getElementById("perchngans");
-    output.innerHTML = final  + " is a " + ans + "% change of " + initial;
+    var temp = "";
+
+    if (!isNaN(initial) && !isNaN(final))
+    {
+        var ans = ((final-initial)/Math.abs(initial))*100;
+
+        temp += "\\[The \\space Percentage \\space change \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{((Final value) - (Initial value))}{ |(Initial value)| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{(("+final+") - ("+initial+"))}{ |("+initial+")| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{"+(final-initial)+"}{ |("+initial+")| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{"+(final-initial)+"}{ "+(Math.abs(initial))+" } \\times 100\\]"
+        temp += "\\[\\space = \\space "+((final-initial)/Math.abs(initial)).toFixed(2)+" \\times 100\\]"
+        temp += "\\[\\space = \\space "+ans.toFixed(3)+"\\]"
+        temp += "\\[Hence, \\space\\]"
+        temp += "\\[\\space = \\space "+final+" \\space is \\space a \\space "+ans.toFixed(2)+" \\space \\% change \\space of \\space "+initial+"\\]"
+
+        output.innerHTML = temp;
+    }
+    else
+    {
+        temp += "\\[Please \\space enter \\space valid \\space input\\]"
+    }
+    renderMathInElement(output);
 }
 
 function peroffCal(){
@@ -1554,7 +1575,19 @@ function moduloCal(){
     var x = parseInt(document.getElementById("modx").value);
     var y = parseInt(document.getElementById("mody").value);
     var r = x%y;
-    document.getElementById("moduloans").innerHTML = "x % y = " + r;
+    var output = document.getElementById("moduloans");
+    var xy = x/y;
+    var yy = y*xy;
+    
+    var step = "\\[x \\pmod y= \\space x - (frac{x}{y}) \\times y\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - (frac{"+x+"}{"+y+"}) \\times "+y+"\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - "+xy+" \\times "+y+"\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - "+yy+" \\]";
+    step += "\\[x \\pmod y= \\space "+r+" \\]";
+
+    output.innerHTML = step;
+
+    renderMathInElement(output);
 }
 
 function covcalcu(){
@@ -2289,28 +2322,35 @@ function ainvcal()
 
 }
 
-function hypergeos2cal()
-{
-    var num1=document.getElementById("hypergeos12").value;
-    var num2=document.getElementById("hypergeos22").value;
-    var num3=document.getElementById("hypergeos32").value;
-    var num4=document.getElementById("hypergeos42").value;
-    ans="";
-    if(num1==""||num2==""||num4==""||num3=="")
+function hypergeos2cal() {
+    var num1=parseFloat(document.getElementById("hypergeos12").value);
+    var num2=parseFloat(document.getElementById("hypergeos22").value);
+    var num3=parseFloat(document.getElementById("hypergeos32").value);
+    var num4=parseFloat(document.getElementById("hypergeos42").value);
+
+    var output = document.getElementById("hypergeos2ans");
+    var temp="";
+    var d= (num2*num3)/num4;
+
+    if(isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4))
     {
-        ans="Please fill all the field";
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
     }
     else
     {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
-      var d= (num2*num3)/num4;
-       ans="The value of hypergeometric distribution's mean is : "+d;
-   
+        var d= (num2*num3)/num4;
+        temp += "\\[The \\space value \\space of \\space hypergeometric \\space distribution \\space mean \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{(Sample \\space Size) \\times (Successes \\space of \\space Lot)}{(Lot \\space Size)}\\]"
+        temp += "\\[\\space = \\space \\frac{("+num2+") \\times ("+num3+")}{"+num4+"}\\]"
+        temp += "\\[\\space = \\space \\frac{"+(num2*num3)+"}{"+num4+"}\\]"
+        temp += "\\[\\space = \\space "+d.toFixed(3)+"\\]";
+        temp += "\\[Hence, \\space the \\space value \\space of \\space mean \\space is,\\]"
+        "\\[\\space = \\space "+d.toFixed(3)+"\\]"
+
+        output.innerHTML = temp;
     }
-    document.getElementById("hypergeos2ans").innerHTML=ans;
+    renderMathInElement(output);
 }
 
 function hypergeosvarcal()
@@ -2336,28 +2376,38 @@ function hypergeosvarcal()
     }
     document.getElementById("hypergeos2ans").innerHTML=ans;
 }
-function hypergeosvar2cal()
-{
-    var num1=document.getElementById("hypergeos12").value;
-    var num2=document.getElementById("hypergeos22").value;
-    var num3=document.getElementById("hypergeos32").value;
-    var num4=document.getElementById("hypergeos42").value;
-    ans="";
-    if(num1==""||num2==""||num4==""||num3=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
-      var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
-       ans="The value of hypergeometric distribution's variance is : "+Math.sqrt(d);
+function hypergeosvar2cal() {
+    var num1=parseFloat(document.getElementById("hypergeos12").value);
+    var num2=parseFloat(document.getElementById("hypergeos22").value);
+    var num3=parseFloat(document.getElementById("hypergeos32").value);
+    var num4=parseFloat(document.getElementById("hypergeos42").value);
+
+    var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
+    var ans = Math.sqrt(d);
+    var output = document.getElementById("hypergeos2ans");
+    var temp ="";
+    if(isNaN(num2) || isNaN(num1) || isNaN(num3) || isNaN(num4)) {
+        temp = "\\[Please \\space fill \\space all \\space the \\space field\\]";
+
+        output.innerHTML = temp;
+    } 
+    else {
+        temp += "\\[Hypergeometric \\space Standard \\space Deviation \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+num4+" - "+num3+") \\times ("+num4+" - "+num2+"))}{( "+num4+"^{2} \\times ("+num4+" - 1))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{( "+num4+"^{2} \\times ("+num4+" - 1))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{( "+num4+"^{2} \\times ("+(num4-1)+"))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+(num2*num3)+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space \\frac{ "+(num2*num3*(num4-num3)*(num4-num2))+" }{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space "+d.toFixed(3)+"\\]"
+        temp += "\\[Hence, \\space the \\space values \\space Hypergeometric \\space Standard \\space Deviation \\space is,\\]"
+        temp += "\\[\\space = \\sqrt{"+d.toFixed(2)+"} \\]"
+        temp += "\\[\\space = "+ans.toFixed(3)+" \\]"
+
+        output.innerHTML = temp;
    
     }
-    document.getElementById("hypergeos2ans").innerHTML=ans;
+    renderMathInElement(output);
 }
 
 function egccal()
@@ -2455,27 +2505,31 @@ function isPrime( n)
     {
         return (n != 0 )&& ((n & (n - 1)) == 0);
     }
- 
+
+
 function wagcal()
 {
     var num1=document.getElementById("wag1").value;
     ans="";
+    explain="";
     if(num1==""||isNaN(num1))
     {
-        ans="Please enter the number";
+        ans="\\[Please \\space enter \\space the \\space number\\]";
     }
     else
     {
         num1=parseInt(num1);
         if(isPrime(num1) && (isPowerOfTwo(num1 * 3 - 1)))
         {
-            ans=num1+" is a Wagstaff number"
+            ans="\\["+num1+" is \\space a \\space Wagstaff \\space number.\\]"
+            explain="\\["+num1+"\\space is \\space prime \\space and \\space"+num1+"="+"\\frac{2^{"+Math.log2(num1*3-1)+"}-1}{3}\\]";
         }
         else
         {
             ans=num1+" is not a Wagstaff number"   
         }
     }
-    document.getElementById("wagans").innerHTML=ans;
+    document.getElementById("wagans").innerHTML=ans+explain;
+    renderMathInElement(document.getElementById("wagans"))
 }
 
