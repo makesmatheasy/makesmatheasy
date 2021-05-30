@@ -10245,20 +10245,39 @@ function sharpKinkSolve() {
     var diagonalField = document.getElementById("resultKinkDiagonal");
     var perimeterField = document.getElementById("resultKinkPerimeter");
     var areaField = document.getElementById("resultKinkArea");
-    var d = b/Math.sin((a/2)* (180 / Math.PI));
+    var temp1 = "";
+    var temp2 = "";
+    var temp3 = "";
+    var d = b/(Math.sin((alpha/2)* (180 / Math.PI)));
     var ax = cx + Math.sqrt(d*d - b*b);
     var perimeter = a + 2*b + c + ax + cx;
     var area = b * ( a + cx );
     if(alpha > 180){
-        diagonalField.innerHTML = "Angle must be <= 180!";
-        perimeterField.innerHTML = "";
-        areaField.innerHTML = "";
+        temp1 += "\\[Angle \\space must \\space be \\space <= \\space 180! \\]";
+        diagonalField.innerHTML = temp1;
+        temp2 += "";
+        perimeterField.innerHTML = temp2;
+        temp3 += "";
+        areaField.innerHTML = temp3;
+
     }
     else if ((!isNaN(b)) && (!isNaN(a)) && (!isNaN(c)) && (!isNaN(cx))) {
-        diagonalField.innerHTML = `Diagonal Field = ${d}`;
-        perimeterField.innerHTML = `Perimeter = ${perimeter} units`;
-        areaField.innerHTML = `Area (A) = ${area} sq.units`;
+        temp1 += "\\[d \\space = \\space \\frac{" + b + "}{Sin(\\frac{"+ alpha + "}{2} )} \\]"
+        temp1 += "\\[d \\space = \\space \\frac{" + b + "}{Sin \\space"+ (alpha/2) + " } \\]"
+        temp1 += "\\[Diagonal \\space Field \\space is \\space " + d.toFixed(3) + "\\]"
+        diagonalField.innerHTML = temp1;
+        temp2 += "\\[p \\space = \\space " + a + "+ 2 \\times" + b + "+" + c + "+" + ax.toFixed(3) + "+" + cx + " \\]"
+        temp2 += "\\[p \\space = \\space " + a + "+" + (2*b) + "+" + c + "+" + ax.toFixed(3) + "+" + cx + " \\]"
+        temp2 += "\\[Perimeter \\space is \\space " + perimeter.toFixed(3) + "\\space units \\]"
+        perimeterField.innerHTML = temp2;
+        temp3 += "\\[A \\space = \\space " + b + "\\times (" + a + "+" + cx + ") \\]"
+        temp3 += "\\[A \\space = \\space " + b + "\\times " + (a+cx) + " \\]"
+        temp3 += "\\[Area \\space is \\space " + area + " \\space sq.units \\]"
+        areaField.innerHTML = temp3;
     }
+    renderMathInElement(diagonalField);
+    renderMathInElement(perimeterField);
+    renderMathInElement(areaField);
 }
 
 //Salinon
