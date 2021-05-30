@@ -1593,6 +1593,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#npvbtn").click(function () {
+        openit("#npv");
+        closenav();
+        clearall();
+    });
 
     $("#analyticalbtn").click(function () {
         openit("#analytical");

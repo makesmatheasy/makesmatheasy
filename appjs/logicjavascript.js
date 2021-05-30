@@ -23949,6 +23949,24 @@ function ppvCal() {
         document.getElementById('ppvans').innerHTML = "Positive Predictive Value " + ans.toFixed(2);
     }
   }
+// NPV Calculator
+function npvCal() {
+    let sensi = document.getElementById("npvsensi").value;
+    let speci = document.getElementById("npvspeci").value;
+    let prev = document.getElementById("npvprev").value;
+
+    let ans = "";
+    if(sensi=="" || speci=="" || prev==""||isNaN(sensi)||isNaN(speci)||isNaN(prev)){
+        ans = "Enter valid inputs"
+        document.getElementById("npvans").innerHTML = ans;
+    }
+    else{
+        ans = (speci * (1 - prev))/(((1 - sensi) * prev) + (speci * (1 - pre)));
+       
+        document.getElementById('npvans').innerHTML = "Negative Predictive Value " + ans.toFixed(2);
+    }
+  }
+
 
   function vectsfind()
   {
