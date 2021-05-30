@@ -245,6 +245,7 @@ Other Tech/Libraries
   - Lucas series
   - Types of numbers
   - Disarium Number
+  - Krishnamurthy Number
   - Automorphic Number 
 
 - Basic Convertors

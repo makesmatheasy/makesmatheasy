@@ -152,6 +152,7 @@ function openit(id) {
         "#impfixs",
         "#etf",
         "#etc",
+        "#krishnum",
         "#equationssolver",
         "#quadeqncal",
         "#mulsolwithsteps",
