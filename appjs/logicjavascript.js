@@ -2836,33 +2836,82 @@ function findsectorarea() {
 }
 //Least number to be added to or subtracted from N to make it a Perfect Cube Calculator
 function addsubcfind() {
-    let n = parseInt(document.getElementById("addsubc").value)
-    let prevCube = Math.cbrt(n)
-    let nextCube = prevCube + 1
-    let ans = (n - prevCube) < (nextCube - n)
-        ? (prevCube - n)
-        : (nextCube - n)
-    if (!isNaN(n)) {
-        document.getElementById("addsubcans").innerHTML = ans;
+    var n = parseInt(document.getElementById("addsubc").value)
+    var output = document.getElementById('addsubcans');
+    var temp = "";
+
+    if (!isNaN(n)){
+        var prevCube = Math.cbrt(n)
+        var nextCube = prevCube + 1
+        temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space from \\space N \\space to \\space make \\space it \\space Perfect \\space Cube,\\]"
+        temp += "\\[First, \\space we \\space calculate \\space the \\space previous \\space and \\space the \\space next \\space Cube \\space values\\]"
+        temp += "\\[Previous \\space  Cube \\space = \\space \\sqrt[3]{n}\\]"
+        temp += "\\[\\space = \\space \\sqrt[3]{"+n+"}\\]"
+        temp += "\\[\\space = \\space "+prevCube.toFixed(2)+"\\]"
+        temp += "\\[Next \\space Cube \\space = \\space (Previous \\space Cube) + 1\\]"
+        temp += "\\[\\space = \\space "+prevCube.toFixed(2)+" + 1 \\]"
+        temp += "\\[\\space = \\space "+nextCube.toFixed(2)+"\\]"
+
+        if ((n - prevCube) < (nextCube - n)){
+            temp += "\\[Since, \\space (n - (Previous \\space Cube)) \\space is \\space less \\space than \\space ((Next \\space Cube) - n)\\]"
+            temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space will \\space be,\\]"
+            temp += "\\[Least \\space number \\space = \\space (previous \\space Cube) - n \\]"
+            temp += "\\[\\space = \\space "+prevCube+" - "+n+"\\]"
+            temp += "\\[\\space = \\space "+(prevCube - n).toFixed(3)+"\\]"
+        } else{
+            temp += "\\[Since, \\space (n - (Previous \\space Cube)) \\space is \\space greater \\space than \\space ((Next \\space Cube) - n)\\]"
+            temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space will \\space be,\\]"
+            temp += "\\[Least \\space number \\space = \\space (Next \\space Cube) - n \\]"
+            temp += "\\[\\space = \\space "+nextCube+" - "+n+"\\]"
+            temp += "\\[\\space = \\space "+(nextCube - n).toFixed(3)+"\\]"
+        }
+        output.innerHTML = temp;
+
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]"
+        output.innerHTML = temp;
     }
-    else {
-        document.getElementById('addsubcans').innerHTML = 'Please enter all Input';
-    }
+    renderMathInElement(output);
 }
 //Least number to be added to or subtracted from N to make it a Perfect Square Calculator
 function addsubsfind() {
-    let n = parseInt(document.getElementById("addsubs").value)
-    let prevSquare = Math.sqrt(n)
-    let nextSquare = prevSquare + 1
-    let ans = (n - prevSquare) < (nextSquare - n)
-        ? (prevSquare - n)
-        : (nextSquare - n)
-    if (!isNaN(n)) {
-        document.getElementById("addsubsans").innerHTML = ans;
+    var n = parseInt(document.getElementById("addsubs").value)
+    var output = document.getElementById('addsubsans');
+    var temp = "";
+    if (!isNaN(n)){
+        var prevSquare = Math.sqrt(n)
+        var nextSquare = prevSquare + 1
+        var ans = (n - prevSquare) < (nextSquare - n)
+            ? (prevSquare - n)
+            : (nextSquare - n)
+
+        temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space from \\space N \\space to \\space make \\space it \\space Perfect \\space Square,\\]"
+        temp += "\\[First, \\space we \\space calculate \\space the \\space previous \\space and \\space the \\space next \\space square \\space values\\]"
+        temp += "\\[Previous \\space  square \\space = \\space \\sqrt{n}\\]"
+        temp += "\\[\\space = \\space \\sqrt{"+n+"}\\]"
+        temp += "\\[\\space = \\space "+prevSquare.toFixed(2)+"\\]"
+        temp += "\\[Next \\space square \\space = \\space (Previous \\space square) + 1\\]"
+        temp += "\\[\\space = \\space "+prevSquare.toFixed(2)+" + 1 \\]"
+        temp += "\\[\\space = \\space "+nextSquare.toFixed(2)+"\\]"
+        if ((n - prevSquare) < (nextSquare - n)){
+            temp += "\\[Since, \\space (n - (Previous \\space square)) \\space is \\space less \\space than \\space ((Next \\space square) - n)\\]"
+            temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space will \\space be,\\]"
+            temp += "\\[Least \\space number \\space = \\space (previous \\space square) - n \\]"
+            temp += "\\[\\space = \\space "+prevSquare+" - "+n+"\\]"
+            temp += "\\[\\space = \\space "+(prevSquare - n).toFixed(3)+"\\]"
+        } else{
+            temp += "\\[Since, \\space (n - (Previous \\space square)) \\space is \\space greater \\space than \\space ((Next \\space square) - n)\\]"
+            temp += "\\[Least \\space number \\space to \\space be \\space added/subtracted \\space will \\space be,\\]"
+            temp += "\\[Least \\space number \\space = \\space (Next \\space square) - n \\]"
+            temp += "\\[\\space = \\space "+nextSquare+" - "+n+"\\]"
+            temp += "\\[\\space = \\space "+(nextSquare - n).toFixed(3)+"\\]"
+        }
+        output.innerHTML = temp;
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input\\]"
+        output.innerHTML = temp;
     }
-    else {
-        document.getElementById('addsubsans').innerHTML = 'Please enter all Input';
-    }
+    renderMathInElement(output);
 }
 //Count numbers upto N which are both perfect square and perfect cube
 function countscfind() {
@@ -4607,19 +4656,41 @@ function solveocta() {
 }
 //Area of largest Circle inscribe in N-sided Regular polygon
 function circleinfind() {
-    let n = parseInt(document.getElementById("circleinin").value)
-    let a = parseInt(document.getElementById("circleinin1").value)
-    if (!isNaN(n) && !isNaN(a)) {
-        // degree converted to radians
-        let r = a / (2 * Math.tan((180 / n) * 3.14159 / 180));
+    var n = parseInt(document.getElementById("circleinin").value)
+    var a = parseInt(document.getElementById("circleinin1").value)
+    var output = document.getElementById("circleinans");
+    var temp = "";
 
+    if (!isNaN(n) && !isNaN(a)) 
+    {
+        // degree converted to radians
+        var r = a / (2 * Math.tan((180 / n) * 3.14159 / 180));
         // area of circle
-        let Area = (3.14) * (r) * (r);
-        document.getElementById("circleinans").innerHTML = "The area of circle is " + Area
+        var Area = (3.14) * (r) * (r);
+        temp += "\\[Area \\space of \\space largest \\space Circle \\space inscribe \\space in \\space N-sided \\space Regular \\space polygon \\space will \\space be,\\]"
+        temp += "\\[First, \\space we \\space calculate \\space the \\space Radius \\space (r)\\]"
+        temp += "\\[Radius \\space (r) \\space = \\space \\frac{(Side \\space length)}{2 \\times tan(\\frac{180}{(No. \\space of \\space sides)} \\times \\frac{3.14159}{180}) }\\]"
+        temp += "\\[\\space = \\space \\frac{"+a+"}{2 \\times tan(\\frac{180}{"+n+"} \\times \\frac{3.14159}{180}) )}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a+"}{2 \\times tan("+(180 / n).toFixed(2)+" \\times "+(3.14159 / 180).toFixed(2)+") )}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a+"}{2 \\times tan("+((180 / n) * 3.14159 / 180).toFixed(2)+")}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a+"}{2 \\times "+(Math.tan((180 / n) * 3.14159 / 180)).toFixed(2)+"}\\]"
+        temp += "\\[\\space = \\space \\frac{"+a+"}{"+(2 * Math.tan((180 / n) * 3.14159 / 180)).toFixed(2)+"}\\]"
+        temp += "\\[\\space = \\space "+r.toFixed(3)+"\\]"
+        temp += "\\[Now,\\space the \\space area \\space of \\space the \\space circle \\space will \\space be,\\]"
+        temp += "\\[Area \\space (A) \\space = \\space \\pi \\times "+r.toFixed(2)+" \\times "+r.toFixed(2)+" \\]"
+        temp += "\\[\\space = \\space "+Area.toFixed(3)+" \\]"
+
+        output.innerHTML = temp;
     }
-    else {
-        document.getElementById("circleinans").innerHTML = "Please enter valid input"
+    else 
+    {
+        temp = "\\[Please \\space enter \\space valid \\space input\\]"
+
+        output.innerHTML = temp;
+
     }
+
+    renderMathInElement(output);
 }
 
 function solveheart() {
@@ -5966,20 +6037,25 @@ function escbrad() {
     let c = parseInt(document.getElementById('inputabc2').value)
     let r = parseInt(document.getElementById('inputabc5').value)
     var output = document.getElementById("inexans");
-    var ans = "";
-    if (!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(r)) {
+    var temp = "";
+    if (!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(r)) 
+    {
         let r1 = 4 * r * (Math.sin(((a * Math.PI) / 180) / 2) * (Math.cos((((b * Math.PI) / 180) / 2))) * (Math.cos(((c * Math.PI) / 180) / 2)))
         let r2 = 4 * r * (Math.cos(((a * Math.PI) / 180) / 2) * (Math.sin((((b * Math.PI) / 180) / 2))) * (Math.cos(((c * Math.PI) / 180) / 2)))
         let r3 = 4 * r * (Math.cos(((a * Math.PI) / 180) / 2) * (Math.cos((((b * Math.PI) / 180) / 2))) * (Math.sin(((c * Math.PI) / 180) / 2)))
-        ans += "\\[Radius \\space of \\space the \\space Escribed \\space Circles \\space of \\space a \\space Triangle \\space is \\]"
-        ans += "\\[r1 \\space = \\space 4 \\times R \\times Sin \\frac{A}{2} \\times Cos \\frac{B}{2} \\times Cos \\frac{C}{2} \\space = \\space " + r1.toFixed(4) + " \\]"
-        ans += "\\[r2 \\space = \\space 4 \\times R \\times Cos \\frac{A}{2} \\times Sin \\frac{B}{2} \\times Cos \\frac{C}{2} \\space = \\space " + r2.toFixed(4) + " \\]"
-        ans += "\\[r3 \\space = \\space 4 \\times R \\times Cos \\frac{A}{2} \\times Cos \\frac{B}{2} \\times Sin \\frac{C}{2} \\space = \\space " + r3.toFixed(4) + " \\]"
-        output.innerHTML = ans;
+        temp += "\\[Radius \\space of \\space the \\space Escribed \\space Circles \\space of \\space a \\space Triangle \\space is \\]"
+        temp += "\\[r1 \\space = \\space 4 \\times R \\times Sin \\frac{A}{2} \\times Cos \\frac{B}{2} \\times Cos \\frac{C}{2} \\space = \\space 4 \\times " + r + " \\times Sin \\frac{ " +a+ " }{2} \\times Cos \\frac{" + b + "}{2} \\times Cos \\frac{"+ c + "}{2} \\space = \\space 4 \\times " + r + " \\times Sin ( " +a/2+ " ) \\times Cos (" + b/2 + ") \\times Cos ("+ (c/2) + ") \\]"
+        temp += "\\[r1 \\space = \\space " + r1.toFixed(4) + " \\]"
+        temp += "\\[r2 \\space = \\space 4 \\times R \\times Cos \\frac{A}{2} \\times Sin \\frac{B}{2} \\times Cos \\frac{C}{2} \\space = \\space 4 \\times" + r + " \\times Cos \\frac{" + a + "}{2} \\times Sin \\frac{" + b + "}{2} \\times Cos \\frac{" + c + "}{2} \\space = \\space 4 \\times" + r + " \\times Cos (" + a/2 + ") \\times Sin (" + b/2 + ") \\times Cos (" + c/2 + ")  \\]"
+        temp += "\\[r2 \\space = \\space " + r2.toFixed(4) + " \\]"
+        temp += "\\[r3 \\space = \\space 4 \\times R \\times Cos \\frac{A}{2} \\times Cos \\frac{B}{2} \\times Sin \\frac{C}{2} \\space = \\space 4 \\times" + r + " \\times Cos \\frac{" + a + "}{2} \\times Cos \\frac{" + b + " }{2} \\times Sin \\frac{" + c + "}{2}\\space = \\space 4 \\times" + r + " \\times Cos (" + a/2 + ") \\times Cos (" + b/2 + " ) \\times Sin (" + c/2 + ")  \\]"
+        temp += "\\[r3 \\space = \\space " + r3.toFixed(4) + " \\]"
+        output.innerHTML = temp;
     }
-    else {
-        ans += "\\[Please \\space enter \\space valid \\space input \\]"
-        output.innerHTML = ans;
+    else
+     {
+        temp += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = temp;
     }
     renderMathInElement(output);
 }
@@ -12718,10 +12794,19 @@ function gstcal() {
 function degcal() {
     var expression = document.getElementById("exp").value;
     var ans = document.getElementById("deg");
-
+    var print;
     exp = expression.replace(/ /g, '')
     var x = nerdamer(`deg(${exp})`);
+    print = "\\[Answer \\space -> \\space "+x+"\\]"
+    print += "\\[The \\space degree \\space of \\space an \\space individual \\space term \\space of \\space a \\space polynomial \\space is \\]";
+    print += "\\[ the \\space exponent \\space of \\space its \\space variable\\]";
+    print += "\\[ the \\space exponents \\space of \\space the \\space terms \\space of \\space this \\space polynomial \\space are, \\space in \\space order \\space :- \\space "+exp+"\\]";
+    print += "\\[The \\space degree \\space of \\space the \\space polynomial \\space is \\space the \\space highest \\space degree \\space of \\space any \\space of \\space the \\space terms\\]";
+    print += "\\[ in \\space  this \\space case, \\space it \\space is \\space " + x + ".\\]";
     ans.innerText = x;
+
+    ans.innerHTML = print;
+    renderMathInElement(ans);
 
 }
 
@@ -13484,16 +13569,25 @@ function retfind13() {
 function trirect() {
     let l = parseFloat(document.getElementById("trirect1").value)
     let b = parseFloat(document.getElementById("trirect2").value)
+    var output = document.getElementById("trirectans")
+    var ans = ""
     let area = (l * b) / 2;
     if (l < 0 || b < 0) {
-        document.getElementById("trirectans").innerHTML = "Length and Breadth of a Rectangle cannot be negative"
+        ans += "\\[Length \\space and \\space Breadth \\space of \\space a \\space Rectangle \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
     }
     else if (!isNaN(l) && !isNaN(b) ) {
-        document.getElementById("trirectans").innerHTML = area.toFixed(4);
+        ans += "\\[Length \\space of \\space the \\space Rectangle \\space = \\space Height \\space of \\space the \\space Triangle \\space = \\space " + l + " \\]"
+        ans += "\\[Breadth \\space of \\space the \\space Rectangle \\space = \\space Base \\space of \\space the \\space Triangle \\space = \\space " + b + " \\]"
+        ans += "\\[Area \\space of \\space Triangle \\space = \\space \\frac{Height \\times Base}{2} \\space = \\space \\frac{ " + l + "\\times" + b + "}{2} \\space = \\space \\frac{" + (l*b) + "}{2} \\]"
+        ans += "\\[Area \\space of \\space Triangle \\\space is \\space " + area.toFixed(3) + " \\]"
+        output.innerHTML = ans; 
     }
     else {
-        document.getElementById("trirectans").innerHTML = "Please enter valid input"
-    }
+        ans += "\\[Please \\space enter \\space all \\space input \\]"
+        output.innerHTML = ans;
+     }
+   renderMathInElement(output);
 }
 
 
@@ -16673,7 +16767,7 @@ function sumDivisor(num) {
     var work = document.getElementById('work_smDiv');
     var print = "\\[\\underline{Working \\space Steps}\\]";
     print += "\\[Find \\space all \\space the \\space divisors \\space the \\space number \\space and \\space add \\space them \\space simultaneously\\]";
-    print += "\\[Divisors \\space of \\space " + num + " \\space = ";
+    print += "\\[1) \\space All \\space Divisors \\space of \\space " + num + " \\space = ";
     let res = 0;
     for (let i = 1; i <= num; i++) {
         if (!(num % i)) {
@@ -16685,10 +16779,29 @@ function sumDivisor(num) {
             res += i;
         }
     }
-    document.getElementById("smDivResult").innerHTML = "The sum of divisors of " + num + " is: " + res;
     print += "\\]";
     print += "\\[Sum \\space of \\space all \\space divisors \\space of \\space " + num + " \\space = \\space " + res + "\\]";
     result.innerHTML = "Answer -> The sum of divisors of " + num + " is: " + res;
+
+    //for proper  divisors
+    print += "\\[2) \\space Proper \\space Divisors \\space of \\space " + num + " \\space = ";
+    let res1 = 0;
+    for (let i = 1; i <= num; i++) {
+        if (!(num % i)) {
+            if(num == i){
+                print += " \\space ";
+            }else{
+                print += " \\space " + i +" \\space + \\space ";
+            }
+            res1 += i;
+        }
+    }
+    print += "\\]";
+    print += "\\[Sum \\space of \\space proper \\space divisors \\space only \\space of \\space " + num + " \\space = \\space " + (res1 -num) + "\\]";
+    result.innerHTML = "Answer -> The sum of divisors of " + num + " is: " + (res1 -num);
+
+
+
     work.innerHTML = print;
     renderMathInElement(work);
 }
@@ -20216,14 +20329,30 @@ function cscu5find() {
 
 function hexa121find() {
     let a = parseFloat(document.getElementById("hexa131").value)
-    var area = (Math.pow(1.268, 2) * Math.pow(a, 2));                                                             
+    var output = document.getElementById("hexa121ans")
+    var ans = ""
+    var a1 = 1.268 * a;
+    var a2 = (1.268 * a)**2;
+    var area = (Math.pow(1.268, 2) * Math.pow(a, 2));
     if(a<0)
     {
-       document.getElementById("hexa121ans").innerHTML+="\\[Side \\space Length \\space of \\space the \\space Hexagon \\space cannot \\space be \\space negative.\\]"  
-       renderMathInElement( document.getElementById("hexa121ans"));
-    }else {
-     document.getElementById("hexa121ans").innerHTML =area;
-    }  
+       ans += "\\[Side \\space Length \\space of \\space the \\space Hexagon \\space cannot \\space be \\space negative.\\]"  
+       output.innerHTML = ans
+    }
+    else  if (!isNaN(a))
+     {
+        ans += "\\[Side \\space length \\space of \\space Hexagon \\space = \\space  " + a + " \\]"
+        ans += "\\[Length \\space of \\space the \\space side \\space of \\space the \\space inscribed \\space square \\space (d) \\space = \\space 1.268 \\times a \\]"
+        ans += "\\[Area \\space of \\space Square \\space = \\space d^{2} \\space = \\space (1.268 \\times a)^{2} \\space = \\space  (1.268 \\times " + a + ")^{2} \\space = \\space (" + (a1).toFixed(3) + ")^{2} \\space = \\space " + (a2).toFixed(3) + " \\]"
+        ans += "\\[Area \\space of \\space Square \\space is \\space " + area.toFixed(3) + " \\]"
+        output.innerHTML = ans
+    }
+    else
+    {
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans
+    }
+    renderMathInElement(output)
 }
 
 //Empirical Probability
@@ -21568,18 +21697,30 @@ function triinsemifind() {
 
 function hexsq() {
     let a = parseFloat(document.getElementById("hexsq1").value)
-    if (!isNaN(a)) {
-        if (a < 0){
-            document.getElementById("hexsqans").innerHTML = "Side Length cannot be negative"
-    }
-    else{
+    var output = document.getElementById("hexsqans")
+    var ans = ""
+    if (!isNaN(a))
+     {
+        if (a < 0)
+        {
+            ans += "\\[Side \\space Length \\space of \\space the \\space Square \\space cannot \\space be \\space negative.\\]"  
+            output.innerHTML = ans
+     }
+    else
+    {
         var s = 0.5176 * a;
-        document.getElementById("hexsqans").innerHTML = s
+        ans += "\\[Side \\space length \\space of \\space Square \\space = \\space  " + a + " \\]"
+        ans += "\\[Length \\space of \\space the \\space side \\space of \\space Hexagon \\space (x) \\space = \\space 0.5176 \\times a \\]"
+        ans += "\\[Length \\space of \\space the \\space side \\space of \\space Hexagon \\space (x) \\space = \\space  (0.5176 \\times " + a + ") \\space = \\space " + (s).toFixed(3) + " \\]"
+        output.innerHTML = ans
     }
 }
-    else {
-        document.getElementById("hexsqans").innerHTML = "Please enter valid input"
+    else 
+    {
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans
     }
+    renderMathInElement(output)
 }
 
 function recinsemifind() {

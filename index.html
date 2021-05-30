@@ -6969,10 +6969,17 @@
             <br>
             <h5 id="cirinsemi7ans"></h5>
             <br>
-            <h4>Area of largest isosceles triangle that can be inscribed in an Ellipse whose vertex coincides with one extremity of the major axis</h4><br>
-            <input type="text" id="cirinsemi9in" placeholder="Enter length of major axis of ellipse" class="form__field">
-            <input type="text" id="cirinsemi10in" placeholder="Enter length of minor axis of ellipse" class="form__field"><br>
-            <button class="btn btn-dark" onclick="cirinsemi8find()">Find</button><br>
+            <h4>Area of largest isosceles triangle that can be inscribed in an Ellipse whose vertex coincides with one extremity of the major axis</h4>
+            <br>
+            <form action="">
+                <input type="text" id="cirinsemi9in" placeholder="Enter length of major axis of ellipse" class="form__field">
+                <input type="text" id="cirinsemi10in" placeholder="Enter length of minor axis of ellipse" class="form__field">
+                <br>
+                <button class="btn btn-dark" onclick="cirinsemi8find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <br>
             <h5 id="cirinsemi8ans"></h5>
             <br>
             <h4>Largest triangle that can be inscribed in an ellipse</h4>
@@ -14845,8 +14852,8 @@
                     <input type="text" style="width: 15.625rem;" class="form__field" name="a"
                            id="exp"
                            placeholder="Enter a Polynomial expression"/><br><br>
-                    <button class="btn btn-outline-light" onclick="degcal()">Find</button>
-                    <button class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                    <button type = "button" class="btn btn-outline-light" onclick="degcal()">Find</button>
+                    <button type = "button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
                     <br><br><br> 
                     <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
                     font-family:mathfont;" id="deg"></p>
@@ -15658,16 +15665,13 @@
             <p id="polymaxans" style= "font-family:mathfont"></p>
             </form>
             <br>
-            <h4>Area of largest Circle inscribe in N-sided Regular polygon</h4>
-            <br>
+            <h4>Area of largest Circle inscribe in N-sided Regular polygon</h4><br>
             <form action="">
             <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="circleinin"/>
-            <input type="text" class = "form__field" placeholder = "Side Length" id="circleinin1">
-            <br>
+            <input type="text" class = "form__field" placeholder = "Side Length" id="circleinin1"><br>
             <button type="button" class="btn btn-dark" onclick="circleinfind()">Find</button>
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
-            <br>
-            <h4 id="circleinans"></h4>
+            <br><p id="circleinans"></p>
             </form>
             <br>
             <h4>Area of largest Triangle inscribe in N-sided Regular polygon</h4>
@@ -20537,15 +20541,14 @@
             <p>&nbsp;</p>
             <form action="">
                 <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to Cartesian</p>
-                <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                    <input type="number" id="cylcartp" placeholder="Enter the distance between the pole and the projected point"> 
-                    <input type="number" id="cylcarto" placeholder="Enter the angle created by the line and the polar axis in degree">
-                    <input type="number" id="cylcartz" placeholder="Enter the vertical distance between the original point and the projected point">
-                    <p>&nbsp;</p></p>
-            <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylcartcal()">Calculate</button>
-            <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+                <input type="number" id="cylcartp" placeholder="Enter the distance between the pole and the projected point"> 
+                <input type="number" id="cylcarto" placeholder="Enter the angle created by the line and the polar axis in degree">
+                <input type="number" id="cylcartz" placeholder="Enter the vertical distance between the original point and the projected point">
+                <p>&nbsp;</p></p>
+                <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylcartcal()">Calculate</button>
+                <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
             </form>
-            
         <p>&nbsp;</p>
         <p id="cylcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
         <p>&nbsp;</p>
@@ -20614,13 +20617,16 @@
 <div class="collapse" id="sph">
     <h1 style=" text-align: center; font-family:mathfont">Spherical Coordinate Calculator</h1>
         <p>&nbsp;</p>
-        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Spherical</p>
-        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-            <input type="number" id="cartsphx" width="5em" placeholder="Enter X coordinate"> 
-            <input type="number" id="cartsphy" width="5em" placeholder="Enter Y coordinate">
-            <input type="number" id="cartsphz" width="5em" placeholder="Enter Z coordinate">
-            <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartsphcal()">Calculate</button>
+        <form action="">
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+                <input type="number" id="sphx" width="5em" placeholder="Enter X coordinate"> 
+                <input type="number" id="sphy" width="5em" placeholder="Enter Y coordinate">
+                <input type="number" id="sphz" width="5em" placeholder="Enter Z coordinate">
+                <p>&nbsp;</p></p>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+        </form>
+        
     <p>&nbsp;</p>
     <p id="cartsphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
