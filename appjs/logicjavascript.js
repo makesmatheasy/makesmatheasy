@@ -5718,17 +5718,56 @@ function pointri() {
     y3 = parseFloat(document.getElementById('q7w').value);
     p1 = parseFloat(document.getElementById('q4w').value);
     p2 = parseFloat(document.getElementById('q8w').value);
+    var areaop = document.getElementById("pointoutput");
+    var explaintemp = "";
     var area = Math.abs((x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2.0);
     var area1 = Math.abs((p1 * (y2 - y3) + x2 * (y3 - p2) + x3 * (p2 - y2)) / 2.0);
     var area2 = Math.abs((x1 * (p2 - y3) + p1 * (y3 - y1) + x3 * (y1 - p2)) / 2.0);
     var area3 = Math.abs((x1 * (y2 - p2) + x2 * (p2 - y1) + p1 * (y1 - y2)) / 2.0);
     var areatotal = area1 + area2 + area3;
-    if (area == areatotal) {
-        document.getElementById("pointoutput").innerHTML = "Point is Inside the Triangle"
+    if(!isNaN(x1) && !isNaN(y1) && !isNaN(x2) && !isNaN(y2) && !isNaN(x3) && !isNaN(y3) && !isNaN(p1) && !isNaN(p2)){
+        if (area != 0){
+            explaintemp += "\\[Area \\space of \\space Triangle (ABC)  = \\space  \\frac{1}{2} | \\space x1(y2-y3) \\space + x2(y3-y1) + x3(y1-y2) | \\] ";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") ((" + y2 + ") - (" + y3 + ")) + (" + x2 + ") ((" + y3 + ") - (" + y1 + ")) + (" + x3 + ") ((" + y1 + ") - (" + y2 + ")) | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") \\times (" + (y2 - y3) + ") + (" + x2 + ") \\times (" + (y3 - y1) + ") + (" + x3 + ") \\times (" + (y1 - y2) + ") \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (x1 * (y2 - y3)) + ") + (" + (x2 * (y3 - y1)) + ") + (" + (x3 * (y1 - y2)) + ") | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (area) + ") | \\]";
+            explaintemp += "\\[Area \\space of \\space Triangle (PAB)  = \\space  \\frac{1}{2} | \\space p1(y2-y3) \\space + x2(y3-p2) + x3(p2-y2) | \\] ";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + p1 + ") ((" + y2 + ") - (" + y3 + ")) + (" + x2 + ") ((" + y3 + ") - (" + p2 + ")) + (" + x3 + ") ((" + p2 + ") - (" + y2 + ")) | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + p1 + ") \\times (" + (y2 - y3) + ") + (" + x2 + ") \\times (" + (y3 - p2) + ") + (" + x3 + ") \\times (" + (p2 - y2) + ") \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (p1 * (y2 - y3)) + ") + (" + (x2 * (y3 - p2)) + ") + (" + (x3 * (p2 - y2)) + ") | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (area1) + ") | \\]";
+            explaintemp += "\\[Area \\space of \\space Triangle (PBC)  = \\space  \\frac{1}{2} | \\space x1(p2-y3) \\space + p1(y3-y1) + x3(y1-y2) | \\] ";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") ((" + p2 + ") - (" + y3 + ")) + (" + p1 + ") ((" + y3 + ") - (" + y1 + ")) + (" + x3 + ") ((" + y1 + ") - (" + p2 + ")) | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") \\times (" + (p2 - y3) + ") + (" + p1 + ") \\times (" + (y3 - y1) + ") + (" + x3 + ") \\times (" + (y1 - p2) + ") \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (x1 * (p2 - y3)) + ") + (" + (p1 * (y3 - y1)) + ") + (" + (x3 * (y1 - p2)) + ") | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (area2) + ") | \\]";
+            explaintemp += "\\[Area \\space of \\space Triangle (PAC)  = \\space  \\frac{1}{2} | \\space x1(y2-p2) \\space + x2(p2-y1) + p1(y1-y2) | \\] ";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") ((" + y2 + ") - (" + p2 + ")) + (" + x2 + ") ((" + p2 + ") - (" + y1 + ")) + (" + p1 + ") ((" + y1 + ") - (" + y2 + ")) | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") \\times (" + (y2 - p2) + ") + (" + x2 + ") \\times (" + (p2 - y1) + ") + (" + p1 + ") \\times (" + (y1 - y2) + ") \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (x1 * (y2 - p2)) + ") + (" + (x2 * (p2 - y1)) + ") + (" + (p1 * (y1 - y2)) + ") | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (area3) + ") | \\]";
+            explaintemp += "\\[Area \\space of \\space Triangle (PAB) \\space + \\space Area \\space of \\space Triangle (PBC) \\space + \\space Area \\space of \\space Triangle (PAC) \\space = \\space " + areatotal + " \\]"
+           
+            areaop.innerHTML = explaintemp;
+        }
+       if (area == areatotal) {
+        explaintemp += "\\[\\space Area \\space of \\space Triangle (ABC) \\space = Total \\space Area \\space (PAB + PAC + PBC) \\]"
+        explaintemp += "\\[Point \\space is \\space Inside \\space the \\space Triangle \\]"
+        areaop.innerHTML = explaintemp;
     }
     else {
-        document.getElementById("pointoutput").innerHTML = "Point is Not Inside the Triangle"
+        explaintemp += "\\[\\space Area \\space of \\space Triangle (ABC) \\space != Total \\space Area \\space (PAB + PAC + PBC) \\]"
+        explaintemp += "\\[Point \\space is \\space NOT \\space Inside \\space the \\space Triangle \\]"
+        areaop.innerHTML = explaintemp;
     }
+}
+    else{
+    explaintemp += "\\[Please \\space enter \\space all \\space fields \\]";
+    areaop.innerHTML = explaintemp;
+
+}
+renderMathInElement(areaop);
 }
 
 function pointcir() {
