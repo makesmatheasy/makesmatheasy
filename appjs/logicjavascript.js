@@ -14593,10 +14593,16 @@ function cal_func_stats() {
 }
 
 //sum of nterms of an Arithmetic Progression
-function sum_n_apsol(nval, rval, r1val) {
-    var n = document.getElementById(nval).value;
-    var a = document.getElementById(rval).value;
-    var d = document.getElementById(r1val).value;
+function calcexsum_n_apsol(){
+    var n = document.getElementById("napterms").value = 5;
+    var a = document.getElementById("rapterms").value = 2;
+    var d = document.getElementById("r1val").value = 3;
+    sum_n_apsol();
+}
+function sum_n_apsol() {
+    var n = document.getElementById("napterms").value;
+    var a = document.getElementById("rapterms").value;
+    var d = document.getElementById("r1val").value;
     var res = document.getElementById("sum_APsolprint");
     var explain = document.getElementById("sumAP_formula");
     var printseries = document.getElementById("printAPseries");
@@ -14629,6 +14635,12 @@ function sum_n_apsol(nval, rval, r1val) {
     }
 }
 //If first term,number of terms and last term is given
+function calcexanotherap(){
+    var n = document.getElementById("numterms").value = 5;
+    var a = document.getElementById("ft").value = 2;
+    var l = document.getElementById("lt").value = 14;
+    anotherap();
+}
 function anotherap() {
     var n = document.getElementById("numterms").value
     var a = document.getElementById("ft").value
@@ -14917,6 +14929,11 @@ function amsol() {
     renderMathInElement(result);
 }
 
+function calcexhmgm(){
+    var am = document.getElementById("am11").value=2;
+    var gm = document.getElementById("gm11").value=3;
+    hmgm();
+}
 function hmgm() {
     var am = parseFloat(document.getElementById("am11").value)
     var gm = parseFloat(document.getElementById("gm11").value)
@@ -15112,6 +15129,11 @@ function phi5(n) {
     return result;
 }
 //Harmonic Mean
+function calcexhmsol(){
+    var a = document.getElementById("aval2").value=2;
+    var c = document.getElementById("cval2").value=6;
+    hmsol();
+}
 function hmsol() {
     var a = parseInt(document.getElementById("aval2").value)
     var c = parseInt(document.getElementById("cval2").value)
