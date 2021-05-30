@@ -20041,8 +20041,8 @@ function convertdec2421() {
     }else if(type === "Octal" && type1 === "2421 Code"){
         var x = "_";
         var y = "";
-        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space binaoctalry \\space to \\space decimal \\]";
-        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 2).toString() + "\\]";
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space octal \\space to \\space decimal \\]";
+        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 8).toString() + "\\]";
         input = parseInt(input,8).toString();
         print +="\\[\\space Add \\space 6 \\space to \\space the \\space digit \\space if \\space it \\space is \\space >4 and \\space then \\]";
         print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
