@@ -22325,6 +22325,42 @@ function recinsemifind() {
     }
     renderMathInElement(result);
 }
+
+function cirrecfind() {
+    let r = parseInt(document.getElementById("cirrec").value)
+    let result = document.getElementById("cirrecans")
+    let temp = "";
+    if (!isNaN(r)) {
+        if (r < 0) {
+            temp += "\\[Radius \\space cannot \\space be \\space negative\\]"
+            result.innerHTML = temp;
+        }
+        else {
+            let rectangles = 0;
+            let diameter = 2 * r;
+            let diameterSquare = diameter *diameter;
+            for (let a = 1;a < 2 * r; a++)
+            {
+                for (let b = 1;
+                    b < 2 * r; b++)
+                {
+                    let diagnalLengthSquare = (a * a +b * b);
+                    if (diagnalLengthSquare <= diameterSquare)
+                    {
+                        rectangles++;
+                    }
+                }
+            }
+            temp+="\\[Number \\space of \\space rectangles="+rectangles+"\\]"
+            result.innerHTML = temp;
+        }
+    }
+    else {
+        temp += "\\[Please \\space enter \\space valid \\space input \\]"
+        result.innerHTML = temp;
+    }
+    renderMathInElement(result);
+}
 //Hyperbolic trignometric ratios
 function hypertrigno() {
     var i = (document.getElementById("hypertrignoin").value);
