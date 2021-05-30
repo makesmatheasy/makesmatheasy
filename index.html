@@ -7338,109 +7338,141 @@
             </div>
             <br><br>
             <h3>Equation of a plane</h3><br>
-            <div class="coll">
-                <p>
-                    Point A = (<input type="text" id="va1" size=5 value='' placeholder="Ax"> , 
-                <input type="text" id="va2" size=5 value='' placeholder="Ay"> , <input type="text" id="va3" size=5 value='' placeholder="Az">)
-                        <br><br>
-                    Point B = (<input type="text" id="vb1" size=5 value='' placeholder="Bx"> , 
-                <input type="text" id="vb2" size=5 value='' placeholder="By"> , <input type="text" id="vb3" size=5 value='' placeholder="Bz">)
-                        <br><br>
-                    Point C = (<input type="text" id="vc1" size=5 value='' placeholder="Cx"> , 
-                <input type="text" id="vc2" size=5 value='' placeholder="Cy"> , <input type="text" id="vc3" size=5 value='' placeholder="Cz">)
-                        <br><br>
-                <button type="button" class="btn btn-light" onclick=equationplanesolve()>
-                    Find 
-                </button><br>
-                </p>
-            </div><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Point A = (<input type="text" id="va1" size=5 value='' placeholder="Ax"> , 
+                    <input type="text" id="va2" size=5 value='' placeholder="Ay"> , <input type="text" id="va3" size=5 value='' placeholder="Az">)
+                            <br><br>
+                        Point B = (<input type="text" id="vb1" size=5 value='' placeholder="Bx"> , 
+                    <input type="text" id="vb2" size=5 value='' placeholder="By"> , <input type="text" id="vb3" size=5 value='' placeholder="Bz">)
+                            <br><br>
+                        Point C = (<input type="text" id="vc1" size=5 value='' placeholder="Cx"> , 
+                    <input type="text" id="vc2" size=5 value='' placeholder="Cy"> , <input type="text" id="vc3" size=5 value='' placeholder="Cz">)
+                            <br><br>
+                    <button type="button" class="btn btn-light" onclick=equationplanesolve()>
+                        Find 
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset 
+                    </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <h4 style="color:white" id="eqop"> </h4><br> 
             <h3>Distance between two Points</h3><br>
-            <div class="coll">
-                <p>
-                    Point A = (<input type="text" id="valx1" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="valy1" size=5 value='' placeholder="y1"> , <input type="text" id="valz1" size=5 value='' placeholder="z1">)
-                        <br><br>
-                    Point B = (<input type="text" id="valx2" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="valy2" size=5 value='' placeholder="y2"> , <input type="text" id="valz2" size=5 value='' placeholder="z2">)
-                        <br><br>
-                <button type="button" class="btn btn-light" onclick=disttwopntsolve()>
-                    Find 
-                </button><br>
-                </p>
-            </div><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Point A = (<input type="text" id="valx1" size=5 value='' placeholder="x1"> , 
+                    <input type="text" id="valy1" size=5 value='' placeholder="y1"> , <input type="text" id="valz1" size=5 value='' placeholder="z1">)
+                            <br><br>
+                        Point B = (<input type="text" id="valx2" size=5 value='' placeholder="x2"> , 
+                    <input type="text" id="valy2" size=5 value='' placeholder="y2"> , <input type="text" id="valz2" size=5 value='' placeholder="z2">)
+                            <br><br>
+                    <button type="button" class="btn btn-light" onclick=disttwopntsolve()>
+                        Find 
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset 
+                    </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p id="dope" style="font-family:mathfont;;width:auto;"
                 class="stopwrap"></p>
                 <h4 style="color:white; text-align: center;" id="dope1"> </h4> 
             <h3>Distance from point to plane calculator</h3><br>
-            <div class="coll">
-                <p>
-                    Plane Equation :   <input type="text" id="a1s" size=3 value='' placeholder="A">  x  +
-                <input type="text" id="b1s" size=3 value='' placeholder="B"> y + <input type="text" id="c1s" size=3 value='' placeholder="C"> z + <input type="text" id="d1s" size=3 value='' placeholder="D">  = 0
-                    <br><br>
-                    Point M = (<input type="text" id="mx1" size=5 value='' placeholder="Mx"> , 
-                <input type="text" id="my1" size=5 value='' placeholder="My"> , <input type="text" id="mz1" size=5 value='' placeholder="Mz">)
-                        <br>
-                        <br>
-                <button type="button" class="btn btn-light" onclick=displanesolve()>
-                    Calculate Distance
-                </button><br>
-                </p>
-            </div><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Plane Equation :   <input type="text" id="a1s" size=3 value='' placeholder="A">  x  +
+                    <input type="text" id="b1s" size=3 value='' placeholder="B"> y + <input type="text" id="c1s" size=3 value='' placeholder="C"> z + <input type="text" id="d1s" size=3 value='' placeholder="D">  = 0
+                        <br><br>
+                        Point M = (<input type="text" id="mx1" size=5 value='' placeholder="Mx"> , 
+                    <input type="text" id="my1" size=5 value='' placeholder="My"> , <input type="text" id="mz1" size=5 value='' placeholder="Mz">)
+                            <br>
+                            <br>
+                    <button type="button" class="btn btn-light" onclick=displanesolve()>
+                        Calculate Distance
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset 
+                    </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p id="planept" style="display:flex;font-family:mathfont;;width:auto;"
                 class="stopwrap"
                align="right"></p>
             <h4 style="color:white" id="displanept"> </h4><br> 
             <h4>Distance between perpendicular line and plane </h4>
-            <input type="text" id="la" placeholder="Enter 1st dr of line ">
-            <input type="text" id="lb" placeholder="Enter 2nd dr of line ">
-            <input type="text" id="lc" placeholder="Enter 3rd dr of line ">
-            <input type="text" id="cor1" placeholder="Enter x coordinate of a point ">
-            <input type="text" id="cor2" placeholder="Enter y coordinate of a point ">
-            <input type="text" id="cor3" placeholder="Enter z coordinate of a point ">
-            <br>
-            <input type="text" id="pa" placeholder="Enter 1st dr of plane ">
-            <input type="text" id="pb" placeholder="Enter 2nd dr of plane ">
-            <input type="text" id="pc" placeholder="Enter 3rd dr of plane ">
-            <input type="text" id = "d" placeholder="Enter d of plane">
-            <br>
-            <button type="submit" onclick="dlp()">Find</button>
-
+            <form action="">
+                <input type="text" id="la" placeholder="Enter 1st dr of line ">
+                <input type="text" id="lb" placeholder="Enter 2nd dr of line ">
+                <input type="text" id="lc" placeholder="Enter 3rd dr of line ">
+                <input type="text" id="cor1" placeholder="Enter x coordinate of a point ">
+                <input type="text" id="cor2" placeholder="Enter y coordinate of a point ">
+                <input type="text" id="cor3" placeholder="Enter z coordinate of a point ">
+                <br>
+                <input type="text" id="pa" placeholder="Enter 1st dr of plane ">
+                <input type="text" id="pb" placeholder="Enter 2nd dr of plane ">
+                <input type="text" id="pc" placeholder="Enter 3rd dr of plane ">
+                <input type="text" id = "d" placeholder="Enter d of plane">
+                <br>
+                <button type="submit" onclick="dlp()">Find</button>
+                <button type="submit" onclick="this.form.reset();">Reset</button>    
+            </form>
+            
             <h5 id="dlpans"></h5>
             <br>
             <h4>Section Formula</h4>
-            <input type="text" id="corx1" placeholder="Enter x-coordinate of first point" class="form__field">
-            <input type="text" id="cory1" placeholder="Enter y-coordinate of first point" class="form__field">
-            <input type="text" id="corz1" placeholder="Enter z-coordinate of first point" class="form__field">
-            <input type="text" id="corx2" placeholder="Enter x-coordinate of second point" class="form__field">
-            <input type="text" id="cory2" placeholder="Enter y-coordinate of second point" class="form__field">
-            <input type="text" id="corz2" placeholder="Enter z-coordinate of second point" class="form__field">
-            <input type="text" id="rat"placeholder="Enter ratio" class="form__field">
-            <br>
-            <button onclick="sec3dfind()" class="btn btn-dark">Find</button>
+            <form action="">
+                <input type="text" id="corx1" placeholder="Enter x-coordinate of first point" class="form__field">
+                <input type="text" id="cory1" placeholder="Enter y-coordinate of first point" class="form__field">
+                <input type="text" id="corz1" placeholder="Enter z-coordinate of first point" class="form__field">
+                <input type="text" id="corx2" placeholder="Enter x-coordinate of second point" class="form__field">
+                <input type="text" id="cory2" placeholder="Enter y-coordinate of second point" class="form__field">
+                <input type="text" id="corz2" placeholder="Enter z-coordinate of second point" class="form__field">
+                <input type="text" id="rat"placeholder="Enter ratio" class="form__field">
+                <br>
+                <button onclick="sec3dfind()" class="btn btn-dark">Find</button>
+                <button onclick="this.form.reset();" class="btn btn-dark">Reset</button>
+            </form>
+            
             <br>
             <h5 id="sec3dans"></h5>
             <br>
             <h3>Distance between two planes calculator</h3><br>
-            <div class="coll">
-                <p>
-                    Plane Equation 1:   <input type="text" id="da1" size=3 value='' placeholder="A1">  x  +
-                <input type="text" id="db1" size=3 value='' placeholder="B1"> y + <input type="text" id="dc1" size=3 value='' placeholder="C1"> z + <input type="text" id="dd1" size=3 value='' placeholder="D1">  = 0
-                    <br><br>
-                    Plane Equation 2:   <input type="text" id="da2" size=3 value='' placeholder="A2">  x  +
-                <input type="text" id="db2" size=3 value='' placeholder="B2"> y + <input type="text" id="dc2" size=3 value='' placeholder="C2"> z + <input type="text" id="dd2" size=3 value='' placeholder="D2">  = 0
-                        <br>
-                        <br>
-                <button type="button" class="btn btn-light" onclick=solvetwoplane()>
-                    Find Distance
-                </button><br>
-                </p>
-            </div><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Plane Equation 1:   <input type="text" id="da1" size=3 value='' placeholder="A1">  x  +
+                    <input type="text" id="db1" size=3 value='' placeholder="B1"> y + <input type="text" id="dc1" size=3 value='' placeholder="C1"> z + <input type="text" id="dd1" size=3 value='' placeholder="D1">  = 0
+                        <br><br>
+                        Plane Equation 2:   <input type="text" id="da2" size=3 value='' placeholder="A2">  x  +
+                    <input type="text" id="db2" size=3 value='' placeholder="B2"> y + <input type="text" id="dc2" size=3 value='' placeholder="C2"> z + <input type="text" id="dd2" size=3 value='' placeholder="D2">  = 0
+                            <br>
+                            <br>
+                    <button type="button" class="btn btn-light" onclick=solvetwoplane()>
+                        Find Distance
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <h4 style="color:white" id="dplane"> </h4> <br>
             <p id="dplane_work"></p>
 
             
             <h3 style="text-align: center;">Angle between planes calculator</h3><br>
+            <form action="">
             <div class="coll">
                 <p>
                     Plane Equation 1:   <input type="text" id="pa1" size=3 value='' placeholder="A1">  x  +
@@ -7452,50 +7484,67 @@
                         <br>
                 <button type="button" class="btn btn-light" onclick=angletwoplanesolve()>
                     Find Angle
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
                 </button><br>
                 </p>
-            </div><br>
+            </div>
+            </form>
+            <br>
             <p id="angleplane" style="font-family:mathfont;;width:auto;"
                 class="stopwrap"></p>
             <h4 style="color:white; text-align: center;" id="angleplaneop"> </h4> 
 <br><br>
             
                 <h3 style="text-align: center;">Centroid of a Tetrahedron</h3>
+            <form action="">
                 <div class= "coll">
-             <p>
-              Coordinate 1 = (<input type="text" id="a1m" size=5 value='' placeholder="x1"> , 
-              <input type="text" id="a2m" size=5 value='' placeholder="y1">, <input type="text" id="a3m" size=5 value='' placeholder="z1">)
-             <br>
-              Coordinate 2 = (<input type="text" id="a4m" size=5 value='' placeholder="x2"> , 
-             <input type="text" id="a5m" size=5 value='' placeholder="y2">, <input type="text" id="a6m" size=5 value='' placeholder="z2">)
-             <br>
-            Coordinate 3 = (<input type="text" id="a7m" size=5 value='' placeholder="x3"> , 
-             <input type="text" id="a8m" size=5 value='' placeholder="y3">, <input type="text" id="a9m" size=5 value='' placeholder="z3">)
-             <br>
-            Coordinate 4 = (<input type="text" id="a10m" size=5 value='' placeholder="x4"> , 
-            <input type="text" id="a11m" size=5 value='' placeholder="y4">, <input type="text" id="a12m" size=5 value='' placeholder="z4">)
-             <br><br>
-            <button type="button" class="btn btn-light" onclick=centsolve1()>
-             Find Centroid
-            </button><br>
-            </p>
-            </div>
+                    <p>
+                     Coordinate 1 = (<input type="text" id="a1m" size=5 value='' placeholder="x1"> , 
+                     <input type="text" id="a2m" size=5 value='' placeholder="y1">, <input type="text" id="a3m" size=5 value='' placeholder="z1">)
+                    <br>
+                     Coordinate 2 = (<input type="text" id="a4m" size=5 value='' placeholder="x2"> , 
+                    <input type="text" id="a5m" size=5 value='' placeholder="y2">, <input type="text" id="a6m" size=5 value='' placeholder="z2">)
+                    <br>
+                   Coordinate 3 = (<input type="text" id="a7m" size=5 value='' placeholder="x3"> , 
+                    <input type="text" id="a8m" size=5 value='' placeholder="y3">, <input type="text" id="a9m" size=5 value='' placeholder="z3">)
+                    <br>
+                   Coordinate 4 = (<input type="text" id="a10m" size=5 value='' placeholder="x4"> , 
+                   <input type="text" id="a11m" size=5 value='' placeholder="y4">, <input type="text" id="a12m" size=5 value='' placeholder="z4">)
+                    <br><br>
+                   <button type="button" class="btn btn-light" onclick=centsolve1()>
+                    Find Centroid
+                   </button>
+                   <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                       Reset
+                   </button><br>
+                   </p>
+                   </div>
+            </form>
+            
              <h4 id="centres" style="color: white;"></h4>
             <h4 class="text-center" id="line22"> </h4> <br>
             <h3>3-D Distance Calculator</h3><br>
-            <div class="coll">
-                <p>
-                    Point A = (<input type="text" id="3dinputx1" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="3dinputy1" size=5 value='' placeholder="y1"> , <input type="text" id="3dinputz1" size=5 value='' placeholder="z1">)
-                        <br><br>
-                    Point B = (<input type="text" id="3dinputx2" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="3dinputy2" size=5 value='' placeholder="y2"> , <input type="text" id="3dinputz2" size=5 value='' placeholder="z2">)
-                        <br><br>
-                <button type="button" class="btn btn-light" onclick=threedissolve()>
-                    Find 
-                </button><br>
-                </p>
-            </div><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Point A = (<input type="text" id="3dinputx1" size=5 value='' placeholder="x1"> , 
+                    <input type="text" id="3dinputy1" size=5 value='' placeholder="y1"> , <input type="text" id="3dinputz1" size=5 value='' placeholder="z1">)
+                            <br><br>
+                        Point B = (<input type="text" id="3dinputx2" size=5 value='' placeholder="x2"> , 
+                    <input type="text" id="3dinputy2" size=5 value='' placeholder="y2"> , <input type="text" id="3dinputz2" size=5 value='' placeholder="z2">)
+                            <br><br>
+                    <button type="button" class="btn btn-light" onclick=threedissolve()>
+                        Find 
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset 
+                    </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
             <p id="opdis" style="display:flex;font-family:mathfont;;width:auto;"
                 class="stopwrap"
                text-align="right"></p>
@@ -11871,27 +11920,31 @@
         <div class="collapse" id="volume">
             <h2 style="color: var(--appimage);">Volumetric Weight Calculator</h2>
             <br>
-            <div class="form-group">
-                <input type="text" class="form__field" name="a"
-                       id="length_vol"
-                       placeholder="Enter length in centimeters"/>
-               <br>
-               <br>
-                <input type="text" class="form__field" name="w"
-                       id="width_vol"
-                       placeholder="Enter width in centimeters"/>
-                <br>
-                <br>
-                <input type="text" class="form__field" name="h"
-                       id="height_vol"
-                       placeholder="Enter height in centimeters"/>
-                <br>
-                <br>
-                <button class="btn btn-outline-light" onclick="volweight()">Calculate</button>
-                <br><br><br>
-                <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
-                font-family:mathfont;" id="volweightAns"></p>
-            </div>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" class="form__field" name="a"
+                           id="length_vol"
+                           placeholder="Enter length in centimeters"/>
+                   <br>
+                   <br>
+                    <input type="text" class="form__field" name="w"
+                           id="width_vol"
+                           placeholder="Enter width in centimeters"/>
+                    <br>
+                    <br>
+                    <input type="text" class="form__field" name="h"
+                           id="height_vol"
+                           placeholder="Enter height in centimeters"/>
+                    <br>
+                    <br>
+                    <button class="btn btn-outline-light" onclick="volweight()">Calculate</button>
+                    <button class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                    <br><br><br>
+                    <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                    font-family:mathfont;" id="volweightAns"></p>
+                </div>
+            </form>
+            
         </div>
         <div class="collapse" id="per_chng_vol">
             <h2 style="color: var(--appimage);">Percentage change in Volume of a Sphere</h2><br>
@@ -11913,9 +11966,13 @@
             </div><br>
             <h2 style="color: var(--appimage);">Percentage change in Volume of a Cube</h2><br>
             <div class="form-group">
-                <input type="text" style="width: 15.625rem;" class="form__field" name="a"
+                <form action="">
+                    <input type="text" style="width: 15.625rem;" class="form__field" name="a"
                     id="chngsidecube" placeholder="Enter the percentage change in the side of a cube"/><br><br>
-                    <button class="btn btn-outline-light" onclick="volofcube()">Calculate</button><br><br>
+                    <button class="btn btn-outline-light" onclick="volofcube()">Calculate</button>
+                    <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button><br><br><br>
+                </form>
+                
                     <p class="stopwrap" id="cubeAns"
                     style="font-family:mathfont;"></p><br>
                     <p class="stopwrap" id="cubeAns1"
@@ -11927,13 +11984,17 @@
             </div><br>
             <h2 style="color: var(--appimage);">Percentage change in Volume of a Cuboid</h2><br>
             <div class="form-group">
-                <input type="text" class="form__field" name="a"
-                       id="chnglengthcuboid" placeholder="Enter the change in the length of the cuboid"/><br><br>
-                <input type="text" class="form__field" name="a"
-                       id="chngbreadthcuboid" placeholder="Enter the change in the breadth of the cuboid"/><br><br>
-                <input type="text" class="form__field" name="a"
-                       id="chngheightcuboid" placeholder="Enter the change in the height of the cuboid"/><br><br>
-                <button class="btn btn-outline-light" onclick="volofcuboid()">Calculate</button> <br><br><br>
+                <form action="">
+                    <input type="text" class="form__field" name="a"
+                    id="chnglengthcuboid" placeholder="Enter the change in the length of the cuboid"/><br><br>
+             <input type="text" class="form__field" name="a"
+                    id="chngbreadthcuboid" placeholder="Enter the change in the breadth of the cuboid"/><br><br>
+             <input type="text" class="form__field" name="a"
+                    id="chngheightcuboid" placeholder="Enter the change in the height of the cuboid"/><br><br>
+             <button class="btn btn-outline-light" onclick="volofcuboid()">Calculate</button> 
+             <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button><br><br><br><br>
+                </form>
+                
                             <p class="stopwrap" id="cuboidAns"
                                style="font-family:mathfont;"></p><br>
                             <p class="stopwrap" id="cuboidAns1"
@@ -16172,9 +16233,13 @@
                 Faulhaber polynomials for odd powers described below
             </p>
             <br>
-            <input type="text" id="faulin"placeholder="Enter power of series">
-            <br>
-            <button onclick="faulfind()" class="btn btn-dark">Find</button>
+            <form action="">
+                <input type="text" id="faulin"placeholder="Enter power of series">
+                <br>
+                <button onclick="faulfind()" class="btn btn-dark">Find</button>
+                <button onclick="this.form.reset();" class="btn btn-dark">Reset</button>
+            </form>
+            
             <br>
             <p id="faulans"></p>
         </div>
@@ -28229,34 +28294,38 @@ N is the population size.
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <!-- added div with class container -->
-                    <div class="conatiner">
-                        <div class="row">
-                            <div class="col-6">
-                                <h5 class="text-center">Volume</h5>
-                                <p class="text-center">\[V = 2\pi^{2} r^{3} \]</p>
-                                <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Area</h5>
-                                <p class="text-center">\[A = 16 \pi r^{2}\]</p>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/368/996/datas/gallery.jpg" class="img-fluid">
+                <form action="">
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = 2\pi^{2} r^{3} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = 16 \pi r^{2}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/368/996/datas/gallery.jpg" class="img-fluid">
+                                    </div>
                                 </div>
                             </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number" oninput="glomefind()" placeholder="Enter side (r)" id="inputsideglome"><br><br>
+                            <p class="stopwrap" id="resultofvolglome"
+                               style="font-family:mathfont;"></p><br>                      
+                            <p class="stopwrap" id="resultofareaglome"
+                               style="font-family:mathfont;"></p><br>
                         </div>
-                        <div class="dropdown-divider"></div>
-                        <input class="form__field" type="number" oninput="glomefind()" placeholder="Enter side (r)" id="inputsideglome"><br><br>
-                        <p class="stopwrap" id="resultofvolglome"
-                           style="font-family:mathfont;"></p><br>                      
-                        <p class="stopwrap" id="resultofareaglome"
-                           style="font-family:mathfont;"></p><br>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></div>
-            </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset</button>
+                    </div>
+                </form>
+                
         </div>
     </div>
 
@@ -29850,46 +29919,50 @@ N is the population size.
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <!-- added div with class container -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6">
-                                <h5 class="text-center">Surface Area</h5>
-                                <p class="text-center">\[A = 24 \space a^2 \]</p>
-                                <p class="text-center">a = edge length</p>
-                                <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Surface Volume</h5>
-                                <p class="text-center">\[V = 8 \space a^3 \]</p>
-                                <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Hypervolume</h5>
-                                <p class="text-center">\[H = a^4 \]</p>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <img src="images/tesseract.png" class="img-fluid">
+                <form action="">
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[A = 24 \space a^2 \]</p>
+                                    <p class="text-center">a = edge length</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Volume</h5>
+                                    <p class="text-center">\[V = 8 \space a^3 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Hypervolume</h5>
+                                    <p class="text-center">\[H = a^4 \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/tesseract.png" class="img-fluid">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="dropdown-divider"></div>
-                        <!-- --------FROM------- -->
-                        <input class="form__field" type="number"
-                               placeholder="Enter edge length of tesseract (a)" id="inputtessedge"
-                               oninput="solvetesseract();">
-                        <p class="stopwrap" id="resultoftessarea"
-                            style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultoftessvol"
-                            style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultoftesshypvol"
-                            style="font-family:mathfont;"></p>
-                      </div>
-                    <!-- ------HERE------ -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Close
-                    </button>
-                </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length of tesseract (a)" id="inputtessedge"
+                                   oninput="solvetesseract();">
+                            <p class="stopwrap" id="resultoftessarea"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftessvol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftesshypvol"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset</button>
+                    </div>
+                </form>
+                
             </div>
         </div>
     </div>
@@ -29904,46 +29977,50 @@ N is the population size.
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <!-- added div with class container -->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6">
-                                <h5 class="text-center">Diameter</h5>
-                                <p class="text-center">\[d = 2 \space r \]</p>
-                                <p class="text-center">r = radius</p>
-                                <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Surface Volume</h5>
-                                <p class="text-center">\[V = 2 \space π^2 \space r^3 \]</p>
-                                <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Hypervolume</h5>
-                                <p class="text-center">\[H = \frac{π^2}{2} \space r^4 \]</p>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <img src="images/hypersphere.png" class="img-fluid">
+                <form action="">
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Diameter</h5>
+                                    <p class="text-center">\[d = 2 \space r \]</p>
+                                    <p class="text-center">r = radius</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Volume</h5>
+                                    <p class="text-center">\[V = 2 \space π^2 \space r^3 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Hypervolume</h5>
+                                    <p class="text-center">\[H = \frac{π^2}{2} \space r^4 \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/hypersphere.png" class="img-fluid">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="dropdown-divider"></div>
-                        <!-- --------FROM------- -->
-                        <input class="form__field" type="number"
-                               placeholder="Enter edge length of tesseract (a)" id="inputhypsphrad"
-                               oninput="solvehypsphere();">
-                        <p class="stopwrap" id="resultofhypsphdia"
-                            style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofhypsphvol"
-                            style="font-family:mathfont;"></p>
-                        <p class="stopwrap" id="resultofhypsphhypvol"
-                            style="font-family:mathfont;"></p>
-                      </div>
-                    <!-- ------HERE------ -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Close
-                    </button>
-                </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length of tesseract (a)" id="inputhypsphrad"
+                                   oninput="solvehypsphere();">
+                            <p class="stopwrap" id="resultofhypsphdia"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhypsphvol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofhypsphhypvol"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset</button>
+                    </div>
+                </form>
+                
             </div>
         </div>
     </div>
