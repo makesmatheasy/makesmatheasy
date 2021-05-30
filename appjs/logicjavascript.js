@@ -13810,7 +13810,8 @@ function cirinsemi11find(){
     let N = n * 1.0;
     let M = m * 1.0;
     let h = H * Math.sqrt(N / (N + M));
-    document.getElementById("cirinsemi11ans").innerHTML = h;
+    document.getElementById("cirinsemi11ans").innerHTML ="\\["+h.toFixed(3)+"\\]"+"\\[Height \\space for \\space cut \\space = H*\\sqrt{\\frac{n}{n+m}}  \\newline \\space \\space ="+H+"*\\sqrt{\\frac{"+n+"}{"+n+"+"+m+"}}="+H+"*"+Math.sqrt(N / (N + M))+"="+h.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById("cirinsemi11ans"));
 }
 
 function countinfind(){
