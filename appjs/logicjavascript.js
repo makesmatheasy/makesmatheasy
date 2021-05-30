@@ -8677,11 +8677,15 @@ function hollowcuboidsolve() {
     var d = parseFloat(document.getElementById("hollowcuboid-d").value);
     var b = parseFloat(document.getElementById("hollowcuboid-b").value);
     var c = parseFloat(document.getElementById("hollowcuboid-c").value);
+    var volumeField = document.getElementById("hollowcuboid-vol");
+    var surfaceAreaField = document.getElementById("hollowcuboid-area");
     var surfaceArea = 4 * ( a*b + a*c + b*d + c*d - 2*a*d - 2*Math.pow(d, 2));
     var volume = 2*a*d * ( b + c - 2*d );
     if ((!isNaN(a)) && (!isNaN(d)) && (!isNaN(b)) && (!isNaN(c))) {
-        document.getElementById("hollowcuboid-vol").innerHTML = `Volume (V) = ${volume}`;
-        document.getElementById("hollowcuboid-area").innerHTML = `Surface Area (A) = ${surfaceArea}`;
+        volumeField.innerHTML = "\\[Volume \\space (V) = 2"+a+"\\times"+d+" \\times \\left ( "+b+" + "+c+" - 2\\times"+d+" \\right ) = "+ volume.toFixed(3)+" \\space cubic \\space units \\]";
+        surfaceAreaField.innerHTML = "\\[Surface \\space Area (A) = 4 \\times \\left ( "+a+"\\times"+b+" + "+b+"\\times"+c+" + "+c+"\\times"+d+" - 2\\times"+a+""+d+" - 2\\times"+d+"^{2}  \\right ) = "+surfaceArea.toFixed(3)+" \\space sq.units \\]";
+        renderMathInElement(volumeField);
+        renderMathInElement(surfaceAreaField);
     }
 }
 
