@@ -4059,8 +4059,17 @@ function alisum3find(){
 
 function alisum4find(){
     let n = parseInt(document.getElementById("alisum4").value)
-    let ans = (n & 1) ? -1 : 1;
-    document.getElementById("alisum4ans").innerHTML = ans
+    if(!isNaN(n)){
+        let ans = (n & 1) ? -1 : 1;
+        document.getElementById("alisum4exp").innerHTML = "\\[ f(n-1)*f(n+1) - f(n)*f(n)\\]"
+        document.getElementById("alisum4exp").innerHTML = "\\[Where f(n) is the n-th Fibonacci number with n >= 1. \\]"
+        document.getElementById("alisum4exp").innerHTML = "\\[f(n-1)*f(n+1) - f(n*n) = (-1)^n \\]"
+        document.getElementById("alisum4exp").innerHTML = "\\[So, we don’t need to calculate any Fibonacci term,the only thing is to check whether n is even or odd.\\]"
+        document.getElementById("alisum4ans").innerHTML = ans
+        renderMathInElement(document.getElementById("alisum4exp"))
+    }
+    else
+        document.getElementById("alisum4ans").innerHTML = "Please enter valid input"
 }
 
 function Hosoya(n, m)
