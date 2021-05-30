@@ -198,6 +198,7 @@ function openit(id) {
         "#chitest",
         "#leadtest",
         "#takttest",
+        "#throughputtest",
         "#cycletest",
         "#adams",
         "#integralcollapse",

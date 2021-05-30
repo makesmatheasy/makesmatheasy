@@ -22794,6 +22794,33 @@ function taktvalue() {
         
     }
 }
+//throughput time calculator
+function throughputvalue() {
+    var num1 = document.getElementById("process").value; 
+    var num2 = document.getElementById("inspection").value;
+    var num3 = document.getElementById("move").value;
+    var num4 = document.getElementById("queue").value;
+    if(num1==""||num2=="" ||num3=="" ||num4 =="")
+    {
+        document.getElementById("throughputans").innerHTML="Please fill all the fields";
+    }
+    else{
+     num1 =parseFloat(num1);
+     num2 =parseFloat(num2);
+     num3 =parseFloat(num3);
+     num4 =parseFloat(num4);
+     var through=(num1+num2+num3+num4);
+     console.log(num1+" "+num2+" "+num3);
+     var ans="\\[Throughput \\space time \\space = \\space Process \\space time \\space + Inspection \\space time + Move \\space time + Queue \\space time \\]" 
+     ans+="\\["+num1+"+"+num2+" +"+num3+"+"+num4+" \\]"
+     ans+="\\["+(num1+num2+num3+num4).toFixed(4)+" \\]"
+     ans+="\\[ Throughput \\space Time ="+through.toFixed(4)+" \\space minutes \\]"
+     ans+="\\[ ="+(through*60).toFixed(4)+" \\space seconds \\]"
+     document.getElementById("throughputans").innerHTML=ans;
+     renderMathInElement(document.getElementById("throughputans"));
+        
+    }
+}
 
 //cycle time calculator
 function cyclevalue() {
