@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["autoans","disans","gammaprobAns","negbinoans","ackermannResult","nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["proans","autoans","disans","gammaprobAns","negbinoans","ackermannResult","nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -37,6 +37,12 @@ $("#disnumbtn").click(function(){
 // Automorphic Number
 $("#autonumbtn").click(function(){
     openit("#autonum");
+    closenav();
+    clearall();
+});
+// Pronic Number
+$("#pronumbtn").click(function(){
+    openit("#pronum");
     closenav();
     clearall();
 });
@@ -605,6 +611,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#shepbtn").click(function () {
+        openit("#sheppard");
+        closenav();
+        clearall();
+    });
     $("#npbtn").click(function () {
         openit("#npchart");
         closenav();
@@ -619,12 +630,22 @@ $(document).ready(function () {
         openit("#chitest");
         closenav();
         clearall();
-    });   
+    }); 
+    $("#leadbtn").click(function () {
+        openit("#leadtest");
+        closenav();
+        clearall();
+    });    
     $("#taktbtn").click(function () {
         openit("#takttest");
         closenav();
         clearall();
     });   
+    $("#cyclebtn").click(function () {
+        openit("#cycletest");
+        closenav();
+        clearall();
+    }); 
     $("#gammabtn").click(function () {
         openit("#gamma");
         closenav();
@@ -1077,7 +1098,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#sumAndDiffTributton").click(function () {
+    $("#sumAndDiffTribtn").click(function () {
         openit("#sumAndDiffTri");
         closenav();
         clearall();
@@ -1187,12 +1208,6 @@ $(document).ready(function () {
     });
     $("#expgrwth").click(function () {
         openit("#expgrwths");
-        closenav();
-        clearall();
-    });
-    // Permutation and combination
-    $("#pandcbtn").click(function () {
-        openit("#pandc");
         closenav();
         clearall();
     });

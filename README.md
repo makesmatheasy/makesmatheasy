@@ -245,7 +245,8 @@ Other Tech/Libraries
   - Lucas series
   - Types of numbers
   - Disarium Number
-  - Automorphic Number 
+  - Automorphic Number
+  - Pronic Number 
 
 - Basic Convertors
 
@@ -315,6 +316,7 @@ Other Tech/Libraries
   - Shapes Calculator + Written formulas
     - Square
     - Rectangle
+    - Round corner
     - Rhombus
     - Triangles
     	1. Equilateral Triangle
@@ -342,6 +344,7 @@ Other Tech/Libraries
     - H-Shape
     - L-Shape
     - X-Shape
+    - Drop Shape
     - Arbelos
     - Spherical Triangle
 
