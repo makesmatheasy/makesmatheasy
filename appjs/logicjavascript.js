@@ -4012,12 +4012,13 @@ function alisum1find() {
 }
 
 function alisum3find(){
-    let n = parseInt(document.getElementById("alisum3").value)
+    let n = parseInt(document.getElementById("alisum3").value);
+    document.getElementById("alisum3ans").innerHTML = "";
     for (let i = 0; i < n; i++){
         for (let j = 0; j <= i; j++)
-            document.getElementById("alisum3ans").innerHTML =  Hosoya(i, j)+ " ";  
-       
-        document.getElementById("alisum3ans").innerHTML =  "<br/>";
+            document.getElementById("alisum3ans").innerHTML +=  Hosoya(i, j)+ " ";  
+
+        document.getElementById("alisum3ans").innerHTML +=  "<br/>";
     }
 }
 
@@ -4029,11 +4030,10 @@ function alisum4find(){
 
 function Hosoya(n, m)
     {
-        if ((n == 0 && m == 0) ||
-            (n == 1 && m == 0) ||
-            (n == 1 && m == 1) ||
-            (n == 2 && m == 1))
-                return 1;
+        if ((n == 0 && m == 0) || (n == 1 && m == 0) || (n == 1 && m == 1) || (n == 2 && m == 1))
+        {
+            return 1;
+        }
         if (n > m)
             return Hosoya(n - 1, m)+ Hosoya(n - 2, m);
                
