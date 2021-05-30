@@ -16829,6 +16829,10 @@
                            style="text-decoration:none;" href="#">Rhombus</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#roundcorner"
+                           style="text-decoration:none;" href="#">Round corner</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#salinon"
                            style="text-decoration:none;" href="#">Salinon</a></td>
                 </tr>
@@ -25215,6 +25219,62 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="roundcorner" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Round Corner</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Arc length</h5>
+                                    <p class="text-center">\[l = \frac{1}{2} \space π \space a\]</p>
+                                    <p class="text-center">a = edge length, radius</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[p = l + 2 \space a\]</p>
+                                    <p class="text-center">\[ = \frac{1}{2} \space π \space a + 2 \space a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area round corner</h5>
+                                    <p class="text-center">\[A_1 = \frac{1}{4} \space π \space a^2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area missing piece</h5>
+                                    <p class="text-center">\[A_2 = a^2 - A_1\]</p>
+                                    <p class="text-center">\[ = a^2 - \frac{1}{4} \space π \space a^2\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/round-corner.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                       placeholder="Enter edge length/radius (a)" id="inputrndcrnradius"
+                                       oninput="solveroundcorner();">
+                            <p class="stopwrap" id="resultofrndcrnarclen"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrndcrnperi"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrndcrnarea"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrndcrnpiece"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="rhombus" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
