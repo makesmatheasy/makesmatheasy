@@ -5584,6 +5584,36 @@ else{
 renderMathInElement(output);
 }
 
+function pointring() {
+    var r,R,x,y,r1;
+    r= parseFloat(document.getElementById('checkring1').value);
+    R= parseFloat(document.getElementById('checkring2').value);
+    x= parseFloat(document.getElementById('checkring3').value);
+    y= parseFloat(document.getElementById('checkring4').value);
+    r1= parseFloat(document.getElementById('checkring5').value);
+    var output = document.getElementById("pointringans")
+    var ans = "";
+    if (!isNaN(r) && !isNaN(R) && !isNaN(x) && !isNaN(y) && !isNaN(r1) ) {
+        if(r<0 || R<0 || r1<0){
+            ans+="\\[Radius \\space cannot \\space be \\space negative\\]"
+        }
+        else{
+            let dis = Math.sqrt(x * x +y * y);
+            if(dis - r1 >= R && dis + r1 <= r){
+                ans+="\\[Yes, \\space circle \\space  lies \\space completely \\space inside \\space the \\space ring \\space of \\space concentric \\space circle\\]"
+            }
+            else{
+                ans+="\\[No, \\space circle \\space does \\space not \\space lies \\space completely \\space inside \\space the \\space ring \\space of \\space concentric \\space circle\\]"
+            }
+        }
+        output.innerHTML = ans;
+    }
+    else {
+        ans += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = ans;
+    }
+    renderMathInElement(output);
+}
 function pointhyper() {
     var h,k,a,b, x,y;
     h = parseFloat(document.getElementById('checkhyper1').value);
