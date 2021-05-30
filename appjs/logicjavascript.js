@@ -22285,12 +22285,12 @@ function lrccal() {
     var num1 = document.getElementById("setlrx").value;
     var num2 = document.getElementById("setlry").value;
     valid = /^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
-    var s = "";
+    // var s = "";
     if (num1 == "" || num2 == "") {
-        s = "Please enter number";
+        document.getElementById("lrcans").innerHTML = "Please enter number";
     }
     else if (!valid.test(num1 && num2)) {
-        s = "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+        document.getElementById("lrcans").innerHTML = "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
     }
     else {
         num1 = num1.trim();
@@ -22308,9 +22308,10 @@ function lrccal() {
         num2 = num2.split(" ");
         var len2 = parseInt(num2.length);
         if (len1 != len2) {
-            s = "Your datasets X and Y contain different numbers of element";
+            document.getElementById("lrcans").innerHTML = "Your datasets X and Y contain different numbers of element";
         }
         else {
+            let steps = "";
             var number2 = [];
             for (i = 0; i < len2; i++) {
                 number2[i] = parseFloat(num2[i].trim());
@@ -22318,12 +22319,27 @@ function lrccal() {
                 sum2_sq += (number2[i]) ** 2;
                 sum12 += (number1[i] * number2[i]);
             }
+            var temp1 = (sum2 * sum1_sq) - (sum1 * sum12);
+            var temp2 = ((len1 * sum1_sq) - (sum1 ** 2));
             var slope = ((sum2 * sum1_sq) - (sum1 * sum12)) / ((len1 * sum1_sq) - (sum1 ** 2));
+            var temp3 = (len1 * sum12) - (sum1 * sum2);
             var intercept = ((len1 * sum12) - (sum1 * sum2)) / ((len1 * sum1_sq) - (sum1 ** 2));
-            s = "The calculated linear regression is: " + intercept + " + " + slope + " x";
+
+            steps += "\\[slope= \\frac{(("+sum2+"\\times "+sum1_sq+") - ("+sum1+" \\times "+sum12+")) }{(("+len1+" \\times "+sum1_sq+") - ("+sum1+" ^ 2))}\\]";
+            steps += "\\[\\frac{"+temp1+"}{"+temp2+"}\\]";
+            steps += "\\[slope= "+slope+" \\]";
+
+            steps += "\\[Intercept= frac{(("+len1+" \\times "+sum12+") - ("+sum1+" \\times "+sum2+"))}{(("+len1+" \\times "+sum1_sq+") - ("+sum1+" ^ 2))}\\]";
+            steps += "\\[\\frac{"+temp3+"}{"+temp2+"}\\]";
+            steps += "\\[slope= "+intercept+" \\]";
+
+            let reg = intercept + slope;
+            steps += "\\[Linear\\space Regression:\\space Intercept\\times slope \\]";
+            steps += "\\[Linear\\space Regression:\\space "+reg+" \\]";
         }
     }
-    document.getElementById("lrcans").innerHTML = s;
+    document.getElementById("lrcans").innerHTML = steps;
+    renderMathInElement(document.getElementById("lrcans"));
 }
 //Ratio to Percentage
 function ratpercal() {
