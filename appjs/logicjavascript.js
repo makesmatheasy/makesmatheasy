@@ -19741,24 +19741,44 @@ function convertex3() {
     let result = document.getElementById("ex3-result");
     const fromBase = document.getElementById("ex3-select1").value;
     const toBase = document.getElementById("ex3-select2").value;
+    var work = document.getElementById("ex3-work");
+    var print = "\\[\\underline{Working \\space Steps}\\]";
     var x = "_";
 
     if (fromBase === "Decimal" && toBase === "Excess-3") {
+        print += "\\[\\textbf{Converting \\space Decimal \\space Code \\space to \\space Excess-3 \\space Code}\\]"
+        print +="\\[STEP \\space 1 \\space : Add \\space 3 \\space to \\space each \\space digit \\space and \\space then \\]"
+        print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
         for (var i = 0; i < input.length; i++) {
             var y = (parseInt(input[i]) + 3).toString(2);
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + +temp;
             }
         }
+        print +="\\[STEP \\space 2 \\space : \\space Combine \\space the \\space nibbles \\space to \\]"
+        print += "\\[\\space get \\space your \\space result \\space in \\space Excess-3 \\space Code \\]";
+        print +="\\[Result \\space in \\space Excess-3 \\space Code \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     } else if (fromBase === "Binary" && toBase === "Excess-3") {
         r = parseInt(input, 2).toString();
         for (var i = 0; i < r.length; i++) {
@@ -19914,8 +19934,6 @@ function convertex3() {
     } else if (fromBase === "Binary" && input.search(/^[10]+$/) == -1) {
         x = "Binary code can only have 0's and 1's";
     }
-
-    result.innerHTML = x;
 }
 
 //Function which performs conversion of Decimal to 2421
