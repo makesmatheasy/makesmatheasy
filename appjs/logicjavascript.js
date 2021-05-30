@@ -14804,7 +14804,11 @@ function mngpsum() {
 }
 
 
-
+function calcexgmsol(){
+    var a = document.getElementById("aval1").value = 2;
+    var c = document.getElementById("cval1").value = 8;
+    gmsol();
+}
 
 function gmsol() {
     var a = parseInt(document.getElementById("aval1").value)
