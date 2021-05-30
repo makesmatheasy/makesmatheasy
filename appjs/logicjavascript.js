@@ -24152,9 +24152,14 @@ function antilogCal(){
     }
     else{
         let ans = Math.pow(base,val); //trick to find antilog
-        output.innerHTML = "Antilog of " + val + " with base " + base + " is " + ans;
-    }
+        let steps  = "";
+        steps += "\\[ y\\space =\\space log_b(x) \\]";
+        steps += "\\[x\\space =\\space log_b^{-1}(y)\\space =\\space b ^ y\\]";
+        steps += "\\[=\\space "+ans+"\\]";
 
+        output.innerHTML = steps;
+    }
+    renderMathInElement(output);
 }
 function logbaseCal(){
     let a = document.getElementById("logbasea").value;
