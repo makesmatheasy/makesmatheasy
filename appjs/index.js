@@ -195,6 +195,7 @@ function openit(id) {
         "#kaps",
         "#chitest",
         "#takttest",
+        "#cycletest",
         "#adams",
         "#integralcollapse",
         "#integration-idencollapse",

@@ -620,6 +620,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#cyclebtn").click(function () {
+        openit("#cycletest");
+        closenav();
+        clearall();
+    }); 
     $("#gammabtn").click(function () {
         openit("#gamma");
         closenav();
