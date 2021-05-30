@@ -14550,22 +14550,31 @@ function typenum12find() {
 
 function typenum16find(){
     var n = parseInt(document.getElementById("typenum19").value)
-    var pf = primeFactors(n);
-    if (pf[0] == n)
-        return false;
-    var all_pf_sum = 0;   
-    for (var i = 0; i < pf.length; i++) {
- 
-        var pf_sum;
-        for (pf_sum = 0; pf[i] > 0;
-             pf_sum += pf[i] % 10, pf[i] = parseInt(pf[i]/10))
-            ;
- 
-        all_pf_sum += pf_sum;
+    if(!isNaN(n)){
+        document.getElementById("typenum16exp").innerHTML = "\\[A Hoax Number is defined as a composite number, whose sum of digits is equal to the sum of digits of its distinct prime factors.\\]"
+        document.getElementById("typenum16exp").innerHTML = "\\[It may be noted here that, 1 is not considered a prime number, hence it is not included in the sum of digits of distinct prime factors.\\]"
+        document.getElementById("typenum16exp").innerHTML = "\\[It is apparent that those hoax numbers that do not have repeated factors in their prime decomposition, i.e square free number are also eligible Smith numbers.\\]"
+        document.getElementById("typenum16exp").innerHTML = "\\[ If the sums are equal, ‘n’ is a hoax number. \\]"
+        var pf = primeFactors(n);
+        if (pf[0] == n)
+            return false;
+        var all_pf_sum = 0;   
+        for (var i = 0; i < pf.length; i++) {
+     
+            var pf_sum;
+            for (pf_sum = 0; pf[i] > 0;
+                 pf_sum += pf[i] % 10, pf[i] = parseInt(pf[i]/10))
+                ;
+     
+            all_pf_sum += pf_sum;
+        }
+        var sum_n;
+        for (sum_n = 0; n > 0; sum_n += n % 10,n = parseInt(n/10))
+        document.getElementById("typenum16ans").innerHTML =  sum_n == all_pf_sum;
+        renderMathInElement(document.getElementById("typenum16exp"))
     }
-    var sum_n;
-    for (sum_n = 0; n > 0; sum_n += n % 10,n = parseInt(n/10))
-    document.getElementById("typenum16ans").innerHTML =  sum_n == all_pf_sum;
+    else
+        document.getElementById("typenum16ans").innerHTML = "Please enter valid input"
 }
 
 function primeFactors(n)
