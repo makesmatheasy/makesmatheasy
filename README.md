@@ -249,6 +249,7 @@ Other Tech/Libraries
   - Krishnamurthy Number
   - Automorphic Number 
   - Pronic Number 
+  - Harshad Number
 
 
 - Basic Convertors
