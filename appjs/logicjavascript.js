@@ -19990,6 +19990,10 @@ function convertdec2421() {
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space all \\space the \\space decimal \\space digits \\space found \\space from \\space STEP2 \\]";
+            print += "\\[\\space to \\space get \\space the \\space result \\space in \\space Decimal \\space \\]";
+            print += "\\[\\rightarrow "+x+"\\]";
+
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString();
             }else if(parseInt(x)<0){
