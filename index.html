@@ -1668,6 +1668,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="logbasebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Change log base calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Change log base calculator','#logbase','c','logbaseimgfav')"><img
+                                        id="logbaseimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="dbltimebtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Doubling Time</a>
                         </td>
@@ -5092,6 +5107,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="npvbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">NPV Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('NPV Calculator','#npv','c','npvfav')"><img
+                                        id="npvfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             
             <li>
                 <table class="table">
@@ -6856,8 +6887,10 @@
                 <input type="text" id="trapinsemin1" placeholder="Enter shorter side of trapezoid" class="form__field">
                 <input type="text" id="trapinsemin2" placeholder="Enter longer side of trapezoid" class="form__field">
                 <br>
-                <button class="btn btn-dark" onclick="trapinsemifind1()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <button type="button" class="btn btn-dark" onclick="trapinsemifind1()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+                <p id=trapinsemi1ans></p>
             </form>
             
             <br>
@@ -6977,10 +7010,10 @@
                 <br>
                 <button class="btn btn-dark" onclick="sht6find()">Find</button>
                 <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-            </form>
-            
+            </form>            
             <br>
             <h5 id="sht6ans"></h5>
+            <h5 id="sht6exp"></h5>
             <br>
             <h4>Area of a Rectangle inscribed in an Equilateral Triangle</h4>
             <br>
@@ -7180,7 +7213,7 @@
             <br>
             <h4>Division of  an isosceles triangle in two parts with ratio of areas as n:m </h4>
             <br>
-            <input type="text" id="cirinsemi17in" placeholder="Enter height of triangle" class="form__field">
+            <input type="text" id="cirinsemi17in" placeholder="Enter height of triangle(H)" class="form__field">
             <input type="text" id="cirinsemi18in" placeholder="Enter n" class="form__field">
             <input type="text" id="cirinsemi19in" placeholder="Enter n" class="form__field">
             <br>
@@ -13538,6 +13571,23 @@
             <p id="ppvans"></p>
         </div>
         
+        <!-- NPV Calculator-->
+        <div class="collapse" id="npv">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">NPV Calculator</h1>
+        
+            <form action="">
+                <input class = "form__field"type="text" id="npvsensi" placeholder="Enter Sensitivity">
+                <br><br>
+                <input class = "form__field"type="text" id="npvspeci" placeholder="Enter Specificity">
+                <br><br>
+                <input class = "form__field"type="text" id="npvprev" placeholder="Enter Prevalence">
+        
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="npvCal()">Calculate</button>
+            </form>
+        
+            <p id="npvans"></p>
+        </div>
 <!-- Relative risk Calculator -->
 <div class="collapse" id="relrisk">
     <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Relative Risk Calculator</h1>
@@ -16421,7 +16471,9 @@
             <button type = "button" class="btn btn-dark" onclick = "polymax7find()">FInd</button>
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
             <br>
-            <h4 id="polymax7ans"></h4></form>
+            <h4 id="polymax7ans"></h4>
+            <h4 id="polymax7exp"></h4>
+            </form>
             <br>
             <h4>Number of cycles in a Polygon with lines from Centroid to Vertices</h4><br>
             <form action="">
@@ -16463,7 +16515,9 @@
             <button type = "button" class="btn btn-dark" onclick = "polymax11find()">FInd</button>
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
             <br>
-            <h4 id="polymax11ans"></h4></form>
+            <h4 id="polymax11ans"></h4>
+            <h4 id="polymax11exp"></h4>
+            </form>
         </div>
         
         <div class="collapse" id="co_prime">
@@ -18046,6 +18100,10 @@
                                     style="text-decoration:none;" href="#">Truncated Tetrahedron</a></td>
                             </tr>
                             <tr>
+                                <td><a data-toggle="modal" data-target="#truncocta"
+                                    style="text-decoration:none;" href="#">Truncated Octahedron</a></td>
+                            </tr>
+                            <tr>
                                 <td><a data-toggle="modal" data-target="#tetrahexahedron"
                                        style="text-decoration:none;" href="#">Tetrahexahedron</a></td>
                             </tr>
@@ -18150,6 +18208,10 @@
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#pentpyramid"
                                         style="text-decoration:none;" href="#">Pentagonal Pyramid</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#pentelongbipyramid"
+                                        style="text-decoration:none;" href="#">Elongated pentagonal bipyramid</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#pentbipyramid"
@@ -21019,6 +21081,16 @@
 </div>
 <!-- Antilog ends -->
 
+<!-- Log base starts -->
+<div class="collapse" id="logbase">
+    <h2 style="text-align:center;">Log base Calculator</h2><br>
+    <input type="text"id="logbasea" placeholder="Enter the a" class="form__field"><br><br>
+    <input type="text"id="logbasex" placeholder="Enter the x" class="form__field"><br><br>
+    <input type="text"id="logbaseb" placeholder="Enter the b" class="form__field"><br><br>
+    <button class="btn btn-dark" onclick="logbaseCal()">Calculate</button><br><br>
+    <p id="logbaseans" style= "font-family:mathfont"></p><br>
+</div>
+<!-- Log base ends -->
 
 <!-- Percentage change starts -->
 <div class="collapse" id="perchng">
@@ -21034,6 +21106,7 @@
 <!-- Percentage off starts -->
 <div class="collapse" id="peroff">
     <h2 style="text-align:center;">Percentage Off</h2><br>
+    
     <input type="text"id="originalPrice" placeholder="Enter the original price" class="form__field"><br><br>
     <input type="text"id="offper" placeholder="Enter the off percentage" class="form__field"><br><br>
     <input type="text"id="salestax" placeholder="Enter the sales tax percentage" class="form__field"><br><br>
@@ -21787,6 +21860,7 @@ N is the population size.
    
        <p>&nbsp;</p>
        <h5 id="typenumans"></h5>
+       <h5 id ="typenumans1"></h5>
        <br>
     </form>
     <h2>Print pentatope numbers upto Nth term</h2>
@@ -21799,6 +21873,7 @@ N is the population size.
 
     <br>
     <h5 id="typenum1ans"></h5>
+    <h5 id="typenumans2"></h5>
     <br>
     </form>
     <h2>Hardy-Ramanujan Theorem</h2>
@@ -21837,6 +21912,7 @@ N is the population size.
 
     <br>
     <h5 id="typenum4ans"></h5>
+    <h5 id="typeans4"></h5>
     <br>
     </form>
     <h2>Find all combinations that add upto given number</h2>
@@ -21938,6 +22014,7 @@ N is the population size.
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     <br>
     <h5 id="typenum13ans"></h5>
+    <h5 id="typenumans131"></h5>
     <br>
     </form>
     <br>
@@ -21952,6 +22029,7 @@ N is the population size.
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     <br>
     <h5 id="typenum14ans"></h5>
+    <h5 id="typenum14ans11"></h5>
     <br>
     </form>
     <br>
@@ -21964,7 +22042,7 @@ N is the population size.
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     <br>
     <h5 id="typenum15ans"></h5>
-    <h5 id="typenum15exp"></h5>
+    <h5 id="typenum15ans1"></h5>
     <br>
     </form>
     <br>
@@ -33644,6 +33722,57 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="pentelongbipyramid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Elongated pentagonal bipyramid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = [\frac{5 \sqrt{3}}{2} + 5] \space a^2\]</p>
+                                    <p class="text-center">a = edge length</p>
+                                    <div class="dropdown-divider"></div>
+                                    <<h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = (2 \space \sqrt{\frac{(5 - \sqrt{5})}{10}} + 1) \space a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = [\frac{(5 + \sqrt{5})}{12} + \frac{\sqrt{25 + 10 \sqrt{5}}}{4}] \space a^3\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/elongated-pentagonal-bipyramid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                       placeholder="Enter side length (a)" id="inputpentelongbipyedge"
+                                       oninput="solvepentelongbipy();">
+                            <p class="stopwrap" id="resultofpentelongbipyarea"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpentelongbipyhei"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofpentelongbipyvol"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade" id="pentpyramid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -34478,6 +34607,75 @@ N is the population size.
                             <p class="stopwrap" id="resultoftruntetravol"
                                        style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultoftruntetraarea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="truncocta" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Octahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Edge length octahedron (a')</h5>
+                                    <p class="text-center">\[a' = 3 \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 6a^2 \times \left ( 1 + 2 \sqrt 3 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = 8a^3 \times \sqrt 2\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumsphere radius (r<sub>c</sub>)</h5>
+                                    <p class="text-center">\[r_{c} = \frac {a}{2} \times \sqrt {10}\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truncated-octahedron.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius (r<sub>m</sub>)</h5>
+                                    <p class="text-center">\[r_{m} = \frac{3}{2} \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface-to-volume ratio (A/V)</h5>
+                                    <p class="text-center">\[\frac{A}{V}\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Edge length (a)" id="truncocta-a"
+                                       oninput="solvetruncocta();">
+                            <p class="stopwrap" id="truncocta-ax"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncocta-A"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncocta-V"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncocta-rc"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncocta-rm"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="truncocta-av"
                                 style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->

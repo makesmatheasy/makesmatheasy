@@ -722,6 +722,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#logbasebtn").click(function () {
+        openit("#logbase");
+        closenav();
+        clearall();
+    });
     $("#dbltimebtn").click(function () {
         openit("#dbltime");
         closenav();
@@ -1596,6 +1601,11 @@ $(document).ready(function () {
     
     $("#ppvbtn").click(function () {
         openit("#ppv");
+        closenav();
+        clearall();
+    });
+    $("#npvbtn").click(function () {
+        openit("#npv");
         closenav();
         clearall();
     });

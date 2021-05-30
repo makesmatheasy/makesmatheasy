@@ -1399,7 +1399,6 @@ function chordTangle() {
 }
 
 function chordlength() {
-    // when angle in the alternate segment is given
     var x = document.getElementById("clength1").value
     var r = document.getElementById("clength2").value
     if (x != "" && r!="") {
@@ -1407,8 +1406,8 @@ function chordlength() {
           document.getElementById("clengthans").innerHTML = "\\[Radius \\space cannot \\space  be \\space \\negative\\]"
         }
         else{
-          var l=2 * r * Math.sin(x * (3.14 / 180))
-          document.getElementById("clengthans").innerHTML = "\\[The \\space angle \\space between \\space chord \\space and \\space tangent \\space is " + l+"\\]";
+          var l=(2 * r * Math.sin(x * (3.14 / 180))).toFixed(3)
+          document.getElementById("clengthans").innerHTML = "\\[The \\space length \\space of \\space chord \\space is \\space " + l+"\\]"+"\\[Length \\space of \\space  chord \\space is \\space  given \\space  by :\\space 2*rsin(\\frac{3.14x}{180}) \\newline \\space \\space \\space =2*"+r+"*sin(\\frac{3.14*"+x+"}{180})="+l+"\\]";
         }
     }
     else {
@@ -8757,6 +8756,31 @@ function solvetruntetra() {
     }
 }
 
+// Truncated Octahedron
+
+function solvetruncocta() {
+    var a = parseFloat(document.getElementById("truncocta-a").value);
+    var edgeLenOctField = document.getElementById("truncocta-ax");
+    var areaField = document.getElementById("truncocta-A");
+    var volField = document.getElementById("truncocta-V");
+    var cirRadField = document.getElementById("truncocta-rc");
+    var midRadField = document.getElementById("truncocta-rm");
+    var avField = document.getElementById("truncocta-av");
+    var ax = 3 * a;
+    var A = 6*a*a * (1 + 2*Math.sqrt(2));
+    var V = 8*a*a*a * Math.sqrt(2);
+    var rc = a/2*Math.sqrt(10);
+    var rm = 3/2*a;
+    if ((!isNaN(a))) {
+        edgeLenOctField.innerHTML = `Edge length octahedron (a') = ${ax.toFixed(3)}`;
+        areaField.innerHTML = `Surface area (A) = ${A.toFixed(3)}`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)}`;
+        cirRadField.innerHTML = `Circumsphere radius (rc) = ${rc.toFixed(3)}`;
+        midRadField.innerHTML = `Midsphere radius (rm) = ${rm.toFixed(3)}`;
+        avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A/V).toFixed(3)}`;
+    }
+}
+
 function solvetruncube() {
     var a = parseInt(document.getElementById("inputtruncubeside").value);
     var area = 2 * a ** 2 * (6 + 6 * math.sqrt(2) + math.sqrt(3));
@@ -10174,6 +10198,31 @@ function octpyramidsolve() {
         tsaoutput.innerHTML = "";
         lsaoutput.innerHTML = "";
 
+    }
+}
+//Elongated pentagonal bipyramid
+function solvepentelongbipy() {
+    let a = document.getElementById("inputpentelongbipyedge").value;
+    let heioutput = document.getElementById("resultofpentelongbipyhei");
+    let areaoutput = document.getElementById("resultofpentelongbipyarea");
+    let voloutput = document.getElementById("resultofpentelongbipyvol");
+    var areatemp = "";
+    var heitemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline (\\frac{5 \\sqrt{3}}{2} + 5) \\space (" + a + ")^2" + "\\ = " + eval(String(9.330127 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        heitemp += "\\[Height \\space \\newline ( 2 \\space \\sqrt{\\frac{(5 - \\sqrt{5})}{10} + 1}) \\space" + a + "\\ = " + eval(String(2.0514622 * a)).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        voltemp += "\\[Volume \\space \\newline (\\frac{(5 + \\sqrt{5})}{12} + \\frac{\\sqrt{25 + 10 \\sqrt{5}}}{4}) \\space (" + a + ")^3 \\space \\newline" + "\\ = " + eval(String(2.3234831 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(heioutput);
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        heioutput.innerHTML = "";
+        voloutput.innerHTML = "";
     }
 }
 //Pentagonal Pyramid
@@ -13760,7 +13809,8 @@ function cirinsemi11find(){
     let N = n * 1.0;
     let M = m * 1.0;
     let h = H * Math.sqrt(N / (N + M));
-    document.getElementById("cirinsemi11ans").innerHTML = h;
+    document.getElementById("cirinsemi11ans").innerHTML ="\\["+h.toFixed(3)+"\\]"+"\\[Height \\space for \\space cut \\space = H*\\sqrt{\\frac{n}{n+m}}  \\newline \\space \\space ="+H+"*\\sqrt{\\frac{"+n+"}{"+n+"+"+m+"}}="+H+"*"+Math.sqrt(N / (N + M))+"="+h.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById("cirinsemi11ans"));
 }
 
 function countinfind(){
@@ -13869,7 +13919,13 @@ function sht6find() {
     let a = parseInt(document.getElementById("sht6in").value)
     if (!isNaN(a)) {
         var area = Math.sqrt(a) / 6;
+        document.getElementById("sht6exp").innerHTML = "\\[let r be the radius of circle, \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[hence it is the inradius of equilateral triangle, so r = a /(2 * √3) \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[diagonal of square, d = diameter of circle = 2 * r = a/ √3 \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[So, area of square, A = 0.5 * d * d \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[hence A = (1/2) * (a^2) / (3) = (a^2/6)\\]"
         document.getElementById("sht6ans").innerHTML = area;
+        renderMathInElement(document.getElementById("sht6exp"));
     }
     else {
         document.getElementById("sht6ans").innerHTML = "Please enter valid input"
@@ -14422,14 +14478,12 @@ function solveperper() {
 //Print tetrahedral numbers upto Nth term
 
 function typenumfind() {
-    let n = document.getElementById("typenum0").value;
+    let n = parseInt(document.getElementById("typenum0").value);
     var ans = "\\[";
     var explain = "\\[N-th \\space tetrahedral \\space number =\\frac{N*(N+1)*(N+2)}{6}\\]" + "\\[";
-    if (n == "") {
-        ans += "Please enter number to find answer";
-    }
-    else {
-        n = parseInt(n);
+    var result = document.getElementById("typenumans1")
+    var ans1 = ""
+    if (!isNaN(n)) {
         var prev = 0;
         var curr;
         for (var i = 1; i <= n; i++) {
@@ -14443,43 +14497,27 @@ function typenumfind() {
         explain += "\\]";
         ans += "\\]";
         document.getElementById("typenumans").innerHTML = ans + explain;
-        renderMathInElement(document.getElementById("typenumans"));
+        ans1 += "";
+        result.innerHTML = ans1;
+
     }
-}
-function typenumfind() {
-    let n = document.getElementById("typenum0").value;
-    var ans = "\\[";
-    var explain = "\\[N-th \\space tetrahedral \\space number =\\frac{N*(N+1)*(N+2)}{6}\\]" + "\\[";
-    if (n == "") {
-        ans += "Please enter number to find answer";
+    else{
+            ans1 += "\\[Please \\space enter \\space all \\space Input \\]"
+            result.innerHTML = ans1;
+            document.getElementById("typenumans").innerHTML = ""
+
     }
-    else {
-        n = parseInt(n);
-        var prev = 0;
-        var curr;
-        for (var i = 1; i <= n; i++) {
-            curr = findTriangularNumber(i);
-            explain += "(\\frac{" + i + "*" + (i + 1) + "*" + (i + 2) + "}{6}=";
-            curr = prev + curr;
-            ans += curr + "\\space \\space ";
-            explain += curr + ")\\space ";
-            prev = curr;
-        }
-        explain += "\\]";
-        ans += "\\]";
-        document.getElementById("typenumans").innerHTML = ans + explain;
-        renderMathInElement(document.getElementById("typenumans"));
-    }
+    renderMathInElement(document.getElementById("typenumans"));
+    renderMathInElement(result);
 }
 //Print pentatope numbers upto Nth term
 function typenum1find() {
     let n = parseInt(document.getElementById("typenum1").value)
     var ans = "\\[";
     var explain = "\\[N-th \\space pentatope \\space number =\\frac{N*(N+1)*(N+2)*(N+3)}{24}\\]" + "\\[";
-    if (n == "") {
-        ans += "Please enter number to find answer";
-    }
-    else {
+    var result = document.getElementById("typenumans2")
+    var ans1 = ""
+    if (!isNaN(n)) {
         let prev = 0;
         let curr;
         for (let i = 1; i <= n; i++) {
@@ -14490,12 +14528,22 @@ function typenum1find() {
             explain += curr + ")\\space ";
             prev = curr;
         }
-    }
     explain += "\\]";
     ans += "\\]";
     document.getElementById("typenum1ans").innerHTML = ans + explain;
-    renderMathInElement(document.getElementById("typenum1ans"));
+    ans1 += "";
+    result.innerHTML = ans1;
+    
+    }
+    else{
+        ans1 += "\\[Please \\space enter \\space all \\space Input \\]"
+        result.innerHTML = ans1;
+        document.getElementById("typenum1ans").innerHTML = "";
 }
+renderMathInElement(document.getElementById("typenum1ans"));
+renderMathInElement(result);
+}
+
 //Hardy-Ramanujan Theorem
 function typenum2find() {
 
@@ -14556,6 +14604,9 @@ function divSums(n) {
 function typenum4find() {
     let N = parseInt(document.getElementById("typenum5").value)
     let s=0;
+    var result = document.getElementById("typeans4")
+    var ans1 = ""
+    if(!isNaN(N)){
     var ans="\\[Amicable \\space Number \\space in \\space this \\space range: \\space";
     var ans2="\\[Sum:\\space";
     for (let i = 2; i <= N; i++) {
@@ -14572,8 +14623,19 @@ function typenum4find() {
     ans+="\\]";
     ans2+="="+s+"\\]";
     document.getElementById("typenum4ans").innerHTML = "\\[Sum \\space of \\space Amicable \\space Numbers \\space upto \\space n:"+s+" \\]"+ans+ans2;
-    renderMathInElement(document.getElementById("typenum4ans"))
+    renderMathInElement(document.getElementById("typeans4"))
+    ans1 += "";
+    result.innerHTML = ans1;
 }
+else{
+        ans1 += "\\[Please \\space enter \\space all \\space Input \\]"
+        result.innerHTML = ans1;
+        document.getElementById("typenum1ans").innerHTML = "";
+}
+renderMathInElement(document.getElementById("typenum1ans"));
+renderMathInElement(result);
+}
+
 //Sum of Fibonacci numbers at even indexes upto N terms
 function typenum6find() {
     let n = parseInt(document.getElementById("typenum7").value)
@@ -14635,12 +14697,15 @@ function typenum8find() {
 
 function typenum9find() {
     let n = parseInt(document.getElementById("typenum11").value)
+    var result = document.getElementById("typenum9exp")
+    var ans1 = ""
     if(!isNaN(n)){
-        document.getElementById("typenum9exp").innerHTML = "\\[The\\space Fibonacci\\space numbers\\space are\\space the\\space numbers\\space in\\space the\\space following\\space integer\\space sequence. \\]"
-        document.getElementById("typenum9exp").innerHTML = "\\[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …. \\]"
-        document.getElementById("typenum9exp").innerHTML = "\\[The\\space even\\space number\\space Fibonacci\\space sequence \\space is,\\space 0, 2, 8, 34, 144, 610, 2584…. \\]"
-        document.getElementById("typenum9exp").innerHTML = "\\[If\\space we\\space take\\space a\\space closer\\space look\\space at\\space Fibonacci\\space sequence,\\space we\\space can\\space notice\\space that\\space every\\space third\\space number\\space in sequence\\space is even\\space and\\space the sequence\\space of evenv numbers follow\\space following\\space recursive\\space formula. \\]"
-        renderMathInElement(document.getElementById("typenum9exp"))
+        ans1 += "\\[The\\space Fibonacci\\space numbers\\space are\\space the\\space numbers\\space in\\space the\\space following\\space integer\\space sequence. \\]"
+        ans1 += "\\[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …. \\]"
+        ans1 += "\\[The\\space even\\space number\\space Fibonacci\\space sequence \\space is,\\space 0, 2, 8, 34, 144, 610, 2584…. \\]"
+        ans1 += "\\[If\\space we\\space take\\space a\\space closer\\space look\\space at\\space Fibonacci\\space sequence,\\space we\\space can\\space notice\\space that\\space every\\space third\\space number\\space in sequence\\space is even\\space and\\space the sequence\\space of evenv numbers follow\\space following\\space recursive\\space formula. \\]"
+       result.innerHTML = ans1;
+       renderMathInElement(result)
         if (n < 1)
             document.getElementById("typenum9ans").innerHTML = n;
         if (n == 1)
@@ -14651,6 +14716,8 @@ function typenum9find() {
     }
     else 
         document.getElementById("typenum9ans").innerHTML = "Please fill the field"
+        ans1 += "";
+        result.innerHTML = ans1;
 }
 
 function typenum10find() {
@@ -14678,6 +14745,9 @@ function typenum11find() {
 
 function typenum13find() {
     var n = parseInt(document.getElementById("typenum16").value)
+    var result = document.getElementById("typenumans131")
+    var ans1 = ""
+    if(!isNaN(n)){
     let dp = [];
     var explain="\\[Leonardo \\space Number(n)=1 \\space for \\space n=1 \\space \\space L(n-1)+L(n-2)+1 \\space for \\space n>1  \\]"+"\\[Leonardo \\space series \\space  upto \\space n :1 \\space,1 \\space ,";
     dp[0] = dp[1] = 1;
@@ -14693,7 +14763,16 @@ function typenum13find() {
         explain+="\\["+n+"th \\space Leonardo \\ Number is =L("+n+"-1)+L("+n+"-2)+1=L("+(n-1)+")+L("+(n-2)+")+1="+dp[n-1]+"+"+dp[n-2]+"+1="+dp[n]+"\\]";
     
     document.getElementById("typenum13ans").innerHTML ="\\["+n+"th \\space Leonardo \\space Number \\space is:"+dp[n]+"\\]"+explain;
-    renderMathInElement(document.getElementById("typenum13ans"))
+    ans1 += "";
+    result.innerHTML = ans1;
+    }
+    else{
+        ans1 += "\\[Please \\space enter \\space all \\space Input \\]"
+        result.innerHTML = ans1;
+        document.getElementById("typenum13ans").innerHTML = "";
+}
+renderMathInElement(document.getElementById("typenum13ans"));
+renderMathInElement(result);
 }
 
 function typenum12find() {
@@ -14755,13 +14834,33 @@ let arr = Array(1001).fill(true);
 function typenum15find()
 {
     var n = parseInt(document.getElementById("typenum18").value)
-    simpleSieve();
-    var ans = find_sphene(n);
-    if (ans == 1)
-        document.getElementById("typenum15ans").innerHTML  =  "Yes"
-    else
+    var result = document.getElementById("typenum15ans1")
+    var ans1 = ""
+    if(!isNaN(n)){
+        simpleSieve();
+        var ans = find_sphene(n);
+        if (ans == 1){
+            document.getElementById("typenum15ans").innerHTML  =  "Yes"
+            ans1 +=  "\\[A \\space Sphenic \\space Number \\space is \\space a \\space positive \\space integer \\space n \\space which \\space is \\space product \\space of \\space exactly \\space three \\space distinct \\space primes. \\]"
+            ans1 += "\\[The \\space first \\space few \\space sphenic \\space numbers \\space are \\space 30, \\space 42, \\space 66, \\space 70, \\space 78, \\space 102, \\space 105, \\space 110,\\space 114, \\space … \\]"
+            ans1 += "\\[Sphenic \\space number \\space can \\space be \\space checked \\space by \\space fact \\space that \\space every \\space sphenic \\space number \\space will \\space have \\space exactly \\space 8 \\space divisor \\space SPHENIC \\space NUMBER \\]"
+           result.innerHTML = ans1;
+        }
+        else{
         document.getElementById("typenum15ans").innerHTML  =  "NO"
-
+        ans1 +=  "\\[A \\space Sphenic \\space Number \\space is \\space a \\space positive \\space integer \\space n \\space which \\space is \\space product \\space of \\space exactly \\space three \\space distinct \\space primes. \\]"
+        ans1 += "\\[The \\space first \\space few \\space sphenic \\space numbers \\space are \\space 30, \\space 42, \\space 66, \\space 70, \\space 78, \\space 102, \\space 105, \\space 110,\\space 114, \\space … \\]"
+        ans1 += "\\[Sphenic \\space number \\space can \\space be \\space checked \\space by \\space fact \\space that \\space every \\space sphenic \\space number \\space will \\space have \\space exactly \\space 8 \\space divisor \\space SPHENIC \\space NUMBER \\]"
+       result.innerHTML = ans1;
+        }
+    }
+    else {
+        document.getElementById("typenum15ans").innerHTML  = "Please enter valid input"
+        ans1 += "";
+        result.innerHTML = ans1;
+    }
+    renderMathInElement(result);
+}
 
 }    
 
@@ -14793,6 +14892,9 @@ function find_sphene(N) {
 function typenum14find() {
     var s = parseInt(document.getElementById("typenum17").value)
     var n = parseInt(document.getElementById("typenum172").value)
+    var result = document.getElementById("typenum14ans11")
+    var ans1 = ""
+    if(!isNaN(s) && !isNaN(n)){
     var ans="\\[";
     var explain="\\[n-th \\space term \\space of \\space s-gonal \\space number \\space is \\space given \\space as:\\frac{(s-2)n(n-1)}{2}\\]"+"\\[where, \\space s=number \\space of \\space sides \\space in \\space polygon \\space and \\space n=\\space term \\space of \\space s-gonal \\space number\\]"+"\\[";
     for (var i = 1; i <= n; i++) {
@@ -14811,7 +14913,16 @@ function typenum14find() {
     ans+="\\]";
     explain+="\\]";
     document.getElementById("typenum14ans").innerHTML=ans+explain;
-    renderMathInElement(document.getElementById("typenum14ans")) ;
+    ans1 += "";
+    result.innerHTML = ans1;
+}
+else{
+        ans1 += "\\[Please \\space enter \\space all \\space Input \\]"
+        result.innerHTML = ans1;
+        document.getElementById("typenum14ans").innerHTML = "";
+}
+renderMathInElement(document.getElementById("typenum14ans"));
+renderMathInElement(result);
 }
 function kaprekarRec(n, prev) {
     if (n == 0)
@@ -14867,6 +14978,8 @@ function typenum3find() {
     if (x == "" || y == "") {
         document.getElementById("typenum3ans").innerHTML = "\\[Please \\space enter \\space all \\space the \\space field \\space to \\space find \\space answer\\]";
         renderMathInElement(document.getElementById("typenum3ans"));
+        document.getElementById("typenum3ex").innerHTML = "";
+        renderMathInElement(document.getElementById("typenum3ex"))
     }
     else {
         let x = parseInt(document.getElementById("typenum3").value)
@@ -17709,30 +17822,56 @@ function regang() {
 //-------------------------------
 
 function co_prime_calc(){
-    let n = parseInt(document.getElementById("co_num1").value);
-    let m = parseInt(document.getElementById("co_num2").value);
-    const smaller = n > m ? n : m;
-    for(let ind = 2; ind < smaller; ind++){
-      const condition1 = n % ind === 0;
-      const condition2 = m % ind === 0;
-      if(condition1 && condition2){
-         document.getElementById("co_prime_res").innerHTML = "NO the numbers "+n+" and "+m+" are not co-prime";
-      }
-   }
-   document.getElementById("co_prime_res").innerHTML = "YES the numbers "+n+" and "+m+" are co-prime";
+    var n = parseInt(document.getElementById("co_num1").value);
+    var m = parseInt(document.getElementById("co_num2").value);
+    var output = document.getElementById("co_prime_res");
+    var temp = "";
+    if (!isNaN(n) && !isNaN(m)){
+        const smaller = n < m ? n : m;
+        temp += "\\[To \\space check \\space whether \\space two \\space numbers \\space are \\space Co-prime \\space or \\space not \\space we \\space take \\space two \\space numbers,\\]"
+        temp += "\\[Here, \\space we \\space are \\space taking \\space "+n+" \\space and \\space "+m+" \\space and \\space storing \\space the \\space smaller \\space one \\space in \\space smaller \\space variable\\]"
+        temp += "\\[The \\space value \\space of \\space smaller \\space variable \\space here, \\space will \\space be, "+smaller+"\\]"
+        temp += "\\[Then \\space we \\space take \\space a \\space loop \\space from \\space 2 \\space to \\space  smaller \\space i.e. \\space "+smaller+"\\]"
 
+        for(let ind = 2; ind < smaller; ind++){
+        const condition1 = n % ind === 0;
+        const condition2 = m % ind === 0;
+        if(condition1 && condition2){
+            temp += "\\[For \\space "+ind+" \\space value \\space while \\space iterating \\space through \\space the \\space loop, \\]"
+            temp += "\\[Both \\space "+n+" \\space \\% \\space ("+ind+") \\space and \\space "+m+"\\space \\% \\space ("+ind+") \\space equals \\space to \\space 0\\]"
+            temp += "\\[Hence, \\space the \\space numbers \\space "+n+" \\space and \\space "+m+" \\space are \\space NOT \\space Co-prime\\]"
+            output.innerHTML = temp;
+            renderMathInElement(output);
+            return;
+        }
+    }
+    temp += "\\[Since, \\space after \\space iterating \\space over \\space the \\space whole \\space loop,\\]"
+    temp += "\\[Both \\space "+n+" \\space \\%  \\space (value) \\space and \\space "+m+" \\space \\% \\space  (value) \\space NEVER \\space equals \\space to \\space 0\\]"
+    temp += "\\[Hence, \\space the \\space numbers \\space "+n+" \\space and \\space "+m+" \\space are \\space Co-prime\\]"
+    output.innerHTML = temp;
+    renderMathInElement(output);
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input \\space \\]"
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
 }
 
 //Side of a regular n-sided polygon circumscribed in a circle
 function polymax7find() {
     let n = parseInt(document.getElementById("polymax7").value)
     let r = parseInt(document.getElementById("polymax71").value)
-    if (!isNaN(n) && !isNaN(r)) {
+    if (!isNaN(n) || !isNaN(r)) {
         var theta, theta_in_radians;
         theta = 360 / n;
         theta_in_radians = theta * 3.14 / 180;
         let ans = 2 * r * Math.sin(theta_in_radians / 2);
+        document.getElementById("polymax7exp").innerHTML ="\\[Consider the image above and let angle AOB be theta then theta = 360 / n. \\]"
+        document.getElementById("polymax7exp").innerHTML ="\\[In right angled triangle $\Delta AOC$   , angle ACO = 90 degrees and angle AOC = theta / 2. \\]"
+        document.getElementById("polymax7exp").innerHTML ="\\[So, AC = OA * sin(theta / 2) = r * sin(theta / 2) \\]"
+        document.getElementById("polymax7exp").innerHTML ="\\[Therefore, side of the polygon, AB = 2 * AC i.e. 2 * r * sin(theta / 2).\\]"
         document.getElementById("polymax7ans").innerHTML = ans
+        renderMathInElement(document.getElementById("polymax7exp"))
     }
     else {
         document.getElementById("polymax7ans").innerHTML = "Please enter valid input"
@@ -17788,12 +17927,22 @@ function polymax10find() {
 }
 
 function polymax11find(){
-    let n = parseInt(document.getElementById("polymax20").value)
-    let m = parseInt(document.getElementById("polymax21").value)
-    if (M > parseInt(N / 2)) {
-        document.getElementById("polymax11ans").innerHTML = M - parseInt(N / 2);
+    let N = parseInt(document.getElementById("polymax20").value)
+    let M = parseInt(document.getElementById("polymax21").value)
+    if(!isNaN(N)||!isNaN(M)){
+        if (M > parseInt(N / 2)) {
+            document.getElementById("polymax11exp").innerHTML = "\\[If M > N / 2: The vertex will always be M — (N / 2).\\]"
+            document.getElementById("polymax11exp").innerHTML = "\\[If M ≤ N / 2: The vertex will always be M + (N / 2).\\]"
+            document.getElementById("polymax11ans").innerHTML = M - parseInt(N / 2);
+            renderMathInElement(document.getElementById("polymax11ans"))
+        }
+        document.getElementById("polymax11exp").innerHTML = "\\[If M > N / 2: The vertex will always be M — (N / 2).\\]"
+        document.getElementById("polymax11exp").innerHTML = "\\[If M ≤ N / 2: The vertex will always be M + (N / 2).\\]"
+        document.getElementById("polymax11ans").innerHTML = M + parseInt(N / 2);
+        renderMathInElement(document.getElementById("polymax11ans"))
     }
-    document.getElementById("polymax11ans").innerHTML = M + parseInt(N / 2);
+    else
+        document.getElementById("polymax11ans").innerHTML = "Please enter valid input"
 }
 
 //Sum of numbers from 1 to N which are in Lucas Sequence
@@ -23998,6 +24147,19 @@ function antilogCal(){
     }
 
 }
+function logbaseCal(){
+    let a = document.getElementById("logbasea").value;
+    let b = document.getElementById("logbaseb").value;
+    let x = document.getElementById("logbasex").value;
+
+    if(a=="" || b=="" || x==""){
+        output.innerHTML = "Enter all the inputs";
+    }
+    else{
+        let ans = (Math.log(x) / Math.log(b))/(Math.log(a) / Math.log(b));
+        output.innerHTML =  `log base ${a} of ${x} is ${ans}`;
+    }
+}
 
 function relrisk() {
     let a = document.getElementById("relexp0").value;
@@ -24070,6 +24232,24 @@ function ppvCal() {
         document.getElementById('ppvans').innerHTML = "Positive Predictive Value " + ans.toFixed(2);
     }
   }
+// NPV Calculator
+function npvCal() {
+    let sensi = document.getElementById("npvsensi").value;
+    let speci = document.getElementById("npvspeci").value;
+    let prev = document.getElementById("npvprev").value;
+
+    let ans = "";
+    if(sensi=="" || speci=="" || prev==""||isNaN(sensi)||isNaN(speci)||isNaN(prev)){
+        ans = "Enter valid inputs"
+        document.getElementById("npvans").innerHTML = ans;
+    }
+    else{
+        ans = (speci * (1 - prev))/(((1 - sensi) * prev) + (speci * (1 - pre)));
+       
+        document.getElementById('npvans').innerHTML = "Negative Predictive Value " + ans.toFixed(2);
+    }
+  }
+
 
   function vectsfind()
   {
