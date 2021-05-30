@@ -19304,7 +19304,12 @@ function polymax1find() {
     if (!isNaN(n)) {
         var num;
         num = n * (n - 4);
+        document.getElementById("polymax1exp").innerHTML = "\\[To make a triangle with one side common with a polygon the two vertices adjacent to the chosen common vertices cannot be considered as the third vertex of a triangle.\\]"
+        document.getElementById("polymax1exp").innerHTML = "\\[First select any one edge from the polygon. Consider this edge to be the common edge. Number of ways to select an edge in a polygon would be equal to n.\\]"
+        document.getElementById("polymax1exp").innerHTML = "\\[Now ,to form a triangle ,select any of the (n-4) vertices left .Two vertices of the common edge and two vertices adjacent to the common edge cannot be considered.\\]"
+        document.getElementById("polymax1exp").innerHTML = "\\[Number of triangle formed by joining the vertices of an n-sided polygon with one side common would be equal to n * ( n – 4) .\\]"
         document.getElementById("polymax1ans").innerHTML = num;
+        renderMathInElement(document.getElementById("polymax1exp"))
     }
     else {
         document.getElementById("polymax1ans").innerHTML = "Please enter valid input"
