@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["proans","autoans","disans","gammaprobAns","negbinoans","ackermannResult","nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["harans","proans","autoans","disans","gammaprobAns","negbinoans","ackermannResult","nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -46,6 +46,12 @@ $("#pronumbtn").click(function(){
     closenav();
     clearall();
 });
+// Harshad Number
+$("#harnumbtn").click(function(){
+    openit("#harnum");
+    closenav();
+    clearall();
+});
 $("#wag").click(function () {
     openit("#wags");
     closenav();
@@ -68,6 +74,12 @@ $("#bilinearbtn").click(function(){
     closenav();
     clearall();
 });
+// Krishnamurthy Number
+$("#krishnumbtn").click(function(){
+    openit("#krishnum");
+    closenav();
+    clearall();
+});
 $("#manhat").click(function(){
     openit("#manhats");
     closenav();
@@ -79,7 +91,12 @@ $("#cartbtn").click(function(){
     closenav();
     clearall();
 });
-
+ // Neon Number
+ $("#neonnumbtn").click(function(){
+    openit("#neonnum");
+    closenav();
+    clearall();
+});
 function closenav() {
     $('#slide-out').addClass('sidenav-close');
     setTimeout(function () {
@@ -641,6 +658,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#throughputbtn").click(function () {
+        openit("#throughputtest");
+        closenav();
+        clearall();
+    });  
     $("#cyclebtn").click(function () {
         openit("#cycletest");
         closenav();
@@ -708,6 +730,11 @@ $(document).ready(function () {
     });
     $("#antilogbtn").click(function () {
         openit("#antilog");
+        closenav();
+        clearall();
+    });
+    $("#logbasebtn").click(function () {
+        openit("#logbase");
         closenav();
         clearall();
     });
@@ -1585,6 +1612,11 @@ $(document).ready(function () {
     
     $("#ppvbtn").click(function () {
         openit("#ppv");
+        closenav();
+        clearall();
+    });
+    $("#npvbtn").click(function () {
+        openit("#npv");
         closenav();
         clearall();
     });

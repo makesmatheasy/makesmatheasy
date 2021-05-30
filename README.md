@@ -162,6 +162,7 @@ Other Tech/Libraries
     - Prime Factorization **( with steps for single number)**
   - Euclid GCD
   - Antilog calculator
+  - Change Log base
   - Doubling Time
   - Percentage change
   - Percentage off
@@ -244,9 +245,13 @@ Other Tech/Libraries
   - Smallest Number Divisible
   - Lucas series
   - Types of numbers
+  - Neon Number
   - Disarium Number
-  - Automorphic Number
+  - Krishnamurthy Number
+  - Automorphic Number 
   - Pronic Number 
+  - Harshad Number
+
 
 - Basic Convertors
 
@@ -485,6 +490,7 @@ Other Tech/Libraries
   - np chart Calculator
   - Confidence Interval Calculator
   - PPV calculator
+  - NPV calculator
   - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation
