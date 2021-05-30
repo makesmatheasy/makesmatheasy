@@ -5701,6 +5701,54 @@ function pointri() {
     }
 }
 
+function pointcir() {
+    var x1,y1,r1,x2,y2,r2;
+     x1= parseFloat(document.getElementById('checkcir1').value);
+     y1= parseFloat(document.getElementById('checkcir2').value);
+     r1= parseInt(document.getElementById('checkcir3').value);
+     x2= parseFloat(document.getElementById('checkcir4').value);
+     y2= parseFloat(document.getElementById('checkcir5').value);
+     r2= parseInt(document.getElementById('checkcir6').value);
+    var output = document.getElementById("pointcirans")
+    var ans = "";
+
+    if (!isNaN(x1) && !isNaN(x2) && !isNaN(r1) && !isNaN(x2) && !isNaN(y2) && !isNaN(r2)) {
+        if(r1<r2){
+            temp=x1;
+            x1=x2;
+            x2=temp;
+            temp=y1;
+            y1=y2;
+            y2=temp;
+            temp=r1;
+            r1=r2;
+            r2=temp;
+            
+        }
+
+        var distSq = parseInt(Math.sqrt(((x1 - x2) * (x1 - x2))+ ((y1 - y2)* (y1 - y2))));
+        
+        if (distSq + r2 == r1)
+        {    ans="\\[The \\space smaller \\space circle \\space of \\space radius("+r2+") \\space lies \\space completely \\space inside \\space the \\space bigger \\space circle \\space of \\space radius("+r1+") \\space with \\space touching \\space each \\space other \\space  at \\space  a \\space povar \\space  of \\space  circumference.\\]"
+        }
+                 
+        else if (distSq + r2 < r1)
+        {    ans="\\[The \\space smaller \\space circle \\space of \\space radius("+r2+") \\space lies \\space completely \\space inside \\space the \\space bigger \\space circle  \\space of \\space radius("+r1+") \\space without \\space touching \\space each \\space other \\space  at \\space  a \\space povar \\space  of \\space  circumference.\\]"
+        }
+                 
+        else
+        {
+           ans="\\[The \\space smaller \\space circle \\space of \\space radius("+r2+") \\space does \\space not \\space lies  \\space inside \\space the \\space bigger \\space circle \\space of \\space radius("+r1+") \\space completely.\\]"
+        }
+                    
+        output.innerHTML = ans;
+    }
+    else {
+        ans += "\\[Please \\space enter \\space all \\space fields \\]";
+        output.innerHTML = ans;
+    }
+    renderMathInElement(output);
+}
 
 
 
