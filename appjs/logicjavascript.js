@@ -16632,8 +16632,28 @@ function scyf1find() {
 function scyf2find() {
     var b = parseInt(document.getElementById("scyf6").value);
     var h = parseInt(document.getElementById("scyf7").value);
-    let ans = 2 * b * h + parseInt(Math.pow(b, 2));
-    document.getElementById("scyf2ans").innerHTML = ans;
+
+    var output = document.getElementById("scyf2ans");
+    var temp = "";
+    if (!isNaN(b) && !isNaN(h))
+    {
+        temp += "\\[The \\space Surface \\space area \\space of \\space the \\space square \\space pyramid \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space 2 \\times (base-length) \\times (slant-height) + (base-length)^{2}\\]"
+        temp += "\\[\\space = \\space 2 \\times "+b+" \\times "+h+" + "+b+"^{2}\\]"
+        temp += "\\[\\space = \\space 2 \\times "+(b*h)+" + "+b+"^{2}\\]"
+        temp += "\\[\\space = \\space 2 \\times "+(b*h)+" + "+(b**2)+"\\]"
+        temp += "\\[\\space = \\space "+(2*b*h)+" + "+(b**2)+"\\]"
+        temp += "\\[\\space = \\space "+(2 * b * h + parseInt(Math.pow(b, 2)))+"\\]"
+
+        output.innerHTML = temp;
+    } 
+    else
+    {
+        temp += "\\[Please \\space enter \\space valid \\space input\\]"
+
+        output.innerHTML = temp ;
+    }
+    renderMathInElement(output);
 }
 
 
