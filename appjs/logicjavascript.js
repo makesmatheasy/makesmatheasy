@@ -1423,6 +1423,20 @@ function chordsub1() {
     renderMathInElement(document.getElementById("chsub1ans"));
     renderMathInElement(document.getElementById("chsub1info"));
 }
+
+function chordsub2() {
+    var into = document.getElementById("chsub2").value
+    if (into != "") {
+        document.getElementById("chsub2info").innerHTML = "\\[An \\space angle \\space at \\space the \\space circumference \\space of \\space a \\space circle \\space is \\space the \\space half \\space angle \\space at \\space the \\space centre \\space subtended \\space by \\space the \\space same \\space chord.\\]";
+        document.getElementById("chsub2ans").innerHTML = "\\[The \\space angle \\space subtended \\space by \\space chord \\space at \\space the \\space center \\space is \\space " + (into/2).toFixed(2)+"\\degree \\]";
+    }
+    else {
+        document.getElementById("chsub2info").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
+        document.getElementById("chsub2ans").innerHTML = ""
+    }
+    renderMathInElement(document.getElementById("chsub2ans"));
+    renderMathInElement(document.getElementById("chsub2info"));
+}
 //-----------------------------------------------------
 //Centroid calculator
 function centcal() {
