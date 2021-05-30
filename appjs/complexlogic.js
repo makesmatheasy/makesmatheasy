@@ -1554,7 +1554,19 @@ function moduloCal(){
     var x = parseInt(document.getElementById("modx").value);
     var y = parseInt(document.getElementById("mody").value);
     var r = x%y;
-    document.getElementById("moduloans").innerHTML = "x % y = " + r;
+    var output = document.getElementById("moduloans");
+    var xy = x/y;
+    var yy = y*xy;
+    
+    var step = "\\[x \\pmod y= \\space x - (frac{x}{y}) \\times y\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - (frac{"+x+"}{"+y+"}) \\times "+y+"\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - "+xy+" \\times "+y+"\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - "+yy+" \\]";
+    step += "\\[x \\pmod y= \\space "+r+" \\]";
+
+    output.innerHTML = step;
+
+    renderMathInElement(output);
 }
 
 function covcalcu(){
