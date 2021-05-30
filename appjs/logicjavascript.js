@@ -1579,6 +1579,9 @@ function cencirtcal() {
     var c2 = parseInt(document.getElementById("scc").value);
     var c3 = parseInt(document.getElementById("tcc").value);
 
+    var centout1 = document.getElementById("rcc");
+    var ans1 = "";
+
     var x1 = ((b1 * c2) - (b2 * c1)) / ((a2 * b1) - (a1 * b2));
     var y1 = ((c1 * a2) - (c2 * a1)) / ((a2 * b1) - (a1 * b2));
 
@@ -1610,13 +1613,29 @@ function cencirtcal() {
     var o2 = (((c4 * a5) - (c5 * a4)) / ((a5 * b4) - (a4 * b5))).toFixed(2);
 
     if (!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3)) {
-        var ans = "( " + o1 + ", " + o2 + " )";
-        document.getElementById("rcc").innerHTML = ans;
-        document.getElementById("rcch").innerHTML = "Circumcenter of Triangle";
-    }
+ ans1 += "\\[To \\space find \\space the Point \\space of \\space Intersection \\space between \\space lines : \\]"
+ans1 += "\\[(x , y) \\space = \\space [ \\frac{b1c2 - b2c1}{a1b2 - a2b1} \\space , \\space \\frac{a2c1 - a1c2}{a1b2 - a2b1} ] \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{(" + b1 + "\\times" + c2 + ") - (" + b2 + "\\times" + c1 + ")}{(" + a2 + "\\times" + b1 + ") - (" + a1 + "\\times" + b2 + ")} \\space , \\space \\frac{(" + c1 + "\\times" + a2 + ") - (" + c2 + "\\times" + a1 + ")}{(" + a2 + "\\times" + b1 + ") - (" + a1 + "\\times" + b2 + ")}) \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{" + b1 * c2 + " - " + b2 * c1 + "}{" + a2 * b1 + " - " + a1 * b2 + "} \\space , \\space \\frac{" + c1 * a2 + " - " + c2 * a1 + "}{" + a2 * b1 + " - " + a1 * b2 + "}) \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{" + ((b1 * c2)-(b2 * c1)) + "}{" + ((a2 * b1)-(a1 * b2)) + "} \\space , \\space \\frac{" + ((c1 * a2)-(c2 * a1)) + "}{" + ((a2 * b1)-(a1 * b2)) + "}) \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( " + x1.toFixed(2) + " \\space , \\space " +  y1.toFixed(2) + ") \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{(" + b2 + "\\times" + c3 + ") - (" + b3 + "\\times" + c2 + ")}{(" + a3 + "\\times" + b2 + ") - (" + a2 + "\\times" + b3 + ")} \\space , \\space \\frac{(" + c2 + "\\times" + a3 + ") - (" + c3 + "\\times" + a2 + ")}{(" + a3 + "\\times" + b2 + ") - (" + a2 + "\\times" + b3 + ")}) \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{" + b2 * c3 + " - " + b3 * c2 + "}{" + a3 * b2 + " - " + a2 * b3 + "} \\space , \\space \\frac{" + c2 * a3 + " - " + c3 * a2 + "}{" + a3 * b2 + " - " + a2 * b3 + "}) \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{" + ((b2 * c3)-(b3 * c2)) + "}{" + ((a3 * b2)-(a2 * b3)) + "} \\space , \\space \\frac{" + ((c2 * a3)-(c3 * a2)) + "}{" + ((a3 * b2)-(a2 * b3)) + "}) \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( " + x2.toFixed(2) + " \\space , \\space " +  y2.toFixed(2) + ") \\]"
+ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{(" + b3 + "\\times" + c1 + ") - (" + b1 + "\\times" + c3 + ")}{(" + a1 + "\\times" + b3 + ") - (" + a3 + "\\times" + b1 + ")} \\space , \\space \\frac{(" + c3 + "\\times" + a1 + ") - (" + c1 + "\\times" + a3 + ")}{(" + a1 + "\\times" + b3 + ") - (" + a3 + "\\times" + b1 + ")}) \\]"   
+ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{" + b3 * c1 + " - " + b1 * c3 + "}{" + a1 * b3 + " - " + a3 * b1 + "} \\space , \\space \\frac{" + c3 * a1 + " - " + c1 * a3 + "}{" + a1 * b3 + " - " + a3 * b1 + "}) \\]"
+ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{" + ((b3 * c1)-(b1 * c3)) + "}{" + ((a1 * b3)-(a3 * b1)) + "} \\space , \\space \\frac{" + ((c3 * a1)-(c1 * a3)) + "}{" + ((a1 * b3)-(a3 * b1)) + "}) \\]"
+ans1 += "\\[(x3 , y3) \\space = \\space ( " + x3.toFixed(2) + " \\space , \\space " +  y3.toFixed(2) + ") \\]"
+ans1 += "\\[Circumcenter \\space = \\space ( \\space \\frac{x1 \\times sin2A + x2 \\times sin2B + x3 \\times sin2C }{sin2A + sin2B + sin2C }, \\space \\frac{y1 \\times sin2A + y2 \\times sin2B + y3 \\times sin2C }{sin2A + sin2B + sin2C} )" + "\\] ";
+ans1 += "\\[Circumcenter \\space = \\space (" + o1 + "," + o2 + ")"  +"\\]";   
+centout1.innerHTML = ans1;
+renderMathInElement(centout1)
+}
     else {
-        document.getElementById("rcch").innerHTML = "Please enter all fields";
-        document.getElementById("rcc").innerHTML = "";
+        ans1 += "\\[Please \\space enter \\space all \\space fields \\]";
+        centout1.innerHTML = ans1;
+        renderMathInElement(centout1)
     }
 }
 
