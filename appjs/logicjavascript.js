@@ -14688,6 +14688,12 @@ function anotherap() {
     }
 }
 //Insert n-Arthimetic Mean between two numbers
+function calcexnap(){
+    var n = document.getElementById("nt1").value = 6;
+    var a = document.getElementById("ft1").value = 3;
+    var b = document.getElementById("lt1").value = 24;
+    nap();
+}
 function nap() {
     var n = parseInt(document.getElementById("nt1").value)
     var a = parseInt(document.getElementById("ft1").value)
@@ -14885,10 +14891,15 @@ function nhp() {
     document.getElementById("nHPseries2").innerHTML = "n-Harmonic Mean: " + series.substring(0, series.length - 2)
 }
 //If number of terms and the AP is given
+function calcexapsum(){
+    var n = document.getElementById("nterms").value = 5;
+    var val = document.getElementById("ap").value ="1,2,3";
+    apsum();
+}
 function apsum() {
     var n = document.getElementById("nterms").value
     var val = document.getElementById("ap").value;
-    val = val.split(" ");
+    val = val.split(",");
     val = val.filter(function (str) {
         return /\S/.test(str);
     });
@@ -14964,7 +14975,15 @@ function hmgm() {
     renderMathInElement(result);
 }
 
+function calcexmnapsum(){
+    var m = document.getElementById("mterm").value=3;
+    var n = document.getElementById("nterm").value=4;
+    var mtherm = document.getElementById("mthterm").value=6;
+    var ntherm = document.getElementById("nthterm").value=8;
+    var pterm = document.getElementById("pterm").value=5;
 
+    mnapsum();
+}
 function mnapsum() {
     var m = parseFloat(document.getElementById("mterm").value)
     var n = parseFloat(document.getElementById("nterm").value)
@@ -14977,7 +14996,11 @@ function mnapsum() {
     document.getElementById("printmnAP").innerHTML = sum
 
 }
-
+function calcexmnap(){
+    var m = document.getElementById("mterm99").value=5;
+    var n = document.getElementById("nterm98").value=2;
+    mnap();
+}
 function mnap() {
     var m = parseFloat(document.getElementById("mterm99").value)
     var n = parseFloat(document.getElementById("nterm98").value)
