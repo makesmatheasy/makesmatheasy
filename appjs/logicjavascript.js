@@ -13455,16 +13455,25 @@ function retfind13() {
 function trirect() {
     let l = parseFloat(document.getElementById("trirect1").value)
     let b = parseFloat(document.getElementById("trirect2").value)
+    var output = document.getElementById("trirectans")
+    var ans = ""
     let area = (l * b) / 2;
     if (l < 0 || b < 0) {
-        document.getElementById("trirectans").innerHTML = "Length and Breadth of a Rectangle cannot be negative"
+        ans += "\\[Length \\space and \\space Breadth \\space of \\space a \\space Rectangle \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
     }
     else if (!isNaN(l) && !isNaN(b) ) {
-        document.getElementById("trirectans").innerHTML = area.toFixed(4);
+        ans += "\\[Length \\space of \\space the \\space Rectangle \\space = \\space Height \\space of \\space the \\space Triangle \\space = \\space " + l + " \\]"
+        ans += "\\[Breadth \\space of \\space the \\space Rectangle \\space = \\space Base \\space of \\space the \\space Triangle \\space = \\space " + b + " \\]"
+        ans += "\\[Area \\space of \\space Triangle \\space = \\space \\frac{Height \\times Base}{2} \\space = \\space \\frac{ " + l + "\\times" + b + "}{2} \\space = \\space \\frac{" + (l*b) + "}{2} \\]"
+        ans += "\\[Area \\space of \\space Triangle \\\space is \\space " + area.toFixed(3) + " \\]"
+        output.innerHTML = ans; 
     }
     else {
-        document.getElementById("trirectans").innerHTML = "Please enter valid input"
-    }
+        ans += "\\[Please \\space enter \\space all \\space input \\]"
+        output.innerHTML = ans;
+     }
+   renderMathInElement(output);
 }
 
 
