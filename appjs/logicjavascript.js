@@ -13550,8 +13550,16 @@ function cirinsemi5find() {
 function cirinsemi6find() {
     let l = parseInt(document.getElementById("cirinsemi6in").value)
     let b = parseInt(document.getElementById("cirinsemi7in").value)
-    var r = ((l * b) / (2 * Math.sqrt((Math.pow(l, 2) + Math.pow(b, 2)))));
-    document.getElementById("cirinsemi6ans").innerHTML = r;
+    if(!isNaN(l)||!isNaN(b)){
+        var r = ((l * b) / (2 * Math.sqrt((Math.pow(l, 2) + Math.pow(b, 2)))));
+        document.getElementById("cirinsemi6exp").innerHTML = "\\[From the figure, it is clear that diagonals, x & y, are equal to the length and breadth of the rectangle. \\]"
+        document.getElementById("cirinsemi6exp").innerHTML = "\\[ radius of the circle, r, inside a rhombus is = xy/2√(x^2+y^2). \\]"
+        document.getElementById("cirinsemi6exp").innerHTML = "\\[radius of the circle in terms of l & b is = lb/2√(l^2+b^2).\\]"
+        document.getElementById("cirinsemi6ans").innerHTML = r;
+        renderMathInElement(document.getElementById("cirinsemi6exp"))
+    }
+    else
+        document.getElementById("cirinsemi6ans").innerHTML = "Please enter valid input"
 }
 
 function regpoly() {
