@@ -1534,41 +1534,14 @@ function perchngCal(){
 
 function peroffCal(){
     var original = parseInt(document.getElementById("originalPrice").value);
-    var off = parseInt(document.getElementById("offper").value);
-    var tax = parseInt(document.getElementById("salestax").value);
+    var off = parseInt(document.getElementById("offper").value)/100;
+    var tax = parseInt(document.getElementById("salestax").value)/100;
+    var final = (original + (original*tax))*off;
+    var savings = original - final;
     var output1 = document.getElementById("peroffans1");
     var output2 = document.getElementById("peroffans2");
-    var temp1 = "";
-    var temp2 = "";
-    var final = (original + (original*(tax/100)))*(off/100);
-    var savings = original - final;
-
-    if(!isNaN(original) && !isNaN(tax) && !isNaN(off)){
-
-        temp1 += "\\[The \\space Percentage \\space Off \\space will \\space be,\\]"
-        temp1 += "\\[First, \\space we \\space calculate \\space the \\space final \\space value\\]"
-        temp1 += "\\[Final \\space Price \\space = \\space (Original \\space Price) +  ( (Original \\space Price) \\times \\frac{(Tax \\space value)}{100} ) \\times \\frac{(Off \\space value)}{100}\\]"
-        temp1 += "\\[\\space = \\space ("+original+") +  ( ("+original+") \\times \\frac{("+tax+")}{100} ) \\times \\frac{("+off+")}{100}\\]"
-        temp1 += "\\[\\space = \\space ("+original+") +  ( ("+original+") \\times "+(tax/100).toFixed(2)+" ) \\times "+(off/100).toFixed(2)+"\\]"
-        temp1 += "\\[\\space = \\space ("+original+") +  ( "+(original * (tax/100)).toFixed(2)+" ) \\times "+(off/100).toFixed(2)+"\\]"
-        temp1 += "\\[\\space = \\space "+(original * (original * (tax/100))).toFixed(2)+"  \\times "+(off/100).toFixed(2)+"\\]"
-        temp1 += "\\[\\space = \\space "+final.toFixed(3)+"\\]"
-
-        output1.innerHTML = temp1;
-
-        temp2 += "\\[Finally,\\space we \\space substract \\space this \\space (Final \\space Price) \\space value \\space from \\space the \\space (Orginal \\space Price)\\]"
-        temp2 += "\\[Savings \\space = \\space (Orginal \\space Price) \\space - \\space (Final \\space Price)\\]"
-        temp2 += "\\[\\space = \\space "+original+" - "+final.toFixed(2)+"\\]"
-        temp2 += "\\[\\space = \\space "+savings.toFixed(3)+"\\]"
-
-        output2.innerHTML = temp2;
-    } else{
-        temp1 = "\\[Please \\space enter \\space valid \\space input\\]"
-        output1.innerHTML = temp1;
-        temp2 = "";
-    }
-    renderMathInElement(output1);
-    renderMathInElement(output2);
+    output1.innerHTML = "Final price: " + final.toFixed(2);
+    output2.innerHTML = "Your savings: " + savings;
 }
 
 function moduloCal(){
