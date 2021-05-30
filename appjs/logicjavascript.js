@@ -19814,18 +19814,36 @@ function convertex3() {
         var x = "",y="";
         var temp ="";
         if(input.length % 4 != 0 ){
-            x = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
+            result.innerHTML = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
         }else{
             x = "";
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space Excess-3 \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\space digits \\]";
+            print +="\\[then \\space subtract \\space 3 \\space from \\space each \\space decimal \\space digit \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + (parseInt(temp,2)-3).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
+                    print += "\\[" + parseInt(temp,2) + " \\space - \\space 3 \\space \\rightarrow \\space " + (parseInt(temp,2)-3).toString() + " \\]";
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space the \\space decimal \\space digits \\space to \\]";
+            print += "\\[\\space get \\space the \\space result \\space in \\space Decimal \\space \\]";
+            print += "\\[\\rightarrow "+x+"\\]";
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString();
             }else if(parseInt(x)<0){
@@ -19833,6 +19851,9 @@ function convertex3() {
             }else{
                 x = "Error : Invalid input (decimal value of each digit cant exceed 9)";
             }
+            result.innerHTML = "Answer -> " + x;
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     }else if(fromBase === "Excess-3" && toBase === "Binary"){
         var x = "",y="";
