@@ -19359,7 +19359,7 @@ function convertdec2421() {
             result.innerHTML = x;
         }result.innerHTML = x;
 }
-
+}
 
 //---------------------------------------------------------------------------
 //Function that performs conversion of grey to Decimal and viceversa
@@ -21103,10 +21103,46 @@ function rvalue() {
 
    }
     
+}
+// sheppard correction for moments
+function shepvalue() {
+    let num = document.getElementById("mu2").value;
+    let num1 = document.getElementById("mu4").value;
+    let num3=document.getElementById("mu3").value;
+    let h = document.getElementById("widths").value;
+
+    if(num=="" || num1=="" ||num3=="" || h=="")
+    {
+       document.getElementById("shepans").innerHTML="Please fill all the fields";
+    }
+    else{
+        num=parseFloat(num);
+        num1=parseFloat(num1);
+        h=parseFloat(h);
+        var h2=Math.pow(h,2);
+        var h4=Math.pow(h,4);
+        var ans ="";
+        ans="\\[The \\space corrected \\space value \\space of \\space moments \\space are:\\]"
+        ans+="\\[\\mu_2 \\space (corrected)= \\mu_2 -\\frac{h^{2}}{12}\\]"
+        ans+="\\["+num+" -\\frac{"+h+"^{2}}{12}\\]"
+        ans+="\\["+num+" -\\frac{"+h2.toFixed(4)+"}{12}\\]"
+        ans+="\\["+num+" -"+((h2.toFixed(4))/12).toFixed(4)+"\\]"
+        ans+="\\["+(num-((h2.toFixed(4))/12).toFixed(4)).toFixed(4)+"\\]"
+        ans+="\\[\\mu_4 \\space (corrected)= \\mu_4 -\\frac{h^{4} \\mu_2}{2} + \\frac{7 h^{4}}{240}\\]"
+        ans+="\\["+num1+" -\\frac{"+h+"^{2} \\times "+num+"}{2} + \\frac{7 \\times "+h+"^{4}}{240}\\]"
+        ans+="\\["+num1+" -\\frac{"+(h2*num).toFixed(4)+"}{2} + \\frac{"+(7*h4).toFixed(4)+"}{240}\\]"
+        ans+="\\["+num1+" -"+(h2*num).toFixed(4)/2+" + "+(7*h4).toFixed(4)/240+"\\]"
+        ans+="\\["+(num1-(h2*num).toFixed(4)/2+(7*h4).toFixed(4)/240).toFixed(4)+"\\]"
+        ans+="\\[\\mu_1 \\space and \\space \\mu_3 \\space i.e. \\space "+num3+" \\space require \\space no \\space correction.\\]"
+        document.getElementById("shepans").innerHTML=ans;
+        renderMathInElement(document.getElementById("shepans"));
 
 
+
+    }
 
 }
+
 
 
 //np chart
@@ -21124,7 +21160,7 @@ function npvalue() {
     let list1 = document.getElementById("defective").value;
     let n = document.getElementById("no").value;
 
-    console.log(list1 + " " + n);
+   
     list1 = list1.split(" ");
     let n1 = list1.length;
     for (var i = 0; i < n1; i++) {
