@@ -17759,12 +17759,17 @@ function co_prime_calc(){
 function polymax7find() {
     let n = parseInt(document.getElementById("polymax7").value)
     let r = parseInt(document.getElementById("polymax71").value)
-    if (!isNaN(n) && !isNaN(r)) {
+    if (!isNaN(n) || !isNaN(r)) {
         var theta, theta_in_radians;
         theta = 360 / n;
         theta_in_radians = theta * 3.14 / 180;
         let ans = 2 * r * Math.sin(theta_in_radians / 2);
+        document.getElementById("polymax7exp").innerHTML ="\\[Consider the image above and let angle AOB be theta then theta = 360 / n. \\]"
+        document.getElementById("polymax7exp").innerHTML ="\\[In right angled triangle $\Delta AOC$   , angle ACO = 90 degrees and angle AOC = theta / 2. \\]"
+        document.getElementById("polymax7exp").innerHTML ="\\[So, AC = OA * sin(theta / 2) = r * sin(theta / 2) \\]"
+        document.getElementById("polymax7exp").innerHTML ="\\[Therefore, side of the polygon, AB = 2 * AC i.e. 2 * r * sin(theta / 2).\\]"
         document.getElementById("polymax7ans").innerHTML = ans
+        renderMathInElement(document.getElementById("polymax7exp"))
     }
     else {
         document.getElementById("polymax7ans").innerHTML = "Please enter valid input"
