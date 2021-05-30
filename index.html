@@ -6177,21 +6177,26 @@
                 </div>
             </div>
 
-
-            <div class="form-group">
-                <input type="text" placeholder="Enter Function" id="inputdifferentiatequation"
-                       class="form__field"
-                       oninput="ddiff()">
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="plotit('inputdifferentiatequation','diffplot',sdiff())">
-                    Solve
-                </button>
-                <button type="button" class="btn btn-outline-light" id="diffsolvebutton">Show
-                    Steps
-                </button>
-            </div>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" placeholder="Enter Function" id="inputdifferentiatequation"
+                           class="form__field"
+                           oninput="ddiff()">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light"
+                            onclick="plotit('inputdifferentiatequation','diffplot',sdiff())">
+                        Solve
+                    </button>
+                    <button type="button" class="btn btn-outline-light" id="diffsolvebutton">Show
+                        Steps
+                    </button>
+                    <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            
             <div class="form-group">
                 <p style="overflow-x:scroll;overflow-y:hidden;height:100%" id="resultdiff"></p>
             </div>
@@ -8883,17 +8888,21 @@
                 y_{1}f'(x_{1})\]</p>
         </div>
         <div class="collapse" id="partialdiffcollapse">
-            <div class="form-group">
-                <input type="text" id="inputpartialdiff" class="form__field"
-                       placeholder="Enter Function"
-                       oninput="dpardiff()">
-                <input type="text" id="inputpartialorder" class="form__field"
-                       placeholder="Order"
-                       oninput="dpardiff()">
-            </div>
-            <div class="form-group">
-                <button type="button" id="solvepardiff" class="btn btn-light">Solve</button>
-            </div>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" id="inputpartialdiff" class="form__field"
+                           placeholder="Enter Function"
+                           oninput="dpardiff()">
+                    <input type="text" id="inputpartialorder" class="form__field"
+                           placeholder="Order"
+                           oninput="dpardiff()">
+                </div>
+                <div class="form-group">
+                    <button type="button" id="solvepardiff" class="btn btn-light">Solve</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+                </div>
+            </form>
+            
             <div class="form-group">
                 <p style="overflow-x:scroll;overflow-y:hidden;height:100%"
                    id="resultpardiff"></p>
@@ -9934,20 +9943,26 @@
         <div class="text-center">
             <h3>Mono Vector Calculator </h3><br>
         </div>
-        <div class="coll">
-            <p>
-                Vector :   <input type="text" id="vma" size=3 value='' placeholder="A">  i  +
-            <input type="text" id="vmb" size=3 value='' placeholder="B"> j + <input type="text" id="vmc" size=3 value='' placeholder="C"> k
-                <br><br>
-                    <br>
-            <button type="button" class="btn btn-light" onclick=vecotrmod()>
-                Modulus
-            </button>
-            <button type="button" class="btn btn-light" onclick=vectorunit()>
-                Unit Vector
-            </button><br>
-            </p>
-        </div><br>
+        <form action="">
+            <div class="coll">
+                <p>
+                    Vector :   <input type="text" id="vma" size=3 value='' placeholder="A">  i  +
+                <input type="text" id="vmb" size=3 value='' placeholder="B"> j + <input type="text" id="vmc" size=3 value='' placeholder="C"> k
+                    <br><br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=vecotrmod()>
+                    Modulus
+                </button>
+                <button type="button" class="btn btn-light" onclick=vectorunit()>
+                    Unit Vector
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+                </p>
+            </div>
+        </form>
+        <br>
         <div class="coll" style="text-align: center; display: block;">
             <p id="vme"><br></p>
         <h5 id="vmr" style="color: white; font-size: x-large;"></h5>
@@ -9956,6 +9971,7 @@
             <div class="text-center">
             <h3>Vector Addition/Subtraction Calculator</h3><br>
         </div>
+        <form action="">
             <div class="coll">
                 <p>
                     Vector X :   <input type="text" id="a1b" size=3 value='' placeholder="A">  i  +
@@ -9970,9 +9986,14 @@
                 </button>
                 <button type="button" class="btn btn-light" onclick=vectorsub()>
                 Subtraction
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
             </button><br>
                 </p>
-            </div><br>
+            </div>
+        </form>
+            <br>
             <div class="coll" style="text-align: center;">
                 <h5 id="vectorsum1" style="color: white; font-size: x-large; display: none;">
                     <p id ="vsumi" style="display: inline-block;"></p><p style="display: inline-block;">\[\hat{i}\]</p>
@@ -9985,22 +10006,28 @@
         <div class="text-center">
             <h3>Product Calculator</h3><br>
         </div>
-        <div class="coll">
-            <p>
-                Vector X :   <input type="text" id="d1e" size=3 value='' placeholder="A">  i  +
-            <input type="text" id="d2e" size=3 value='' placeholder="B"> j + <input type="text" id="d3e" size=3 value='' placeholder="C"> k
-                <br><br>
-                Vector Y :   <input type="text" id="e1d" size=3 value='' placeholder="A"> i +
-            <input type="text" id="e2d" size=3 value='' placeholder="B"> j + <input type="text" id="e3d" size=3 value='' placeholder="C"> k
-                    <br>
-                    <br>
-            <button type="button" class="btn btn-light" onclick=vectordot()>
-                Dot
-            </button><button type="button" class="btn btn-light" onclick=vectorcross()>
-                Cross
-            </button><br>
-            </p>
-        </div><br>
+        <form action="">
+            <div class="coll">
+                <p>
+                    Vector X :   <input type="text" id="d1e" size=3 value='' placeholder="A">  i  +
+                <input type="text" id="d2e" size=3 value='' placeholder="B"> j + <input type="text" id="d3e" size=3 value='' placeholder="C"> k
+                    <br><br>
+                    Vector Y :   <input type="text" id="e1d" size=3 value='' placeholder="A"> i +
+                <input type="text" id="e2d" size=3 value='' placeholder="B"> j + <input type="text" id="e3d" size=3 value='' placeholder="C"> k
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=vectordot()>
+                    Dot
+                </button><button type="button" class="btn btn-light" onclick=vectorcross()>
+                    Cross
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+                </p>
+            </div>
+        </form>
+        <br>
         <div class="coll" style="text-align: center; display: block;">
             <p id="dotex"><br></p>
         <h5 id="vectordot1" style="color: white; font-size: x-large;"></h5>
@@ -10011,20 +10038,26 @@
             <h3>Angle Calculator</h3><br>
         </div>
         <p>3d vector</p>
-        <div class="coll">
-            <p>
-                Vector X :   <input type="text" id="vaa1" size=3 value='' placeholder="A">  i  +
-            <input type="text" id="vab1" size=3 value='' placeholder="B"> j + <input type="text" id="vac1" size=3 value='' placeholder="C"> k
-                <br><br>
-                Vector Y :   <input type="text" id="vaa2" size=3 value='' placeholder="A"> i +
-            <input type="text" id="vab2" size=3 value='' placeholder="B"> j + <input type="text" id="vac2" size=3 value='' placeholder="C"> k
-                    <br>
-                    <br>
-            <button type="button" class="btn btn-light" onclick=vactorangle3()>
-                Solve
-            </button><br>
-            </p>
-        </div><br>
+        <form action="">
+            <div class="coll">
+                <p>
+                    Vector X :   <input type="text" id="vaa1" size=3 value='' placeholder="A">  i  +
+                <input type="text" id="vab1" size=3 value='' placeholder="B"> j + <input type="text" id="vac1" size=3 value='' placeholder="C"> k
+                    <br><br>
+                    Vector Y :   <input type="text" id="vaa2" size=3 value='' placeholder="A"> i +
+                <input type="text" id="vab2" size=3 value='' placeholder="B"> j + <input type="text" id="vac2" size=3 value='' placeholder="C"> k
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=vactorangle3()>
+                    Solve
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+                </p>
+            </div>
+        </form>
+        <br>
         <div class="coll" style="text-align: center; display: block;">
             <p id="vae"><br></p>
         <h5 id="var" style="color: white; font-size: x-large;"></h5>
@@ -10032,20 +10065,26 @@
         </div>    
 
         <p>2d vector</p>
-        <div class="coll">
-            <p>
-                Vector X :   <input type="text" id="vaa3" size=3 value='' placeholder="A">  i  +
-            <input type="text" id="vab3" size=3 value='' placeholder="B"> j
-                <br><br>
-                Vector Y :   <input type="text" id="vaa4" size=3 value='' placeholder="A"> i +
-            <input type="text" id="vab4" size=3 value='' placeholder="B"> j
-                    <br>
-                    <br>
-            <button type="button" class="btn btn-light" onclick=vectorangle2()>
-                Solve
-            </button><br>
-            </p>
-        </div><br>
+        <form action="">
+            <div class="coll">
+                <p>
+                    Vector X :   <input type="text" id="vaa3" size=3 value='' placeholder="A">  i  +
+                <input type="text" id="vab3" size=3 value='' placeholder="B"> j
+                    <br><br>
+                    Vector Y :   <input type="text" id="vaa4" size=3 value='' placeholder="A"> i +
+                <input type="text" id="vab4" size=3 value='' placeholder="B"> j
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=vectorangle2()>
+                    Solve
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+                </p>
+            </div> 
+        </form>
+        <br>
         <div class="coll" style="text-align: center; display: block;">
             <p id="vae2"><br></p>
         <h5 id="var2" style="color: white; font-size: x-large;"></h5>
@@ -10054,20 +10093,26 @@
     <div class="text-center">
         <h3>Paraller vector</h3><br>
     </div>
-    <div class="coll">
-        <p>
-            Vector X:   <input type="text" id="vpa1" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="vpb1" size=3 value='' placeholder="B"> j + <input type="text" id="vpc1" size=3 value='' placeholder="C"> k
-            <br><br>
-            Vector Y :   <input type="text" id="vpa2" size=3 value='' placeholder="A"> i +
-        <input type="text" id="vpb2" size=3 value='' placeholder="B"> j + <input type="text" id="vpc2" size=3 value='' placeholder="C"> k
-                <br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=vectpral()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Vector X:   <input type="text" id="vpa1" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="vpb1" size=3 value='' placeholder="B"> j + <input type="text" id="vpc1" size=3 value='' placeholder="C"> k
+                <br><br>
+                Vector Y :   <input type="text" id="vpa2" size=3 value='' placeholder="A"> i +
+            <input type="text" id="vpb2" size=3 value='' placeholder="B"> j + <input type="text" id="vpc2" size=3 value='' placeholder="C"> k
+                    <br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=vectpral()>
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center; display: block;">
         <p id="vpe"><br></p>
     <h5 id="vpr" style="color: rgb(221, 228, 183) !important; font-size: x-large;"></h5>
@@ -10077,25 +10122,31 @@
     <div class="text-center">
         <h3> Projection Calculator</h3><br>
     </div>
-    <div class="coll">
-        <p>
-            Enter the First Vector X :   <input type="text" id="inp09" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="inp08" size=3 value='' placeholder="B"> j + <input type="text" id="inp07" size=3 value='' placeholder="C"> k
-            <br><br>
-            Enter the Second Vector Y :   <input type="text" id="inp06" size=3 value='' placeholder="A"> i +
-        <input type="text" id="inp05" size=3 value='' placeholder="B"> j + <input type="text" id="inp04" size=3 value='' placeholder="C"> k
-                <br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=vectorscalar()>
-            Scalar Projection
-        </button><button type="button" class="btn btn-light" onclick=vectorproj()>
-            Vector Projection
-        </button>
-        <button type="button" class="btn btn-light" onclick=projector()>
-            Projection Vector
-        </button><br>
-        </p>
-    </div><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Enter the First Vector X :   <input type="text" id="inp09" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="inp08" size=3 value='' placeholder="B"> j + <input type="text" id="inp07" size=3 value='' placeholder="C"> k
+                <br><br>
+                Enter the Second Vector Y :   <input type="text" id="inp06" size=3 value='' placeholder="A"> i +
+            <input type="text" id="inp05" size=3 value='' placeholder="B"> j + <input type="text" id="inp04" size=3 value='' placeholder="C"> k
+                    <br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=vectorscalar()>
+                Scalar Projection
+            </button><button type="button" class="btn btn-light" onclick=vectorproj()>
+                Vector Projection
+            </button>
+            <button type="button" class="btn btn-light" onclick=projector()>
+                Projection Vector
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center;">
     <h5 id="vectorscalar1" style="color: white; font-size: x-large;"></h5>
     </div>
@@ -10106,27 +10157,33 @@
     <div class="text-center">
         <h2>Section Formula</h2><br>
     </div>
-    <div class="coll">
-        <p>
-            Position Vector (OP) :   <input type="text" id="inp001" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="inp002" size=3 value='' placeholder="B"> j + <input type="text" id="inp003" size=3 value='' placeholder="C"> k
+    <form action="">
+        <div class="coll">
+            <p>
+                Position Vector (OP) :   <input type="text" id="inp001" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="inp002" size=3 value='' placeholder="B"> j + <input type="text" id="inp003" size=3 value='' placeholder="C"> k
+                <br><br>
+                 Position Vector (OQ) :   <input type="text" id="inp004" size=3 value='' placeholder="A"> i +
+            <input type="text" id="inp005" size=3 value='' placeholder="B"> j + <input type="text" id="inp006" size=3 value='' placeholder="C"> k
             <br><br>
-             Position Vector (OQ) :   <input type="text" id="inp004" size=3 value='' placeholder="A"> i +
-        <input type="text" id="inp005" size=3 value='' placeholder="B"> j + <input type="text" id="inp006" size=3 value='' placeholder="C"> k
-        <br><br>
-        Ratio = (<input type="text" id="m1" size=3 value='' placeholder="m"> , 
-    <input type="text" id="n11" size=3 value='' placeholder="n">)
-                <br>
-                <br>
-        <button type="button" class="btn btn-light" style="margin-left: 3.125rem;" onclick=vectorsection()>
-            Internal
-        </button>
-        <button type="button" class="btn btn-light" style="margin-left: 3.125rem;" onclick=vectorsection2()>
-            External
-        </button><br>
-
-        </p>
-    </div><br>
+            Ratio = (<input type="text" id="m1" size=3 value='' placeholder="m"> , 
+        <input type="text" id="n11" size=3 value='' placeholder="n">)
+                    <br>
+                    <br>
+            <button type="button" class="btn btn-light" style="margin-left: 3.125rem;" onclick=vectorsection()>
+                Internal
+            </button>
+            <button type="button" class="btn btn-light" style="margin-left: 3.125rem;" onclick=vectorsection2()>
+                External
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+    
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center;">
     <h5 id="vectorsection1" style="color: white; font-size: x-large;"></h5>
     </div><br>
@@ -10138,23 +10195,29 @@
     <div class="text-center">
         <h3>Coplanar and Non-Coplanar Calculator</h3><br>
     </div>
-    <div class="coll">
-        <p>
-            Vector X :   <input type="text" id="inp11" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="inp22" size=3 value='' placeholder="B"> j + <input type="text" id="inp33" size=3 value='' placeholder="C"> k
+    <form action="">
+        <div class="coll">
+            <p>
+                Vector X :   <input type="text" id="inp11" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="inp22" size=3 value='' placeholder="B"> j + <input type="text" id="inp33" size=3 value='' placeholder="C"> k
+                <br><br>
+                Vector Y :   <input type="text" id="inp44" size=3 value='' placeholder="A"> i +
+            <input type="text" id="inp55" size=3 value='' placeholder="B"> j + <input type="text" id="inp66" size=3 value='' placeholder="C"> k
             <br><br>
-            Vector Y :   <input type="text" id="inp44" size=3 value='' placeholder="A"> i +
-        <input type="text" id="inp55" size=3 value='' placeholder="B"> j + <input type="text" id="inp66" size=3 value='' placeholder="C"> k
-        <br><br>
-        Vector Z :   <input type="text" id="inp77" size=3 value='' placeholder="A"> i +
-        <input type="text" id="inp88" size=3 value='' placeholder="B"> j + <input type="text" id="inp99" size=3 value='' placeholder="C"> k
-                <br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=vectorplanar()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
+            Vector Z :   <input type="text" id="inp77" size=3 value='' placeholder="A"> i +
+            <input type="text" id="inp88" size=3 value='' placeholder="B"> j + <input type="text" id="inp99" size=3 value='' placeholder="C"> k
+                    <br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=vectorplanar()>
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center;">
     <h5 id="vectorplanar1" style="color: white; font-size: x-large;"></h5>
     </div>
@@ -10163,19 +10226,25 @@
     <div class="text-center">
     <h3>Vector Joining Two Points</h3><br>
     </div>
-            <div class="coll">
-                <p>
-                    Point A = (<input type="text" id="val1a" size=5 value='' placeholder="x1"> , 
-                <input type="text" id="val1b" size=5 value='' placeholder="y1"> , <input type="text" id="val1c" size=5 value='' placeholder="z1">)
-                        <br><br>
-                    Point B = (<input type="text" id="val2b" size=5 value='' placeholder="x2"> , 
-                <input type="text" id="val2c" size=5 value='' placeholder="y2"> , <input type="text" id="val2d" size=5 value='' placeholder="z2">)
-                        <br><br>
-                <button type="button" class="btn btn-light" onclick=vecpoints()>
-                    Find 
-                </button><br>
-                </p>
-            </div><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Point A = (<input type="text" id="val1a" size=5 value='' placeholder="x1"> , 
+            <input type="text" id="val1b" size=5 value='' placeholder="y1"> , <input type="text" id="val1c" size=5 value='' placeholder="z1">)
+                    <br><br>
+                Point B = (<input type="text" id="val2b" size=5 value='' placeholder="x2"> , 
+            <input type="text" id="val2c" size=5 value='' placeholder="y2"> , <input type="text" id="val2d" size=5 value='' placeholder="z2">)
+                    <br><br>
+            <button type="button" class="btn btn-light" onclick=vecpoints()>
+                Find 
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+            <br>
             <div class="coll" style="text-align: center;">
                 <h5 id="vectorpoint1" style="color: white; font-size: x-large;"></h5>
                 </div>
@@ -10183,23 +10252,29 @@
     <div class="text-center">
         <h3>Shortest Distance</h3><br>
     </div>
-    <div class="coll">
-        <p>
-            Line 1 (X1) :   <input type="text" id="in11" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="in22" size=3 value='' placeholder="B"> j + <input type="text" id="in33" size=3 value='' placeholder="C"> k
+    <form action="">
+        <div class="coll">
+            <p>
+                Line 1 (X1) :   <input type="text" id="in11" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="in22" size=3 value='' placeholder="B"> j + <input type="text" id="in33" size=3 value='' placeholder="C"> k
+                <br><br>
+                Line 2 (X2) :   <input type="text" id="in44" size=3 value='' placeholder="A"> i +
+            <input type="text" id="in55" size=3 value='' placeholder="B"> j + <input type="text" id="in66" size=3 value='' placeholder="C"> k
             <br><br>
-            Line 2 (X2) :   <input type="text" id="in44" size=3 value='' placeholder="A"> i +
-        <input type="text" id="in55" size=3 value='' placeholder="B"> j + <input type="text" id="in66" size=3 value='' placeholder="C"> k
-        <br><br>
-        Vector Parallel (b) :   <input type="text" id="in77" size=3 value='' placeholder="A"> i +
-        <input type="text" id="in88" size=3 value='' placeholder="B"> j + <input type="text" id="in99" size=3 value='' placeholder="C"> k
-                <br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=vectordistance()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
+            Vector Parallel (b) :   <input type="text" id="in77" size=3 value='' placeholder="A"> i +
+            <input type="text" id="in88" size=3 value='' placeholder="B"> j + <input type="text" id="in99" size=3 value='' placeholder="C"> k
+                    <br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=vectordistance()>
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center;">
         <h5 id="vectordist1" style="color: white; font-size: x-large;"></h5>
         </div>
@@ -10207,22 +10282,28 @@
         <div class="text-center">
             <h3>Intersection of Two Lines</h3><br>
         </div>
-        <div class="coll">
-            <p>
-                Enter 1st Line (r1) :   <input type="text" id="i1" size=3 value='' placeholder="A">  i  +
-            <input type="text" id="i2" size=3 value='' placeholder="B"> j + <input type="text" id="i3" size=3 value='' placeholder="C"> k + t  <input type="text" id="i4" size=3 value='' placeholder="A">  i  +
-            <input type="text" id="i5" size=3 value='' placeholder="B"> j + <input type="text" id="i6" size=3 value='' placeholder="C"> k
-                <br><br>
-                Enter 2nd Line (r2) :   <input type="text" id="i7" size=3 value='' placeholder="A"> i +
-            <input type="text" id="i8" size=3 value='' placeholder="B"> j + <input type="text" id="i9" size=3 value='' placeholder="C"> k + t1  <input type="text" id="i10" size=3 value='' placeholder="A">  i  +
-            <input type="text" id="i11" size=3 value='' placeholder="B"> j + <input type="text" id="i12" size=3 value='' placeholder="C"> k
-                    <br>
-                    <br>
-            <button type="button" class="btn btn-light" onclick=vectorline()>
-                Solve
-            </button><br>
-            </p>
-        </div><br>
+        <form action="">
+            <div class="coll">
+                <p>
+                    Enter 1st Line (r1) :   <input type="text" id="i1" size=3 value='' placeholder="A">  i  +
+                <input type="text" id="i2" size=3 value='' placeholder="B"> j + <input type="text" id="i3" size=3 value='' placeholder="C"> k + t  <input type="text" id="i4" size=3 value='' placeholder="A">  i  +
+                <input type="text" id="i5" size=3 value='' placeholder="B"> j + <input type="text" id="i6" size=3 value='' placeholder="C"> k
+                    <br><br>
+                    Enter 2nd Line (r2) :   <input type="text" id="i7" size=3 value='' placeholder="A"> i +
+                <input type="text" id="i8" size=3 value='' placeholder="B"> j + <input type="text" id="i9" size=3 value='' placeholder="C"> k + t1  <input type="text" id="i10" size=3 value='' placeholder="A">  i  +
+                <input type="text" id="i11" size=3 value='' placeholder="B"> j + <input type="text" id="i12" size=3 value='' placeholder="C"> k
+                        <br>
+                        <br>
+                <button type="button" class="btn btn-light" onclick=vectorline()>
+                    Solve
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+                </p>
+            </div>
+        </form>
+        <br>
         <div class="coll" style="text-align: center;">
         <h5 id="vectorline1" style="color: white; font-size: x-large;"></h5>
         </div>
@@ -10232,19 +10313,25 @@
     <div class="text-center">
         <h3>Resultant Vector Calculator</h3><br>
     </div>
-    <div class="coll">
-        <p>
-            Enter Magnitude of 1st Vector :   <input type="text" id="abc" size=3 value='' placeholder="X">
-            <br><br>
-            Enter Magnitude of 2nd Vector :   <input type="text" id="def" size=3 value='' placeholder="Y">
+    <form action="">
+        <div class="coll">
+            <p>
+                Enter Magnitude of 1st Vector :   <input type="text" id="abc" size=3 value='' placeholder="X">
                 <br><br>
-            Enter Angle between 1st and 2nd Vector :   <input type="text" id="ang3" size=3 value='90' placeholder="θ">
-            <br><br>
-        <button type="button" class="btn btn-light" onclick=vector_res()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
+                Enter Magnitude of 2nd Vector :   <input type="text" id="def" size=3 value='' placeholder="Y">
+                    <br><br>
+                Enter Angle between 1st and 2nd Vector :   <input type="text" id="ang3" size=3 value='90' placeholder="θ">
+                <br><br>
+            <button type="button" class="btn btn-light" onclick=vector_res()>
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center;">
     <h5 id="vectorres1" style="color: white; font-size: x-large;"></h5>
     </div>
@@ -10252,23 +10339,29 @@
     <div class="text-center">
         <h3>Tetrahedron Calculator</h3><br>
     </div>
-    <div class="coll">
-        <p>
-            Vector  AB :   <input type="text" id="inp12" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="inp13" size=3 value='' placeholder="B"> j + <input type="text" id="inp14" size=3 value='' placeholder="C"> k
+    <form action="">
+        <div class="coll">
+            <p>
+                Vector  AB :   <input type="text" id="inp12" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="inp13" size=3 value='' placeholder="B"> j + <input type="text" id="inp14" size=3 value='' placeholder="C"> k
+                <br><br>
+                Vector  AC :   <input type="text" id="inp21" size=3 value='' placeholder="A"> i +
+            <input type="text" id="inp25" size=3 value='' placeholder="B"> j + <input type="text" id="inp23" size=3 value='' placeholder="C"> k
             <br><br>
-            Vector  AC :   <input type="text" id="inp21" size=3 value='' placeholder="A"> i +
-        <input type="text" id="inp25" size=3 value='' placeholder="B"> j + <input type="text" id="inp23" size=3 value='' placeholder="C"> k
-        <br><br>
-        Vector  AD :   <input type="text" id="inp31" size=3 value='' placeholder="A"> i +
-        <input type="text" id="inp32" size=3 value='' placeholder="B"> j + <input type="text" id="inp35" size=3 value='' placeholder="C"> k
-                <br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=vectortetra()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
+            Vector  AD :   <input type="text" id="inp31" size=3 value='' placeholder="A"> i +
+            <input type="text" id="inp32" size=3 value='' placeholder="B"> j + <input type="text" id="inp35" size=3 value='' placeholder="C"> k
+                    <br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=vectortetra()>
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center;">
     <h5 id="vectortetra1" style="color: white; font-size: x-large;"></h5>
     </div>
@@ -10277,23 +10370,29 @@
     <div class="text-center">
         <h3>Area of Triangle</h3><br>
     </div>
-    <div class="coll">
-        <p>
-            Vector  X :   <input type="text" id="inp90" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="inp98" size=3 value='' placeholder="B"> j + <input type="text" id="inp97" size=3 value='' placeholder="C"> k
+    <form action="">
+        <div class="coll">
+            <p>
+                Vector  X :   <input type="text" id="inp90" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="inp98" size=3 value='' placeholder="B"> j + <input type="text" id="inp97" size=3 value='' placeholder="C"> k
+                <br><br>
+                Vector  Y :   <input type="text" id="inp96" size=3 value='' placeholder="A"> i +
+            <input type="text" id="inp95" size=3 value='' placeholder="B"> j + <input type="text" id="inp94" size=3 value='' placeholder="C"> k
             <br><br>
-            Vector  Y :   <input type="text" id="inp96" size=3 value='' placeholder="A"> i +
-        <input type="text" id="inp95" size=3 value='' placeholder="B"> j + <input type="text" id="inp94" size=3 value='' placeholder="C"> k
-        <br><br>
-        Vector  Z :   <input type="text" id="inp93" size=3 value='' placeholder="A"> i +
-        <input type="text" id="inp92" size=3 value='' placeholder="B"> j + <input type="text" id="inp91" size=3 value='' placeholder="C"> k
-                <br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=vectortria()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
+            Vector  Z :   <input type="text" id="inp93" size=3 value='' placeholder="A"> i +
+            <input type="text" id="inp92" size=3 value='' placeholder="B"> j + <input type="text" id="inp91" size=3 value='' placeholder="C"> k
+                    <br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=vectortria()>
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center;">
     <h5 id="vectortria1" style="color: white; font-size: x-large;"></h5>
     </div>
@@ -10302,20 +10401,26 @@
     <div class="text-center">
         <h3>Area of Quadrilateral</h3><br>
     </div>
-    <div class="coll">
-        <p>
-            Vector  AC :   <input type="text" id="inp51" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="inp52" size=3 value='' placeholder="B"> j + <input type="text" id="inp53" size=3 value='' placeholder="C"> k
+    <form action="">
+        <div class="coll">
+            <p>
+                Vector  AC :   <input type="text" id="inp51" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="inp52" size=3 value='' placeholder="B"> j + <input type="text" id="inp53" size=3 value='' placeholder="C"> k
+                <br><br>
+                Vector  BD :   <input type="text" id="inp61" size=3 value='' placeholder="A"> i +
+            <input type="text" id="inp62" size=3 value='' placeholder="B"> j + <input type="text" id="inp63" size=3 value='' placeholder="C"> k
             <br><br>
-            Vector  BD :   <input type="text" id="inp61" size=3 value='' placeholder="A"> i +
-        <input type="text" id="inp62" size=3 value='' placeholder="B"> j + <input type="text" id="inp63" size=3 value='' placeholder="C"> k
-        <br><br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=vectorquad()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=vectorquad()>
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center;">
     <h5 id="vectorquad1" style="color: white; font-size: x-large;"></h5>
     </div>
@@ -10323,23 +10428,29 @@
     <div class="text-center">
         <h3>Volume of Parallelopiped</h3><br>
     </div>
-    <div class="coll">
-        <p>
-          Adjacent Side 1 (a):   <input type="text" id="volpx1" size=3 value='' placeholder="x1">  i  +
-        <input type="text" id="volpx2" size=3 value='' placeholder="y1"> j + <input type="text" id="volpx3" size=3 value='' placeholder="z1"> k
+    <form action="">
+        <div class="coll">
+            <p>
+              Adjacent Side 1 (a):   <input type="text" id="volpx1" size=3 value='' placeholder="x1">  i  +
+            <input type="text" id="volpx2" size=3 value='' placeholder="y1"> j + <input type="text" id="volpx3" size=3 value='' placeholder="z1"> k
+                <br><br>
+              Adjacent Side 2 (b) :   <input type="text" id="volpy1" size=3 value='' placeholder="x2"> i +
+            <input type="text" id="volpy2" size=3 value='' placeholder="y2"> j + <input type="text" id="volpy3" size=3 value='' placeholder="z2"> k
             <br><br>
-          Adjacent Side 2 (b) :   <input type="text" id="volpy1" size=3 value='' placeholder="x2"> i +
-        <input type="text" id="volpy2" size=3 value='' placeholder="y2"> j + <input type="text" id="volpy3" size=3 value='' placeholder="z2"> k
-        <br><br>
-          Adjacent Side 3 (c) :   <input type="text" id="volpz1" size=3 value='' placeholder="x3"> i +
-        <input type="text" id="volpz2" size=3 value='' placeholder="y3"> j + <input type="text" id="volpz3" size=3 value='' placeholder="z3"> k
-                <br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=paralleloarea()>
-            Solve
-        </button><br>
-        </p>
-    </div><br>
+              Adjacent Side 3 (c) :   <input type="text" id="volpz1" size=3 value='' placeholder="x3"> i +
+            <input type="text" id="volpz2" size=3 value='' placeholder="y3"> j + <input type="text" id="volpz3" size=3 value='' placeholder="z3"> k
+                    <br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=paralleloarea()>
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center;">
     <h5 id="paralleo" style="color: white; font-size: x-large;"></h5>
     </div>
@@ -10347,25 +10458,31 @@
     <div class="text-center">
         <h3>Triple Product</h3><br>
     </div>
-    <div class="coll">
-        <p>
-            Vector X :   <input type="text" id="vx1" size=3 value='' placeholder="A">  i  +
-        <input type="text" id="vy1" size=3 value='' placeholder="B"> j + <input type="text" id="vz1" size=3 value='' placeholder="C"> k
+    <form action="">
+        <div class="coll">
+            <p>
+                Vector X :   <input type="text" id="vx1" size=3 value='' placeholder="A">  i  +
+            <input type="text" id="vy1" size=3 value='' placeholder="B"> j + <input type="text" id="vz1" size=3 value='' placeholder="C"> k
+                <br><br>
+                Vector Y :   <input type="text" id="vx2" size=3 value='' placeholder="A"> i +
+            <input type="text" id="vy2" size=3 value='' placeholder="B"> j + <input type="text" id="vz2" size=3 value='' placeholder="C"> k
             <br><br>
-            Vector Y :   <input type="text" id="vx2" size=3 value='' placeholder="A"> i +
-        <input type="text" id="vy2" size=3 value='' placeholder="B"> j + <input type="text" id="vz2" size=3 value='' placeholder="C"> k
-        <br><br>
-        Vector Z :   <input type="text" id="vx3" size=3 value='' placeholder="A"> i +
-        <input type="text" id="vy3" size=3 value='' placeholder="B"> j + <input type="text" id="vz3" size=3 value='' placeholder="C"> k
-                <br>
-                <br>
-        <button type="button" class="btn btn-light" onclick=stp()>
-            Scalar
-        </button><button type="button" class="btn btn-light" onclick=vtp()>
-            Vector
-        </button><br>
-        </p>
-    </div><br>
+            Vector Z :   <input type="text" id="vx3" size=3 value='' placeholder="A"> i +
+            <input type="text" id="vy3" size=3 value='' placeholder="B"> j + <input type="text" id="vz3" size=3 value='' placeholder="C"> k
+                    <br>
+                    <br>
+            <button type="button" class="btn btn-light" onclick=stp()>
+                Scalar
+            </button><button type="button" class="btn btn-light" onclick=vtp()>
+                Vector
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
     <div class="coll" style="text-align: center;">
     <h5 id="stpans" style="color: white; font-size: x-large;"></h5>
     </div>
@@ -20679,9 +20796,14 @@
 
 <div class="collapse" id="vects">
     <h1 style="color: white;font-family:mathfont">Vector Magnitude Calculator</h2><p>&nbsp;</p>
-    <input style="color: white; font-family:mathfont" type="text"id="vects1" placeholder="Enter the Vector space" class="form__field"><p>&nbsp;</p>
-    <input style="color: white; font-family:mathfont" type="text"id="vects2" placeholder="Enter the input coordinates" class="form__field"><p>&nbsp;</p>
-    <button class="btn btn-dark" onclick="vectsfind()">Find</button><p>&nbsp;</p>
+    <form action="">
+        <input style="color: white; font-family:mathfont" type="text"id="vects1" placeholder="Enter the Vector space" class="form__field"><p>&nbsp;</p>
+        <input style="color: white; font-family:mathfont" type="text"id="vects2" placeholder="Enter the input coordinates" class="form__field"><p>&nbsp;</p>
+        <button class="btn btn-dark" onclick="vectsfind()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    </form>
+    
+    <p>&nbsp;</p>
     <p style="font-family:mathfont" id="vectans1"></p><br>
     
 </div>
