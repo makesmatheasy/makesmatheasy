@@ -2336,28 +2336,38 @@ function hypergeosvarcal()
     }
     document.getElementById("hypergeos2ans").innerHTML=ans;
 }
-function hypergeosvar2cal()
-{
-    var num1=document.getElementById("hypergeos12").value;
-    var num2=document.getElementById("hypergeos22").value;
-    var num3=document.getElementById("hypergeos32").value;
-    var num4=document.getElementById("hypergeos42").value;
-    ans="";
-    if(num1==""||num2==""||num4==""||num3=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
-      var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
-       ans="The value of hypergeometric distribution's variance is : "+Math.sqrt(d);
+function hypergeosvar2cal() {
+    var num1=parseFloat(document.getElementById("hypergeos12").value);
+    var num2=parseFloat(document.getElementById("hypergeos22").value);
+    var num3=parseFloat(document.getElementById("hypergeos32").value);
+    var num4=parseFloat(document.getElementById("hypergeos42").value);
+
+    var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
+    var ans = Math.sqrt(d);
+    var output = document.getElementById("hypergeos2ans");
+    var temp ="";
+    if(isNaN(num2) || isNaN(num1) || isNaN(num3) || isNaN(num4)) {
+        temp = "\\[Please \\space fill \\space all \\space the \\space field\\]";
+
+        output.innerHTML = temp;
+    } 
+    else {
+        temp += "\\[Hypergeometric \\space Standard \\space Deviation \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+num4+" - "+num3+") \\times ("+num4+" - "+num2+"))}{( "+num4+"^{2} \\times ("+num4+" - 1))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{( "+num4+"^{2} \\times ("+num4+" - 1))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{( "+num4+"^{2} \\times ("+(num4-1)+"))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+(num2*num3)+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space \\frac{ "+(num2*num3*(num4-num3)*(num4-num2))+" }{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space "+d.toFixed(3)+"\\]"
+        temp += "\\[Hence, \\space the \\space values \\space Hypergeometric \\space Standard \\space Deviation \\space is,\\]"
+        temp += "\\[\\space = \\sqrt{"+d.toFixed(2)+"} \\]"
+        temp += "\\[\\space = "+ans.toFixed(3)+" \\]"
+
+        output.innerHTML = temp;
    
     }
-    document.getElementById("hypergeos2ans").innerHTML=ans;
+    renderMathInElement(output);
 }
 
 function egccal()
