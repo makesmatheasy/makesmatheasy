@@ -21060,13 +21060,17 @@
     <h1 >Exponential Growth Calculator </h1>
     <p>&nbsp;</p>
     <h3>Formula Used:\[x(t)=x_{0}(1+\frac{r}{100})^t\]</h3>
-        <input type="number" name="egc1" class="form__field" id="egc1" width="5em" placeholder="Enter initial value(x₀)">
-        <p>&nbsp;</p>
-        <input type="number" name="egc2" class="form__field" id="egc2" placeholder="Enter rate of change(r)">
-        <p>&nbsp;</p>
-        <input type="number" name="egc3" class="form__field" id="egc3" placeholder="Enter elapsed time( t in years)">
-        <p>&nbsp;</p>
-        <button type="button" class="btn btn-outline-light" onclick="egccal()">Calculate</button>
+        <form action="">
+            <input type="number" name="egc1" class="form__field" id="egc1" width="5em" placeholder="Enter initial value(x₀)">
+            <p>&nbsp;</p>
+            <input type="number" name="egc2" class="form__field" id="egc2" placeholder="Enter rate of change(r)">
+            <p>&nbsp;</p>
+            <input type="number" name="egc3" class="form__field" id="egc3" placeholder="Enter elapsed time( t in years)">
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-light" onclick="egccal()">Calculate</button>
+            <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        </form>
+        
         <p>&nbsp;</p>
         <p id="egcans"></p>
         <p id="egcexplain"></p>
@@ -21276,9 +21280,14 @@
 <div class="collapse" id="perchng">
     <h2 style="text-align:center;">Percentage change</h2>
     <br>
-    <input type="text"id="initialVal" placeholder="Enter the initial value" class="form__field"><br>
-    <input type="text"id="finalVal" placeholder="Enter the final value" class="form__field"><br>
-    <button class="btn btn-dark" onclick="perchngCal()">Calculate</button><br><br>
+    <form action="">
+        <input type="text"id="initialVal" placeholder="Enter the initial value" class="form__field"><br>
+        <input type="text"id="finalVal" placeholder="Enter the final value" class="form__field"><br>
+        <button class="btn btn-dark" onclick="perchngCal()">Calculate</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br><br>
+    </form>
+    
     <p id="perchngans" style= "font-family:mathfont"></p><br>
 </div>
 <!-- Percentage change ends -->
@@ -21286,11 +21295,14 @@
 <!-- Percentage off starts -->
 <div class="collapse" id="peroff">
     <h2 style="text-align:center;">Percentage Off</h2><br>
+    <form action="">
+        <input type="text"id="originalPrice" placeholder="Enter the original price" class="form__field"><br><br>
+        <input type="text"id="offper" placeholder="Enter the off percentage" class="form__field"><br><br>
+        <input type="text"id="salestax" placeholder="Enter the sales tax percentage" class="form__field"><br><br>
+        <button class="btn btn-dark" onclick="peroffCal()">Calculate</button><br><br>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    </form>
     
-    <input type="text"id="originalPrice" placeholder="Enter the original price" class="form__field"><br><br>
-    <input type="text"id="offper" placeholder="Enter the off percentage" class="form__field"><br><br>
-    <input type="text"id="salestax" placeholder="Enter the sales tax percentage" class="form__field"><br><br>
-    <button class="btn btn-dark" onclick="peroffCal()">Calculate</button><br><br>
     <p id="peroffans1" style= "font-family:mathfont"></p><br>
     <p id="peroffans2" style= "font-family:mathfont"></p><br>
 </div>
@@ -21300,9 +21312,13 @@
 <div class="collapse" id="modulo">
     <h2 style="text-align:center;">Modulo Calculator</h2><br>
     <p>x mod y = r</p><br>
-    <input type="text"id="modx" placeholder="Enter dividend(x)" class="form__field"><br><br>
-    <input type="text"id="mody" placeholder="Enter divisor(y)" class="form__field"><br><br>
-    <button class="btn btn-dark" onclick="moduloCal()">Calculate</button><br><br>
+    <form action="">
+        <input type="text"id="modx" placeholder="Enter dividend(x)" class="form__field"><br><br>
+        <input type="text"id="mody" placeholder="Enter divisor(y)" class="form__field"><br><br>
+        <button class="btn btn-dark" onclick="moduloCal()">Calculate</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    </form>
+    <br><br>
     <p id="moduloans" style= "font-family:mathfont"></p><br>
 </div>
 <!-- Modulo ends -->
