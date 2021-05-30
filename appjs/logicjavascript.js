@@ -13194,16 +13194,26 @@ function retfind2() {
 
 function retfind11() {
     let r = parseFloat(document.getElementById("retin11").value)
+    var output =  document.getElementById("retans11");
+    var ans = "";
     let area = 0.70477 * 2 * Math.pow(r, 2);
     if (r < 0) {
-        document.getElementById("retans11").innerHTML = "radius cannot be negative"
+        ans += "\\[Radius \\space of \\space circle \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
     }
     else if (!isNaN(r)) {
-        document.getElementById("retans11").innerHTML = area.toFixed(4);
+        ans += "\\[Area \\space of \\space the \\space Reuleaux \\space Triangle (A) \\space = \\space \\frac{(π - \\sqrt{3}) \\times h^{2}}{2} \\space = \\space 0.70477 \\times h^{2} \\]"
+        ans += "\\[Side \\space of \\space the \\space Square \\space is \\space a, \\space then \\]"
+        ans += "\\[ a\\sqrt{2} \\space = \\space 2r \\space -> \\space a \\space = \\space \\sqrt{2} r \\]"
+        ans += "\\[Height \\space of \\space the \\space Reuleaux \\space Triangle \\space is \\space same \\space as \\space a  \\space so, \\space h \\space = \\space a \\space = \\space \\sqrt{2}r \\]"
+        ans += "\\[A \\space = \\space 0.70477 \\times 2 \\times r^{2} \\space =  \\space 0.70477 \\times 2 \\times " + r + "^{2} \\space =  \\space 0.70477 \\times 2 \\times " + r**2 + " \\space =  \\space 0.70477 \\times " + 2*(r**2) + " \\space =  \\space " + area + " \\]" 
+        output.innerHTML = ans;
     }
     else {
-        document.getElementById("retans11").innerHTML = "Please enter valid input"
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans;
     }
+    renderMathInElement(output);
 }
 
 
