@@ -8765,6 +8765,31 @@ function solvetruntetra() {
     }
 }
 
+// Truncated Dodecahedron
+
+function solvetrundodeca() {
+    var a = parseFloat(document.getElementById("trundodeca-a").value);
+    var edgeLenOctField = document.getElementById("trundodeca-ax");
+    var areaField = document.getElementById("trundodeca-A");
+    var volField = document.getElementById("trundodeca-V");
+    var cirRadField = document.getElementById("trundodeca-rc");
+    var midRadField = document.getElementById("trundodeca-rm");
+    var avField = document.getElementById("trundodeca-av");
+    var ax = (5*a)/Math.sqrt(5);
+    var A = 5 * a*a * (Math.sqrt(3) + 6*Math.sqrt(5 + 2*Math.sqrt(5)));
+    var V = 5/12*a*a*a*(99+47*Math.sqrt(5));
+    var rc = a/4*Math.sqrt(74 + 30*Math.sqrt(5));
+    var rm = a/4*(5+3*Math.sqrt(5));
+    if ((!isNaN(a))) {
+        edgeLenOctField.innerHTML = `Edge length dodecahedron (a') = ${ax.toFixed(3)}`;
+        areaField.innerHTML = `Surface area (A) = ${A.toFixed(3)}`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)}`;
+        cirRadField.innerHTML = `Circumsphere radius (rc) = ${rc.toFixed(3)}`;
+        midRadField.innerHTML = `Midsphere radius (rm) = ${rm.toFixed(3)}`;
+        avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A/V).toFixed(3)}`;
+    }
+}
+
 // Truncated Octahedron
 
 function solvetruncocta() {

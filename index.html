@@ -18117,6 +18117,10 @@
                                         style="text-decoration:none;" href="#">Tetrahedron</a></td>
                             </tr>
                             <tr>
+                                <td><a data-toggle="modal" data-target="#trundodeca"
+                                        style="text-decoration:none;" href="#">Truncated Dodecahedron</a></td>
+                            </tr>
+                            <tr>
                                 <td><a data-toggle="modal" data-target="#truntetra"
                                     style="text-decoration:none;" href="#">Truncated Tetrahedron</a></td>
                             </tr>
@@ -34579,6 +34583,75 @@ N is the population size.
                             <p class="stopwrap" id="resultofrhododecamr"
                                 style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofrhododecair"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="trundodeca" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Dodecahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Edge length dodecahedron (a')</h5>
+                                    <p class="text-center">\[a' = \frac{5a}{\sqrt 5}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 5a^2 \times ( \sqrt 3 + 6\sqrt5 + 2\sqrt5 )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{5}{12} \times a^3 \times \left ( 99 + 47\sqrt5 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumsphere radius (r<sub>c</sub>)</h5>
+                                    <p class="text-center">\[r_{c} = \frac{a}{4} \times \sqrt{74 + 30\sqrt5}\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truncated-dodecahedron.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius (r<sub>m</sub>)</h5>
+                                    <p class="text-center">\[r_{m} = \frac{a}{4} \times \left ( 5 + 3\sqrt5 \right )\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface-to-volume ratio (A/V)</h5>
+                                    <p class="text-center">\[\frac{A}{V}\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Edge length (a)" id="trundodeca-a"
+                                       oninput="solvetrundodeca();">
+                            <p class="stopwrap" id="trundodeca-ax"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trundodeca-A"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trundodeca-V"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trundodeca-rc"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trundodeca-rm"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trundodeca-av"
                                 style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
