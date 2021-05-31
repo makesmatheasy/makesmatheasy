@@ -22595,17 +22595,24 @@ N is the population size.
     <h1 style="font-family:mathfont; text-align:center;">SOLVE FOR X</h1><br><br>
     <div class= "coll" style="margin-left:14.375rem"></div>
     <p>
-        <form action="">
-            <input type="text" id="solvex" size=5 value='' placeholder="a">X +
-            <input type="text" id="solvey" size=5 value='' placeholder="b"> =  <input type="text" id="solvez" size=5 value='' placeholder="c">
-           <br><br><br><br>
-            <button type="button" class="btn btn-light" style="width:8em" onclick=slvcal()>   Solve    </button>
-            <button type="button" class="btn btn-light" style="width:8em" onclick=calcexslvcal()>
-                Example
-            </button>
-            <button type="button" class="btn btn-light" style="width:8em" onclick="this.form.reset();">
-                Reset
-            </button>
+        <form action="" class="">
+            <div class="form-group d-flex justify-content-center">
+                <input type="text" class="form-control" id="solvex" size=5 value='' placeholder="a" style="width: 100%; max-width: 200px;">
+                <label for="#solvey" style="margin-top: 0.6rem;">X+</label>
+                <input type="text" class="form-control" id="solvey" size=5 value='' placeholder="b" style="width: 100%; max-width: 200px;">
+                <label for="#solvez" style="margin-top: 0.6rem;">=</label> 
+                <input type="text" class="form-control" id="solvez" size=5 value='' placeholder="c" style="width: 100%; max-width: 200px;">
+            </div>
+            <div class="form-group d-flex justify-content-center ml-2">
+                <button type="button" class="btn btn-light mb-5" style="width:8em" onclick=slvcal()>   Solve    </button><br><br>
+                <button type="button" class="btn btn-light mb-5" style="width:8em" onclick=calcexslvcal()>
+                    Example
+                </button><br><br>
+                <button type="button" class="btn btn-light mb-5" style="width:8em" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+            
         </form>
     
     <p>&nbsp;</p>
