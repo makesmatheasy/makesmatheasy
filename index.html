@@ -15286,27 +15286,48 @@
          <!-- z -test -->
          <div class="collapse" id="ztest">
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Z - Test</h1>
-            <p style="text-align: left;">H<sub>o</sub> : μ = μ<sub>o</sub>  (Null Hypothesis)</p>
-            <p style="text-align: left; margin-bottom: 2rem;">H<sub>a</sub> : μ ≠ μ<sub>o</sub>  (Alternative Hypothesis)</p>
+            
+            <h3 style="text-align:center;">What is Z-Test</h3>
+
+            <br>
+
+            <p style="color:#ababab !important;">
+                Z-test is a statistical test to determine whether two population means are different when the variances are known and the sample size is large. Z-test is a hypothesis test in which the z-statistic follows a normal distribution. A z-statistic, or z-score, is a number representing the result from the z-test.<
+            </p>
+<br>
+
+            <p style=" color:#ababab !important; text-align: center;">H<sub>o</sub> : μ = μ<sub>o</sub>  (Null Hypothesis)</p>
+            <p style=" color:#ababab !important; text-align: center; margin-bottom: 2rem;">H<sub>a</sub> : μ ≠ μ<sub>o</sub>  (Alternative Hypothesis)</p>
             <form action="">
                 <input class = "form__field"type="number" id="pm" placeholder="Enter Population Mean (µ0)">
-                <br><br>
+                <br>
+                <br>
                 <input class = "form__field"type="number" id="sm" placeholder="Enter Sample Mean (x)">
-                <br><br>
+                <br>
+                <br>
                 <input class = "form__field"type="number" id="sd" placeholder="Enter Standard Deviation (σ)">
-                <br><br>
+                <br> 
+                <br>
                 <input class = "form__field"type="number" id="sn" placeholder="Enter Sample Number (n)">
-                <br><br>
-                <label for="">Significance Level</label>
+                <br>
+                <br>
+                <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                <label for="" style="font-size:24px;">Significance Level</label>
+            
                 <br>
                 <select name="alpha" id="alpha">
                     <option value=0.01>0.01</option>
                     <option value=0.05>0.05</option>
                     <option value=0.1>0.1</option>
                 </select>
-                <br><br>
-                <button class = "btn btn-light" onclick="zvalue()">Test</button>
-                <button class = "btn btn-light" onclick="this.form.reset();">Result</button>
+            </div>
+
+                <br>
+                <br>
+                <div style="display:flex;justify-content:center;align-items:center;">
+                <button  style="width:87px;" class = "btn btn-light" onclick="zvalue()">Test</button>
+                <button  style="width:87px;" class = "btn btn-light" onclick="this.form.reset();">Result</button>
+            </div>
             </form>
             
             <p id="zworking"></p>
