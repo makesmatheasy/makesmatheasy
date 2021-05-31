@@ -21283,13 +21283,32 @@
         </div>
     </div>
 </div>
-
-<div class="collapse" id="woods">
-    <h1 style="color: white;font-family:mathfont">Woodall Number</h2><p>&nbsp;</p>
-    <input style="color: white; font-family:mathfont" type="text"id="wood1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-    <button class="btn btn-dark" onclick="woodfind()">FInd</button><p>&nbsp;</p>
-    <p style="font-family:mathfont" id="woodans"></p><br>
+<div class="collapse" id="woods" style="text-align: center;">
+    <div class="container">
+        <h2 style="color: white;font-family:mathfont;text-align: center;">Woodall Number</h2>
+        <br>
+        <p>A Woodall number (W<sub>n</sub>) is any natural number of the form
+            \[W_n = n \cdot 2^n - 1\]
+            for some natural number n.  </p>
+        <br>
+        <form action="">
+            <div class="form-group">
+                <input style="color: white; font-family:mathfont" type="number" id="wood1" placeholder="Enter the input number" class="form__field">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="woodfind()">Find</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+        <br>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="woodans"></p><br>
+        </div>
+    </div>
 </div>
+
 
 <!-- doubling time starts -->
 <div class="collapse" id="dbltime" style="text-align: center;">
