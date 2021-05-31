@@ -14038,6 +14038,36 @@ function trirect() {
    renderMathInElement(output);
 }
 
+
+function minarfind() {
+    let l = parseFloat(document.getElementById("minar1").value)
+    let b = parseFloat(document.getElementById("minar2").value)
+    var output = document.getElementById("minarans")
+    var ans = ""
+    if (l < 0 || b < 0) {
+        ans += "\\[Length \\space and \\space Breadth \\space of \\space a \\space Rectangle \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
+    }
+    else if (!isNaN(l) && !isNaN(b) ) {
+        let large = Math.max(l, b);
+        let small = Math.min(l, b);
+       
+        if (large >= 2 * small)
+        {
+            ans+=large * large;
+        }
+        else
+        {
+            ans+=(2 * small) * (2 * small);
+        } 
+        output.innerHTML = ans; 
+    }
+    else {
+            ans += "\\[Please \\space enter \\space all \\space input \\]"
+            output.innerHTML = ans;
+    }
+    renderMathInElement(output);
+}
 function receq1() {
     let n = parseInt(document.getElementById("receq1").value)
     var output = document.getElementById("receq1ans")
@@ -20058,20 +20088,41 @@ function convertbcd() {
             result.innerHTML = "Error : Invalid BCD input (BCD Code comes in sets of nibbles(4 bits)"
         }else{
             x = "";
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space BCD \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\space digits \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + parseInt(temp,2).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space the \\space decimal \\space digits \\space \\]";
+            print += "\\[\\rightarrow "+x+"\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space binary  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(2)+"\\]";
+            print += "\\[STEP \\space 5 \\space : Convert \\space binary \\space result \\space to \\space hexadecimal  \\]";
+            print += "\\["+parseInt(x).toString(2)+" \\space becomes \\space "+parseInt(x).toString(16)+"\\]";
             if(input.length / 4 == x.length ){
                 result.innerHTML = parseInt(x).toString(16);//converted dec to hexdec
             }else{
                 result.innerHTML = "Error : Invalid BCD input (decimal value of each digit cant exceed 9)";
             }
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     }
 
