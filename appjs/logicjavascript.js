@@ -26610,24 +26610,40 @@ function perfectvalue(){
         document.getElementById("perfectans").innerHTML="Please input a no";
     }
     else{
+        var v="";
+        var ans="";
+        var w="";
         num=parseInt(num);
         var temp = 0;
+        ans="\\[The \\space positive \\space diviors \\space of \\space the \\space number \\space excluding \\space itself \\space are:\\]"
         for(var i=1;i<=num/2;i++)
           {
               if(num%i === 0)
                {
                  temp += i;
+                 w=w+i+",";
+                 v=v+i+"+"
                }
           }
-        
+         w=w.slice(0,-1);
+         v=v.slice(0,-1)
+         ans+="\\["+w+"\\]"
+         ans+="\\[Taking \\space the \\space sum \\space of \\space the \\space divisors \\]"
+         ans+="\\["+v+"\\]"
+         ans+="\\["+temp+"\\]"
           if(temp === num && temp !== 0)
              {
-            document.getElementById("perfectans").innerHTML=num+" is a perfect number";
+                ans+= "\\[Since \\space the \\space sum \\space i.e \\space "+temp+" \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space "+num+" \\]";
+                ans+="\\[\\therefore \\space "+num+" \\space  is \\space a \\space perfect \\space number\\]"
+            document.getElementById("perfectans").innerHTML=ans;
              } 
           else
              {
-            document.getElementById("perfectans").innerHTML=num+" is not a perfect number";
-             }   }
+                ans+= "\\[Since \\space the \\space sum \\space i.e \\space "+temp+" \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space "+num+" \\]";
+                ans+="\\[\\therefore \\space "+num+" \\space  is \\space not \\space a \\space perfect \\space number\\]"
+            document.getElementById("perfectans").innerHTML=ans;
+             } 
+            renderMathInElement(document.getElementById("perfectans"))  }
 
 }
 // Neon Number
