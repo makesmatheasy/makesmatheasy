@@ -13549,22 +13549,29 @@
                 <p>The Ackermann function is multi-variable function from the natural numbers to the natural numbers with very fast rate of growth.</p>
                 <br>
                 <br>
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the first number : &nbsp; &nbsp; </label>
-                    <input type="number" id="ac1-num" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the second number : &nbsp; &nbsp; </label>
-                    <input type="number" id="ac2-num" class="form__field" placeholder="y"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="ackermannFunction(document.getElementById('ac1-num').value,document.getElementById('ac2-num').value);">
-                        Solve
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the first number : &nbsp; &nbsp; </label>
+                        <input type="number" id="ac1-num" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the second number : &nbsp; &nbsp; </label>
+                        <input type="number" id="ac2-num" class="form__field" placeholder="y"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="ackermannFunction(document.getElementById('ac1-num').value,document.getElementById('ac2-num').value);">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="ackermannResult"></p>
                 </div>
@@ -21091,19 +21098,27 @@
     <p>The algorithm is based on the below facts. <br>If we subtract a smaller number from a larger (we reduce a larger number), GCD doesn’t change. So if we keep subtracting repeatedly the larger of two, we end up with GCD.<br>
     Now instead of subtraction, if we divide the smaller number, the algorithm stops when we find remainder 0.</p>
     <br>
-    <input type="text"id="gcdin1" placeholder="Enter number 1" class="form__field">
-    <input type="text"id="gcdin2" placeholder="Enter number 2" class="form__field">
-    <br>
-    <button class="btn btn-dark" onclick="gcdfind()">FInd</button>
-    <br>
+    <form action="">
+        <input type="text"id="gcdin1" placeholder="Enter number 1" class="form__field">
+        <input type="text"id="gcdin2" placeholder="Enter number 2" class="form__field">
+        <br>
+        <button class="btn btn-dark" onclick="gcdfind()">FInd</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <h4 id="gcdans"></h4>
     <br>
     <h2>Sum of GCD of all numbers upto N with N itself</h2>
     <br>
-    <input type="text"id="gcdin3" placeholder="Enter number " class="form__field">
-    <br>
-    <button class="btn btn-dark" onclick="gcd1find()">FInd</button>
-    <br>
+    <form action="">
+        <input type="text"id="gcdin3" placeholder="Enter number " class="form__field">
+        <br>
+        <button class="btn btn-dark" onclick="gcd1find()">FInd</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <h4 id="gcd1ans"></h4>
 </div>
 
@@ -21267,9 +21282,14 @@
 <!-- Antilog starts -->
 <div class="collapse" id="antilog">
     <h2 style="text-align:center;">Antilog Calculator</h2><br>
-    <input type="text"id="logvalue" placeholder="Enter the log value" class="form__field"><br><br>
-    <input type="text"id="logbase" placeholder="Enter the base" class="form__field"><br><br>
-    <button class="btn btn-dark" onclick="antilogCal()">Calculate</button><br><br>
+    <form action="">
+        <input type="text"id="logvalue" placeholder="Enter the log value" class="form__field"><br><br>
+        <input type="text"id="logbase" placeholder="Enter the base" class="form__field"><br><br>
+        <button class="btn btn-dark" onclick="antilogCal()">Calculate</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br><br>
+    </form>
+    
     <p id="antilogans" style= "font-family:mathfont"></p><br>
 </div>
 <!-- Antilog ends -->
@@ -22461,37 +22481,53 @@ N is the population size.
     <br><br>
     <h4>Sum of the Tan(x) expansion upto N terms</h4>
     <br>
-    <input type="text" id="exc1" class="form__field" placeholder="Enter value of x">
-    <input type="text" id="exc2" class="form__field" placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="exc1find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="exc1" class="form__field" placeholder="Enter value of x">
+        <input type="text" id="exc2" class="form__field" placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="exc1find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <h5 id="exc1ans"></h5>
     <br>
     <h4>Sum of the ArcSin(x) expansion upto N terms</h4>
     <br>
-    <input type="text" id="exc3" class="form__field" placeholder="Enter value of x">
-    <input type="text" id="exc4" class="form__field" placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="exc2find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="exc3" class="form__field" placeholder="Enter value of x">
+        <input type="text" id="exc4" class="form__field" placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="exc2find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <h5 id="exc2ans"></h5>
     <br>
     <h4>Sum of the cos(x) expansion upto N terms</h4>
     <br>
-    <input type="text" id="exc5" class="form__field" placeholder="Enter value of x">
-    <input type="text" id="exc6" class="form__field" placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="exc3find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="exc5" class="form__field" placeholder="Enter value of x">
+        <input type="text" id="exc6" class="form__field" placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="exc3find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>   
+    </form>
+    
     <h5 id="exc3ans"></h5>
     <br>
     <h4>Sum of the sin(x) expansion upto N terms</h4>
     <br>
-    <input type="text" id="exc7" class="form__field" placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="exc4find()">Find</button>
-    <br>
+    <form action="">
+        <input type="text" id="exc7" class="form__field" placeholder="Enter no. of terms">
+        <br>
+        <button class="btn btn-dark" onclick="exc4find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <h5 id="exc4ans"></h5>
 </div>
 
