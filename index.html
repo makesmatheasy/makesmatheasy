@@ -23187,13 +23187,32 @@ N is the population size.
 <div class="collapse" id="pvalues">
 
     <h1 style="font-family:mathfont; text-align:center;">P VALUE CALCULATOR </h1>
+
+<br>
+
+    <h3 style="text-align:center;">What is P value ?</h3>
+
+<br>
+
+<p style="color:#ababab !important;">
+    The p-value is the probability that the test statistic will produce values at least as extreme as the value it produced for your sample. 
+    <br>
+    <br>
+    It is crucial to remember that this probability is calculated under the assumption that the null hypothesis is true!
+</p>
+
     <form>
         <input type="number" name="pvalueinp" class="form__field" id="rawscore" width="5em" placeholder="Enter the Z score">
-        <p>&nbsp;</p>
-        <button type="button" class="btn btn-outline-light" onclick="pvaluecal()">Calculate</button>
-        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+  <br>
+
+       <div style="display:flex;justify-content:center;text-align:center">
+        <button style="width:87px;" type="button" class="btn btn-outline-light" onclick="pvaluecal()">Calculate</button>
+        <button style="width:87px;" type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
         <p id="pvalueans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
-        <p>&nbsp;</p>
+        
+       </div>
+        <br>
+
     </form>
 </div>   
 
