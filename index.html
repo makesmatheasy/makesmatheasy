@@ -18992,6 +18992,10 @@
                                        style="text-decoration:none;" href="#">Rhombic Dodecahedron</a></td>
                             </tr>
                             <tr>
+                                <td><a data-toggle="modal" data-target="#rhomtria"
+                                       style="text-decoration:none;" href="#">Rhombic Triacontahedron</a></td>
+                            </tr>
+                            <tr>
                                 <td><a data-toggle="modal" data-target="#rhombohedron"
                                        style="text-decoration:none;" href="#">Rhombohedron</a></td>
                             </tr>
@@ -36490,6 +36494,65 @@ N is the population size.
                             <p class="stopwrap" id="resultofrhododecamr"
                                 style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofrhododecair"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="rhomtria" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Rhombic Triacontahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V =4a^3 \sqrt{5+2\sqrt{5}} \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[A = 12 a^2 \sqrt{5}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius</h5>
+                                    <p class="text-center">\[r_m = \frac{a}{5} ( 5 + \sqrt{5})\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Insphere radius</h5>
+                                    <p class="text-center">\[r_i = a\sqrt{\frac{(5+2\sqrt{5})}{5}} \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/rhombic-triacontahedron.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length(a)" id="inputrhotriaside"
+                                   oninput="solverhomtria();">
+                            <p class="stopwrap" id="resultofrhotriavol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrhotriaarea"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrhotriamr"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofrhotriair"
                                 style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
