@@ -9475,6 +9475,29 @@ function solvetrundodeca() {
     }
 }
 
+// Snub Cube
+
+function solvesnubcube() {
+    var a = parseFloat(document.getElementById("snubcube-a").value);
+    var areaField = document.getElementById("snubcube-A");
+    var volField = document.getElementById("snubcube-V");
+    var cirRadField = document.getElementById("snubcube-rc");
+    var midRadField = document.getElementById("snubcube-rm");
+    var avField = document.getElementById("snubcube-av");
+    var t = 1.839286755;
+    var A = 2 * a * a *(3 + 4 * Math.sqrt(3));
+    var V = a*a*a*(3*Math.sqrt(t-1) + 4*Math.sqrt(t+1))/(3*Math.sqrt(2-t));
+    var rc = a * Math.sqrt(( 3 - t ) / ( 4 * ( 2 - t ) ));
+    var rm = a * Math.sqrt(1/ ( 4 * ( 2 - t ) ));
+    if ((!isNaN(a))) {
+        areaField.innerHTML = `Surface area (A) = ${A.toFixed(3)}`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)}`;
+        cirRadField.innerHTML = `Circumsphere radius (rc) = ${rc.toFixed(3)}`;
+        midRadField.innerHTML = `Midsphere radius (rm) = ${rm.toFixed(3)}`;
+        avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A/V).toFixed(3)}`;
+    }
+}
+
 // Truncated Octahedron
 
 function solvetruncocta() {
