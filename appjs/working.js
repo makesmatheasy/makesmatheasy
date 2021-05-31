@@ -71,6 +71,11 @@ $("#trimornumbtn").click(function(){
     closenav();
     clearall();
 });
+$("#bmi").click(function(){
+    openit("#bmis");
+    closenav();
+    clearall();
+});
 //Eulerian Number
 $("#eurnumbtn").click(function(){
     openit("#eurnum");
