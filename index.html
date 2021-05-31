@@ -5618,21 +5618,24 @@
         <div class="collapse" id="divide">
             <div class="dropdown-divider"></div>
             <div class="form-group text-center">
-                <table>
-                    <tr>
-                        <td>
-                            <input type="number" id="divisornumwith" class="form__field"
-                                   style="width:4.375rem;border-bottom:0.375rem solid var(--apppink);">
-                        </td>
-                        <td>
-                            <input type="number" id="dividendnum" class="form__field"
-                                   style="width:7.5rem;border-left:0.375rem solid var(--apppink);border-top:0.375rem solid var(--apppink);">
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-light" onclick="divisionwithsteps()">Solve</button>
-                        </td>
-                    </tr>
-                </table>
+                <form action="">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="number" id="divisornumwith" class="form__field"
+                                       style="width:4.375rem;border-bottom:0.375rem solid var(--apppink);">
+                            </td>
+                            <td>
+                                <input type="number" id="dividendnum" class="form__field"
+                                       style="width:7.5rem;border-left:0.375rem solid var(--apppink);border-top:0.375rem solid var(--apppink);">
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-light" onclick="divisionwithsteps()">Solve</button>
+                                <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
                 <!--                <div class="col-3">-->
                 <p id="resultofdivsteps" class="stopwrap"></p>
                 <!--                </div>-->
@@ -5652,6 +5655,7 @@
                         <input type="number" id="n2" class="form__field" style="display:inline-block;width:20%">
                         <label style="display:inline-block;font-family:mathfont;">&nbsp;?&nbsp;</label>
                         <button type="button" class="btn btn-light" onclick="checkdivisibility()">Check</button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
                     </div>
                 </form>
 
@@ -5673,6 +5677,7 @@
                     <input value="2t^2-3t" type="text" id="numvardivi" class="form__field"
                            style="width:7.5rem;border-left:0.375rem solid black;border-top:0.375rem solid black;">
                     <button type="button" id="variabledividebtn" class="btn btn-light">Solve</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
 
                 </form>
             </div>
@@ -16861,12 +16866,15 @@
         
         <div class="collapse" id="co_prime">
             <h2>Co-Prime Calculator</h2><br>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="co_num1" placeholder="Enter first number"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="co_num2" placeholder="Enter second number "/>  <br> <br>
+                    <button  class = "btn btn-outline-light" onclick = "co_prime_calc()" >Find</button>
+                    <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button> <br>
+                </div>
+            </form>
             
-            <div class="form-group">
-                <input type="text" style="width: 250px;" class="form__field" name="a" id="co_num1" placeholder="Enter first number"/>
-                <input type="text" name="b" style="width: 250px;" class="form__field" id="co_num2" placeholder="Enter second number "/>  <br> <br>
-                <button  class = "btn btn-outline-light" onclick = "co_prime_calc()" >Find</button> <br>
-            </div>
                 <p  id="co_prime_res"></p><br><br>    
         </div>
 
@@ -20203,62 +20211,98 @@
             <div class="text-center">
                 <h2>Percentage Calculator</h2><br>
             </div>
-            <div class="coll">
-                <p>
-                    1) What is  <input type="text" id="y" size=3 value='' placeholder="Y">  % of
-                <input type="text" id="x" size=3 value='' placeholder="X">  ? 
-                    <br><br>
-                    
-                <button type="button" class="btn btn-light" onclick=solveper()>
-                    Calculate 
-                </button><br>
-                </p>
-            </div><br>
-            <p id="op" style= "font-family:mathfont"></p><br>
-            <p id="op1" style= "font-family:mathfont"></p><br>
-            <div class="coll">
-                <p>
-                    2) What % of  <input type="text" id="perX1" size=3 value='' placeholder="X">  is
-                <input type="text" id="perY1" size=3 value='' placeholder="Y">  ? 
-                    <br><br>
-                    
-                <button type="button" class="btn btn-light" onclick=solvepera()>
-                    Calculate 
-                </button><br>
-                </p>
-            </div><br>
-            <p id="perAns1" style= "font-family:mathfont"></p><br>
-            <p id="perAns2" style= "font-family:mathfont"></p><br>
-            <div class="coll">
-                <p>
-                    3)  <input type="text" id="perY2" size=3 value='' placeholder="Y">  out of what is <input type="text" id="perX2" size=3 value='' placeholder="X"> %  ? <br><br>    
-                <button type="button" class="btn btn-light" onclick=solvepercal()> Calculate </button><br></p>
-            </div><br>
-            <p id="s" style= "font-family:mathfont"></p><br>
-            <p id="s1" style= "font-family:mathfont"></p><br>
-            <div class="coll">
-                <p>
-                    4)  <input type="text" id="x3" size=3 value='' placeholder="X">  plus
-                <input type="text" id="y3" size=3 value='' placeholder="Y"> % is what? <br><br>   
-                <button type="button" class="btn btn-light" onclick=solvepercent()>Calculate </button><br></p></div><br>
-                <p id="r" style= "font-family:mathfont"></p><br>
-                <p id="r1" style= "font-family:mathfont"></p><br>
-            <div class="coll">
-                <p>
-                    5)  <input type="text" id="x4" size=3 value='' placeholder="X">  minus
-                <input type="text" id="y4" size=3 value='' placeholder="Y"> % is what? <br><br>
-                <button type="button" class="btn btn-light" onclick=solveperc()>Calculate </button><br></p></div><br>
-                <p id="t" style= "font-family:mathfont"></p><br>
-                <p id="t1" style= "font-family:mathfont"></p><br>
+            <form action="">
                 <div class="coll">
                     <p>
-                        6)<input type="text" id="x5" size=3 value='' placeholder="X">% of 
-                    <input type="text" id="y5" size=3 value='' placeholder="Y">%  is ? 
+                        1) What is  <input type="text" id="y" size=3 value='' placeholder="Y">  % of
+                    <input type="text" id="x" size=3 value='' placeholder="X">  ? 
                         <br><br>
                         
-                    <button type="button" class="btn btn-light" onclick=solveperper()>
+                    <button type="button" class="btn btn-light" onclick=solveper()>
                         Calculate 
-                    </button></div>p><br>
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset 
+                    </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
+            <p id="op" style= "font-family:mathfont"></p><br>
+            <p id="op1" style= "font-family:mathfont"></p><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        2) What % of  <input type="text" id="perX1" size=3 value='' placeholder="X">  is
+                    <input type="text" id="perY1" size=3 value='' placeholder="Y">  ? 
+                        <br><br>
+                        
+                    <button type="button" class="btn btn-light" onclick=solvepera()>
+                        Calculate 
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset 
+                    </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
+            <p id="perAns1" style= "font-family:mathfont"></p><br>
+            <p id="perAns2" style= "font-family:mathfont"></p><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        3)  <input type="text" id="perY2" size=3 value='' placeholder="Y">  out of what is <input type="text" id="perX2" size=3 value='' placeholder="X"> %  ? <br><br>    
+                    <button type="button" class="btn btn-light" onclick=solvepercal()> Calculate </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset 
+                    </button><br></p>
+                </div>
+            </form>
+            <br>
+            <p id="s" style= "font-family:mathfont"></p><br>
+            <p id="s1" style= "font-family:mathfont"></p><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        4)  <input type="text" id="x3" size=3 value='' placeholder="X">  plus
+                    <input type="text" id="y3" size=3 value='' placeholder="Y"> % is what? <br><br>   
+                    <button type="button" class="btn btn-light" onclick=solvepercent()>Calculate </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset 
+                        </button><br></p></div>
+            </form>
+            <br>
+                <p id="r" style= "font-family:mathfont"></p><br>
+                <p id="r1" style= "font-family:mathfont"></p><br>
+                <form action="">
+                    <div class="coll">
+                        <p>
+                            5)  <input type="text" id="x4" size=3 value='' placeholder="X">  minus
+                        <input type="text" id="y4" size=3 value='' placeholder="Y"> % is what? <br><br>
+                        <button type="button" class="btn btn-light" onclick=solveperc()>Calculate </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset 
+                        </button><br></p></div>
+                </form>
+            <br>
+                <p id="t" style= "font-family:mathfont"></p><br>
+                <p id="t1" style= "font-family:mathfont"></p><br>
+                <form action="">
+                    <div class="coll">
+                        <p>
+                            6)<input type="text" id="x5" size=3 value='' placeholder="X">% of 
+                        <input type="text" id="y5" size=3 value='' placeholder="Y">%  is ? 
+                            <br><br>
+                            
+                        <button type="button" class="btn btn-light" onclick=solveperper()>
+                            Calculate 
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset 
+                        </button></p></div>
+                </form>
+                <br>
                     <p id="perans1" style= "font-family:mathfont"></p><br>
                     <p id="perans2" style= "font-family:mathfont"></p><br>
                     </p>
