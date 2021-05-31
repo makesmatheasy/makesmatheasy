@@ -252,7 +252,8 @@ Other Tech/Libraries
   - Pronic Number 
   - Harshad Number
   - Trimorphic Number
-
+  - Eulerian Number
+  
 - Basic Convertors
 
   - Currency Convertor
@@ -333,7 +334,6 @@ Other Tech/Libraries
     - Sector of circle
     - Semi-Circle
     - Annulus
-    - Cupola
     - Kite
     - Lemniscate
     - Line
@@ -352,15 +352,19 @@ Other Tech/Libraries
     - X-Shape
     - Drop Shape
     - Arbelos
+    - Helix
     - Spherical Triangle
+    - Right Kite
 
   - Name Of 3D Shapes
   - 3D Shapes Calculator
     - Capsule
     - Cube
     - Cuboid
+    - Cupola
     - Cylinder
     - Cone
+    - Double Calotte
     - Sphere
     - Hollow Cylinder
     - Oblique Circular Cylinder
