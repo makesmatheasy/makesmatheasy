@@ -18780,10 +18780,32 @@ function cylinderincubefind() {
 
 function cylinderinspherefind() {
     var r = parseInt(document.getElementById("cylinderinsphere").value)
+    var output = document.getElementById("cylinderinsphereans");
+    var ans= "";
     a = r*r*r;
-    var ans = (4 * math.pi * r**3);
+    var ans = (4 * math.pi * a);
     var v = ans/ (3 * math.sqrt(3));
-    document.getElementById("cylinderinsphereans").innerHTML = v;    
+
+    if(!isNaN(a)){
+        ans += "\\[Volume \\space of \\space Largest \\space cylinder \\space that \\space can \\space be \\space inscribed \\space within \\space a \\space sphere, \\]"
+        ans += "\\[\\space = \\space \\frac{4 \\times \\pi \\times (Side \\space length \\space of \\space sphere)^3}{3 \\times \\sqrt{3}}\\]"
+        ans += "\\[\\space = \\space \\frac{4 \\times \\pi \\times ("+r+")^3}{3 \\times \\sqrt{3}}\\]"
+        ans += "\\[\\space = \\space \\frac{4 \\times \\pi \\times "+a+"}{3 \\times \\sqrt{3}} \\]"
+        ans += "\\[\\space = \\space \\frac{4 \\times "+(math.pi * a)+"}{3 \\times \\sqrt{3}} \\]"
+        ans += "\\[\\space = \\space \\frac{4 \\times "+(math.pi * a)+"}{3 \\times "+(math.sqrt(3))+"} \\]"
+        ans += "\\[\\space = \\space \\frac{4 \\times "+(math.pi * a)+"}{"+(3 * math.sqrt(3))+"} \\]"
+        ans += "\\[\\space = \\space \\frac{"+(4 * math.pi * a)+"}{"+(3 * math.sqrt(3))+"} \\]"
+        ans += "\\[\\space = \\space "+v.toFixed(3)+"\\]"
+        ans += "\\[Hence, \\space the \\space volume \\space is,\\]"
+        ans += "\\[\\space = \\space "+v.toFixed(3)+"\\]"
+
+        output.innerHTML = ans;    
+    }
+        else{
+            ans += "\\[Please \\space enter \\space the \\space value \\]";
+            output.innerHTML = ans; 
+        }
+        renderMathInElement(output);
 }
 
 function cubeincylinderfind() {
