@@ -3464,6 +3464,34 @@ function impse4find() {
     }
 }
 
+function impse5find(){
+    var n = parseInt(document.getElementById("impse99").value)    
+    for(let i = 0; i < n; i++)
+        document.getElementById("impse4ans").innerHTML = gen(i) + " "
+         
+    document.getElementById("impse4ans").innerHTML = "</br>"
+}
+
+function gen(n)
+{
+    if (n == 0)
+        return 0;
+ 
+    // S(1) = 1
+    else if (n == 1)
+        return 1;
+ 
+    // S(2 * n) = 4 * S(n)
+    else if (n % 2 == 0)
+        return 4 * gen(parseInt(n / 2, 10));
+ 
+    // S(2 * n + 1) = 4 * S(n) + 1
+    else if (n % 2 == 1)
+        return 4 * gen(parseInt(n / 2, 10)) + 1;
+         
+    return 0;
+}
+
 function calceximpse5find(){
     var n = document.getElementById("impse9");
     n.value = 10;
