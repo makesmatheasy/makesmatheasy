@@ -19736,11 +19736,20 @@ function subBinDecHexOct() {
         }
         else if(base === "Decimal"){
             x1 = parseFloat(input1);
+            print += "<h5>Step1 : Take the "+base+" number in Input 1</h5>";
+            print += "i.e," + x1 + "<br>";
             x2 = parseFloat(input2);
+            print += "<h5>Step2 : Take the "+base+" number in Input 2</h5>";
+            print += "i.e," + x2 + "<br>";
 
             x3 = x1 - x2;
+            print += "<h5>Step3 : Now subtract the decimal values found in STEP1 and STEP2</h5>";
+            print += x1 + "&nbsp; - &nbsp;" + x2 + " &nbsp; = &nbsp; " + x3;
 
-            result.innerHTML = parseFloat(x3);
+            result.innerHTML = "Answer in Decimal=" + x3.toString();
+            print += "<h5>Step4 : Answer in "+resultType+"</h5>";
+            print += x3.toString();
+            work.innerHTML = print;
         }
         else if(base === "Octal"){
             x1 = calculatefrac(input1,8);
