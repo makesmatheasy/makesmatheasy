@@ -23069,6 +23069,14 @@ function cscu5find() {
     renderMathInElement(output);
 }
 
+
+function pyinsphfind() {
+    var R = parseInt(document.getElementById("pyinsph").value)
+    var radofsq = (R**3)
+    var V = 64*radofsq/81;
+    document.getElementById("pyinsphans").innerHTML = V;
+}
+
 function hexa121find() {
     let a = parseFloat(document.getElementById("hexa131").value)
     var output = document.getElementById("hexa121ans")
