@@ -15777,15 +15777,21 @@ function apsum() {
             document.getElementById("printAP").innerHTML = "Invalid AP"
         }
         else {
+            let steps = "";
+            steps += "\\[Calculate\\space difference(d)=\\space "+val[1]+" - "+val[0]+" \\]";
+            steps += "\\[Sum\\of\\space AP\\space=\\space \\frac{n}{2} \\times (2\\times a + (n-1)\\times d)\\]";
+            steps += "\\[Sum\\of\\space AP\\space=\\space \\frac{"+n+"}{2} \\times (2\\times "+val[0]+" + ("+n+"-1)\\times "+d+")\\]";
             var d = val[1] - val[0];
-            document.getElementById("printAP").innerHTML = "Common difference for the entered AP is &nbsp;" + d + "<br>";
+            
             for (i = 0; i < n; i++) {
                 document.getElementById("printAP").innerHTML += eval(String(i + "*" + d + "+" + val[0])) + ",";
                 s = eval(String(s + "+" + i + "*" + d + "+" + val[0]))
             }
-            document.getElementById("printAP").innerHTML += "<br>The Sum of &nbsp;" + n + "&nbsp; terms of the given AP is &nbsp;" + s;
+            steps += "\\[Sum\\of\\space AP\\space=\\space "+s+"\\]";
+            document.getElementById("printAP").innerHTML = steps;
         }
     }
+    renderMathInElement(document.getElementById("printAP"))
 }
 //Mean Calculators
 function calcexamsol(){
