@@ -241,6 +241,7 @@ function openit(id) {
         "#fractions",
         "#multiplematrixcollapse",
         "#expgrwths",
+        "#pentakis",
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
         "#about",
