@@ -22993,18 +22993,42 @@ N is the population size.
 <div class="collapse" id="squaresRanges">
     
     <h1 style="font-family:mathfont; text-align:center;">Squares in a Range</h1>
-    <input type="text" name="sqrange1" class="form__field" id="sqrange1" placeholder="Enter the first term" style=" text-align:center;">
-    <input type="text" name="sqrange2" class="form__field" id="sqrange2" placeholder="Enter the last term" style=" text-align:center;">
+    <form action="" class="d-flex justify-content-center">
+        <div class="justify-content-center">
+            <div class="form-group">
+                <input type="text" name="sqrange1" class="form__field" id="sqrange1" placeholder="Enter the first term" style=" text-align:center;"><br>
+                <input type="text" name="sqrange2" class="form__field" id="sqrange2" placeholder="Enter the last term" style=" text-align:center;"><br>
+            </div>
+            
+            <p>&nbsp;</p>
+            <div class="form-group">
+                <button type="button" class="btn btn-outline-light mr-1" style="text-align:center;" onclick="squaresRangecal()">Calculate</button>
+                <button type="button" class="btn btn-outline-light" style="text-align:center;" onclick="this.form.reset();">Reset</button>
+            </div>
+            
+        </div>
+    </form>
     <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" style="margin-left: 40rem; text-align:center;" onclick="squaresRangecal()">Calculate</button> <p>&nbsp;</p>
     <p id="squaresRangeans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
     <p class="" id="sqrt-workn"></p>
     <br>
     <h1 style="font-family:mathfont; text-align:center;">Cubes in a Range</h1>
-    <input type="text" name="range1" class="form__field" id="range1" placeholder="Enter the first term" style=" text-align:center;">
-    <input type="text" name="range2" class="form__field" id="range2" placeholder="Enter the last term" style=" text-align:center;">
+    <form action=""class="d-flex justify-content-center">
+        <div class="justify-content-center">
+            <div class="form-group">
+                <input type="text" name="range1" class="form__field" id="range1" placeholder="Enter the first term" style=" text-align:center;"><br>
+                <input type="text" name="range2" class="form__field" id="range2" placeholder="Enter the last term" style=" text-align:center;"><br>
+            </div>
+            
+            <p>&nbsp;</p>
+            <div class="form-grup">
+                <button type="button" class="btn btn-outline-light mr-1" style="text-align:center;" onclick="cubesRangecal()">Calculate</button>
+                <button type="button" class="btn btn-outline-light" style="text-align:center;" onclick="this.form.reset();">Reset</button>
+            </div>
+            
+        </div>
+    </form>
     <p>&nbsp;</p>
-    <button type="button" class="btn btn-outline-light" style="margin-left: 40rem; text-align:center;" onclick="cubesRangecal()">Calculate</button> <p>&nbsp;</p>
     <p id="cubesRangeans" style="color: white; text-align: center; font-family:mathfont;"></p><p>&nbsp;</p>
     <p class="" id="cbrt-workn"></p>
 
