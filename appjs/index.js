@@ -135,6 +135,7 @@ function openit(id) {
         "#harnum",
         "#pronum",
         "#autonum",
+        "#ducknum",
         "#armnum",
         "#perfectnum",
         "#disnum",

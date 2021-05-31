@@ -16498,10 +16498,10 @@ function typenum47find() {
         let num = (1 << k) - 1;
         if (prime[(num)])
             document.getElementById("typenum47exp").innerHTML = num + " "
-    }
+    
     else
         document.getElementById("typenum47ans").innerHTML= " Please enter valid input"
-}
+}}
 
 function typenum12find() {
     var n = parseInt(document.getElementById("typenum15").value)
@@ -27052,6 +27052,31 @@ function hyperfind() {
         }
     }
     document.getElementById("hyperans").innerHTML = ans;
+}
+// Duck number
+function duckvalue(){
+    var num = document.getElementById("duckno").value;
+    if (num == "") {
+        document.getElementById("duckans").innerHTML = "Please input a no";
+    }
+    else {
+        var temp=num.toString();
+        var l = temp.length;  
+        let counter = 0;  
+ 
+        for(var i=1;i<l;i++)
+        {
+            chr = temp.charAt(i); 
+            if(chr=='0')
+                counter++;
+        }
+ 
+        if(counter>0 && temp.charAt(0)!='0')
+        document.getElementById("duckans").innerHTML =temp +" is a duck number";
+        else
+        document.getElementById("duckans").innerHTML =temp +" is not a duck number";
+        }
+
 }
 function armstrongvalue() {
     var num = document.getElementById("arm").value;

@@ -23,6 +23,11 @@ $("#clock").click(function(){
     closenav();
     clearall();
 });
+$("#ducknumbtn").click(function(){
+    openit("#ducknum");
+    closenav();
+    clearall();
+});
 $("#armnumbtn").click(function(){
     openit("#armnum");
     closenav();
