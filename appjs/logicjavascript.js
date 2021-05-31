@@ -19847,11 +19847,23 @@ function subBinDecHexOct() {
 
         if(base === "Binary"){
             x1 = calculatefrac(input1,2);
+            print += "<h5>Step1 : Convert the " + base + " number in Input 1 to decimal</h5>";
+            print += input1 + "->" + x1 + "<br>";
+
             x2 = calculatefrac(input2,2);
+            print += "<h5>Step2 : Convert the " + base + " number in Input 2 to decimal</h5>";
+            print += input2 + "->" + x2 + "<br>";
 
             x3 = x1 - x2;
+            print += "<h5>Step3 : Now subtract the decimal values found in STEP1 and STEP2</h5>";
+            print += x1 + "&nbsp; - &nbsp;" + x2 + " &nbsp; = &nbsp; " + x3;
 
             result.innerHTML = fracDectoBinHexOct(x3,2);
+            result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3, 2);
+            print += "<h5>Step4 : To find the result in " + base + " convert the answer found in STEP3 to " + base + "</h5>";
+            print += x3 + "->" + fracDectoBinHexOct(x3, 2);
+
+            work.innerHTML = print;
         }
         else if(base === "Decimal"){
             x1 = parseFloat(input1);
