@@ -9812,6 +9812,29 @@ function solvetruncube() {
     }
 }
 
+// Rhombicuboctahedron
+
+function solverhombicuboctahedron() {
+    var a = parseFloat(document.getElementById("rhombicuboctahedron-a").value);
+    var areaField = document.getElementById("rhombicuboctahedron-A");
+    var volField = document.getElementById("rhombicuboctahedron-V");
+    var cirRadField = document.getElementById("rhombicuboctahedron-rc");
+    var midRadField = document.getElementById("rhombicuboctahedron-rm");
+    var avField = document.getElementById("rhombicuboctahedron-av");
+    var A = 2 * a*a * ( 9 + Math.sqrt(3) );
+    var V = 2/3 * a*a*a * ( 6 + 5 * Math.sqrt(2) );
+    var rc = a / 2 * Math.sqrt( 5 + 2 * Math.sqrt(2));
+    var rm = a / 2 * Math.sqrt(4 + 2* Math.sqrt(2));
+    if ((!isNaN(a))) {
+        areaField.innerHTML = `Surface area (A) = ${A.toFixed(3)}`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)}`;
+        cirRadField.innerHTML = `Circumsphere radius (rc) = ${rc.toFixed(3)}`;
+        midRadField.innerHTML = `Midsphere radius (rm) = ${rm.toFixed(3)}`;
+        avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A/V).toFixed(3)}`;
+    }
+}
+
+
 //Star of Lakshmi	
 function solvelakstar() {
     var a = document.getElementById("inputlakstarside").value;
