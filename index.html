@@ -22407,6 +22407,7 @@
     <p  id="bmians1"></p><br>
 
     
+>>>>>>> 8bd371ae4caeca64b2ead951686c8510ff5f35dd
 </div>
 
 <div class="collapse" id="hypers" style="text-align: center;">
@@ -22950,10 +22951,21 @@
         </form>
         
     <p>&nbsp;</p>
-    <p id="cartpolarans1" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
-    <p>&nbsp;</p>
-    <p id="cartpolarans2" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
-    <p>&nbsp;</p>
+        <form action="">
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Spherical to Polar</p>
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+                <input type="number" id="sphpolarr" width="5em" placeholder="Enter the radial distance"> 
+                <input type="number" id="sphtpolaro" width="5em" placeholder="Enter the polar angle">
+                <p>&nbsp;</p></p>
+                <p>&nbsp;</p>
+        <p id="sphpolarpans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+        <p>&nbsp;</p>
+        <p id="sphpolaroans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphpolarcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+        </form>
+
+
     <form action="">
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Polar to Cartesian</p>
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
@@ -22979,6 +22991,7 @@
     <h1 style=" text-align: center; font-family:mathfont">Spherical Coordinate Calculator</h1>
         <p>&nbsp;</p>
         <form action="">
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Spherical</p>
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
                 <div class="d-flex justify-content-center form-group">
                     <input type="number" style="width: 100%;" class="form-control" id="sphx" width="5em" placeholder="Enter X coordinate"> 

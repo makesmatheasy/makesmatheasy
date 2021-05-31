@@ -24759,10 +24759,23 @@ function randommeanCal() {
         xxp[i] = numbers[i]*numbers[i]*probs[i];
         sumv += xxp[i];
     }
-    
-    document.getElementById(randommeanans) = "Mean of random variable: " + sumx;
-    document.getElementById(randomvarans) = "Variance of random variable: " + sumv;
 
+    sumv = sumv-sumx**2;
+    var steps1 = "\\[To\\space calculate\\space the\\space Expected\\space Value:\\]"
+    steps1 += "\\[\\space multiply\\space each\\space value\\space by\\space its\\space probability\\space and\\space sum\\space them\\space up\\]";
+    steps1 += "\\[μ\\space =\\space Σ\\times x\\times p\\]";
+
+    var steps2 = "\\[To\\space calculate\\space the\\space Variance:\\]";
+    steps2 += "\\[square\\space each\\space value\\space and\\space multiply\\space by\\space its\\space probability\\]";
+    steps2 += "\\[sum\\space them\\space up\\space and\\space we\\space get\\space Σ\\timesx^2\\timesp\\]";
+    steps2 += "\\[then\\space subtract\\space the\\space square\\space of\\space the\\space Expected\\space Value\\space μ2\\]";
+    steps2 += "\\[Var(X)\\space =\\space Σ\\times x^2 \\times p − μ^2\\]";
+    
+    
+    document.getElementById(randommeanans) = steps1;
+    document.getElementById(randomvarans) = steps2;
+    renderMathInElement(document.getElementById(randommeanans));
+    renderMathInElement(document.getElementById(randomvarans));
 }
 
 //Form the Cubic equation from the given roots
@@ -26928,6 +26941,32 @@ function sphcartcal() {
     renderMathInElement(outputx);
     renderMathInElement(outputy);
     renderMathInElement(outputz);
+}
+function sphpolarcal() {
+    var r = parseFloat(document.getElementById("sphcartr").value);
+    var o = parseFloat(document.getElementById("sphcarto").value);
+
+    var outputx = document.getElementById("sphpolarpans");
+    var outputy = document.getElementById("sphpolaroans");
+    var ans = "";
+
+    var x = (r * Math.sin(o) * Math.cos(fi)).toFixed(2);
+    var y = (r * Math.sin(o) * Math.sin(fi)).toFixed(2);
+
+    var r = Math.sqrt(x * x + y * y).toFixed(2);
+    var o = Math.atan(y / x).toFixed(2);
+
+    var ansx = "r: " + r;
+    var ansy = "θ: " + o;
+    if (isNaN(r) || isNaN(o)) {
+        ans += "Please fill all the field";
+        outputx.innerHTML = ans;
+        outputy.innerHTML = "";
+    }
+    else {
+        outputx.innerHTML = ansx;
+        outputy.innerHTML = ansy;
+    }
 }
 
 function cartcylcal() {
