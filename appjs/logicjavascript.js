@@ -3304,21 +3304,6 @@ function impse21find() {
     }
 }
 
-<<<<<<< HEAD
-function impse24find(){
-    var n = parseInt(document.getElementById("impse24").value)
-    let a = 1
-    let ans = 2;
-    for (let i = 1; i <= n; i++)
-    {
-        document.getElementById("impse24ans").innerHTML = ans + " ";
-        ans = ((a % N) * (ans % N)) % N;
-        a = ans;
-        ans = (ans + 1) % N;
-    }
-}
-
-=======
 function calceximpse2find(){
     let x = document.getElementById("impse5");
     let n = document.getElementById("impse6");
@@ -3328,7 +3313,6 @@ function calceximpse2find(){
 
     impse2find();
 }
->>>>>>> 97442ffb5cdc55374585bda502caf45d910d00e5
 function impse2find() {
     let x = parseInt(document.getElementById("impse5").value)
     let n = parseInt(document.getElementById("impse6").value)
