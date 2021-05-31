@@ -18676,7 +18676,6 @@ function subBinDecHexOct() {
             x3 = x1 - x2;
 
             result.innerHTML = fracDectoBinHexOct(x3,2);
-            work.innerHTML = "";
         }
         else if(base === "Decimal"){
             x1 = parseFloat(input1);
@@ -18685,7 +18684,6 @@ function subBinDecHexOct() {
             x3 = x1 - x2;
 
             result.innerHTML = parseFloat(x3);
-            work.innerHTML = "";
         }
         else if(base === "Octal"){
             x1 = calculatefrac(input1,8);
@@ -18694,6 +18692,14 @@ function subBinDecHexOct() {
             x3 = x1 - x2;
 
             result.innerHTML = fracDectoBinHexOct(x3,8);
+        }
+        else if(base === "Hexa Decimal"){
+            x1 = calculatefrac(input1,16);
+            x2 = calculatefrac(input2,16);
+
+            x3 = x1 - x2;
+
+            result.innerHTML = fracDectoBinHexOct(x3,16);
         }
     }else{
     if (input1.length > input2.length) {
