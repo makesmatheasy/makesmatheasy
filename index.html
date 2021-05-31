@@ -20276,6 +20276,9 @@
                 <br><br>
             <button type="button" class="btn btn-light" onclick=inmed()>
                 Check
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
             </button><br>
             </p>
 
@@ -20441,6 +20444,9 @@
                                 <br><br>
                         <button type="button" class="btn btn-light" onclick=incircum()>
                             Check
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
                         </button><br>
                         </p>
     
@@ -26803,57 +26809,62 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_add" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_add" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_add" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_add" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
+    
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">+
+                            </div>
+    
+    
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_add" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_add" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">+
-                        </div>
-
-
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_add" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
+                            <div>
+                                <var id="addz" style="color: aliceblue;font-size: 1.125rem;" ></var>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_add" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <var id="addz" style="color: aliceblue;font-size: 1.125rem;" ></var>
-                        </div>
-                        <br>
-
-                        <center>
-                            <button type="button" class="btn btn-light" ; onclick="additon()">
-                                ADD
-                            </button>
-                        </center>
-
-                        <br>
+                            <br>
+    
+                            <center>
+                                <button type="button" class="btn btn-light" ; onclick="additon()">
+                                    ADD
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+                            <br>
+                        </form>
+                        
 
                         <div style="display: flex; justify-content: center;">
 
@@ -26920,58 +26931,63 @@ N is the population size.
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
 
-
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_sub" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_sub" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_sub" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_sub" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
+    
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
+                                -
+                            </div>
+    
+    
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_sub" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_sub" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
-                            -
-                        </div>
-
-
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_sub" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
+                            <div>
+                                <var id="subz" style="color: aliceblue;font-size: 1.125rem;"></var>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_sub" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <var id="subz" style="color: aliceblue;font-size: 1.125rem;"></var>
-                        </div>
-                        <br>
-                        <center>
-
-                            <button type="button" class="btn btn-light" ; onclick="subtractiom()">
-                                SUBTRACT
-                            </button>
-                        </center>
-
-                        <br>
+                            <br>
+                            <center>
+    
+                                <button type="button" class="btn btn-light" ; onclick="subtractiom()">
+                                    SUBTRACT
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+                            <br>
+                        </form>
+                        
 
                         <div style="display: flex; justify-content: center;">
 
@@ -27037,56 +27053,62 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_div" placeholder="Numerator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_div" placeholder="Numerator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_div" placeholder="Denominator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;"> /
-                        </div>
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_div" placeholder="Numerator" type="number"
-                                                       required=""
-                                                       style="width: 9.375rem;">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_div" placeholder="Denominator" type="number"
-                                                       required=""
-                                                       style="width: 9.375rem;">
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_div" placeholder="Denominator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <var id="divaz" style="color: aliceblue;font-size: 1.125rem;"></var>
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;"> /
                             </div>
-                            <br>
-                                <center>
-                                <button type="button" class="btn btn-light" ; onclick="division()">
-                                            DIVIDE
-                                </button>
-                                </center>
-                            <br>
-
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_div" placeholder="Numerator" type="number"
+                                                           required=""
+                                                           style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_div" placeholder="Denominator" type="number"
+                                                           required=""
+                                                           style="width: 9.375rem;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <var id="divaz" style="color: aliceblue;font-size: 1.125rem;"></var>
+                                </div>
+                                <br>
+                                    <center>
+                                    <button type="button" class="btn btn-light" ; onclick="division()">
+                                                DIVIDE
+                                    </button>
+                                    <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                        Reset
+                                    </button>
+                                    </center>
+                                <br>
+    
+                        </form>
+                        
 
                             <div style="display: flex; justify-content: center;">
 
@@ -27170,64 +27192,69 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_mul" placeholder="Numerator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_mul" placeholder="Numerator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_mul" placeholder="Denominator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_mul" placeholder="Denominator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
+    
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
+                                x
+                            </div>
+    
+    
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_mul" placeholder="Numerator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_mul" placeholder="Denominator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
-                            x
-                        </div>
-
-
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_mul" placeholder="Numerator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
-                                </div>
+    
+                            <div>
+                                <var id="mulz" style="color: aliceblue;font-size: 1.125rem;" ></var>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_mul" placeholder="Denominator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <var id="mulz" style="color: aliceblue;font-size: 1.125rem;" ></var>
-                        </div>
-                        <br>
-                        <center>
-                            <button type="button" class="btn btn-light" ;
-                                    onclick="multiplication1()">
-                                MULTIPLY
-                            </button>
-                        </center>
-
-
-                        <br>
+                            <br>
+                            <center>
+                                <button type="button" class="btn btn-light" ;
+                                        onclick="multiplication1()">
+                                    MULTIPLY
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+    
+                            <br>
+                        </form>
+                        
 
                         <div style="display: flex; justify-content: center;">
 
@@ -27293,45 +27320,50 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-
-
-                        <div style="display: inline-block; margin-left: 2.5rem; ">
-                            <div class="row">
-
-                                <div class="row" style="margin-top: 0.625rem;">
-                                    <div class="cell borderBottom_1">
-
-                                        <input id="side_mix" placeholder="Side" type="number"
-                                               required="" style="width: 4.375rem; ">
+                        <form action="">
+                            <div style="display: inline-block; margin-left: 2.5rem; ">
+                                <div class="row">
+    
+                                    <div class="row" style="margin-top: 0.625rem;">
+                                        <div class="cell borderBottom_1">
+    
+                                            <input id="side_mix" placeholder="Side" type="number"
+                                                   required="" style="width: 4.375rem; ">
+                                        </div>
+                                    </div>
+                                    <div class="cell borderBottom_1" style="margin-left: 1.25rem; ">
+    
+                                        <input id="one_mix" placeholder="Numerator" type="number"
+                                               required="" style="width: 9.375rem;">
                                     </div>
                                 </div>
-                                <div class="cell borderBottom_1" style="margin-left: 1.25rem; ">
-
-                                    <input id="one_mix" placeholder="Numerator" type="number"
-                                           required="" style="width: 9.375rem;">
+                                <div class="row" style="margin-left: 2.8125rem;">
+                                    <div class="cell">
+    
+                                        <input id="two_mix" placeholder="Denominator" type="number"
+                                               required="" style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row" style="margin-left: 2.8125rem;">
-                                <div class="cell">
+    
+                            <br>
+    
+                            <center>
+                                <button type="button" class="btn btn-light" ;
+                                        onclick="mixed_to_improper()"
+                                        style="margin-top: 1.25rem;">
+                                    CONVERT
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+                            <br>
+    
+                        </form>
 
-                                    <input id="two_mix" placeholder="Denominator" type="number"
-                                           required="" style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <br>
-
-                        <center>
-                            <button type="button" class="btn btn-light" ;
-                                    onclick="mixed_to_improper()"
-                                    style="margin-top: 1.25rem;">
-                                CONVERT
-                            </button>
-                        </center>
-
-                        <br>
-
+                        
                         <div style="display: flex; justify-content: center;">
 
                             <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;"
@@ -27390,38 +27422,43 @@ N is the population size.
                 <div class="modal-body">
 
                     <div class="container" style="padding-top:0%">
-
-                        <center>
-                            <div style="display: inline-block;  ">
-                                <div class="row">
-                                    <div class="cell borderBottom_1">
-
-                                        <input id="one_imp" placeholder="Numerator"
-                                               type="number"
-                                               required="" style="width: 9.375rem;">
+                        <form action="">
+                            <center>
+                                <div style="display: inline-block;  ">
+                                    <div class="row">
+                                        <div class="cell borderBottom_1">
+    
+                                            <input id="one_imp" placeholder="Numerator"
+                                                   type="number"
+                                                   required="" style="width: 9.375rem;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="cell">
+    
+                                            <input id="two_imp" placeholder="Denominator"
+                                                   type="number"
+                                                   required="" style="width: 9.375rem;">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="cell">
-
-                                        <input id="two_imp" placeholder="Denominator"
-                                               type="number"
-                                               required="" style="width: 9.375rem;">
-                                    </div>
-                                </div>
-                            </div>
-
+    
+                                <br>
+    
+    
+                                <button type="button" class="btn btn-light" ;
+                                        onclick="improper_to_mixed()" style="margin-top: 1.25rem;">
+                                    CONVERT
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
                             <br>
-
-
-                            <button type="button" class="btn btn-light" ;
-                                    onclick="improper_to_mixed()" style="margin-top: 1.25rem;">
-                                CONVERT
-                            </button>
-                        </center>
-
-                        <br>
-
+    
+                        </form>
+                        
                         <div style="display: flex; justify-content: center;">
 
                             <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;"
