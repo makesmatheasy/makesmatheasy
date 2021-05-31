@@ -186,6 +186,7 @@ function openit(id) {
         "#shapescal",
         "#tdshapescal",
         "#fdshapescal",
+        "#archimedean",
         "#divide",
         "#simpletrignocollapse",
         "#trigonovaluestable",

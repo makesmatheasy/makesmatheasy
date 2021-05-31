@@ -1550,6 +1550,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#archimedeanbtn").click(function () {
+        openit("#archimedean");
+        closenav();
+        clearall();
+    });
     $("#degbtn").click(function () {
         openit("#degcal");
         closenav();
