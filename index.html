@@ -18191,6 +18191,10 @@
                                     <td><a data-toggle="modal" data-target="#truncube"
                                         style="text-decoration:none;" href="#">Truncated Cube</a></td>
                                 </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#snubcube"
+                                        style="text-decoration:none;" href="#">Snub Cube</a></td>
+                                </tr>
                             </table>
                         </div>
                     </td>
@@ -35012,6 +35016,73 @@ N is the population size.
                             <p class="stopwrap" id="truncocta-rm"
                                        style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="truncocta-av"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="snubcube" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Snub Cube</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Tribonacci Constant (t)</h5>
+                                    <p class="text-center">\[t = 1.8392867552\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 2a^2 \times \left ( 3 + 4 \sqrt 3 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = a^3 \times \frac {\left ( 3\times \sqrt {t - 1} + 4 \times \sqrt {t + 1} \right )} { \left ( 3 \times \sqrt {2 - t} \right )}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumsphere radius (r<sub>c</sub>)</h5>
+                                    <p class="text-center">\[r_{c} = a \times \sqrt { \frac {3 - t}{ 4 \times ( 2 - t )}}\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/snub-cube.png" class="img-fluid d-block mx-auto">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius (r<sub>m</sub>)</h5>
+                                    <p class="text-center">\[r_{m} = a \times \sqrt { \frac {1}{ 4 \times ( 2 - t )}}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface-to-volume ratio (A/V)</h5>
+                                    <p class="text-center">\[\frac{A}{V}\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Edge length (a)" id="snubcube-a"
+                                       oninput="solvesnubcube();">
+                            <p class="stopwrap" id="snubcube-A"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="snubcube-V"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="snubcube-rc"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="snubcube-rm"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="snubcube-av"
                                 style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
