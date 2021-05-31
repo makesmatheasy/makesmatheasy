@@ -23466,9 +23466,11 @@ function perratcal() {
 //Minimum side of square embedded in Regular polygon with N sides
 function embedfind() {
     let n = parseInt(document.getElementById("embedin").value)
+    let output = document.getElementById("embedans")
+    let ans1 = "";
     let pi = Math.acos(-1.0);
     let proAngleVar;
-
+if(!isNaN(n)){
     // Projection angle variation
     // when the number of
     // sides are in multiple of 4
@@ -23503,8 +23505,22 @@ function embedfind() {
     // Return the portion of side
     // forming the square
     let ans = opt2 / Math.sin(pi / n) / 2;
-    document.getElementById("embedans").innerHTML = ans
+    ans1 += "\\[N \\space represents \\space the \\space number \\space of \\space sides \\space of \\space a \\space regular \\space polygon \\space with \\space n \\space vertices \\]"
+    ans1 += "\\[A \\space Polygon \\space is \\space a  \\space convex \\space figure \\space and \\space has \\space equal \\space sides \\space and \\space equal \\space angles \\]"
+    ans1 += "\\[When \\space Number \\space of \\space sides \\space is \\space multiple \\space of \\space 4 \\]"
+    ans1 += "\\[Projection Angle \\space = \\space π \\times \\frac{180}{N} \\times \\frac{1}{180} \\space = \\space π  \\times \\frac{180}{"+ n + "} \\times \\frac{1}{180}  \\]"
+    ans1 += "\\[When \\space Number \\space of \\space sides \\space is \\space not \\space multiple \\space of \\space 4 \\]"
+    ans1 += "\\[Projection Angle \\space = \\space π \\times \\frac{180}{2 \\times N} \\times \\frac{1}{180} \\space = \\space π  \\times \\frac{180}{2 \\times"+ n + "} \\times \\frac{1}{180} \\]"
+    ans1 += "\\[Regular \\space Polygon \\space with \\space " + n + "sides \\space can \\space easily \\space embed \\space with \\space side \\space " + ans + " \\]"
+    output.innerHTML = ans1;
 }
+else{
+    ans1 += "\\[Please \\space enter \\space valid \\space input \\]"
+    output.innerHTML = ans1;
+}
+renderMathInElement(output);
+}
+
 //MARGIN OF ERROR CALCULATOR
 function mecal() {
     var num1 = document.getElementById("conf").value;
