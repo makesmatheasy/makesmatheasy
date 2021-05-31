@@ -253,7 +253,7 @@ Other Tech/Libraries
   - Harshad Number
   - Trimorphic Number
   - Eulerian Number
-  
+  - Delannoy Number
 - Basic Convertors
 
   - Currency Convertor

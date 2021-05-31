@@ -69,6 +69,12 @@ $("#eurnumbtn").click(function(){
     closenav();
     clearall();
 });
+//Delannoy Number
+$("#delnumbtn").click(function(){
+    openit("#delnum");
+    closenav();
+    clearall();
+});
 $("#wag").click(function () {
     openit("#wags");
     closenav();

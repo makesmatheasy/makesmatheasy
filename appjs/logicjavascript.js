@@ -26823,4 +26823,30 @@ function isEurNum(n,m) {
         }
     }
     document.getElementById('eurans').innerHTML = "The result is: " + dp[n][m] ;
+}
+// Delannoy Number
+function DelNum(n, m)
+{
+    let x, x_length = n+1
+        , y, y_length = m+1
+        , dp = [];
+    for (x = 0; x < x_length; x++) {
+        dp[x] = []
+        for (y = 0; y < y_length; y++) {
+            dp[x][y] = 0;
+        }
+    }
+    for (let i = 0; i <= m; i++)
+        dp[i][0] = 1;
+    for (let i = 0; i <= m; i++)
+        dp[0][i] = 1;   
+ 
+    for (let i = 1; i <= m; i++)
+        for (let j = 1; j <= n; j++)
+            dp[i][j] = dp[i - 1][j] +
+                       dp[i - 1][j - 1] +
+                       dp[i][j - 1];
+ 
+    document.getElementById('delans').innerHTML = "The result is: " + dp[m][n] ;
+
 }  
