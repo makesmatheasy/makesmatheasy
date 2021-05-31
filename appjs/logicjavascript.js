@@ -15463,6 +15463,15 @@ function constGp() {
     renderMathInElement(output);
 }
 //Insert n-Geometric Mean between two numbers
+function calcexngp(){
+    var n = document.getElementById("nt2");
+    var a = document.getElementById("ft2");
+    var b = document.getElementById("lt2");
+    n.value = 3;
+    a.value = 2;
+    b.value = 32;
+    ngp();
+}
 function ngp() {
     var n = parseInt(document.getElementById("nt2").value)
     var a = parseInt(document.getElementById("ft2").value)
