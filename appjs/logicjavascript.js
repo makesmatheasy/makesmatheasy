@@ -8691,6 +8691,40 @@ function helixsolve(){
         arcLenField.innerHTML = `Arc length (s) = ${s}`;
     }
 }
+// Right Kite
+
+function rightkitesolve() {
+    var a = parseFloat(document.getElementById("rightkite-a").value);
+    var b = parseFloat(document.getElementById("rightkite-b").value);
+    var symDiaField = document.getElementById("symDiaRightkite");
+    var othDiaField = document.getElementById("othDiaRightkite");
+    var circumCirRadField = document.getElementById("circumCirRadRightkite");
+    var inCirRadField = document.getElementById("inCirRadRightkite");
+    var perimeterField = document.getElementById("perimeterRightkite");
+    var areaField = document.getElementById("areaRightkite");
+    var obtuseAngField = document.getElementById("obtuseAngRightkite");
+    var acuteAngField = document.getElementById("acuteAngRightkite");
+
+    var e = Math.sqrt(a*a + b*b);
+    var f = (2*a*b)/e;
+    var rc = e/2;
+    var ri = (a*b)/(a+b);
+    var p = 2*(a+b);
+    var A = a*b;
+    var alpha = 2 * Math.acos((a*a + e*e - b*b)/(2*a*e)) * (180/Math.PI);
+    var gamma = 180 - alpha;
+
+    if (!isNaN(a) && !isNaN(b)) {
+       symDiaField.innerHTML = `Symmetric Diagonal (e) = ${e.toFixed(4)} units`;
+       othDiaField.innerHTML = `Other Diagonal (f) = ${f.toFixed(4)} units`;
+       circumCirRadField.innerHTML = `Circumcircle radius (r<sub>c</sub>) = ${rc.toFixed(4)}`;
+       inCirRadField.innerHTML = `Circumcircle radius (r<sub>i</sub>) = ${ri.toFixed(4)}`;
+       perimeterField.innerHTML = `Perimeter (p) = ${p.toFixed(4)}`;
+       areaField.innerHTML = `Area (A) = ${A.toFixed(4)}`;
+       obtuseAngField.innerHTML = `Obtuse angle (α) = ${alpha.toFixed(4)}`;
+       acuteAngField.innerHTML = `Acute angle (γ) = ${gamma.toFixed(4)}`;
+    }
+}
 
 // H - Shape
 
