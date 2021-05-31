@@ -13291,37 +13291,52 @@
             <br>
             <h4>Count of elements having Euler’s Totient value one less than itself</h4>
             <br>
-            <input type="text" id="text1" class="form__field" placeholder = "Enter the inputs and click on add button to add"></input>
-            <input type="text" id="onelow" class="form_field" placeholder ="Enter lower boundary">
-            <input type="text" id="oneupp" class="form_field" placeholder ="Enter upper boundary">
-            <br>
-            <button class="btn btn-dark" onclick="add_element_to_array()">ADD</button>
-            <button class="btn btn-dark" onclick="etc4find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="text1" class="form__field" placeholder = "Enter the inputs and click on add button to add"></input>
+                <input type="text" id="onelow" class="form_field" placeholder ="Enter lower boundary">
+                <input type="text" id="oneupp" class="form_field" placeholder ="Enter upper boundary">
+                <br>
+                <button class="btn btn-dark" onclick="add_element_to_array()">ADD</button>
+                <button class="btn btn-dark" onclick="etc4find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <h5 id="etc4ans"></h5>
             <br>
             <h4>Perfect totient number</h4>
             <br>
-            <input type="text" id="etc5" class="form__field" placeholder="ENter the number">
-            <br>
-            <button class="btn btn-dark" onclick="etc5find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="etc5" class="form__field" placeholder="ENter the number">
+                <br>
+                <button class="btn btn-dark" onclick="etc5find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <h5 id="etc5ans"></h5>
         </div>
         <!-- start of Hamming Dist -->
         <div>
             <div class="collapse" id="etf">
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the number : &nbsp; &nbsp; </label>
-                    <input type="number" id="etfnum" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="eulerTotient(document.getElementById('etfnum').value);">
-                        Solve
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the number : &nbsp; &nbsp; </label>
+                        <input type="number" id="etfnum" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="eulerTotient(document.getElementById('etfnum').value);">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="etfResult"></p>
                 </div>
@@ -13509,17 +13524,24 @@
         <!-- start of Catalan numbers calculator -->
         <div>
             <div class="collapse" id="catNum">
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the number : &nbsp; &nbsp; </label>
-                    <input type="number" id="cat-num" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="catalanNumbers(document.getElementById('cat-num').value);">
-                        Solve
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the number : &nbsp; &nbsp; </label>
+                        <input type="number" id="cat-num" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="catalanNumbers(document.getElementById('cat-num').value);">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="catNumResult"></p>
                 </div>
@@ -14672,23 +14694,27 @@
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Z - Test</h1>
             <p style="text-align: left;">H<sub>o</sub> : μ = μ<sub>o</sub>  (Null Hypothesis)</p>
             <p style="text-align: left; margin-bottom: 2rem;">H<sub>a</sub> : μ ≠ μ<sub>o</sub>  (Alternative Hypothesis)</p>
-            <input class = "form__field"type="number" id="pm" placeholder="Enter Population Mean (µ0)">
-            <br><br>
-            <input class = "form__field"type="number" id="sm" placeholder="Enter Sample Mean (x)">
-            <br><br>
-            <input class = "form__field"type="number" id="sd" placeholder="Enter Standard Deviation (σ)">
-            <br><br>
-            <input class = "form__field"type="number" id="sn" placeholder="Enter Sample Number (n)">
-            <br><br>
-            <label for="">Significance Level</label>
-            <br>
-            <select name="alpha" id="alpha">
-                <option value=0.01>0.01</option>
-                <option value=0.05>0.05</option>
-                <option value=0.1>0.1</option>
-            </select>
-            <br><br>
-            <button class = "btn btn-light" onclick="zvalue()">Test</button>
+            <form action="">
+                <input class = "form__field"type="number" id="pm" placeholder="Enter Population Mean (µ0)">
+                <br><br>
+                <input class = "form__field"type="number" id="sm" placeholder="Enter Sample Mean (x)">
+                <br><br>
+                <input class = "form__field"type="number" id="sd" placeholder="Enter Standard Deviation (σ)">
+                <br><br>
+                <input class = "form__field"type="number" id="sn" placeholder="Enter Sample Number (n)">
+                <br><br>
+                <label for="">Significance Level</label>
+                <br>
+                <select name="alpha" id="alpha">
+                    <option value=0.01>0.01</option>
+                    <option value=0.05>0.05</option>
+                    <option value=0.1>0.1</option>
+                </select>
+                <br><br>
+                <button class = "btn btn-light" onclick="zvalue()">Test</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Result</button>
+            </form>
+            
             <p id="zworking"></p>
             <p id="ztestans"></p>
             <div id="stepsbox2">
