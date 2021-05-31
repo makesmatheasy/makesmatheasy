@@ -3005,6 +3005,13 @@ function impse36find (){
     }
 }
 
+function calceximpsefind22(){
+    var n = document.getElementById("impse57");
+    n.value = 10;
+
+    impsefind22();
+}
+
 function impsefind22(){
     var n = (document.getElementById("impse57").value);
     var x = setBits(n ^ (n - 1));
@@ -3021,6 +3028,13 @@ function setBits(n)
         count++;
     }
     return count;
+}
+
+function calcexnth113find(){
+    var n = document.getElementById("imp113");
+    n.value = 10;
+
+    nth113find();
 }
 
 function nth113find(){
@@ -3077,6 +3091,19 @@ function impse1find() {
     }
 }
 
+
+function calceximpsefind20(){
+    var n = document.getElementById("impse201");
+    n.value = 10;
+
+    impsefind20();
+}
+
+function impsefind20(){
+    var n = parseInt(document.getElementById("impse201").value)
+    var series = n * (Math.pow(n, 2) + 3 * n + 5 ) / 3;
+    document.getElementById("impseans20").innerHTML =  series;
+}
 
 function impse20find() {
     var n = parseInt(document.getElementById("impse20").value)
@@ -3263,6 +3290,13 @@ function impse9find() {
     }
 }
 
+function calceximpse10find(){
+    var n = document.getElementById("impse14");
+    n.value = 10;
+
+    impse10find();
+}
+
 function impse10find() {
     let num = parseInt(document.getElementById("impse14").value)
     var result = 0;
@@ -3272,6 +3306,13 @@ function impse10find() {
         result = result + (i / fact);
     }
     document.getElementById("impse10ans").innerHTML = result.toFixed(5);
+}
+
+function calceximpse11find(){
+    var n = document.getElementById("impse15");
+    n.value = 10;
+
+    impse11find();
 }
 
 function impse11find() {
@@ -3286,6 +3327,13 @@ function impse11find() {
         document.getElementById("impse11ans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
     }
     renderMathInElement(document.getElementById("impse11ans"));
+}
+
+function calceximpse12find(){
+    var n = document.getElementById("impse16");
+    n.value = 10;
+
+    impse12find();
 }
 
 function impse12find() {
@@ -3372,6 +3420,13 @@ function impse20find() {
         document.getElementById("impse20ans").innerHTML = arr[i] + ", ";
 
     }
+}
+
+function calceximpse13find(){
+    var n = document.getElementById("impse17");
+    n.value = 10;
+
+    impse13find();
 }
 
 function impse13find() {
