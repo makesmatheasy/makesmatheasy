@@ -16467,6 +16467,8 @@ function typenum47find() {
         if (prime[(num)])
             document.getElementById("typenum47exp").innerHTML = num + " "
     }
+    else
+        document.getElementById("typenum47ans").innerHTML= " Please enter valid input"
 }
 
 function typenum12find() {
