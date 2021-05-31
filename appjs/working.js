@@ -45,6 +45,11 @@ $("#autonumbtn").click(function(){
     closenav();
     clearall();
 });
+$("#magicbtn").click(function(){
+    openit("#magicnum");
+    closenav();
+    clearall();
+});
 // Pronic Number
 $("#pronumbtn").click(function(){
     openit("#pronum");

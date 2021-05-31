@@ -3156,6 +3156,22 @@
                     </tr>
                 </table>
             </li>
+            <!-- magic number -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="magicbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Magic number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Magic number','magicnum','c','magicnumimgfav')"><img
+                                        id="magicnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -39770,6 +39786,30 @@ N is the population size.
         </div>
     </div>
     <!-- Automorphic number end -->
+    <!-- Magic number -->
+    <div class="collapse" id="magicnum" style="text-align: center;">
+        <div class="container">
+            <h1 style="color: white;font-family:mathfont;text-align: center;">Magic number Checker</h2>
+            <br>
+            <p>If the sum of a number's digit is recursively calculated till a single digit and if that single digit is 1 then the number is called a magic number.</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="magicno" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="magicvalue()">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="magicans"></p><br>
+            </div>
+        </div>
+    </div>
     <!-- Pronic number start-->
     <div class="collapse" id="pronum" style="text-align: center;">
         <div class="container">
