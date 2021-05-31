@@ -1574,7 +1574,6 @@ function perchngCal(){
     renderMathInElement(output);
 }
 
-
 function peroffCal(){
     var original = parseInt(document.getElementById("originalPrice").value);
     var off = parseInt(document.getElementById("offper").value);
@@ -1599,7 +1598,7 @@ function peroffCal(){
 
         output1.innerHTML = temp1;
 
-        temp2 += "\\[Finally,\\space we \\space substract \\space this \\space (Final \\space Price) \\space value \\space from \\space the \\space (Orginal \\space Price)\\]"
+        temp2 += "\\[Finally,\\space we \\space subtract \\space this \\space (Final \\space Price) \\space value \\space from \\space the \\space (Orginal \\space Price)\\]"
         temp2 += "\\[Savings \\space = \\space (Orginal \\space Price) \\space - \\space (Final \\space Price)\\]"
         temp2 += "\\[\\space = \\space "+original+" - "+final.toFixed(2)+"\\]"
         temp2 += "\\[\\space = \\space "+savings.toFixed(3)+"\\]"
