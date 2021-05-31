@@ -3479,6 +3479,13 @@ function impse4find() {
             }
             document.getElementById("impse4ans").innerHTML = count + " ";
         }
+        document.getElementById("impse4exp").innerHTML = "\\[Given a positive Integer n, The task is to print Gould’s sequence up to nth term. \\]"
+        document.getElementById("impse4exp").innerHTML = "\\[In Mathematics, Gould’s sequence is an integer sequence whose nth term tells the count of odd numbers in n-1th row of the pascal triangle.\\]"
+        document.getElementById("impse4exp").innerHTML = "\\[This sequence is consist of only power’s of 2.\\]"
+        document.getElementById("impse4exp").innerHTML = "\\[1, 2, 2, 4, 2, 4, 4, 8, 2, 4, 4, 8, 4, 8, 8, 16, 2, 4, 4, 8, 4, 8, 8, 16, 4, 8, 8, 16, 8, 16, 16, 32 \\]"
+        document.getElementById("impse4exp").innerHTML = "\\[generate Gould’s sequence is to generate every row of pascal’s triangle from 0th row to nth row and count odd numbers appearing in each row. \\]"
+        document.getElementById("impse4exp").innerHTML = "\\[ith element of nth row can be calculated easily by calculating binomial coefficient C(n, i). \\]"
+        renderMathInElement( document.getElementById("impse4exp"))
     }
     else {
         document.getElementById("impse4ans").innerHTML = "Please enter valid input"
