@@ -2838,6 +2838,23 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="pentatopbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Pentatope calculator
+                                </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Co-Prime Numbers Theory','#pentatop','c','pentatopimgfav')"><img
+                                        id="pentatopimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem; filter:none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <!--Added Euler's Totient Function -->
             <li>
                 <table class="table">
@@ -17635,6 +17652,23 @@
             </form>   
             
                 <p  id="cylcar_res"></p><br><br>    
+        </div>
+
+        <div class="collapse" id="pentatop">
+            <h2>Cylindrical to Cartesian Coordinate Calculator</h2><br>
+            <p id="penta">\[n * (n + 1) *(n + 2) * (n + 3)/ 24\]</p>
+            
+            <form action="">
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="penta_n" placeholder="Enter n:"/>
+                     <br> <br>
+                    <button  class = "btn btn-outline-light" onclick = "penta_cal()" >Find</button>
+                    <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
+                    <br>
+                </div>
+            </form>   
+            
+                <p  id="penta_res"></p><br><br>    
         </div>
 
         <div class="collapse" id="curve">

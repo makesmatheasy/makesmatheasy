@@ -158,6 +158,7 @@ function openit(id) {
         "#impfixs",
         "#etf",
         "#etc",
+        "#pentatop",
         "#krishnum",
         "#neonnum",
         "#equationssolver",

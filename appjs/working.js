@@ -1613,6 +1613,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#pentatopbtn").click(function () {
+        openit("#pentatop");
+        closenav();
+        clearall();
+    });
 
 
     $("#bayesprobabilitycollapsebtn").click(function () {
