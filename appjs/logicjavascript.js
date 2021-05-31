@@ -16498,9 +16498,10 @@ function typenum47find() {
         let num = (1 << k) - 1;
         if (prime[(num)])
             document.getElementById("typenum47exp").innerHTML = num + " "
-    }
+    
     else
         document.getElementById("typenum47ans").innerHTML= " Please enter valid input"
+    }
 }
 
 function typenum12find() {
@@ -27198,6 +27199,37 @@ function isDisNum(num) {
     }
     document.getElementById('disans').innerHTML = ans;
 };
+function happyvalue()
+{var num = document.getElementById("happyno").value;
+if (num == "") {
+    document.getElementById("happyans").innerHTML = "Please input a no";
+}
+else {
+    let sum=0;
+    num = parseInt(num);
+    number=num;
+    while (number > 9)              
+    {     
+    while (number > 0)  
+    {     
+    var remainder =parseInt( number % 10);   
+    sum = sum + Math.pow(remainder,2);  
+
+    number =parseInt(number / 10);     
+    }  
+    number = sum;  
+    sum = 0;  
+    }  
+    if (number == 1)  
+    {  
+        document.getElementById("happyans").innerHTML=num+" is a Happy number"
+    }  
+    else  
+    {  
+        document.getElementById("happyans").innerHTML=num+" is not a Happy number"
+    }  
+    }  
+}
 // Krishnamurthy Number
 function isKrishnaNum(num) {
     let sum = 0;
