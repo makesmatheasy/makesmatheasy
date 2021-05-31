@@ -4768,7 +4768,8 @@ function plpSolve() {
         renderMathInElement(work);
     }
 }
-function foot() {
+
+function reflex() {
     var a = parseFloat(document.getElementById('plpa').value);
     var b = parseFloat(document.getElementById('plpb').value);
     var c = parseFloat(document.getElementById('plpc').value);
