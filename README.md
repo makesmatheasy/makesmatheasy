@@ -254,6 +254,7 @@ Other Tech/Libraries
   - Cullen Number 
   - Trimorphic Number
   - Eulerian Number
+  - Carmichael Number
   
 - Basic Convertors
 

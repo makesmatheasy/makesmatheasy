@@ -70,6 +70,12 @@ $("#culnumbtn").click(function(){
     closenav();
     clearall();
 });
+//Cullen Number
+$("#carnumbtn").click(function(){
+    openit("#carnum");
+    closenav();
+    clearall();
+});
 // Pronic Number
 $("#pronumbtn").click(function(){
     openit("#pronum");
