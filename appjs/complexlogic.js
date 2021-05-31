@@ -1452,6 +1452,12 @@ function confidence() {
 
 function unitcircCal(){
     var deg = document.getElementById("unitdeg").value;
+    if(deg==""||isNaN(deg))
+    {
+        document.getElementById("unitcircxans").innerHTML = "Please enter proper numeric value";
+
+    }
+    else{
     var rad=0.0174533*deg;
     var x = Math.cos(rad);
     var y = Math.sin(rad);
@@ -1460,6 +1466,7 @@ function unitcircCal(){
     document.getElementById("unitcircyans").innerHTML = "\\[X \\space =cos("+deg+"\\degree )="+x+"  \\space \\newline Y \\space =sin("+deg+"\\degree )="+y+"  \\]"
     renderMathInElement(document.getElementById("unitcircxans"));
     renderMathInElement(document.getElementById("unitcircyans"));
+    }
 }
 
 function wmccal()
@@ -2087,7 +2094,7 @@ else{
      for (i = 0; i < len; i++) {
          varrzlt = varrzlt + ((number[i])-sum)*((number[i])-sum);
      }
-
+      
      varrzlt = varrzlt/(len-1);
      var sampstddev=Math.sqrt(varrzlt);
      sampstddev=sampstddev**3;
@@ -2163,6 +2170,35 @@ var ans="";
 document.getElementById("kurtans").innerHTML=ans;
 renderMathInElement(document.getElementById("kurtans"));
 
+}
+
+function bmifind()
+{
+    a=document.getElementById("bmis1").value;  
+    b=document.getElementById("bmis2").value;  
+    c=document.getElementById("bmis3").value;   
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Please enter all field to find answer";
+    }
+    else
+    {
+        a=parseFloat(a);
+        b=parseFloat(b);
+        c=parseFloat(c);
+       var height= (a*0.308)+(b*0.0245);
+        var bm= c/(height**2);
+
+       var vi="The B.M.I is the ratio of your weight in kg and your height in metre's square<br>"
+       vi+=" Square of your Height in metre is: "+height**2;
+       vi+="<br>Your weight is: "+c;
+       vi+="<br>Thus, your B.M.I is: "+ c+" / "+height**2;
+       document.getElementById("bmians1").innerHTML=vi;
+
+        ans="Your B.M.I is: "+bm;
+    }
+    document.getElementById("bmians").innerHTML=ans;
 }
 function clockcal()
 {
@@ -2536,21 +2572,25 @@ function iskaprekar(n)
 }
 function kapfind()
 {
-    var num=document.getElementById("kap1").value;
-    var ans="";
+    let num=document.getElementById("kap1").value;
+    let ans="";
     if(num==""||isNaN(num))
     {
-        ans="Please enter proper number";
+        ans+="Please enter proper number";
     }
     else
     {
-      if(iskaprekar(num)==true)
+      ans += "Step 1: Number => " + num;
+      ans += `<br> Step 2: The Square of ${num} => ${num}^2 = ${Math.pow(num,2)}`;
+      if(iskaprekar(num))
       {
-          ans=num+" is a Kaprekar Number";
+        ans += `<br> Step 3: The square can be divided into two parts <br>and such that sum of parts is equal to the original number `;
+        ans += `<br> Step 4: Hence ${num} is a Kaprekar Number `;
       }
       else
       {
-        ans=num+" is not a Kaprekar Number";
+        ans += `<br> Step 3: The square can't be divided into two parts <br>and such that sum of parts is equal to the original number `;
+        ans += `<br> Step 4: Hence ${num} is not a Kaprekar Number `;
       }
     }
     document.getElementById("kapans").innerHTML=ans;
@@ -2572,6 +2612,77 @@ function isPrime( n)
         }
         return true;
     }
+   
+function wagcal()
+{
+    var num1=document.getElementById("wag1").value;
+    ans="";
+    if(num1==""||isNaN(num1))
+    {
+        ans="Please enter the number";
+    }
+    else
+    {
+        num1=parseInt(num1);
+        if(isPrime(num1) && (isPowerOfTwo(num1 * 3 - 1)))
+        {
+            ans=num1+" is a Wagstaff number"
+        }
+        else
+        {
+            ans=num1+" is not a Wagstaff number"   
+        }
+    }
+    document.getElementById("wagans").innerHTML=ans;
+}
+
+function Ranges()
+{
+   var num = document.getElementById('getNum').value;
+    
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
+
+
+    if(num=="")
+    {
+       document.getElementById('Meanresult').innerHTML = "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        document.getElementById('Meanresult').innerHTML = "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else
+    {
+        var outputstring="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+
+        var max=Math.max(...number);
+        var min=Math.min(...number);
+
+        var d=max-min;
+
+       var ans= "The highest number is: "+max;
+        ans+="<br> The lowest number is: "+min;
+        ans+="<br>The Range is: "+max+" -"+" "+min+" = "+d;
+        document.getElementById('Meanresult').innerHTML = ans;
+
+        document.getElementById('Meanresult').innerHTML = "Range is: "+d;
+
+
+
+}
+}
+
+
+
     function isPowerOfTwo(n)
     {
         return (n != 0 )&& ((n & (n - 1)) == 0);
@@ -2603,4 +2714,5 @@ function wagcal()
     document.getElementById("wagans").innerHTML=ans+explain;
     renderMathInElement(document.getElementById("wagans"))
 }
+
 

@@ -23,6 +23,20 @@ $("#clock").click(function(){
     closenav();
     clearall();
 });
+
+$("#wag").click(function () {
+    openit("#wags");
+    closenav();
+    clearall();
+});
+
+
+$("#wag").click(function () {
+    openit("#wags");
+    closenav();
+    clearall();
+});
+
 $("#armnumbtn").click(function(){
     openit("#armnum");
     closenav();
@@ -50,6 +64,12 @@ $("#autonumbtn").click(function(){
     closenav();
     clearall();
 });
+//Cullen Number
+$("#culnumbtn").click(function(){
+    openit("#culnum");
+    closenav();
+    clearall();
+});
 // Pronic Number
 $("#pronumbtn").click(function(){
     openit("#pronum");
@@ -68,6 +88,11 @@ $("#trimornumbtn").click(function(){
     closenav();
     clearall();
 });
+$("#bmi").click(function(){
+    openit("#bmis");
+    closenav();
+    clearall();
+});
 //Eulerian Number
 $("#eurnumbtn").click(function(){
     openit("#eurnum");
@@ -79,6 +104,7 @@ $("#wag").click(function () {
     closenav();
     clearall();
 });
+
 $("#midrangebtn").click(function () {
     openit("#midrange");
     closenav();
@@ -96,12 +122,20 @@ $("#bilinearbtn").click(function(){
     closenav();
     clearall();
 });
+
+$("#madc").click(function(){
+    openit("#madcs");
+    closenav();
+    clearall();
+});
+
 // Krishnamurthy Number
 $("#krishnumbtn").click(function(){
     openit("#krishnum");
     closenav();
     clearall();
 });
+
 $("#manhat").click(function(){
     openit("#manhats");
     closenav();
@@ -811,6 +845,13 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#rsqr").click(function () {
+        openit("#rsqrs");
+        closenav();
+        clearall();
+
+    });
+
     $("#vect").click(function () {
         openit("#vects");
         closenav();
@@ -1555,6 +1596,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#archimedeanbtn").click(function () {
+        openit("#archimedean");
+        closenav();
+        clearall();
+    });
     $("#degbtn").click(function () {
         openit("#degcal");
         closenav();
@@ -1642,6 +1688,11 @@ $(document).ready(function () {
 
     $("#condprobabilitybtn").click(function () {
         openit("#condprobability");
+        closenav();
+        clearall();
+    });
+    $("#randommeanbtn").click(function () {
+        openit("#randommean");
         closenav();
         clearall();
     });
