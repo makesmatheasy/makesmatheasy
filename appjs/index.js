@@ -230,6 +230,7 @@ function openit(id) {
         "#excircum",
         "#shapeinscribed",
         "#matrixprops",
+        "#cylcarcal",
         "#2d-shape-ins",
         "#carpolarcal",
         "#cramer",

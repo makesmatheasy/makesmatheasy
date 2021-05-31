@@ -17193,6 +17193,25 @@ function car_polar(){
     
 }
 
+function cylin_car(){
+    let p = parseInt(document.getElementById("cylcar_p").value);
+    let theta = parseInt(document.getElementById("cylcar_the").value);
+    let z = parseInt(document.getElementById("cylcar_z").value);
+    var resul = document.getElementById("cylcar_res");
+    if (!isNaN(parseInt(p)) || !isNaN(parseInt(theta)) || !isNaN(parseInt(z))){
+         var x = p*cos(theta);
+         var y = p*sin(theta);
+         var z1 = z;
+         resul.innerHTML = "Cartesian coordinate is: x = "+x+", y = "+y+" and z = "+z1;
+    }
+    else 
+    {
+        resul.innerHTML = "Enter valid values";
+    }
+
+    
+}
+
 //minimum number to be multiplied to make a number a perfect square
 function lacube1find() {
     let n = parseInt(document.getElementById("lacube1").value)
