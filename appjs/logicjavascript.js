@@ -14945,12 +14945,27 @@ function cirinsemi4find() {
 
 function sqinsemi2find() {
     var r = parseInt(document.getElementById("sqinsemi2in").value)
-    if (r < 0) {
-        return;
+    var output = document.getElementById("sqinsemi2ans");
+    var temp ="";
+    if (!isNaN(r)){
+        if (r < 0) {
+            temp += "\\[Radius \\space cannot \\space be \\space less \\space than \\space 0\\]"
+            return;
+        }
+        a = 4 * (r ** 2) / 5;
+        temp += "\\[Area \\space of \\space a \\space Largest \\space square \\space fit \\space in \\space semicircle \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{4 \\times (Radius \\space of \\space semicircle)^2}{5}\\]"
+        temp += "\\[\\space = \\space \\frac{4 \\times ("+r+")^2}{5}\\]"
+        temp += "\\[\\space = \\space \\frac{4 \\times "+(r**2)+"}{5}\\]"
+        temp += "\\[\\space = \\space \\frac{"+(4 * (r ** 2))+"}{5}\\]"
+        temp += "\\[\\space = \\space "+a.toFixed(2)+"\\]"
+
+        output.innerHTML = temp;
+    } else{
+        temp += "\\[Please \\space enter \\space valid \\space input\\]"
+        output.innerHTML = temp;
     }
-    //area of the square
-    a = 4 * (r ** 2) / 5;
-    document.getElementById("sqinsemi2ans").innerHTML = a;
+    renderMathInElement(output);
 }
 
 function cirinsemi5find() {
