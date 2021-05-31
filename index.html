@@ -3643,6 +3643,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="cylcarcalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cylindrical to Cartesian 
+                            Coordinates Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Cylindrical to Cartesian Coordinates Calculator','#cylcarcal','c','cylcarcalfav')"><img
+                                        id="cylcarcalfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="corgeobtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coordinate
                                 Geometry Formula and Theorem
@@ -6909,6 +6926,7 @@
                     </p >
     
                 </div><br>
+                
                 <button type="button" class="btn btn-light" onclick=centersolve()>
                     Center
                 </button>
@@ -6927,6 +6945,10 @@
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
                    </button><br><br><br>
+                </form>
+            
+                <h1 id = "centerer"></h1>
+                <h1 id = "centerrr"></h1> 
 
                    <h3 style="text-align: center;">Angle Bisector </h3><br>
             <form action="">
@@ -6952,16 +6974,34 @@
             
             </form>
             <br>
-            <p id="pppdcq1explaneo" style="font-family:mathfont;;width:auto;"
-                class="stopwrap"
-               align="right"></p>
-            <p id="pppdcq1outputo"> </p> 
+        
+
+
+            <h3 style="text-align: center;">Circle and a point</h3><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        <p>\[Equation \space of \space Circle \space : \space  \space  \space  \space \]</p> <p>\[x^2 \space + \space \]</p>  <p>\[y^2 \space + \space \]</p> <input type="text" id="acenterrp" size=3 value='' placeholder="g">  <p>\[x \space + \space \]</p>  +
+                    <input type="text" id="bcenterrp" size=3 value='' placeholder="h"> <p>\[y \space + \space \]</p> + <input type="text" id="ccenterrp" size=3 value='' placeholder="C">  <p>\[\space = \space 0 \newline \]</p>
+                        <br><br>
+                    </p >
+                </div><br>
+                <p>\[Point \space  =  \space  \](<input type="text" id="bcenterrpx" size=5 value='' placeholder="a"> , 
+                <input type="text" id="bcenterrpy" size=5 value='' placeholder="b">)</p><br><br>
+                <button type="button" class="btn btn-light" onclick=tanglenght()>
+                    Tangent length
+                </button>
+                
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                   </button><br><br><br>
+                </form>
+            
+                <h1 id = "centererp"></h1>
+                <h1 id = "centerrrp"></h1> 
 
                
-            </form>
-            
-        <h1 id = "centerer"></h1>
-        <h1 id = "centerrr"></h1>   
+   
         </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
@@ -15187,12 +15227,16 @@
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Chi-Square Test</h1>
             <p style="margin: 0 auto 4rem auto; font-style: italic;">(Single Row Data)</p>
             <p style="margin: 0 auto 6rem auto; font-style: italic;">A chi-square (χ2) statistic is a test that measures how a model compares to actual observed data. The data used in calculating a chi-square statistic must be random, raw, mutually exclusive, drawn from independent variables, and drawn from a large enough sample.</p>
-            <input class = "form__field"type="text" id="obsList" placeholder="Enter Observed List Separated by SPACE">
-            <br><br>
-            <input class = "form__field"type="number" id="sigValue" placeholder="Enter given Significance value (χ2)">
-            <br><br>
-        
-            <button class = "btn btn-light" onclick="chivalue()">Test</button>
+            <form action="">
+                <input class = "form__field"type="text" id="obsList" placeholder="Enter Observed List Separated by SPACE">
+                <br><br>
+                <input class = "form__field"type="number" id="sigValue" placeholder="Enter given Significance value (χ2)">
+                <br><br>
+            
+                <button class = "btn btn-light" onclick="chivalue()">Test</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <p id="chians"></p>
             <br>
             <p id="chitestans"></p>
@@ -15206,6 +15250,7 @@
                 Lead Time is used in manufacturing, supply chain management, and project management.</p>
            <br>
            <br>
+           <form action="">
             <input class = "form__field"type="number" id="pre" placeholder="Pre Processing Time (in minutes)">
             <br><br>
             <input class = "form__field"type="number" id="pro" placeholder="Processing Time(in minutes)">
@@ -15213,6 +15258,9 @@
             <input class = "form__field"type="number" id="post" placeholder="Post Processing Time (in minutes)">
             <br><br>
             <button class = "btn btn-light" onclick="leadvalue()">Test</button>
+            <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+           </form>
+            
             <p id="leadans"></p>
             <br>
           </div>
@@ -16417,7 +16465,7 @@
                     <br>
                     <br>
                     <button  class = "btn btn-outline-light" onclick = "planeequation()" >Find</button>
-                    <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
+                    <button  class = "btn btn-outline-light" onclick = "this.form.reset()" >Reset</button>
                     <br>
                 </div>
             </form>
@@ -17604,6 +17652,25 @@
             </form>   
             
                 <p  id="car_polar_res"></p><br><br>    
+        </div>
+
+        <div class="collapse" id="cylcarcal">
+            <h2>Cylindrical to Cartesian Coordinate Calculator</h2><br>
+            <p id="cylcar">\[x = pcosθ\]</p>
+            <p id="cylcar">\[y = psinθ\]</p>
+            <p id="cylcar">\[z = z\]</p> 
+            <form action="">
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="cylcar_p" placeholder="Enter p:"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="cylcar_the" placeholder="Enter θ: "/> 
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="cylcar_z" placeholder="Enter z: "/>  <br> <br>
+                    <button  class = "btn btn-outline-light" onclick = "cylin_car()" >Find</button>
+                    <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
+                    <br>
+                </div>
+            </form>   
+            
+                <p  id="cylcar_res"></p><br><br>    
         </div>
 
         <div class="collapse" id="curve">
@@ -22349,7 +22416,8 @@
 <div id="mecs" class="collapse">
     <h1 style="text-align: center;">MARGIN OF ERROR CALCULATOR </h1>
     <br>
-    <input type="number" name="conf" class="form__field" id="conf" width="5em" placeholder="Enter Z-score">
+    <form action="">
+        <input type="number" name="conf" class="form__field" id="conf" width="5em" placeholder="Enter Z-score">
     <br>
     <input type="number" name="samsize" class="form__field" id="samsize" placeholder="Enter sample size">
     <br>
@@ -22359,6 +22427,8 @@
     <br>
     <div style="display:flex; justify-content:center;align-items:center;">
     <button type="button" class="btn btn-outline-light" onclick="mecal()">Calculate</button>
+    <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+    </form>
     </div>
     <p id="mecans" style="color:#ababab !important; text-align: center; font-size:22px; font-family:mathfont">
         <br>
@@ -39160,7 +39230,39 @@ N is the population size.
         </div>
     </div>
     <!--roman numeral end-->
+<<<<<<< HEAD
     <!-- Armstrong -->
+=======
+<<<<<<< HEAD
+<!-- Armstrong -->
+    <div class="collapse" id="armnum" style="text-align: center;">
+        <div class="container">
+            <h1 style="color: white;font-family:mathfont;text-align: center;">Armstrong Number Checker</h2>
+            <br>
+            <p>In numerical number theory, the Armstrong number definition is the number in any given number base, which forms the total of the same number,
+                 when each of its digits is raised to the power of the number of digits in the number.</p>
+            <br>
+            <br>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="arm" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="armstrongvalue()">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+                <p class="stopwrap" style="color:white;" id="armans"></p><br>
+        </div>
+    </div>
+||||||| 57299174
+=======
+<!-- Armstrong -->
+>>>>>>> 9c3b3392b955d0eee2ea2e4b1802300b75565417
     <div class="collapse" id="armnum" style="text-align: center;">
         <div class="container">
             <h1 style="color: white;font-family:mathfont;text-align: center;">Armstrong Number Checker</h2>
@@ -39184,6 +39286,7 @@ N is the population size.
                 <p class="stopwrap" style="color:white;" id="armans"></p><br>
         </div>
     </div>
+<<<<<<< HEAD
      <!-- Perfect -->
      <div class="collapse" id="perfectnum" style="text-align: center;">
         <div class="container">
@@ -39207,6 +39310,9 @@ N is the population size.
                 <p class="stopwrap" style="color:white;" id="perfectans"></p><br>
         </div>
     </div>
+=======
+>>>>>>> upstream/main
+>>>>>>> 9c3b3392b955d0eee2ea2e4b1802300b75565417
     <!-- Disarium Number start-->
     <div class="collapse" id="disnum" style="text-align: center;">
         <div class="container">
