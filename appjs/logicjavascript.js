@@ -16256,24 +16256,33 @@ function findTetrahedralNumber(n) {
 
 function typenum20find(){
     var n = document.getElementById('typenum30').value;
-    var  prime=Array.from({length: n+1},
-        (_, i) => true);
-
-    for (p = 2; p * p <= n; p++){
-        if (prime[p] == true){
-            for (i = p * 2; i <= n; i += p)
-                prime[i] = false;
-        }
-    }
-    for (p = 2; p <= n; p++){
-        if (prime[p]){
-            var rev = reverse(p);
-            if (p != rev && rev <= n &&prime[rev]){
-                document.getElementById('typenum20ans').innerHTML = p + " " + rev + " ";
-                prime[rev] = false;
+    if(!isNaN(n)){        
+        var  prime=Array.from({length: n+1},
+            (_, i) => true);
+    
+        for (p = 2; p * p <= n; p++){
+            if (prime[p] == true){
+                for (i = p * 2; i <= n; i += p)
+                    prime[i] = false;
             }
         }
+        for (p = 2; p <= n; p++){
+            if (prime[p]){
+                var rev = reverse(p);
+                if (p != rev && rev <= n &&prime[rev]){
+                    document.getElementById('typenum20ans').innerHTML = p + " " + rev + " ";
+                    prime[rev] = false;
+                }
+            }
+        }
+        document.getElementById('typenum20exp').innerHTML = "\\[Emirp is the word “prime” spelled backwards, and it refers to a prime number that becomes a new prime number when you reverse its digits. \]"
+        document.getElementById('typenum20exp').innerHTML = "\\[ Emirps do not include palindromic primes (like 151 or 787) nor 1-digit primes like 7. 107, 113, 149, and 157 – reverse them and you’ve got a new prime number on your hands.\\]"
+        document.getElementById('typenum20exp').innerHTML = "\\[Use Sieve of Eratosthenes to generate all primes smaller than or equal to n. \\]"
+        document.getElementById('typenum20exp').innerHTML = "\\[Traverse all generated prime numbers. For every traversed prime number print this number\\]"
+        renderMathInElement(document.getElementById('typenum20exp'))
     }
+    else
+        document.getElementById('typenum20ans').innerHTML = "Please enter valid input"
 }
 
 function reverse(x){
