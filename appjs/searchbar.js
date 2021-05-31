@@ -1051,6 +1051,18 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "Z SCORE CALCULATOR"){
                         document.getElementById('zscores').click();
                     }
+                    else if (inp.value.toUpperCase() == "P VALUE CALCULATOR") {
+                        $("#pvalue").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "P VALUE CALCULATOR"){
+                        document.getElementById('pvalue').click();
+                    }
+                    else if (inp.value.toUpperCase() == "PPV CALCULATOR") {
+                        $("#ppv").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PPV CALCULATOR"){
+                        document.getElementById('ppv').click();
+                    }
                     else if (inp.value.toUpperCase() == "WEIGHTED MEAN CALCULATOR") {
                         $("#wmcs").slideToggle();    
                     }
@@ -1170,6 +1182,192 @@ function autocomplete(inp, arr) {
                     }
                     else if(inp.value.toUpperCase() == "VECTOR ALGEBRA"){
                         document.getElementById('vecalg').click();
+                    } 
+                    else if (inp.value.toUpperCase() == " GOLDEN AND SILVER RATIO ") {
+                        $("#golds").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == " GOLDEN AND SILVER RATIO "){
+                        document.getElementById('golds').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "BETA FUNCTION CALCULATOR ") {
+                        $("#beta").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "BETA FUNCTION CALCULATOR "){
+                        document.getElementById('beta').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "GAMMA FUNCTION CALCULATOR") {
+                        $("#gamma").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "GAMMA FUNCTION CALCULATOR"){
+                        document.getElementById('gamma').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "VECTOR MAGNITUDE CALCULATOR") {
+                        $("#vects").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == " VECTOR MAGNITUDE CALCULATOR"){
+                        document.getElementById('vects').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "ORDER OF MAGNITUDE CALCULATOR") {
+                        $("#oocs").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "ORDER OF MAGNITUDE CALCULATOR"){
+                        document.getElementById('oocs').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "LOGARITHM PROPERTIES") {
+                        $("#log-collapse").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "LOGARITHM PROPERTIES"){
+                        document.getElementById('log-collapse').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "PRONIC NUMBER") {
+                        $("#pronum").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PRONIC NUMBER"){
+                        document.getElementById('pronum').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "ROOTS OF UNITY CALCULATOR") {
+                        $("#rootsunity").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "ROOTS OF UNITY CALCULATOR"){
+                        document.getElementById(' rootsunity').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "QUADRATIC EQUATION CALCULATOR") {
+                        $("#quadeqncal").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "QUADRATIC EQUATION CALCULATOR"){
+                        document.getElementById('quadeqncal').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "INTERCEPT FORM OF PLANE") {
+                        $("#planeintercept").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "INTERCEPT FORM OF PLANE"){
+                        document.getElementById('planeintercept').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "NAME OF 2D SHAPES") {
+                        $("#2d-shape").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "NAME OF 2D SHAPES"){
+                        document.getElementById('2d-shape').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "AREA OF CRESCENT AND LUNE") {
+                        $("#crescentLune").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "AREA OF CRESCENT AND LUNE"){
+                        document.getElementById('crescentLune').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "UNIT CIRCLE") {
+                        $("#unitcirc").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "UNIT CIRCLE"){
+                        document.getElementById('unitcirc').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "EXPANSION CALCULATOR") {
+                        $("#expansionc").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "EXPANSION CALCULATOR"){
+                        document.getElementById('expansionc').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "TYPES OF NUMBERS") {
+                        $("#typenum").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "TYPES OF NUMBERS"){
+                        document.getElementById('typenum').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "SMALLEST NUMBER DIVISIBLE") {
+                        $("#smNum").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SMALLEST NUMBER DIVISIBLE"){
+                        document.getElementById('smNum').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "FAULHABER FORMULA") {
+                        $("#faul").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "FAULHABER FORMULA"){
+                        document.getElementById('faul').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "PLATONIC SOLIDS") {
+                        $("#platonic").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PLATONIC SOLIDS"){
+                        document.getElementById('platonic').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "Bilinear INTERPOLATION CALCULATOR") {
+                        $("#bilinear").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "Bilinear INTERPOLATION CALCULATOR"){
+                        document.getElementById('bilinear').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "DISARIUM NUMBER") {
+                        $("#disnum").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "DISARIUM NUMBER"){
+                        document.getElementById('disnum').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "LN CALCULATOR") {
+                        $("#lns").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "LN CALCULATOR"){
+                        document.getElementById('lns').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "PERCENTAGE OFF") {
+                        $("#peroff").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PERCENTAGE OFF"){
+                        document.getElementById('peroff').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "PERCENTAGE CHANGE") {
+                        $("#perchng").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "PERCENTAGE CHANGE"){
+                        document.getElementById('perchng').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "ANTILOG CALCULATOR") {
+                        $("#antilog").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "ANTILOG CALCULATOR"){
+                        document.getElementById('antilog').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "POLAR COORDINATES CALCULATOR") {
+                        $("#polar").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "POLAR COORDINATES CALCULATOR"){
+                        document.getElementById('polar').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "SPHERICAL COORDINATES CALCULATOR") {
+                        $("#sph").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "SPHERICAL COORDINATES CALCULATOR"){
+                        document.getElementById('sph').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "KAPREKAR NUMBER") {
+                        $("#kaps").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "KAPREKAR NUMBER"){
+                        document.getElementById('kaps').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "WAGSTAFF NUMBER") {
+                        $("#wags").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "WAGSTAFF NUMBER"){
+                        document.getElementById('wags').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "WOODALL NUMBER") {
+                        $("#woods").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "WOODALL NUMBER"){
+                        document.getElementById('woods').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "HYPERPERFECT NUMBER") {
+                        $("#hypers").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == " HYPERPERFECT NUMBER "){
+                        document.getElementById('hypers').click();
+                    } 
+                    else if (inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR") {
+                        $("#etc").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR"){
+                        document.getElementById('etc').click();
                     } 
                     else if (inp.value.toUpperCase() == "VECTOR CALCULATOR") {
                         $("#vec").slideToggle();    
@@ -1604,6 +1802,30 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "DOUBLING TIME"){
                         clearmain()
                         document.getElementById('dbltime').click();
+                    }
+                    else if (inp.value.toUpperCase() == "PERCENTAGE CHANGE") {
+                        clearmain()
+                        $("#perchng").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "PERCENTAGE CHANGE"){
+                        clearmain()
+                        document.getElementById('perchng').click();
+                    }
+                    else if (inp.value.toUpperCase() == "ANTILOG CALCULATOR") {
+                        clearmain()
+                        $("#antilog").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "ANTILOG CALCULATOR"){
+                        clearmain()
+                        document.getElementById('antilog').click();
+                    }
+                    else if (inp.value.toUpperCase() == "PERCENTAGE OFF") {
+                        clearmain()
+                        $("#peroff").slideDown();    
+                    }
+                    else if(inp.value.toUpperCase() == "PERCENTAGE OFF"){
+                        clearmain()
+                        document.getElementById('peroff').click();
                     }
                     else if (inp.value.toUpperCase() == "ADAM NUMBERS") {
                         clearmain()
@@ -2043,7 +2265,7 @@ var arrayofelements =  ["Divide","Catalan Numbers","Euclid GCD","F-Test","Diamon
                         "Vector Algebra","Sigma Notation","Sum And Difference Of Trignometric Function","Laplace Transforms and Properties","Hyperbola","Algebraic Equations Formulas","Date","Currency Convertor","Beta Gamma Functions","Transformation of Functions","Inverse and Periodicity of Functions","Trigonometric Functions", "Operations on Sets","Euclid Geometry",
                         "Trigonometric Values", "Power Series","Unit Converter" ,"Polynomial Degree","Set Calculator","GST Calculator","Representation by Power Series","EMI Calculator","Binomial Coefficient Calculator","Percentile Rank Calculator","Euler Totient Function","Enneadecagon Calculator","Manhattan Distance calculator","Unit Rate Calculator","Hydrostatic Pressure","3-D Geometry Calculator","Leap Year","Rank Calculator","Excess-3 Code Convertor","Linear Regression Calculator","Covariance Calculator","Skewness Calculator","Improper to Mixed Fraction","Complementary angle calculator","Supplementary Angle Calculator","Coterminal Angle Calculator","SSS Triangles Angle Calculator","Cevas and Thales Theorem","Properties of Circles","Triangle Calculator","2-D Shapes Inscribed","3-D shapes Inscribed","Properties of Quadrilaterals","Arc Length Calculator","Paraboloid","Important Graph Calculators","Cartesian coordinates calculator",
                         "Volume, CSA, TSA","Percentage Change in Volume Calculator","Congruence and Similarity of Triangles","Types of Relations","Cramers Rule Calculator","Name of 3d Shapes","Sieve of Eratosthenes","Double Factorial","Next Prime Number","Sum of N terms of AP,GP & HP","Conditional Probability","Smallest Prime Factor","Additive Inverse","Confidence Interval Calculator","Joint Probability","Binomial Distribution Calculator","Poisson Distribution Calculator","Inverse Hyperbolic Trigonometric Identities","De-Moivres Theorem and Cauchy-Reimaan Theorem","Milne Thomson Method","Residue Methods","Bin/Dec/Oct/Hex Converter","Any Base to Any Base Converter","Addition Of any Number System","Subtraction Of any Number System","Multiplication Of any Number System","Factorial","Permutation and Combination","Z Score Calculator","Weighted Mean Calculator","Logarithm Calculator","Volumetric weight Calculator","Binomial Theorem Properties","BCD Code Converter","2421 Code Converter",
-                        "R-1 s and R s Complement Calculator","Hamming Code","Hamming Distance","Factorization","Perfect Squares & Cubes in a range","Error Percentage Calculator","Effective Interest Rate","Coefficient of Variation","Root Mean Square","Sum of Square of given number","Natural Numbers","Multiplicative Inverse","Vector Calculus","Vector Algebra","Vector Calculator","Fourier Series","Theorems on Differentiation","Partial Differential Equations","Methods of Integration","Direct And Indirect Proportion","Clock Angle Calculator","Grey Code Convertor","Bitwise Calculator","Boolean Algebra"
+                        "R-1 s and R s Complement Calculator","Hamming Code","Hamming Distance","Factorization","Perfect Squares & Cubes in a range","Error Percentage Calculator","Effective Interest Rate","Coefficient of Variation","Root Mean Square","Sum of Square of given number","Natural Numbers","Multiplicative Inverse","Vector Calculus","Vector Algebra","Golden and Silver Ratio","Beta Function Calculator" ,"Gamma Function Calculator" ,"Vector Magnitude Calculator" ,"Order of Magnitude Calculator" ,"Logarithm Properties" ,"Pronic number","Roots of Unity calculator","Quadratic Equation Calculator","Intercept form of Plane","Name Of 2D Shapes","Area of Crescent and Lune","Unit Circle","Expansion Calculator","Types of numbers","Smallest Number Divisible","Faulhaber Formula","Platonic Solids","Bilinear Interpolation Calculator","Disarium Number","Ln Calculator","Percentage Off","Percentage Change","Antilog calculator","Polar coordinates calculator","Spherical coordinates calculator","Kaprekar Number","Wagstaff Number","Woodall Number","Hyperperfect Number","Euler Totient Calculator","Vector Calculator","Fourier Series","Theorems on Differentiation","Partial Differential Equations","Methods of Integration","Direct And Indirect Proportion","Clock Angle Calculator","Grey Code Convertor","Bitwise Calculator","Boolean Algebra"
                         ,"Probability Properties","Empirical Probability","OPS1 on Complex Numbers","OPS2 on Complex Numbers","Properties","Identities","3-D Geometry","3-D Shapes Calculator","Shapes Calculator",
                         "Curve Tracing","Coordinate Systems","Coordinate Geometry Calculator","Cauchy Integral,Liouville and Rouche Theorem","Coordinate Geometry Formula and Theorem","Mean Calculator","Statistics Formulae","p chart calculator","Midrange Calculator","Sensitivity and Specificity","T-test","AB-test","Pythagorean Triplets","Profit/Loss Calculations","LCM/HCF/Factors","Binary/Hexadecimal Convertor","Tangent and Normal","Application of Derivatives","Maxima and Minima of Functions","Properties of Parallel Lines","Straight Line","Plot Angle","Plot Graph","Location of Roots",
                         "SPI/CGPA Convertor","Parabola","Ackermann Function","Modulo calculator","Exponential Growth Calculator","Abundant Number","Foil Calculator","Binomial Expression Multiplication","Sum of Divisors","Height and Distance","Aliquot Sums","Important Series and Sequences","Solve for X","Doubling Time","Adam Numbers","Half Life Calculator","Operations on Fractions","Mathematical Reasoning","Interest(Simple,Compound)","Cost and Selling Prices","Sets,Relations and Functions","Sets Formulas List","Properties of Matrices and Determinants","Cayley Hamilton Theorem and Diagonalization","Integration Formulae","Definite Integration Formulae","Differential Equations","Convergence and Divergence of Series","Hyperbolic Trigonometric Identities","General Solution of Trigonometric Equations","Solution of Triangles","Greatest Integer Function and Fractional Part","Solve for Exponents","Percentage Calculator","Standard Deviation","Prime Numbers","Plot Bar Graph",
@@ -3194,6 +3416,192 @@ function handleclick(value) {
     }
     else if (inp.value.toUpperCase() == "VECTOR ALGEBRA") {
         $("#vecalg").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "GOLDEN AND SILVER RATIO"){
+        document.getElementById('golds').click(); 
+    }
+    else if (inp.value.toUpperCase() == "GOLDEN AND SILVER RATIO") {
+        $("#golds").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "BETA FUNCTION CALCULATOR"){
+        document.getElementById('beta').click(); 
+    }
+    else if (inp.value.toUpperCase() == "BETA FUNCTION CALCULATOR") {
+        $("#beta").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "GAMMA FUNCTION CALCULATOR"){
+        document.getElementById('gamma').click(); 
+    }
+    else if (inp.value.toUpperCase() == "GAMMA FUNCTION CALCULATOR") {
+        $("#gamma").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "VECTOR MAGNITUDE CALCULATOR"){
+        document.getElementById('vects').click(); 
+    }
+    else if (inp.value.toUpperCase() == "VECTOR MAGNITUDE CALCULATOR") {
+        $("#vects").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "ORDER OF MAGNITUDE CALCULATOR"){
+        document.getElementById('oocs').click(); 
+    }
+    else if (inp.value.toUpperCase() == "ORDER OF MAGNITUDE CALCULATOR") {
+        $("#oocs").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "LOGARITHM PROPERTIES"){
+        document.getElementById('log-collapse').click(); 
+    }
+    else if (inp.value.toUpperCase() == "LOGARITHM PROPERTIES") {
+        $("#log-collapse").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PRONIC NUMBER"){
+        document.getElementById('pronum').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PRONIC NUMBER") {
+        $("#pronum").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "ROOTS OF UNITY CALCULATOR"){
+        document.getElementById('rootsunity').click(); 
+    }
+    else if (inp.value.toUpperCase() == "ROOTS OF UNITY CALCULATOR") {
+        $("#rootsunity").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "QUADRATIC EQUATION CALCULATOR"){
+        document.getElementById('quadeqncal').click(); 
+    }
+    else if (inp.value.toUpperCase() == "QUADRATIC EQUATION CALCULATOR") {
+        $("#quadeqncal").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "INTERCEPT FORM OF PLANE"){
+        document.getElementById('pointintercept').click(); 
+    }
+    else if (inp.value.toUpperCase() == "INTERCEPT FORM OF PLANE") {
+        $("#pointintercept").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "NAME OF 2D SHAPES"){
+        document.getElementById('2d-shape').click(); 
+    }
+    else if (inp.value.toUpperCase() == "NAME OF 2D SHAPES") {
+        $("#2d-shape").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "AREA OF CRESCENT AND LUNE"){
+        document.getElementById('crescentLune').click(); 
+    }
+    else if (inp.value.toUpperCase() == "AREA OF CRESCENT AND LUNE") {
+        $("#crescentLune").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "UNIT CIRCLE"){
+        document.getElementById('unitcirc').click(); 
+    }
+    else if (inp.value.toUpperCase() == "UNIT CIRCLE") {
+        $("#unitcirc").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "EXPANSION CALCULATOR"){
+        document.getElementById('expansionc').click(); 
+    }
+    else if (inp.value.toUpperCase() == "EXPANSION CALCULATOR") {
+        $("#expansionc").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "TYPES OF NUMBERS"){
+        document.getElementById('typenum').click(); 
+    }
+    else if (inp.value.toUpperCase() == "TYPES OF NUMBERS") {
+        $("#typenum").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SMALLEST NUMBER DIVISIBLE"){
+        document.getElementById('smNum').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SMALLEST NUMBER DIVISIBLE") {
+        $("#smNum").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "FAULHABER FORMULA"){
+        document.getElementById('faul').click(); 
+    }
+    else if (inp.value.toUpperCase() == "FAULHABER FORMULA") {
+        $("#faul").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PLATONIC SOLIDS"){
+        document.getElementById('platonic').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PLATONIC SOLIDS") {
+        $("#platonic").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "Bilinear INTERPOLATION CALCULATOR"){
+        document.getElementById('bilinear').click(); 
+    }
+    else if (inp.value.toUpperCase() == "Bilinear INTERPOLATION CALCULATOR") {
+        $("#bilinear").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "DISARIUM NUMBER"){
+        document.getElementById('disnum').click(); 
+    }
+    else if (inp.value.toUpperCase() == "DISARIUM NUMBER") {
+        $("#disnum").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "LN CALCULATOR"){
+        document.getElementById('lns').click(); 
+    }
+    else if (inp.value.toUpperCase() == "LN CALCULATOR") {
+        $("#lns").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PERCENTAGE OFF"){
+        document.getElementById('peroff').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PERCENTAGE OFF") {
+        $("#peroff").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "PERCENTAGE CHANGE"){
+        document.getElementById('perchng').click(); 
+    }
+    else if (inp.value.toUpperCase() == "PERCENTAGE CHANGE") {
+        $("#perchng").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "ANTILOG CALCULATOR"){
+        document.getElementById('antilog').click(); 
+    }
+    else if (inp.value.toUpperCase() == "ANTILOG CALCULATOR") {
+        $("#antilog").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "POLAR COORDINATES CALCULATOR"){
+        document.getElementById('polar').click(); 
+    }
+    else if (inp.value.toUpperCase() == "POLAR COORDINATES CALCULATOR") {
+        $("#polar").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "SPHERICAL COORDINATES CALCULATOR"){
+        document.getElementById('sph').click(); 
+    }
+    else if (inp.value.toUpperCase() == "SPHERICAL COORDINATES CALCULATOR") {
+        $("#sph").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "KAPREKAR NUMBER"){
+        document.getElementById('kaps').click(); 
+    }
+    else if (inp.value.toUpperCase() == "KAPREKAR NUMBER") {
+        $("#kaps").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "WAGSTAFF NUMBER"){
+        document.getElementById('wags').click(); 
+    }
+    else if (inp.value.toUpperCase() == "WAGSTAFF NUMBER") {
+        $("#wags").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "WOODALL NUMBER"){
+        document.getElementById('woods').click(); 
+    }
+    else if (inp.value.toUpperCase() == "WOODALL NUMBER") {
+        $("#woods").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "HYPERPERFECT NUMBER"){
+        document.getElementById('hypers').click(); 
+    }
+    else if (inp.value.toUpperCase() == "HYPERPERFECT NUMBER") {
+        $("#hypers").slideToggle(); 
+    }
+    else if(inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR"){
+        document.getElementById('etc').click(); 
+    }
+    else if (inp.value.toUpperCase() == "EULER TOTIENT CALCULATOR") {
+        $("#etc").slideToggle(); 
     }
     else if(inp.value.toUpperCase() == "VECTOR CALCULATOR"){
         document.getElementById('vec').click(); 
