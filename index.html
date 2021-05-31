@@ -1424,6 +1424,26 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="lancentarcbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">
+                                Lancent Arc Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Trigonometry Values','#lancentarc','c','lancentarcimgfav')"><img
+                                        id="lancentarcimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -1442,6 +1462,7 @@
                     </tr>
                 </table>
             </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -6035,7 +6056,7 @@
         <div class="collapse" id="ineqtri">
             <h2>Inequalities of Triangles</h2><br><br>
             <form action="">
-                
+
                 <input type="text" id="ineqtriin1" class="form__field" placeholder="Enter length of side 1">
                 <input type="text" id="ineqtriin2" class="form__field" placeholder="Enter length of side 2">
                 <input type="text" id="ineqtriin3" class="form__field" placeholder="Enter length of side 3"><br>
@@ -21722,6 +21743,28 @@
             <p class="stopwrap" style="color:white;" id="lnans"></p><br>
         </div>
     </div>
+</div>
+
+<div class="collapse" id="lancentarc">
+    <h2>Lancent Arc Calculator</h2><br>
+    <p id="lance">\[h = √ r * b - b² / 4\]</p>
+    <p id="lance">\[b = 2 (r - √ r² - h² )\]</p> 
+    <p id="lance">\[r = ( 4h² + b² ) / (4b)\]</p> 
+    <p id="lance">\[p = 2r * arccos [ 1 - b / ( 2 * r ) ] + b\]</p> 
+    <p id="lance">\[A = r * ( u - b ) / 2 - h * ( r - b/2 )\]</p> 
+    <form action="">
+        <div class="form-group">
+            <input type="text" style="width: 250px;" class="form__field" name="a" id="lance_x" placeholder="Enter h:"/>
+            <input type="text" name="b" style="width: 250px;" class="form__field" id="lance_y" placeholder="Enter b: "/>  
+            <input type="text" name="b" style="width: 250px;" class="form__field" id="lance_z" placeholder="Enter r: "/> <br> <br>
+
+            <button  class = "btn btn-outline-light" onclick = "lance_cal()" >Find</button>
+            <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
+            <br>
+        </div>
+    </form>   
+
+        <p  id="lance_res"></p><br><br>    
 </div>
 
 <div class="collapse" id="vects">
