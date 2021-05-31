@@ -131,6 +131,7 @@ function collapseit(openit) {
 function openit(id) {
     var ids = [
         "#trimornum",
+        "#eurnum",
         "#harnum",
         "#pronum",
         "#autonum",
