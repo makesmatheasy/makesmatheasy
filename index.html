@@ -18309,6 +18309,10 @@
                                 <td><a data-toggle="modal" data-target="#halfcy"
                                         style="text-decoration:none;" href="#">Half Cylinder</a></td>
                             </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#diagcy"
+                                        style="text-decoration:none;" href="#">Diagonally halved Cylinder</a></td>
+                            </tr>
                             </table>
                         </div>
                     </td>
@@ -31896,6 +31900,70 @@ N is the population size.
                                 <p class="stopwrap" id="resultofhalfcyba"
                                 style="font-family:mathfont;"></p>
                                 <p class="stopwrap" id="resultofhalfcydia"
+                                style="font-family:mathfont;"></p>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="diagcy" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Diagoanlly Halved  Cylinder</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{ \pi \times r^2 \times h}{2}  \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[A = \pi *r * ( h + r + \frac{d}{2})\]</p>
+                                     <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Area</h5>
+                                    <p class="text-center">\[L = \pi *r*h\]</p>
+                                     <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume diagonal</h5>
+                                    <p class="text-center">\[d = \sqrt{h^2+ (2r)^2}\]</p>
+
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/diagonally-halved-cylinder.png" class="img-fluid">
+                                    </div>
+
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number" placeholder="Enter cylinder radius r"
+                                    id="inputdiaghalfcyr"
+                                    oninput="solvediagcy()">
+                                <input class="form__field" type="number" placeholder="Enter height h"
+                                    id="inputdiaghalfcyh"
+                                    oninput="solvediagcy()">
+                                <br>
+                                <p class="stopwrap" id="resultofdiaghalfcyvol"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofdiaghalfcyla"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofdiaghalfcyba"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofdiaghalfcydia"
                                 style="font-family:mathfont;"></p>
 
                             </div>

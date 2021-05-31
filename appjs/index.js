@@ -371,6 +371,7 @@ function openit(id) {
         "#expansion",
         "#solutiontri",
         "#sumAndDiffTri",
+        "#diagcy",
         "#plotangle",
         "#profitloss",
         "#cylin_shell",
