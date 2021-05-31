@@ -23947,13 +23947,11 @@ function armstrongvalue(){
             r = parseInt(r/10);
             if (r>0)
             {
-            console.log("hello")
             ans+=" "+d+"^{"+digits+"} +  ";
             ans2+= " "+parseInt(Math.pow(d,digits))+" + ";
         }
              else
             {
-            console.log("hello mf")
              ans+=" "+d+"^{"+digits+"}  ";
             ans2+= " "+parseInt(Math.pow(d,digits))+" ";
 
