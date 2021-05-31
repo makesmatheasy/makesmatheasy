@@ -22468,12 +22468,18 @@
         <form action="">
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Spherical to Cartesian</p>
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                <input type="number" id="sphcartr" width="5em" placeholder="Enter the radial distance (r)"> 
-                <input type="number" id="sphcarto" width="5em" placeholder="Enter the polar angle (θ)">
-                <input type="number" id="sphcartfi" width="5em" placeholder="Enter the azimuth angle (φ)">
+                <div class="d-flex justify-content-center form-group">
+                    <input type="number"class="form-control" style="width: 100%;" id="sphcartr" width="5em" placeholder="Enter the radial distance (r)"> 
+                    <input type="number"class="form-control" style="width: 100%;" id="sphcarto" width="5em" placeholder="Enter the polar angle (θ)">
+                    <input type="number"class="form-control" style="width: 100%;" id="sphcartfi" width="5em" placeholder="Enter the azimuth angle (φ)">
+                </div>
+                
                 <p>&nbsp;</p></p>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcartcal()">Calculate</button>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+                <div class="d-flex justify-content-center form-group">
+                    <button type="button" class="btn btn-outline-light" onclick="sphcartcal()">Calculate</button>
+                    <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                </div>
+        
         </form>
             
         <p>&nbsp;</p>
