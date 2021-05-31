@@ -3452,6 +3452,12 @@ function impse3find() {
             }
             str = tmp;
         }
+        document.getElementById("impse3exp").innerHTML = "\\[he look-and-say sequence is the sequence of below integers: \\]"
+        document.getElementById("impse3exp").innerHTML = "\\[1, 11, 21, 1211, 111221, 312211, 13112221, 1113213211, … \\]"
+        document.getElementById("impse3exp").innerHTML = "\\[First two terms are initialized as “1” and “11”, and all other terms are generated using previous terms. \\]"
+        document.getElementById("impse3exp").innerHTML = "\\[While scanning a term, we simply keep track of count of all consecutive characters. \\]"
+        document.getElementById("impse3exp").innerHTML = "\\[For sequence of same characters, we append the count followed by character to generate the next term.\\]"
+        renderMathInElement(document.getElementById("impse3exp"))
         document.getElementById("impse3ans").innerHTML = str;
     }
     else {
