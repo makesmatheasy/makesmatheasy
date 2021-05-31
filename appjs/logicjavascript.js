@@ -10485,6 +10485,25 @@ function ellipcap() {
         document.getElementById("baspcap2").innerHTML = "";
     }
 }
+function solvedisheptahedron() {
+    let a = document.getElementById("inputtribipyedge").value;
+    let areaoutput = document.getElementById("resultoftribipyarea");
+    let voloutput = document.getElementById("resultoftribipyvol");
+    var areatemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline 2 \\space (3 + \\sqrt{3}) \\space (" + a + ")^2" + "\\ = " + eval(String(9.464 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;;
+        voltemp += "\\[Volume \\space \\newline \\frac{5}{3} \\space \\sqrt{2} \\space (" + a + ")^3" + "\\ = " + eval(String(2.357 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
+
 //Triquetra	
 function triquetra() {
     var a = document.getElementById("triquesidea").value;
