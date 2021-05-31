@@ -17159,6 +17159,47 @@ function cal_func_stats() {
     }
 }
 
+function sieve2(){
+    let limit = parseInt(document.getElementById("sieve2").value)
+    if (limit > 2)
+        document.getElementById('sieve2ans').innerHTML =2 + " ";
+    if (limit > 3)
+        document.getElementById('sieve2ans').innerHTML = 3 + " ";
+    let sieve = new Array()
+    sieve[limit] = 0;
+    for (let i = 0; i < limit; i++)
+        sieve[i] = false;
+    for (let x = 1; x * x < limit; x++)
+    {
+        for (let y = 1; y * y < limit; y++)
+        {
+            let n = (4 * x * x) + (y * y);
+            if (n <= limit && (n % 12 == 1 ||
+                                n % 12 == 5))
+                sieve[n] ^= true;
+ 
+            n = (3 * x * x) + (y * y);
+            if (n <= limit && n % 12 == 7)
+                sieve[n] = true;
+ 
+            n = (3 * x * x) - (y * y);
+            if (x > y && n <= limit &&
+                            n % 12 == 11)
+                sieve[n] ^= true;
+        }
+    }
+    for (let r = 5; r * r < limit; r++) {
+        if (sieve[r]) {
+            for (i = r * r; i < limit;
+                            i += r * r)
+                sieve[i] = false;
+        }
+    }
+    for (let a = 5; a < limit; a++)
+        if (sieve[a])
+            document.getElementById('sieve2ans').innerHTML = a , " ";
+}
+
 //sum of nterms of an Arithmetic Progression
 function calcexsum_n_apsol() {
     var n = document.getElementById("napterms").value = 5;
@@ -17286,13 +17327,6 @@ function nap() {
         p.innerHTML = temp;
         renderMathInElement(p);
     }
-
-
-
-
-
-
-
 }
 //Constant/Increasing/Decreasing AP
 function calcexconstAp() {
