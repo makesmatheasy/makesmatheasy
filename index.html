@@ -18591,6 +18591,10 @@
                                 <td><a data-toggle="modal" data-target="#sqcupola"
                                         style="text-decoration:none;" href="#">Square Cupola</a></td>
                             </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#pentcupola"
+                                        style="text-decoration:none;" href="#">Pentagonal Cupola</a></td>
+                            </tr>
                             </table>
                         </div>
                     </td>
@@ -32177,6 +32181,53 @@ N is the population size.
             </div>
         </div>
     </div>
+    <div class="modal fade" id="pentcupola" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pentagonal cupola</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Volume</h5>
+                                <p class="text-center">\[V = \frac{1}{6} (5 + 4\sqrt{5}) \space a^3\]</p>
+                                <p class="text-center">a = edge length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{1}{4} \space [20 + 5 \sqrt{3} + \sqrt{5 \space (145 + 62 \sqrt{5})}] \space a^2\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/5-cupola.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length (a)" id="inputpentcupolaedge"
+                                   oninput="solvepentcupola();">
+                        <p class="stopwrap" id="resultofpentcupolavol"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofpentcupolaarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="cylinder" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
