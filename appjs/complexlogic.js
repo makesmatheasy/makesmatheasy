@@ -2629,8 +2629,10 @@ function Ranges()
 
         var d=max-min;
 
-        document.getElementById('Meanresult').innerHTML = "Range is: "+d;
-
+       var ans= "The highest number is: "+max;
+        ans+="<br> The lowest number is: "+min;
+        ans+="<br>The Range is: "+max+" -"+" "+min+" = "+d;
+        document.getElementById('Meanresult').innerHTML = ans;
 
 }
 }
