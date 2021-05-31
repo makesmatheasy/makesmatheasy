@@ -333,7 +333,6 @@ Other Tech/Libraries
     - Sector of circle
     - Semi-Circle
     - Annulus
-    - Cupola
     - Kite
     - Lemniscate
     - Line
@@ -359,8 +358,10 @@ Other Tech/Libraries
     - Capsule
     - Cube
     - Cuboid
+    - Cupola
     - Cylinder
     - Cone
+    - Double Calotte
     - Sphere
     - Hollow Cylinder
     - Oblique Circular Cylinder
