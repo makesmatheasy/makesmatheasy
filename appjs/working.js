@@ -53,6 +53,12 @@ $("#autonumbtn").click(function(){
     closenav();
     clearall();
 });
+//Cullen Number
+$("#culnumbtn").click(function(){
+    openit("#culnum");
+    closenav();
+    clearall();
+});
 // Pronic Number
 $("#pronumbtn").click(function(){
     openit("#pronum");
