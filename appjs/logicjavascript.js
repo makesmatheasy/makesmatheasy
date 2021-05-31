@@ -16496,11 +16496,13 @@ function typenum47find() {
     SieveOfEratosthenes(n, prime);
     for (let k = 2; ((1 << k) - 1) <= n; k++) {
         let num = (1 << k) - 1;
-        if (prime[(num)])
-            document.getElementById("typenum47exp").innerHTML = num + " "
     }
-    else
+        if (prime[(num)]){
+            document.getElementById("typenum47exp").innerHTML = num + " "
+        }
+    else{
         document.getElementById("typenum47ans").innerHTML= " Please enter valid input"
+    }
 }
 
 function typenum12find() {
