@@ -4526,9 +4526,17 @@ function alisum4find(){
 
 function alisum5find(){
     let n = parseInt(document.getElementById("alisum5").value)
-    sieveSundaram();
-    for (let i = 1 ; i<= n; i++)
-        document.getElementById("alisum5ans").innerHTML ="Primorial(P#) of " + i + " is " + calculatePrimorial(i) + "<br>";
+    if(!isNaN(n)){
+        document.getElementById("alisum5exp").innerHTML = "\\[ Primorial (denoted as Pn#) is a product of first n prime numbers. \\]"
+        document.getElementById("alisum5exp").innerHTML = "\\[ Primorial of a number is similar to the factorial of a number.\\]"
+        document.getElementById("alisum5exp").innerHTML = "\\[In primorial, not all the natural numbers get multiplied only prime numbers are multiplied to calculate the primorial of a number.\\]"
+        sieveSundaram();
+        for (let i = 1 ; i<= n; i++)
+            document.getElementById("alisum5ans").innerHTML ="Primorial(P#) of " + i + " is " + calculatePrimorial(i) + "<br>";
+        renderMathInElement(document.getElementById("alisum5exp"))   
+    }
+    else 
+        document.getElementById("alisum5ans").innerHTML = "Please enter valid input"
 }
 
 function calculatePrimorial(n)
