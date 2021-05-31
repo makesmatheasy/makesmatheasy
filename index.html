@@ -17487,6 +17487,10 @@
                            style="text-decoration:none;" href="#">Ellipse</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#gridshape"
+                           style="text-decoration:none;" href="#">Grid</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#yin_yang"
                            style="text-decoration:none;" href="#">Half Yin-Yang</a></td>
                 </tr>
@@ -28741,6 +28745,65 @@ N is the population size.
                             <p class="stopwrap" id="heightDropshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="perimeterDropshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="areaDropshape" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="gridshape" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Grid</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Rectangle length (c)</h5>
+                                    <p class="text-center">\[c = m \times a + \left ( m + 1 \right ) \times b\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Rectangle width (d)</h5>
+                                    <p class="text-center">\[d = n \times a + \left ( n + 1 \right ) \times b\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = c + d + 4 \times m \times n \times a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = c \times d - m \times n \times a^2\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group ml-3">
+                                        <img src="images/grid.png" class="img-fluid mx-auto d-block">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Number of holes in length (m):"
+                                   id="gridshape-m" oninput="gridshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Number of holes in width (n)"
+                                   id="gridshape-n" oninput="gridshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Edge length hole (a)"
+                                   id="gridshape-a" oninput="gridshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Bar thickness (b)"
+                                   id="gridshape-b" oninput="gridshapesolve()">
+                            <br>
+                            <p class="stopwrap" id="gridshape-c" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="gridshape-d" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="gridshape-p" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="gridshape-A" style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
