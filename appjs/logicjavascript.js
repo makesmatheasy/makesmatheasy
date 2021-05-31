@@ -7707,6 +7707,35 @@ function solvescalenetriangle() {
     }
 }
 
+
+function solvecirtriangle() {
+    var r = document.getElementById("inputcirtrirad").value;
+    var a = document.getElementById("inputcirtria").value;
+    var areaoutput = document.getElementById("resultofareacirtri");
+    var perimeteroutput = document.getElementById("resultofcirtriperi");
+    var areatemp = "";
+    var perimetertemp = "";
+    var area= ((3.14*r)/3).toFixed(2);
+    var peri= 3.14*r;
+    if ((r != "") && (a != "" )) {
+
+        perimetertemp += "\\[P= \\pi \\times" + r + "\\]";
+        perimetertemp += "\\[Perimeter  \\space is \\space " + peri + "\\]";
+        perimeteroutput.innerHTML = perimetertemp;
+        areatemp += "\\[A= \\frac{ \\pi }{3} \\times" + r + "\\]";
+        areatemp += "\\[Area  \\space is \\space " + area + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(areaoutput);
+        renderMathInElement(perimeteroutput);
+        
+
+    } else {
+        areaoutput.innerHTML = "";
+        perimeteroutput.innerHTML = "";
+       
+    }
+}
 // created function for isosceles triangle
 function isoscelestrianglearea() {
     var eqside = document.getElementById("inputeqitside").value;

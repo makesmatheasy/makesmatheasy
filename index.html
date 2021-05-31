@@ -18167,6 +18167,10 @@
                                            style="text-decoration:none;" href="#">Scalene Triangle</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#cirtri"
+                                           style="text-decoration:none;" href="#">Circular Arc Triangle</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#triangle-cal"
                                            style="text-decoration:none;" href="#">Calculator (given sides and angle)</a></td>
                                 </tr>
@@ -27715,6 +27719,58 @@ N is the population size.
                             <p class="stopwrap" id="resultofsemiperist"
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofareast"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!-- TILL HERE -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="cirtri" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Circular Arc Triangle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = \frac{\pi}{3} r\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[p = \pi r \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/circular-arc-triangle.png" class="img-fluid">
+                                    </div>
+                                   
+                                   
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- ADDED THIS -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter radius(r)"
+                                   id="inputcirtrirad" oninput="solvecirtriangle();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter arc length(a)"
+                                   id="inputcirtria" oninput="solvecirtriangle();">
+                            <p class="stopwrap" id="resultofareacirtri"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcirtriperi"
                                style="font-family:mathfont;"></p>
                         </div>
                         <!-- TILL HERE -->
