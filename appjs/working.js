@@ -53,6 +53,11 @@ $("#disnumbtn").click(function(){
     closenav();
     clearall();
 });
+$("#happybtn").click(function(){
+    openit("#happynum");
+    closenav();
+    clearall();
+});
 // Automorphic Number
 $("#autonumbtn").click(function(){
     openit("#autonum");
