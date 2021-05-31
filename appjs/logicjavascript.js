@@ -26854,14 +26854,18 @@ function ppvCal() {
     let prev = document.getElementById("ppvprev").value;
 
     let ans = "";
+    let steps = "";
     if (sensi == "" || speci == "" || prev == "" || isNaN(sensi) || isNaN(speci) || isNaN(prev)) {
         ans = "Enter valid inputs"
         document.getElementById("ppvans").innerHTML = ans;
     }
     else {
         ans = (sensi * prev) / ((sensi * prev) + ((1 - speci) * (1 - prev)));
-
-        document.getElementById('ppvans').innerHTML = "Positive Predictive Value " + ans.toFixed(2);
+        steps += "\\[PPV = frac{(Sensitivity\\times Prevalence)}{((Sensitivity \\times Prevalence) + ((1-Specificity) \\times (1- Prevalence)))}\\]";
+        steps += "\\[= frac{("+sensi+" \\times "+prev+")}{(("+sensi+" \\times "+prev+") + ((1-"+speci+") \\times (1- "+prev+")))}\\]";
+        steps += "\\[=" + ans + "\\]";
+        document.getElementById('ppvans').innerHTML = steps;
+        renderMathInElement(document.getElementById('ppvans'));
     }
 }
 // NPV Calculator
