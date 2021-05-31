@@ -5615,7 +5615,7 @@ function ktimes() {
 }
 //Paraller vector
 
-function calcexvectpral(){
+fraction calcexvectpral(){
     var a = document.getElementById('vpa1');
     var b = document.getElementById('vpb1');
     var c = document.getElementById('vpc1');
@@ -20029,7 +20029,7 @@ function triinfind() {
     }
     renderMathInElement(document.getElementById("triinans"));
 }
-
+}
 //----------------------------
 
 //Function for multiplication of any number system
