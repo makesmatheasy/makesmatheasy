@@ -7031,7 +7031,34 @@ function director_c() {
     renderMathInElement(document.getElementById("centerrr"));
 
 }
+function tanglenght() {
+    var a, b, c, d, e, f;
+    g = parseInt(document.getElementById("acenterrp").value);
+    f = parseInt(document.getElementById("bcenterrp").value);
+    c = parseInt(document.getElementById("ccenterrp").value);
+    a = parseInt(document.getElementById("bcenterrpx").value);
+    b = parseInt(document.getElementById("bcenterrpy").value);
+    var x  = g/2;
+    var y = f/2;
 
+    var answer = (a*a) + (b*b) + (g*a)+ (f*b) +(c);
+
+    
+        document.getElementById("centererp").innerHTML = "\\[Length \\space Of tangent \\space of  \\space circle \\space -> \\newline";
+        document.getElementById("centererp").innerHTML += " g\\space = \\frac {" + g + "} { ( \\space " + 2 + " ) } " + " \\space = " + x + "\\newline";
+        document.getElementById("centererp").innerHTML += " h\\space = \\frac {" + f + "} { (  \\space " + 2 + " ) } " + " \\space = " + y + "\\newline"; 
+        document.getElementById("centererp").innerHTML += " = \\space \\sqrt{ a^2 \\space + \\space b^2 \\space+ \\space  2ga \\space + \\space 2fb \\space + c \\space } \\newline \\] ";
+
+        
+        document.getElementById("centerrrp").innerHTML += " \\[ = "+ answer + " \\newline \\] ";
+       
+
+    
+
+    renderMathInElement(document.getElementById("centererp"));
+    renderMathInElement(document.getElementById("centerrrp"));
+
+}
 
 // number of diagonals in n sided convex polygon
 function nodiagnolfind() {
