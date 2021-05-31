@@ -21401,6 +21401,17 @@ function polymax2find() {
     }
 }
 
+function polyincirclefind(){
+    var n = parseInt(document.getElementById("polyincirclen").value);
+    var r = parseInt(document.getElementById("polyincircler").value);
+    var polyside = 2 * r * math.sin(math.pi/n);
+    var polyarea = 0.5 * n * r**2 * math.sin(2*math.pi/n);
+    var circlearea = math.pi * r * r;
+    document.getElementById("polyincircleans1").innerHTML = "Polygon side: "+polyside.toFixed(2)
+    document.getElementById("polyincircleans2").innerHTML = "Polygon area: "+polyarea.toFixed(2)
+    document.getElementById("polyincircleans3").innerHTML = "Circle area: "+circlearea.toFixed(2)
+}
+
 //function for correction of  a message hamming code
 function hammingCalc2() {
     var input = document.getElementById("crct-input").value;
