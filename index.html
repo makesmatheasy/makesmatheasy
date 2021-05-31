@@ -14600,22 +14600,39 @@
     <div class="collapse" id="sensi">
         <h1 style="font-family:mathfont; text-align:center;">Sensitivity and Specificity</h1>
         <br>
-        <h4>Sensitivity</h4>
-        <p>Sensitivity is the ability of a test to correctly classify an individual as ′diseased′</p>
-        <p>Sensitivity = a / a+c
+        <br>
+        <h4 style="text-align:center;">Sensitivity</h4>
+
+        <br>
+
+        <p style="color:#ababab !important;">Sensitivity is the ability of a test to correctly classify an individual as ′diseased′</p>
+       <br>
+
+        <p style="color:#ababab !important;">Sensitivity = a / a+c
 
             = a (true positive) / a+c (true positive + false negative)
             
             = Probability of being test positive when disease present.</p>
+            
             <br>
-            <h4>Specificity</h4>
-            <p>The ability of a test to correctly classify an individual as disease- free is called the test′s specificity.</p>
-             <p>Specificity = d / b+d
+            <br>
+
+            <h4 style="text-align:center;">Specificity</h4>
+            <br>
+
+            <p style="color:#ababab !important;">The ability of a test to correctly classify an individual as disease- free is called the test′s specificity.</p>
+           <br>
+
+            <p style="color:#ababab !important;">Specificity = d / b+d
 
                 = d (true negative) / b+d (true negative + false positive)
                 
                 = Probability of being test negative when disease absent.</p>
-            <form action="">
+           
+           <br>
+           <br>
+           
+                <form action="">
             <input type="text" id="tp" class="form__field" placeholder="Enter True Positive value(TP)">
             <p>&nbsp;</p>
             <input type="text" id="tn" class="form__field" placeholder="Enter True Negative value(TN)">
@@ -14630,7 +14647,8 @@
                 </div>
                 <br><br>
                 <div class="col-md-auto d-flex justify-content-center">
-                    <button class="btn btn-secondary m-1" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
+              
+                    <button style="width:87px;" class="btn btn-secondary m-1" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
                 </div>
             </div>
         </form>
