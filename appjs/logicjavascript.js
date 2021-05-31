@@ -19720,6 +19720,12 @@ function isPrime(n) {
     return true;
 }
 
+function calcexnextPrime(num){
+    num =5;
+    nextPrime();
+
+}
+
 function nextPrime(num) {
     var ans = document.getElementById("nextPrimeResult");
     if (num <= 1)
