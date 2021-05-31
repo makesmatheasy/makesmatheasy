@@ -27208,26 +27208,39 @@ else {
     let sum=0;
     num = parseInt(num);
     number=num;
+    var ans="";
     while (number > 9)              
-    {     
+    {   
+        ans+= "\\[";   
     while (number > 0)  
     {     
     var remainder =parseInt( number % 10);   
-    sum = sum + Math.pow(remainder,2);  
-
-    number =parseInt(number / 10);     
+    sum = sum + parseInt(Math.pow(remainder,2));  
+    number =parseInt(number / 10);  
+    
+    if (number > 0) {
+        ans += "  "+ Math.pow(remainder,2) +" + ";
+    }
+    else{
+        ans += "  "+ Math.pow(remainder,2) +" ";
+    }    
     }  
+    ans+= "\\]";
+    ans += "\\[" + sum + "\\]";
     number = sum;  
     sum = 0;  
     }  
     if (number == 1)  
-    {  
-        document.getElementById("happyans").innerHTML=num+" is a Happy number"
+    {  ans += "\\[Since \\space the \\space resultant \\space sum \\space i.e \\space " + number + " \\space is \\space equal \\space to \\space 1 \\]";
+       ans += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space Happy \\space number\\]"
+        document.getElementById("happyans").innerHTML=ans;
     }  
     else  
-    {  
-        document.getElementById("happyans").innerHTML=num+" is not a Happy number"
+    {  ans += "\\[Since \\space the \\space resulatant \\space sum \\space i.e \\space " + number + " \\space is \\space not \\space equal \\space to \\space 1 \\]";
+       ans += "\\[\\therefore \\space " + num + " \\space  is \\space not \\space a \\space Happy \\space number\\]"
+        document.getElementById("happyans").innerHTML=ans;
     }  
+    renderMathInElement(document.getElementById("happyans"));
     }  
 }
 // Krishnamurthy Number
