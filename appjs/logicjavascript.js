@@ -25620,6 +25620,7 @@ function sphcylcal() {
     var p = Math.sqrt(x * x + y * y).toFixed(3);
     var o = Math.tan(y / x).toFixed(3);
 
+    
     var ansp;
     var anso;
     var ansz;
@@ -25629,11 +25630,11 @@ function sphcylcal() {
         document.getElementById("sphcylzans").innerHTML = "";
     } else {
         ansp = "\\[ρ:\\space \\sqrt{x^2 + y^2}\\]";
-        ansp = "\\[ρ:\\space \\sqrt{" + x + "^2 + " + y + "^2}\\]";
-        ansp = "\\[ρ:\\space " + p + " \\]";
+        ansp = "\\[ρ:\\space \\sqrt{"+x+"^2 + "+y+"^2}\\]";
+        ansp = "\\[ρ:\\space "+p+" \\]";
 
         anso = "\\[θ:\\space \\tan(\\frac{y}{x}) \\space  \\tan(\\frac{" + y + "}{" + x + "} ) \\space\\]";
-        anso = "\\[θ:\\space " + o + " \\]";
+        anso = "\\[θ:\\space "+o+" \\]";
 
         ansz = "\\[z:\\space z \\space =\\space " + z + "\\]";
 
