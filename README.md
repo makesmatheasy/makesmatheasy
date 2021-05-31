@@ -333,6 +333,7 @@ Other Tech/Libraries
     - Sector of circle
     - Semi-Circle
     - Annulus
+    - Cupola
     - Kite
     - Lemniscate
     - Line
