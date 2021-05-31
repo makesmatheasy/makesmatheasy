@@ -24347,6 +24347,43 @@ N is the population size.
                 </div>
                 <br>
                 <br>
+
+                <form action="">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <h4>BCD Code - Miscellaneous Converter</h4><br>
+                            <h5>From BCD Code </h5>
+                            
+                            <input type="number" id="bcdmisc-input" value="0" class="form__field">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <h5>To</h5>
+                            <select id="bcd-misc-1" class="form__field">
+                                <option class="form_field" style="background-color: #232a36;">Grey
+                                    Code
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">Excess-3
+                                    Code
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">2421
+                                    Code
+                                </option>
+                            </select>
+                            <button type="button" class="btn btn-light" onclick="convertbcdmisc()">
+                                Find
+                            </button>
+                            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                                Reset
+                            </button>
+                        </div>
+                        <label class="form__group" id="bcdmisc-result"></label>
+                        <p class="" id = "bcd-misc-working"></p>
+                    </div>
+                </form>
+                <br>
+                <br>
                 <br>
                 <br>
                 <!--BCD Addition -->
