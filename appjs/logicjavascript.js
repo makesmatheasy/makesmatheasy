@@ -9484,6 +9484,47 @@ function solvehalfcy() {
         taoutput.innerHTML = "";
     }
 }
+
+function solvediagcy() {
+    var h = document.getElementById("inputdiaghalfcyh").value;
+    var r = document.getElementById("inputdiaghalfcyr").value;
+    var volumeoutput = document.getElementById("resultofdiaghalfcyvol");
+    var laoutput = document.getElementById("resultofdiaghalfcyla");
+    var taoutput = document.getElementById("resultofdiaghalfcyba");
+    var diaoutput = document.getElementById("resultofdiaghalfcydia");
+    var voltemp = "";
+    var latemp = "";
+    var tatemp = "";
+    var diatemp = "";
+    var vol = 0.5 * 3.14 * r * r * h;
+    var lateral = 3.14 * r * h;
+    var d = Math.sqrt((h * h) + (2*2*r * r)).toFixed(2);
+    var area = (3.14 * r * (h + r+ (d*0.5))) ;
+    if ((h != "") && (r != "")) {
+        voltemp += "\\[V \\space = \\space \\frac{ \\pi \\times " + r + "\\times" + r + "\\times" + h + "}{2}" + "\\]";
+        voltemp += "\\[Volume \\space is \\space : \\space " + eval(String((vol).toFixed(2))) + "\\]";
+        volumeoutput.innerHTML = voltemp;
+        renderMathInElement(volumeoutput);
+        latemp += "\\[L \\space = \\pi \\times" + r + "\\times" + h + "\\]";
+        latemp += "\\[Lateral \\space Area \\space is \\space = \\space " + eval(String((lateral).toFixed(2))) + "\\]";
+        laoutput.innerHTML = latemp;
+        renderMathInElement(laoutput);
+        tatemp += "\\[A \\space = \\pi \\times " + r + "\\times" + "(" + h + "+" + r + " + \\frac{" + d + "}{2})" + "\\]";
+        tatemp += "\\[Surface \\space Area \\space is \\space = \\space " + eval(String((area).toFixed(2))) + "\\]";
+        taoutput.innerHTML = tatemp;
+        renderMathInElement(taoutput);
+        diatemp += "\\[d \\space = \\sqrt{" + h + "^2 + (2 \\times " + r + "^2 )}" + "\\]";
+        diatemp += "\\[Volume \\space diagonal \\space is \\space = \\space " + eval(String((d))) + "\\]";
+        diaoutput.innerHTML = diatemp;
+        renderMathInElement(diaoutput);
+    }
+    else {
+        volumeoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+        diaoutput.innerHTML = "";
+        taoutput.innerHTML = "";
+    }
+}
 //Ellipsoid
 function ellipsoidsolve() {
 
