@@ -18177,6 +18177,10 @@
                                         style="text-decoration:none;" href="#">Anticone</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#trun_anticone"
+                                        style="text-decoration:none;" href="#">Truncated Anticone</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#Cone"
                                         style="text-decoration:none;" href="#">Cone</a></td>
                                 </tr>
@@ -32615,6 +32619,70 @@ N is the population size.
             </div>
         </div> 
 
+        <div class="modal fade" id="trun_anticone" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Anticone</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Wall thickness bottom</h5>
+                                    <p class="text-center">\[w = \frac{r}{i}*h\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Radius bottom opening</h5>
+                                    <p class="text-center">\[s = r-w\]</p>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \pi*h*[r^2-\frac{(r^2 + rs +s^2)}{3}] \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = \pi [2rh + (r+s) * \sqrt{h^2+w^2} + r^2 - s^2]\]</p>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truncated-anticone.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius (r)" id="inputtrunanticonerad"
+                                       oninput="solvetrunanticone();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter cylinder height (h)" id="inputtrunanticoneheight"
+                                       oninput="solvetrunanticone();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter cone height (i)" id="inputtrunanticonei"
+                                       oninput="solvetrunanticone();">
+                            <p class="stopwrap" id="resultoftrunanticonevol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrunanticonearea"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrunanticonerad"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrunanticonethick"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
         <div class="modal fade" id="sphere" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -32817,7 +32885,7 @@ N is the population size.
                                    placeholder="Enter First short side (c)" id="sharpkink-c"
                                    oninput="sharpKinkSolve();">
                             <input class="form__field" type="number"
-                                   placeholder="Enter Second short side (c')" id="sharpkink-cx"
+                                   placeholder="Enter Second short side (c)" id="sharpkink-cx"
                                    oninput="sharpKinkSolve();">
                             <input class="form__field" type="number"
                                    placeholder="Enter Angle (α)" id="sharpkink-alpha"
