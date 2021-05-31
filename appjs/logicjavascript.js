@@ -22529,6 +22529,15 @@ function convertBinhex() {
     }
 }
 //Expansion Calculator
+function calcexexc1find(){
+    var n = document.getElementById("exc1");
+    var x = document.getElementById("exc2");
+    n.value = 4;
+    x.value = 2;
+
+    exc1find();
+}
+
 function exc1find() {
     let terms = parseInt(document.getElementById("exc1").value)
     let x = parseInt(document.getElementById("exc2").value)
@@ -22553,6 +22562,15 @@ else{
 }
 }
 
+function calcexexc2find(){
+    var n = document.getElementById("exc3");
+    var x = document.getElementById("exc4");
+    n.value = 4;
+    x.value = 2;
+
+    exc2find();
+}
+
 function exc2find() {
     let n = parseInt(document.getElementById("exc3").value)
     let x = parseInt(document.getElementById("exc4").value)
@@ -22571,6 +22589,15 @@ else{
 }
 }
 
+function calcexexc3find(){
+    var n = document.getElementById("exc5");
+    var x = document.getElementById("exc6");
+    n.value = 4;
+    x.value = 2;
+
+    exc3find();
+}
+
 function exc3find() {
     let num = parseInt(document.getElementById("exc5").value)
     let x = parseInt(document.getElementById("exc6").value)
@@ -22585,6 +22612,13 @@ function exc3find() {
 else{
     document.getElementById("exc3ans").innerHTML = "Please enter valid input"
 }
+}
+
+function calcexexc4find(){
+    var n = document.getElementById("exc7");
+    n.value = 4;
+
+    exc4find();
 }
 
 function exc4find() {
