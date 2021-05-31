@@ -26385,7 +26385,7 @@ function perfectvalue(){
                  temp += i;
                }
           }
-        
+         
           if(temp === num && temp !== 0)
              {
             document.getElementById("perfectans").innerHTML=num+" is a perfect number";
