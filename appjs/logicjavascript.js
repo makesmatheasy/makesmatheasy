@@ -24346,7 +24346,6 @@ function regressionvalue(){
 
 
     if (list1 == "" || list2 == "") {
-        document.getElementById('').style.display = "none";
         document.getElementById('regressionans').innerHTML = "Please input all the numbers to find answer";
     }
     else {
