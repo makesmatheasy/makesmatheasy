@@ -24423,13 +24423,15 @@ function specialvalue(){
         document.getElementById("specialans").innerHTML="Please input a no";
     }
     else{
+        var re=0;
         num=parseInt(num);
         number = num;  
         var sum=0;
         while (number > 0)  
         {  
         var digit =parseInt( number % 10);  
-        var fact=1;  
+        var fact=1; 
+        re=(re*10)+digit; 
          for(var i=1; i<=digit; i++)  
          {  
           fact=fact*i;  
@@ -24437,15 +24439,45 @@ function specialvalue(){
         sum= parseInt(sum+ fact);  
         number = parseInt(number / 10);
          }  
+         var facto=1;
+         var ans="\\[";
+         var ans2="\\[";
+         while(re>0)
+         {  let d =parseInt(re% 10);
+             re = parseInt(re/10);
+             for(var i=1; i<=d; i++)  
+             {  
+              facto=facto*i;  
+              }  
+             if (re>0)
+             {
+             ans+=" "+d+"! +  ";
+             ans2+= " "+facto+" + ";
+         }
+              else
+             {
+              ans+=" "+d+"!  ";
+             ans2+= " "+facto+" ";
+ 
+         }
+ 
+         }
+ 
+         ans+= "\\]";
+         ans2+= "\\]";
+         ans2+= "\\["+sum+"\\]"
 
        if(num==sum)  
-        {  
-           document.getElementById("specialans").innerHTML=num+" is a special number"
+        {  ans2+= "\\[Since \\space the \\space result \\space i.e \\space "+sum+" \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space "+num+" \\]";
+        ans2+="\\[\\therefore \\space "+num+" \\space  is \\space a \\space special \\space number\\]"
+           document.getElementById("specialans").innerHTML=ans+ans2;
           }  
         else  
-         {  
-          document.getElementById("specialans").innerHTML=num+" is not a special number"
+         {     ans2+= "\\[Since \\space the \\space result \\space i.e \\space "+sum+" \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space "+num+"\\]";
+         ans2+="\\[\\therefore \\space "+num+" \\space is \\space not \\space a \\space special\\space number\\]"
+          document.getElementById("specialans").innerHTML=ans+ans2;
           }  
+          renderMathInElement(document.getElementById("specialans"));
     }
 }
 
