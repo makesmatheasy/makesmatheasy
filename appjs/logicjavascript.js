@@ -4633,14 +4633,22 @@ function calcexalisum2find() {
 
 function alisum2find() {
     let n = parseInt(document.getElementById("alisum2").value)
-    Set < Integer > v;
-    v = ABUNDANT();
-    for (let i = 1; i <= n; i++) {
-        if (v.contains(i) & v.contains(n - i)) {
-            document.getElementById("alisum2ans").innerHTML = i + " " + (n - i);
-            return;
-        }
+    if(!isNaN(n)){
+        Set < Integer > v;
+        v = ABUNDANT();
+        for (let i = 1; i <= n; i++) {
+            if (v.contains(i) & v.contains(n - i)) {
+                document.getElementById("alisum2ans").innerHTML = i + " " + (n - i);
+                return;
+            }
+        }        
+        document.getElementById("alisum2exp").innerHTML = "\\[if j is proper divisor sum+=j\\]"
+        document.getElementById("alisum2exp").innerHTML = "\\[if i is not a perfect square sum +=i/j\\]"
+        document.getElementById("alisum2exp").innerHTML = "\\[if sum is greater than i then i is a abundant number\\]"
+        renderMathInElement(document.getElementById("alisum2exp"))
     }
+    else
+        document.getElementById("alisum2ans").innerHTML = "Please Enter valid input"
 }
 
 function ABUNDANT() {
