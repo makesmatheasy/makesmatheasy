@@ -4736,6 +4736,27 @@ function solvesection() {
     }
 }
 
+function calcexvectorsection(){
+    var x1 = document.getElementById("inp001");
+    var y1 = document.getElementById("inp002");
+    var z1 = document.getElementById("inp003");
+    var x2 = document.getElementById("inp004");
+    var y2 = document.getElementById("inp005");
+    var z2 = document.getElementById("inp006");
+    var m = document.getElementById("m1");
+    var n = document.getElementById("n11");
+    x1.value = 2;
+    y1.value = 3;
+    z1.value = 4;
+    x2.value = 4;
+    y2.value = 5;
+    z2.value = 6;
+    m.value = 2;
+    n.value = 1;
+
+    vectorsection();
+}
+
 function vectorsection() {
     var x1, y1, x2, y2, m, n;
     x1 = parseFloat(document.getElementById('inp001').value);
@@ -4764,6 +4785,26 @@ function vectorsection() {
     }
 }
 
+function calcexvectorsection2(){
+    var x1 = document.getElementById("inp001");
+    var y1 = document.getElementById("inp002");
+    var z1 = document.getElementById("inp003");
+    var x2 = document.getElementById("inp004");
+    var y2 = document.getElementById("inp005");
+    var z2 = document.getElementById("inp006");
+    var m = document.getElementById("m1");
+    var n = document.getElementById("n11");
+    x1.value = 2;
+    y1.value = 3;
+    z1.value = 4;
+    x2.value = 4;
+    y2.value = 5;
+    z2.value = 6;
+    m.value = 2;
+    n.value = 1;
+
+    vectorsection2();
+}
 
 function vectorsection2() {
     var x1, y1, x2, y2, m, n;
@@ -5628,6 +5669,24 @@ function vectorunit() {
 }
 
 //Projection Calculato
+function calcexvectorscalar(){
+    var x1 = document.getElementById("inp09");
+    var y1 = document.getElementById("inp08");
+    var z1 = document.getElementById("inp07");
+    var x2 = document.getElementById("inp06");
+    var y2 = document.getElementById("inp05");
+    var z2 = document.getElementById("inp04");
+
+    x1.value = 2;
+    y1.value = 3;
+    z1.value = 4;
+    x2.value = 4;
+    y2.value = 5;
+    z2.value = 6;
+
+    vectorscalar();
+}
+
 function vectorscalar() {
     let a = parseFloat(document.getElementById('inp09').value);
     let b = parseFloat(document.getElementById('inp08').value);
@@ -5654,6 +5713,23 @@ function vectorscalar() {
     }
 }
 
+function calcexvectorproj(){
+    var x1 = document.getElementById("inp09");
+    var y1 = document.getElementById("inp08");
+    var z1 = document.getElementById("inp07");
+    var x2 = document.getElementById("inp06");
+    var y2 = document.getElementById("inp05");
+    var z2 = document.getElementById("inp04");
+
+    x1.value = 2;
+    y1.value = 3;
+    z1.value = 4;
+    x2.value = 4;
+    y2.value = 5;
+    z2.value = 6;
+
+    vectorproj();
+}
 
 function vectorproj() {
     let a = parseFloat(document.getElementById('inp09').value);
@@ -5681,6 +5757,24 @@ function vectorproj() {
         projoutput.innerHTML = projtemp;
         renderMathInElement(document.getElementById("vectorscalar1"));
     }
+}
+
+function calcexprojector(){
+    var x1 = document.getElementById("inp09");
+    var y1 = document.getElementById("inp08");
+    var z1 = document.getElementById("inp07");
+    var x2 = document.getElementById("inp06");
+    var y2 = document.getElementById("inp05");
+    var z2 = document.getElementById("inp04");
+
+    x1.value = 2;
+    y1.value = 3;
+    z1.value = 4;
+    x2.value = 4;
+    y2.value = 5;
+    z2.value = 6;
+
+    projector();
 }
 
 function projector() {
@@ -5856,6 +5950,23 @@ function vectordistance() {
     }
 }
 //Vector Joining Two Points
+function calcexvecpoints(){
+    var a = document.getElementById("val1a");
+    var b = document.getElementById("val1b");
+    var c = document.getElementById("val1c");
+    var d = document.getElementById("val2b");
+    var e = document.getElementById("val2c");
+    var f = document.getElementById("val2d");
+    a.value = 2;
+    b.value = 3;
+    c.value = 4;
+    d.value = 5;
+    e.value = 6;
+    f.value = 7;
+
+    vecpoints();
+}
+
 function vecpoints() {
     var a, b, c, d, e, f;
     a = parseInt(document.getElementById("val1a").value);
