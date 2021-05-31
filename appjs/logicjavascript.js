@@ -17050,6 +17050,32 @@ function solvesphere_shell() {
 
 }
 
+function solvedoublept() {
+    var r = document.getElementById("inputdoubleptr").value;
+    var a = document.getElementById("inputdoublepta").value;
+    var b = document.getElementById("inputdoubleptb").value;
+    var c = document.getElementById("inputdoubleptc").value;
+    var voloutput = document.getElementById("resultofdoubleptvol");
+    var areaoutput = document.getElementById("resultofdoubleptarea");
+    var areatemp = "";
+    var voltemp = "";
+    var vol = 3.14*r*r*(a+(0.33*b)+(0.33*c));
+    var area=3.14*r*(2*a + Math.sqrt((b*b)+(r*r)) + Math.sqrt((c*c)+(r*r)));
+    if ((a!= "") && (r != "") && (b != "") && (c != "")) {
+        voltemp += "\\[Volume \\space of \\space Double \\space Point \\space \\newline  \\pi \\times" + r + "\\times" + r + "\\times (" + a + "+ \\frac{" + b + "}{3} + \\frac{" + c + "}{3})" + "\\sqrt{" + c + "^2 + " + r + "^2 }" + "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Double \\space Point \\space  \\newline" + "\\pi \\times" + r + "\\times(2" + a + "+" + "\\sqrt{" + b + "^2+" + r +"^2}" + "\\sqrt{" + c + "^2+" + r + "^2})" + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
 //Mode end
 //Variance
 function Variance() {
