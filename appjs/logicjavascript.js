@@ -19528,12 +19528,15 @@ function minsqfind() {
     let b = parseInt(document.getElementById("minsq2").value)
     if (!isNaN(l) && !isNaN(b)) {
         if (l < 0 || b < 0)
-            document.getElementById("minsqans").innerHTML = "\\[Dimension \\space cannot \\space be \\space negative\\]";
-        else {
-            var n = (l * b) / gcd(l, b);
-            document.getElementById("minsqans").innerHTML = "\\[Area \\space of \\space smallest \\space square \\space formed \\space with \\space given \\space rectangle=" + n * n + "\\]";
+           document.getElementById("minsqans").innerHTML = "\\[Dimension \\space cannot \\space be \\space negative\\]";
+        else{
+            var g=gcd(l,b);
+            var n = (l * b) / g;
+            document.getElementById("minsqans").innerHTML = "\\[Area \\space of \\space smallest \\space square \\space formed \\space with \\space given \\space rectangle="+n*n+"\\]";
+            document.getElementById("minsqans").innerHTML = "\\[Side \\space of \\space smallest \\space square \\space formed \\space with \\space given \\space rectangle=\\frac{(l * b)}{gcd(l, b)} \\newline \\space \\space =\\frac{"+l+"*"+b+"}{"+g+"}=\\frac{"+l*b+"}{"+g+"}="+n+" \\]";     
+            document.getElementById("minsqans").innerHTML = "\\[Area ="+n+"*"+n+"="+n*n+"\\]";
         }
-    }
+    }    
     else {
         document.getElementById("minsqans").innerHTML = "\\[Please \\space  enter \\space valid \\space input\\]";
     }
