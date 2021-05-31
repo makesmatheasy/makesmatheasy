@@ -7191,6 +7191,36 @@ function radeq() {
     renderMathInElement(document.getElementById("centerrrpr"));
 
 }
+
+function orthogana() {
+    var a, b, c, d, e, f;
+    var g1 = parseInt(document.getElementById("acenterrpr1").value);
+    var f1 = parseInt(document.getElementById("bcenterrpr1").value);
+    var c1 = parseInt(document.getElementById("ccenterrpr1").value);   
+    var g2 = parseInt(document.getElementById("acenterrpr2").value);
+    var f2 = parseInt(document.getElementById("bcenterrpr2").value);
+    var c2 = parseInt(document.getElementById("ccenterrpr2").value);
+    
+    var x  = g/2;
+    var y = f/2;
+
+    var one = g1*g2/2;
+    var two = f1*f2/2;
+    var three = c1+c2;
+
+    
+        document.getElementById("centererpr").innerHTML = "\\[Two  \\space Circle  \\space are  \\space orthogonal \\space  if \\newline  \\space 2g1g2 \\space + \\space 2f1f2 = \\space c1 +c2  \\newline \\] ";
+         if(one+two == three)
+        document.getElementById("centerrrpr").innerHTML = " \\[  Circle \\space A \\space Circle \\space B \\space are  \\space orthogonal \\] ";
+        else
+        document.getElementById("centerrrpr").innerHTML = " \\[  Circle \\space A \\space Circle \\space B \\space are \\space not  \\space orthogonal \\] ";
+
+    
+
+    renderMathInElement(document.getElementById("centererpr"));
+    renderMathInElement(document.getElementById("centerrrpr"));
+
+}
 // number of diagonals in n sided convex polygon
 function nodiagnolfind() {
     var n = parseInt(document.getElementById('nodiagnol').value);
@@ -16524,9 +16554,10 @@ function typenum47find() {
         let num = (1 << k) - 1;
         if (prime[(num)])
             document.getElementById("typenum47exp").innerHTML = num + " "
-    }
+    
     else
         document.getElementById("typenum47ans").innerHTML= " Please enter valid input"
+    }
 }
 
 function typenum12find() {
