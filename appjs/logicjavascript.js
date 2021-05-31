@@ -8719,12 +8719,17 @@ function helixsolve(){
     var s = 2 * Math.PI * r * Math.sqrt(1 + k*k) * t;
 
     if (!isNaN(r) && !isNaN(h) && !isNaN(t)) {
-        slopeField.innerHTML = `Slope (k) = ${k}`;
-        curvatureField.innerHTML = `Curvature (κ) = ${kp}`;
-        torsionField.innerHTML = `Torsion (w) = ${w}`;
-        arcLenField.innerHTML = `Arc length (s) = ${s}`;
+        slopeField.innerHTML = "\\[Slope \\space (k) = \\frac{"+h.toFixed(3)+"}{( 2 \\times \\pi \\times "+r.toFixed(3)+" )} = "+k.toFixed(3)+"\\]";
+        curvatureField.innerHTML = "\\[Curvature \\space (\\kappa) = \\frac{1}{( "+r.toFixed(3)+" \\times ( 1 + "+k.toFixed(3)+"^2 )} = "+kp.toFixed(3)+"\\]";
+        torsionField.innerHTML = "\\[Torsion \\space (w) = \\frac{"+k.toFixed(3)+"}{"+r.toFixed(3)+" \\times ( 1 + "+k.toFixed(3)+"^2 )} = "+w.toFixed(3)+"\\]";
+        arcLenField.innerHTML = "\\[Arc \\space length \\space (s) = 2 \\times \\pi \\times "+r.toFixed(3)+" \\times \\sqrt{1 + "+k.toFixed(3)+"^2} \\times "+t.toFixed(3)+" = "+s.toFixed(3)+"\\]";
+        renderMathInElement(slopeField);
+        renderMathInElement(curvatureField);
+        renderMathInElement(torsionField);
+        renderMathInElement(arcLenField);
     }
 }
+
 // Right Kite
 
 function rightkitesolve() {
