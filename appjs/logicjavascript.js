@@ -20129,30 +20129,55 @@ function convertdec2421() {
         if(input.length % 4 != 0 ){
             result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
         }else{
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space 2421 \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\]";
+            print +="\\[ \\space then \\space subtract \\space 6 \\space from \\space the \\space decimal \\space values \\space if \\]"
+            print +="\\[ \\space decimal \\space value \\space  of \\space each \\space nibble  \\space >=11 \\space and \\space <=15 \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
-                        x = "Invalid 2421 Input";
+                        result.innerHTML = "Invalid 2421 Input";
                     }
                     if(parseInt(temp,2) > 4){
                         x = x + (parseInt(temp,2) - 6).toString();
+                        print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
+                        print += "\\[As \\space 11<="+parseInt(temp,2).toString()+"<=15 \\space so,\\]";
+                        print += "\\[" + parseInt(temp,2) + " \\space - \\space 6 \\space \\rightarrow \\space " + (parseInt(temp,2)-6).toString() + " \\]";
                     }else{
                         x = x + parseInt(temp,2).toString();
+                        print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
                     }
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space all \\space the \\space decimal \\space digits \\space found \\space from \\space STEP2 \\]";
+            print += "\\[\\rightarrow " + x + "\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space hexa decimal  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(16)+"\\]";
+
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString(16);
             }else if(parseInt(x)<0){
-                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+                result.innerHTML = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
             }else{
-                x = "Error : Invalid 2421 input";
+                result.innerHTML = "Error : Invalid 2421 input";
             }
-            result.innerHTML = x;
+            result.innerHTML = "Answer -> " + x;
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     }
 }
