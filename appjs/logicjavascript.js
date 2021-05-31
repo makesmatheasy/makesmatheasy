@@ -20280,13 +20280,10 @@ function multBinDecHexOct() {
     print += "<h5>Step3 : Now multiply the decimal values found in STEP1 and STEP2</h5>";
     print += x1 + "&nbsp; X &nbsp;" + x2 + "&nbsp; = &nbsp;" + x3;
 
-    if(input1 === '1' || input1 === '0' || input2 === '1' || input2 === '0')
-    {
-        console.log(input1);
         if (resultType === "Binary") {
-            result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3, 2);
+            result.innerHTML = "Answer in binary=" + parseInt(fracDectoBinHexOct(x3, 2));
             print += "<h5>Step4 : To find the result in "+resultType+" convert the answer found in STEP3 to "+resultType+"</h5>";
-            print += x3 + "->" + fracDectoBinHexOct(x3, 2);
+            print += x3 + "->" + parseInt(fracDectoBinHexOct(x3, 2));
         } else if (resultType === "Octal") {
             result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3, 8);
             print += "<h5>Step4 : To find the result in "+resultType+" convert the answer found in STEP3 to "+resultType+"</h5>";
@@ -20301,7 +20298,6 @@ function multBinDecHexOct() {
             print += x3.toString();
         }
         work.innerHTML = print;
-    }
 }
 
 //----------------------------
