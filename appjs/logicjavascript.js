@@ -15129,12 +15129,12 @@ function trirect() {
    renderMathInElement(output);
 }
 
-
 function minarfind() {
     let l = parseFloat(document.getElementById("minar1").value)
     let b = parseFloat(document.getElementById("minar2").value)
     var output = document.getElementById("minarans")
     var ans = ""
+    var explain=""
     if (l < 0 || b < 0) {
         ans += "\\[Length \\space and \\space Breadth \\space of \\space a \\space Rectangle \\space cannot \\space be \\space negative \\]"
         output.innerHTML = ans;
@@ -15146,12 +15146,14 @@ function minarfind() {
         if (large >= 2 * small)
         {
             ans+=large * large;
+            explain="\\[Minimum \\space area \\space square \\space that \\space  hold \\space two \\space identical \\space square \\space have \\space side \\space ,s="+large+" \\space as \\space "+large+">=2*"+small+" \\newline Area="+large+"*"+large+"="+ans+"\\]";
         }
         else
         {
             ans+=(2 * small) * (2 * small);
+            explain="\\[Minimum \\space area \\space square \\space that \\space  hold \\space two \\space identical \\space square \\space have \\space side \\space ,s="+2*small+" \\space as \\space "+large+"<2*"+small+" \\newline Area="+2*samll+"*"+2*small+"="+ans+"\\]";
         } 
-        output.innerHTML = ans; 
+        output.innerHTML = ans+explain; 
     }
     else {
             ans += "\\[Please \\space enter \\space all \\space input \\]"
