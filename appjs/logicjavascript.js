@@ -15407,8 +15407,16 @@ function golds3find() {
 
 function gold4find(){
     let n = document.getElementById("golds6").value
-    for (let i = 0; i < n; i++)
-        document.getElementById("golds4ans").innerHTML = catalan(i) + " " ;
+    if(!isNaN(n)){
+        document.getElementById("golds4exp").innerHTML = "\\[Catalan numbers satisfy the following recursive formula. \\]"
+        document.getElementById("golds4exp").innerHTML = "\\[C_0=1 \\ and \\ C_{n+1}=\\sum_{i=0}^{n}C_iC_{n-i} \\ for \\ n\\geq 0\\]"
+        document.getElementById("golds4exp").innerHTML = "\\[The value of nth catalan number is exponential that makes the time complexity exponential.\\]"
+        for (let i = 0; i < n; i++)
+            document.getElementById("golds4ans").innerHTML = catalan(i) + " " ;
+        renderMathInElement(document.getElementById("golds4exp"))    
+    }
+    else
+        document.getElementById("golds4ans").innerHTML = "Please enter valid input"
 }
 function catalan(n)
 {
