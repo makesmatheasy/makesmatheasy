@@ -3903,6 +3903,13 @@ function collapselimitbox() {
     }
 }
 
+function calcexsolvelaplace(){
+    var lurl = document.getElementById("inputlaplace");
+    lurl.value = "e^t/2";
+
+    solvelaplace();
+}
+
 function solvelaplace() {
     var lurl = encodeURIComponent(document.getElementById("inputlaplace").value);
     window.open(
@@ -3931,6 +3938,13 @@ function dlp() {
         document.getElementById("dlpans").innerHTML = "The distance is  " + dlpans;
     }
 
+}
+
+function calcexsolveinverselaplace(){
+    var ilurl = document.getElementById("inputinverselaplace");
+    ilurl.value = "e^t/2";
+
+    solveinverselaplace();
 }
 
 function solveinverselaplace() {
@@ -5216,6 +5230,23 @@ function countscfind() {
     }
 }
 //Vector Addition
+function calcexvectoradd(){
+    var a = document.getElementById("a1b");
+    var b = document.getElementById("a2b");
+    var c = document.getElementById("a3b");
+    var d = document.getElementById("b1c");
+    var e = document.getElementById("b2c");
+    var f = document.getElementById("b3c");
+    a.value = 3;
+    b.value = 6;
+    c.value = 9;
+    d.value = 12;
+    e.value = 15;
+    f.value = 18;
+
+    vectoradd();
+}
+
 function vectoradd() {
     var a = parseFloat(document.getElementById('a1b').value);
     var b = parseFloat(document.getElementById('a2b').value);
@@ -5245,6 +5276,23 @@ function vectoradd() {
     }
 }
 //Vector Subtraction
+function calcexvectorsub(){
+    var a = document.getElementById("a1b");
+    var b = document.getElementById("a2b");
+    var c = document.getElementById("a3b");
+    var d = document.getElementById("b1c");
+    var e = document.getElementById("b2c");
+    var f = document.getElementById("b3c");
+    a.value = 15;
+    b.value = 6;
+    c.value = 9;
+    d.value = 12;
+    e.value = 3;
+    f.value = 6;
+
+    vectorsub();
+}
+
 function vectorsub() {
     var a = parseFloat(document.getElementById('a1b').value);
     var b = parseFloat(document.getElementById('a2b').value);
@@ -5440,6 +5488,17 @@ function vectorplanar() {
     }
 }
 //Mono Vector Calculator
+function calcexvectormod(){
+    var a = document.getElementById("vma");
+    var b = document.getElementById("vmb");
+    var c = document.getElementById("vmc");
+    a.value = 3;
+    b.value = 6;
+    c.value = 9;
+
+    vectormod();
+}
+
 function vecotrmod() {
     var a = parseFloat(document.getElementById('vma').value);
     var b = parseFloat(document.getElementById('vmb').value);
@@ -5464,7 +5523,16 @@ function vecotrmod() {
     }
 }
 
+function calcexvectorunit(){
+    var a = document.getElementById("vma");
+    var b = document.getElementById("vmb");
+    var c = document.getElementById("vmc");
+    a.value = 3;
+    b.value = 6;
+    c.value = 9;
 
+    vectorunit();
+}
 
 function vectorunit() {
     var a = parseFloat(document.getElementById('vma').value);

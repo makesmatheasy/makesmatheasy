@@ -9432,6 +9432,10 @@
                             onclick="plotit('inputlaplace','laplaceplot',slap())">
                         Solve
                     </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="calcexsolvelaplace()">
+                        Example
+                    </button>
                     <button type="button" id="solvelaplaceid" class="btn btn-outline-light"
                             onclick="solvelaplace()">
                         Show Steps
@@ -9462,6 +9466,10 @@
                     <button type="button" class="btn btn-light"
                             onclick="plotit('inputinverselaplace','inverselaplaceplot',sinvlap());">
                         Solve
+                    </button>
+                    <button type="button" class="btn btn-light"
+                    onclick="calcexsolveinverselaplace()">
+                     Example
                     </button>
                     <button type="button" id="solveinverselaplaceid"
                             class="btn btn-outline-light"
@@ -10221,7 +10229,7 @@
                 <input type="text" id="vmb" size=3 value='' placeholder="B"> j + <input type="text" id="vmc" size=3 value='' placeholder="C"> k
                     <br><br>
                         <br>
-                <button type="button" class="btn btn-light" onclick=vecotrmod()>
+                <button type="button" class="btn btn-light" onclick=vectormod()>
                     Modulus
                 </button>
                 <button type="button" class="btn btn-light" onclick=vectorunit()>
@@ -10229,6 +10237,12 @@
                 </button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
+                </button><br><br>
+                <button type="button" class="btn btn-light" onclick=calcexvectormod()>
+                    Modulus Example
+                </button>
+                <button type="button" class="btn btn-light" onclick=calcexvectorunit()>
+                    Unit Vector Example
                 </button><br>
                 </p>
             </div>
@@ -10260,6 +10274,12 @@
             </button>
             <button type="button" class="btn btn-light" onclick="this.form.reset();">
                 Reset
+            </button><br><br>
+            <button type="button" class="btn btn-light" onclick=calcexvectoradd()>
+                Vector Addition Example
+            </button>
+            <button type="button" class="btn btn-light" onclick=calcexvectorsub()>
+                Vector Subtraction Example
             </button><br>
                 </p>
             </div>
