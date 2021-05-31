@@ -26202,3 +26202,30 @@ function isTrimorNum(Num) {
     else
         document.getElementById('trimorans').innerHTML = n +" is not a Trimorphic Number";
 }
+// Eulerian Number
+function isEurNum(n,m) {
+    let x, x_length = n+1
+        , y, y_length = m+1
+        , dp = [];
+
+    for (x = 0; x < x_length; x++) {
+        dp[x] = []
+        for (y = 0; y < y_length; y++) {
+            dp[x][y] = 0;
+        }
+    }
+
+    for (let i = 1; i <= n; i++) {
+        for (let j = 0; j <= m; j++) {
+            if (i > j) {
+                if (j == 0)
+                    dp[i][j] = 1;
+                else
+                    dp[i][j] = ((i - j) *
+                     dp[i - 1][j - 1]) +
+                    ((j + 1) * dp[i - 1][j]);
+            }
+        }
+    }
+    document.getElementById('eurans').innerHTML = "The result is: " + dp[n][m] ;
+}

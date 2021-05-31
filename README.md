@@ -252,6 +252,7 @@ Other Tech/Libraries
   - Pronic Number 
   - Harshad Number
   - Trimorphic Number
+  - Eulerian Number
 
 - Basic Convertors
 
