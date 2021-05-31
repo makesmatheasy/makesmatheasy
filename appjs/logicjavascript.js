@@ -4811,6 +4811,30 @@ function pppSolve() {
     }
 }
 
+function foot() {
+    var a = parseFloat(document.getElementById('plpa').value);
+    var b = parseFloat(document.getElementById('plpb').value);
+    var c = parseFloat(document.getElementById('plpc').value);
+    var x1 = parseFloat(document.getElementById('plpx').value);
+    var y1 = parseFloat(document.getElementById('plpy').value);
+
+    var work = document.getElementById("ppp_work");
+
+    var dis = -(((a * x1) + (b * y1) - c)/(a^2 + b^2));
+
+    var x = a*dis +x1; 
+    var y = b*dis +y1; 
+    if (isNaN(x1) || isNaN(y1) || isNaN(a) || isNaN(b) || isNaN(c)) {
+        document.getElementById('plp_op').innerHTML = "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("plp_op"));
+    } else {
+        
+            document.getElementById('plp_op').innerHTML = 'Foot Of  point (' + x1 + ',' + y1 + ')  on Line  ' + a + 'x' + b + 'y' + '=' + c +  'is ( ' + x + ' , ' + y + ' )';
+        
+        renderMathInElement(work);
+    }
+}
+
 //Distance Between Two Parallel Line
 function pppdSolve() {
     var a = parseFloat(document.getElementById('pppdaq2').value);
