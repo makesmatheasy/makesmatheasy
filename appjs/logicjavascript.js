@@ -3065,6 +3065,15 @@ function impsefind() {
     }
 }
 
+function calceximpse1find(){
+    let x = document.getElementById("impse3");
+    let n = document.getElementById("impse4");
+
+    x.value = 2;
+    n.value = 5;
+
+    impse1find();
+}
 function impse1find() {
     let x = parseInt(document.getElementById("impse3").value)
     let n = parseInt(document.getElementById("impse4").value)
