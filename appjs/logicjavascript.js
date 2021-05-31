@@ -5012,6 +5012,20 @@ function vactorangle3() {
     }
 }
 
+function calcexvectorangle2(){
+    var a = document.getElementById('vaa3');
+    var b = document.getElementById('vab3');
+    var c = document.getElementById('vaa4');
+    var d = document.getElementById('vab4');
+
+    a.value = 3;
+    b.value = 4;
+    c.value = 4;
+    d.value = 3;
+
+    vectorangle2();
+}
+
 function vectorangle2() {
     var a = parseFloat(document.getElementById('vaa3').value);
     var b = parseFloat(document.getElementById('vab3').value);
