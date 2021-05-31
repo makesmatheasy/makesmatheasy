@@ -17073,12 +17073,21 @@ function findTetrahedralNumber(n) {
 
 function typenum21find(){
     var n = parseInt(document.getElementById('typenum30').value)
-    let res = 1;
-    for (let i = 0; i < n; ++i){
-        res *= (2 * n - i);
-        res /= (i + 1);
+    if(!isNaN(n)){
+        let res = 1;
+        for (let i = 0; i < n; ++i){
+            res *= (2 * n - i);
+            res /= (i + 1);
+        }
+        document.getElementById('typenum21exp').innerHTML = "\\[Dyck path is a staircase walk from bottom left, i.e., (n-1, 0) to top right, i.e., (0, n-1) that lies above the diagonal cells (or cells on line from bottom left to top right).\\]"
+        document.getElementById('typenum21exp').innerHTML = "\\[The number of Dyck paths from (n-1, 0) to (0, n-1) can be given by the Catalan numberC(n).\\]"
+        document.getElementById('typenum21exp').innerHTML = "\\[C_n=\frac{(2n)!}{(n+1)!n1}=\prod_{k=2}^{n}\frac{n+k}{k} \ for\ n\geq 0  \\]"
+        document.getElementById('typenum21exp').innerHTML = "\\[The task is to count the number of Dyck Paths from (n-1, 0) to (0, n-1).\\]"
+        document.getElementById('typenum21ans').innerHTML = res / (n + 1);
+        renderMathInElement(document.getElementById('typenum21exp'))
     }
-    document.getElementById('typenum21ans').innerHTML = res / (n + 1);
+    else
+        document.getElementById('typenum21ans').innerHTML = "Please enter valid input"
 }
 
 function typenum20find() {
