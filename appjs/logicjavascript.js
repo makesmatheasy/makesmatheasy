@@ -20430,22 +20430,43 @@ function convertex3() {
         work.innerHTML = print;
         renderMathInElement(work);
     } else if (fromBase === "Octal" && toBase === "Excess-3") {
-        r = parseInt(input, 8).toString();
-        for (var i = 0; i < r.length; i++) {
-            var y = (parseInt(r[i]) + 3).toString(2);
+        print += "\\[\\textbf{Converting \\space Octal \\space Code \\space to \\space Excess-3 \\space Code}\\]"
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space octal \\space to \\space decimal \\]";
+        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 8).toString() + "\\]";
+        input = parseInt(input, 8).toString();
+        print +="\\[STEP \\space 2 \\space : Add \\space 3 \\space to \\space each \\space digit \\space and \\space then \\]"
+        print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
+
+        for (var i = 0; i < input.length; i++) {
+            var y = (parseInt(input[i]) + 3).toString(2);
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],8) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],8) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],8) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],8) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + +temp;
             }
         }
+        print +="\\[STEP \\space 3 \\space : \\space Combine \\space the \\space nibbles \\space to \\]"
+        print += "\\[\\space get \\space your \\space result \\space in \\space Excess-3 \\space Code \\]";
+        print +="\\[Result \\space in \\space Excess-3 \\space Code \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     } else if (fromBase === "Hexa decimal" && toBase === "Excess-3") {
         r = parseInt(input, 16).toString();
         for (var i = 0; i < r.length; i++) {
