@@ -12500,6 +12500,17 @@ function solvehemisphere() {
     }
 }
 //Height and Distance
+function calcexheightdist1(){
+    var distance = document.getElementById("height22");
+    var degree = document.getElementById("height33");
+
+    distance.value = 20;
+    degree.value = 30;
+
+    heightdist1();
+
+}
+
 function heightdist1() {
     var distance = parseFloat(document.getElementById("height22").value);
     var degree = parseFloat(document.getElementById("height33").value);
@@ -12585,6 +12596,18 @@ function solvehalf_sphere_shell() {
         voloutput.innerHTML = "";
         areaoutput.innerHTML = "";
     }
+}
+
+
+function calcexheightdist9(){
+    var distance = document.getElementById("height92");
+    var degree = document.getElementById("height93");
+
+    distance.value = 30;
+    degree.value = 60;
+
+    heightdist9();
+    
 }
 
 function heightdist9() {
@@ -27356,6 +27379,14 @@ const ackermann = (m, n) => {
     }
 }
 
+
+function calcexackermannFunction(num1,num2){
+    num1= 7;
+    num2=12;
+
+    ackermannFunction();
+
+}
 function ackermannFunction(num1, num2) {
     document.getElementById("ackermannResult").innerHTML = "The result is : " + ackermann(num1, num2);
 }
