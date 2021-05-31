@@ -251,7 +251,7 @@ Other Tech/Libraries
   - Automorphic Number 
   - Pronic Number 
   - Harshad Number
-
+  - Trimorphic Number
 
 - Basic Convertors
 
@@ -333,6 +333,7 @@ Other Tech/Libraries
     - Sector of circle
     - Semi-Circle
     - Annulus
+    - Cupola
     - Kite
     - Lemniscate
     - Line
@@ -489,13 +490,8 @@ Other Tech/Libraries
   - p value Calculator
   - np chart Calculator
   - Confidence Interval Calculator
-<<<<<<< HEAD
-  - PPV calculator
-||||||| 6f1ab91
-=======
   - PPV calculator
   - NPV calculator
->>>>>>> 30dd34b8ec0ea576a9ad92c7a5c863555c9488e9
   - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation

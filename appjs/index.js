@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#trimornum",
         "#harnum",
         "#pronum",
         "#autonum",
@@ -178,6 +179,7 @@ function openit(id) {
         "#numcubesRanges",
         "#segcals",
         "#hydroz",
+        "#odshapescal",
         "#shapescal",
         "#tdshapescal",
         "#fdshapescal",

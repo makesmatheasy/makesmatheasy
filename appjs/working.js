@@ -52,6 +52,12 @@ $("#harnumbtn").click(function(){
     closenav();
     clearall();
 });
+//Trimorphic Number
+$("#trimornumbtn").click(function(){
+    openit("#trimornum");
+    closenav();
+    clearall();
+});
 $("#wag").click(function () {
     openit("#wags");
     closenav();
@@ -1005,6 +1011,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#odshapescalbtn").click(function () {
+        openit("#odshapescal");
+        closenav();
+        clearall();
+    });
     $("#fdshapescalbtn").click(function () {
         openit("#fdshapescal");
         closenav();
@@ -1615,7 +1626,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-<<<<<<< HEAD
     $("#relriskbtn").click(function () {
         var temp = "\\[Formula:\\space \\frac{[\\frac{a}{(a+b)}]}{[\\frac{c}{(c+d)}]}\\]";
         var output = document.getElementById("relriskform");
@@ -1626,19 +1636,13 @@ $(document).ready(function () {
         clearall();
     }); 
     $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-||||||| 6f1ab91
-    $("#relriskbtn").click(function () {
-        openit("#relrisk");
+        openit("#geoprobability");   
         closenav();
         clearall();
-    }); 
-    $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-=======
+    });
+    
     $("#npvbtn").click(function () {
         openit("#npv");
->>>>>>> 30dd34b8ec0ea576a9ad92c7a5c863555c9488e9
         closenav();
         clearall();
     });
