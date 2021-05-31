@@ -26640,13 +26640,3 @@ function isTrimorNum(Num) {
     else
         document.getElementById('trimorans').innerHTML = n +" is not a Trimorphic Number";
 }
-// Harshad Number
-function isHarNum(num) {
-    let sum = 0;
-    for (let temp = num; temp > 0; temp = parseInt(temp / 10, 10))
-        sum += temp % 10;
-    if(num % sum == 0)
-        document.getElementById('harans').innerHTML = num +" is a Harshad Number";
-    else
-        document.getElementById('harans').innerHTML = num +" is not a Harshad Number";
-} 
