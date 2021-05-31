@@ -4335,6 +4335,25 @@ function endpointsolve() {
         }
     }
 }
+function angleb() {
+
+    var a = parseFloat(document.getElementById('aba1').value);
+    var b = parseFloat(document.getElementById('abb1').value);
+    var c = parseFloat(document.getElementById('abc1').value);
+    var d = parseFloat(document.getElementById('aba2').value);
+    var e = parseFloat(document.getElementById('abb2').value);
+    var f = parseFloat(document.getElementById('abc2').value);
+
+    var x = (a*a)+(b*b); 
+    var y = (d*d)+(e*e);
+
+    document.getElementById('abr').innerHTML  = "\\[ \\newline Angle \\space Bisector \\space \\newline \\newline"
+    document.getElementById('abr').innerHTML += "  \\frac{ "+ a + " x \\space + ( "+ b +" )y \\space + ( "+ c +" ) } { \\sqrt { "+ x +"} } \\space = ";
+    document.getElementById('abr').innerHTML += " \\pm \\frac{ "+ d + " x \\space + ( "+ e +" )y \\space + ( "+ f +" ) } { \\sqrt { "+ y +"} } \\space  \\]";
+        renderMathInElement(document.getElementById("abr"));
+
+    
+}
 //Perpendiculer Distance From Origin calculator
 function pppdoSolve() {
     var a = parseFloat(document.getElementById('pppdaqo1').value);
