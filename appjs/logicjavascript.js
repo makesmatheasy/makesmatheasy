@@ -9820,6 +9820,30 @@ function solvedoustar() {
 
 }
 //Truncated Shapes
+
+function solvetrunicosa() {
+    var a = parseFloat(document.getElementById("trunicosa-a").value);
+    var edgeLenOctField = document.getElementById("trunicosa-ax");
+    var areaField = document.getElementById("trunicosa-A");
+    var volField = document.getElementById("trunicosa-V");
+    var cirRadField = document.getElementById("trunicosa-rc");
+    var midRadField = document.getElementById("trunicosa-rm");
+    var avField = document.getElementById("trunicosa-av");
+    var ax = 3 * a;
+    var A = 3 * a*a * (10*Math.sqrt(3) + Math.sqrt(25 + 10*Math.sqrt(5)));
+    var V = a*a*a/4 * (125 + 43 * Math.sqrt(5));
+    var rc = a/4*Math.sqrt(58 + 18*Math.sqrt(5));
+    var rm = 3 / (4*a) * (1 + Math.sqrt(5));
+    if ((!isNaN(a))) {
+        edgeLenOctField.innerHTML = `Edge length octahedron (a') = ${ax.toFixed(3)}`;
+        areaField.innerHTML = `Surface area (A) = ${A.toFixed(3)}`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)}`;
+        cirRadField.innerHTML = `Circumsphere radius (rc) = ${rc.toFixed(3)}`;
+        midRadField.innerHTML = `Midsphere radius (rm) = ${rm.toFixed(3)}`;
+        avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A/V).toFixed(3)}`;
+    }
+}
+
 function solvetruntetra() {
     var a = document.getElementById("inputtruntetraside").value;
 
