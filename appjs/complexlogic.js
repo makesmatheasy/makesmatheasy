@@ -2572,6 +2572,71 @@ function isPrime( n)
         }
         return true;
     }
+   
+function wagcal()
+{
+    var num1=document.getElementById("wag1").value;
+    ans="";
+    if(num1==""||isNaN(num1))
+    {
+        ans="Please enter the number";
+    }
+    else
+    {
+        num1=parseInt(num1);
+        if(isPrime(num1) && (isPowerOfTwo(num1 * 3 - 1)))
+        {
+            ans=num1+" is a Wagstaff number"
+        }
+        else
+        {
+            ans=num1+" is not a Wagstaff number"   
+        }
+    }
+    document.getElementById("wagans").innerHTML=ans;
+}
+
+function Ranges()
+{
+   var num = document.getElementById('getNum').value;
+    
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
+
+
+    if(num=="")
+    {
+       document.getElementById('Meanresult').innerHTML = "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        document.getElementById('Meanresult').innerHTML = "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else
+    {
+        var outputstring="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+
+        var max=Math.max(...number);
+        var min=Math.min(...number);
+
+        var d=max-min;
+
+        document.getElementById('Meanresult').innerHTML = "Range is: "+d;
+
+
+}
+}
+
+
+
     function isPowerOfTwo(n)
     {
         return (n != 0 )&& ((n & (n - 1)) == 0);
