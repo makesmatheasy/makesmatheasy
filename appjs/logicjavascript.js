@@ -16122,8 +16122,16 @@ function printTribRec(n) {
 
 function typenum8find() {
     let n = parseInt(document.getElementById("typenum10").value)
-    for (let i = 1; i <= n; i++)
-        document.getElementById("typenum8ans").innerHTML = printTribRec(i) + " ";
+    if(!isNaN(n)){
+        document.getElementById("typenum8exp").innerHTML = "\\[The tribonacci series is a generalization of the Fibonacci sequence where each term is the sum of the three preceding terms.\\]"
+        document.getElementById("typenum8exp").innerHTML = "\\[0, 0, 1, 1, 2, 4, 7, 13, 24, 44, 81, \\]"
+        document.getElementById("typenum8exp").innerHTML = "\\[a(n) = a(n-1) + a(n-2) + a(n-3) \\]"
+        document.getElementById("typenum8exp").innerHTML = "\\[a(0) = a(1) = 0, a(2) = 1. \\]"
+        for (let i = 1; i <= n; i++)
+            document.getElementById("typenum8ans").innerHTML = printTribRec(i) + " ";
+    }
+    else 
+        document.getElementById("typenum8ans").innerHTML = "Please enter valid input"
 }
 
 
