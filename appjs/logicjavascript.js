@@ -20981,11 +20981,16 @@ function convertdec2421() {
             }
             result.innerHTML = x;
         }
-    }else if(type === "Octal"){
-
+    }else if(type === "Octal" && type1 === "2421 Code"){
         var x = "_";
         var y = "";
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space octal \\space to \\space decimal \\]";
+        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 8).toString() + "\\]";
         input = parseInt(input,8).toString();
+        print +="\\[\\space Add \\space 6 \\space to \\space the \\space digit \\space if \\space it \\space is \\space >4 and \\space then \\]";
+        print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
+
         for (var i = 0; i < input.length; i++) {
             if (parseInt(input[i]) < 5) {
                 y = (parseInt(input[i]) + 0).toString(2);
@@ -20994,19 +20999,48 @@ function convertdec2421() {
             }
     
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
         }
-        result.innerHTML = x;
+        print +="\\[STEP \\space 2 \\space : \\space Combine \\space the \\space nibbles \\space to \\]"
+        print += "\\[\\space get \\space your \\space result \\space in \\space 2421 \\space Code \\]";
+        print +="\\[Result \\space in \\space 2421 \\space Code \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     }else if (type === "2421 Code" && type1 === "Octal"){
         var x = "";
         var y = "";
