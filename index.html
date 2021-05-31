@@ -15231,13 +15231,17 @@
           Takt time is your sell rate and can easily be categorized as the heartbeat of your work process. It allows you to optimize your capacity in
           the most appropriate way to meet demand without keeping too much inventory in reserve. </p>
          <br>
-          <input class = "form__field"type="number" id="works" placeholder="Total time available at work (in minutes)">
-          <br><br>
-          <input class = "form__field"type="number" id="demands" placeholder="Average Customer Demand">
-          <br><br>
-          <input class = "form__field"type="number" id="breaks" placeholder="Enter BreakTime if any else input 0 (in minutes)">
-          <br><br>
-          <button class = "btn btn-light" onclick="taktvalue()">Test</button>
+         <form action="">
+            <input class = "form__field"type="number" id="works" placeholder="Total time available at work (in minutes)">
+            <br><br>
+            <input class = "form__field"type="number" id="demands" placeholder="Average Customer Demand">
+            <br><br>
+            <input class = "form__field"type="number" id="breaks" placeholder="Enter BreakTime if any else input 0 (in minutes)">
+            <br><br>
+            <button class = "btn btn-light" onclick="taktvalue()">Test</button>
+            <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+         </form>
+          
           <p id="taktans"></p>
           <br>
         </div>
@@ -15248,6 +15252,7 @@
                  inspection time, move time, and wait time.Notice the process in the throughput time calculation that is considered value-added time is the process time. This is the only step that actually produces a product.
                   The rest of the time is administrative and logistical non-value-added time.</p>
            <br>
+           <form action="">
             <input class = "form__field"type="number" id="process" placeholder="Process Time(in minutes)">
             <br><br>
             <input class = "form__field"type="number" id="inspection" placeholder="Inspection Time (in minutes)">
@@ -15257,6 +15262,9 @@
             <input class = "form__field"type="number" id="queue" placeholder="Queue Time(in minutes)">
             <br><br>
             <button class = "btn btn-light" onclick="throughputvalue()">Test</button>
+            <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+           </form>
+            
             <p id="throughputans"></p>
             <br>
           </div>
@@ -15266,11 +15274,15 @@
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Cycle Time Calculator</h1>
             <p style="margin: 0 auto 6rem auto; font-style: italic;">Cycle Time is the time it takes you to complete the production process of one product,
                  from start to finish.It’s one of the most crucial flow metrics that’ll help you run a project smoothly efficiently.  </p>
-            <input class = "form__field"type="number" id="produce" placeholder="Net Production Time (in minutes)">
-            <br><br>
-            <input class = "form__field"type="number" id="units" placeholder="Number of units produced">
-            <br><br>
-            <button class = "btn btn-light" onclick="cyclevalue()">Test</button>
+            <form action="">
+                <input class = "form__field"type="number" id="produce" placeholder="Net Production Time (in minutes)">
+                <br><br>
+                <input class = "form__field"type="number" id="units" placeholder="Number of units produced">
+                <br><br>
+                <button class = "btn btn-light" onclick="cyclevalue()">Test</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <p id="cycleans"></p>
             <br>
           </div>
