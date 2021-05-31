@@ -131,10 +131,12 @@ function collapseit(openit) {
 function openit(id) {
     var ids = [
         "#trimornum",
+        "#eurnum",
         "#harnum",
         "#pronum",
         "#autonum",
         "#armnum",
+        "#perfectnum",
         "#disnum",
         "#gammaDist",
         "#expoDist",
@@ -231,6 +233,7 @@ function openit(id) {
         "#shapeinscribed",
         "#matrixprops",
         "#2d-shape-ins",
+        "#carpolarcal",
         "#cramer",
         "#lns",
         "#fractions",

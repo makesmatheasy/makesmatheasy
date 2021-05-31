@@ -3492,12 +3492,22 @@ function impse4find() {
     }
 }
 
-function impse5find(){
-    var n = parseInt(document.getElementById("impse99").value)    
-    for(let i = 0; i < n; i++)
-        document.getElementById("impse4ans").innerHTML = gen(i) + " "
-         
-    document.getElementById("impse4ans").innerHTML = "</br>"
+function impse99find(){
+    var n = parseInt(document.getElementById("impse99").value)  
+    if(!isNaN(n))  {
+        for(let i = 0; i < n; i++)
+            document.getElementById("impse99ans").innerHTML = gen(i) + " "
+             
+        document.getElementById("impse99ans").innerHTML = "</br>"
+        document.getElementById("impse99exp").innerHTML = "\\[The Moser-de Bruijn sequence is the sequence obtained by adding up the distinct powers of the number 4\\]"
+        document.getElementById("impse99exp").innerHTML = "\\[S(2 * n) = 4 * S(n)\\]"
+        document.getElementById("impse99exp").innerHTML = "\\[S(2 * n + 1) = 4 * S(n) + 1 with S(0) = 0 and S(1) = 1\\]"
+        document.getElementById("impse99exp").innerHTML = "\\[It may be noted here that any number which is the sum of non-distinct powers of 4 is not a part of the sequence. \\]"
+        document.getElementById("impse99exp").innerHTML = "\\[Thus, any number which is not a power of 4 and is present in the sequence must be the sum of the distinct powers of 4. \\]"
+        renderMathInElement(document.getElementById("impse99exp").innerHTML)
+    }
+    else 
+    document.getElementById("impse99ans").innerHTML = "Please enter valid input"
 }
 
 function gen(n)
@@ -3610,6 +3620,28 @@ function impse8find() {
     else {
         document.getElementById("impse8ans").innerHTML = "Please enter valid input"
     }
+}
+let N = 1000000007;
+
+function impse24find(){
+    let n = parseInt(document.getElementById("impse24").value)
+    if(!isNaN(n)){
+        let a = 1;
+        let ans = 2;
+        for (let i = 1; i <= n; i++)
+        {
+            document.getElementById("impse24exp").innerHTML = "\\[(a + b)%N = (a%N + b%N)%N \\]"
+            document.getElementById("impse24exp").innerHTML = "\\[for each step multiply both using arithmetic modular operation\\]"
+            document.getElementById("impse24exp").innerHTML = "\\[N where N is a modular number.\\]"
+            document.getElementById("impse24ans").innerHTML = ans + " ";
+            ans = ((a % N) * (ans % N)) % N;
+            a = ans;
+            ans = (ans + 1) % N;
+            renderMathInElement(document.getElementById("impse24exp"))
+        }
+    }
+    else 
+        document.getElementById("impse24ans").innerHTML = "Please enter valid input"
 }
 
 
@@ -4313,6 +4345,25 @@ function endpointsolve() {
         }
     }
 }
+function angleb() {
+
+    var a = parseFloat(document.getElementById('aba1').value);
+    var b = parseFloat(document.getElementById('abb1').value);
+    var c = parseFloat(document.getElementById('abc1').value);
+    var d = parseFloat(document.getElementById('aba2').value);
+    var e = parseFloat(document.getElementById('abb2').value);
+    var f = parseFloat(document.getElementById('abc2').value);
+
+    var x = (a*a)+(b*b); 
+    var y = (d*d)+(e*e);
+
+    document.getElementById('abr').innerHTML  = "\\[ \\newline Angle \\space Bisector \\space \\newline \\newline"
+    document.getElementById('abr').innerHTML += "  \\frac{ "+ a + " x \\space + ( "+ b +" )y \\space + ( "+ c +" ) } { \\sqrt { "+ x +"} } \\space = ";
+    document.getElementById('abr').innerHTML += " \\pm \\frac{ "+ d + " x \\space + ( "+ e +" )y \\space + ( "+ f +" ) } { \\sqrt { "+ y +"} } \\space  \\]";
+        renderMathInElement(document.getElementById("abr"));
+
+    
+}
 //Perpendiculer Distance From Origin calculator
 function pppdoSolve() {
     var a = parseFloat(document.getElementById('pppdaqo1').value);
@@ -4526,9 +4577,17 @@ function alisum4find(){
 
 function alisum5find(){
     let n = parseInt(document.getElementById("alisum5").value)
-    sieveSundaram();
-    for (let i = 1 ; i<= n; i++)
-        document.getElementById("alisum5ans").innerHTML ="Primorial(P#) of " + i + " is " + calculatePrimorial(i) + "<br>";
+    if(!isNaN(n)){
+        document.getElementById("alisum5exp").innerHTML = "\\[ Primorial (denoted as Pn#) is a product of first n prime numbers. \\]"
+        document.getElementById("alisum5exp").innerHTML = "\\[ Primorial of a number is similar to the factorial of a number.\\]"
+        document.getElementById("alisum5exp").innerHTML = "\\[In primorial, not all the natural numbers get multiplied only prime numbers are multiplied to calculate the primorial of a number.\\]"
+        sieveSundaram();
+        for (let i = 1 ; i<= n; i++)
+            document.getElementById("alisum5ans").innerHTML ="Primorial(P#) of " + i + " is " + calculatePrimorial(i) + "<br>";
+        renderMathInElement(document.getElementById("alisum5exp"))   
+    }
+    else 
+        document.getElementById("alisum5ans").innerHTML = "Please enter valid input"
 }
 
 function calculatePrimorial(n)
@@ -5615,7 +5674,7 @@ function ktimes() {
 }
 //Paraller vector
 
-fraction calcexvectpral(){
+function calcexvectpral(){
     var a = document.getElementById('vpa1');
     var b = document.getElementById('vpb1');
     var c = document.getElementById('vpc1');
@@ -9811,6 +9870,29 @@ function solvetruncube() {
         rctemp.innerHTML = "";
     }
 }
+
+// Rhombicuboctahedron
+
+function solverhombicuboctahedron() {
+    var a = parseFloat(document.getElementById("rhombicuboctahedron-a").value);
+    var areaField = document.getElementById("rhombicuboctahedron-A");
+    var volField = document.getElementById("rhombicuboctahedron-V");
+    var cirRadField = document.getElementById("rhombicuboctahedron-rc");
+    var midRadField = document.getElementById("rhombicuboctahedron-rm");
+    var avField = document.getElementById("rhombicuboctahedron-av");
+    var A = 2 * a*a * ( 9 + Math.sqrt(3) );
+    var V = 2/3 * a*a*a * ( 6 + 5 * Math.sqrt(2) );
+    var rc = a / 2 * Math.sqrt( 5 + 2 * Math.sqrt(2));
+    var rm = a / 2 * Math.sqrt(4 + 2* Math.sqrt(2));
+    if ((!isNaN(a))) {
+        areaField.innerHTML = `Surface area (A) = ${A.toFixed(3)}`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)}`;
+        cirRadField.innerHTML = `Circumsphere radius (rc) = ${rc.toFixed(3)}`;
+        midRadField.innerHTML = `Midsphere radius (rm) = ${rm.toFixed(3)}`;
+        avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A/V).toFixed(3)}`;
+    }
+}
+
 
 //Star of Lakshmi	
 function solvelakstar() {
@@ -14805,6 +14887,16 @@ function cirinsemi4find() {
     renderMathInElement(document.getElementById("cirinsemifind4ans"));
 }
 
+function sqinsemi2find(){
+    var r = parseInt(document.getElementById("sqinsemi2in").value)    
+    if (r < 0){
+        return;
+    }
+    //area of the square
+    a = 4 * (r**2) / 5;
+    document.getElementById("sqinsemi2ans").innerHTML = a; 
+}
+
 function cirinsemi5find() {
     var r = parseInt(document.getElementById("cirinsemi5in").value)
     var area = (3.14 * r ** 2) / 4;
@@ -15129,12 +15221,12 @@ function trirect() {
    renderMathInElement(output);
 }
 
-
 function minarfind() {
     let l = parseFloat(document.getElementById("minar1").value)
     let b = parseFloat(document.getElementById("minar2").value)
     var output = document.getElementById("minarans")
     var ans = ""
+    var explain=""
     if (l < 0 || b < 0) {
         ans += "\\[Length \\space and \\space Breadth \\space of \\space a \\space Rectangle \\space cannot \\space be \\space negative \\]"
         output.innerHTML = ans;
@@ -15146,12 +15238,14 @@ function minarfind() {
         if (large >= 2 * small)
         {
             ans+=large * large;
+            explain="\\[Minimum \\space area \\space square \\space that \\space  hold \\space two \\space identical \\space square \\space have \\space side \\space ,s="+large+" \\space as \\space "+large+">=2*"+small+" \\newline Area="+large+"*"+large+"="+ans+"\\]";
         }
         else
         {
             ans+=(2 * small) * (2 * small);
+            explain="\\[Minimum \\space area \\space square \\space that \\space  hold \\space two \\space identical \\space square \\space have \\space side \\space ,s="+2*small+" \\space as \\space "+large+"<2*"+small+" \\newline Area="+2*samll+"*"+2*small+"="+ans+"\\]";
         } 
-        output.innerHTML = ans; 
+        output.innerHTML = ans+explain; 
     }
     else {
             ans += "\\[Please \\space enter \\space all \\space input \\]"
@@ -15407,8 +15501,16 @@ function golds3find() {
 
 function gold4find(){
     let n = document.getElementById("golds6").value
-    for (let i = 0; i < n; i++)
-        document.getElementById("golds4ans").innerHTML = catalan(i) + " " ;
+    if(!isNaN(n)){
+        document.getElementById("golds4exp").innerHTML = "\\[Catalan numbers satisfy the following recursive formula. \\]"
+        document.getElementById("golds4exp").innerHTML = "\\[C_0=1 \\ and \\ C_{n+1}=\\sum_{i=0}^{n}C_iC_{n-i} \\ for \\ n\\geq 0\\]"
+        document.getElementById("golds4exp").innerHTML = "\\[The value of nth catalan number is exponential that makes the time complexity exponential.\\]"
+        for (let i = 0; i < n; i++)
+            document.getElementById("golds4ans").innerHTML = catalan(i) + " " ;
+        renderMathInElement(document.getElementById("golds4exp"))    
+    }
+    else
+        document.getElementById("golds4ans").innerHTML = "Please enter valid input"
 }
 function catalan(n)
 {
@@ -15992,6 +16094,17 @@ renderMathInElement(document.getElementById("typenum13ans"));
 renderMathInElement(result);
 }
 
+function typenum47find(){
+    var n = parseInt(document.getElementById("typenum47").value)
+    let prime=[];
+    SieveOfEratosthenes(n, prime);
+    for (let k = 2; (( 1 << k) - 1) <= n; k++){
+        let num = ( 1 << k) - 1;
+        if (prime[(num)])
+            document.getElementById("typenum47exp").innerHTML=num + " "
+    }
+}
+
 function typenum12find() {
     var n = parseInt(document.getElementById("typenum15").value)
     var prev = 0;
@@ -16256,24 +16369,33 @@ function findTetrahedralNumber(n) {
 
 function typenum20find(){
     var n = document.getElementById('typenum30').value;
-    var  prime=Array.from({length: n+1},
-        (_, i) => true);
-
-    for (p = 2; p * p <= n; p++){
-        if (prime[p] == true){
-            for (i = p * 2; i <= n; i += p)
-                prime[i] = false;
-        }
-    }
-    for (p = 2; p <= n; p++){
-        if (prime[p]){
-            var rev = reverse(p);
-            if (p != rev && rev <= n &&prime[rev]){
-                document.getElementById('typenum20ans').innerHTML = p + " " + rev + " ";
-                prime[rev] = false;
+    if(!isNaN(n)){        
+        var  prime=Array.from({length: n+1},
+            (_, i) => true);
+    
+        for (p = 2; p * p <= n; p++){
+            if (prime[p] == true){
+                for (i = p * 2; i <= n; i += p)
+                    prime[i] = false;
             }
         }
+        for (p = 2; p <= n; p++){
+            if (prime[p]){
+                var rev = reverse(p);
+                if (p != rev && rev <= n &&prime[rev]){
+                    document.getElementById('typenum20ans').innerHTML = p + " " + rev + " ";
+                    prime[rev] = false;
+                }
+            }
+        }
+        document.getElementById('typenum20exp').innerHTML = "\\[Emirp is the word “prime” spelled backwards, and it refers to a prime number that becomes a new prime number when you reverse its digits. \]"
+        document.getElementById('typenum20exp').innerHTML = "\\[ Emirps do not include palindromic primes (like 151 or 787) nor 1-digit primes like 7. 107, 113, 149, and 157 – reverse them and you’ve got a new prime number on your hands.\\]"
+        document.getElementById('typenum20exp').innerHTML = "\\[Use Sieve of Eratosthenes to generate all primes smaller than or equal to n. \\]"
+        document.getElementById('typenum20exp').innerHTML = "\\[Traverse all generated prime numbers. For every traversed prime number print this number\\]"
+        renderMathInElement(document.getElementById('typenum20exp'))
     }
+    else
+        document.getElementById('typenum20ans').innerHTML = "Please enter valid input"
 }
 
 function reverse(x){
@@ -16515,6 +16637,10 @@ function nap() {
     //}
     var p = document.getElementById("nAPseries2")
     var temp = ""
+
+
+
+
     if (isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(b))) {
 
         temp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
@@ -16522,6 +16648,10 @@ function nap() {
         renderMathInElement(p);
         return;
     }
+
+    
+
+
 
     else{
         var d = (b - a) / (n + 1);
@@ -16539,7 +16669,10 @@ function nap() {
     p.innerHTML = temp;
     renderMathInElement(p);
     }
+
+
     
+
 
 }
 //Constant/Increasing/Decreasing AP
@@ -16700,6 +16833,9 @@ function ngp() {
         renderMathInElement(p);
         return;
     }
+
+    
+
 
     else{
         var d = Math.pow((b / a), 1 / (n + 1))
@@ -17114,9 +17250,10 @@ function check_prime(isprime) {
 
 function prime_till_num(primetill) {
     var b = document.getElementById('primetill').value;
+    var res = document.getElementById("primetillsol");
     b = parseInt(b);
     if (isNaN(b) || b <= 1) {
-        document.getElementById("primetillsol").innerHTML = "Enter positive integer greater than 1.";
+        res.innerHTML = "Enter positive integer greater than 1.";
     }
     else {
         var w = "";
@@ -17124,6 +17261,7 @@ function prime_till_num(primetill) {
             //flag acts as a counter
             var flag = 0;
             //check for prime no
+            res.innerHTML += "Check whether " + f +" is  prime number";
             for (var y = 2; y < f; y++) {
                 if (f % y == 0) {
                     flag = flag + 1;
@@ -17132,11 +17270,13 @@ function prime_till_num(primetill) {
             }
             //adding prime no to the string w along with colon and spacing
             if (flag == 0) {
+                
                 w = w + f + ", ";
+                res.innerHTML += "The obtained prime numbers " + w ;
 
             }
         }
-        document.getElementById("primetillsol").innerHTML = w.slice(0, w.length - 2);
+        res.innerHTML += "The prime numbers till "+b+" are: "+w.slice(0, w.length - 2);
     }
 }
 //end
@@ -17156,6 +17296,25 @@ function lacubefind() {
         document.getElementById('lacubeans').innerHTML = 'Please enter all Input';
     }
 }
+// Cartesian Coordinates to Polar Coordinate Calculator
+//---------------------------
+function car_polar(){
+    let x = parseInt(document.getElementById("car_x").value);
+    let y = parseInt(document.getElementById("car_y").value);
+    var resul = document.getElementById("car_polar_res");
+    if (!isNaN(parseInt(x)) || !isNaN(parseInt(y))){
+         var r = Math.sqrt((x*x)+(y*y));
+         var theta = Math.atan(y/x);
+         resul.innerHTML = "Polar coordinate is: r = "+r+" and theta = "+theta+" in degree";
+    }
+    else 
+    {
+        resul.innerHTML = "Enter valid numbers";
+    }
+
+    
+}
+
 //minimum number to be multiplied to make a number a perfect square
 function lacube1find() {
     let n = parseInt(document.getElementById("lacube1").value)
@@ -17479,16 +17638,23 @@ function lacube10find() {
 
 function lacube11find() {
     let n = parseInt(document.getElementById("lacube12").value)
-    let s = new Map();
-    for (let i = 0; i * i <= n; ++i) {
-        s.set(i * i, 1);
-        if (s.has(n - i * i)) {
-            document.getElementById("lacube11ans").innerHTML = Math.sqrt(n - i * i) + "^2 + " + i + "^2<br>"
-            document.getElementById("lacube11ans").innerHTML = "true"
-            return true;
+    if(!isNaN(n)){
+        let s = new Map();
+        for (let i = 0; i * i <= n; ++i) {
+            s.set(i * i, 1);
+            if (s.has(n - i * i)) {
+                document.getElementById("lacube11ans").innerHTML = Math.sqrt(n - i * i) + "^2 + " + i + "^2<br>"
+                document.getElementById("lacube11ans").innerHTML = "true"
+                return true;
+            }
         }
+        document.getElementById("lacube11exp").innerHTML = "\\[The idea is that all the numbers can be represented as the difference of two squares except the numbers which yield the remainder of 2 when divided by 4. \\]"
+        document.getElementById("lacube11exp").innerHTML = "\\[Therefore, the idea is to simply check the remainder for 2 when the given number is divided by 4.\\]"
+        renderMathInElement(document.getElementById("lacube11exp"));
+        document.getElementById("lacube11ans").innerHTML = "false"
     }
-    document.getElementById("lacube11ans").innerHTML = "false"
+    else
+        document.getElementById("lacube11ans").innerHTML = "Please enter valid input"
 }
 
 function lacube12find() {
@@ -17540,15 +17706,23 @@ function lacube14find() {
 
 function lacube15find(){
     let n = parseInt(document.getElementById("lacube16").value)
-    for(let i = 0; i < 100000; i++)
-    {
-        if (parseInt(Math.pow(i + 1, 3), 10) -
-            parseInt(Math.pow(i, 3), 10) == N)
+    if(!isNaN(n)){
+        for(let i = 0; i < 100000; i++)
         {
-            document.getElementById("lacube15ans").innerHTML =  i + " " + (i + 1);
-            return;
+            if (parseInt(Math.pow(i + 1, 3), 10) -
+                parseInt(Math.pow(i, 3), 10) == N)
+            {
+                document.getElementById("lacube15ans").innerHTML =  i + " " + (i + 1);
+                return;
+            }
         }
+        document.getElementById("lacube15exp").innerHTML = "\\[The key observation in the problem is that a number can be represented as difference of two consecutive cubes if and only if:\\]"
+        document.getElementById("lacube15exp").innerHTML = "\\[which means (12*N – 3) must be a perfect square to break N into difference of two consecutive cubes.\\]"
+        document.getElementById("lacube15exp").innerHTML = "\\[Therefore, if the above condition holds true then we will print the numbers using a for a loop by check that for which value of i if (i+1)3 – i3 = N and print the number i and i + 1\\]"
+        renderMathInElement(document.getElementById("lacube15exp"))
     }
+    else
+    document.getElementById("lacube15ans").innerHTML ="Please neter vvalid input"
 }
 
 function isPerfectCube(x) {
@@ -18957,6 +19131,7 @@ function external_radius() {
         cirout.innerHTML = cirtemp;
     }
     renderMathInElement(cirout);
+    
 }
 
 // function to find double factorial
@@ -19566,6 +19741,16 @@ function convertAnyBaseToAnyBase() {
 
 }
 //Euclid's GCD
+function calcexgcdfind(){
+    var n = document.getElementById("gcdin1");
+    var x = document.getElementById("gcdin2");
+
+    n.value = 12;
+    x.value = 10;
+
+    gcdfind();
+}
+
 function gcdfind() {
 
     let a = parseInt(document.getElementById("gcdin1").value)
@@ -19581,6 +19766,14 @@ function gcdfind() {
         return b;
     document.getElementById("gcdans").innerHTML = gcd(b % a, a);
 }
+}
+
+function calcexgcd1find(){
+    var n = document.getElementById("gcdin3");
+
+    n.value = 12;
+
+    gcd1find();
 }
 
 function gcd1find() {
@@ -19728,27 +19921,59 @@ function subBinDecHexOct() {
 
         if(base === "Binary"){
             x1 = calculatefrac(input1,2);
+            print += "<h5>Step1 : Convert the " + base + " number in Input 1 to decimal</h5>";
+            print += input1 + "->" + x1 + "<br>";
+
             x2 = calculatefrac(input2,2);
+            print += "<h5>Step2 : Convert the " + base + " number in Input 2 to decimal</h5>";
+            print += input2 + "->" + x2 + "<br>";
 
             x3 = x1 - x2;
+            print += "<h5>Step3 : Now subtract the decimal values found in STEP1 and STEP2</h5>";
+            print += x1 + "&nbsp; - &nbsp;" + x2 + " &nbsp; = &nbsp; " + x3;
 
             result.innerHTML = fracDectoBinHexOct(x3,2);
+            result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3, 2);
+            print += "<h5>Step4 : To find the result in " + base + " convert the answer found in STEP3 to " + base + "</h5>";
+            print += x3 + "->" + fracDectoBinHexOct(x3, 2);
+
+            work.innerHTML = print;
         }
         else if(base === "Decimal"){
             x1 = parseFloat(input1);
+            print += "<h5>Step1 : Take the "+base+" number in Input 1</h5>";
+            print += "i.e," + x1 + "<br>";
             x2 = parseFloat(input2);
+            print += "<h5>Step2 : Take the "+base+" number in Input 2</h5>";
+            print += "i.e," + x2 + "<br>";
 
             x3 = x1 - x2;
+            print += "<h5>Step3 : Now subtract the decimal values found in STEP1 and STEP2</h5>";
+            print += x1 + "&nbsp; - &nbsp;" + x2 + " &nbsp; = &nbsp; " + x3;
 
-            result.innerHTML = parseFloat(x3);
+            result.innerHTML = "Answer in Decimal=" + x3.toString();
+            print += "<h5>Step4 : Answer in "+resultType+"</h5>";
+            print += x3.toString();
+            work.innerHTML = print;
         }
         else if(base === "Octal"){
             x1 = calculatefrac(input1,8);
+            print += "<h5>Step1 : Convert the " + base + " number in Input 1 to decimal</h5>";
+            print += input1 + "->" + x1 + "<br>";
+
             x2 = calculatefrac(input2,8);
+            print += "<h5>Step2 : Convert the " + base + " number in Input 2 to decimal</h5>";
+            print += input2 + "->" + x2 + "<br>";
 
             x3 = x1 - x2;
+            print += "<h5>Step3 : Now subtract the decimal values found in STEP1 and STEP2</h5>";
+            print += x1 + "&nbsp; - &nbsp;" + x2 + " &nbsp; = &nbsp; " + x3;
 
-            result.innerHTML = fracDectoBinHexOct(x3,8);
+            result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3, 8);
+            print += "<h5>Step4 : To find the result in "+resultType+" convert the answer found in STEP3 to "+resultType+"</h5>";
+            print += x3 + "->" + fracDectoBinHexOct(x3,8);
+
+            work.innerHTML = print;
         }
         else if(base === "Hexa Decimal"){
             x1 = calculatefrac(input1,16);
@@ -20029,7 +20254,7 @@ function triinfind() {
     }
     renderMathInElement(document.getElementById("triinans"));
 }
-}
+
 //----------------------------
 
 //Function for multiplication of any number system
@@ -23067,6 +23292,14 @@ function cscu5find() {
         output.innerHTML = ans;
     }
     renderMathInElement(output);
+}
+
+
+function pyinsphfind() {
+    var R = parseInt(document.getElementById("pyinsph").value)
+    var radofsq = (R**3)
+    var V = 64*radofsq/81;
+    document.getElementById("pyinsphans").innerHTML = V;
 }
 
 function hexa121find() {
@@ -26113,6 +26346,17 @@ function woodfind() {
     }
     document.getElementById("woodans").innerHTML = ans;
 }
+
+function calcexantilogCal(){
+    var n = document.getElementById("logvalue");
+    var x = document.getElementById("logbase");
+
+    n.value = 10;
+    x.value = 2;
+
+    antilogCal();
+}
+
 function antilogCal(){
     let val = document.getElementById("logvalue").value;
     let base = document.getElementById("logbase").value;
@@ -26368,6 +26612,50 @@ function armstrongvalue(){
 
     }
 }
+function perfectvalue(){
+    var num=document.getElementById("perfectno").value;
+    var digits=Math.floor(Math.log10(num) + 1);
+    if(num=="")
+    {
+        document.getElementById("perfectans").innerHTML="Please input a no";
+    }
+    else{
+        var v="";
+        var ans="";
+        var w="";
+        num=parseInt(num);
+        var temp = 0;
+        ans="\\[The \\space positive \\space diviors \\space of \\space the \\space number \\space excluding \\space itself \\space are:\\]"
+        for(var i=1;i<=num/2;i++)
+          {
+              if(num%i === 0)
+               {
+                 temp += i;
+                 w=w+i+",";
+                 v=v+i+"+"
+               }
+          }
+         w=w.slice(0,-1);
+         v=v.slice(0,-1)
+         ans+="\\["+w+"\\]"
+         ans+="\\[Taking \\space the \\space sum \\space of \\space the \\space divisors \\]"
+         ans+="\\["+v+"\\]"
+         ans+="\\["+temp+"\\]"
+          if(temp === num && temp !== 0)
+             {
+                ans+= "\\[Since \\space the \\space sum \\space i.e \\space "+temp+" \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space "+num+" \\]";
+                ans+="\\[\\therefore \\space "+num+" \\space  is \\space a \\space perfect \\space number\\]"
+            document.getElementById("perfectans").innerHTML=ans;
+             } 
+          else
+             {
+                ans+= "\\[Since \\space the \\space sum \\space i.e \\space "+temp+" \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space "+num+" \\]";
+                ans+="\\[\\therefore \\space "+num+" \\space  is \\space not \\space a \\space perfect \\space number\\]"
+            document.getElementById("perfectans").innerHTML=ans;
+             } 
+            renderMathInElement(document.getElementById("perfectans"))  }
+
+}
 // Neon Number
 function isNeonNum(num) {
     let sq = num * num;   
@@ -26439,10 +26727,18 @@ function isHarNum(num) {
     let sum = 0;
     for (let temp = num; temp > 0; temp = parseInt(temp / 10, 10))
         sum += temp % 10;
-    if(num % sum == 0)
-        document.getElementById('harans').innerHTML = num +" is a Harshad Number";
-    else
-        document.getElementById('harans').innerHTML = num +" is not a Harshad Number";
+    let ans ="";
+    ans += "Step 1: Number => " + num;
+    ans += `<br> Step 2: Sum of the digits of the number => ${sum}`;
+    if(num % sum == 0){
+        ans += `<br> Step 3: Clearly the number is divisible by the sum of digits => ${num}%${sum}=0`;
+        ans += `<br> Step 4: Hence ${num} is a Harshad Number`;
+    }
+    else{
+        ans += `<br> Step 3: Clearly the number is not divisible by the sum of digits => ${num}%${sum}=${num%sum}`;
+        ans += `<br> Step 4: Hence ${num} is not a Harshad Number`;
+    }
+    document.getElementById('harans').innerHTML = ans;
 }
 // Trimorphic Number
 function isTrimorNum(Num) {
@@ -26456,10 +26752,18 @@ function isTrimorNum(Num) {
         Num = parseInt(Num / 10, 10);
         cube = parseInt(cube / 10, 10);
     }
-    if(!flag)
-        document.getElementById('trimorans').innerHTML = n +" is a Trimorphic Number";
-    else
-        document.getElementById('trimorans').innerHTML = n +" is not a Trimorphic Number";
+    let ans ="";
+    ans += "Step 1: Number => " + n;
+    ans += `<br> Step 2: Cube of the number => ${n}*${n}*${n} = ${n*n*n}`;
+    if(!flag){
+        ans += `<br> Step 3: Clearly the cube of the number ends with ${n}`;
+        ans += `<br> Step 4: Hence ${n} is a Trimorphic Number`;
+    }
+    else{
+        ans += `<br> Step 3: Clearly the cube of the number doesn't ends with ${n}`;
+        ans += `<br> Step 4: Hence, ${n} is not a Trimorphic Number`;
+    }
+    document.getElementById('trimorans').innerHTML = ans;
 }
 // Harshad Number
 function isHarNum(num) {
@@ -26470,4 +26774,31 @@ function isHarNum(num) {
         document.getElementById('harans').innerHTML = num +" is a Harshad Number";
     else
         document.getElementById('harans').innerHTML = num +" is not a Harshad Number";
-} 
+}
+// Eulerian Number
+function isEurNum(n,m) {
+    let x, x_length = n+1
+        , y, y_length = m+1
+        , dp = [];
+
+    for (x = 0; x < x_length; x++) {
+        dp[x] = []
+        for (y = 0; y < y_length; y++) {
+            dp[x][y] = 0;
+        }
+    }
+
+    for (let i = 1; i <= n; i++) {
+        for (let j = 0; j <= m; j++) {
+            if (i > j) {
+                if (j == 0)
+                    dp[i][j] = 1;
+                else
+                    dp[i][j] = ((i - j) *
+                     dp[i - 1][j - 1]) +
+                    ((j + 1) * dp[i - 1][j]);
+            }
+        }
+    }
+    document.getElementById('eurans').innerHTML = "The result is: " + dp[n][m] ;
+}  
