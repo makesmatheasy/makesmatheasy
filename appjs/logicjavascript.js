@@ -17128,9 +17128,10 @@ function check_prime(isprime) {
 
 function prime_till_num(primetill) {
     var b = document.getElementById('primetill').value;
+    var res = document.getElementById("primetillsol");
     b = parseInt(b);
     if (isNaN(b) || b <= 1) {
-        document.getElementById("primetillsol").innerHTML = "Enter positive integer greater than 1.";
+        res.innerHTML = "Enter positive integer greater than 1.";
     }
     else {
         var w = "";
@@ -17138,6 +17139,7 @@ function prime_till_num(primetill) {
             //flag acts as a counter
             var flag = 0;
             //check for prime no
+            res.innerHTML += "Check whether " + f +" is  prime number";
             for (var y = 2; y < f; y++) {
                 if (f % y == 0) {
                     flag = flag + 1;
@@ -17146,11 +17148,13 @@ function prime_till_num(primetill) {
             }
             //adding prime no to the string w along with colon and spacing
             if (flag == 0) {
+                
                 w = w + f + ", ";
+                res.innerHTML += "The obtained prime numbers " + w ;
 
             }
         }
-        document.getElementById("primetillsol").innerHTML = w.slice(0, w.length - 2);
+        res.innerHTML += "The prime numbers till "+b+" are: "+w.slice(0, w.length - 2);
     }
 }
 //end
