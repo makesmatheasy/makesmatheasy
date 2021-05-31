@@ -1640,6 +1640,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#randommeanbtn").click(function () {
+        openit("#randommean");
+        closenav();
+        clearall();
+    });
     
     $("#relriskbtn").click(function () {
         var temp = "\\[Formula:\\space \\frac{[\\frac{a}{(a+b)}]}{[\\frac{c}{(c+d)}]}\\]";
