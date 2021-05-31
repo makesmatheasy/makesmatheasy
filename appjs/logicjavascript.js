@@ -26004,25 +26004,26 @@ function gammaprobability(op) {
     if (num1 == "" || num2 == "" || num3 == "") {
         document.getElementById("gammaprobAns").innerHTML = "Please fill all the field";
     }
-    else {
-        num1 = parseFloat(num1);
-        num2 = parseFloat(num2);
-        num3 = parseFloat(num3);
+    else
+    {
+        num1=parseFloat(num1);
+        num2=parseFloat(num2);
+        num3=parseFloat(num3);
         let steps = "";
-        if (op == 1) {
-            let g = (math.gamma(num2)) ** (-1);
-            let b = num3 ** (-num2);
-            let e = 2.71828 ** (-num1 / num3)
-            let x = num1 ** (num2 - 1);
-            let dist = g * b * e * x;
+        if(op==1){
+            let g = (math.gamma(num2))**(-1);
+            let b = num3**(-num2);
+            let e = 2.71828**(-num1/num3)
+            let x = num1**(num2-1);
+            let dist = g*b*e*x;
 
-            steps += "\\[\\gamma (" + num2 + ") ^{-1} \\times " + num3 + " ^ {-" + num2 + "} \\times {2.71828} ^ {frac{-" + num1 + "}{" + num3 + "}} \\times " + num1 + " ^{(" + num2 + "-1)} \\]";
-            steps += "\\[" + g + " \\times " + b + " \\times " + e + " \\times " + x + "\\]";
-            steps += "\\[Gamma\\space Probability: " + dist + " \\]";
+            steps += "\\[\\gamma ("+num2+") ^{-1} \\times "+num3+" ^ {-"+num2+"} \\times {2.71828} ^ {frac{-"+num1+"}{"+num3+"}} \\times "+num1+" ^{("+num2+"-1)} \\]";
+            steps += "\\["+g+" \\times "+b+" \\times "+e+" \\times "+x+"\\]";
+            steps += "\\[Gamma\\space Probability: "+dist+" \\]";
             document.getElementById("gammaprobAns").innerHTML = steps;
         }
-        else if (op == 2)
-            document.getElementById("gammaprobAns").innerHTML = "Mean: " + num2 / num3;
+        else if(op==2)
+            document.getElementById("gammaprobAns").innerHTML = "Mean: " + num2/num3;
         else
             document.getElementById("gammaprobAns").innerHTML = "Variance: " + num2 / (num3 * num3);
     }
