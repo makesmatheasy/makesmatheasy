@@ -5615,7 +5615,7 @@ function ktimes() {
 }
 //Paraller vector
 
-fraction calcexvectpral(){
+function calcexvectpral(){
     var a = document.getElementById('vpa1');
     var b = document.getElementById('vpb1');
     var c = document.getElementById('vpc1');
@@ -20028,7 +20028,6 @@ function triinfind() {
         document.getElementById("triinans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
     }
     renderMathInElement(document.getElementById("triinans"));
-}
 }
 //----------------------------
 
