@@ -3127,6 +3127,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="trimornumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Trimorphic Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Trimorphic Number','trimornum','c','trimornumimgfav')"><img
+                                        id="trimornumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -3766,6 +3781,22 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Platonic Solids','#platonic','c','platonicimgfav')"><img
                                         id="platonicimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="odshapescalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">1-D Shapes Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('1-D Shapes Calculator','#odshapescal','c','odshapesimgfav')"><img
+                                        id="odshapesimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -9334,8 +9365,9 @@
                 <input type="text" id="betain1" class="form__field" placeholder="Enter Number 1 for beta function">
                 <input type="text" id="betain2" class="form__field" placeholder="Enter Number 2 for beta function">
                 <br>
-                <button type="button" onclick ="betafind()">Find</button>
-                <button type="button" onclick ="this.form.reset();">Reset</button>
+                <br>
+                <button class = "btn btn-light" type="button" onclick ="betafind()">Find</button>
+                <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
             </form>
             <br>
             <div class="form-group text-center">
@@ -17407,6 +17439,15 @@
             </div>
             
         </div>
+        <div class="collapse" id="odshapescal">
+            <h2>Calculator for 1-D Shapes</h2>
+            <table class="table">
+                <tr>
+                    <td><a data-toggle="modal" data-target="#slopeline"
+                            style="text-decoration:none;" href="#">Line</a></td>
+                </tr>
+            </table>
+        </div>
 
         <div class="collapse" id="shapescal">
             <h2>Calculator for Shapes</h2>
@@ -17513,10 +17554,6 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#lemniscate" 
                             style="text-decoration:none;" href="#">Lemniscate</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#slopeline" 
-                            style="text-decoration:none;" href="#">Line</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#lshape" 
@@ -18210,6 +18247,21 @@
                                 <td><a data-toggle="modal" data-target="#hollowcuboid"
                                        style="text-decoration:none;"
                                        href="#">Hollow Cuboid</a></td>
+                            </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div onclick="$('#typesofcupola').slideToggle();"
+                             style="color: var(--appimage);cursor: pointer;"> Cupola
+                        </div>
+                        <div class="collapse" id="typesofcupola" style="margin: 0.9375rem;">
+                            <table>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#tricupola"
+                                        style="text-decoration:none;" href="#">Triangular Cupola</a></td>
                             </tr>
                             </table>
                         </div>
@@ -19236,14 +19288,7 @@
     
     </form>
     
-    <div class="row">
-        <div class="col-6">
-            <label>
-                <h5 id="rcch"> </h5>
-            </label>
-            <p id="rcc"></p>
-        </div>
-    </div>
+    <h5 class="text-center" id="rcc"> </h5> <br>
     
     <h3 style="text-align: center;">Using Vertex</h3>
     <h4 style="text-align: center;">Centroid Calculator</h4>
@@ -21118,13 +21163,17 @@
     <h1 >Exponential Growth Calculator </h1>
     <p>&nbsp;</p>
     <h3>Formula Used:\[x(t)=x_{0}(1+\frac{r}{100})^t\]</h3>
-        <input type="number" name="egc1" class="form__field" id="egc1" width="5em" placeholder="Enter initial value(x₀)">
-        <p>&nbsp;</p>
-        <input type="number" name="egc2" class="form__field" id="egc2" placeholder="Enter rate of change(r)">
-        <p>&nbsp;</p>
-        <input type="number" name="egc3" class="form__field" id="egc3" placeholder="Enter elapsed time( t in years)">
-        <p>&nbsp;</p>
-        <button type="button" class="btn btn-outline-light" onclick="egccal()">Calculate</button>
+        <form action="">
+            <input type="number" name="egc1" class="form__field" id="egc1" width="5em" placeholder="Enter initial value(x₀)">
+            <p>&nbsp;</p>
+            <input type="number" name="egc2" class="form__field" id="egc2" placeholder="Enter rate of change(r)">
+            <p>&nbsp;</p>
+            <input type="number" name="egc3" class="form__field" id="egc3" placeholder="Enter elapsed time( t in years)">
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-light" onclick="egccal()">Calculate</button>
+            <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        </form>
+        
         <p>&nbsp;</p>
         <p id="egcans"></p>
         <p id="egcexplain"></p>
@@ -21233,8 +21282,12 @@
 
 <div class="collapse" id="kaps">
     <h1 style="color: white;font-family:mathfont">Kaprekar Number</h2><p>&nbsp;</p>
-    <input style="color: white; font-family:mathfont" type="text"id="kap1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-    <button class="btn btn-dark" onclick="kapfind()">FInd</button><p>&nbsp;</p>
+    <form action="">
+        <input style="color: white; font-family:mathfont" type="text"id="kap1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
+        <button class="btn btn-dark" onclick="kapfind()">FInd</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    </form>
+    <p>&nbsp;</p>
     <p style="font-family:mathfont" id="kapans"></p><br>
 </div>
 <div class="collapse" id="abundants" style="text-align: center;">
@@ -21347,9 +21400,14 @@
 <div class="collapse" id="perchng">
     <h2 style="text-align:center;">Percentage change</h2>
     <br>
-    <input type="text"id="initialVal" placeholder="Enter the initial value" class="form__field"><br>
-    <input type="text"id="finalVal" placeholder="Enter the final value" class="form__field"><br>
-    <button class="btn btn-dark" onclick="perchngCal()">Calculate</button><br><br>
+    <form action="">
+        <input type="text"id="initialVal" placeholder="Enter the initial value" class="form__field"><br>
+        <input type="text"id="finalVal" placeholder="Enter the final value" class="form__field"><br>
+        <button class="btn btn-dark" onclick="perchngCal()">Calculate</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br><br>
+    </form>
+    
     <p id="perchngans" style= "font-family:mathfont"></p><br>
 </div>
 <!-- Percentage change ends -->
@@ -21357,11 +21415,14 @@
 <!-- Percentage off starts -->
 <div class="collapse" id="peroff">
     <h2 style="text-align:center;">Percentage Off</h2><br>
+    <form action="">
+        <input type="text"id="originalPrice" placeholder="Enter the original price" class="form__field"><br><br>
+        <input type="text"id="offper" placeholder="Enter the off percentage" class="form__field"><br><br>
+        <input type="text"id="salestax" placeholder="Enter the sales tax percentage" class="form__field"><br><br>
+        <button class="btn btn-dark" onclick="peroffCal()">Calculate</button><br><br>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    </form>
     
-    <input type="text"id="originalPrice" placeholder="Enter the original price" class="form__field"><br><br>
-    <input type="text"id="offper" placeholder="Enter the off percentage" class="form__field"><br><br>
-    <input type="text"id="salestax" placeholder="Enter the sales tax percentage" class="form__field"><br><br>
-    <button class="btn btn-dark" onclick="peroffCal()">Calculate</button><br><br>
     <p id="peroffans1" style= "font-family:mathfont"></p><br>
     <p id="peroffans2" style= "font-family:mathfont"></p><br>
 </div>
@@ -21371,9 +21432,13 @@
 <div class="collapse" id="modulo">
     <h2 style="text-align:center;">Modulo Calculator</h2><br>
     <p>x mod y = r</p><br>
-    <input type="text"id="modx" placeholder="Enter dividend(x)" class="form__field"><br><br>
-    <input type="text"id="mody" placeholder="Enter divisor(y)" class="form__field"><br><br>
-    <button class="btn btn-dark" onclick="moduloCal()">Calculate</button><br><br>
+    <form action="">
+        <input type="text"id="modx" placeholder="Enter dividend(x)" class="form__field"><br><br>
+        <input type="text"id="mody" placeholder="Enter divisor(y)" class="form__field"><br><br>
+        <button class="btn btn-dark" onclick="moduloCal()">Calculate</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    </form>
+    <br><br>
     <p id="moduloans" style= "font-family:mathfont"></p><br>
 </div>
 <!-- Modulo ends -->
@@ -21576,10 +21641,14 @@
     <h1 >ADDITIVE INVERSE</h1>
     <p>&nbsp;</p>
     <div style="color: white; font-size: 1.3em; font-family:mathfont"> Enter number to find additive inverse: 
-    <input type="number" name="aians1" id="aians1" placeholder="Enter number">
-    <br>
-    <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="ainvcal()">Calculate</button>
-    <br>
+    <form action="">
+        <input type="number" name="aians1" id="aians1" placeholder="Enter number">
+        <br>
+        <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="ainvcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" style="text-align: center;" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    
     <p id="aians">
     </div>
 </div>
@@ -21902,9 +21971,13 @@ N is the population size.
           nuclear species by emitting particles and energy), or, equivalently, the time interval
          required for the number of disintegrations per second of a radioactive material to decrease by one-half is called Half-life.</p>
          <br><br>
-   <input type="text" class="form__field" id="decay" width="5em" placeholder="Enter the decay constant">
-   <p>&nbsp;</p>
-   <button type="button" class="btn btn-outline-light" onclick="halflifeCalc()">Calculate</button>
+        <form action="">
+            <input type="text" class="form__field" id="decay" width="5em" placeholder="Enter the decay constant">
+            <p>&nbsp;</p>
+            <button type="button" class="btn btn-outline-light" onclick="halflifeCalc()">Calculate</button>
+            <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        </form>
+   
    <p id="halflifeAns" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
 </div>
 
@@ -24060,6 +24133,7 @@ N is the population size.
 
             </div>
             <label class="form__group" id="ex3-result">0</label>
+            <p class="form__group" id="ex3-work"><</p>
         </div>
         </div>
         <br><br>
@@ -24165,6 +24239,7 @@ N is the population size.
 
             </div>
             <label class="form__group" id="dec2421-result">0</label>
+            <p class="form__group" id="dec2421-work"></p>
         </div>
     </div>
         <br><br>
@@ -31233,6 +31308,52 @@ N is the population size.
 
     <!--3-D shapes model -------->
 
+    <div class="modal fade" id="tricupola" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Triangular cupola</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = (3 + \frac{5 \sqrt{3}}{2}) \space a^2\]</p>
+                                <p class="text-center">a = edge length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Volume</h5>
+                                <p class="text-center">\[V = \frac{5}{3 \sqrt{2}} \space a^3\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/3-cupola.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length (a)" id="inputtricupolaedge"
+                                   oninput="solvetricupola();">
+                        <p class="stopwrap" id="resultoftricupolaarea"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftricupolavol"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="cylinder" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -37703,7 +37824,7 @@ N is the population size.
         </div>
     </div>
     <!--roman numeral end-->
-<!-- Armstrong -->
+    <!-- Armstrong -->
     <div class="collapse" id="armnum" style="text-align: center;">
         <div class="container">
             <h1 style="color: white;font-family:mathfont;text-align: center;">Armstrong Number Checker</h2>
@@ -37777,8 +37898,8 @@ N is the population size.
         </div>
     </div>
     <!-- Neon Number end -->
-       <!-- Krishnamurthy Number start-->
-       <div class="collapse" id="krishnum" style="text-align: center;">
+    <!-- Krishnamurthy Number start-->
+    <div class="collapse" id="krishnum" style="text-align: center;">
         <div class="container">
             <h1 style="color: white;font-family:mathfont;text-align: center;">Krishnamurthy Number Checker</h2>
             <br>
@@ -37853,7 +37974,7 @@ N is the population size.
         </div>
     </div>
     <!-- Pronic number end -->
-    <!-- Pronic number start-->
+    <!-- Harshad Number start-->
     <div class="collapse" id="harnum" style="text-align: center;">
         <div class="container">
             <h2 style="color: white;font-family:mathfont;text-align: center;">Harshad Number Checker</h2>
@@ -37877,7 +37998,32 @@ N is the population size.
             </div>
         </div>
     </div>
-    <!-- Pronic number end -->
+    <!-- Harshad Number end -->
+    <!-- Trimorphic Number start-->
+    <div class="collapse" id="trimornum" style="text-align: center;">
+        <div class="container">
+            <h2 style="color: white;font-family:mathfont;text-align: center;">Trimorphic Number Checker</h2>
+            <br>
+            <p>A number is called Trimorphic number if and only if its cube ends in the same digits as the number itself. </p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="trimorn" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="isTrimorNum(document.getElementById('trimorn').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="trimorans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Trimorphic Number end -->
 </div>
 <!--#######-------all modals here-------#######-->
 

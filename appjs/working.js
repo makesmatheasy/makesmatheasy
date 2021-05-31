@@ -52,6 +52,12 @@ $("#harnumbtn").click(function(){
     closenav();
     clearall();
 });
+//Trimorphic Number
+$("#trimornumbtn").click(function(){
+    openit("#trimornum");
+    closenav();
+    clearall();
+});
 $("#wag").click(function () {
     openit("#wags");
     closenav();
@@ -1002,6 +1008,11 @@ $(document).ready(function () {
 
     $("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
+        closenav();
+        clearall();
+    });
+    $("#odshapescalbtn").click(function () {
+        openit("#odshapescal");
         closenav();
         clearall();
     });
