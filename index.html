@@ -18102,6 +18102,10 @@
                            style="text-decoration:none;" href="#">Trapezium</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#trunsquare"
+                           style="text-decoration:none;" href="#">Truncated Square</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#tshape"
                            style="text-decoration:none;" href="#">T - Shape</a></td>
                 </tr>
@@ -29130,6 +29134,69 @@ N is the population size.
                 </div>
             </div>
         </div>
+        
+        <div class="modal fade" id="trunsquare" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Square</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Missing length (e)</h5>
+                                    <p class="text-center">\[e = \frac{b}{\sqrt 2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Length (l)</h5>
+                                    <p class="text-center">\[l = \sqrt 2 \times \left ( a + e \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height (h)</h5>
+                                    <p class="text-center">\[h = a + 2e\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Diagonal (d)</h5>
+                                    <p class="text-center">\[d = \sqrt{a^2 + \left ( a + 2e \right )^2}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truncated-square.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = 4 \times \left ( a + b \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \left ( a + 2e \right )^2 - 2e^2\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter First side (a)"
+                                   id="trunsquare-a" oninput="trunsquaresolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Second side (b)"
+                                   id="trunsquare-b" oninput="trunsquaresolve()">
+                            <br>
+                            <p class="stopwrap" id="trunsquare-e" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunsquare-l" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunsquare-h" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunsquare-d" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunsquare-p" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunsquare-A" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="tshape" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
