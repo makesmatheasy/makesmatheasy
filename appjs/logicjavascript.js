@@ -17778,13 +17778,21 @@ function lacube12find() {
 
 function lacube13find() {
     let n = parseInt(document.getElementById("lacube14").value)
-    for (i = 2; i * i <= n; i++)
-
-        for (j = 2; j <= n; j++)
-            if (i * i * j * j == n)
-                document.getElementById("lacube12ans").innerHTML = true;
-
-    document.getElementById("lacube12ans").innerHTML = false;
+    if(!isNaN(n)){
+        for (i = 2; i * i <= n; i++)
+    
+            for (j = 2; j <= n; j++)
+                if (i * i * j * j == n)
+                    document.getElementById("lacube12ans").innerHTML = true;
+    
+        document.getElementById("lacube12ans").innerHTML = false;
+        document.getElementById("lacube12exp").innerHTML = "\\[check whether the product of the square\\]"
+        document.getElementById("lacube12exp").innerHTML = "\\[of both numbers is equal to N\\]"
+        document.getElementById("lacube12exp").innerHTML = "\\[where we will store the squares of number till sqrt(n) and each time we will search for (n / sqrt(i)) \\]"
+        renderMathInElement(document.getElementById("lacube12exp"));
+    }
+    else
+        document.getElementById("lacube12ans").innerHTML = "Please enter valid input"
 }
 
 
