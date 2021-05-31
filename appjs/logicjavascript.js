@@ -3123,7 +3123,12 @@ function solveper() {
     }
 }
 
+function calceximpse13findd(){
+    var n = document.getElementById("impse32");
+    n.value = 5;
 
+    impse13findd();
+}
 function impse13findd() {
     var n = (document.getElementById("impse32").value);
     let a = 1, b = 2;
@@ -3132,6 +3137,12 @@ function impse13findd() {
     document.getElementById("impseans32").innerHTML = sum;
 }
 
+function calceximpse36find(){
+    var nterm = document.getElementById("impse35");
+    nterm.value = 5;
+
+    impse36find();
+}
 function impse36find (){
     var nterm = parseInt((document.getElementById("impse35").value));
     var sum = (nterm * ((2 * (nterm**3)) + (12 * (nterm**2))  + (25 * nterm) + 21)) / 2
@@ -3210,6 +3221,15 @@ function impsefind() {
     }
 }
 
+function calceximpse1find(){
+    let x = document.getElementById("impse3");
+    let n = document.getElementById("impse4");
+
+    x.value = 2;
+    n.value = 5;
+
+    impse1find();
+}
 function impse1find() {
     let x = parseInt(document.getElementById("impse3").value)
     let n = parseInt(document.getElementById("impse4").value)
@@ -3284,6 +3304,15 @@ function impse21find() {
     }
 }
 
+function calceximpse2find(){
+    let x = document.getElementById("impse5");
+    let n = document.getElementById("impse6");
+
+    x.value = 2;
+    n.value = 5;
+
+    impse2find();
+}
 function impse2find() {
     let x = parseInt(document.getElementById("impse5").value)
     let n = parseInt(document.getElementById("impse6").value)
@@ -3301,6 +3330,12 @@ function impse2find() {
     }
 }
 
+function calceximpse3find(){
+    var n = document.getElementById("impse7");
+    n.value = 5;
+    
+    impse3find();
+}
 function impse3find() {
     let n = parseInt(document.getElementById("impse7").value)
     if (!isNaN(n)) {
