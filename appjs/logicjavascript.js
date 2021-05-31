@@ -17500,7 +17500,7 @@ function lance_cal(){
     let z = parseInt(document.getElementById("lance_z").value);
 
     var area = z * ( u - y ) / 2 - x * ( z - y/2 );
-    var peri = 2z * arccos ( 1 - y / ( 2 * z ) ) + y;
+    var peri = 2*z * arccos ( 1 - y / ( 2 * z ) ) + y;
     document.getElementById("lance_res").innerHTML = "Area : "+ area+" and perimeter : "+peri;
 }
 function arccos(degrees) {

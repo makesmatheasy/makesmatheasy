@@ -159,7 +159,7 @@ function openit(id) {
         "#etf",
         "#etc",
         "#krishnum",
-        "#lancentarc"
+        "#lancentarc",
         "#neonnum",
         "#equationssolver",
         "#quadeqncal",
