@@ -3555,6 +3555,28 @@ function impse8find() {
         document.getElementById("impse8ans").innerHTML = "Please enter valid input"
     }
 }
+let N = 1000000007;
+
+function impse24find(){
+    let n = parseInt(document.getElementById("impse24").value)
+    if(!isNaN(n)){
+        let a = 1;
+        let ans = 2;
+        for (let i = 1; i <= n; i++)
+        {
+            document.getElementById("impse24exp").innerHTML = "\\[(a + b)%N = (a%N + b%N)%N \\]"
+            document.getElementById("impse24exp").innerHTML = "\\[for each step multiply both using arithmetic modular operation\\]"
+            document.getElementById("impse24exp").innerHTML = "\\[N where N is a modular number.\\]"
+            document.getElementById("impse24ans").innerHTML = ans + " ";
+            ans = ((a % N) * (ans % N)) % N;
+            a = ans;
+            ans = (ans + 1) % N;
+            renderMathInElement(document.getElementById("impse24exp"))
+        }
+    }
+    else 
+        document.getElementById("impse24ans").innerHTML = "Please enter valid input"
+}
 
 
 function impse9find() {
