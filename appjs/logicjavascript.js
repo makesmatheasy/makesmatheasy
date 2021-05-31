@@ -2988,7 +2988,7 @@ function solveper() {
 function calceximpse13findd(){
     var n = document.getElementById("impse32");
     n.value = 5;
-    
+
     impse13findd();
 }
 function impse13findd() {
@@ -2999,6 +2999,12 @@ function impse13findd() {
     document.getElementById("impseans32").innerHTML = sum;
 }
 
+function calceximpse36find(){
+    var nterm = document.getElementById("impse35");
+    nterm.value = 5;
+
+    impse36find();
+}
 function impse36find (){
     var nterm = parseInt((document.getElementById("impse35").value));
     var sum = (nterm * ((2 * (nterm**3)) + (12 * (nterm**2))  + (25 * nterm) + 21)) / 2
