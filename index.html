@@ -18822,6 +18822,10 @@
                                     style="text-decoration:none;" href="#">Truncated Tetrahedron</a></td>
                             </tr>
                             <tr>
+                                <td><a data-toggle="modal" data-target="#trunicosa"
+                                    style="text-decoration:none;" href="#">Truncated Icosahedron</a></td>
+                            </tr>
+                            <tr>
                                 <td><a data-toggle="modal" data-target="#truncocta"
                                     style="text-decoration:none;" href="#">Truncated Octahedron</a></td>
                             </tr>
@@ -36255,7 +36259,74 @@ N is the population size.
                 </div>
             </div>
         </div>
-
+        <div class="modal fade" id="trunicosa" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Icosahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Edge length icosahedron (a')</h5>
+                                    <p class="text-center">\[a' = 3 \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 3a^2 \times \left ( 10\sqrt 3 + \sqrt{25+10 \times \sqrt 5} \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{a^3}{4} \times \left ( 125 + 43 \times \sqrt 5 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumsphere radius (r<sub>c</sub>)</h5>
+                                    <p class="text-center">\[r_{c} = \frac{a}{4} \times \sqrt{58+ 18 \times \sqrt 5}\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truncated-icosahedron.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius (r<sub>m</sub>)</h5>
+                                    <p class="text-center">\[r_{m} = \frac{3}{4a} \times \left ( 1 + \sqrt 5 \right )\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface-to-volume ratio (A/V)</h5>
+                                    <p class="text-center">\[\frac{A}{V}\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Edge length (a)" id="trunicosa-a"
+                                       oninput="solvetrunicosa();">
+                            <p class="stopwrap" id="trunicosa-ax"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunicosa-A"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunicosa-V"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunicosa-rc"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunicosa-rm"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunicosa-av"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="truntetra" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
