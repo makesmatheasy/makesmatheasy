@@ -19596,6 +19596,11 @@ function std() {
 // standard deviation end
 
 //Smallest prime factor calculator
+function calcexsmallestPrimeDivisor(num){
+    num = 9;
+    smallestPrimeDivisor(num);
+}
+
 function smallestPrimeDivisor(num) {
     var res = 0;
     if (num % 2 == 0 || num == "") {
@@ -19631,6 +19636,12 @@ function smallestPrimeDivisor(num) {
 }
 
 //Euler's Totient Function
+
+function calcexeulerTotient(n){
+    n = 6;
+    eulerTotient(n);
+
+}
 
 function eulerTotient(n) {
     function gcd(a, b) {
@@ -19912,6 +19923,12 @@ function isPrime(n) {
     }
 
     return true;
+}
+
+function calcexnextPrime(num){
+    num =5;
+    nextPrime(num);
+
 }
 
 function nextPrime(num) {
