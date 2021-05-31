@@ -1494,6 +1494,14 @@ function wmccal()
     document.getElementById("wmcans").innerHTML=ans;
 }
 
+function calcexdbltimeCal(){
+    var n = document.getElementById("inctime");
+
+    n.value = 2;
+
+    dbltimeCal();
+}
+
 function dbltimeCal(){
     var inc = parseInt(document.getElementById("inctime").value);
     var ans = Math.log(2) / Math.log(1 + inc);
@@ -1501,6 +1509,16 @@ function dbltimeCal(){
     renderMathInElement(document.getElementById("dbltimeans"));
     document.getElementById("dbltimeans1").innerHTML = "\\[\\frac{log \\space (2)}{log \\space (1 + ("+inc+")) } \\space = \\space "+ans.toFixed(3)+" \\space periods\\]";
     renderMathInElement(document.getElementById("dbltimeans1"));
+}
+
+function calcexperchngCal(){
+    var n = document.getElementById("initialVal");
+    var x = document.getElementById("finalVal");
+
+    n.value = 10;
+    x.value = 20;
+
+    perchngCal();
 }
 
 function perchngCal(){
