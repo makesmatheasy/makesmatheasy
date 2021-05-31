@@ -10255,6 +10255,24 @@ function solvetrundodeca() {
         avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A / V).toFixed(3)}`;
     }
 }
+function solvesnubdis() {
+    let a = document.getElementById("inputsnubdisedge").value;
+    let areaoutput = document.getElementById("resultofsnubdisarea");
+    let voloutput = document.getElementById("resultofsnubdisvol");
+    var areatemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline 3 \\space \\sqrt{3} \\space (" + a + ")^2" + "\\ = " + eval(String(5.19615 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline 0.85949364619130053 \\space (" + a + ")^3" + "\\ = " + eval(String(0.85949 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
 
 // Snub Cube
 
