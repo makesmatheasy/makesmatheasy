@@ -12588,6 +12588,18 @@ function heightdist9() {
 
 }
 
+
+function calcexheightdist5(){
+    var height = document.getElementById("height51");
+    var degree = document.getElementById("height52");
+
+    height.value = 20;
+    degree = 30;
+
+    heightdist5();
+
+}
+
 function heightdist5() {
     var height = parseFloat(document.getElementById("height51").value);
     var degree = parseFloat(document.getElementById("height52").value);
@@ -12608,6 +12620,17 @@ function heightdist5() {
     }
     output.innerHTML = temp;
     renderMathInElement(output);
+}
+
+function calcexheightdist8(){
+    var height = document.getElementById("height81");
+    var degree = document.getElementById("height82");
+
+    height.value = 15;
+    degree.value = 45;
+
+    heightdist8();
+    
 }
 
 function heightdist8() {
