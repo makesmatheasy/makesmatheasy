@@ -15992,6 +15992,17 @@ renderMathInElement(document.getElementById("typenum13ans"));
 renderMathInElement(result);
 }
 
+function typenum47find(){
+    var n = parseInt(document.getElementById("typenum47").value)
+    let prime=[];
+    SieveOfEratosthenes(n, prime);
+    for (let k = 2; (( 1 << k) - 1) <= n; k++){
+        let num = ( 1 << k) - 1;
+        if (prime[(num)])
+            document.getElementById("typenum47exp").innerHTML=num + " "
+    }
+}
+
 function typenum12find() {
     var n = parseInt(document.getElementById("typenum15").value)
     var prev = 0;
