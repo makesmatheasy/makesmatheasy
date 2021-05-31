@@ -1452,6 +1452,12 @@ function confidence() {
 
 function unitcircCal(){
     var deg = document.getElementById("unitdeg").value;
+    if(deg==""||isNaN(deg))
+    {
+        document.getElementById("unitcircxans").innerHTML = "Please enter proper numeric value";
+
+    }
+    else{
     var rad=0.0174533*deg;
     var x = Math.cos(rad);
     var y = Math.sin(rad);
@@ -1460,6 +1466,7 @@ function unitcircCal(){
     document.getElementById("unitcircyans").innerHTML = "\\[X \\space =cos("+deg+"\\degree )="+x+"  \\space \\newline Y \\space =sin("+deg+"\\degree )="+y+"  \\]"
     renderMathInElement(document.getElementById("unitcircxans"));
     renderMathInElement(document.getElementById("unitcircyans"));
+    }
 }
 
 function wmccal()
