@@ -14825,19 +14825,12 @@
            <br><p style="margin-top:2rem; text-align: left;">What is the unknown value:</p>
            <select class="btn btn-light" name="unknown" id="lead" onchange="getLead()">
                <option>Select</option>
-               <option value="supply">Lead Time (Supply chain management)</option>
+              
                <option value="manufacture">Lead Time (manufacturing)</option>
+               <option value="project">Lead Time (project management)</option>
            </select>
            <br><br>
-           <div id="leadsupply" style="display:none;">
-               <input class="form__field" type="number" id="supplydelay" placeholder="Supply Delay (in days)">
-               <br><br>
-               <input class="form__field" type="number" id="reorder" placeholder="Reordering delay (in days)">
-               <br><br>
-               <button class = "btn btn-light" onclick="leadsupply()">Test</button>
-               <p id="leadsupplydelay"></p>
-               <p id="stepswork"></p>
-           </div>
+           
            <div id="leadmanufacture" style="display:none;">
             <input class = "form__field"type="number" id="pre" placeholder="Pre Processing Time (in minutes)">
             <br><br>
@@ -14849,6 +14842,16 @@
             <p id="leadans"></p>
             <br>
            </div>
+
+           <div id="leadproject" style="display:none;">
+            <input class="form__field" type="number" id="task1" placeholder="Time for Task1 (in days)">
+            <br><br>
+            <input class="form__field" type="number" id="task2" placeholder="Time for Task2 (in days)">
+            <br><br>
+            <button class = "btn btn-light" onclick="leadmangement()">Test</button>
+            <p id="leadpro"></p>
+
+        </div>
           </div>
         
  <!-- TaktTime Calculator -->
