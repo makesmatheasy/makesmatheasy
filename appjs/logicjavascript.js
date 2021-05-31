@@ -12816,22 +12816,56 @@ function solvetruncone() {
     var R = parseFloat(document.getElementById("truncone-R").value);
     var r = parseFloat(document.getElementById("truncone-r").value);
     var h = parseFloat(document.getElementById("truncone-h").value);
+
+    var slanttemp = "";
+    var latsurtemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    var avtemp = ""
+
     var slantHeightField = document.getElementById("truncone-s");
     var latSurfaceField = document.getElementById("truncone-L");
     var areaField = document.getElementById("truncone-A");
     var volField = document.getElementById("truncone-V");
     var avField = document.getElementById("truncone-AV");
+
     var s = Math.sqrt(Math.pow((R - r), 2) + Math.pow(h, 2));
     var L = (R + r) * Math.PI * s;
     var A = L + Math.PI * r * r + Math.PI * R * R;
     var V = h * Math.PI / 3 * (R * R + R * r + r * r);
     if ((!isNaN(R)) && (!isNaN(r)) && (!isNaN(h))) {
-        slantHeightField.innerHTML = `Slant Height (s) = ${s.toFixed(3)} units`;
-        latSurfaceField.innerHTML = `Lateral Surface (L) = ${L.toFixed(3)} units`;
-        areaField.innerHTML = `Surface Area (A) = ${A.toFixed(3)} sq.units`;
-        volField.innerHTML = `Volume (V) = ${V.toFixed(3)} cubic units`;
-        avField.innerHTML = `A/V Ratio = ${(A / V).toFixed(3)}`;
+
+        slanttemp += "\\[Slant \\space Height \\space (s) \\space = \\space \\sqrt {\\left ( "+R+" - "+r+" \\right )^2 + "+h+"^2}\\]"
+        slanttemp += "\\[Slant \\space Height \\space (s) \\space = \\space "+s.toFixed(3)+"\\]"
+        slantHeightField.innerHTML = slanttemp;
+
+        latsurtemp += "\\[Lateral \\space Surface \\space (L)\\space = \\space \\left ( "+R+" + "+r+" \\right ) \\times \\pi \\times "+s+"\\]"
+        latsurtemp += "\\[Lateral \\space Surface \\space (L)\\space = \\space "+L.toFixed(3)+"\\]"
+        areaField.innerHTML = latsurtemp;
+
+        areatemp += "\\[Surface \\space Area \\space (A) \\space = \\space "+L+" + \\pi "+r+"^2 + \\pi "+R+"^2\\]"
+        areatemp += "\\[Surface \\space Area \\space (A) \\space = \\space "+A.toFixed(3)+"\\]"
+        latSurfaceField.innerHTML = areatemp;
+
+        voltemp += "\\[Volume \\space (V) \\space = \\space "+h+" \\times \\frac{\pi}{3} \\times \\left ( "+R+"^2 + "+R+" \\times "+r+"+ "+r+"^2 \\right )\\]"
+        voltemp += "\\[Volume \\space (V) \\space = \\space "+h+" \\times "+V.toFixed(3)+" \\]"
+        volField.innerHTML = voltemp;
+
+        avtemp += "\\[A/V \\space Ratio \\space = \\space \\frac{"+A+"}{"+V+"}\\]"
+        avtemp += "\\[A/V \\space Ratio \\space = \\space "+(A/V).toFixed(3)+"\\]"
+        avField.innerHTML = avtemp;
+    } else{
+        slantHeightField.innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
+        areaField.innerHTML =  "";
+        latSurfaceField.innerHTML = "";
+        volField.innerHTML =  "";
+        avField.innerHTML = "";
     }
+    renderMathInElement(slantHeightField);
+    renderMathInElement(areaField);
+    renderMathInElement(latSurfaceField);
+    renderMathInElement(volField);
+    renderMathInElement(avField);
 }
 
 //Truncated Bicone
