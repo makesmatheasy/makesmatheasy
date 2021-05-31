@@ -27031,25 +27031,29 @@ function isWoodall(x) {
 
         p++;
         if (p == x)
-            return true;
+            return p;
     }
 
-    return false;
+    return 0;
 }
 
 function woodfind() {
     var num1 = document.getElementById("wood1").value;
-    ans = "";
+    let ans ="";
     if (num1 == "") {
         ans = "Please enter the number";
     }
     else {
         num1 = parseInt(num1);
-        if (isWoodall(num1) == true) {
-            ans = num1 + " is a woodall number";
+        ans += "Step 1: Number => " + num1;
+        let p = isWoodall(num1);
+        if (p) {
+            ans += `<br> Step 2: For n = ${p} => <br> W = ${p}.2^${p}-1 = ${(p*Math.pow(2,p)) - 1}`;
+            ans += `<br> Step 3: Hence ${num1} is a woodall number`;
         }
         else {
-            ans = num1 + " is not a woodall number";
+            ans += `<br> Step 2: No value of "n" can be found for ${num1}`;
+            ans += `<br> Step 3: Hence ${num1} is not a woodall number`;
         }
     }
     document.getElementById("woodans").innerHTML = ans;
