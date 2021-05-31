@@ -22310,6 +22310,89 @@ function decimalTObcd(z = "") {
 
 }
 
+function convertex3misc2(){
+    const toBase = document.getElementById("misc2-1").value;
+    var input = document.getElementById("misc2-input").value;
+    let result = document.getElementById("misc2-result");
+
+    if (toBase === "2421 Code"){
+        var x = "", y = "";
+        var temp = "";
+        if (input.length % 4 != 0) {
+            result.innerHTML = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
+        } else {
+            x = "";
+
+            for (var i = 0; i < input.length; i++) {
+                if ((i + 1) % 4 == 0) {
+                    temp = temp + input[i]; //for 4 th value
+                    x = x + (parseInt(temp, 2) - 3).toString();
+                    print += "\\[\\rightarrow \\space " + temp + " \\space becomes \\space " + parseInt(temp, 2).toString() + "\\]";
+                    print += "\\[" + parseInt(temp, 2) + " \\space - \\space 3 \\space \\rightarrow \\space " + (parseInt(temp, 2) - 3).toString() + " \\]";
+                    temp = "";
+                } else {
+                    temp = temp + input[i];
+                }
+            }
+
+            if (input.length / 4 == x.length) {
+                input = parseInt(x).toString();
+            } else if (parseInt(x) < 0) {
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant subceed 0)";
+            } else {
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant exceed 9)";
+            }
+            var x = "_", y = ""; temp = "";
+
+        for (var i = 0; i < input.length; i++) {
+            if (parseInt(input[i]) < 5) {
+                y = (parseInt(input[i]) + 0).toString(2);
+            } else if (parseInt(input[i]) > 4) {
+                y = (parseInt(input[i]) + 6).toString(2);
+            }
+
+            if (y.length == 1) {
+                temp = "000" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space <= \\space 4)" + input[i] + " \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space > \\space 4) " + input[i] + " \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
+            }
+            if (y.length == 2) {
+                temp = "00" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space <= \\space 4)" + input[i] + " \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space > \\space 4) " + input[i] + " \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
+            }
+            if (y.length == 3) {
+                temp = "0" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space <= \\space 4)" + input[i] + " \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space > \\space 4) " + input[i] + " \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
+            }
+            if (y.length == 4) {
+                temp = y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space <= \\space 4)" + input[i] + " \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space > \\space 4) " + input[i] + " \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
+            }
+        }
+
+        result.innerHTML = "Answer -> " + x;
+    }
+}
+
 function convertbcdmisc(){
     const toBase = document.getElementById("bcd-misc-1").value;
     var input = document.getElementById("bcdmisc-input").value;
