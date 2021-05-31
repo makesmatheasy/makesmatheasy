@@ -6061,6 +6061,19 @@ function vecpoints() {
 }
 
 //Resultant Vector Calculator
+
+function calcexvector_res(){
+    var a = document.getElementById('abc');
+    var b = document.getElementById('def');
+    var c = document.getElementById('ang3');
+
+    a.value = 3;
+    b.value = 4;
+    c.value = 90;
+
+    vector_res();
+}
+
 function vector_res() {
     var a = parseFloat(document.getElementById('abc').value);
     var b = parseFloat(document.getElementById('def').value);
@@ -6532,6 +6545,32 @@ function solvecubo() {
 
 }
 //Tetrahedron Calculator
+
+function calcexvectortetra(){
+    a = document.getElementById("inp12");
+    b = document.getElementById("inp13");
+    c = document.getElementById("inp14");
+    d = document.getElementById("inp21");
+    e = document.getElementById("inp25");
+    f = document.getElementById("inp23");
+    g = document.getElementById("inp31");
+    h = document.getElementById("inp32");
+    i = document.getElementById("inp35");
+
+    a.value = 2;
+    b.value = 1;
+    c.value = 3;
+    d.value = 1;
+    e.value = 2;
+    f.value = 3;
+    g.value = 2;
+    h.value = 3;
+    i.value = 4;
+
+    vectortetra();
+
+}
+
 function vectortetra() {
     var a, b, c, d, e, f, g, h, i;
     a = parseInt(document.getElementById("inp12").value);
