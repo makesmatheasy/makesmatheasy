@@ -15494,13 +15494,34 @@ function htfind() {
     }
     renderMathInElement(document.getElementById("htans"));
 }
-
+//to calculate the factorial
+function gamma_fact(num)
+{ var f=1;
+    for(var i=1;i<=num;i++)
+    {f=(f*i);
+    }
+    return f;
+}
 // gamma find function
 function gammafind() {
     // function to find gamma function of any no.
     let inpu = document.getElementById("gammain").value
-    let ans = math.gamma(inpu)
-    document.getElementById("gammafindans").innerHTML = "The gamma is " + ans
+    if(inpu=="")
+    {document.getElementById("gammafindans").innerHTML="Please enter a number"}
+    else{
+    num1=parseInt(inpu)
+    var num2=num1-1;
+    var num3=gamma_fact(num2);
+    let ans = math.gamma(num1)
+    var gamma ="";
+     gamma +="\\[\\Gamma \\left( x \\right)=\\space \\int_{0}^{\\infty} t^{x-1}e^{-t} dt\\]"
+     gamma +="\\[\\Gamma \\left( "+num1+" \\right) =("+num1+"-1)!\\]"
+     gamma +="\\["+num2+"!\\]"
+     gamma +="\\["+num3.toFixed(4)+"\\]"
+     gamma +="\\[The \\space result \\space is: "+ans.toFixed(4)+"\\]"
+    document.getElementById("gammafindans").innerHTML = gamma;
+    renderMathInElement(document.getElementById("gammafindans"))
+    }
 }
 
 function calcexgolds1find() {
@@ -16370,6 +16391,7 @@ function typenum15find() {
     renderMathInElement(result);
 }
 
+  
 
 
 
@@ -24679,32 +24701,6 @@ function shepvalue() {
         ans += "\\[\\mu_1 \\space and \\space \\mu_3 \\space i.e. \\space " + num3 + " \\space require \\space no \\space correction.\\]"
         document.getElementById("shepans").innerHTML = ans;
         renderMathInElement(document.getElementById("shepans"));
-
-        if (num == "" || num1 == "" || num3 == "" || h == "") {
-            document.getElementById("shepans").innerHTML = "Please fill all the fields";
-        }
-        else {
-            num = parseFloat(num);
-            num1 = parseFloat(num1);
-            h = parseFloat(h);
-            var h2 = Math.pow(h, 2);
-            var h4 = Math.pow(h, 4);
-            var ans = "";
-            ans = "\\[The \\space corrected \\space value \\space of \\space moments \\space are:\\]"
-            ans += "\\[\\mu_2 \\space (corrected)= \\mu_2 -\\frac{h^{2}}{12}\\]"
-            ans += "\\[" + num + " -\\frac{" + h + "^{2}}{12}\\]"
-            ans += "\\[" + num + " -\\frac{" + h2.toFixed(4) + "}{12}\\]"
-            ans += "\\[" + num + " -" + ((h2.toFixed(4)) / 12).toFixed(4) + "\\]"
-            ans += "\\[" + (num - ((h2.toFixed(4)) / 12).toFixed(4)).toFixed(4) + "\\]"
-            ans += "\\[\\mu_4 \\space (corrected)= \\mu_4 -\\frac{h^{4} \\mu_2}{2} + \\frac{7 h^{4}}{240}\\]"
-            ans += "\\[" + num1 + " -\\frac{" + h + "^{2} \\times " + num + "}{2} + \\frac{7 \\times " + h + "^{4}}{240}\\]"
-            ans += "\\[" + num1 + " -\\frac{" + (h2 * num).toFixed(4) + "}{2} + \\frac{" + (7 * h4).toFixed(4) + "}{240}\\]"
-            ans += "\\[" + num1 + " -" + (h2 * num).toFixed(4) / 2 + " + " + (7 * h4).toFixed(4) / 240 + "\\]"
-            ans += "\\[" + (num1 - (h2 * num).toFixed(4) / 2 + (7 * h4).toFixed(4) / 240).toFixed(4) + "\\]"
-            ans += "\\[\\mu_1 \\space and \\space \\mu_3 \\space i.e. \\space " + num3 + " \\space require \\space no \\space correction.\\]"
-            document.getElementById("shepans").innerHTML = ans;
-            renderMathInElement(document.getElementById("shepans"));
-        }
 
     }
 }
