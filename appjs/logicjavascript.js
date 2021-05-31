@@ -8737,17 +8737,21 @@ function gridshapesolve() {
     var rectWidfield = document.getElementById("gridshape-d");
     var perifield = document.getElementById("gridshape-p");
     var areafield = document.getElementById("gridshape-A");
-    var c = m * a + (m + 1) * b;
-    var d = n * a + (n + 1) * b;
+    var c = m * a + ( m + 1 ) * b;
+    var d = n * a + ( n + 1 ) * b;
     var p = c + d + 4 * m * n * a;
-    var A = c * d - m * n * a * a;
-    if ((!isNaN(m)) && (!isNaN(n)) && (!isNaN(a)) && (!isNaN(b))) {
-        rectLenfield.innerHTML = `Rectangle length (c) = ${c.toFixed(3)}`;
-        rectWidfield.innerHTML = `Rectangle width (d) = ${d.toFixed(3)}`;
-        perifield.innerHTML = `Perimeter (p) = ${p.toFixed(3)}`;
-        areafield.innerHTML = `Area (A) = ${A.toFixed(3)}`;
+    var A = c * d - m * n * a*a;
+    if ((!isNaN(m)) && (!isNaN(n)) && (!isNaN(a)) && (!isNaN(b)) ) {
+        rectLenfield.innerHTML = "\\[Rectangle \\space length \\space (c) = "+m+" \\times "+a+" + \\left ( "+m+" + 1 \\right ) \\times "+b+" = "+c.toFixed(3)+"\\]";
+        rectWidfield.innerHTML = "\\[Rectangle \\space width \\space (d) = "+n+" \\times "+a+" + \\left ( "+n+" + 1 \\right ) \\times "+b+" = "+d.toFixed(3)+"\\]";
+        perifield.innerHTML = "\\[Perimeter \\space (p) = "+c+" + "+d+" + 4 \\times "+m+" \\times "+n+" \\times "+a+" = "+p.toFixed(3)+"\\]";
+        areafield.innerHTML = "\\[Area \\space (A) = "+c+" \\times "+d+" - "+m+" \\times "+n+" \\times "+a+"^2 = "+A.toFixed(3)+"\\]";
+        renderMathInElement(rectLenfield);
+        renderMathInElement(rectWidfield);
+        renderMathInElement(perifield);
+        renderMathInElement(areafield);
     }
-
+    
 }
 
 // T - Shape
