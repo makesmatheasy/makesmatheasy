@@ -23631,7 +23631,7 @@ function convertgreymisc(){
         result2.innerHTML ="Answer -> " +x;
 
     }
-    else if(toBase === "Excess-3"){
+    else if(toBase === "Excess-3 Code"){
         var result1 = input;
         var a = result1[0];
         for (var i = 1; i < result1.length; i++) {
@@ -23667,7 +23667,43 @@ function convertgreymisc(){
         result2.innerHTML ="Answer -> " +x;
 
     }
-    
+    else if(toBase === "2421 Code"){
+        var result1 = input;
+        var a = result1[0];
+        for (var i = 1; i < result1.length; i++) {
+            var n = parseInt(a[i - 1] ^ result1[i]).toString();
+            a += n;
+        }
+        var temp = a;
+        input = parseInt(a, 2).toString();//dec value of input 
+        var x = "";
+        for (var i = 0; i < input.length; i++) {
+            if (parseInt(input[i]) < 5) {
+                y = (parseInt(input[i]) + 0).toString(2);
+            } else if (parseInt(input[i]) > 4) {
+                y = (parseInt(input[i]) + 6).toString(2);
+            }
+
+            if (y.length == 1) {
+                temp = "000" + y + "_   ";
+                x = x + temp;
+            }
+            if (y.length == 2) {
+                temp = "00" + y + "_   ";
+                x = x + temp;
+            }
+            if (y.length == 3) {
+                temp = "0" + y + "_   ";
+                x = x + temp;
+            }
+            if (y.length == 4) {
+                temp = y + "_   ";
+                x = x + temp;
+            }
+        }
+
+        result2.innerHTML ="Answer -> " +x;
+    }
 }
 
 //function that performs conversion of grey code to hexadecimal and vice versa
