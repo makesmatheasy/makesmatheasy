@@ -14995,8 +14995,9 @@
         </div>
         <!-- Quartiles -->
         <div class="collapse" id="qrtl">
-            <h2 style="margin-bottom:2rem;">Quartiles</h2>
-            <p style="text-align: center; margin-bottom: 2rem;">The quartile measures the spread of values above and below the mean by dividing the distribution into four groups. 
+            <h2 style="margin-bottom:2rem; text-align: center;">Quartiles</h2>
+            <br>
+            <p style="text-align: center; margin-bottom: 2rem; color:#ababab !important;">The quartile measures the spread of values above and below the mean by dividing the distribution into four groups. 
                 A quartile divides data into three points a lower quartile, median, and upper quartile to form four groups of the dataset. Where N is number of dataset points
                 <br>
                 Q1 = (N+1)(1/4)
@@ -15012,6 +15013,31 @@
             <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
             </form>
             <p id="qrtlans"></p>
+            <br>
+            <br>
+            <h3 style="text-align:center">Theory of Quartile</h3>
+            <br>
+            <p style="color:#ababab !important;">
+                In statistics, a quartile is a type of quantile which divides the number of data points into four parts, or quarters, of more-or-less equal size. The data must be ordered from smallest to largest to compute quartiles; as such, quartiles are a form of order statistic. The three main quartiles are as follows:
+            </p>
+            <p style="color:#ababab !important;">
+                The first quartile (Q1) is defined as the middle number between the smallest number (minimum) and the median of the data set. It is also known as the lower or 25th empirical quartile, as 25% of the data is below this point.
+            </P>
+
+            <p style="color:#ababab !important;">
+                The second quartile (Q2) is the median of a data set; thus 50% of the data lies below this point.
+            </p>
+            <p style="color:#ababab !important;">
+                The third quartile (Q3) is the middle value between the median and the highest value (maximum) of the data set. It is known as the upper or 75th empirical quartile, as 75% of the data lies below this point.[
+            </p>
+            <br>
+            <br>
+            <h3 style="text-align:center;">Applications of Quartiles</h3>
+           <br>
+
+            <p style="color:#ababab !important;">
+                Some examples of the use of range in the real world are: temperature ranges for the day as reported on a weather report, min/max levels of water in a reservoir. However, in the presence of outliers, the range values can be significantly influenced by them. Hence, we prefer to use the IQR instead as we “ignore” the bottom 25% of the data points and the top 25% of the data points. IQR statistic is more robust with respect to outliers. In the presence of outliers, IQR is a better representation of the amount of spread in the data rather than the range. Some companies use the quartiles to benchmark other companies. For example, the median company pay for a given position is set at the first quartile of the top 20 companies in that region. The quartiles and IQR information is typically used when you create a box-plot of your data set.
+            </p>
         </div>
         <!-- Deciles -->
         <div class="collapse" id="decl">
