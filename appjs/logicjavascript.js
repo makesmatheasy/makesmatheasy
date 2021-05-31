@@ -18304,11 +18304,19 @@ function lacube13find() {
 
 function lacube14find() {
     let n = parseInt(document.getElementById("lacube15").value)
-    for (var i = 1; i * i * i <= n; i++) {
-        if (i * i * i + (i + 1) * (i + 1) * (i + 1) == n)
-            document.getElementById("lacube14ans").innerHTML = true;
+    if(!isNaN(n)){
+        for (var i = 1; i * i * i <= n; i++) {
+            if (i * i * i + (i + 1) * (i + 1) * (i + 1) == n)
+                document.getElementById("lacube14ans").innerHTML = true;
+        }
+        document.getElementById("lacube14exp").innerHTML = "\\[The simplest approach to solve the problem is to iterate from 1 to cube root of N and check if the sum of perfect cubes of any two consecutive numbers is equal to N or not.\\]"
+        document.getElementById("lacube14exp").innerHTML = "\\[A number can be represented as the sum of the perfect cube of two consecutive numbers if the sum of the cube root of both consecutive numbers is equal to N.\\]"
+        document.getElementById("lacube14exp").innerHTML = "\\[\lfloor \sqrt[3]{N} - 1 \rfloor ^3 + \lfloor \sqrt[3]{N} \rfloor^3\\]"
+        renderMathInElement(document.getElementById("lacube14exp"));
+        document.getElementById("lacube14ans").innerHTML = false;
     }
-    document.getElementById("lacube14ans").innerHTML = false;
+    else
+        document.getElementById("lacube14ans").innerHTML = "Please enter valid input"
 }
 
 function lacube15find() {
