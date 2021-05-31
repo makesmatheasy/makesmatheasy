@@ -16849,6 +16849,31 @@ function primeFactors(n) {
 let arr = Array(1001).fill(true);
 function typenum15find() {
     var n = parseInt(document.getElementById("typenum18").value)
+<<<<<<< HEAD
+    simpleSieve();
+    var ans = find_sphene(n);
+    if (ans == 1)
+        document.getElementById("typenum15ans").innerHTML  =  "Yes"
+    else
+        document.getElementById("typenum15ans").innerHTML  =  "NO"
+
+
+    }    
+
+
+||||||| 6e7cb7c
+    simpleSieve();
+    var ans = find_sphene(n);
+    if (ans == 1)
+        document.getElementById("typenum15ans").innerHTML  =  "Yes"
+    else
+        document.getElementById("typenum15ans").innerHTML  =  "NO"
+
+
+    }    
+
+}
+=======
     var result = document.getElementById("typenum15ans1")
     var ans1 = ""
     if (!isNaN(n)) {
@@ -16876,6 +16901,7 @@ function typenum15find() {
     }
     renderMathInElement(result);
 }
+>>>>>>> ba57fa8f23da84270ff16cce5d8eca59077bed1e
 
 function typenum48find(){
     var n = parseInt(document.getElementById("typenum48").value)

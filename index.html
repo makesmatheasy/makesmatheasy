@@ -5198,6 +5198,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="rsqr"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">R-Squared Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('R-Squared Calculator','#rsqrs','d','rsqrsimgfav')"><img
+                                        id="rsqrsimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="sensibtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sensitivity and Specificity</a>
                         </td>
@@ -15204,6 +15219,24 @@
             </div>
         </div>
 
+        <div class="collapse" id="rsqrs">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">R-Squared Calculator</h1>
+            <p style="margin-top: 2rem; ">
+                R Squared Calculator is used for data analysis programmed to predict the future outcome with respect to the proportion of variability in the other data set. 
+                <br>
+                The coefficient of equation R<sup>2</sup> as an overall summary of the effectiveness of a least squares equation. 
+                <br>           
+             </p>
+             <p>&nbsp;</p>
+            <form action="">
+                <input class = "form__field"type="text" id="rsqrs1" placeholder="Enter list of number separated by SPACE(sample x) ">
+                <br><br>
+                <input class = "form__field"type="text" id="rsqrs2" placeholder="Enter list of number separated by SPACE(sample y)">
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="rsqrsfind()">Calculate</button>
+            </form>
+            <p id="rsqrsans"></p>
+        </div>
         <!-- t -test -->
         <div class="collapse" id="ttest">
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">T - Test</h1>
@@ -22248,7 +22281,6 @@
     </div>
 </div>
 
-<<<<<<< HEAD
 <div class="collapse" id="madcs">
     <h1 style="color: white;font-family:mathfont">Mean Absolute Deviation Calculator</h2><p>&nbsp;</p>
     <input style="color: white; font-family:mathfont" type="text"id="mdcs1" placeholder="Enter the input values" class="form__field"><p>&nbsp;</p>
@@ -22261,13 +22293,6 @@
     <input style="color: white; font-family:mathfont" type="text"id="adam1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
     <button class="btn btn-dark" onclick="adamfind()">Check</button><p>&nbsp;</p>
     <p style="font-family:mathfont" id="adamans"></p><br>
-||||||| 7f794d2
-<div class="collapse" id="adams">
-    <h1 style="color: white;font-family:mathfont">Adam Number Checker</h2><p>&nbsp;</p>
-    <input style="color: white; font-family:mathfont" type="text"id="adam1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-    <button class="btn btn-dark" onclick="adamfind()">Check</button><p>&nbsp;</p>
-    <p style="font-family:mathfont" id="adamans"></p><br>
-=======
 <div class="collapse" id="vects">
     <h1 style="color: white;font-family:mathfont">Vector Magnitude Calculator</h2><p>&nbsp;</p>
     <form action="">
@@ -22283,7 +22308,6 @@
     <p>&nbsp;</p>
     <p style="font-family:mathfont" id="vectans1"></p><br>
     
->>>>>>> feac54b3b5aa3e3d5a459bba647b418a389f6d2e
 </div>
 
 <div class="collapse" id="bmis">
