@@ -1613,7 +1613,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#lancentarcbtn").click(function () {
+        openit("#lancentarc");
+        closenav();
+        clearall();
+    });
 
     $("#bayesprobabilitycollapsebtn").click(function () {
         openit("#bayes-probabilitycollapse");

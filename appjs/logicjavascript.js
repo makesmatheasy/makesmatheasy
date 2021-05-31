@@ -17330,6 +17330,21 @@ function phi5(n) {
         result -= parseInt(result / n);
     return result;
 }
+
+function lance_cal(){
+    let x = parseInt(document.getElementById("lance_x").value);
+    let y = parseInt(document.getElementById("lance_y").value);
+    let z = parseInt(document.getElementById("lance_z").value);
+
+    var area = z * ( u - y ) / 2 - x * ( z - y/2 );
+    var peri = 2z * arccos ( 1 - y / ( 2 * z ) ) + y;
+    document.getElementById("lance_res").innerHTML = "Area : "+ area+" and perimeter : "+peri;
+}
+function arccos(degrees) {
+    var radians = (degrees*Math.PI)/180;
+    return Math.arccos(radians);
+}
+
 //Harmonic Mean
 function calcexhmsol() {
     var a = document.getElementById("aval2").value = 2;
