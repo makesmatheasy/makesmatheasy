@@ -4768,6 +4768,28 @@ function plpSolve() {
         renderMathInElement(work);
     }
 }
+function foot() {
+    var a = parseFloat(document.getElementById('plpa').value);
+    var b = parseFloat(document.getElementById('plpb').value);
+    var c = parseFloat(document.getElementById('plpc').value);
+    var x1 = parseFloat(document.getElementById('plpx').value);
+    var y1 = parseFloat(document.getElementById('plpy').value);
+
+    
+
+    var dis = -2*(((a * x1) + (b * y1) - c)/(a^2 + b^2));
+
+    var x = a*dis +x1; 
+    var y = b*dis +y1; 
+    if (isNaN(x1) || isNaN(y1) || isNaN(a) || isNaN(b) || isNaN(c)) {
+        document.getElementById('plp_op').innerHTML = "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("plp_op"));
+    } else {
+
+            document.getElementById('plp_op').innerHTML = 'Reflexation Of  point (' + x1 + ',' + y1 + ')  by Line  ' + a + 'x' + b + 'y' + '=' + c +  'is ( ' + x + ' , ' + y + ' )';
+
+    }
+}
 //Find Equation Of Parallel Line
 function pppSolve() {
     var a = parseFloat(document.getElementById('plpa').value);
