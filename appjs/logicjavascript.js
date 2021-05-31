@@ -8973,14 +8973,23 @@ function rightkitesolve() {
     var gamma = 180 - alpha;
 
     if (!isNaN(a) && !isNaN(b)) {
-        symDiaField.innerHTML = `Symmetric Diagonal (e) = ${e.toFixed(4)} units`;
-        othDiaField.innerHTML = `Other Diagonal (f) = ${f.toFixed(4)} units`;
-        circumCirRadField.innerHTML = `Circumcircle radius (r<sub>c</sub>) = ${rc.toFixed(4)}`;
-        inCirRadField.innerHTML = `Circumcircle radius (r<sub>i</sub>) = ${ri.toFixed(4)}`;
-        perimeterField.innerHTML = `Perimeter (p) = ${p.toFixed(4)}`;
-        areaField.innerHTML = `Area (A) = ${A.toFixed(4)}`;
-        obtuseAngField.innerHTML = `Obtuse angle (α) = ${alpha.toFixed(4)}`;
-        acuteAngField.innerHTML = `Acute angle (γ) = ${gamma.toFixed(4)}`;
+        symDiaField.innerHTML = "\\[Symmetric \\space Diagonal \\space (e) = \\sqrt{"+a.toFixed(3)+"^2 + "+b.toFixed(3)+"^2} = "+e.toFixed(3)+" \\space units\\]";
+        othDiaField.innerHTML = "\\[Other Diagonal (f) = \\frac{2 \\times "+a.toFixed(3)+" \\times "+b.toFixed(3)+"}{"+e.toFixed(3)+"} = "+f.toFixed(3)+" \\space units\\]";
+        circumCirRadField.innerHTML = "\\[Circumcircle \\space radius (r_{c}) = \\frac{"+e.toFixed(3)+"}{2} = "+rc.toFixed(3)+" \\space units\\]";
+        inCirRadField.innerHTML = "\\[Incircle \\space radius \\space (r_{i}) = \\frac{"+a.toFixed(3)+" \\times "+b.toFixed(3)+"}{ "+a.toFixed(3)+" + "+b.toFixed(3)+" } = "+ri.toFixed(3)+"\\]";
+        perimeterField.innerHTML = "\\[Perimeter \\space (p) = 2\\left ( "+a.toFixed(3)+" + "+b.toFixed(3)+" \\right ) = "+p.toFixed(3)+" \\space units \\]";
+        areaField.innerHTML = "\\[Area (A) = "+a.toFixed(3)+" \\times "+b.toFixed(3)+" = "+A.toFixed(3)+" \\space units \\]";
+        obtuseAngField.innerHTML = "\\[Obtuse angle (\\alpha) = 2 \\times \\arccos \\left ( \\frac{"+a.toFixed(3)+"^2 + "+e.toFixed(3)+"^2 - "+b.toFixed(3)+"^2}{2 \\times "+a.toFixed(3)+" \\times "+e.toFixed(3)+"} \\right ) = "+alpha.toFixed(3)+" \\degree \\]";
+        acuteAngField.innerHTML = "\\[Acute angle (\\gamma) = 180 \\degree - "+alpha.toFixed(3)+" = "+gamma.toFixed(3)+" \\degree \\]";
+        
+        renderMathInElement(symDiaField);
+        renderMathInElement(othDiaField);
+        renderMathInElement(circumCirRadField);
+        renderMathInElement(inCirRadField);
+        renderMathInElement(perimeterField);
+        renderMathInElement(areaField);
+        renderMathInElement(obtuseAngField);
+        renderMathInElement(acuteAngField);
     }
 }
 
