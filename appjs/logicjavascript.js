@@ -18979,6 +18979,18 @@ function Variance() {
 
     renderMathInElement(document.getElementById("Meanresult"));
 }
+
+function polycirclefind(){
+    var n = parseInt(document.getElementById("polycirclen").value);
+    var r = parseInt(document.getElementById("polycircler").value);
+    var polyside = 2 * r * math.tan(math.pi/n);
+    var polyarea = 0.5 * n * a * r;
+    var circlearea = math.pi * r * r;
+    document.getElementById("polycircleans1").innerHTML = "Polygon side: "+polyside.toFixed(2)
+    document.getElementById("polycircleans2").innerHTML = "Polygon area: "+polyarea.toFixed(2)
+    document.getElementById("polycircleans3").innerHTML = "Circle area: "+circlearea.toFixed(2)
+}
+
 //Minimum side of square embedded in Regular polygon with N sides
 function minsquarefind() {
     let n = parseInt(document.getElementById("minsquarein").value)
