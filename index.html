@@ -13989,28 +13989,27 @@
         </div>
         <!-- end of Double Factorial calculator -->
         <!-- start of Catalan numbers calculator -->
-        <div>
-            <div class="collapse" id="catNum">
+        <div class="collapse" id="catNum" style="text-align: center;">
+            <div class="container">
+                <h2 style="color: white;font-family:mathfont;text-align: center;">Catalan Numbers</h2>
+                <br>
+                <p>The Catalan numbers form a sequence of natural numbers that occur in various counting problems, often involving recursively defined objects.  </p>
+                <p>The nth Catalan number is given as: \[C_n = \frac{1}{n+1}{2n\choose n} = \frac{(2n)!}{(n+1)!\,n!}\]</p>
+                <br>
                 <form action="">
-                    <div class="form-group" style="display:inline-block">
-                        <label>Enter the number : &nbsp; &nbsp; </label>
-                        <input type="number" id="cat-num" class="form__field" placeholder="x"
-                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    <div class="form-group">
+                        <input style="color: white; font-family:mathfont" type="number" id="cat-num" placeholder="Enter the input number" class="form__field">
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-light"
-                                onclick="catalanNumbers(document.getElementById('cat-num').value);">
-                            Solve
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                onclick="this.form.reset();">
+                        <button type="button" class="btn btn-light" onclick="catalanNumbers(document.getElementById('cat-num').value);">Find</button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
                             Reset
                         </button>
                     </div>
                 </form>
-                
+                <br>
                 <div class="form-group text-center">
-                    <p class="stopwrap" style="color:white;" id="catNumResult"></p>
+                    <p class="stopwrap" style="color:white;" id="catNumResult"></p><br>
                 </div>
             </div>
         </div>
