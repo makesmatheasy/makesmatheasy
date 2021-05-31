@@ -17540,15 +17540,23 @@ function lacube14find() {
 
 function lacube15find(){
     let n = parseInt(document.getElementById("lacube16").value)
-    for(let i = 0; i < 100000; i++)
-    {
-        if (parseInt(Math.pow(i + 1, 3), 10) -
-            parseInt(Math.pow(i, 3), 10) == N)
+    if(!isNaN(n)){
+        for(let i = 0; i < 100000; i++)
         {
-            document.getElementById("lacube15ans").innerHTML =  i + " " + (i + 1);
-            return;
+            if (parseInt(Math.pow(i + 1, 3), 10) -
+                parseInt(Math.pow(i, 3), 10) == N)
+            {
+                document.getElementById("lacube15ans").innerHTML =  i + " " + (i + 1);
+                return;
+            }
         }
+        document.getElementById("lacube15exp").innerHTML = "\\[The key observation in the problem is that a number can be represented as difference of two consecutive cubes if and only if:\\]"
+        document.getElementById("lacube15exp").innerHTML = "\\[which means (12*N – 3) must be a perfect square to break N into difference of two consecutive cubes.\\]"
+        document.getElementById("lacube15exp").innerHTML = "\\[Therefore, if the above condition holds true then we will print the numbers using a for a loop by check that for which value of i if (i+1)3 – i3 = N and print the number i and i + 1\\]"
+        renderMathInElement(document.getElementById("lacube15exp"))
     }
+    else
+    document.getElementById("lacube15ans").innerHTML ="Please neter vvalid input"
 }
 
 function isPerfectCube(x) {
