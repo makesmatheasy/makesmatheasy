@@ -11013,6 +11013,45 @@ function solveanticone() {
 
 }
 
+function solvetrunanticone() {
+    var r = document.getElementById("inputtrunanticonerad").value;
+    var h = document.getElementById("inputtrunanticoneheight").value;
+    var i = document.getElementById("inputtrunanticonei").value;
+    var voloutput = document.getElementById("resultoftrunanticonevol");
+    var areaoutput = document.getElementById("resultoftrunanticonearea");
+    var radoutput = document.getElementById("resultoftrunanticonerad");
+    var thickoutput = document.getElementById("resultoftrunanticonethick");
+    var areatemp = "";
+    var voltemp = "";
+    var radtemp = "";
+    var thicktemp = "";
+    var w=(r)/(i)*h;
+    var s=r-w;
+    var area= 3.14*[(2*r*h)+((r+s)*Math.sqrt(h^2+w^2)) + (r*r) - (s*s)];
+    var vol= 3.14*h*[(r*r)-((r*r)+(r*s)+(s*s))/3];
+    if ((r != "") && (h != "") && (i != "")) {
+        voltemp += "\\[Volume \\space is \\space \\newline" + "\\pi \\times" + h + "[" + r + "^2" + "-(" + r + "^2+" + r + "\\times" + s + "+" + s + "^2)/3]" + "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Surface \\space Area \\space is \\space  \\newline" + "\\pi \\times [2\\times" + r + "\\times" + h + "+(" + r + "+" + s + ") * \\sqrt{" + h + "^2 +" + w + "^2} + " + r + "^2-" + s + "^2]" + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        radtemp += "\\[Radius \\space bottom \\space opening \\space is \\space  \\newline" + r + "-" + "\\frac{" + r + "}{" + i  + "}\\times" + h + "\\ = " + eval(String(s)).toFixed(2) + "\\]";
+        radoutput.innerHTML = radtemp;
+        thicktemp += "\\[Wall \\space bottom \\space thickness \\space is  \\newline" + "\\frac{" + r + "}{" + i  + "}\\times" + h + "\\ = " + eval(String(w)).toFixed(2) + "\\]";
+        thickoutput.innerHTML = thicktemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(radoutput);
+        renderMathInElement(thickoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        radoutput.innerHTML = "";
+        thickoutput.innerHTML = "";
+    }
+
+}
+
 //Hollow Cone
 function solvehollowcone(){
     var R = parseInt(document.getElementById("inputhollowconeoutrad").value);

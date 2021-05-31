@@ -358,6 +358,7 @@ function openit(id) {
         "#sum_n_AP",
         "#sum_n_GP",
         "#sum_n_HP",
+        "#trun_anticone",
         "#algebraic_formulascollapse",
         "#expansion",
         "#solutiontri",
