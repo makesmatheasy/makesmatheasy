@@ -10668,6 +10668,40 @@ function obliquecysolve() {
     }
 
 }
+
+function solvetriaocta() {
+    var a = document.getElementById("inputtriaoctaside").value;
+    var voloutput = document.getElementById("resultofvoltriaocta");
+    var tsaoutput = document.getElementById("resultoftsatriaocta");
+    var boutput = document.getElementById("resultofbtriaocta");
+    var voltemp = "";
+    var tsatemp = "";
+    var btemp = "";
+    var vol=0.586*a*a*a;
+    var area=3.662*a*a;
+    var b=0.586*a;
+    if (a != "") {
+        voltemp += "\\[(2- \\sqrt{2}) \\times " + a + "^3 \\]";
+        voltemp += "\\[Volume \\space of \\space Triakis \\space Octahedron \\space is \\space " + eval(String(vol)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        tsatemp += "\\[ 6 \\times " + a + "\\times" + a + "\\sqrt{23-16\\sqrt{2}}" + "\\]";
+        tsatemp += "\\[Surface \\space Area \\space of \\space Triakis \\space Octahedron \\space is \\space \\]";
+        tsatemp += "\\[" + eval(String(area)) + "\\]";
+        tsaoutput.innerHTML = tsatemp;
+        btemp += "\\[(2-\\sqrt{2}) \\times " + a + " \\]";
+        btemp +="\\[Edge \\space length \\space pyramid \\space is\\space  \\]";
+        btemp += "\\[" + eval(String(b)) + "\\]";
+        boutput.innerHTML = btemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(tsaoutput);
+        renderMathInElement(boutput);
+    } else {
+        voloutput.innerHTML = "";
+        tsaoutput.innerHTML = "";
+        boutput.innerHTML = "";
+    }
+}
+
 //Cube
 function solvecube() {
     var side = document.getElementById("inputcuside").value;
@@ -16498,9 +16532,9 @@ function typenum47find() {
         let num = (1 << k) - 1;
         if (prime[(num)])
             document.getElementById("typenum47exp").innerHTML = num + " "
+        else
+            document.getElementById("typenum47ans").innerHTML= " Please enter valid input"
     }
-    else
-        document.getElementById("typenum47ans").innerHTML= " Please enter valid input"
 }
 
 function typenum12find() {

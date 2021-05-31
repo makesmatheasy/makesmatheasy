@@ -170,6 +170,7 @@ function openit(id) {
         "#arcs",
         "#crescentLune",
         "#sigma",
+        "#tria_octa",
         "#negbino",
         "#chng-vol-cube",
         "#sosqs",
