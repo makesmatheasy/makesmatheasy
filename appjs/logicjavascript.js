@@ -8225,6 +8225,29 @@ function arbelossolve(){
     }
 }
 
+// Grid Shape
+function gridshapesolve() {
+    var m = parseFloat(document.getElementById("gridshape-m").value);
+    var n = parseFloat(document.getElementById("gridshape-n").value);
+    var a = parseFloat(document.getElementById("gridshape-a").value);
+    var b = parseFloat(document.getElementById("gridshape-b").value);
+    var rectLenfield = document.getElementById("gridshape-c");
+    var rectWidfield = document.getElementById("gridshape-d");
+    var perifield = document.getElementById("gridshape-p");
+    var areafield = document.getElementById("gridshape-A");
+    var c = m * a + ( m + 1 ) * b;
+    var d = n * a + ( n + 1 ) * b;
+    var p = c + d + 4 * m * n * a;
+    var A = c * d - m * n * a*a;
+    if ((!isNaN(m)) && (!isNaN(n)) && (!isNaN(a)) && (!isNaN(b)) ) {
+        rectLenfield.innerHTML = `Rectangle length (c) = ${c.toFixed(3)}`;
+        rectWidfield.innerHTML = `Rectangle width (d) = ${d.toFixed(3)}`;
+        perifield.innerHTML = `Perimeter (p) = ${p.toFixed(3)}`;
+        areafield.innerHTML = `Area (A) = ${A.toFixed(3)}`;
+    }
+
+}
+
 // T - Shape
 
 function tshapesolve() {
