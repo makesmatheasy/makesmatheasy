@@ -930,6 +930,12 @@ function autocomplete(inp, arr) {
                     else if(inp.value.toUpperCase() == "CONDITIONAL PROBABILITY"){
                         document.getElementById('condprobability').click();
                     }
+                    else if (inp.value.toUpperCase() == "MEAN AND VARIANCE OF RANDOM VARIABLE") {
+                        $("#randommean").slideToggle();    
+                    }
+                    else if(inp.value.toUpperCase() == "MEAN AND VARIANCE OF RANDOM VARIABLE"){
+                        document.getElementById('randommean').click();
+                    }
                     else if (inp.value.toUpperCase() == "GEOMETRIC PROBABILITY DISTRIBUTION") {
                         $("#geoprobability").slideToggle();    
                     }

@@ -53,6 +53,12 @@ $("#autonumbtn").click(function(){
     closenav();
     clearall();
 });
+//Cullen Number
+$("#culnumbtn").click(function(){
+    openit("#culnum");
+    closenav();
+    clearall();
+});
 // Pronic Number
 $("#pronumbtn").click(function(){
     openit("#pronum");
@@ -68,6 +74,11 @@ $("#harnumbtn").click(function(){
 //Trimorphic Number
 $("#trimornumbtn").click(function(){
     openit("#trimornum");
+    closenav();
+    clearall();
+});
+$("#bmi").click(function(){
+    openit("#bmis");
     closenav();
     clearall();
 });
@@ -100,12 +111,21 @@ $("#bilinearbtn").click(function(){
     closenav();
     clearall();
 });
+<<<<<<< HEAD
+$("#madc").click(function(){
+    openit("#madcs");
+    closenav();
+    clearall();
+});
+||||||| 7f794d2
+=======
 // Krishnamurthy Number
 $("#krishnumbtn").click(function(){
     openit("#krishnum");
     closenav();
     clearall();
 });
+>>>>>>> feac54b3b5aa3e3d5a459bba647b418a389f6d2e
 $("#manhat").click(function(){
     openit("#manhats");
     closenav();
@@ -1646,6 +1666,11 @@ $(document).ready(function () {
 
     $("#condprobabilitybtn").click(function () {
         openit("#condprobability");
+        closenav();
+        clearall();
+    });
+    $("#randommeanbtn").click(function () {
+        openit("#randommean");
         closenav();
         clearall();
     });

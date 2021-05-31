@@ -1882,6 +1882,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="bmi"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">B.M.I Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('B.M. I Calculator','#bmis','c','bmiimgfav')"><img
+                                        id="bmiimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+ 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="perrankcalbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentile Rank Calculator
                                 </a>
@@ -3211,6 +3227,21 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Eulerian Number','eurnum','c','eurnumimgfav')"><img
                                         id="eurnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="culnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cullen Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Cullen Number','culnum','c','culnumimgfav')"><img
+                                        id="culnumimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -4831,6 +4862,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="randommeanbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Mean and Variance of Random Variable</a></td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Mean and Variance of Random Variable','#randommean','c','randommeanfav')"><img
+                                     id="randommeanfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="jointprobabilitycollapsebtn"
                                style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Joint Probability</a>
                         </td>
@@ -5015,6 +5061,23 @@
                                <span
                                        onclick="addtofavourite('Exponential distribution calculator','#expoDist','c','expoDistimgfav')"><img
                                        id="expoDistimgfav" src="images/unfavourite.png"
+                                       style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="madc"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> Mean Absolute Deviation Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                               <span
+                                       onclick="addtofavourite('Mean Absolute Deviation Calculator','#madcs','c','madcsimgfav')"><img
+                                       id="madcsimgfav" src="images/unfavourite.png"
                                        style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -5836,6 +5899,14 @@
             </form>
         
             <h4 id="sieveans"></h4>
+            <h2>Sieve of Atkin</h2>
+            <br>
+            <input type="text" id="sieve2" class="form__field"placeholder="Enter the number">
+            <br>
+            <button type="button" class="btn btn-dark" onclick="sieve2find()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            <br>
+            <h5 id="sieve2ans"></h5>
         </div>
         <!--        start factors-->
         <div class="collapse" id="factors">
@@ -7059,7 +7130,7 @@
                 <h1 id = "centererp"></h1>
                 <h1 id = "centerrrp"></h1> 
 
-                <h3 style="text-align: center;">Circle and a point</h3><br>
+                <h3 style="text-align: center;">Two circle system</h3><br>
             <form action="">
                 <div class="coll">
                     <p>
@@ -7078,7 +7149,9 @@
                 <button type="button" class="btn btn-light" onclick=radeq()>
                     Radial axis
                 </button>
-                
+                <button type="button" class="btn btn-light" onclick=orthogana()>
+                    check Orthogonalty
+                </button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
                    </button><br><br><br>
@@ -7104,6 +7177,9 @@
                                 <br><br>    
                         <button type="button" class="btn btn-light" onclick=directl()>
                             Length of Direct
+                        </button>
+                        <button type="button" class="btn btn-light" onclick=transl()>
+                            Length of Transverse
                         </button>
                         <button type="button" class="btn btn-light" onclick="this.form.reset();">
                             Reset
@@ -7208,6 +7284,18 @@
             <h5 id="triinsemians"></h5>
             <h5 id="triinsemiexp"></h5>
             <br>
+            <h4>Regular polygon circumscribed to a circle</h4><br>
+            <form action="">
+                <input type="text" id="polycirclen" placeholder="Enter number of sides n" class="form__field">
+                <input type="text" id="polycircler" placeholder="Enter inradius r" class="form__field"><br>
+
+                <button type="button" class="btn btn-dark" onclick="polycirclefind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form><br>
+            <h5 id="polycircleans1"></h5><br>
+            <h5 id="polycircleans2"></h5><br>
+            <h5 id="polycircleans3"></h5><br>
+            <br>
             <h4>Minimum side of square embedded in Regular polygon with N sides</h4><br>
             <form action="">
                 <input type="text" id="minsquarein" placeholder="Enter no. of side of polygon" class="form__field"><br>
@@ -7259,10 +7347,20 @@
                 <br>
                 <button type="button" class="btn btn-dark" onclick="cirrecfind()">Find</button>
                 <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-            </form>
-            
-            <br>
+            </form> <br>
             <h5 id="cirrecans"></h5>
+            <br>
+            <h4>Incircle of a regular polygon</h4><br>
+            <form action="">
+                <input type = "text" class = "form__field" placeholder = "Enter number of sides n" id="ininpolyn"/>
+                <input type="text" id="ininpolyr" placeholder="Enter side length a" class="form__field"><br>
+                <br>
+                <button type="button" class="btn btn-dark" onclick="ininpolyfind()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form><br>
+            <h5 id="ininpolynans1"></h5><br>
+            <h5 id="ininpolynans2"></h5><br>
+            <h5 id="ininpolynans3"></h5><br>
             <br>
             <h4>Largest rectangle that can be inscribed in a semicircle </h4>
             <br>
@@ -7653,14 +7751,12 @@
                 <input type="text" id="cirinsemi13in" placeholder="Enter x coordinate of 1st vertex" class="form__field">
                 <input type="text" id="cirinsemi14in" placeholder="Enter y coordinate of 1st vertex" class="form__field">
                 <input type="text" id="cirinsemi15in" placeholder="Enter x coordinate of 2nd vertex" class="form__field">
-                <input type="text" id="cirinsemi16in" placeholder="Enter y coordinate of 2nd vertex" class="form__field">
-                <br>
+                <input type="text" id="cirinsemi16in" placeholder="Enter y coordinate of 2nd vertex" class="form__field">                <br>
                 <button type="button" class="btn btn-dark" onclick="cirinsemi10find()">Find</button>
                 <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-            </form>
-            
-            <br>
+            </form><br>
             <h5 id="cirinsemi10ans"></h5>
+            <h5 id="cirinsemi10exp"></h5>
             <br>
             <h4>Division of  an isosceles triangle in two parts with ratio of areas as n:m </h4>
             <br>
@@ -10251,14 +10347,10 @@
             <p id="lacube13ans"></p>
             <p id="lacube13exp"></p>
             <br>
-            <h2>Check whether a number can be represented by sum of two cubes</h2>
-            <br>
-            <input type="text" id="lacube15" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="button" class="btn btn-dark" onclick="lacube14find()">Find</button>
-            <br>
-            <p id="lacube14ans"></p>
-            <br>
+            <h2>Check whether a number can be represented by sum of two cubes</h2><br>
+            <input type="text" id="lacube15" class="form__field" placholder="Enter the number">           <br>
+            <button type="button" class="btn btn-dark" onclick="lacube14find()">Find</button>            <br>
+            <p id="lacube14ans"></p><p id="lacube14exp"></p><br>
             <h2>Check whether a number can be represented by difference of two cubes</h2>
             <br>
             <input type="text" id="lacube16" class="form__field" placholder="Enter the number">
@@ -12376,11 +12468,11 @@
             <h2 style="text-align: center;">ParaBoloid</h2>
             <br>
             <img style="display:block; margin-left:auto; margin-right:auto; " src="https://mathworld.wolfram.com/images/eps-gif/Paraboloid_700.gif" alt="">
-            <p>Paraboloid, an open surface generated by rotating a parabola (q.v.) about its axis. If the axis of the surface is the z axis and the vertex is at the origin, the intersections of the surface with planes parallel to the xz and yz planes are parabolas </p>
-            <p>The surface of revolution of the parabola which is the shape used in the reflectors of automobile headlights</p>
-            <p>Its equation is given by -</p>
+            <p style="color: #ababab !important;">Paraboloid, an open surface generated by rotating a parabola (q.v.) about its axis. If the axis of the surface is the z axis and the vertex is at the origin, the intersections of the surface with planes parallel to the xz and yz planes are parabolas </p>
+            <p style="color: #ababab !important;">The surface of revolution of the parabola which is the shape used in the reflectors of automobile headlights</p>
+            <p style="color: #ababab !important;">Its equation is given by -</p>
             <p>\[z\space =\space b(x^{2}+y^{2})\]</p>
-            <p>The paraboloid which has radius a at height h is then given parametrically by</p>
+            <p style="color: #ababab !important;">The paraboloid which has radius a at height h is then given parametrically by</p>
             <p>\[x\space =\space a\sqrt{\frac{u}{h}}cosv\]</p>
             <p>\[y\space =\space a\sqrt{\frac{u}{h}}sinv\]</p>
             <p>\[z\space =\space u\]</p>
@@ -12395,7 +12487,7 @@
                 <h5 id="yeqn"></h5>
                 <h5 id="zeqn"></h5>
             </div>
-            <p>Volume of paraboloid =</p>
+            <p style="color: #ababab !important;">Volume of paraboloid =</p>
             <p>\[\frac{1}{2}\pi a^{2}h\]</p>
             <div style="text-align: center;">
                 <input type="text" placeholder="Enter radius" id="ther1">
@@ -12406,7 +12498,7 @@
                 </button>
                 <h5 id="volf"></h5>
             </div>
-            <p>\[Geometric\space centroid\space = \]</p>
+            <p style="color: #ababab !important;">Geometric centroid= </p>
             <p>\[\frac{2}{3}h\]</p>
             <div style="text-align: center;">
                 <input type="text" name="" id="theh2" placeholder="Enter Height">
@@ -12416,10 +12508,15 @@
                 </button>
                 <h5 id="volf1"></h5>
             </div>
-            <p>A circular or elliptical paraboloid surface may be used as a parabolic reflector. Applications of this property are used in automobile headlights, solar furnaces, radar, and radio relay stations.</p>
-         <h2>Properties and applications of paraboloid</h2>
-         <h4>Elliptic paraboloid</h4>
-         <p>In a suitable Cartesian coordinate system, an elliptic paraboloid has the equation
+            <br>
+            <p style="color: #ababab !important;">A circular or elliptical paraboloid surface may be used as a parabolic reflector. Applications of this property are used in automobile headlights, solar furnaces, radar, and radio relay stations.</p>
+          <br>
+          <br>
+            <h2 style="text-align:center;">Properties and applications of paraboloid</h2>
+         <br>
+         
+            <h4 style="text-align:center;">Elliptic paraboloid</h4>
+         <p style="color: #ababab !important;">In a suitable Cartesian coordinate system, an elliptic paraboloid has the equation
 
             {\displaystyle z={\frac {x^{2}}{a^{2}}}+{\frac {y^{2}}{b^{2}}}.}{\displaystyle z={\frac {x^{2}}{a^{2}}}+{\frac {y^{2}}{b^{2}}}.}
             If a = b, an elliptic paraboloid is a circular paraboloid or paraboloid of revolution. It is a surface of revolution obtained by revolving a parabola around its axis.
@@ -12427,22 +12524,24 @@
             Obviously, a circular paraboloid contains circles. This is also true in the general case (see Circular section).
             
             From the point of view of projective geometry, an elliptic paraboloid is an ellipsoid that is tangent to the plane at infinity.</p>
-         <h4>Plane sections</h4>
-         <p>The plane sections of an elliptic paraboloid can be:
+         <h4 style="text-align: center;">Plane sections</h4>
+         <p style="color: #ababab !important;">The plane sections of an elliptic paraboloid can be:
 
-          <p>  a parabola, if the plane is parallel to the axis,</p>
-          <p> a point, if the plane is a tangent plane.</p>
-          <p> an ellipse or empty, otherwise. </p></p>
+          <p style="color: #ababab !important;">  a parabola, if the plane is parallel to the axis,</p>
+          <p style="color: #ababab !important;"> a point, if the plane is a tangent plane.</p>
+          <p style="color: #ababab !important;"> an ellipse or empty, otherwise. </p></p>
           
-          <h4>Parabolic reflector</h4>
-          <p>On the axis of a circular paraboloid, there is a point called the focus (or focal point), such that, if the paraboloid is a mirror, light (or other waves) from a point source at the focus is reflected into a parallel beam, parallel to the axis of the paraboloid. This also works the other way around: a parallel beam of light that is parallel to the axis of the paraboloid is concentrated at the focal point. For a proof, see Parabola § Proof of the reflective property.
+          <br>
+
+          <h4 style="text-align:center;">Parabolic reflector</h4>
+          <p style="color: #ababab !important;">On the axis of a circular paraboloid, there is a point called the focus (or focal point), such that, if the paraboloid is a mirror, light (or other waves) from a point source at the focus is reflected into a parallel beam, parallel to the axis of the paraboloid. This also works the other way around: a parallel beam of light that is parallel to the axis of the paraboloid is concentrated at the focal point. For a proof, see Parabola § Proof of the reflective property.
 
             Therefore, the shape of a circular paraboloid is widely used in astronomy for parabolic reflectors and parabolic antennas.
             
             The surface of a rotating liquid is also a circular paraboloid. This is used in liquid-mirror telescopes and in making solid telescope mirrors (see rotating furnace).</p>
       
-           <h4>Hyperbolic paraboloid</h4>
-           <p>The hyperbolic paraboloid is a doubly ruled surface: it contains two families of mutually skew lines. The lines in each family are parallel to a common plane, but not to each other. Hence the hyperbolic paraboloid is a conoid.
+           <h4 style="text-align:center">Hyperbolic paraboloid</h4>
+           <p style="color: #ababab !important;">The hyperbolic paraboloid is a doubly ruled surface: it contains two families of mutually skew lines. The lines in each family are parallel to a common plane, but not to each other. Hence the hyperbolic paraboloid is a conoid.
 
             These properties characterize hyperbolic paraboloids and are used in one of the oldest definitions of hyperbolic paraboloids: a hyperbolic paraboloid is a surface that may be generated by a moving line that is parallel to a fixed plane and crosses two fixed skew lines.
             
@@ -12454,8 +12553,8 @@
             
             A hyperbolic paraboloid of equation {\displaystyle z=axy}{\displaystyle z=axy} or {\displaystyle z={\tfrac {a}{2}}(x^{2}-y^{2})}{\displaystyle z={\tfrac {a}{2}}(x^{2}-y^{2})} (this is the same up to a rotation of axes) may be called a rectangular hyperbolic paraboloid, by analogy with rectangular hyperbolas.</p>
         
-            <h4>Plane sections</h4>
-            <p>A plane section of a hyperbolic paraboloid with equation
+            <h4 style="text-align:center;">Plane sections</h4>
+            <p style="color: #ababab !important;">A plane section of a hyperbolic paraboloid with equation
 
                 {\displaystyle z={\frac {x^{2}}{a^{2}}}-{\frac {y^{2}}{b^{2}}}}{\displaystyle z={\frac {x^{2}}{a^{2}}}-{\frac {y^{2}}{b^{2}}}}
                 can be
@@ -12465,8 +12564,10 @@
                 a pair of intersecting lines, if the plane is a tangent plane,
                 a hyperbola, otherwise.</p>
 
-                <h4>Examples in architecture</h4>
-                <p>Saddle roofs are often hyperbolic paraboloids as they are easily constructed from straight sections of material. Some examples:
+                <br>
+
+                <h4 style="text-align:center;">Examples in architecture</h4>
+                <p style="color: #ababab !important;">Saddle roofs are often hyperbolic paraboloids as they are easily constructed from straight sections of material. Some examples:
 
                     St. Mary's Cathedral, Tokyo, Japan (1964)
                     Cathedral of Saint Mary of the Assumption, San Francisco, California, USA (1971)
@@ -13401,16 +13502,13 @@
             <br>
             </form>
             <br>
-            <h2>Check if a number is Primorial Prime or not</h2>
-            <br>
+            <h2>Check if a number is Primorial Prime or not</h2>            <br>
             <form>
-            <input type="text" id="golds7" class="form__field"placeholder="Enter the number">
-            <br>
+            <input type="text" id="golds7" class="form__field"placeholder="Enter the number">            <br>
             <button type="button" class="btn btn-dark" onclick="golds5find()">Find</button>
-            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>      
             <br>
-            <h5 id="golds5ans"></h5>
-            <br>
+            <h5 id="golds5ans"></h5 id="golds5exp"></h5> <br>
             </form>
         </div>
 
@@ -13839,14 +13937,11 @@
                 <input type="text" id="alisum3"class="form__field"placeholder="Enter the height of triangle ">
                 <br><br>
                 <button class="btn btn-dark" onclick="alisum3find()">Find</button>
-                <button class="btn btn-dark" onclick="calcexalisum3find()">
-                    Find
-                </button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                <br>
-            </form>
-            
+                <button class="btn btn-dark" onclick="calcexalisum3find()"> Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>                <br>
+            </form>            
             <p id="alisum3ans" style="font-size: 26px;"></p>
+            <p id="alisum3exp" style="font-size: 26px;"></p>
             <br>
             <p>Cassini’s Identity</p>
             <br>
@@ -13931,28 +14026,27 @@
         </div>
         <!-- end of Double Factorial calculator -->
         <!-- start of Catalan numbers calculator -->
-        <div>
-            <div class="collapse" id="catNum">
+        <div class="collapse" id="catNum" style="text-align: center;">
+            <div class="container">
+                <h2 style="color: white;font-family:mathfont;text-align: center;">Catalan Numbers</h2>
+                <br>
+                <p>The Catalan numbers form a sequence of natural numbers that occur in various counting problems, often involving recursively defined objects.  </p>
+                <p>The nth Catalan number is given as: \[C_n = \frac{1}{n+1}{2n\choose n} = \frac{(2n)!}{(n+1)!\,n!}\]</p>
+                <br>
                 <form action="">
-                    <div class="form-group" style="display:inline-block">
-                        <label>Enter the number : &nbsp; &nbsp; </label>
-                        <input type="number" id="cat-num" class="form__field" placeholder="x"
-                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    <div class="form-group">
+                        <input style="color: white; font-family:mathfont" type="number" id="cat-num" placeholder="Enter the input number" class="form__field">
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-light"
-                                onclick="catalanNumbers(document.getElementById('cat-num').value);">
-                            Solve
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                onclick="this.form.reset();">
+                        <button type="button" class="btn btn-light" onclick="catalanNumbers(document.getElementById('cat-num').value);">Find</button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
                             Reset
                         </button>
                     </div>
                 </form>
-                
+                <br>
                 <div class="form-group text-center">
-                    <p class="stopwrap" style="color:white;" id="catNumResult"></p>
+                    <p class="stopwrap" style="color:white;" id="catNumResult"></p><br>
                 </div>
             </div>
         </div>
@@ -14563,16 +14657,16 @@
         </div>
 
         <div class="collapse" id="excircum">
-            <h2>Distance between excentre and circumcentre</h2><br>
+            <h2 class="d-flex justify-content-center">Distance between excentre and circumcentre</h2><br>
                 <p>For OI1</p>
-                <p id="extcircum">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>    
-                <form action="">
+                <p id="extcircum" style="0.1rem;">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>    
+                <form action=""class="d-flex justify-content-center">
                     <div class="form-group">
-                        <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_2" placeholder="Enter External radius"/>
-                        <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_1" placeholder="Enter angle A "/>
-                        <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_2" placeholder="Enter angle B"/>
-                        <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_3" placeholder="Enter angle C"/><br><br>
-                        <button  class = "btn btn-outline-light" onclick = "excircum_1()" >Find</button><br>
+                        <input type="text"  style="width: 250px;" class="form__field form-control" name="a" id="radius_2" placeholder="Enter External radius"/>
+                        <input type="text"  name="b" style="width: 250px;" class="form__field form-control p-1" id="ang_1" placeholder="Enter angle A "/>
+                        <input type="text"  name="c" style="width: 250px;" class="form__field form-control p-1" id="ang_2" placeholder="Enter angle B"/>
+                        <input type="text"  name="d" style="width: 250px;" class="form__field form-control p-1" id="ang_3" placeholder="Enter angle C"/><br><br>
+                        <button  class = "btn btn-outline-light" onclick = "excircum_1()" >Find</button>
                         <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
                     </div>
                 </form>
@@ -14580,13 +14674,13 @@
                     <p id="excircum1"></p><br><br>
 
                 <p>For OI2 and OI3</p>
-                <p id="extcircum">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>    
-                <form action="">
+                <p id="extcircum" style="0.1rem;">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>    
+                <form action=""class="d-flex justify-content-center">
                     <div class="form-group">
-                        <input type="text" style="width: 250px;" class="form__field" name="a" id="radius_3" placeholder="Enter External radius"/>
-                        <input type="text" name="b" style="width: 250px;" class="form__field" id="ang_A" placeholder="Enter angle A "/>
-                        <input type="text" name="c" style="width: 250px;" class="form__field" id="ang_B" placeholder="Enter angle B"/>
-                        <input type="text" name="d" style="width: 250px;" class="form__field" id="ang_C" placeholder="Enter angle C"/><br><br>
+                        <input type="text"  style="width: 250px;" class="form__field form-control p-1" name="a" id="radius_3" placeholder="Enter External radius"/>
+                        <input type="text"  name="b" style="width: 250px;" class="form__field form-control p-1" id="ang_A" placeholder="Enter angle A "/>
+                        <input type="text"  name="c" style="width: 250px;" class="form__field form-control p-1" id="ang_B" placeholder="Enter angle B"/>
+                        <input type="text"  name="d" style="width: 250px;" class="form__field form-control p-1" id="ang_C" placeholder="Enter angle C"/><br><br>
                         <button  class = "btn btn-outline-light" onclick = "excircum_2()" >Find</button>
                         <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
                         <br>
@@ -14600,22 +14694,39 @@
     <div class="collapse" id="sensi">
         <h1 style="font-family:mathfont; text-align:center;">Sensitivity and Specificity</h1>
         <br>
-        <h4>Sensitivity</h4>
-        <p>Sensitivity is the ability of a test to correctly classify an individual as ′diseased′</p>
-        <p>Sensitivity = a / a+c
+        <br>
+        <h4 style="text-align:center;">Sensitivity</h4>
+
+        <br>
+
+        <p style="color:#ababab !important;">Sensitivity is the ability of a test to correctly classify an individual as ′diseased′</p>
+       <br>
+
+        <p style="color:#ababab !important;">Sensitivity = a / a+c
 
             = a (true positive) / a+c (true positive + false negative)
             
             = Probability of being test positive when disease present.</p>
+            
             <br>
-            <h4>Specificity</h4>
-            <p>The ability of a test to correctly classify an individual as disease- free is called the test′s specificity.</p>
-             <p>Specificity = d / b+d
+            <br>
+
+            <h4 style="text-align:center;">Specificity</h4>
+            <br>
+
+            <p style="color:#ababab !important;">The ability of a test to correctly classify an individual as disease- free is called the test′s specificity.</p>
+           <br>
+
+            <p style="color:#ababab !important;">Specificity = d / b+d
 
                 = d (true negative) / b+d (true negative + false positive)
                 
                 = Probability of being test negative when disease absent.</p>
-            <form action="">
+           
+           <br>
+           <br>
+           
+                <form action="">
             <input type="text" id="tp" class="form__field" placeholder="Enter True Positive value(TP)">
             <p>&nbsp;</p>
             <input type="text" id="tn" class="form__field" placeholder="Enter True Negative value(TN)">
@@ -14630,7 +14741,8 @@
                 </div>
                 <br><br>
                 <div class="col-md-auto d-flex justify-content-center">
-                    <button class="btn btn-secondary m-1" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
+              
+                    <button style="width:87px;" class="btn btn-secondary m-1" type="button" onclick="this.form.reset();" style="font-family:mathfont;">Reset</button>
                 </div>
             </div>
         </form>
@@ -14641,6 +14753,19 @@
         <!--Standard Deviation starts-->
         <div class="collapse" id="deviation">
             <h1 style="font-family:mathfont; text-align:center;">STANDARD DEVIATION</h1>
+          
+            <br>
+
+           <h3 style="text-align:center;">What is Standard Deviation</h3>
+
+<br>
+
+            <p style="color:#ababab !important;">
+                Standard deviation is the measure of dispersion of a set of data from its mean. It measures the absolute variability of a distribution; the higher the dispersion or variability, the greater is the standard deviation and greater will be the magnitude of the deviation of the value from their mean.
+            </p>
+<br>
+<br>
+
             <form action="">
                 <input type="text" id="stdinp" class="form__field" placeholder="Input numbers to calculate Standard Deviation">
                 <p>&nbsp;</p>
@@ -14659,13 +14784,18 @@
                 </div>
             </form>
             
-            <p>&nbsp;</p>
-             <p>&nbsp;</p>
+            <br>
+            <br>
+
           <ul style="list-style-type:disc;">
-          <li style="font-family:mathfont; color:white; float:left;"> Select Population if data contains all the measurable values or all of the values you are interested in.</li>
-           <br><br><li style="font-family:mathfont ; color:white; float:left;"> Select Sample if the data is sample of large or unlimited population an you wish to make a statement about entire population.</li>
+          <li style="color:#ababab !important; font-size:24px;"> Select Population if data contains all the measurable values or all of the values you are interested in.</li>
+           <br>
+           <li  style="color:#ababab !important; font-size:24px;"> Select Sample if the data is sample of large or unlimited population an you wish to make a statement about entire population.</li>
           </ul>
-          <p>&nbsp;</p> <p>&nbsp;</p>
+          
+          <br>
+<br>
+
           <div  id='std-var-rslt' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;">
           </div>
           
@@ -14954,8 +15084,9 @@
         </div>
         <!-- Quartiles -->
         <div class="collapse" id="qrtl">
-            <h2 style="margin-bottom:2rem;">Quartiles</h2>
-            <p style="text-align: center; margin-bottom: 2rem;">The quartile measures the spread of values above and below the mean by dividing the distribution into four groups. 
+            <h2 style="margin-bottom:2rem; text-align: center;">Quartiles</h2>
+            <br>
+            <p style="text-align: center; margin-bottom: 2rem; color:#ababab !important;">The quartile measures the spread of values above and below the mean by dividing the distribution into four groups. 
                 A quartile divides data into three points a lower quartile, median, and upper quartile to form four groups of the dataset. Where N is number of dataset points
                 <br>
                 Q1 = (N+1)(1/4)
@@ -14971,6 +15102,31 @@
             <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
             </form>
             <p id="qrtlans"></p>
+            <br>
+            <br>
+            <h3 style="text-align:center">Theory of Quartile</h3>
+            <br>
+            <p style="color:#ababab !important;">
+                In statistics, a quartile is a type of quantile which divides the number of data points into four parts, or quarters, of more-or-less equal size. The data must be ordered from smallest to largest to compute quartiles; as such, quartiles are a form of order statistic. The three main quartiles are as follows:
+            </p>
+            <p style="color:#ababab !important;">
+                The first quartile (Q1) is defined as the middle number between the smallest number (minimum) and the median of the data set. It is also known as the lower or 25th empirical quartile, as 25% of the data is below this point.
+            </P>
+
+            <p style="color:#ababab !important;">
+                The second quartile (Q2) is the median of a data set; thus 50% of the data lies below this point.
+            </p>
+            <p style="color:#ababab !important;">
+                The third quartile (Q3) is the middle value between the median and the highest value (maximum) of the data set. It is known as the upper or 75th empirical quartile, as 75% of the data lies below this point.[
+            </p>
+            <br>
+            <br>
+            <h3 style="text-align:center;">Applications of Quartiles</h3>
+           <br>
+
+            <p style="color:#ababab !important;">
+                Some examples of the use of range in the real world are: temperature ranges for the day as reported on a weather report, min/max levels of water in a reservoir. However, in the presence of outliers, the range values can be significantly influenced by them. Hence, we prefer to use the IQR instead as we “ignore” the bottom 25% of the data points and the top 25% of the data points. IQR statistic is more robust with respect to outliers. In the presence of outliers, IQR is a better representation of the amount of spread in the data rather than the range. Some companies use the quartiles to benchmark other companies. For example, the median company pay for a given position is set at the first quartile of the top 20 companies in that region. The quartiles and IQR information is typically used when you create a box-plot of your data set.
+            </p>
         </div>
         <!-- Deciles -->
         <div class="collapse" id="decl">
@@ -15163,27 +15319,48 @@
          <!-- z -test -->
          <div class="collapse" id="ztest">
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Z - Test</h1>
-            <p style="text-align: left;">H<sub>o</sub> : μ = μ<sub>o</sub>  (Null Hypothesis)</p>
-            <p style="text-align: left; margin-bottom: 2rem;">H<sub>a</sub> : μ ≠ μ<sub>o</sub>  (Alternative Hypothesis)</p>
+            
+            <h3 style="text-align:center;">What is Z-Test</h3>
+
+            <br>
+
+            <p style="color:#ababab !important;">
+                Z-test is a statistical test to determine whether two population means are different when the variances are known and the sample size is large. Z-test is a hypothesis test in which the z-statistic follows a normal distribution. A z-statistic, or z-score, is a number representing the result from the z-test.<
+            </p>
+<br>
+
+            <p style=" color:#ababab !important; text-align: center;">H<sub>o</sub> : μ = μ<sub>o</sub>  (Null Hypothesis)</p>
+            <p style=" color:#ababab !important; text-align: center; margin-bottom: 2rem;">H<sub>a</sub> : μ ≠ μ<sub>o</sub>  (Alternative Hypothesis)</p>
             <form action="">
                 <input class = "form__field"type="number" id="pm" placeholder="Enter Population Mean (µ0)">
-                <br><br>
+                <br>
+                <br>
                 <input class = "form__field"type="number" id="sm" placeholder="Enter Sample Mean (x)">
-                <br><br>
+                <br>
+                <br>
                 <input class = "form__field"type="number" id="sd" placeholder="Enter Standard Deviation (σ)">
-                <br><br>
+                <br> 
+                <br>
                 <input class = "form__field"type="number" id="sn" placeholder="Enter Sample Number (n)">
-                <br><br>
-                <label for="">Significance Level</label>
+                <br>
+                <br>
+                <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                <label for="" style="font-size:24px;">Significance Level</label>
+            
                 <br>
                 <select name="alpha" id="alpha">
                     <option value=0.01>0.01</option>
                     <option value=0.05>0.05</option>
                     <option value=0.1>0.1</option>
                 </select>
-                <br><br>
-                <button class = "btn btn-light" onclick="zvalue()">Test</button>
-                <button class = "btn btn-light" onclick="this.form.reset();">Result</button>
+            </div>
+
+                <br>
+                <br>
+                <div style="display:flex;justify-content:center;align-items:center;">
+                <button  style="width:87px;" class = "btn btn-light" onclick="zvalue()">Test</button>
+                <button  style="width:87px;" class = "btn btn-light" onclick="this.form.reset();">Result</button>
+            </div>
             </form>
             
             <p id="zworking"></p>
@@ -17175,6 +17352,19 @@
             <h4 id="polymax2exp"></h4>
             </form>
             <br>
+            <h4>Regular polygons inscribed to a circle</h4>
+            <br>
+            <form action="">
+            <input type = "text" class = "form__field" placeholder = "Enter number of sides n" id="polyincirclen"/>
+            <input type="text" id="polyincircler" placeholder="Enter circumradius r" class="form__field"><br>
+            <button type = "button" class="btn btn-dark" onclick = "polyincirclefind()">FInd</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button>
+            <br>
+            <h5 id="polyincircleans1"></h5><br>
+            <h5 id="polyincircleans2"></h5><br>
+            <h5 id="polyincircleans3"></h5><br>
+            </form>
+            <br>
             <h4>Ratio of area of two nested polygons formed by connecting midpoints of sides of a regular N-sided polygon</h4><br>
             <form action="">
             <input type = "text" class = "form__field" placeholder = "Enter no. of sides" id="regploygonmax3"/><br>
@@ -17998,6 +18188,10 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#slopeline"
                             style="text-decoration:none;" href="#">Line</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#kochcurve"
+                            style="text-decoration:none;" href="#">Koch Curve</a></td>
                 </tr>
             </table>
         </div>
@@ -18992,6 +19186,10 @@
                                        style="text-decoration:none;" href="#">Rhombic Dodecahedron</a></td>
                             </tr>
                             <tr>
+                                <td><a data-toggle="modal" data-target="#rhombicuboctahedron"
+                                    style="text-decoration:none;" href="#">Rhombicuboctahedron</a></td>
+                            </tr>
+                            <tr>
                                 <td><a data-toggle="modal" data-target="#rhombohedron"
                                        style="text-decoration:none;" href="#">Rhombohedron</a></td>
                             </tr>
@@ -19086,12 +19284,69 @@
                         <div class="collapse" id="typesofpyramid" style="margin: 0.9375rem;">
                             <table>
                                 <tr>
-                                    <td><a data-toggle="modal" data-target="#pyramid"
-                                        style="text-decoration:none;" href="#">Square Pyramid</a></td>
+                                    <td>
+                                        <div onclick="$('#typesofbipyramid').slideToggle();"
+                                             style="color: var(--appimage);cursor: pointer;"> Bipyramids
+                                        </div>
+                                        <div class="collapse" id="typesofbipyramid" style="margin: 0.9375rem;">
+                                            <table>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#pentbipyramid"
+                                                    style="text-decoration:none;" href="#">Pentagonal Bipyramid</a></td>
+                                            </tr>
+                                            </table>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><a data-toggle="modal" data-target="#sqelongbipyramid"
-                                        style="text-decoration:none;" href="#">Elongated square bipyramid</a></td>
+                                    <td>
+                                        <div onclick="$('#typesofelongpyramid').slideToggle();"
+                                             style="color: var(--appimage);cursor: pointer;"> Elongated Pyramids
+                                        </div>
+                                        <div class="collapse" id="typesofelongpyramid" style="margin: 0.9375rem;">
+                                            <table>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#eltripyramid"
+                                                    style="text-decoration:none;" href="#">Elongated Triangular Pyramid</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#elonsquare"
+                                                    style="text-decoration:none;" href="#">Elongated Square Pyramid</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#elonpentpyr"
+                                                    style="text-decoration:none;" href="#">Elongated Pentagonal Pyramid</a></td>
+                                            </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div onclick="$('#typesofelongbipyramid').slideToggle();"
+                                             style="color: var(--appimage);cursor: pointer;"> Elongated bipyramids
+                                        </div>
+                                        <div class="collapse" id="typesofelongbipyramid" style="margin: 0.9375rem;">
+                                            <table>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#trielongbipyramid"
+                                                    style="text-decoration:none;" href="#">Elongated triangular bipyramid</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#sqelongbipyramid"
+                                                    style="text-decoration:none;" href="#">Elongated square bipyramid</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#pentelongbipyramid"
+                                                    style="text-decoration:none;" href="#">Elongated pentagonal bipyramid</a></td>
+                                            </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#pyramid"
+                                        style="text-decoration:none;" href="#">Square Pyramid</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#trusqpyramid"
@@ -19102,36 +19357,12 @@
                                         style="text-decoration:none;" href="#">Triangular Pyramid</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a data-toggle="modal" data-target="#trielongbipyramid"
-                                        style="text-decoration:none;" href="#">Elongated triangular bipyramid</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#elonpentpyr"
-                                        style="text-decoration:none;" href="#">Elongated Pentagonal Pyramid</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#elonsquare"
-                                        style="text-decoration:none;" href="#">Elongated Square Pyramid</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#eltripyramid"
-                                        style="text-decoration:none;" href="#">Elongated Triangular Pyramid (Heptahedron)</a></td>
-                                </tr>
-                                <tr>
                                     <td><a data-toggle="modal" data-target="#recpyramid"
                                         style="text-decoration:none;" href="#">Rectangular Pyramid</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#pentpyramid"
                                         style="text-decoration:none;" href="#">Pentagonal Pyramid</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#pentelongbipyramid"
-                                        style="text-decoration:none;" href="#">Elongated pentagonal bipyramid</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#pentbipyramid"
-                                        style="text-decoration:none;" href="#">Pentagonal Bipyramid (Decahedron)</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#hexpyramid"
@@ -19144,10 +19375,6 @@
                             </table>
                         </div>
                     </td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#rhombicuboctahedron"
-                        style="text-decoration:none;" href="#">Rhombicuboctahedron</a></td>
                 </tr>
                 <tr>
                     <td>
@@ -20096,6 +20323,9 @@
                 <br><br>
             <button type="button" class="btn btn-light" onclick=inmed()>
                 Check
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
             </button><br>
             </p>
 
@@ -20261,6 +20491,9 @@
                                 <br><br>
                         <button type="button" class="btn btn-light" onclick=incircum()>
                             Check
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
                         </button><br>
                         </p>
     
@@ -21436,33 +21669,58 @@
 
         <!--Cost and selling prices-->
         <div class="collapse" id="prices">
-            <h1>Cost and Selling Prices</h1>
-              <p>Cost Price:
+            <h1 style="text-align:center;">Cost and Selling Prices</h1>
+           
+            <br>
+            <br> 
+           
+            <p style="color:#ababab !important;">Cost Price:
 
                   The price, at which an article is purchased, is called its cost price, abbreviated as C.P.
-                  
+               
+                  <br>
+
                   Selling Price:
                   
                   The price, at which an article is sold, is called its selling prices, abbreviated as S.P.
                   
+                  <br>
+
                   Profit or Gain:
                   
                   If S.P. is greater than C.P., the seller is said to have a profit or gain.
                   
+                  <br>
+
                   Loss:
                   
                   If S.P. is less than C.P., the seller is said to have incurred a loss.</p>
-              <h1>
+             
+             <br>
+
+                  <h1 style="text-align:center;">
                   IMPORTANT FORMULAE
               </h1>
-              <p>
+              
+               <br>
+
+              <p style="color:#ababab !important;">
                   1) Selling Price: (S.P.): SP = [(100 + Gain %) x C.P] / 100<br>
+                 <br>
                   2) Selling Price: (S.P.): Sp = [(100 - Loss %) x C.P.] / 100  <br> 
-                  3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)/(100 + Gain %)<br>
-                  4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)/(100 - Loss %)<br>
+                 <br>
+                 
+                 3) Cost Price: (C.P.):  C.P. =	(100 x S.P.)/(100 + Gain %)<br>
+                 <br>
+                 4) Cost Price: (C.P.):  C.P. =	(100 x S.P.)/(100 - Loss %)<br>
                                
               </p>
-              <div class="row">
+
+              <br>
+              <br>
+              <br>
+
+              <div class="row" style="justify-content:center !important;">
                   <div class="col-md-4">
                       <div class="form-group">
                           <form action="">
@@ -21470,12 +21728,14 @@
                             <input type="number" value="0" class="form__field" id="p1">
                             <h5>Enter Cost Price</h5>
                             <input type="number" value="0" class="form__field" id="cp2">
+                          <div style="display:flex; justify-content:center;align-items:center;">
                             <button type="button" class="btn btn-light" onclick="computeSP()">
                                 Find SP
                             </button>
                             <button type="button" class="btn btn-light" onclick="this.form.reset();">
                                 Reset
                             </button>
+                        </div>
                           </form>
                         
                         <div id="ressp" style="color: white; font-size: large"></div>
@@ -21488,12 +21748,15 @@
                             <input type="number" value="0" class="form__field" id="p2">
                             <h5>Enter Selling Price</h5>
                             <input type="number" value="0" class="form__field" id="sp2">
+                            <div style="display:flex; justify-content:center;align-items:center;">
                             <button type="button" class="btn btn-light" onclick="computeCP()">
                                 Find CP
                             </button>
                             <button type="button" class="btn btn-light" onclick="this.form.reset();">
                                 Reset
                             </button>
+                        </div>
+
                           </form>
                         
                         <div id="rescp" style="color:white; font-size: large;"></div>
@@ -21952,6 +22215,26 @@
     </div>
 </div>
 
+<<<<<<< HEAD
+<div class="collapse" id="madcs">
+    <h1 style="color: white;font-family:mathfont">Mean Absolute Deviation Calculator</h2><p>&nbsp;</p>
+    <input style="color: white; font-family:mathfont" type="text"id="mdcs1" placeholder="Enter the input values" class="form__field"><p>&nbsp;</p>
+    <button class="btn btn-dark" onclick="mdcfind()">FInd</button><p>&nbsp;</p>
+    <p style="font-family:mathfont" id="mdcans"></p><br>
+</div>
+
+<div class="collapse" id="adams">
+    <h1 style="color: white;font-family:mathfont">Adam Number Checker</h2><p>&nbsp;</p>
+    <input style="color: white; font-family:mathfont" type="text"id="adam1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
+    <button class="btn btn-dark" onclick="adamfind()">Check</button><p>&nbsp;</p>
+    <p style="font-family:mathfont" id="adamans"></p><br>
+||||||| 7f794d2
+<div class="collapse" id="adams">
+    <h1 style="color: white;font-family:mathfont">Adam Number Checker</h2><p>&nbsp;</p>
+    <input style="color: white; font-family:mathfont" type="text"id="adam1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
+    <button class="btn btn-dark" onclick="adamfind()">Check</button><p>&nbsp;</p>
+    <p style="font-family:mathfont" id="adamans"></p><br>
+=======
 <div class="collapse" id="vects">
     <h1 style="color: white;font-family:mathfont">Vector Magnitude Calculator</h2><p>&nbsp;</p>
     <form action="">
@@ -21966,6 +22249,23 @@
     
     <p>&nbsp;</p>
     <p style="font-family:mathfont" id="vectans1"></p><br>
+    
+>>>>>>> feac54b3b5aa3e3d5a459bba647b418a389f6d2e
+</div>
+
+<div class="collapse" id="bmis">
+    <h1 style="color: white;font-family:mathfont">B.M.I Calculator</h1><p>&nbsp;</p>
+    
+    
+      <h3> Enter Height:</h3><br>
+       <input cl style="color: white; font-family:mathfont" type="text"id="bmis1" placeholder="(feet)" class="form__field" ><input style="color: white; font-family:mathfont" type="text"id="bmis2" placeholder="(inches)" class="form__field"><p>&nbsp;</p>
+      <h3> Enter Weight:</h3><br>
+       <input style="color: white; font-family:mathfont" type="text"id="bmis3" placeholder="(in kg)" class="form__field" ><p>&nbsp;</p>
+    <button type="button" class="btn btn-dark" onclick="bmifind()">Find</button>
+   
+
+    <p>&nbsp;</p>
+    <p style="font-family:mathfont" id="bmians"></p><br>
     
 </div>
 
@@ -22005,7 +22305,7 @@
                 <input style="color: white; font-family:mathfont" type="number" id="kap1" placeholder="Enter the input number" class="form__field">
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="kapfind()">FInd</button>
+                <button type="button" class="btn btn-light" onclick="kapfind()">Find</button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
                 </button>
@@ -22029,7 +22329,7 @@
                 <input style="color: white; font-family:mathfont" type="number" id="amicable1" placeholder="Enter the input number" class="form__field">
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="amfind()">FInd</button>
+                <button type="button" class="btn btn-light" onclick="amfind()">Find</button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
                 </button>
@@ -22443,12 +22743,18 @@
             <form action="">
                 <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to Cartesian</p>
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                <input type="number" id="cylcartp" placeholder="Enter the distance between the pole and the projected point"> 
-                <input type="number" id="cylcarto" placeholder="Enter the angle created by the line and the polar axis in degree">
-                <input type="number" id="cylcartz" placeholder="Enter the vertical distance between the original point and the projected point">
+                <div class="d-flex justify-content-center form-group">
+                    <input type="number" class="form-control" style="width: 100%;" id="cylcartp" placeholder="Enter the distance between the pole and the projected point"> 
+                    <input type="number" class="form-control" style="width: 100%;" id="cylcarto" placeholder="Enter the angle created by the line and the polar axis in degree">
+                    <input type="number" class="form-control" style="width: 100%;" id="cylcartz" placeholder="Enter the vertical distance between the original point and the projected point">
+                </div>
+                
                 <p>&nbsp;</p></p>
-                <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylcartcal()">Calculate</button>
-                <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+                <div class="d-flex justify-content-center form-group">
+                    <button type="button" class="btn btn-outline-light" onclick="cylcartcal()">Calculate</button>
+                    <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                </div>
+                
             </form>
         <p>&nbsp;</p>
         <p id="cylcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
@@ -22462,12 +22768,18 @@
         <form action="">
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Spherical to Cartesian</p>
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                <input type="number" id="sphcartr" width="5em" placeholder="Enter the radial distance (r)"> 
-                <input type="number" id="sphcarto" width="5em" placeholder="Enter the polar angle (θ)">
-                <input type="number" id="sphcartfi" width="5em" placeholder="Enter the azimuth angle (φ)">
+                <div class="d-flex justify-content-center form-group">
+                    <input type="number"class="form-control" style="width: 100%;" id="sphcartr" width="5em" placeholder="Enter the radial distance (r)"> 
+                    <input type="number"class="form-control" style="width: 100%;" id="sphcarto" width="5em" placeholder="Enter the polar angle (θ)">
+                    <input type="number"class="form-control" style="width: 100%;" id="sphcartfi" width="5em" placeholder="Enter the azimuth angle (φ)">
+                </div>
+                
                 <p>&nbsp;</p></p>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcartcal()">Calculate</button>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+                <div class="d-flex justify-content-center form-group">
+                    <button type="button" class="btn btn-outline-light" onclick="sphcartcal()">Calculate</button>
+                    <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+                </div>
+        
         </form>
             
         <p>&nbsp;</p>
@@ -22486,11 +22798,15 @@
         <form action="">
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Polar</p>
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                <input type="number" id="cartpolarx" width="5em" placeholder="Enter the X coordinate"> 
-                <input type="number" id="cartpolary" width="5em" placeholder="Enter the Y coordinate">
+                <div class="d-flex justify-content-center form-group">
+                <input type="number" style="width: 100%;" class="form-control" id="cartpolarx" width="5em" placeholder="Enter the X coordinate"> 
+                <input type="number" style="width: 100%;" class="form-control" id="cartpolary" width="5em" placeholder="Enter the Y coordinate">
+                </div>
                 <p>&nbsp;</p></p>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartpolarcal()">Calculate</button>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+                <div class="d-flex justify-content-center form-group">
+                    <button type="button" class="btn btn-outline-light mr-1" onclick="cartpolarcal()">Calculate</button>
+                    <button type="button" class="btn btn-outline-light mr-1" onclick="this.form.reset();">Reset</button>
+                </div>
         </form>
         
     <p>&nbsp;</p>
@@ -22501,12 +22817,16 @@
     <form action="">
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Polar to Cartesian</p>
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-            <input type="number" id="polarcartr" placeholder="Enter the length of the line (r)"> 
-            <input type="number" id="polarcarto" placeholder="Enter the polar angle (θ)">
+        <div class="d-flex justify-content-center form-group">
+            <input type="number" style="width: 100%;" class="form-control" id="polarcartr" placeholder="Enter the length of the line (r)"> 
+            <input type="number" style="width: 100%;" class="form-control" id="polarcarto" placeholder="Enter the polar angle (θ)">
+         </div>
             <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="polarcartcal()">Calculate</button>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
-    </form>
+            <div class="d-flex justify-content-center form-group">
+                <button type="button" class="btn btn-outline-light mr-1" onclick="polarcartcal()">Calculate</button>
+                <button type="button" class="btn btn-outline-light mr-1" onclick="this.form.reset();">Reset</button>
+            </div>
+            </form>
             
         <p>&nbsp;</p>
         <p id="polarcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
@@ -22520,12 +22840,17 @@
         <p>&nbsp;</p>
         <form action="">
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                <input type="number" id="sphx" width="5em" placeholder="Enter X coordinate"> 
-                <input type="number" id="sphy" width="5em" placeholder="Enter Y coordinate">
-                <input type="number" id="sphz" width="5em" placeholder="Enter Z coordinate">
+                <div class="d-flex justify-content-center form-group">
+                    <input type="number" style="width: 100%;" class="form-control" id="sphx" width="5em" placeholder="Enter X coordinate"> 
+                    <input type="number" style="width: 100%;" class="form-control" id="sphy" width="5em" placeholder="Enter Y coordinate">
+                    <input type="number" style="width: 100%;" class="form-control" id="sphz" width="5em" placeholder="Enter Z coordinate">
+                </div>
+                
                 <p>&nbsp;</p></p>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcal()">Calculate</button>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+                <div class="d-flex justify-content-center form-group">
+                    <button type="button" class="btn btn-outline-light mr-1" style="" onclick="sphcal()">Calculate</button>
+                    <button type="button" class="btn btn-outline-light mr-1" style="" onclick="this.form.reset();">Reset</button>
+                </div>
         </form>
         
     <p>&nbsp;</p>
@@ -22537,12 +22862,18 @@
     <p>&nbsp;</p>
     <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to Spherical</p>
     <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-        <input type="number" id="cylsphp" width="5em" placeholder="Enter the distance between the pole and the projected point"> 
-        <input type="number" id="cylspho" width="5em" placeholder="Enter the angle created by the line and the polar axis in degree">
-        <input type="number" id="cylsphz" width="5em" placeholder="Enter the vertical distance between the original point and the projected point">
+        <div class="d-flex justify-content-center form-group">
+            <input type="number" style="width: 100%;" class="form-control" id="cylsphp" width="5em" placeholder="Enter the distance between the pole and the projected point"> 
+            <input type="number" style="width: 100%;" class="form-control" id="cylspho" width="5em" placeholder="Enter the angle created by the line and the polar axis in degree">
+            <input type="number" style="width: 100%;" class="form-control" id="cylsphz" width="5em" placeholder="Enter the vertical distance between the original point and the projected point">
+        </div>
+        
         <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylsphcal()">Calculate</button>
-    <p>&nbsp;</p>
+        <div class="d-flex justify-content-center form-group">
+        <button type="button" class="btn btn-outline-light mr-1" style="" onclick="cylsphcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light mr-1" style="" onclick="this.form.reset();">Reset</button>
+        </div>
+        <p>&nbsp;</p>
     <p id="cylsphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
     <p id="cylsphoans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
@@ -22556,11 +22887,18 @@
         <p>&nbsp;</p>
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Cylindrical</p>
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-            <input type="number" id="cartcylx" width="5em" placeholder="Enter X coordinate"> 
-            <input type="number" id="cartcyly" width="5em" placeholder="Enter Y coordinate">
-            <input type="number" id="cartcylz" width="5em" placeholder="Enter Z coordinate">
+            <div class="d-flex justify-content-center form-group">
+                <input type="number" style="width: 100%;" class="form-control" id="cartcylx" width="5em" placeholder="Enter X coordinate"> 
+                <input type="number" style="width: 100%;" class="form-control" id="cartcyly" width="5em" placeholder="Enter Y coordinate">
+                <input type="number" style="width: 100%;" class="form-control" id="cartcylz" width="5em" placeholder="Enter Z coordinate">
+            </div>
+            
             <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartcylcal()">Calculate</button>
+            <div class="d-flex justify-content-center form-group">
+                <button type="button" class="btn btn-outline-light mr-1" onclick="cartcylcal()">Calculate</button>
+                <button type="button" class="btn btn-outline-light mr-1" onclick="this.form.reset();">Reset</button>
+            </div>
+            
     <p>&nbsp;</p>
     <p id="cartcylpans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
@@ -22571,18 +22909,40 @@
     <p>&nbsp;</p>
     <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Spherical to Cylindrical</p>
     <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-        <input type="number" id="sphcylr" width="5em" placeholder="Enter the radial distance (r)"> 
-        <input type="number" id="sphcylo" width="5em" placeholder="Enter the polar angle (θ)">
-        <input type="number" id="sphcylfi" width="5em" placeholder="Enter the azimuth angle (φ)">
+        <div class="d-flex justify-content-center form-group">
+            <input type="number" style="width: 100%;" class="form-control" id="sphcylr" width="5em" placeholder="Enter the radial distance (r)"> 
+            <input type="number" style="width: 100%;" class="form-control" id="sphcylo" width="5em" placeholder="Enter the polar angle (θ)">
+            <input type="number" style="width: 100%;" class="form-control" id="sphcylfi" width="5em" placeholder="Enter the azimuth angle (φ)">
+        </div>
+        
         <p>&nbsp;</p></p>
         <p>&nbsp;</p></p>
-<button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcylcal()">Calculate</button>
+        <div class="d-flex justify-content-center form-group">
+            <button type="button" class="btn btn-outline-light mr-1" onclick="sphcylcal()">Calculate</button>
+            <button type="button" class="btn btn-outline-light mr-1" onclick="this.form.reset();">Reset</button>
+        </div>
+
 <p>&nbsp;</p>
 <p id="sphcylpans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
 <p>&nbsp;</p>
 <p id="sphcyloans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
 <p>&nbsp;</p>
 <p id="sphcylzans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+
+<p>&nbsp;</p>
+    <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Polar to Cylindrical</p>
+    <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+        <input type="number" id="polarcylr" placeholder="Enter the length of the line (r)"> 
+        <input type="number" id="polarcylo" placeholder="Enter the polar angle (θ)">
+        <p>&nbsp;</p></p>
+        <p>&nbsp;</p></p>
+<button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="polarcylcal()">Calculate</button>
+<p>&nbsp;</p>
+<p id="polarcylpans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+<p>&nbsp;</p>
+<p id="polarcyloans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+<p>&nbsp;</p>
+<p id="polarcylzans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
 </div>            
   
 
@@ -22592,19 +22952,25 @@
     <img src="images/bilinear.png" class="img-fluid" style="display: block; margin-left:auto; margin-right:auto; height:244px;"><br>
 
     <form action="">
-        <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Coordinates: <input type="number" name="bicx1" id="bicx1" width="5em" placeholder="Enter x₁"> 
-            <input type="number" name="bicy1" id="bicy1" width="5em" placeholder="Enter y₁"><input type="number" name="bicx2" id="bicx2" width="5em" placeholder="Enter x₂"><input type="number" name="bicy2" id="bicy2" width="5em" placeholder="Enter y₂">
-            <p>&nbsp;</p></p>
         
-          <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Values: <input type="number" name="bicq11" id="bicq11" width="5em" placeholder="Enter Q₁₁"> 
-              <input type="number" name="bicq21" id="bicq21" width="5em" placeholder="Enter Q₂₁"><input type="number" name="bicq12" id="bicq12" width="5em" placeholder="Enter Q₁₂"><input type="number" name="bicq22" id="bicq22" width="5em" placeholder="Enter Q₂₂">
-              <p>&nbsp;</p></p>
-          <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Interpolated Point: <input type="number" name="bicx" id="bicx" width="5em" placeholder="Enter x"> 
-              <input type="number" name="bicy" id="bicy" width="5em" placeholder="Enter y">
-              <p>&nbsp;</p></p>      
-          <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="bilinearcal()">Calculate</button>
-          <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
-    </form>
+            <div class="form-group justify-content-center" style="display: grid;">
+                <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Coordinates: <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicx1" id="bicx1" width="5em" placeholder="Enter x₁"> 
+                <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicy1" id="bicy1" width="5em" placeholder="Enter y₁"><input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicx2" id="bicx2" width="5em" placeholder="Enter x₂"><input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicy2" id="bicy2" width="5em" placeholder="Enter y₂">
+                <p>&nbsp;</p></p>
+            
+              <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Values: <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicq11" id="bicq11" width="5em" placeholder="Enter Q₁₁"> 
+                  <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicq21" id="bicq21" width="5em" placeholder="Enter Q₂₁"><input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicq12" id="bicq12" width="5em" placeholder="Enter Q₁₂"><input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicq22" id="bicq22" width="5em" placeholder="Enter Q₂₂">
+                  <p>&nbsp;</p></p>
+              <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Interpolated Point: <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicx" id="bicx" width="5em" placeholder="Enter x"> 
+                  <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicy" id="bicy" width="5em" placeholder="Enter y">
+                  <p>&nbsp;</p></p>
+            </div>
+             
+              <div class="d-flex justify-content-center form-group justify-content-center" style="display: grid;">     
+                <button type="button" class="btn btn-outline-light mr-1" onclick="bilinearcal()">Calculate</button>
+                <button type="button" class="btn btn-outline-light mr-1" onclick="this.form.reset();">Reset</button>
+             </div>
+            </form>
     
     <p>&nbsp;</p>
     <p id="bilinearans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
@@ -22998,6 +23364,16 @@ N is the population size.
     <br>    
     <h5 id="typenum47exp"></h5>
     <h5 id="typenum47ans"></h5>
+    <br>
+    <h2>Super Prime</h2>
+    <br>
+    <input type="text" id="typenum48" class="form__field"placeholder="Enter the number ">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum48find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum48ans"></h5>
+    <h5 id="typenum48exp"></h5>
     <h2>Check for Amicable Pair</h2>
     <br>
     <form>
@@ -23182,18 +23558,49 @@ N is the population size.
     <h5 id="typenum20exp"></h5>
     <br>
     </form>
+    <br>
+    <h2>Dyck path</h2>
+    <br>
+    <form>
+    <input type="text" id="typenum31" class="form__field"placeholder="Enter the number">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum21find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum21ans"></h5>
+    <br>
+    </form>
 </div>
 
 <div class="collapse" id="pvalues">
 
     <h1 style="font-family:mathfont; text-align:center;">P VALUE CALCULATOR </h1>
+
+<br>
+
+    <h3 style="text-align:center;">What is P value ?</h3>
+
+<br>
+
+<p style="color:#ababab !important;">
+    The p-value is the probability that the test statistic will produce values at least as extreme as the value it produced for your sample. 
+    <br>
+    <br>
+    It is crucial to remember that this probability is calculated under the assumption that the null hypothesis is true!
+</p>
+
     <form>
         <input type="number" name="pvalueinp" class="form__field" id="rawscore" width="5em" placeholder="Enter the Z score">
-        <p>&nbsp;</p>
-        <button type="button" class="btn btn-outline-light" onclick="pvaluecal()">Calculate</button>
-        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+  <br>
+
+       <div style="display:flex;justify-content:center;text-align:center">
+        <button style="width:87px;" type="button" class="btn btn-outline-light" onclick="pvaluecal()">Calculate</button>
+        <button style="width:87px;" type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
         <p id="pvalueans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
-        <p>&nbsp;</p>
+        
+       </div>
+        <br>
+
     </form>
 </div>   
 
@@ -24847,6 +25254,43 @@ N is the population size.
                 </div>
                 <br>
                 <br>
+
+                <form action="">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <h4>BCD Code - Miscellaneous Converter</h4><br>
+                            <h5>From BCD Code </h5>
+                            
+                            <input type="number" id="bcdmisc-input" value="0" class="form__field">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <h5>To</h5>
+                            <select id="bcd-misc-1" class="form__field">
+                                <option class="form_field" style="background-color: #232a36;">Grey
+                                    Code
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">Excess-3
+                                    Code
+                                </option>
+                                <option class="form_field" style="background-color: #232a36;">2421
+                                    Code
+                                </option>
+                            </select>
+                            <button type="button" class="btn btn-light" onclick="convertbcdmisc()">
+                                Find
+                            </button>
+                            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                                Reset
+                            </button>
+                        </div>
+                        <label class="form__group" id="bcdmisc-result"></label>
+                        <p class="" id = "bcd-misc-working"></p>
+                    </div>
+                </form>
+                <br>
+                <br>
                 <br>
                 <br>
                 <!--BCD Addition -->
@@ -25279,6 +25723,41 @@ N is the population size.
                 <p class="" id = "grey-hexdec-working"></p>
             </div>
         </form>
+
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h4>Gray Code - Miscellaneous Converter</h4><br>
+                    <h5>From Grey Code </h5>
+                    
+                    <input type="number" id="greymisc-input" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <select id="grey-misc-1" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">BCD
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">Excess-3
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">2421
+                            Code
+                        </option>
+                    </select>
+                    <button type="button" class="btn btn-light" onclick="convertgreymisc()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="greymisc-result"></label>
+                <p class="" id = "grey-misc-working"></p>
+            </div>
+        </form>
         
     </div>
 </div>
@@ -25368,9 +25847,9 @@ N is the population size.
         </button>
         <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br>
-    </form>
-    
+    </form>    
     <p id="impse3ans"></p>
+    <p id="impse3exp"></p>
     <br>
     <h4>Sum of Gould's sequence</h4><br>
     <form action="">
@@ -26093,6 +26572,40 @@ N is the population size.
             </div>
         </div>
 
+<!-- Mean and Variance of Random variable-->
+<div class="collapse" id="randommean" style="text-align: center;">
+    <h1 style="text-align: center;">Mean and Variance of Random variable</h1><br><br>
+    <form action="">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="randommean1" placeholder="Enter the datasets">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="randommean2" placeholder="Enter probabability for each data">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                    onclick="randommeanCal()">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+    
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="randommeanans"></p>
+    </div>
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="randomvarans"></p>
+    </div>
+</div>
 
         <!--Joint  Probability-->
         <div class="collapse" id="joint-probabilitycollapse">
@@ -26390,57 +26903,62 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_add" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_add" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_add" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_add" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
+    
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">+
+                            </div>
+    
+    
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_add" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_add" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">+
-                        </div>
-
-
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_add" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
+                            <div>
+                                <var id="addz" style="color: aliceblue;font-size: 1.125rem;" ></var>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_add" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <var id="addz" style="color: aliceblue;font-size: 1.125rem;" ></var>
-                        </div>
-                        <br>
-
-                        <center>
-                            <button type="button" class="btn btn-light" ; onclick="additon()">
-                                ADD
-                            </button>
-                        </center>
-
-                        <br>
+                            <br>
+    
+                            <center>
+                                <button type="button" class="btn btn-light" ; onclick="additon()">
+                                    ADD
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+                            <br>
+                        </form>
+                        
 
                         <div style="display: flex; justify-content: center;">
 
@@ -26507,58 +27025,63 @@ N is the population size.
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
 
-
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_sub" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_sub" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_sub" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_sub" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
+    
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
+                                -
+                            </div>
+    
+    
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_sub" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_sub" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
-                            -
-                        </div>
-
-
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_sub" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
+                            <div>
+                                <var id="subz" style="color: aliceblue;font-size: 1.125rem;"></var>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_sub" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <var id="subz" style="color: aliceblue;font-size: 1.125rem;"></var>
-                        </div>
-                        <br>
-                        <center>
-
-                            <button type="button" class="btn btn-light" ; onclick="subtractiom()">
-                                SUBTRACT
-                            </button>
-                        </center>
-
-                        <br>
+                            <br>
+                            <center>
+    
+                                <button type="button" class="btn btn-light" ; onclick="subtractiom()">
+                                    SUBTRACT
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+                            <br>
+                        </form>
+                        
 
                         <div style="display: flex; justify-content: center;">
 
@@ -26624,56 +27147,62 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_div" placeholder="Numerator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_div" placeholder="Numerator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_div" placeholder="Denominator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;"> /
-                        </div>
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_div" placeholder="Numerator" type="number"
-                                                       required=""
-                                                       style="width: 9.375rem;">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_div" placeholder="Denominator" type="number"
-                                                       required=""
-                                                       style="width: 9.375rem;">
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_div" placeholder="Denominator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <var id="divaz" style="color: aliceblue;font-size: 1.125rem;"></var>
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;"> /
                             </div>
-                            <br>
-                                <center>
-                                <button type="button" class="btn btn-light" ; onclick="division()">
-                                            DIVIDE
-                                </button>
-                                </center>
-                            <br>
-
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_div" placeholder="Numerator" type="number"
+                                                           required=""
+                                                           style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_div" placeholder="Denominator" type="number"
+                                                           required=""
+                                                           style="width: 9.375rem;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <var id="divaz" style="color: aliceblue;font-size: 1.125rem;"></var>
+                                </div>
+                                <br>
+                                    <center>
+                                    <button type="button" class="btn btn-light" ; onclick="division()">
+                                                DIVIDE
+                                    </button>
+                                    <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                        Reset
+                                    </button>
+                                    </center>
+                                <br>
+    
+                        </form>
+                        
 
                             <div style="display: flex; justify-content: center;">
 
@@ -26757,64 +27286,69 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_mul" placeholder="Numerator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_mul" placeholder="Numerator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_mul" placeholder="Denominator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_mul" placeholder="Denominator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
+    
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
+                                x
+                            </div>
+    
+    
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_mul" placeholder="Numerator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_mul" placeholder="Denominator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
-                            x
-                        </div>
-
-
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_mul" placeholder="Numerator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
-                                </div>
+    
+                            <div>
+                                <var id="mulz" style="color: aliceblue;font-size: 1.125rem;" ></var>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_mul" placeholder="Denominator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <var id="mulz" style="color: aliceblue;font-size: 1.125rem;" ></var>
-                        </div>
-                        <br>
-                        <center>
-                            <button type="button" class="btn btn-light" ;
-                                    onclick="multiplication1()">
-                                MULTIPLY
-                            </button>
-                        </center>
-
-
-                        <br>
+                            <br>
+                            <center>
+                                <button type="button" class="btn btn-light" ;
+                                        onclick="multiplication1()">
+                                    MULTIPLY
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+    
+                            <br>
+                        </form>
+                        
 
                         <div style="display: flex; justify-content: center;">
 
@@ -26880,45 +27414,50 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-
-
-                        <div style="display: inline-block; margin-left: 2.5rem; ">
-                            <div class="row">
-
-                                <div class="row" style="margin-top: 0.625rem;">
-                                    <div class="cell borderBottom_1">
-
-                                        <input id="side_mix" placeholder="Side" type="number"
-                                               required="" style="width: 4.375rem; ">
+                        <form action="">
+                            <div style="display: inline-block; margin-left: 2.5rem; ">
+                                <div class="row">
+    
+                                    <div class="row" style="margin-top: 0.625rem;">
+                                        <div class="cell borderBottom_1">
+    
+                                            <input id="side_mix" placeholder="Side" type="number"
+                                                   required="" style="width: 4.375rem; ">
+                                        </div>
+                                    </div>
+                                    <div class="cell borderBottom_1" style="margin-left: 1.25rem; ">
+    
+                                        <input id="one_mix" placeholder="Numerator" type="number"
+                                               required="" style="width: 9.375rem;">
                                     </div>
                                 </div>
-                                <div class="cell borderBottom_1" style="margin-left: 1.25rem; ">
-
-                                    <input id="one_mix" placeholder="Numerator" type="number"
-                                           required="" style="width: 9.375rem;">
+                                <div class="row" style="margin-left: 2.8125rem;">
+                                    <div class="cell">
+    
+                                        <input id="two_mix" placeholder="Denominator" type="number"
+                                               required="" style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row" style="margin-left: 2.8125rem;">
-                                <div class="cell">
+    
+                            <br>
+    
+                            <center>
+                                <button type="button" class="btn btn-light" ;
+                                        onclick="mixed_to_improper()"
+                                        style="margin-top: 1.25rem;">
+                                    CONVERT
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+                            <br>
+    
+                        </form>
 
-                                    <input id="two_mix" placeholder="Denominator" type="number"
-                                           required="" style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <br>
-
-                        <center>
-                            <button type="button" class="btn btn-light" ;
-                                    onclick="mixed_to_improper()"
-                                    style="margin-top: 1.25rem;">
-                                CONVERT
-                            </button>
-                        </center>
-
-                        <br>
-
+                        
                         <div style="display: flex; justify-content: center;">
 
                             <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;"
@@ -26977,38 +27516,43 @@ N is the population size.
                 <div class="modal-body">
 
                     <div class="container" style="padding-top:0%">
-
-                        <center>
-                            <div style="display: inline-block;  ">
-                                <div class="row">
-                                    <div class="cell borderBottom_1">
-
-                                        <input id="one_imp" placeholder="Numerator"
-                                               type="number"
-                                               required="" style="width: 9.375rem;">
+                        <form action="">
+                            <center>
+                                <div style="display: inline-block;  ">
+                                    <div class="row">
+                                        <div class="cell borderBottom_1">
+    
+                                            <input id="one_imp" placeholder="Numerator"
+                                                   type="number"
+                                                   required="" style="width: 9.375rem;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="cell">
+    
+                                            <input id="two_imp" placeholder="Denominator"
+                                                   type="number"
+                                                   required="" style="width: 9.375rem;">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="cell">
-
-                                        <input id="two_imp" placeholder="Denominator"
-                                               type="number"
-                                               required="" style="width: 9.375rem;">
-                                    </div>
-                                </div>
-                            </div>
-
+    
+                                <br>
+    
+    
+                                <button type="button" class="btn btn-light" ;
+                                        onclick="improper_to_mixed()" style="margin-top: 1.25rem;">
+                                    CONVERT
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
                             <br>
-
-
-                            <button type="button" class="btn btn-light" ;
-                                    onclick="improper_to_mixed()" style="margin-top: 1.25rem;">
-                                CONVERT
-                            </button>
-                        </center>
-
-                        <br>
-
+    
+                        </form>
+                        
                         <div style="display: flex; justify-content: center;">
 
                             <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;"
@@ -28336,6 +28880,54 @@ N is the population size.
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="kochcurve" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Koch Curve</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Length after n iterations</h5>
+                                    <p class="text-center">\[m = l \times (\frac{4}{3})^n \]</p>
+                                    <p class="text-center">n = number of iterations</p>
+                                    <p class="text-center">l = original line length</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = \frac{\sqrt{3}}{6} \space l \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/koch-curve.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                       placeholder="Enter no. of iterations (n)" id="inputkochcuriterno"
+                                       oninput="solvekochcurve();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter original line length (l)" id="inputkochcurlinelen"
+                                       oninput="solvekochcurve();">
+                            <p class="stopwrap" id="resultofkochcuriterlen"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofkochcurheight"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
                         </button>
                     </div>
                 </div>
@@ -39873,6 +40465,31 @@ N is the population size.
         </div>
     </div>
     <!-- Eulerian Number end -->
+    <!-- Cullen Number start-->
+    <div class="collapse" id="culnum" style="text-align: center;">
+        <div class="container">
+            <h2 style="color: white;font-family:mathfont;text-align: center;">Cullen Number</h2>
+            <br>
+            <p>A Cullen Number is a number of the form is 2n * n + 1 where n is an integer.</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="culn" placeholder="Enter the value of n" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="CulNum(document.getElementById('culn').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="culans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Cullen Number end -->
 </div>
 <!--#######-------all modals here-------#######-->
 

@@ -1452,6 +1452,12 @@ function confidence() {
 
 function unitcircCal(){
     var deg = document.getElementById("unitdeg").value;
+    if(deg==""||isNaN(deg))
+    {
+        document.getElementById("unitcircxans").innerHTML = "Please enter proper numeric value";
+
+    }
+    else{
     var rad=0.0174533*deg;
     var x = Math.cos(rad);
     var y = Math.sin(rad);
@@ -1460,6 +1466,7 @@ function unitcircCal(){
     document.getElementById("unitcircyans").innerHTML = "\\[X \\space =cos("+deg+"\\degree )="+x+"  \\space \\newline Y \\space =sin("+deg+"\\degree )="+y+"  \\]"
     renderMathInElement(document.getElementById("unitcircxans"));
     renderMathInElement(document.getElementById("unitcircyans"));
+    }
 }
 
 function wmccal()
@@ -2087,7 +2094,7 @@ else{
      for (i = 0; i < len; i++) {
          varrzlt = varrzlt + ((number[i])-sum)*((number[i])-sum);
      }
-
+      
      varrzlt = varrzlt/(len-1);
      var sampstddev=Math.sqrt(varrzlt);
      sampstddev=sampstddev**3;
@@ -2163,6 +2170,29 @@ var ans="";
 document.getElementById("kurtans").innerHTML=ans;
 renderMathInElement(document.getElementById("kurtans"));
 
+}
+
+function bmifind()
+{
+    a=document.getElementById("bmis1").value;  
+    b=document.getElementById("bmis2").value;  
+    c=document.getElementById("bmis3").value;   
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Please enter all field to find answer";
+    }
+    else
+    {
+        a=parseFloat(a);
+        b=parseFloat(b);
+        c=parseFloat(c);
+       var height= (a*0.308)+(b*0.0245);
+        var bm= c/(height**2);
+
+        ans="Your B.M.I is: "+bm;
+    }
+    document.getElementById("bmians").innerHTML=ans;
 }
 function clockcal()
 {
@@ -2536,21 +2566,25 @@ function iskaprekar(n)
 }
 function kapfind()
 {
-    var num=document.getElementById("kap1").value;
-    var ans="";
+    let num=document.getElementById("kap1").value;
+    let ans="";
     if(num==""||isNaN(num))
     {
-        ans="Please enter proper number";
+        ans+="Please enter proper number";
     }
     else
     {
-      if(iskaprekar(num)==true)
+      ans += "Step 1: Number => " + num;
+      ans += `<br> Step 2: The Square of ${num} => ${num}^2 = ${Math.pow(num,2)}`;
+      if(iskaprekar(num))
       {
-          ans=num+" is a Kaprekar Number";
+        ans += `<br> Step 3: The square can be divided into two parts <br>and such that sum of parts is equal to the original number `;
+        ans += `<br> Step 4: Hence ${num} is a Kaprekar Number `;
       }
       else
       {
-        ans=num+" is not a Kaprekar Number";
+        ans += `<br> Step 3: The square can't be divided into two parts <br>and such that sum of parts is equal to the original number `;
+        ans += `<br> Step 4: Hence ${num} is not a Kaprekar Number `;
       }
     }
     document.getElementById("kapans").innerHTML=ans;
@@ -2634,6 +2668,10 @@ function Ranges()
         ans+="<br>The Range is: "+max+" -"+" "+min+" = "+d;
         document.getElementById('Meanresult').innerHTML = ans;
 
+        document.getElementById('Meanresult').innerHTML = "Range is: "+d;
+
+
+
 }
 }
 
@@ -2670,4 +2708,5 @@ function wagcal()
     document.getElementById("wagans").innerHTML=ans+explain;
     renderMathInElement(document.getElementById("wagans"))
 }
+
 
