@@ -1237,6 +1237,12 @@ function factorial(n){
     }  
   }
 
+ function calcexhpcal(){
+    var x = document.getElementById("ath").value = 5;
+    var y = document.getElementById("differ").value = 2;
+    var z = document.getElementById("totno").value = 3;
+    hpcal();
+}
 function hpcal()
 {
     var x=parseInt(document.getElementById("ath").value);
@@ -1267,6 +1273,13 @@ function hpcal()
    }
 }
 
+
+function calcexhpcal11(){
+    var x = document.getElementById("lterm1").value = 5;
+    var y = document.getElementById("cdiffer1").value = 2;
+    var z = document.getElementById("totnum1").value = 3;
+    hpcal11();
+}
 function hpcal11()
 {
     var x=parseInt(document.getElementById("lterm1").value);

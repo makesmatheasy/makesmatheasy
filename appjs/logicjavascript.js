@@ -3037,7 +3037,11 @@ function nth113find(){
 }
 
 //Important Series and Sequences start
-
+function calceximpsefind(){
+    var x = document.getElementById("impse1").value = 3;
+    var n = document.getElementById("impse2").value = 5;
+    impsefind();
+}
 function impsefind() {
     var x = (document.getElementById("impse1").value);
     var n = (document.getElementById("impse2").value);
@@ -15500,6 +15504,12 @@ function ngp() {
     }
 }
 //Insert n-Harmonic Mean between two numbers
+function calcexnhp(){
+    var n = document.getElementById("nt3").value = 5;
+    var a = document.getElementById("ft3").value = 2;
+    var b = document.getElementById("lt3").value = 3;
+    nhp();
+}
 function nhp() {
     var n = parseInt(document.getElementById("nt3").value)
     var a = parseInt(document.getElementById("ft3").value)

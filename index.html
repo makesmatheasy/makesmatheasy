@@ -20551,12 +20551,17 @@
                 <br>
                 <br>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <button type="button" class="btn btn-light" onclick=nhp()>
                             Find
                         </button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">        
+                        <button type="button" class="btn btn-light" onclick=calcexnhp()>
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
                         onclick="this.form.reset();">
                         Reset
@@ -20578,10 +20583,15 @@
                         <input type="number" name="totno" class="form__field" id="totno" placeholder="Enter the number of term to find">
                         <p>&nbsp;</p>
                         <div class="row">
-                            <div class="col-6">      
+                            <div class="col-4">      
                                 <button type="button" class="btn btn-outline-light" onclick="hpcal()">Calculate</button>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">        
+                                <button type="button" class="btn btn-light" onclick=calcexhpcal()>
+                                    Example
+                                </button>
+                            </div>
+                            <div class="col-4">
                                 <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
                             </div>
                         </div>
@@ -20606,10 +20616,15 @@
                         <input type="number" name="totnum" class="form__field" id="totnum1" placeholder="Enter the number of term to find (n)">
                         <p>&nbsp;</p>
                         <div class="row">
-                            <div class="col-6">      
+                            <div class="col-4">      
                                 <button type="button" class="btn btn-outline-light" onclick="hpcal11()">Calculate</button>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">        
+                                <button type="button" class="btn btn-light" onclick=calcexhpcal11()>
+                                    Example
+                                </button>
+                            </div>
+                            <div class="col-4">
                                 <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
                             </div>
                         </div>
@@ -24292,7 +24307,10 @@ N is the population size.
     <form action="">
         <input type="text" id="impse1"class="form__field"placeholder="Enter value of x">
         <input type="text" id="impse2"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impsefind()">Find</button>
+        <button class="text" onclick="impsefind()">Find</button>        
+        <button type="button" class="btn btn-light" onclick=calceximpsefind()>
+         Example
+        </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>
     
