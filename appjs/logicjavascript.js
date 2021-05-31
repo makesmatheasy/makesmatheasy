@@ -14204,18 +14204,29 @@ function eqrect() {
 
 function retfind13() {
     let a = parseFloat(document.getElementById("retin16").value)
+    var output =  document.getElementById("retans16");
+    var ans = "";
     let x = 1.268 * a;
+    let x1 = x**2;
     let area = 0.70477 * Math.pow(x, 2);
     if (a < 0) {
-        document.getElementById("retans16").innerHTML = "side length cannot be negative"
+        ans += "\\[side \\space length \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
     }
     else if (!isNaN(a)) {
-        document.getElementById("retans16").innerHTML = area.toFixed(4);
+        ans += "\\[Area \\space of \\space the \\space Reuleaux \\space Triangle (A) \\space = \\space \\frac{(π - \\sqrt{3}) \\times h^{2}}{2} \\space = \\space 0.70477 \\times h^{2} \\]"
+        ans += "\\[Length \\space of \\space the \\space side \\space of \\space inscribed \\space Square \\space is \\space x, \\space then \\]"
+        ans += "\\[ x \\space = \\space  1.268 \\times a \\]"
+        ans += "\\[Height \\space of \\space the \\space Reuleaux \\space Triangle \\space is \\space same \\space as \\space 1.268 \\times a  \\space so, \\space h \\space = \\space 1.268 \\times a \\]"
+        ans += "\\[A \\space = \\space 0.70477 \\times x^{2} \\space =  \\space 0.70477  \\times  (1.268 \\times " + a + ")^{2} \\space =  \\space 0.70477 \\times "  + x.toFixed(3) + "^{2}  \\space =  \\space 0.70477 \\times " + (x1).toFixed(3) + " \\space =  \\space " + area.toFixed(3) + " \\]" 
+        output.innerHTML = ans;
     }
     else {
-        document.getElementById("retans16").innerHTML = "Please enter valid input"
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans;
     }
-}
+    renderMathInElement(output);
+    }
 
 function trirect() {
     let l = parseFloat(document.getElementById("trirect1").value)
