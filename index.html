@@ -21666,30 +21666,19 @@
     
 </div>
 
-<div class="collapse" id="hypers">
-    <h1 style="color: white;font-family:mathfont">Hyperperfect Number Checker</h2><p>&nbsp;</p>
-    <form action="">
-        <input style="color: white; font-family:mathfont" type="text"id="hypers1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-        <input style="color: white; font-family:mathfont" type="text"id="hypers2" placeholder="Enter the value of K" class="form__field"><p>&nbsp;</p>
-        <button class="btn btn-dark" onclick="hyperfind()">Check</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-    </form>
-    
-    <p>&nbsp;</p>
-    <p style="font-family:mathfont" id="hyperans"></p><br>
-</div>
-<div class="collapse" id="adams" style="text-align: center;">
+<div class="collapse" id="hypers" style="text-align: center;">
     <div class="container">
-        <h1 style="color: white;font-family:mathfont;text-align: center;">Adam Number Checker</h2>
+        <h1 style="color: white;font-family:mathfont;text-align: center;">Hyperperfect Number Checker</h2>
         <br>
-        <p>Adam number is a number when reversed, the square of the number and the square of the reversed number should be numbers which are reverse of each other.</p>
+        <p>A number n is called k-hyperperfect if: <strong>n = 1 + k ∑ <sub>i</sub> d <sub>i</sub></strong> where all d<sub>i</sub> are the proper divisors of n.</p>
         <br>
         <form action="">
             <div class="form-group">
-                <input style="color: white; font-family:mathfont" type="number" id="adam1" placeholder="Enter the input number" class="form__field">
+                <input style="color: white; font-family:mathfont" type="number" id="hypers1" placeholder="Enter the input number" class="form__field">
+                <input style="color: white; font-family:mathfont" type="number" id="hypers2" placeholder="Enter the value of K" class="form__field">
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="adamfind()">Check</button>
+                <button type="button" class="btn btn-light" onclick="hyperfind()">Check</button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
                 </button>
@@ -21697,7 +21686,7 @@
         </form>
         <br>
         <div class="form-group text-center">
-            <p class="stopwrap" style="color:white;" id="adamans""></p>
+            <p class="stopwrap" style="color:white;" id="hyperans"></p><br>
         </div>
     </div>
 </div>
