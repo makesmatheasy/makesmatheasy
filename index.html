@@ -3247,6 +3247,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="carnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Carmichael Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Carmichael Number','carnum','c','culnumimgfav')"><img
+                                        id="carnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -40899,6 +40914,31 @@ N is the population size.
         </div>
     </div>
     <!-- Cullen Number end -->
+    <!-- Carmichael Numbers start-->
+    <div class="collapse" id="carnum" style="text-align: center;">
+        <div class="container">
+            <h2 style="color: white;font-family:mathfont;text-align: center;">Carmichael Number Checker</h2>
+            <br>
+            <p>A Cullen Number is a number of the form is 2n * n + 1 where n is an integer.</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="carn" placeholder="Enter the value of n" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="CarNum(document.getElementById('carn').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="carans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Carmichael Numbers end -->
 </div>
 <!--#######-------all modals here-------#######-->
 

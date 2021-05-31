@@ -28151,3 +28151,35 @@ function CulNum(num){
     ans += `<br> Step 3: Hence the result is: ${(((1 << num) * num) + 1)} `;
     document.getElementById('culans').innerHTML = ans;
 }
+
+function cargcd(a, b) {
+    if (a < b)
+        return cargcd(b, a);
+    if (a % b == 0)
+        return b;
+    return cargcd(b, a % b);
+}
+function carpower(x, y, mod) {
+    if (y == 0)
+        return 1;
+    let temp = carpower(x, parseInt(y / 2, 10), mod) % mod;
+    temp = (temp * temp) % mod;
+    if (y % 2 == 1)
+        temp = (temp * x) % mod;
+    return temp;
+}   
+function CarNum(num)
+{
+    let flag=0;
+    for (let b = 2; b < num; b++) {
+        if (cargcd(b, num) == 1)
+            if (carpower(b, num - 1, num) != 1){
+                flag = 1;
+                break;
+            }
+    }
+    if (!flag)
+        document.getElementById('carans').innerHTML = num + " is a Carmichael Number";
+    else
+        document.getElementById('carans').innerHTML = num + " is not a Carmichael Number";
+}
