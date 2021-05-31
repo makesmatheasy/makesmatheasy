@@ -352,6 +352,7 @@ Other Tech/Libraries
     - X-Shape
     - Drop Shape
     - Arbelos
+    - Helix
     - Spherical Triangle
 
   - Name Of 3D Shapes
