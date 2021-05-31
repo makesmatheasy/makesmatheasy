@@ -27416,3 +27416,7 @@ function isEurNum(n, m) {
     }
     document.getElementById('eurans').innerHTML = "The result is: " + dp[n][m];
 }
+
+function CulNum(num){
+    document.getElementById('culans').innerHTML = "The result is: " + (((1 << num) * num) + 1);
+}

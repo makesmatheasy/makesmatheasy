@@ -141,6 +141,7 @@ function openit(id) {
         "#gammaDist",
         "#expoDist",
         "#ackermann",
+        "#culnum",
         "#lucNum",
         "#smNum",
         "#catNum",
