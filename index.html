@@ -22589,12 +22589,17 @@
         <p>&nbsp;</p>
         <form action="">
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                <input type="number" id="sphx" width="5em" placeholder="Enter X coordinate"> 
-                <input type="number" id="sphy" width="5em" placeholder="Enter Y coordinate">
-                <input type="number" id="sphz" width="5em" placeholder="Enter Z coordinate">
+                <div class="d-flex justify-content-center form-group">
+                    <input type="number" style="width: 100%;" class="form-control" id="sphx" width="5em" placeholder="Enter X coordinate"> 
+                    <input type="number" style="width: 100%;" class="form-control" id="sphy" width="5em" placeholder="Enter Y coordinate">
+                    <input type="number" style="width: 100%;" class="form-control" id="sphz" width="5em" placeholder="Enter Z coordinate">
+                </div>
+                
                 <p>&nbsp;</p></p>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphcal()">Calculate</button>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+                <div class="d-flex justify-content-center form-group">
+                    <button type="button" class="btn btn-outline-light mr-1" style="" onclick="sphcal()">Calculate</button>
+                    <button type="button" class="btn btn-outline-light mr-1" style="" onclick="this.form.reset();">Reset</button>
+                </div>
         </form>
         
     <p>&nbsp;</p>
@@ -22606,12 +22611,18 @@
     <p>&nbsp;</p>
     <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to Spherical</p>
     <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-        <input type="number" id="cylsphp" width="5em" placeholder="Enter the distance between the pole and the projected point"> 
-        <input type="number" id="cylspho" width="5em" placeholder="Enter the angle created by the line and the polar axis in degree">
-        <input type="number" id="cylsphz" width="5em" placeholder="Enter the vertical distance between the original point and the projected point">
+        <div class="d-flex justify-content-center form-group">
+            <input type="number" style="width: 100%;" class="form-control" id="cylsphp" width="5em" placeholder="Enter the distance between the pole and the projected point"> 
+            <input type="number" style="width: 100%;" class="form-control" id="cylspho" width="5em" placeholder="Enter the angle created by the line and the polar axis in degree">
+            <input type="number" style="width: 100%;" class="form-control" id="cylsphz" width="5em" placeholder="Enter the vertical distance between the original point and the projected point">
+        </div>
+        
         <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cylsphcal()">Calculate</button>
-    <p>&nbsp;</p>
+        <div class="d-flex justify-content-center form-group">
+        <button type="button" class="btn btn-outline-light mr-1" style="" onclick="cylsphcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light mr-1" style="" onclick="this.form.reset();">Reset</button>
+        </div>
+        <p>&nbsp;</p>
     <p id="cylsphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
     <p>&nbsp;</p>
     <p id="cylsphoans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
