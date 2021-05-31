@@ -10383,6 +10383,25 @@ function solvetruncube() {
     }
 }
 
+function solvedisphenocingulum() {
+    let a = document.getElementById("inputdisphenoedge").value;
+    let areaoutput = document.getElementById("resultofdisphenoarea");
+    let voloutput = document.getElementById("resultofdisphenovol");
+    var areatemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline (4 + 5 \\sqrt{3}) \\space (" + a + ")^2" + "\\ = " + eval(String(12.6603 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline 3.7776453418585752 \\space (" + a + ")^3" + "\\ = " + eval(String(3.7776 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
+
 // Rhombicuboctahedron
 
 function solverhombicuboctahedron() {
