@@ -16980,6 +16980,16 @@ function findTetrahedralNumber(n) {
     return ((n * (n + 1) * (n + 2)) / 6);
 }
 
+function typenum21find(){
+    var n = parseInt(document.getElementById('typenum30').value)
+    let res = 1;
+    for (let i = 0; i < n; ++i){
+        res *= (2 * n - i);
+        res /= (i + 1);
+    }
+    document.getElementById('typenum21ans').innerHTML = res / (n + 1);
+}
+
 function typenum20find() {
     var n = document.getElementById('typenum30').value;
     if (!isNaN(n)) {
