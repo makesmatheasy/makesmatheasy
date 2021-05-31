@@ -11650,6 +11650,31 @@ function eltripyramidsolve() {
         houtput.innerHTML = "";
     }
 }
+// Triangular bipyramid
+function solvetribipyramid() {
+    let a = document.getElementById("inputtribipyedge").value;
+    let heioutput = document.getElementById("resultoftribipyhei");
+    let areaoutput = document.getElementById("resultoftribipyarea");
+    let voloutput = document.getElementById("resultoftribipyvol");
+    var areatemp = "";
+    var heitemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline \\frac{3}{2} \\space \\sqrt{3} \\space (" + a + ")^2" + "\\ = " + eval(String(2.5980762 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        heitemp += "\\[Height \\space \\newline \\frac{2}{3} \\space \\sqrt{6} \\space (" + a + ")" + "\\ = " + eval(String(1.6329932 * a)).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        voltemp += "\\[Volume \\space \\newline \\frac{\\sqrt{2}}{6} \\space (" + a + ")^3" + "\\ = " + eval(String(0.2357023 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(heioutput);
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        heioutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
 //Centroid of a Tetrahedron
 function centsolve() {
     var x1 = parseInt(document.getElementById("x1st").value)
@@ -16498,9 +16523,9 @@ function typenum47find() {
         let num = (1 << k) - 1;
         if (prime[(num)])
             document.getElementById("typenum47exp").innerHTML = num + " "
-    }
-    else
+        else
         document.getElementById("typenum47ans").innerHTML= " Please enter valid input"
+    }
 }
 
 function typenum12find() {
