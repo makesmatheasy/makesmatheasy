@@ -5693,8 +5693,14 @@ function ktimes() {
     let B = parseInt(document.getElementById('bofeqn').value)
     let C = parseInt(document.getElementById('cofeqn').value)
     let K = parseInt(document.getElementById('kofeqn').value)
-    document.getElementById("ktimesans").innerHTML = A + " " + K * B
+    var res = document.getElementById("ktimesans");
+    res.innerHTML += "Coefficient of x^2: "+ A+"<br>";
+    res.innerHTML += "Coefficient of x: "+B +"<br>";
+    res.innerHTML += "Constant term: "+ C+"<br>";
+    res.innerHTML += "Number of times the equation is to be multiplied: "+ K+"<br>";
+    res.innerHTML +="The Quadratic equation whose roots are K times the roots of given equation: " A + " " + K * B
         + " " + K * K * C
+
 }
 //Paraller vector
 
