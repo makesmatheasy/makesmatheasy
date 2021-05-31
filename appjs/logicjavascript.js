@@ -16639,8 +16639,6 @@ function nap() {
     var temp = ""
 
 
-
-
     if (isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(b))) {
 
         temp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
@@ -16648,10 +16646,6 @@ function nap() {
         renderMathInElement(p);
         return;
     }
-
-    
-
-
 
     else{
         var d = (b - a) / (n + 1);
@@ -16669,6 +16663,7 @@ function nap() {
     p.innerHTML = temp;
     renderMathInElement(p);
     }
+    
 
 
     
@@ -16833,12 +16828,9 @@ function ngp() {
         renderMathInElement(p);
         return;
     }
-
-    
-
-
     else{
         var d = Math.pow((b / a), 1 / (n + 1))
+        
     for (var i = 1, series = "", num = 0; i <= n; i++) {
         num = ((a) * Math.pow(d, i));
         series += (num.toString() + ", ");
