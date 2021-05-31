@@ -12630,7 +12630,7 @@ function calcexheightdist8(){
     degree.value = 45;
 
     heightdist8();
-    
+
 }
 
 function heightdist8() {
@@ -12653,6 +12653,16 @@ function heightdist8() {
     }
     output.innerHTML = temp;
     renderMathInElement(output);
+}
+
+function calcexheightdist2(){
+    var distance = document.getElementById("height21");
+    var height = document.getElementById("height31");
+
+    distance.value = 20;
+    height.value = 45;
+
+    heightdist2();
 }
 
 function heightdist2() {
