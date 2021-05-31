@@ -1294,6 +1294,30 @@ function exterior() {
     document.getElementById("exteriorans").innerHTML = "The exterior angle is " + into
 }
 //Scalar Triple Product
+function calcexstp(){
+    var x1 = document.getElementById("vx1");
+    var y1 = document.getElementById("vy1");
+    var z1 = document.getElementById("vz1");
+    var x2 = document.getElementById("vx2");
+    var y2 = document.getElementById("vy2");
+    var z2 = document.getElementById("vz2");
+    var x3 = document.getElementById("vx3");
+    var y3 = document.getElementById("vy3");
+    var z3 = document.getElementById("vz3");
+    x1.value = 3;
+    y1.value = 5;
+    z1.value = 7;
+    x2.value = 2;
+    y2.value = 3;
+    z2.value = 4;
+    x3.value = 6;
+    y3.value = 6;
+    z3.value = 7;
+
+    stp();
+}
+
+
 function stp() {
     let vx1 = parseInt(document.getElementById("vx1").value)
     let vy1 = parseInt(document.getElementById("vy1").value)
@@ -1324,6 +1348,29 @@ function stp() {
     }
 }
 //Vector Triple Product
+function calcexvtp(){
+    var x1 = document.getElementById("vx1");
+    var y1 = document.getElementById("vy1");
+    var z1 = document.getElementById("vz1");
+    var x2 = document.getElementById("vx2");
+    var y2 = document.getElementById("vy2");
+    var z2 = document.getElementById("vz2");
+    var x3 = document.getElementById("vx3");
+    var y3 = document.getElementById("vy3");
+    var z3 = document.getElementById("vz3");
+    x1.value = 3;
+    y1.value = 5;
+    z1.value = 7;
+    x2.value = 2;
+    y2.value = 3;
+    z2.value = 4;
+    x3.value = 6;
+    y3.value = 6;
+    z3.value = 7;
+
+    vtp();
+}
+
 function vtp() {
     let vvx1 = parseInt(document.getElementById("vx1").value)
     let vvy1 = parseInt(document.getElementById("vy1").value)
@@ -1344,6 +1391,29 @@ function vtp() {
     }
 }
 //Volume of Parallelopiped
+function calcexparalleloarea(){
+    var x1 = document.getElementById("volpx1");
+    var y1 = document.getElementById("volpx2");
+    var z1 = document.getElementById("volpx3");
+    var x2 = document.getElementById("volpy1");
+    var y2 = document.getElementById("volpy2");
+    var z2 = document.getElementById("volpy3");
+    var x3 = document.getElementById("volpz1");
+    var y3 = document.getElementById("volpz2");
+    var z3 = document.getElementById("volpz3");
+    x1.value = 3;
+    y1.value = 5;
+    z1.value = 7;
+    x2.value = 2;
+    y2.value = 3;
+    z2.value = 4;
+    x3.value = 6;
+    y3.value = 6;
+    z3.value = 7;
+
+    paralleloarea();
+}
+
 function paralleloarea() {
     let vx1 = parseInt(document.getElementById("volpx1").value)
     let vy1 = parseInt(document.getElementById("volpx2").value)
@@ -24352,6 +24422,14 @@ function cirrecfind() {
     renderMathInElement(result);
 }
 //Hyperbolic trignometric ratios
+function calcexhypertrigno(){
+    var x1 = document.getElementById("hypertrignoin");
+
+    x1.value = 5;
+
+    hypertrigno();
+}
+
 function hypertrigno() {
     var i = (document.getElementById("hypertrignoin").value);
     var hyperout = document.getElementById("hyperresult");
@@ -25911,6 +25989,15 @@ function npvCal() {
     }
   }
 
+  function calcexvectsfind(){
+    var x1 = document.getElementById("vects1");
+    var y1 = document.getElementById("vects2");
+
+    x1.value = 1;
+    y1.value = 3;
+
+    vectsfind();
+}
 
   function vectsfind()
   {

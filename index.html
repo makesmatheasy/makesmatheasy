@@ -6434,6 +6434,9 @@
                     </div><br>
                     <div class="form-group text-center">
                         <button type="button" class="btn btn-light" onclick="hypertrigno()"> Calculate </button>
+                        <button type="button" class="btn btn-light" onclick=calcexhypertrigno()>
+                            Example
+                        </button>
                         <button type="button" class="btn btn-light m-1" onclick="this.form.reset();"> Reset </button><br>
                     </div>
                 </form>
@@ -10769,6 +10772,9 @@
             <button type="button" class="btn btn-light" onclick=paralleloarea()>
                 Solve
             </button>
+            <button type="button" class="btn btn-light" onclick=calcexparalleloarea()>
+                 Example
+            </button>
             <button type="button" class="btn btn-light" onclick="this.form.reset();">
                 Reset
             </button><br>
@@ -10803,7 +10809,13 @@
             </button>
             <button type="button" class="btn btn-light" onclick="this.form.reset();">
                 Reset
-            </button><br>
+            </button><br><br>
+            <button type="button" class="btn btn-light" onclick=calcexstp()>
+                Scalar Example
+            </button>
+            <button type="button" class="btn btn-light" onclick=calcexvtp()>
+                Vector Example
+            </button>
             </p>
         </div>
     </form>
@@ -21439,7 +21451,10 @@
     <form action="">
         <input style="color: white; font-family:mathfont" type="text"id="vects1" placeholder="Enter the Vector space" class="form__field"><p>&nbsp;</p>
         <input style="color: white; font-family:mathfont" type="text"id="vects2" placeholder="Enter the input coordinates" class="form__field"><p>&nbsp;</p>
-        <button class="btn btn-dark" onclick="vectsfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="vectsfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calcexvectsfind()>
+             Example
+        </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     </form>
     
