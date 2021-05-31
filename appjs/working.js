@@ -650,6 +650,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#momentbtn").click(function () {
+        openit("#momentcal");
+        closenav();
+        clearall();
+    });  
     $("#npbtn").click(function () {
         openit("#npchart");
         closenav();
