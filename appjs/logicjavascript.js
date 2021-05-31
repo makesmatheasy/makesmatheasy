@@ -19995,20 +19995,39 @@ function convertbcd() {
             result.innerHTML = "Error : Invalid BCD input (BCD Code comes in sets of nibbles(4 bits)"
         }else{
             x = "";
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space BCD \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\space digits \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + parseInt(temp,2).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]"
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space the \\space decimal \\space digits \\space \\]";
+            print += "\\[\\rightarrow "+x+"\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space binary  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(2)+"\\]";
             if(input.length / 4 == x.length ){
                 result.innerHTML = parseInt(x).toString(2);//converted dec to bin
             }else{
                 result.innerHTML = "Error : Invalid BCD input (decimal value of each digit cant exceed 9)";
             }
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     } else if (fromCode == "Octal" && toCode == "BCD Code") {
         print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space octal \\space to \\space decimal \\]";
