@@ -10032,12 +10032,18 @@ function trunsquaresolve() {
     var p = 4 * (a + b);
     var A = Math.pow(a + 2 * e, 2) - 2 * e * e;
     if ((!isNaN(a)) && (!isNaN(b))) {
-        missingLenField.innerHTML = `Missing length (e) = ${e.toFixed(3)} units`;
-        lenField.innerHTML = `Length (l) = ${l.toFixed(3)} units`;
-        heightField.innerHTML = `Height (h) = ${h.toFixed(3)} units`;
-        diagField.innerHTML = `Diagonal (d) = ${d.toFixed(3)} units`;
-        periField.innerHTML = `Peimeter (p) = ${p.toFixed(3)} units`;
-        areaField.innerHTML = `Area (A) = ${A.toFixed(3)} sq.units`;
+        missingLenField.innerHTML = "\\[Missing \\space length \\space (e) = \\frac{"+b.toFixed(3)+"}{\\sqrt 2} = "+e.toFixed(3)+" \\space units\\]";
+        lenField.innerHTML = "\\[Length \\space (l) = \\sqrt 2 \\times \\left ( "+a.toFixed(3)+" + "+e.toFixed(3)+" \\right ) = "+l.toFixed(3)+" \\space units\\]";
+        heightField.innerHTML = "\\[Height \\space (h) = "+a.toFixed(3)+" + 2 \\times "+e.toFixed(3)+" = "+h.toFixed(3)+" \\space units\\]";
+        diagField.innerHTML = "\\[Diagonal \\space (d) = \\sqrt{"+a.toFixed(3)+"^2 + \\left ( "+a.toFixed(3)+" + 2 \\times "+e.toFixed(3)+" \\right )^2} = "+d.toFixed(3)+" \\space units\\]";
+        periField.innerHTML = "\\[Peimeter \\space (p) = 4 \\times \\left ( "+a.toFixed(3)+" + "+b.toFixed(3)+" \\right ) = "+p.toFixed(3)+" \\space units\\]";
+        areaField.innerHTML = "\\[Area \\space (A) = \\left ( "+a.toFixed(3)+" + 2 \\times "+e.toFixed(3)+" \\right )^2 - 2 \\times "+e.toFixed(3)+"^2 = "+A.toFixed(3)+" \\space sq.units \\]";
+        renderMathInElement(missingLenField);
+        renderMathInElement(lenField);
+        renderMathInElement(heightField);
+        renderMathInElement(diagField);
+        renderMathInElement(periField);
+        renderMathInElement(areaField);
     }
 }
 
