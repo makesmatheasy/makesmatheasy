@@ -23106,6 +23106,42 @@ function convertgreymisc(){
         result2.innerHTML ="Answer -> " +x;
 
     }
+    else if(toBase === "Excess-3"){
+        var result1 = input;
+        var a = result1[0];
+        for (var i = 1; i < result1.length; i++) {
+            var n = parseInt(a[i - 1] ^ result1[i]).toString();
+            a += n;
+        }
+        var temp = a;
+        input = parseInt(a, 2).toString();//dec value of input 
+        var x = "_", y = ""; temp = "";
+        for (var i = 0; i < input.length; i++) {
+            var y = (parseInt(input[i]) + 3).toString(2);
+            if (y.length == 1) {
+                temp = "000" + y + "_   ";
+                print += "\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
+            }
+            if (y.length == 2) {
+                temp = "00" + y + "_   ";
+                print += "\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
+            }
+            if (y.length == 3) {
+                temp = "0" + y + "_   ";
+                print += "\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
+            }
+            if (y.length == 4) {
+                temp = y + "_   ";
+                print += "\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + +temp;
+            }
+        }
+        result2.innerHTML ="Answer -> " +x;
+
+    }
     
 }
 
