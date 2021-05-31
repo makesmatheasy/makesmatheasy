@@ -18414,7 +18414,6 @@ function subBinDecHexOct() {
             x3 = x1 - x2;
 
             result.innerHTML = fracDectoBinHexOct(x3,2);
-            work.innerHTML = "";
         }
         else if(base === "Decimal"){
             x1 = parseFloat(input1);
@@ -18423,7 +18422,6 @@ function subBinDecHexOct() {
             x3 = x1 - x2;
 
             result.innerHTML = parseFloat(x3);
-            work.innerHTML = "";
         }
         else if(base === "Octal"){
             x1 = calculatefrac(input1,8);
