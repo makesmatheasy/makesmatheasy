@@ -2536,21 +2536,25 @@ function iskaprekar(n)
 }
 function kapfind()
 {
-    var num=document.getElementById("kap1").value;
-    var ans="";
+    let num=document.getElementById("kap1").value;
+    let ans="";
     if(num==""||isNaN(num))
     {
-        ans="Please enter proper number";
+        ans+="Please enter proper number";
     }
     else
     {
-      if(iskaprekar(num)==true)
+      ans += "Step 1: Number => " + num;
+      ans += `<br> Step 2: The Square of ${num} => ${num}^2 = ${Math.pow(num,2)}`;
+      if(iskaprekar(num))
       {
-          ans=num+" is a Kaprekar Number";
+        ans += `<br> Step 3: The square can be divided into two parts <br>and such that sum of parts is equal to the original number `;
+        ans += `<br> Step 4: Hence ${num} is a Kaprekar Number `;
       }
       else
       {
-        ans=num+" is not a Kaprekar Number";
+        ans += `<br> Step 3: The square can't be divided into two parts <br>and such that sum of parts is equal to the original number `;
+        ans += `<br> Step 4: Hence ${num} is not a Kaprekar Number `;
       }
     }
     document.getElementById("kapans").innerHTML=ans;
