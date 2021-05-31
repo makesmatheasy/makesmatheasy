@@ -26811,17 +26811,22 @@ function isKrishnaNum(num) {
 }
 // Automorphic Number
 function isAutoNum(num) {
-    console.log(num);
-    let sq = num * num;
-    document.getElementById('autosq').innerHTML = "Square of " + num + " is: " + sq;
-    if (num % 10 != sq % 10) {
-        document.getElementById('autoans').innerHTML = num + " is not an atomorphic number";
-        num = num / 10;
-        sq = m / 10;
+    let sq = num*num;
+    let ans ="";
+    ans += "Step 1: Number => " + num;
+    ans += `<br> Step 2: Square the number => ${num}*${num} = ${num*num}`;
+    if(num%10 != sq%10) {
+        ans += `<br> Step 3: Clearly the square of the number doesn't ends in the same digits as the number itself.`;
+        ans += `<br> Step 4: Hence ${num} is not an atomorphic number`;
+        num = num/10;
+        sq = sq/10;
     }
-    else
-        document.getElementById('autoans').innerHTML = num + " is an automorphic number";
-
+    else{
+        ans += `<br> Step 3: Clearly the square of the number ends in the same digits as the number itself.`;
+        ans += `<br> Step 4: Hence ${num} is an atomorphic number`;
+    }
+    document.getElementById('autoans').innerHTML = ans;
+    
 }
 // Pronic Number
 function isProNum(num) {
