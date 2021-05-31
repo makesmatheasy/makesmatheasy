@@ -1613,8 +1613,16 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+
     $("#pentatopbtn").click(function () {
         openit("#pentatop");
+        closenav();
+        clearall();
+    });
+
+
+    $("#lancentarcbtn").click(function () {
+        openit("#lancentarc");
         closenav();
         clearall();
     });
