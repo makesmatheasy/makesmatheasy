@@ -8444,18 +8444,24 @@
 
          <!-- start of nth base  root calculator   -->
         <div class="collapse" id="n_baseroot">     
-             <h1 style="text-align: center;">n-th base root calculator </h1><br>    
-            <div class="form-group">
-                <input type="text" id="n_rootnumber" class="form__field"
-                        placeholder="Enter the number">
-                <input type="text" id="n_rootbase" class="form__field" placeholder="Enter the value nth base">
-                    </div><br>
-        
-             <div class="form-group">
-                      <button type="button" class="btn btn-light" onclick="findnthrt()">
-                            Calculate
-                        </button><br>
-             </div>
+             <h1 style="text-align: center;">n-th base root calculator </h1><br> 
+             <form action="">
+                <div class="form-group">
+                    <input type="text" id="n_rootnumber" class="form__field"
+                            placeholder="Enter the number">
+                    <input type="text" id="n_rootbase" class="form__field" placeholder="Enter the value nth base">
+                        </div><br>
+            
+                 <div class="form-group">
+                          <button type="button" class="btn btn-light" onclick="findnthrt()">
+                                Calculate
+                            </button>
+                            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                                Reset
+                            </button><br>
+                 </div>
+             </form>   
+            
                      <br>
              <div class="form-group">
                            <p id="nrootresult" style="overflow-y:hidden;height:100%;text-align: center;"></p>
@@ -21490,9 +21496,14 @@
 
 <div class="collapse" id="hypers">
     <h1 style="color: white;font-family:mathfont">Hyperperfect Number Checker</h2><p>&nbsp;</p>
-    <input style="color: white; font-family:mathfont" type="text"id="hypers1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-    <input style="color: white; font-family:mathfont" type="text"id="hypers2" placeholder="Enter the value of K" class="form__field"><p>&nbsp;</p>
-    <button class="btn btn-dark" onclick="hyperfind()">Check</button><p>&nbsp;</p>
+    <form action="">
+        <input style="color: white; font-family:mathfont" type="text"id="hypers1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
+        <input style="color: white; font-family:mathfont" type="text"id="hypers2" placeholder="Enter the value of K" class="form__field"><p>&nbsp;</p>
+        <button class="btn btn-dark" onclick="hyperfind()">Check</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    </form>
+    
+    <p>&nbsp;</p>
     <p style="font-family:mathfont" id="hyperans"></p><br>
 </div>
 <div class="collapse" id="adams" style="text-align: center;">
@@ -21575,6 +21586,18 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+
+<div class="collapse" id="woods">
+    <h1 style="color: white;font-family:mathfont">Woodall Number</h2><p>&nbsp;</p>
+    <form action="">
+        <input style="color: white; font-family:mathfont" type="text"id="wood1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
+        <button class="btn btn-dark" onclick="woodfind()">FInd</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    </form>
+    <p>&nbsp;</p>
+    <p style="font-family:mathfont" id="woodans"></p><br>
+=======
 <div class="collapse" id="woods" style="text-align: center;">
     <div class="container">
         <h2 style="color: white;font-family:mathfont;text-align: center;">Woodall Number</h2>
@@ -21599,6 +21622,7 @@
             <p class="stopwrap" style="color:white;" id="woodans"></p><br>
         </div>
     </div>
+>>>>>>> 4a906d9164f30e481325f2317718a1714be7ac2a
 </div>
 
 
