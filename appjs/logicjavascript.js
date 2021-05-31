@@ -4083,6 +4083,36 @@ function alisum4find(){
         document.getElementById("alisum4ans").innerHTML = "Please enter valid input"
 }
 
+function alisum5find(){
+    let n = parseInt(document.getElementById("alisum5").value)
+    sieveSundaram();
+    for (let i = 1 ; i<= n; i++)
+        document.getElementById("alisum5ans").innerHTML ="Primorial(P#) of " + i + " is " + calculatePrimorial(i) + "<br>";
+}
+
+function calculatePrimorial(n)
+{   
+    let result = 1;
+    for (let i = 0; i < n; i++)
+    result = result * primes[i];
+    return result;
+}
+
+let MAX = 100000;
+let primes = new Array();
+function sieveSundaram()
+{
+    let marked = new Array(MAX / 2 + 1).fill(0);
+    for (let i = 1; i <= (Math.sqrt(MAX) - 1) / 2 ; i++)
+        for (let j = (i * (i + 1)) << 1 ;
+            j <= MAX / 2 ; j += 2 * i + 1)
+            marked[j] = true;
+    primes.push(2);
+    for (let i = 1; i <= MAX / 2; i++)
+        if (marked[i] == false)
+            primes.push(2 * i + 1);
+}
+
 function Hosoya(n, m)
     {
         if ((n == 0 && m == 0) || (n == 1 && m == 0) || (n == 1 && m == 1) || (n == 2 && m == 1))
