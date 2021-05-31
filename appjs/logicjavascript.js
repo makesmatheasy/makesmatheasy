@@ -8668,6 +8668,30 @@ function crossedrectsolve() {
     }
 }
 
+// Helix Shape
+
+function helixsolve(){
+    var r = parseFloat(document.getElementById("helix-r").value);
+    var h = parseFloat(document.getElementById("helix-h").value);
+    var t = parseFloat(document.getElementById("helix-t").value);
+    var slopeField = document.getElementById("slopeHelix");
+    var curvatureField = document.getElementById("curvatureHelix");
+    var torsionField = document.getElementById("torsionHelix");
+    var arcLenField = document.getElementById("arcLenHelix");
+
+    var k = h / (2 * Math.PI * r);
+    var kp = 1 / (r * (1 + k*k));
+    var w = k / (r * (1 + k*k));
+    var s = 2 * Math.PI * r * Math.sqrt(1 + k*k) * t;
+
+    if (!isNaN(r) && !isNaN(h) && !isNaN(t)) {
+        slopeField.innerHTML = `Slope (k) = ${k}`;
+        curvatureField.innerHTML = `Curvature (κ) = ${kp}`;
+        torsionField.innerHTML = `Torsion (w) = ${w}`;
+        arcLenField.innerHTML = `Arc length (s) = ${s}`;
+    }
+}
+
 // H - Shape
 
 function hshapesolve() {
