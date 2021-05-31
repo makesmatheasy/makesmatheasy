@@ -15709,6 +15709,16 @@ function apgphp() {
     renderMathInElement(output);
 }
 //Constant/Increasing/Decreasing GP
+function calcexconstGp(){
+    var a = document.getElementById("term151");
+    var b = document.getElementById("term152");
+
+    a.value = 2;
+    b.value = 4;
+
+    constGp();
+}
+
 function constGp() {
     var a = parseInt(document.getElementById("term151").value)
     var b = parseInt(document.getElementById("term152").value)
@@ -15748,6 +15758,15 @@ function constGp() {
     renderMathInElement(output);
 }
 //Insert n-Geometric Mean between two numbers
+function calcexngp(){
+    var n = document.getElementById("nt2");
+    var a = document.getElementById("ft2");
+    var b = document.getElementById("lt2");
+    n.value = 3;
+    a.value = 2;
+    b.value = 32;
+    ngp();
+}
 function ngp() {
     var n = parseInt(document.getElementById("nt2").value)
     var a = parseInt(document.getElementById("ft2").value)
@@ -15956,7 +15975,21 @@ function mnap() {
 
 }
 
+function calcexmngpsum(){
+    var m = document.getElementById("mterm1");
+    var n = document.getElementById("nterm1");
+    var mtherm = document.getElementById("mthterm1");
+    var ntherm = document.getElementById("nthterm1");
+    var pterm = document.getElementById("pterm1");
 
+    m.value = 10;
+    n.value = 5;
+    mtherm.value = 2560;
+    ntherm.value = 80;
+    pterm.value = 30;
+
+    mngpsum();
+}
 function mngpsum() {
     var m = parseInt(document.getElementById("mterm1").value)
     var n = parseInt(document.getElementById("nterm1").value)

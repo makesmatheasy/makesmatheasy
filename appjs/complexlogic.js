@@ -582,6 +582,17 @@ function factorial(n){
   }
   
   // HP starts
+  function calcexhp(){
+    var a = document.getElementById("firstTerm");
+    var d = document.getElementById("diff");
+    var n = document.getElementById("noofTerms");
+
+    a.value = 1;
+    d.value = 3;
+    n.value = 5;
+
+    hp();
+  }
   function hp() {
     var a = document.getElementById("firstTerm").value;
     var d = document.getElementById("diff").value;
