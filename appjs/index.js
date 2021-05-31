@@ -130,6 +130,7 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        "#trimornum",
         "#harnum",
         "#pronum",
         "#autonum",
@@ -178,6 +179,7 @@ function openit(id) {
         "#numcubesRanges",
         "#segcals",
         "#hydroz",
+        "#odshapescal",
         "#shapescal",
         "#tdshapescal",
         "#fdshapescal",
@@ -319,6 +321,7 @@ function openit(id) {
         "#bt-collapse1",
         "#antipodal",
         "#manhats",
+        "#doublept",
         "#bilinear",
         "#elliptic_cone",
         "#bicone",
@@ -364,10 +367,12 @@ function openit(id) {
         "#sum_n_AP",
         "#sum_n_GP",
         "#sum_n_HP",
+        "#trun_anticone",
         "#algebraic_formulascollapse",
         "#expansion",
         "#solutiontri",
         "#sumAndDiffTri",
+        "#diagcy",
         "#plotangle",
         "#profitloss",
         "#cylin_shell",

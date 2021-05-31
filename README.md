@@ -251,7 +251,7 @@ Other Tech/Libraries
   - Automorphic Number 
   - Pronic Number 
   - Harshad Number
-
+  - Trimorphic Number
 
 - Basic Convertors
 
@@ -333,6 +333,7 @@ Other Tech/Libraries
     - Sector of circle
     - Semi-Circle
     - Annulus
+    - Cupola
     - Kite
     - Lemniscate
     - Line
