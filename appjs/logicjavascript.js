@@ -9401,6 +9401,22 @@ function solveconcavepent() {
     }
 }
 
+//Concave Pentagon
+function solveconcaveregularpent() {
+    var a = parseFloat(document.getElementById("regularpenta-a").value);
+    var tipDistField = document.getElementById("regularpenta-b");
+    var perimeterField = document.getElementById("regularpenta-p");
+    var areaField = document.getElementById("regularpenta-A");
+    var b = a/2 * (1 + Math.sqrt(5));
+    var p = 5 * a;
+    var A = a*a/4 * ( Math.sqrt(25 + 10 * Math.sqrt(5)) - Math.sqrt(10 + 2 * Math.sqrt(5)));
+    if (!isNaN(a)) {
+        tipDistField.innerHTML = `Distance of the tips (b):	= ${b.toFixed(3)} units`;
+        perimeterField.innerHTML = `Perimeter (p) = ${p.toFixed(3)} units`;
+        areaField.innerHTML = `Area (A) = ${A.toFixed(3)} sq.units`;
+    }
+}
+
 //created function for Decagon
 function solvedeca() {
     let side = document.getElementById("inputsidedeca").value;
