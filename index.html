@@ -3618,6 +3618,23 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="carpolarcalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cartesian Coordinates to Polar 
+                            Coordinate Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Cartesian Coordinates to Polar Coordinate Calculator','#carpolarcal','c','carpolarcalfav')"><img
+                                        id="carpolarcalfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="corgeobtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Coordinate
                                 Geometry Formula and Theorem
@@ -6684,6 +6701,8 @@
                 style="font-family:mathfont;"></p>
             <p class="stopwrap" id="inter_output"
                 style="font-family:mathfont;"></p><br> 
+
+            
 
             
             <h3 style="text-align: center;">Distance between point and a line</h3><br>
@@ -17553,6 +17572,23 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="collapse" id="carpolarcal">
+            <h2>Cartesian Coordinates to Polar Coordinate Calculator</h2><br>
+            <p id="carpolar">\[r = √(x^2 + y^2)\]</p>
+            <p id="carpolar">\[θ = tan-1 ( y / x )\]</p> 
+            <form action="">
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="car_x" placeholder="Enter cartesian coordinate x:"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="car_y" placeholder="Enter cartesian coordinate y: "/>  <br> <br>
+                    <button  class = "btn btn-outline-light" onclick = "car_polar()" >Find</button>
+                    <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
+                    <br>
+                </div>
+            </form>   
+            
+                <p  id="car_polar_res"></p><br><br>    
         </div>
 
         <div class="collapse" id="curve">
