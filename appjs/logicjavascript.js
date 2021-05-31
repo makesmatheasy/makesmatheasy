@@ -26119,6 +26119,33 @@ function polarcartcal() {
     renderMathInElement(outputy);
 }
 
+function polarcylCal(){
+    var r = parseFloat(document.getElementById("polarcylr").value);
+    var o = parseFloat(document.getElementById("polarcylo").value);
+
+    var outputx = document.getElementById("polarcartxans");
+    var outputy = document.getElementById("polarcartyans");
+    var ans = "";
+
+    var x = r * Math.cos(o).toFixed(2);
+    var y = r * Math.sin(o).toFixed(2);
+
+    if (isNaN(r) || isNaN(o)) {
+        ans += "Please fill all the field";
+        outputx.innerHTML = ans;
+        outputy.innerHTML = "";
+    }
+    else {
+        var p = Math.sqrt(x * x + y * y).toFixed(3);
+        var o = Math.tan(y / x).toFixed(3);
+        ansp = "ρ: " + p;
+        anso = "θ: " + o;
+
+        outputx.innerHTML = ansp;
+        outputy.innerHTML = anso;
+    }
+}
+
 function cartpolarcal() {
     var x = parseFloat(document.getElementById("cartpolarx").value);
     var y = parseFloat(document.getElementById("cartpolary").value);
