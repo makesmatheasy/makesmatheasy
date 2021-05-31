@@ -5165,6 +5165,25 @@ function ktimes() {
         + " " + K * K * C
 }
 //Paraller vector
+
+fraction calcexvectpral(){
+    var a = document.getElementById('vpa1');
+    var b = document.getElementById('vpb1');
+    var c = document.getElementById('vpc1');
+    var d = document.getElementById('vpa2');
+    var e = document.getElementById('vpb2');
+    var f = document.getElementById('vpc2');
+
+    a.value = 4;
+    b.value = -5;
+    c.value = 2;
+    d.value = 6;
+    e.value = 3;
+    f.value = 4;
+
+    vectpral();
+}
+
 function vectpral() {
     var a, b, c, d, e, f, mul, mul1, mul2, mul3, mul4, mul5, ans, ans1, ans2;
     var a = parseFloat(document.getElementById('vpa1').value);
@@ -5221,6 +5240,32 @@ function vectpral() {
 }
 
 //Coplanar and Non-Coplanar Calculator
+
+function calcexvectorplanar(){
+    var a = document.getElementById('inp11');
+    var b = document.getElementById('inp22');
+    var c = document.getElementById('inp33');
+    var d = document.getElementById('inp44');
+    var e = document.getElementById('inp55');
+    var f = document.getElementById('inp66');
+    var g = document.getElementById('inp77');
+    var h = document.getElementById('inp88');
+    var i = document.getElementById('inp99');
+
+    a.value = 1;
+    b.value = 1;
+    c.value = 1;
+    d.value = 1;
+    e.value = 3;
+    f.value = 1;
+    g.value = 2;
+    h.value = 2;
+    i.value = 2;
+
+    vectorplanar();
+
+}
+
 function vectorplanar() {
     var a = parseFloat(document.getElementById('inp11').value);
     var b = parseFloat(document.getElementById('inp22').value);
