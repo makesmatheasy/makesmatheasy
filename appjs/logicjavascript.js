@@ -19443,6 +19443,12 @@ function smallestPrimeDivisor(num) {
 
 //Euler's Totient Function
 
+function calcexeulerTotient(n){
+    n = 6;
+    eulerTotient(n);
+
+}
+
 function eulerTotient(n) {
     function gcd(a, b) {
         if (a === 0) {
