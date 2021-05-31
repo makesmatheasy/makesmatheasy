@@ -15112,6 +15112,37 @@ function findTetrahedralNumber(n) {
     return ((n * (n + 1) * (n + 2)) / 6);
 }
 
+function typenum20find(){
+    var n = document.getElementById('typenum30').value;
+    var  prime=Array.from({length: n+1},
+        (_, i) => true);
+
+    for (p = 2; p * p <= n; p++){
+        if (prime[p] == true){
+            for (i = p * 2; i <= n; i += p)
+                prime[i] = false;
+        }
+    }
+    for (p = 2; p <= n; p++){
+        if (prime[p]){
+            var rev = reverse(p);
+            if (p != rev && rev <= n &&prime[rev]){
+                document.getElementById('typenum20ans').innerHTML = p + " " + rev + " ";
+                prime[rev] = false;
+            }
+        }
+    }
+}
+
+function reverse(x){
+    var rev = 0;
+    while (x > 0){
+        rev = (rev * 10) + x % 10;
+        x = parseInt(x / 10);
+    }
+    return rev;
+}
+
 
 //Statistics Calculator
 function cal_func_stats() {
