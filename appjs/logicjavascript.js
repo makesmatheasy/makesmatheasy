@@ -16588,9 +16588,19 @@ function typenum15find() {
     renderMathInElement(result);
 }
 
-  
-
-
+function typenum48find(){
+    var n = parseInt(document.getElementById("typenum48").value)
+    let isPrime = [];
+    SieveOfEratosthenes(n, isPrime);
+    let primes = [];
+    let j = 0;           
+    for (let p = 2; p <= n; p++)
+        if (isPrime[p] != 0)
+            primes[j++] = p;
+    for (let k = 0; k < j; k++)
+        if (isPrime[k + 1])
+            document.getElementById("typenum48ans").innerHTML = primes[k]+ " ";
+}
 
 function simpleSieve() {
     for (let p = 2; p * p < 1001; p++) {
