@@ -27135,6 +27135,15 @@ const ackermann = (m, n) => {
         return ackermann((m - 1), ackermann(m, (n - 1)))
     }
 }
+function ackexp(){
+    let m = document.getElementById("ac1-num");
+    let n = document.getElementById("ac2-num");
+
+    m.value = 1;
+    n.value = 2;
+
+    ackermannFunction(m.value,n.value);
+}
 
 function ackermannFunction(num1, num2) {
     document.getElementById("ackermannResult").innerHTML = "The result is : " + ackermann(num1, num2);
