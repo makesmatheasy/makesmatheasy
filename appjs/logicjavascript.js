@@ -15440,7 +15440,11 @@ function calcexgolds3find() {
 function golds3find() {
     let a = document.getElementById("golds4").value
     let b = document.getElementById("golds5").value
+<<<<<<< HEAD
     if (!isNaN(a) || !isNaN(b)) {
+=======
+    if(!isNaN(a)|| !isNaN(b)){
+>>>>>>> 957d14fbfd8ca04e5b7c312a718c17b42ec1e8e9
         document.getElementById("golds3exp").innerHTML += "\\[Two\\space numbers\\space are\\space said\\space to\\space be\\space in\\space silver\\space ratio\\space if\\space \\]"
         document.getElementById("golds3exp").innerHTML += "\\[The\\space ratio\\space of\\space the\\space sum\\space of\\space the\\space smaller\\space and\\space twice\\space the\\space larger\\space number\\space to\\space the\\space larger\\space number\\space is\\space the\\space same\\space as\\space the\\space ratio\\space of\\space the\\space larger\\space one\\space to\\space the\\space smaller\\space one.\\]"
         document.getElementById("golds3exp").innerHTML += "\\[\\frac{2*A+B}{A} = \\frac{A}{B} = \\delta_{\\varsigma} = {1+ \sqrt{2}} = 2.414  \\]"
@@ -20276,29 +20280,28 @@ function multBinDecHexOct() {
     print += "<h5>Step3 : Now multiply the decimal values found in STEP1 and STEP2</h5>";
     print += x1 + "&nbsp; X &nbsp;" + x2 + "&nbsp; = &nbsp;" + x3;
 
-    // var checkbinary = "[01][01]+";
-    if (resultType === "Binary" && (/^[01]+$/.test(input1) && /^[01]+$/.test(input2))) {
-        result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3, 2);
-        print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
-        print += x3 + "->" + fracDectoBinHexOct(x3, 2);
+    if(input1 === '1' || input1 === '0' || input2 === '1' || input2 === '0')
+    {
+        console.log(input1);
+        if (resultType === "Binary") {
+            result.innerHTML = "Answer in binary=" + fracDectoBinHexOct(x3, 2);
+            print += "<h5>Step4 : To find the result in "+resultType+" convert the answer found in STEP3 to "+resultType+"</h5>";
+            print += x3 + "->" + fracDectoBinHexOct(x3, 2);
+        } else if (resultType === "Octal") {
+            result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3, 8);
+            print += "<h5>Step4 : To find the result in "+resultType+" convert the answer found in STEP3 to "+resultType+"</h5>";
+            print += x3 + "->" + fracDectoBinHexOct(x3, 8);
+        } else if (resultType === "Hexa Decimal") {
+            result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3, 16);
+            print += "<h5>Step4 : To find the result in "+resultType+" convert the answer found in STEP3 to "+resultType+"</h5>";
+            print += x3 + "->" + fracDectoBinHexOct(x3, 16);
+        } else if (resultType === "Decimal") {
+            result.innerHTML = "Answer in Decimal=" + fracDectoBinHexOct(x3, 10);
+            print += "<h5>Step4 : Answer in "+resultType+"</h5>";
+            print += x3.toString();
+        }
+        work.innerHTML = print;
     }
-    else {
-        print = "";
-    }
-    if (resultType === "Octal") {
-        result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3, 8);
-        print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
-        print += x3 + "->" + fracDectoBinHexOct(x3, 8);
-    } else if (resultType === "Hexa Decimal") {
-        result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3, 16);
-        print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
-        print += x3 + "->" + fracDectoBinHexOct(x3, 16);
-    } else if (resultType === "Decimal") {
-        result.innerHTML = "Answer in Decimal=" + fracDectoBinHexOct(x3, 10);
-        print += "<h5>Step4 : Answer in " + resultType + "</h5>";
-        print += x3.toString();
-    }
-    work.innerHTML = print;
 }
 
 //----------------------------
@@ -25638,10 +25641,10 @@ function cylsphcal() {
         outputo.innerHTML = "";
         outputfi.innerHTML = "";
     }
-    else {
-        var sm = x * x + y * y + z * z;
-        var zr = (z / r).toFixed(2);
-        var yx = (y / x).toFixed(2);
+    else{
+        var sm = x*x + y*y + z*z;
+        var zr = (z/r).toFixed(2);
+        var yx = (y/x).toFixed(2);
         var ansr = "\\[r\\space coordinate:\\space \\sqrt{(x^2 + y^2 + z^2)} \\]";
         ansr += "\\[r\\space coordinate:\\space \\sqrt{(" + x + " ^ 2 + " + y + " ^ 2 + " + z + " ^ 2)} \\]";
         ansr += "\\[r\\space coordinate:\\space \\sqrt{" + sm + "} \\]";
