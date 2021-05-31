@@ -24190,17 +24190,27 @@ function findSqrt() {
     const n = parseInt(document.getElementById("squarerootin").value);
     var result = document.getElementById("squarerootresult");
     var found = false;
+    let steps = "";
+    steps += "\\[\\sqrt{n}\\space is\\space the\\space number\\space that\\space gives\\space n\\space when\\space multiplied\\space by\\space itself\\]";
+    steps += "\\[Finding- square\\space roots\\space of\\space numbers\\space that aren't\\space perfect\\space squares\\space :\\]";
+    steps += "\\[1.\\space Estimate\\space -\\space first,\\space get\\space as\\space \\space as\\space you\\space can\\space by\\space finding\\space two\\space perfect\\space square\\space roots\\space your\\space number\\space is\\space between.\\]";
+    steps += "\\[2.\\space Divide\\space -\\space divide\\space your\\space number\\space by\\space one\\space of\\space those\\space square\\space roots.\\]";
+    steps += "\\[3.\\space Average\\space -\\space take\\space the\\space average\\space of\\space the\\space result\\space of\\space step\\space 2\\space and\\space the\\space root.\\]";
+    steps += "\\[4.\\space Use\\space the\\space result\\space of\\space step\\space 3\\space to\\space repeat\\space steps\\space 2\\space and\\space 3\\space until\\space you\\space have\\space a\\space number\\space that\\space is\\space accurate\\space enough\\space for\\space you.\\]";
     while (!found) {
         if (i * i == n) {
-            result.innerHTML = ` The  square root  of  ${n}  is  ${i}`;
+            steps += "\\[\\sqrt{"+n+"}\\space =\\space "+i+"\\]";
             found = true;
         } else if (i * i > n) {
             var res = Square(n, i - 1, i);
-            result.innerHTML = `The square root  of ${n}  is  ${res.toFixed(4)}`;
+            steps += "\\[\\sqrt{"+n+"}\\space =\\space "+res.toFixed(4)+"\\]";
             found = true;
         }
         i++;
     }
+    result.innerHTML = steps;
+    renderMathInElement(result);;
+
 }
 //Variance
 function vpdscal() {
