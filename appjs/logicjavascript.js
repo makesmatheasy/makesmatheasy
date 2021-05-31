@@ -15860,12 +15860,30 @@ function mnapsum() {
     var mtherm = parseFloat(document.getElementById("mthterm").value)
     var ntherm = parseFloat(document.getElementById("nthterm").value)
     var pterm = parseFloat(document.getElementById("pterm").value)
+    var output = document.getElementById("printmnAP");
+    var ans = "";
     var d = ((Math.abs(mtherm - ntherm)) / Math.abs((m - 1) - (n - 1)));
     var a = (mtherm - ((m - 1) * d));
     var sum = (pterm * (2 * a + (pterm - 1) * d)) / 2;
-    document.getElementById("printmnAP").innerHTML = sum
+    if(!isNaN(m) && !isNaN(n) && !isNaN(mtherm) && !isNaN(ntherm) && !isNaN(pterm)){
+        ans += "\\[Let \\space a \\space be \\space the \\space First \\space Term \\space and \\space d \\space be \\space the \\space Common \\space Difference \\space of \\space an \\space AP  \\]"
+        ans += "\\[mth \\space term \\space = \\space a + (m - 1)d \\]"
+        ans += "\\[mth \\space term \\space = \\space a + (n - 1)d \\]"
+        ans += "\\[a \\space = \\space   (  mth  - (( m - 1 ) \\times d )) \\space = \\space ( " + mtherm + " -(( " + m + " - 1 ) \\times " + d + ")) \\space  =  \\space " + a + " \\]"
+        ans += "\\[d  \\space = \\space | \\frac{  mth -  nth }{ (m - 1)  -  (n - 1) } | \\space = \\space | \\frac{ " + mtherm + "-" + ntherm + "}{" + (m - 1) + " - " + (n - 1) + "} | \\space = \\space " + d + " \\]"
+        ans += "\\[Sum \\space of \\space p \\space terms \\space = \\space \\frac{(p \\times ( 2 \\times a + (p - 1) \\times d ))}{2} \\space = \\space \\frac{(" + pterm + " \\times ( 2 \\times " + a + " + (" + pterm + " - 1) \\times " + d  + "))}{2} \\] "
+        ans += "\\[Sum \\space of \\space p \\space terms \\space is \\space " + sum + " \\]"
+        output.innerHTML = ans; 
+    }
+     else
+        {
+           ans += "\\[Please \\space enter \\space valid \\space input \\]"
+           output.innerHTML = ans;
+        }
+       renderMathInElement(output);
+   }
 
-}
+
 function calcexmnap(){
     var m = document.getElementById("mterm99").value=5;
     var n = document.getElementById("nterm98").value=2;
