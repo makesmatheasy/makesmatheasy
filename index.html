@@ -15215,12 +15215,16 @@
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Chi-Square Test</h1>
             <p style="margin: 0 auto 4rem auto; font-style: italic;">(Single Row Data)</p>
             <p style="margin: 0 auto 6rem auto; font-style: italic;">A chi-square (χ2) statistic is a test that measures how a model compares to actual observed data. The data used in calculating a chi-square statistic must be random, raw, mutually exclusive, drawn from independent variables, and drawn from a large enough sample.</p>
-            <input class = "form__field"type="text" id="obsList" placeholder="Enter Observed List Separated by SPACE">
-            <br><br>
-            <input class = "form__field"type="number" id="sigValue" placeholder="Enter given Significance value (χ2)">
-            <br><br>
-        
-            <button class = "btn btn-light" onclick="chivalue()">Test</button>
+            <form action="">
+                <input class = "form__field"type="text" id="obsList" placeholder="Enter Observed List Separated by SPACE">
+                <br><br>
+                <input class = "form__field"type="number" id="sigValue" placeholder="Enter given Significance value (χ2)">
+                <br><br>
+            
+                <button class = "btn btn-light" onclick="chivalue()">Test</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <p id="chians"></p>
             <br>
             <p id="chitestans"></p>
@@ -15234,6 +15238,7 @@
                 Lead Time is used in manufacturing, supply chain management, and project management.</p>
            <br>
            <br>
+           <form action="">
             <input class = "form__field"type="number" id="pre" placeholder="Pre Processing Time (in minutes)">
             <br><br>
             <input class = "form__field"type="number" id="pro" placeholder="Processing Time(in minutes)">
@@ -15241,6 +15246,9 @@
             <input class = "form__field"type="number" id="post" placeholder="Post Processing Time (in minutes)">
             <br><br>
             <button class = "btn btn-light" onclick="leadvalue()">Test</button>
+            <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+           </form>
+            
             <p id="leadans"></p>
             <br>
           </div>
@@ -22377,7 +22385,8 @@
 <div id="mecs" class="collapse">
     <h1 style="text-align: center;">MARGIN OF ERROR CALCULATOR </h1>
     <br>
-    <input type="number" name="conf" class="form__field" id="conf" width="5em" placeholder="Enter Z-score">
+    <form action="">
+        <input type="number" name="conf" class="form__field" id="conf" width="5em" placeholder="Enter Z-score">
     <br>
     <input type="number" name="samsize" class="form__field" id="samsize" placeholder="Enter sample size">
     <br>
@@ -22387,6 +22396,8 @@
     <br>
     <div style="display:flex; justify-content:center;align-items:center;">
     <button type="button" class="btn btn-outline-light" onclick="mecal()">Calculate</button>
+    <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+    </form>
     </div>
     <p id="mecans" style="color:#ababab !important; text-align: center; font-size:22px; font-family:mathfont">
         <br>
