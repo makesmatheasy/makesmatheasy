@@ -7051,11 +7051,11 @@ function tanglenght() {
 }
 function tangeqution() {
     var a, b, c, d, e, f;
-    g = parseInt(document.getElementById("acenterrp").value);
-    f = parseInt(document.getElementById("bcenterrp").value);
-    c = parseInt(document.getElementById("ccenterrp").value);
-    a = parseInt(document.getElementById("bcenterrpx").value);
-    b = parseInt(document.getElementById("bcenterrpy").value);
+    var g = parseInt(document.getElementById("acenterrp").value);
+    var f = parseInt(document.getElementById("bcenterrp").value);
+    var c = parseInt(document.getElementById("ccenterrp").value);
+    var a = parseInt(document.getElementById("bcenterrpx").value);
+    var b = parseInt(document.getElementById("bcenterrpy").value);
     var x  = g/2;
     var y = f/2;
 
@@ -7070,7 +7070,7 @@ function tangeqution() {
         document.getElementById("centererp").innerHTML += " Equation \\space = \\space \\ ( \\space a \\space + \\space g) \\space  x  + \\space ( \\space b \\space + \\space f ) \\space  y   \\space + ( \\space  ga \\space + fy \\space  + c \\space ) \\newline \\] ";
 
         
-        document.getElementById("centerrrp").innerHTML += " \\[  "+ one + "x \\space + (" +  two + ") y \\space +("+three + ") \\space = \\space 0 \\newline \\] ";
+        document.getElementById("centerrrp").innerHTML = " \\[  "+ one + "x \\space + (" +  two + ") y \\space +("+three + ") \\space = \\space 0 \\newline \\] ";
        
 
     
@@ -7080,6 +7080,35 @@ function tangeqution() {
 
 }
 
+function radeq() {
+    var a, b, c, d, e, f;
+    var g1 = parseInt(document.getElementById("acenterrpr1").value);
+    var f1 = parseInt(document.getElementById("bcenterrpr1").value);
+    var c1 = parseInt(document.getElementById("ccenterrpr1").value);   
+    var g2 = parseInt(document.getElementById("acenterrpr2").value);
+    var f2 = parseInt(document.getElementById("bcenterrpr2").value);
+    var c2 = parseInt(document.getElementById("ccenterrpr2").value);
+    
+    var x  = g/2;
+    var y = f/2;
+
+    var one = g1-g2;
+    var two = f1-f2;
+    var three = c1-c2;
+
+    
+        document.getElementById("centererpr").innerHTML = "\\[Radial  \\space Axis  \\space of  \\space circles \\space = \\space A \\space - \\space B  \\newline \\] ";
+        
+        
+        document.getElementById("centerrrpr").innerHTML = " \\[  "+ one + "x \\space + (" +  two + ") y \\space +("+three + ") \\space = \\space 0 \\newline \\] ";
+       
+
+    
+
+    renderMathInElement(document.getElementById("centererpr"));
+    renderMathInElement(document.getElementById("centerrrpr"));
+
+}
 // number of diagonals in n sided convex polygon
 function nodiagnolfind() {
     var n = parseInt(document.getElementById('nodiagnol').value);
