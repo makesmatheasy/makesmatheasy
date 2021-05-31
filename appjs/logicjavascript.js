@@ -28151,3 +28151,21 @@ function CulNum(num){
     ans += `<br> Step 3: Hence the result is: ${(((1 << num) * num) + 1)} `;
     document.getElementById('culans').innerHTML = ans;
 }
+
+function PellNum(num) {
+    let flag=0;
+    if (num <= 2)
+        flag=1;
+    let a = 1;
+    let b = 2;
+    let c;
+    for (let i = 3; i <= num; i++) {
+        c = 2 * b + a;
+        a = b;
+        b = c;
+    }
+    if (!flag)
+        document.getElementById('pellans').innerHTML = "The result is: " + num;
+    else
+        document.getElementById('pellans').innerHTML = "The result is: " + b;
+}
