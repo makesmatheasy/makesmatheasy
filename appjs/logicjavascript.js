@@ -4002,6 +4002,13 @@ function interpointsolve() {
     }
 }
 //Aliquot Sum
+function calcexalisumfind(){
+    var n = document.getElementById("alisum");
+    n.value = 3;
+
+    alisumfind();
+}
+
 function alisumfind() {
     let n = parseInt(document.getElementById("alisum").value)
     let sum = 0;
@@ -4026,6 +4033,14 @@ function alisumfind() {
         document.getElementById("aliexplain").innerHTML = explain1 + explain2;
         renderMathInElement(document.getElementById("aliexplain"));
     }
+}
+
+
+function calcexalisum1find(){
+    var num = document.getElementById("alisum1");
+    num.value = 20;
+
+    alisum1find();
 }
 
 function alisum1find() {
@@ -4057,6 +4072,15 @@ function alisum1find() {
     document.getElementById("alisum1ans").innerHTML = " Please ENer valid input"
 }
 
+
+function calcexalisum3find(){
+    var n = document.getElementById("alisum3");
+    n.value = 4;
+
+    alisum3find();
+
+}
+
 function alisum3find(){
     let n = parseInt(document.getElementById("alisum3").value);
     document.getElementById("alisum3ans").innerHTML = "";
@@ -4066,6 +4090,14 @@ function alisum3find(){
 
         document.getElementById("alisum3ans").innerHTML +=  "<br/>";
     }
+}
+
+
+function calcexalisum4find(){
+    var n = document.getElementById("alisum4");
+    n.value = 5;
+
+    alisum4find();
 }
 
 function alisum4find(){
@@ -4098,6 +4130,14 @@ function Hosoya(n, m)
         else
             return 0;
     }
+
+
+function calcexalisum2find(){
+    var n = document.getElementById("alisum2");
+    n.value = 2;
+
+    alisum2find();
+}
 
 function alisum2find() {
     let n = parseInt(document.getElementById("alisum2").value)
