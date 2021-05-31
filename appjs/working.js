@@ -1608,6 +1608,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#cylcarcalbtn").click(function () {
+        openit("#cylcarcal");
+        closenav();
+        clearall();
+    });
 
 
     $("#bayesprobabilitycollapsebtn").click(function () {

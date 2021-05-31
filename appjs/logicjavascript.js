@@ -16818,6 +16818,7 @@ function nap() {
 
 
 
+
 }
 //Constant/Increasing/Decreasing AP
 function calcexconstAp() {
@@ -17438,19 +17439,38 @@ function lacubefind() {
 }
 // Cartesian Coordinates to Polar Coordinate Calculator
 //---------------------------
-function car_polar() {
+function car_polar(){
     let x = parseInt(document.getElementById("car_x").value);
     let y = parseInt(document.getElementById("car_y").value);
     var resul = document.getElementById("car_polar_res");
-    if (!isNaN(parseInt(x)) || !isNaN(parseInt(y))) {
-        var r = Math.sqrt((x * x) + (y * y));
-        var theta = Math.atan(y / x);
-        resul.innerHTML = "Polar coordinate is: r = " + r + " and theta = " + theta + " in degree";
+    if (!isNaN(parseInt(x)) || !isNaN(parseInt(y))){
+         var r = Math.sqrt((x*x)+(y*y));
+         var theta = Math.atan(y/x);
+         resul.innerHTML = "Polar coordinate is: r = "+r+" and theta = "+theta+" in degree";
     }
-    else {
+    else 
+    {
         resul.innerHTML = "Enter valid numbers";
     }
 
+    
+}
+
+function cylin_car(){
+    let p = parseInt(document.getElementById("cylcar_p").value);
+    let theta = parseInt(document.getElementById("cylcar_the").value);
+    let z = parseInt(document.getElementById("cylcar_z").value);
+    var resul = document.getElementById("cylcar_res");
+    if (!isNaN(parseInt(p)) || !isNaN(parseInt(theta)) || !isNaN(parseInt(z))){
+         var x = p*cos(theta);
+         var y = p*sin(theta);
+         var z1 = z;
+         resul.innerHTML = "Cartesian coordinate is: x = "+x+", y = "+y+" and z = "+z1;
+    }
+    else 
+    {
+        resul.innerHTML = "Enter valid values";
+    }
 
 }
 
