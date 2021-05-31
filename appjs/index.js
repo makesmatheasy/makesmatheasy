@@ -434,6 +434,7 @@ function openit(id) {
         "#elonpentpyr",
         "#hypergeos",
         "#condprobability",
+        "#randommean",
         "#geoprobability",
         "#prism",
         "#pentprism",

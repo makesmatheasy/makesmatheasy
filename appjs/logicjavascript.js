@@ -23745,6 +23745,27 @@ function condprobability() {
 
     }
 }
+
+
+function randommeanCal() {
+    var numbers = document.getElementById('randommean1').value;
+    var probs = document.getElementById('randommean2').value;
+
+    var sumx = 0;
+    var sumv = 0;
+    var xp = [];
+    for(var i=0;i<numbers.length;i++){
+        xp[i] = numbers[i]*probs[i];
+        sumx += xp[i];
+        xxp[i] = numbers[i]*numbers[i]*probs[i];
+        sumv += xxp[i];
+    }
+    
+    document.getElementById(randommeanans) = "Mean of random variable: " + sumx;
+    document.getElementById(randomvarans) = "Variance of random variable: " + sumv;
+
+}
+
 //Form the Cubic equation from the given roots
 function rootscubicfind() {
     let a = parseInt(document.getElementById("rootscubicin1").value)

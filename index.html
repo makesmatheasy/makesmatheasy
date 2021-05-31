@@ -4814,6 +4814,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="randommeanbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Mean and Variance of Random Variable</a></td>
+                        <td style="float:right;border-top: none;">
+                             <span
+                                     onclick="addtofavourite('Mean and Variance of Random Variable','#randommean','c','randommeanfav')"><img
+                                     id="randommeanfav" src="images/unfavourite.png"
+                                     style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="jointprobabilitycollapsebtn"
                                style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Joint Probability</a>
                         </td>
@@ -25940,6 +25955,40 @@ N is the population size.
             </div>
         </div>
 
+<!-- Mean and Variance of Random variable-->
+<div class="collapse" id="randommean" style="text-align: center;">
+    <h1 style="text-align: center;">Mean and Variance of Random variable</h1><br><br>
+    <form action="">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="randommean1" placeholder="Enter the datasets">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="randommean2" placeholder="Enter probabability for each data">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                    onclick="randommeanCal()">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+    
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="randommeanans"></p>
+    </div>
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="randomvarans"></p>
+    </div>
+</div>
 
         <!--Joint  Probability-->
         <div class="collapse" id="joint-probabilitycollapse">

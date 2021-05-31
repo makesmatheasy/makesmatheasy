@@ -475,6 +475,7 @@ Other Tech/Libraries
   - Hypergeometric Distribution Statistics
   - Exponential Distribution Calculator
   - Gamma Distribution Calculator
+  - Mean and Variance of Random variable
 - Statistics
 
   - Statistics Formulae
