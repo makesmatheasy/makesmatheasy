@@ -1882,6 +1882,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="bmi"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">B.M.I Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('B.M. I Calculator','#bmis','c','bmiimgfav')"><img
+                                        id="bmiimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+ 
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="perrankcalbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentile Rank Calculator
                                 </a>
@@ -3216,6 +3232,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="culnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cullen Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Cullen Number','culnum','c','culnumimgfav')"><img
+                                        id="culnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -3878,7 +3909,6 @@
                     </tr>
                 </table>
             </li>
-            
             <li>
                 <table class="table">
                     <tr>
@@ -3894,6 +3924,22 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="archimedeanbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;filter: none;">Archimedean Solids</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Archimedean Solids','#archimedean','c','archimedeanimgfav')"><img
+                                        id="archimedeanimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+
             <li>
                 <table class="table">
                     <tr>
@@ -5152,6 +5198,21 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="rsqr"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">R-Squared Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('R-Squared Calculator','#rsqrs','d','rsqrsimgfav')"><img
+                                        id="rsqrsimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="sensibtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sensitivity and Specificity</a>
                         </td>
@@ -5868,6 +5929,14 @@
             </form>
         
             <h4 id="sieveans"></h4>
+            <h2>Sieve of Atkin</h2>
+            <br>
+            <input type="text" id="sieve2" class="form__field"placeholder="Enter the number">
+            <br>
+            <button type="button" class="btn btn-dark" onclick="sieve2find()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            <br>
+            <h5 id="sieve2ans"></h5>
         </div>
         <!--        start factors-->
         <div class="collapse" id="factors">
@@ -6923,7 +6992,7 @@
             <h4 id="collop1" class="text-center" style="color:white"></h4><br>
             <h4 id="collop2" class="text-center" style="color:white"></h4><br><br>
 
-            <h3 style="text-align: center;">Line Perpendicular/Parallel To Given Line and Pass through the Point</h3><br>
+            <h3 style="text-align: center;">Line and one Point</h3><br>
             <form action="">
                 <div class="coll">
                     <p>
@@ -6931,11 +7000,17 @@
                     <input type="text" id="plpb" size=3 value='' placeholder="B"> y  = <input type="text" id="plpc" size=3 value='' placeholder="C"><br><br>
                         Point = (<input type="text" id="plpx" size=5 value='' placeholder="x"> , 
                     <input type="text" id="plpy" size=5 value='' placeholder="y">)<br><br>
+                    <button type="button" class="btn btn-light" onclick=reflex()>
+                        Reflexation of point by line
+                    </button>
                     <button type="button" class="btn btn-light" onclick=plpSolve()>
                         Find Equation Of Perpendicular Line
                     </button>
                     <button type="button" class="btn btn-light" onclick=pppSolve()>
                         Find Equation Of Parallel Line
+                    </button>
+                    <button type="button" class="btn btn-light" onclick=foot()>
+                        Foot of point on line
                     </button>
                     <button type="button" class="btn btn-light" onclick="this.form.reset();">
                         Reset
@@ -7712,14 +7787,12 @@
                 <input type="text" id="cirinsemi13in" placeholder="Enter x coordinate of 1st vertex" class="form__field">
                 <input type="text" id="cirinsemi14in" placeholder="Enter y coordinate of 1st vertex" class="form__field">
                 <input type="text" id="cirinsemi15in" placeholder="Enter x coordinate of 2nd vertex" class="form__field">
-                <input type="text" id="cirinsemi16in" placeholder="Enter y coordinate of 2nd vertex" class="form__field">
-                <br>
+                <input type="text" id="cirinsemi16in" placeholder="Enter y coordinate of 2nd vertex" class="form__field">                <br>
                 <button type="button" class="btn btn-dark" onclick="cirinsemi10find()">Find</button>
                 <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-            </form>
-            
-            <br>
+            </form><br>
             <h5 id="cirinsemi10ans"></h5>
+            <h5 id="cirinsemi10exp"></h5>
             <br>
             <h4>Division of  an isosceles triangle in two parts with ratio of areas as n:m </h4>
             <br>
@@ -10310,14 +10383,10 @@
             <p id="lacube13ans"></p>
             <p id="lacube13exp"></p>
             <br>
-            <h2>Check whether a number can be represented by sum of two cubes</h2>
-            <br>
-            <input type="text" id="lacube15" class="form__field" placholder="Enter the number">
-            <br>
-            <button type="button" class="btn btn-dark" onclick="lacube14find()">Find</button>
-            <br>
-            <p id="lacube14ans"></p>
-            <br>
+            <h2>Check whether a number can be represented by sum of two cubes</h2><br>
+            <input type="text" id="lacube15" class="form__field" placholder="Enter the number">           <br>
+            <button type="button" class="btn btn-dark" onclick="lacube14find()">Find</button>            <br>
+            <p id="lacube14ans"></p><p id="lacube14exp"></p><br>
             <h2>Check whether a number can be represented by difference of two cubes</h2>
             <br>
             <input type="text" id="lacube16" class="form__field" placholder="Enter the number">
@@ -13469,16 +13538,13 @@
             <br>
             </form>
             <br>
-            <h2>Check if a number is Primorial Prime or not</h2>
-            <br>
+            <h2>Check if a number is Primorial Prime or not</h2>            <br>
             <form>
-            <input type="text" id="golds7" class="form__field"placeholder="Enter the number">
-            <br>
+            <input type="text" id="golds7" class="form__field"placeholder="Enter the number">            <br>
             <button type="button" class="btn btn-dark" onclick="golds5find()">Find</button>
-            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>      
             <br>
-            <h5 id="golds5ans"></h5>
-            <br>
+            <h5 id="golds5ans"></h5 id="golds5exp"></h5> <br>
             </form>
         </div>
 
@@ -13907,14 +13973,11 @@
                 <input type="text" id="alisum3"class="form__field"placeholder="Enter the height of triangle ">
                 <br><br>
                 <button class="btn btn-dark" onclick="alisum3find()">Find</button>
-                <button class="btn btn-dark" onclick="calcexalisum3find()">
-                    Find
-                </button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                <br>
-            </form>
-            
+                <button class="btn btn-dark" onclick="calcexalisum3find()"> Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>                <br>
+            </form>            
             <p id="alisum3ans" style="font-size: 26px;"></p>
+            <p id="alisum3exp" style="font-size: 26px;"></p>
             <br>
             <p>Cassini’s Identity</p>
             <br>
@@ -13999,28 +14062,27 @@
         </div>
         <!-- end of Double Factorial calculator -->
         <!-- start of Catalan numbers calculator -->
-        <div>
-            <div class="collapse" id="catNum">
+        <div class="collapse" id="catNum" style="text-align: center;">
+            <div class="container">
+                <h2 style="color: white;font-family:mathfont;text-align: center;">Catalan Numbers</h2>
+                <br>
+                <p>The Catalan numbers form a sequence of natural numbers that occur in various counting problems, often involving recursively defined objects.  </p>
+                <p>The nth Catalan number is given as: \[C_n = \frac{1}{n+1}{2n\choose n} = \frac{(2n)!}{(n+1)!\,n!}\]</p>
+                <br>
                 <form action="">
-                    <div class="form-group" style="display:inline-block">
-                        <label>Enter the number : &nbsp; &nbsp; </label>
-                        <input type="number" id="cat-num" class="form__field" placeholder="x"
-                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    <div class="form-group">
+                        <input style="color: white; font-family:mathfont" type="number" id="cat-num" placeholder="Enter the input number" class="form__field">
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-light"
-                                onclick="catalanNumbers(document.getElementById('cat-num').value);">
-                            Solve
-                        </button>
-                        <button type="button" class="btn btn-light"
-                                onclick="this.form.reset();">
+                        <button type="button" class="btn btn-light" onclick="catalanNumbers(document.getElementById('cat-num').value);">Find</button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
                             Reset
                         </button>
                     </div>
                 </form>
-                
+                <br>
                 <div class="form-group text-center">
-                    <p class="stopwrap" style="color:white;" id="catNumResult"></p>
+                    <p class="stopwrap" style="color:white;" id="catNumResult"></p><br>
                 </div>
             </div>
         </div>
@@ -14133,6 +14195,10 @@
                         <button type="button" class="btn btn-light"
                                 onclick="ackermannFunction(document.getElementById('ac1-num').value,document.getElementById('ac2-num').value);">
                             Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="calcexackermannFunction(document.getElementById('ac1-num').value,document.getElementById('ac2-num').value);">
+                            Example
                         </button>
                         <button type="button" class="btn btn-light"
                                 onclick="this.form.reset();">
@@ -15153,6 +15219,24 @@
             </div>
         </div>
 
+        <div class="collapse" id="rsqrs">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">R-Squared Calculator</h1>
+            <p style="margin-top: 2rem; ">
+                R Squared Calculator is used for data analysis programmed to predict the future outcome with respect to the proportion of variability in the other data set. 
+                <br>
+                The coefficient of equation R<sup>2</sup> as an overall summary of the effectiveness of a least squares equation. 
+                <br>           
+             </p>
+             <p>&nbsp;</p>
+            <form action="">
+                <input class = "form__field"type="text" id="rsqrs1" placeholder="Enter list of number separated by SPACE(sample x) ">
+                <br><br>
+                <input class = "form__field"type="text" id="rsqrs2" placeholder="Enter list of number separated by SPACE(sample y)">
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="rsqrsfind()">Calculate</button>
+            </form>
+            <p id="rsqrsans"></p>
+        </div>
         <!-- t -test -->
         <div class="collapse" id="ttest">
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">T - Test</h1>
@@ -15293,27 +15377,48 @@
          <!-- z -test -->
          <div class="collapse" id="ztest">
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Z - Test</h1>
-            <p style="text-align: left;">H<sub>o</sub> : μ = μ<sub>o</sub>  (Null Hypothesis)</p>
-            <p style="text-align: left; margin-bottom: 2rem;">H<sub>a</sub> : μ ≠ μ<sub>o</sub>  (Alternative Hypothesis)</p>
+            
+            <h3 style="text-align:center;">What is Z-Test</h3>
+
+            <br>
+
+            <p style="color:#ababab !important;">
+                Z-test is a statistical test to determine whether two population means are different when the variances are known and the sample size is large. Z-test is a hypothesis test in which the z-statistic follows a normal distribution. A z-statistic, or z-score, is a number representing the result from the z-test.<
+            </p>
+<br>
+
+            <p style=" color:#ababab !important; text-align: center;">H<sub>o</sub> : μ = μ<sub>o</sub>  (Null Hypothesis)</p>
+            <p style=" color:#ababab !important; text-align: center; margin-bottom: 2rem;">H<sub>a</sub> : μ ≠ μ<sub>o</sub>  (Alternative Hypothesis)</p>
             <form action="">
                 <input class = "form__field"type="number" id="pm" placeholder="Enter Population Mean (µ0)">
-                <br><br>
+                <br>
+                <br>
                 <input class = "form__field"type="number" id="sm" placeholder="Enter Sample Mean (x)">
-                <br><br>
+                <br>
+                <br>
                 <input class = "form__field"type="number" id="sd" placeholder="Enter Standard Deviation (σ)">
-                <br><br>
+                <br> 
+                <br>
                 <input class = "form__field"type="number" id="sn" placeholder="Enter Sample Number (n)">
-                <br><br>
-                <label for="">Significance Level</label>
+                <br>
+                <br>
+                <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                <label for="" style="font-size:24px;">Significance Level</label>
+            
                 <br>
                 <select name="alpha" id="alpha">
                     <option value=0.01>0.01</option>
                     <option value=0.05>0.05</option>
                     <option value=0.1>0.1</option>
                 </select>
-                <br><br>
-                <button class = "btn btn-light" onclick="zvalue()">Test</button>
-                <button class = "btn btn-light" onclick="this.form.reset();">Result</button>
+            </div>
+
+                <br>
+                <br>
+                <div style="display:flex;justify-content:center;align-items:center;">
+                <button  style="width:87px;" class = "btn btn-light" onclick="zvalue()">Test</button>
+                <button  style="width:87px;" class = "btn btn-light" onclick="this.form.reset();">Result</button>
+            </div>
             </form>
             
             <p id="zworking"></p>
@@ -16498,6 +16603,9 @@
                         <button type="button" class="btn btn-light" onclick=heightdist1()>
                             Find
                         </button>
+                        <button type="button" class="btn btn-light" onclick=calcexheightdist1()>
+                            Example
+                        </button>
                     </div>
                     <div class="col-6">
                         <button type="button" class="btn btn-light"
@@ -16520,12 +16628,17 @@
                 placeholder="Enter Angle of Depression in degree(∠BCA)"
                 style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <button type="button" class="btn btn-light" onclick=heightdist9()>
                             Find
                         </button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-light" onclick=calcexheightdist9()>
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
                         onclick="this.form.reset();">
                         Reset
@@ -20276,6 +20389,9 @@
                 <br><br>
             <button type="button" class="btn btn-light" onclick=inmed()>
                 Check
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
             </button><br>
             </p>
 
@@ -20441,6 +20557,9 @@
                                 <br><br>
                         <button type="button" class="btn btn-light" onclick=incircum()>
                             Check
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
                         </button><br>
                         </p>
     
@@ -22189,6 +22308,45 @@
     <p>&nbsp;</p>
     <p style="font-family:mathfont" id="vectans1"></p><br>
     
+<<<<<<< HEAD
+||||||| 2939325
+>>>>>>> feac54b3b5aa3e3d5a459bba647b418a389f6d2e
+=======
+</div>
+
+<div class="collapse" id="bmis">
+    <h1 style="color: white;font-family:mathfont">B.M.I Calculator</h1><p>&nbsp;</p>
+    
+    
+      <h3> Enter Height:</h3><br>
+       <input cl style="color: white; font-family:mathfont" type="text"id="bmis1" placeholder="(feet)" class="form__field" ><input style="color: white; font-family:mathfont" type="text"id="bmis2" placeholder="(inches)" class="form__field"><p>&nbsp;</p>
+      <h3> Enter Weight:</h3><br>
+       <input style="color: white; font-family:mathfont" type="text"id="bmis3" placeholder="(in kg)" class="form__field" ><p>&nbsp;</p>
+    <button type="button" class="btn btn-dark" onclick="bmifind()">Find</button>
+   
+
+    <p>&nbsp;</p>
+    <p style="font-family:mathfont" id="bmians"></p><br>
+    
+</div>
+
+<div id="bmis" class="collapse">
+    <h1 style="color: white;font-family:mathfont">B.M.I Calculator</h1><p>&nbsp;</p>
+    
+    
+      <h3> Enter Height:</h3><br>
+       <input cl style="color: white; font-family:mathfont" type="text"id="bmis1" placeholder="(feet)" class="form__field" ><input style="color: white; font-family:mathfont" type="text"id="bmis2" placeholder="(inches)" class="form__field"><p>&nbsp;</p>
+      <h3> Enter Weight:</h3><br>
+       <input style="color: white; font-family:mathfont" type="text"id="bmis3" placeholder="(in kg)" class="form__field" ><p>&nbsp;</p>
+    <button type="button" class="btn btn-dark" onclick="bmifind()">Find</button>
+   
+
+    <p>&nbsp;</p>
+    <p style="font-family:mathfont" id="bmians"></p><br><br>
+    <p  id="bmians1"></p><br>
+
+    
+>>>>>>> 8bd371ae4caeca64b2ead951686c8510ff5f35dd
 </div>
 
 <div class="collapse" id="hypers" style="text-align: center;">
@@ -23255,6 +23413,9 @@ N is the population size.
        <input type="text" id="typenum0" class="form__field" placeholder="Enter the number">
        <p>&nbsp;</p>
        <button type="button" class="btn btn-dark" onclick="typenumfind()">Find</button>
+       <button type="button" class="btn btn-dark" onclick=calcextypenumfind()>
+        Example
+       </button>
        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
    
        <p>&nbsp;</p>
@@ -23268,6 +23429,9 @@ N is the population size.
     <input type="text" id="typenum1" class="form__field"placeholder="Enter the number">
     <br>
     <button type="button" class="btn btn-dark" onclick="typenum1find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick=calcextypenum1find()>
+        Example
+       </button>
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
 
     <br>
@@ -23281,6 +23445,9 @@ N is the population size.
     <input type="text" id="typenum2" class="form__field"placeholder="Enter the number">
     <br>
     <button type="button" class="btn btn-dark" onclick="typenum2find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick=calcextypenum2find()>
+        Example
+       </button>
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
 
     <br>
@@ -23293,6 +23460,9 @@ N is the population size.
     <input type="text" id="typenum47" class="form__field"placeholder="Enter the number ">
     <br>
     <button type="button" class="btn btn-dark" onclick="typenum47find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick=calcextypenum47find()>
+        Example
+       </button>
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     <br>
     <br>    
@@ -23306,8 +23476,8 @@ N is the population size.
     <button type="button" class="btn btn-dark" onclick="typenum48find()">Find</button>
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     <br>
-    <br>    
     <h5 id="typenum48ans"></h5>
+    <h5 id="typenum48exp"></h5>
     <h2>Check for Amicable Pair</h2>
     <br>
     <form>
@@ -23315,6 +23485,9 @@ N is the population size.
     <input type="text" id="typenum4" class="form__field"placeholder="Enter the number 2">
     <br>
     <button type="button" class="btn btn-dark" onclick="typenum3find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick=calcextypenum3find()>
+        Example
+       </button>
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
 
     <br>
@@ -23328,6 +23501,9 @@ N is the population size.
     <input type="text" id="typenum5" class="form__field"placeholder="Enter the last number in the range">
     <br>
     <button type="button" class="btn btn-dark" onclick="typenum4find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick=calcextypenum4find()>
+        Example
+       </button>
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
 
     <br>
@@ -23492,18 +23668,47 @@ N is the population size.
     <h5 id="typenum20exp"></h5>
     <br>
     </form>
+    <br>
+    <h2>Dyck path</h2>    <br>
+    <form>
+    <input type="text" id="typenum31" class="form__field"placeholder="Enter the number">    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum21find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>    <br>
+    <h5 id="typenum21ans"></h5>
+    <h5 id="typenum21exp"></h5>
+    <br>
+    </form>
 </div>
 
 <div class="collapse" id="pvalues">
 
     <h1 style="font-family:mathfont; text-align:center;">P VALUE CALCULATOR </h1>
+
+<br>
+
+    <h3 style="text-align:center;">What is P value ?</h3>
+
+<br>
+
+<p style="color:#ababab !important;">
+    The p-value is the probability that the test statistic will produce values at least as extreme as the value it produced for your sample. 
+    <br>
+    <br>
+    It is crucial to remember that this probability is calculated under the assumption that the null hypothesis is true!
+</p>
+
     <form>
         <input type="number" name="pvalueinp" class="form__field" id="rawscore" width="5em" placeholder="Enter the Z score">
-        <p>&nbsp;</p>
-        <button type="button" class="btn btn-outline-light" onclick="pvaluecal()">Calculate</button>
-        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+  <br>
+
+       <div style="display:flex;justify-content:center;text-align:center">
+        <button style="width:87px;" type="button" class="btn btn-outline-light" onclick="pvaluecal()">Calculate</button>
+        <button style="width:87px;" type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
         <p id="pvalueans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
-        <p>&nbsp;</p>
+        
+       </div>
+        <br>
+
     </form>
 </div>   
 
@@ -24079,6 +24284,236 @@ N is the population size.
                         </h4>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="collapse" id="archimedean">
+    <div class="stopwrap">
+        <div class="coll">
+            <div class="left">
+                <h1 style="text-align:center;">Archimedean Solids</h1>
+                <br>
+                <br>
+                <h3 style="text-align:center;">A Archimedean Solids is a 3D shape where:</h3>
+                <br>  
+                    <li style="color:#ababab !important; font-size:22px  !important">number of vertices is 720° divided by the vertex angle defect</li>
+                    <li style="color:#ababab !important; font-size:22px !important">faces surrounding each vertex are of the same types </li>
+                </h3>
+                <br>
+                <br>
+                <h3  style="text-align:center;" >There are only 13 archimedean solids.</h3>
+                <br>
+                <br>
+                <h3>1. Truncated tetrahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Truncatedtetrahedron.jpg/70px-Truncatedtetrahedron.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li >8 Faces</li>
+                        <li >12 Vertices</li>
+                        <li >18 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>2. Cuboctahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cuboctahedron.jpg/70px-Cuboctahedron.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li  >14 Faces</li>
+                        <li >12 Vertices</li>
+                        <li >24 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>3. Truncated cube</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Truncatedhexahedron.jpg/70px-Truncatedhexahedron.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>14 Faces</li>
+                        <li>24 Vertices</li>
+                        <li >36 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>4. Truncated Octahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Truncatedoctahedron.jpg/70px-Truncatedoctahedron.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>14 Faces</li>
+                        <li>24 Vertices</li>
+                        <li>36 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>5. Rhombicuboctahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Rhombicuboctahedron.jpg/70px-Rhombicuboctahedron.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>26 Faces</li>
+                        <li >24 Vertices</li>
+                        <li>48 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>6. Truncated cuboctahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Truncatedcuboctahedron.jpg/70px-Truncatedcuboctahedron.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>26 Faces</li>
+                        <li>48 Vertices</li>
+                        <li>72 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>7. Snub cube</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Snubhexahedronccw.jpg/70px-Snubhexahedronccw.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>38 Faces</li>
+                        <li>24 Vertices</li>
+                        <li>60 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>8. Icosidodecahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Icosidodecahedron.jpg/70px-Icosidodecahedron.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>32 Faces</li>
+                        <li>30 Vertices</li>
+                        <li>60 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>9. Truncated dodecahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Truncateddodecahedron.jpg/70px-Truncateddodecahedron.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>32 Faces</li>
+                        <li>60 Vertices</li>
+                        <li>90 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>10. Truncated icosahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Truncatedicosahedron.jpg/70px-Truncatedicosahedron.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>32 Faces</li>
+                        <li>60 Vertices</li>
+                        <li>90 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>11. Rhombicosidodecahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Rhombicosidodecahedron.jpg/70px-Rhombicosidodecahedron.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>62 Faces</li>
+                        <li>60 Vertices</li>
+                        <li>120 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>12. Truncated icosidodecahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Truncatedicosidodecahedron.jpg/70px-Truncatedicosidodecahedron.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>62 Faces</li>
+                        <li>120 Vertices</li>
+                        <li>180 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h3>13. Snub dodecahedron</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Snubdodecahedroncw.jpg/70px-Snubdodecahedroncw.jpg" style="height:9.375rem"
+                                         class="img-fluid">
+                    </div>
+                    <div class="col-6">
+                        <h4 style="text-align: left;">
+                        <li>92 Faces</li>
+                        <li>60 Vertices</li>
+                        <li>150 Edges</li>
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <br>
             </div>
         </div>
     </div>
@@ -26806,57 +27241,62 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_add" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_add" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_add" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_add" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
+    
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">+
+                            </div>
+    
+    
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_add" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_add" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">+
-                        </div>
-
-
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_add" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
+                            <div>
+                                <var id="addz" style="color: aliceblue;font-size: 1.125rem;" ></var>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_add" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <var id="addz" style="color: aliceblue;font-size: 1.125rem;" ></var>
-                        </div>
-                        <br>
-
-                        <center>
-                            <button type="button" class="btn btn-light" ; onclick="additon()">
-                                ADD
-                            </button>
-                        </center>
-
-                        <br>
+                            <br>
+    
+                            <center>
+                                <button type="button" class="btn btn-light" ; onclick="additon()">
+                                    ADD
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+                            <br>
+                        </form>
+                        
 
                         <div style="display: flex; justify-content: center;">
 
@@ -26923,58 +27363,63 @@ N is the population size.
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
 
-
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_sub" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_sub" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_sub" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_sub" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
+    
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
+                                -
+                            </div>
+    
+    
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_sub" placeholder="Numerator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_sub" placeholder="Denominator" type="number" required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
-                            -
-                        </div>
-
-
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_sub" placeholder="Numerator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
+                            <div>
+                                <var id="subz" style="color: aliceblue;font-size: 1.125rem;"></var>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_sub" placeholder="Denominator" type="number" required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <var id="subz" style="color: aliceblue;font-size: 1.125rem;"></var>
-                        </div>
-                        <br>
-                        <center>
-
-                            <button type="button" class="btn btn-light" ; onclick="subtractiom()">
-                                SUBTRACT
-                            </button>
-                        </center>
-
-                        <br>
+                            <br>
+                            <center>
+    
+                                <button type="button" class="btn btn-light" ; onclick="subtractiom()">
+                                    SUBTRACT
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+                            <br>
+                        </form>
+                        
 
                         <div style="display: flex; justify-content: center;">
 
@@ -27040,56 +27485,62 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_div" placeholder="Numerator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_div" placeholder="Numerator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_div" placeholder="Denominator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;"> /
-                        </div>
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_div" placeholder="Numerator" type="number"
-                                                       required=""
-                                                       style="width: 9.375rem;">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_div" placeholder="Denominator" type="number"
-                                                       required=""
-                                                       style="width: 9.375rem;">
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_div" placeholder="Denominator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <var id="divaz" style="color: aliceblue;font-size: 1.125rem;"></var>
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;"> /
                             </div>
-                            <br>
-                                <center>
-                                <button type="button" class="btn btn-light" ; onclick="division()">
-                                            DIVIDE
-                                </button>
-                                </center>
-                            <br>
-
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_div" placeholder="Numerator" type="number"
+                                                           required=""
+                                                           style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_div" placeholder="Denominator" type="number"
+                                                           required=""
+                                                           style="width: 9.375rem;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <var id="divaz" style="color: aliceblue;font-size: 1.125rem;"></var>
+                                </div>
+                                <br>
+                                    <center>
+                                    <button type="button" class="btn btn-light" ; onclick="division()">
+                                                DIVIDE
+                                    </button>
+                                    <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                        Reset
+                                    </button>
+                                    </center>
+                                <br>
+    
+                        </form>
+                        
 
                             <div style="display: flex; justify-content: center;">
 
@@ -27173,64 +27624,69 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-
-                        <div style="display: inline-block;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="one_mul" placeholder="Numerator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
+                        <form action="">
+                            <div style="display: inline-block;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="one_mul" placeholder="Numerator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="two_mul" placeholder="Denominator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="two_mul" placeholder="Denominator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
+    
+    
+                            <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
+                                x
+                            </div>
+    
+    
+                            <div style="display: inline-block; margin-left: 0.625rem;">
+                                <div class="row">
+                                    <div class="cell borderBottom_1">
+    
+                                        <input id="three_mul" placeholder="Numerator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="cell">
+    
+                                        <input id="four_mul" placeholder="Denominator" type="number"
+                                               required=""
+                                               style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div style="color: #ff299c; display: inline-block; padding: 3.125rem; font-size: 3.75rem;">
-                            x
-                        </div>
-
-
-                        <div style="display: inline-block; margin-left: 0.625rem;">
-                            <div class="row">
-                                <div class="cell borderBottom_1">
-
-                                    <input id="three_mul" placeholder="Numerator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
-                                </div>
+    
+                            <div>
+                                <var id="mulz" style="color: aliceblue;font-size: 1.125rem;" ></var>
                             </div>
-                            <div class="row">
-                                <div class="cell">
-
-                                    <input id="four_mul" placeholder="Denominator" type="number"
-                                           required=""
-                                           style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <var id="mulz" style="color: aliceblue;font-size: 1.125rem;" ></var>
-                        </div>
-                        <br>
-                        <center>
-                            <button type="button" class="btn btn-light" ;
-                                    onclick="multiplication1()">
-                                MULTIPLY
-                            </button>
-                        </center>
-
-
-                        <br>
+                            <br>
+                            <center>
+                                <button type="button" class="btn btn-light" ;
+                                        onclick="multiplication1()">
+                                    MULTIPLY
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+    
+                            <br>
+                        </form>
+                        
 
                         <div style="display: flex; justify-content: center;">
 
@@ -27296,45 +27752,50 @@ N is the population size.
                 </div>
                 <div class="modal-body">
                     <div class="container" style="padding-top:0%">
-
-
-                        <div style="display: inline-block; margin-left: 2.5rem; ">
-                            <div class="row">
-
-                                <div class="row" style="margin-top: 0.625rem;">
-                                    <div class="cell borderBottom_1">
-
-                                        <input id="side_mix" placeholder="Side" type="number"
-                                               required="" style="width: 4.375rem; ">
+                        <form action="">
+                            <div style="display: inline-block; margin-left: 2.5rem; ">
+                                <div class="row">
+    
+                                    <div class="row" style="margin-top: 0.625rem;">
+                                        <div class="cell borderBottom_1">
+    
+                                            <input id="side_mix" placeholder="Side" type="number"
+                                                   required="" style="width: 4.375rem; ">
+                                        </div>
+                                    </div>
+                                    <div class="cell borderBottom_1" style="margin-left: 1.25rem; ">
+    
+                                        <input id="one_mix" placeholder="Numerator" type="number"
+                                               required="" style="width: 9.375rem;">
                                     </div>
                                 </div>
-                                <div class="cell borderBottom_1" style="margin-left: 1.25rem; ">
-
-                                    <input id="one_mix" placeholder="Numerator" type="number"
-                                           required="" style="width: 9.375rem;">
+                                <div class="row" style="margin-left: 2.8125rem;">
+                                    <div class="cell">
+    
+                                        <input id="two_mix" placeholder="Denominator" type="number"
+                                               required="" style="width: 9.375rem;">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row" style="margin-left: 2.8125rem;">
-                                <div class="cell">
+    
+                            <br>
+    
+                            <center>
+                                <button type="button" class="btn btn-light" ;
+                                        onclick="mixed_to_improper()"
+                                        style="margin-top: 1.25rem;">
+                                    CONVERT
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
+                            <br>
+    
+                        </form>
 
-                                    <input id="two_mix" placeholder="Denominator" type="number"
-                                           required="" style="width: 9.375rem;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <br>
-
-                        <center>
-                            <button type="button" class="btn btn-light" ;
-                                    onclick="mixed_to_improper()"
-                                    style="margin-top: 1.25rem;">
-                                CONVERT
-                            </button>
-                        </center>
-
-                        <br>
-
+                        
                         <div style="display: flex; justify-content: center;">
 
                             <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;"
@@ -27393,38 +27854,43 @@ N is the population size.
                 <div class="modal-body">
 
                     <div class="container" style="padding-top:0%">
-
-                        <center>
-                            <div style="display: inline-block;  ">
-                                <div class="row">
-                                    <div class="cell borderBottom_1">
-
-                                        <input id="one_imp" placeholder="Numerator"
-                                               type="number"
-                                               required="" style="width: 9.375rem;">
+                        <form action="">
+                            <center>
+                                <div style="display: inline-block;  ">
+                                    <div class="row">
+                                        <div class="cell borderBottom_1">
+    
+                                            <input id="one_imp" placeholder="Numerator"
+                                                   type="number"
+                                                   required="" style="width: 9.375rem;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="cell">
+    
+                                            <input id="two_imp" placeholder="Denominator"
+                                                   type="number"
+                                                   required="" style="width: 9.375rem;">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="cell">
-
-                                        <input id="two_imp" placeholder="Denominator"
-                                               type="number"
-                                               required="" style="width: 9.375rem;">
-                                    </div>
-                                </div>
-                            </div>
-
+    
+                                <br>
+    
+    
+                                <button type="button" class="btn btn-light" ;
+                                        onclick="improper_to_mixed()" style="margin-top: 1.25rem;">
+                                    CONVERT
+                                </button>
+                                <button type="button" class="btn btn-light" ; onclick="this.form.reset();">
+                                    Reset
+                                </button>
+                            </center>
+    
                             <br>
-
-
-                            <button type="button" class="btn btn-light" ;
-                                    onclick="improper_to_mixed()" style="margin-top: 1.25rem;">
-                                CONVERT
-                            </button>
-                        </center>
-
-                        <br>
-
+    
+                        </form>
+                        
                         <div style="display: flex; justify-content: center;">
 
                             <div style="color: aliceblue;font-size: 1.25rem; margin-top: 1.875rem;"
@@ -27773,28 +28239,37 @@ N is the population size.
                     </div>
 
                     <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Area of Circular Sector</h5>
-                                    <p class="text-center">\[S = \frac{r^2\theta}{2}\]</p>
+                        <form action="">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Area of Circular Sector</h5>
+                                        <p class="text-center">\[S = \frac{r^2\theta}{2}\]</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <img src="images/sector.PNG"
+                                            class="img-fluid">
+                                    </div>
                                 </div>
-                                <div class="col-6">
-                                    <img src="images/sector.PNG"
-                                        class="img-fluid">
+                                        <input class="form__field" type="text" id="sectorcirang" 
+                                            placeholder="Enter angle (Radian)" oninput="findsectorarea()">
+                                        <input class="form__field" type="text" id="sectorcirrad" 
+                                            placeholder="Enter radius" oninput="findsectorarea()">
+        
+                                        <br><br>
+                                        <p class="stopwrap" id="sectorarea1" style="font-family:mathfont;"></p>
+                                        <p class="stopwrap" id="sectorarea2" style="font-family:mathfont;"></p>
+                                    </div>
                                 </div>
                             </div>
-                                    <input class="form__field" type="text" id="sectorcirang" 
-                                        placeholder="Enter angle (Radian)" oninput="findsectorarea()">
-                                    <input class="form__field" type="text" id="sectorcirrad" 
-                                        placeholder="Enter radius" oninput="findsectorarea()">
-    
-                                    <br><br>
-                                    <p class="stopwrap" id="sectorarea1" style="font-family:mathfont;"></p>
-                                    <p class="stopwrap" id="sectorarea2" style="font-family:mathfont;"></p>
-                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                </button>
+                                <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                                </button>
                             </div>
-                        </div>
+                        </form>
+                        
                     </div>                
                 </div>
             </div>             
@@ -27939,51 +28414,55 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Arc length (b)</h5>
-                                    <p class="text-center">\[b = 8 \times a\]</p><br>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Long diameter (c)</h5>
-                                    <p class="text-center">\[c = 2 \times \pi \times a\]</p><br>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Short diameter (d)</h5>
-                                    <p class="text-center">\[d = 4 \times a\]</p><br>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/double-cycloid.png" class="img-fluid">
+                        <form action="">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Arc length (b)</h5>
+                                        <p class="text-center">\[b = 8 \times a\]</p><br>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Long diameter (c)</h5>
+                                        <p class="text-center">\[c = 2 \times \pi \times a\]</p><br>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Short diameter (d)</h5>
+                                        <p class="text-center">\[d = 4 \times a\]</p><br>
                                     </div>
-                                    <h5 class="text-center">Perimeter (p)</h5>
-                                    <p class="text-center">\[p = 2 \times b\]</p><br>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Area (A)</h5>
-                                    <p class="text-center">\[A = 6 \times \pi \times a^2 \]</p><br>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/double-cycloid.png" class="img-fluid">
+                                        </div>
+                                        <h5 class="text-center">Perimeter (p)</h5>
+                                        <p class="text-center">\[p = 2 \times b\]</p><br>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area (A)</h5>
+                                        <p class="text-center">\[A = 6 \times \pi \times a^2 \]</p><br>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <!-- --------FROM------- -->
-                            <input class="form__field" type="number" placeholder="Enter Radius of circle (a)" 
-                                id="doublecycloid-a" oninput="doublecycloidsolve();">
-                            <p class="stopwrap" id="resultOfDoubleCycArcLen"
-                                style="font-family:mathfont;"></p><br>
-                            <p class="stopwrap" id="resultOfDoubleCycLongDia"
-                                style="font-family:mathfont;"></p><br>
-                            <p class="stopwrap" id="resultOfDoubleCycShortDia"
-                                style="font-family:mathfont;"></p><br>
-                            <p class="stopwrap" id="resultOfDoubleCycPeri"
-                                style="font-family:mathfont;"></p><br>
-                            <p class="stopwrap" id="resultOfDoubleCycArea"
-                                style="font-family:mathfont;"></p><br>
-                          </div>
-                        <!-- ------HERE------ -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                                <div class="dropdown-divider"></div>
+                                <!-- --------FROM------- -->
+                                <input class="form__field" type="number" placeholder="Enter Radius of circle (a)" 
+                                    id="doublecycloid-a" oninput="doublecycloidsolve();">
+                                <p class="stopwrap" id="resultOfDoubleCycArcLen"
+                                    style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultOfDoubleCycLongDia"
+                                    style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultOfDoubleCycShortDia"
+                                    style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultOfDoubleCycPeri"
+                                    style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultOfDoubleCycArea"
+                                    style="font-family:mathfont;"></p><br>
+                              </div>
+                            <!-- ------HERE------ -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
                 </div>
             </div>
         </div>  
@@ -28001,6 +28480,7 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
+                      <form action="">
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
@@ -28043,8 +28523,11 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                        </button>
                     </div>
                 </div>
+                      </form>
             </div>
         </div>  
         <div class="modal fade" id="tricorn" tabindex="-1" role="dialog" aria-hidden="true">
@@ -28740,11 +29223,15 @@ N is the population size.
                                          class="img-fluid">
                                 </div>
                             </div>
-                            <input class="form__field" type="number" placeholder="Enter X1" id="inputlinex1" >
-                            <input class="form__field" type="number" placeholder="Enter Y1" id="inputliney1">
-                            <input class="form__field" type="number" placeholder="Enter X2" id="inputlinex2">
-                            <input class="form__field" type="number" placeholder="Enter Y2" id="inputliney2">
-                            <button type="button" onclick="solveSlope()" class="btn btn-secondary" style="margin-top: 1.25rem;">Calculate </button>
+                            <form action="">
+                                <input class="form__field" type="number" placeholder="Enter X1" id="inputlinex1" >
+                                <input class="form__field" type="number" placeholder="Enter Y1" id="inputliney1">
+                                <input class="form__field" type="number" placeholder="Enter X2" id="inputlinex2">
+                                <input class="form__field" type="number" placeholder="Enter Y2" id="inputliney2">
+                                <button type="button" onclick="solveSlope()" class="btn btn-secondary" style="margin-top: 1.25rem;">Calculate </button>
+                                <button type="button" onclick="this.form.reset();" class="btn btn-secondary" style="margin-top: 1.25rem;">Reset </button>
+                            </form>
+                            
                             <p class="stopwrap" id="resultofline" style="font-family:mathfont; margin-top: 3.125rem"></p>
                             <p class="stopwrap" style="font-family:mathfont; margin-left: 0rem;" id="answerofline"></p>
                             <p class="stopwrap" style="font-family:mathfont; margin-left: 0rem;" id="answerofline2"></p>
@@ -28818,54 +29305,59 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
-                        <div class="conatiner">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Area</h5>
-                                    <p class="text-center">\[A = \pi r^2\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Diameter</h5>
-                                    <p class="text-center">\[d = 2r\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Circumference</h5>
-                                    <p class="text-center">\[C=2 \pi r\]</p>
-
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/circle.png" class="img-fluid">
+                        <form action="">
+                            <div class="conatiner">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Area</h5>
+                                        <p class="text-center">\[A = \pi r^2\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Diameter</h5>
+                                        <p class="text-center">\[d = 2r\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Circumference</h5>
+                                        <p class="text-center">\[C=2 \pi r\]</p>
+    
                                     </div>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Chord Length</h5>
-                                    <p class="text-center">\[2\sqrt{r^2-d^2}\]</p>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/circle.png" class="img-fluid">
+                                        </div>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Chord Length</h5>
+                                        <p class="text-center">\[2\sqrt{r^2-d^2}\]</p>
+                                    </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <!---FROM-->
+                                <input class="form__field" type="number" placeholder="Enter Radius in cm"
+                                       id="inputradius"
+                                       oninput="solvecircle()">
+                                <input class="form__field" type="number" placeholder="Enter Distance in cm"
+                                       id="inputdistance"
+                                       oninput="solvecircle()">
+                                <p class="stopwrap" id="resultofareacir"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcircumferencec1"
+                                   style="font-family:mathfont;"></p>
+                                 <p class="stopwrap" id="resultofcircumferencec2"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofdiameterc"
+                                   style="font-family:mathfont;"></p>
+                                   <p class="stopwrap" id="resultofchord"
+                                   style="font-family:mathfont;"></p>
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <!---FROM-->
-                            <input class="form__field" type="number" placeholder="Enter Radius in cm"
-                                   id="inputradius"
-                                   oninput="solvecircle()">
-                            <input class="form__field" type="number" placeholder="Enter Distance in cm"
-                                   id="inputdistance"
-                                   oninput="solvecircle()">
-                            <p class="stopwrap" id="resultofareacir"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofcircumferencec1"
-                               style="font-family:mathfont;"></p>
-                             <p class="stopwrap" id="resultofcircumferencec2"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofdiameterc"
-                               style="font-family:mathfont;"></p>
-                               <p class="stopwrap" id="resultofchord"
-                               style="font-family:mathfont;"></p>
+                            <!---TILL-->
                         </div>
-                        <!---TILL-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                        </button>
-                    </div>
-                </div>
+                        </form>
+                        
             </div>
         </div>
 
@@ -28881,51 +29373,56 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
-                        <div class="conatiner">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Circular arc (L))</h5>
-                                    <p class="text-center">\[L = r \theta  \]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Area (S)</h5>
-                                    <p class="text-center">\[S = \frac{1}{2} r^2 ( \theta - sin\theta )\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Chord (c)</h5>
-                                    <p class="text-center">\[c = 2r sin (\frac { \theta}{2} ) \]</p>
-
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/archcal.PNG" class="img-fluid">
+                        <form action="">
+                            <div class="conatiner">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Circular arc (L))</h5>
+                                        <p class="text-center">\[L = r \theta  \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area (S)</h5>
+                                        <p class="text-center">\[S = \frac{1}{2} r^2 ( \theta - sin\theta )\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Chord (c)</h5>
+                                        <p class="text-center">\[c = 2r sin (\frac { \theta}{2} ) \]</p>
+    
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/archcal.PNG" class="img-fluid">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <!---FROM-->
+                                <input class="form__field" type="number" placeholder="Enter Radius (r)"
+                                       id="radiusarch"
+                                       oninput="solvesemicircle()">
+                                <input class="form__field" type="number" placeholder="Enter angle (Radian)"
+                                       id="anglearch"
+                                       oninput="solvearch()">
+                                <p class="stopwrap" id="resultofareaarch1"
+                                    style="font-family:mathfont;"></p> 
+                                <p class="stopwrap" id="resultofareaarch2"
+                                    style="font-family:mathfont;"></p>       
+                                <p class="stopwrap" id="resultofarchchord1"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofarchchord2"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcirarc"
+                                   style="font-family:mathfont;"></p>
+                                
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <!---FROM-->
-                            <input class="form__field" type="number" placeholder="Enter Radius (r)"
-                                   id="radiusarch"
-                                   oninput="solvesemicircle()">
-                            <input class="form__field" type="number" placeholder="Enter angle (Radian)"
-                                   id="anglearch"
-                                   oninput="solvearch()">
-                            <p class="stopwrap" id="resultofareaarch1"
-                                style="font-family:mathfont;"></p> 
-                            <p class="stopwrap" id="resultofareaarch2"
-                                style="font-family:mathfont;"></p>       
-                            <p class="stopwrap" id="resultofarchchord1"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofarchchord2"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofcirarc"
-                               style="font-family:mathfont;"></p>
-                            
+                            <!---TILL-->
                         </div>
-                        <!---TILL-->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -28942,44 +29439,49 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
-                        <div class="conatiner">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Diameter</h5>
-                                    <p class="text-center">\[d = 2r\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Area</h5>
-                                    <p class="text-center">\[A = \frac{\pi r^2}{2}\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Circumference</h5>
-                                    <p class="text-center">\[C= \pi r +2r\]</p>
-
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/semicircle.png" class="img-fluid">
+                        <form action="">
+                            <div class="conatiner">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Diameter</h5>
+                                        <p class="text-center">\[d = 2r\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area</h5>
+                                        <p class="text-center">\[A = \frac{\pi r^2}{2}\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Circumference</h5>
+                                        <p class="text-center">\[C= \pi r +2r\]</p>
+    
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/semicircle.png" class="img-fluid">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <!---FROM-->
+                                <input class="form__field" type="number" placeholder="Enter Radius"
+                                       id="semiradius"
+                                       oninput="solvesemicircle()">
+                                <p class="stopwrap" id="resultofdiasemi"
+                                    style="font-family:mathfont;"></p>       
+                                <p class="stopwrap" id="resultofareasemi"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofcircumsemi"
+                                   style="font-family:mathfont;"></p>
+                                
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <!---FROM-->
-                            <input class="form__field" type="number" placeholder="Enter Radius"
-                                   id="semiradius"
-                                   oninput="solvesemicircle()">
-                            <p class="stopwrap" id="resultofdiasemi"
-                                style="font-family:mathfont;"></p>       
-                            <p class="stopwrap" id="resultofareasemi"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofcircumsemi"
-                               style="font-family:mathfont;"></p>
-                            
+                            <!---TILL-->
                         </div>
-                        <!---TILL-->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -28996,43 +29498,47 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
-                        <div class="conatiner">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Diameter (R)</h5>
-                                    <p class="text-center">\[R = 2r\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Radius (r)</h5>
-                                    <p class="text-center">\[r = \sqrt{\frac{Area}{\pi}}\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Circumference (L)</h5>
-                                    <p class="text-center">\[L = 2r\pi = R\pi\]</p>
-
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/circal.PNG" class="img-fluid">
+                        <form action="">
+                            <div class="conatiner">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Diameter (R)</h5>
+                                        <p class="text-center">\[R = 2r\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Radius (r)</h5>
+                                        <p class="text-center">\[r = \sqrt{\frac{Area}{\pi}}\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Circumference (L)</h5>
+                                        <p class="text-center">\[L = 2r\pi = R\pi\]</p>
+    
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/circal.PNG" class="img-fluid">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <!---FROM-->
+                                <input class="form__field" type="number" placeholder="Enter Area (S)"
+                                       id="circlearea"
+                                       oninput="solvecirclecal()">
+                                    <p class="stopwrap" id="resultofradcircal"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofcircumcirccal"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofdiacircal"
+                                    style="font-family:mathfont;"></p>       
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <!---FROM-->
-                            <input class="form__field" type="number" placeholder="Enter Area (S)"
-                                   id="circlearea"
-                                   oninput="solvecirclecal()">
-                                <p class="stopwrap" id="resultofradcircal"
-                                style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofcircumcirccal"
-                                style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofdiacircal"
-                                style="font-family:mathfont;"></p>       
+                            <!---TILL-->
                         </div>
-                        <!---TILL-->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
                 </div>
             </div>
         </div>
@@ -29243,57 +29749,63 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Surface Area enclosed by outer circle</h5>
-                                    <p class="text-center">\[A_{1} = \pi r_{1}^2\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Surface Area enclosed by inner circle</h5>
-                                    <p class="text-center">\[A_{2} = \pi r_{2}^2\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Surface area of the annulus</h5>
-                                    <p class="text-center">\[A_{0} = A_{1} - A_{2}\]</p>
-
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/annulus.gif" class="img-fluid">
+                        <form action="">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Surface Area enclosed by outer circle</h5>
+                                        <p class="text-center">\[A_{1} = \pi r_{1}^2\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Surface Area enclosed by inner circle</h5>
+                                        <p class="text-center">\[A_{2} = \pi r_{2}^2\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Surface area of the annulus</h5>
+                                        <p class="text-center">\[A_{0} = A_{1} - A_{2}\]</p>
+    
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/annulus.gif" class="img-fluid">
+                                        </div>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Outer circumference of an annulus:</h5>
+                                        <p class="text-center">\[C_{1} = 2\pi r_{1} \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Inner circumference of an annulus:</h5>
+                                        <p class="text-center">\[C_{2} = 2\pi r_{2} \]</p>
                                     </div>
                                     <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Outer circumference of an annulus:</h5>
-                                    <p class="text-center">\[C_{1} = 2\pi r_{1} \]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Inner circumference of an annulus:</h5>
-                                    <p class="text-center">\[C_{2} = 2\pi r_{2} \]</p>
+                                    <input class="form__field" type="number" placeholder="Enter outer radius (r1)"
+                                       id="inputradius1"
+                                       oninput="solveannulus()">
+                                    <input class="form__field" type="number" placeholder="Enter inner radius (r2)"
+                                        id="inputradius2"
+                                        oninput="solveannulus()">
+                                    <br>
+                                    <p class="stopwrap" id="resultofarea1"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofarea2"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofarea"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofarea"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofcircum1"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofcircum2"
+                                    style="font-family:mathfont;"></p>
                                 </div>
-                                <div class="dropdown-divider"></div>
-                                <input class="form__field" type="number" placeholder="Enter outer radius (r1)"
-                                   id="inputradius1"
-                                   oninput="solveannulus()">
-                                <input class="form__field" type="number" placeholder="Enter inner radius (r2)"
-                                    id="inputradius2"
-                                    oninput="solveannulus()">
-                                <br>
-                                <p class="stopwrap" id="resultofarea1"
-                                style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofarea2"
-                                style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofarea"
-                                style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofarea"
-                                style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofcircum1"
-                                style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofcircum2"
-                                style="font-family:mathfont;"></p>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary"
-                                    data-dismiss="modal">Close
-                            </button>
-                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">Close
+                                </button>
+                                <button type="button" class="btn btn-secondary"
+                                        onclick="this.form.reset();">Close
+                                </button>
+                            </div>
+                        </form>
+                        
                     </div>
                 </div>
             </div>
@@ -29312,44 +29824,48 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Area (A)</h5>
-                                    <p class="text-center">\[A = \frac{\pi r^2}{2}\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Perimeter (P)</h5>
-                                    <p class="text-center">\[P = 2 \times \pi r\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Diameter</h5>
-                                    <p class="text-center">\[d= 2 \times r\]</p>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/yin-yang-half.png" class="img-fluid">
+                        <form action="">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Area (A)</h5>
+                                        <p class="text-center">\[A = \frac{\pi r^2}{2}\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Perimeter (P)</h5>
+                                        <p class="text-center">\[P = 2 \times \pi r\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Diameter</h5>
+                                        <p class="text-center">\[d= 2 \times r\]</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/yin-yang-half.png" class="img-fluid">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <!-- --------FROM------- -->
+                                <input type="text" id="inputhalfyinr" class = "form__field" oninput="solveyinyang()" 
+                                    placeholder="Enter circle radius (r)">
+                                    <br><br>
+                                    <p class="stopwrap" id="resultofhalfyinarea"
+                                       style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofhalfyinperi"
+                                       style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofhalfyindia"
+                                       style="font-family:mathfont;"></p><br>
+    
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <!-- --------FROM------- -->
-                            <input type="text" id="inputhalfyinr" class = "form__field" oninput="solveyinyang()" 
-                                placeholder="Enter circle radius (r)">
-                                <br><br>
-                                <p class="stopwrap" id="resultofhalfyinarea"
-                                   style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofhalfyinperi"
-                                   style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofhalfyindia"
-                                   style="font-family:mathfont;"></p><br>
-
+                            <!-- ------HERE------ -->
                         </div>
-                        <!-- ------HERE------ -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
                 </div>
             </div>
         </div>
@@ -29368,41 +29884,46 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
-                        <div class="conatiner">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Cartesian Equation</h5>
-                                    <p class="text-center">\[x^{\frac{2}{3}} + y^{\frac{2}{3}} = a^{\frac{2}{3}}\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Length</h5>
-                                    <p class="text-center">\[L= 6a\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Area</h5>
-                                    <p class="text-center">\[A= \frac{3 \pi a^2}{8}\]</p>
-
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/astroid.gif" class="img-fluid">
+                        <form action="">
+                            <div class="conatiner">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Cartesian Equation</h5>
+                                        <p class="text-center">\[x^{\frac{2}{3}} + y^{\frac{2}{3}} = a^{\frac{2}{3}}\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Length</h5>
+                                        <p class="text-center">\[L= 6a\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area</h5>
+                                        <p class="text-center">\[A= \frac{3 \pi a^2}{8}\]</p>
+    
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/astroid.gif" class="img-fluid">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <!---FROM-->
+                                <input class="form__field" type="number" placeholder="Enter a"
+                                       id="inputsideastroid"
+                                       oninput="solveastroid()">
+                                    <p class="stopwrap" id="resultofastroidlen"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofastroidarea"
+                                    style="font-family:mathfont;"></p>   
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <!---FROM-->
-                            <input class="form__field" type="number" placeholder="Enter a"
-                                   id="inputsideastroid"
-                                   oninput="solveastroid()">
-                                <p class="stopwrap" id="resultofastroidlen"
-                                style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofastroidarea"
-                                style="font-family:mathfont;"></p>   
+                            <!---TILL-->
                         </div>
-                        <!---TILL-->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
+                        
                 </div>
             </div>
         </div>
@@ -29419,44 +29940,49 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
-                        <div class="conatiner">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Diameter</h5>
-                                    <p class="text-center">\[a=2r\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Perimeter</h5>
-                                    <p class="text-center">\[P= 8a\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Area</h5>
-                                    <p class="text-center">\[A= \frac{3 a^2 \pi}{2}\]</p>
-
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/cardiod.png" class="img-fluid">
+                        <form action="">
+                            <div class="conatiner">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Diameter</h5>
+                                        <p class="text-center">\[a=2r\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Perimeter</h5>
+                                        <p class="text-center">\[P= 8a\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area</h5>
+                                        <p class="text-center">\[A= \frac{3 a^2 \pi}{2}\]</p>
+    
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/cardiod.png" class="img-fluid">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <!---FROM-->
+                                <input class="form__field" type="number" placeholder="Enter radius(r)"
+                                       id="inputradiuscardiod"
+                                       oninput="solvecardiod()">
+                                    <p class="stopwrap" id="resultofcardioddia"
+                                    style="font-family:mathfont;"></p>
+                                    <p class="stopwrap" id="resultofcardiodperi"
+                                    style="font-family:mathfont;"></p>   
+                                    <p class="stopwrap" id="resultofcardiodarea"
+                                    style="font-family:mathfont;"></p>   
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <!---FROM-->
-                            <input class="form__field" type="number" placeholder="Enter radius(r)"
-                                   id="inputradiuscardiod"
-                                   oninput="solvecardiod()">
-                                <p class="stopwrap" id="resultofcardioddia"
-                                style="font-family:mathfont;"></p>
-                                <p class="stopwrap" id="resultofcardiodperi"
-                                style="font-family:mathfont;"></p>   
-                                <p class="stopwrap" id="resultofcardiodarea"
-                                style="font-family:mathfont;"></p>   
+                            <!---TILL-->
                         </div>
-                        <!---TILL-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                        </button>
-                    </div>
-                </div>
+                        </form>
+                      
             </div>
         </div>
 
@@ -29532,49 +30058,53 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Straight line length</h5>
-                                    <p class="text-center">\[l = 2 \space (R - r) \]</p>
-                                    <p class="text-center">R = radius large circle</p>
-                                    <p class="text-center">r = radius small circle</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Perimeter</h5>
-                                    <p class="text-center">\[p = π \space (R + r) + l \]</p>
-                                    <p class="text-center">\[\space \space = π \space (R + r) + 2 \space (R - r) \]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Area</h5>
-                                    <p class="text-center">\[A = \frac{π \space (R^2 - r^2)}{2} \]</p>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/claw.png" class="img-fluid">
+                        <form action="">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Straight line length</h5>
+                                        <p class="text-center">\[l = 2 \space (R - r) \]</p>
+                                        <p class="text-center">R = radius large circle</p>
+                                        <p class="text-center">r = radius small circle</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Perimeter</h5>
+                                        <p class="text-center">\[p = π \space (R + r) + l \]</p>
+                                        <p class="text-center">\[\space \space = π \space (R + r) + 2 \space (R - r) \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area</h5>
+                                        <p class="text-center">\[A = \frac{π \space (R^2 - r^2)}{2} \]</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/claw.png" class="img-fluid">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <!-- --------FROM------- -->
-                            <input class="form__field" type="number"
-                                       placeholder="Enter radius large cicle (R)" id="inputlargerad"
-                                       oninput="solveclaw();">
-                            <input class="form__field" type="number"
-                                       placeholder="Enter radius small circle (r)" id="inputsmallrad"
-                                       oninput="solveclaw();">
-                            <p class="stopwrap" id="resultoflinelen"
-                                style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofclawperi"
-                                style="font-family:mathfont;"></p> 
-                            <p class="stopwrap" id="resultofclawarea"
-                                style="font-family:mathfont;"></p>
-                          </div>
-                        <!-- ------HERE------ -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                                <div class="dropdown-divider"></div>
+                                <!-- --------FROM------- -->
+                                <input class="form__field" type="number"
+                                           placeholder="Enter radius large cicle (R)" id="inputlargerad"
+                                           oninput="solveclaw();">
+                                <input class="form__field" type="number"
+                                           placeholder="Enter radius small circle (r)" id="inputsmallrad"
+                                           oninput="solveclaw();">
+                                <p class="stopwrap" id="resultoflinelen"
+                                    style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofclawperi"
+                                    style="font-family:mathfont;"></p> 
+                                <p class="stopwrap" id="resultofclawarea"
+                                    style="font-family:mathfont;"></p>
+                              </div>
+                            <!-- ------HERE------ -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
                 </div>
             </div>
         </div>
@@ -29592,50 +30122,54 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Bar length (l)</h5>
-                                    <p class="text-center">\[l = 2 \times a + b \]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Perimeter</h5>
-                                    <p class="text-center">\[p = 8 \times a + 4 \times b \]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Area</h5>
-                                    <p class="text-center">\[A = 4 \times a \times b + b^2 \]</p>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/cross.PNG" class="img-fluid">
+                        <form action="">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Bar length (l)</h5>
+                                        <p class="text-center">\[l = 2 \times a + b \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Perimeter</h5>
+                                        <p class="text-center">\[p = 8 \times a + 4 \times b \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area</h5>
+                                        <p class="text-center">\[A = 4 \times a \times b + b^2 \]</p>
                                     </div>
-                                    <h5 class="text-center">Circumcircle radius (r)</h5>
-                                    <p class="text-center">\[r = \sqrt{ (\frac{l}{2})^2 + (\frac{b}{2})^2} \]</p>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/cross.PNG" class="img-fluid">
+                                        </div>
+                                        <h5 class="text-center">Circumcircle radius (r)</h5>
+                                        <p class="text-center">\[r = \sqrt{ (\frac{l}{2})^2 + (\frac{b}{2})^2} \]</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <!-- --------FROM------- -->
-                            <input class="form__field" type="number"
-                                       placeholder="Enter Arm length (a)" id="inputcrossarmlen"
-                                       oninput="solvecross();">
-                            <input class="form__field" type="number"
-                                       placeholder="Enter Width (b)" id="inputcrosswidth"
-                                       oninput="solvecross();">
-                            <p class="stopwrap" id="resultofcrossbarlen"
-                                style="font-family:mathfont;"></p><br>
-                            <p class="stopwrap" id="resultofcrossperi"
-                                style="font-family:mathfont;"></p> <br>
-                            <p class="stopwrap" id="resultofcrossarea"
-                                style="font-family:mathfont;"></p><br>
-                            <p class="stopwrap" id="resultofcrosscirrad"
-                                style="font-family:mathfont;"></p><br>
-                          </div>
-                        <!-- ------HERE------ -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                                <div class="dropdown-divider"></div>
+                                <!-- --------FROM------- -->
+                                <input class="form__field" type="number"
+                                           placeholder="Enter Arm length (a)" id="inputcrossarmlen"
+                                           oninput="solvecross();">
+                                <input class="form__field" type="number"
+                                           placeholder="Enter Width (b)" id="inputcrosswidth"
+                                           oninput="solvecross();">
+                                <p class="stopwrap" id="resultofcrossbarlen"
+                                    style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultofcrossperi"
+                                    style="font-family:mathfont;"></p> <br>
+                                <p class="stopwrap" id="resultofcrossarea"
+                                    style="font-family:mathfont;"></p><br>
+                                <p class="stopwrap" id="resultofcrosscirrad"
+                                    style="font-family:mathfont;"></p><br>
+                              </div>
+                            <!-- ------HERE------ -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
                 </div>
             </div>
         </div>
@@ -29794,52 +30328,56 @@ N is the population size.
                     </div>
                     <div class="modal-body">
                         <!-- added div with class container -->
-                        <div clas="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Area</h5>
-                                    <p class="text-center">\[A = \pi a b \]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <!-- added the formula for primeter -->
-                                    <h5 class="text-center">Perimeter</h5>
-                                    <p class="text-center">\[P =\sqrt{2}\pi \sqrt{a^2+b^2}
-                                        \]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <!-- till here-->
-                                    <h5 class="text-center">Axis(a)</h5>
-                                    <p class="text-center">\[a = \frac{A}{ \pi b} \]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Axis(b)</h5>
-                                    <p class="text-center">\[b = \frac{A}{\pi a} \]</p>
-
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/ellipse.png" class="img-fluid">
+                        <form action="">
+                            <div clas="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Area</h5>
+                                        <p class="text-center">\[A = \pi a b \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <!-- added the formula for primeter -->
+                                        <h5 class="text-center">Perimeter</h5>
+                                        <p class="text-center">\[P =\sqrt{2}\pi \sqrt{a^2+b^2}
+                                            \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <!-- till here-->
+                                        <h5 class="text-center">Axis(a)</h5>
+                                        <p class="text-center">\[a = \frac{A}{ \pi b} \]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Axis(b)</h5>
+                                        <p class="text-center">\[b = \frac{A}{\pi a} \]</p>
+    
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/ellipse.png" class="img-fluid">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <!-- ------FROM------- -->
+                                <input class="form__field" type="number" placeholder="Enter Axis(a)"
+                                       id="inputfirstaxis"
+                                       oninput="solveellipse();">
+                                <input class="form__field" type="number" placeholder="Enter Axis(b)"
+                                       id="inputsecondaxis" oninput="solveellipse();">
+                                <!-- updated ID -->
+                                <p class="stopwrap" id="resultofareae"
+                                   style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofperimetere"
+                                   style="font-family:mathfont;"></p>
+                                <!-- till here -->
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <!-- ------FROM------- -->
-                            <input class="form__field" type="number" placeholder="Enter Axis(a)"
-                                   id="inputfirstaxis"
-                                   oninput="solveellipse();">
-                            <input class="form__field" type="number" placeholder="Enter Axis(b)"
-                                   id="inputsecondaxis" oninput="solveellipse();">
-                            <!-- updated ID -->
-                            <p class="stopwrap" id="resultofareae"
-                               style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultofperimetere"
-                               style="font-family:mathfont;"></p>
-                            <!-- till here -->
+                            <!-- ------till----- -->
                         </div>
-                        <!-- ------till----- -->
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
                 </div>
             </div>
         </div>
@@ -30216,45 +30754,49 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Radius of twin circles (R)</h5>
-                                    <p class="text-center">\[R=\frac{a \times b}{a + b}\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Length (c)</h5>
-                                    <p class="text-center">\[c = \sqrt{a \times b}\]</p>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group ml-3">
-                                        <img src="images/arbelos.png" class="img-fluid">
+                        <form action="">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Radius of twin circles (R)</h5>
+                                        <p class="text-center">\[R=\frac{a \times b}{a + b}\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Length (c)</h5>
+                                        <p class="text-center">\[c = \sqrt{a \times b}\]</p>
                                     </div>
-                                    <h5 class="text-center">Perimeter (p)</h5>
-                                    <p class="text-center">\[p = 2 \times \pi \times a \times b\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Area (A)</h5>
-                                    <p class="text-center">\[A = \pi \times a \times b\]</p>
+                                    <div class="col-6">
+                                        <div class="form-group ml-3">
+                                            <img src="images/arbelos.png" class="img-fluid">
+                                        </div>
+                                        <h5 class="text-center">Perimeter (p)</h5>
+                                        <p class="text-center">\[p = 2 \times \pi \times a \times b\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area (A)</h5>
+                                        <p class="text-center">\[A = \pi \times a \times b\]</p>
+                                    </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Radius 1. small circle (a)"
+                                       id="arbelos-a" oninput="arbelossolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Radius 2. small circle (b)"
+                                       id="arbelos-b" oninput="arbelossolve()">
+                                <br>
+                                <p class="stopwrap" id="resultOfRadiusArbelos" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultOfLengthArbelos" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultOfPerimeterArbelos" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultOfAreaArbelos" style="font-family:mathfont;"></p>
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <input class="form__field" type="number"
-                                   placeholder="Enter Radius 1. small circle (a)"
-                                   id="arbelos-a" oninput="arbelossolve()">
-                            <input class="form__field" type="number"
-                                   placeholder="Enter Radius 2. small circle (b)"
-                                   id="arbelos-b" oninput="arbelossolve()">
-                            <br>
-                            <p class="stopwrap" id="resultOfRadiusArbelos" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultOfLengthArbelos" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultOfPerimeterArbelos" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="resultOfAreaArbelos" style="font-family:mathfont;"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                        </button>
-                    </div>
-                </div>
+                 </form>
             </div>
         </div>
         <div class="modal fade" id="lshape" tabindex="-1" role="dialog" aria-hidden="true">
@@ -30392,56 +30934,60 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Tangent angle (α)</h5>
-                                    <p class="text-center">\[\alpha = 180\degree - \arccos \left ( 1 - \frac{h_{s}}{r} \right )\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Arc length (l)</h5>
-                                    <p class="text-center">\[l = r \times 2 \times \arccos \left ( 1 - \frac{h_{s}}{r} \right )\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Chord length (c)</h5>
-                                    <p class="text-center">\[c = 2 \times \sqrt{2 \times r \times h_{s} - h_{s}^{2}}\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Triangle side length (a)</h5>
-                                    <p class="text-center">\[a = \frac{c}{\sin\left ( 180\degree-2\alpha \right )} \times \sin \alpha\]</p>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <img src="images/drop-shape.png" class="img-fluid">
+                        <form action="">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Tangent angle (α)</h5>
+                                        <p class="text-center">\[\alpha = 180\degree - \arccos \left ( 1 - \frac{h_{s}}{r} \right )\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Arc length (l)</h5>
+                                        <p class="text-center">\[l = r \times 2 \times \arccos \left ( 1 - \frac{h_{s}}{r} \right )\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Chord length (c)</h5>
+                                        <p class="text-center">\[c = 2 \times \sqrt{2 \times r \times h_{s} - h_{s}^{2}}\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Triangle side length (a)</h5>
+                                        <p class="text-center">\[a = \frac{c}{\sin\left ( 180\degree-2\alpha \right )} \times \sin \alpha\]</p>
                                     </div>
-                                    <h5 class="text-center">Height (h)</h5>
-                                    <p class="text-center">\[h = h_{s} + \sqrt {\frac{\left ( 4a^2 - c^2 \right )}{4}}\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Perimeter (p)</h5>
-                                    <p class="text-center">\[p = l + 2a\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Area (A)</h5>
-                                    <p class="text-center">\[A = \frac {r \times l + c \times \left ( h_{s} - r \right ) + c \times \sqrt {\frac{\left ( 4a^2 - c^2 \right )}{4}}}{2} \]</p>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <img src="images/drop-shape.png" class="img-fluid">
+                                        </div>
+                                        <h5 class="text-center">Height (h)</h5>
+                                        <p class="text-center">\[h = h_{s} + \sqrt {\frac{\left ( 4a^2 - c^2 \right )}{4}}\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Perimeter (p)</h5>
+                                        <p class="text-center">\[p = l + 2a\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area (A)</h5>
+                                        <p class="text-center">\[A = \frac {r \times l + c \times \left ( h_{s} - r \right ) + c \times \sqrt {\frac{\left ( 4a^2 - c^2 \right )}{4}}}{2} \]</p>
+                                    </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter the Radius of circular segment (r)"
+                                       id="dropshape-r" oninput="dropshapesolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter the Height of circular segment (hs)"
+                                       id="dropshape-hs" oninput="dropshapesolve()">
+                                <br>
+                                <p class="stopwrap" id="tangentAngleDropshape" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="arcLenDropshape" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="chordLenDropshape" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="triSideLenDropshape" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="heightDropshape" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="perimeterDropshape" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="areaDropshape" style="font-family:mathfont;"></p>
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <input class="form__field" type="number"
-                                   placeholder="Enter the Radius of circular segment (r)"
-                                   id="dropshape-r" oninput="dropshapesolve()">
-                            <input class="form__field" type="number"
-                                   placeholder="Enter the Height of circular segment (hs)"
-                                   id="dropshape-hs" oninput="dropshapesolve()">
-                            <br>
-                            <p class="stopwrap" id="tangentAngleDropshape" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="arcLenDropshape" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="chordLenDropshape" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="triSideLenDropshape" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="heightDropshape" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="perimeterDropshape" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="areaDropshape" style="font-family:mathfont;"></p>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
                 </div>
             </div>
         </div>
@@ -30513,51 +31059,55 @@ N is the population size.
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h5 class="text-center">Rectangle length (c)</h5>
-                                    <p class="text-center">\[c = m \times a + \left ( m + 1 \right ) \times b\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Rectangle width (d)</h5>
-                                    <p class="text-center">\[d = n \times a + \left ( n + 1 \right ) \times b\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Perimeter (p)</h5>
-                                    <p class="text-center">\[p = c + d + 4 \times m \times n \times a\]</p>
-                                    <div class="dropdown-divider"></div>
-                                    <h5 class="text-center">Area (A)</h5>
-                                    <p class="text-center">\[A = c \times d - m \times n \times a^2\]</p>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group ml-3">
-                                        <img src="images/grid.png" class="img-fluid mx-auto d-block">
+                        <form action="">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="text-center">Rectangle length (c)</h5>
+                                        <p class="text-center">\[c = m \times a + \left ( m + 1 \right ) \times b\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Rectangle width (d)</h5>
+                                        <p class="text-center">\[d = n \times a + \left ( n + 1 \right ) \times b\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Perimeter (p)</h5>
+                                        <p class="text-center">\[p = c + d + 4 \times m \times n \times a\]</p>
+                                        <div class="dropdown-divider"></div>
+                                        <h5 class="text-center">Area (A)</h5>
+                                        <p class="text-center">\[A = c \times d - m \times n \times a^2\]</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group ml-3">
+                                            <img src="images/grid.png" class="img-fluid mx-auto d-block">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Number of holes in length (m):"
+                                       id="gridshape-m" oninput="gridshapesolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Number of holes in width (n)"
+                                       id="gridshape-n" oninput="gridshapesolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Edge length hole (a)"
+                                       id="gridshape-a" oninput="gridshapesolve()">
+                                <input class="form__field" type="number"
+                                       placeholder="Enter Bar thickness (b)"
+                                       id="gridshape-b" oninput="gridshapesolve()">
+                                <br>
+                                <p class="stopwrap" id="gridshape-c" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="gridshape-d" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="gridshape-p" style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="gridshape-A" style="font-family:mathfont;"></p>
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <input class="form__field" type="number"
-                                   placeholder="Enter Number of holes in length (m):"
-                                   id="gridshape-m" oninput="gridshapesolve()">
-                            <input class="form__field" type="number"
-                                   placeholder="Enter Number of holes in width (n)"
-                                   id="gridshape-n" oninput="gridshapesolve()">
-                            <input class="form__field" type="number"
-                                   placeholder="Enter Edge length hole (a)"
-                                   id="gridshape-a" oninput="gridshapesolve()">
-                            <input class="form__field" type="number"
-                                   placeholder="Enter Bar thickness (b)"
-                                   id="gridshape-b" oninput="gridshapesolve()">
-                            <br>
-                            <p class="stopwrap" id="gridshape-c" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="gridshape-d" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="gridshape-p" style="font-family:mathfont;"></p>
-                            <p class="stopwrap" id="gridshape-A" style="font-family:mathfont;"></p>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                        </form>
                 </div>
             </div>
         </div>
@@ -32003,47 +32553,51 @@ N is the population size.
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-6">
-                                <h5 class="text-center">Radius of Smaller Circle(b)</h5>
-                                <p class="text-center">\[b = \frac{a}{n}\]</p>
-                                <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Chord length(l) </h5>
-                                <p class="text-center">\[l = 2a \times \sin{\frac{\pi}{n}}\]</p>
-                                <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Perimeter(P)</h5>
-                                <p class="text-center">\[P = \frac{8a \times (n-1)}{n}\]</p>
-                                <div class="dropdown-divider"></div>
-                                <h5 class="text-center">Area(A)</h5>
-                                <p class="text-center">\[A = \frac{\pi \times a^{2} \times (n-1) \times (n-2)}{n^{2}}\]</p>
-                                <div class="dropdown-divider"></div>
-                                
-
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <img src="images/hypocycloid.png" class="img-fluid">
+                    <form action="">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Radius of Smaller Circle(b)</h5>
+                                    <p class="text-center">\[b = \frac{a}{n}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Chord length(l) </h5>
+                                    <p class="text-center">\[l = 2a \times \sin{\frac{\pi}{n}}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter(P)</h5>
+                                    <p class="text-center">\[P = \frac{8a \times (n-1)}{n}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area(A)</h5>
+                                    <p class="text-center">\[A = \frac{\pi \times a^{2} \times (n-1) \times (n-2)}{n^{2}}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    
+    
                                 </div>
-                                
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/hypocycloid.png" class="img-fluid">
+                                    </div>
+                                    
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number" placeholder="Enter radius of larger circle(a)"
+                                    id="hypoa">
+                                <input class="form__field" type="number" placeholder="Enter number of cusps(n) [n must be >2]"
+                                    id="hypon">
+                                <button type="button" class="btn btn-secondary" onclick="hypocycloidcalc()" >Find</button>
+                                <br>
+                                <p class="stopwrap" id="hypoans"
+                                style="font-family:mathfont;"></p>
+                               
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <input class="form__field" type="number" placeholder="Enter radius of larger circle(a)"
-                                id="hypoa">
-                            <input class="form__field" type="number" placeholder="Enter number of cusps(n) [n must be >2]"
-                                id="hypon">
-                            <button type="button" class="btn btn-secondary" onclick="hypocycloidcalc()" >Find</button>
-                            <br>
-                            <p class="stopwrap" id="hypoans"
-                            style="font-family:mathfont;"></p>
-                           
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                                data-dismiss="modal">Close
-                        </button>
-                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();">Reset
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -40337,6 +40891,31 @@ N is the population size.
         </div>
     </div>
     <!-- Eulerian Number end -->
+    <!-- Cullen Number start-->
+    <div class="collapse" id="culnum" style="text-align: center;">
+        <div class="container">
+            <h2 style="color: white;font-family:mathfont;text-align: center;">Cullen Number</h2>
+            <br>
+            <p>A Cullen Number is a number of the form is 2n * n + 1 where n is an integer.</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="culn" placeholder="Enter the value of n" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="CulNum(document.getElementById('culn').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="culans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Cullen Number end -->
 </div>
 <!--#######-------all modals here-------#######-->
 

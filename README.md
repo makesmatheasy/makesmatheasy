@@ -249,8 +249,9 @@ Other Tech/Libraries
   - Disarium Number
   - Krishnamurthy Number
   - Automorphic Number 
-  - Pronic Number 
+  - Pronic Number
   - Harshad Number
+  - Cullen Number 
   - Trimorphic Number
   - Eulerian Number
   
