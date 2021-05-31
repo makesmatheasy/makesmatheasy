@@ -28322,11 +28322,15 @@ N is the population size.
                                          class="img-fluid">
                                 </div>
                             </div>
-                            <input class="form__field" type="number" placeholder="Enter X1" id="inputlinex1" >
-                            <input class="form__field" type="number" placeholder="Enter Y1" id="inputliney1">
-                            <input class="form__field" type="number" placeholder="Enter X2" id="inputlinex2">
-                            <input class="form__field" type="number" placeholder="Enter Y2" id="inputliney2">
-                            <button type="button" onclick="solveSlope()" class="btn btn-secondary" style="margin-top: 1.25rem;">Calculate </button>
+                            <form action="">
+                                <input class="form__field" type="number" placeholder="Enter X1" id="inputlinex1" >
+                                <input class="form__field" type="number" placeholder="Enter Y1" id="inputliney1">
+                                <input class="form__field" type="number" placeholder="Enter X2" id="inputlinex2">
+                                <input class="form__field" type="number" placeholder="Enter Y2" id="inputliney2">
+                                <button type="button" onclick="solveSlope()" class="btn btn-secondary" style="margin-top: 1.25rem;">Calculate </button>
+                                <button type="button" onclick="this.form.reset();" class="btn btn-secondary" style="margin-top: 1.25rem;">Reset </button>
+                            </form>
+                            
                             <p class="stopwrap" id="resultofline" style="font-family:mathfont; margin-top: 3.125rem"></p>
                             <p class="stopwrap" style="font-family:mathfont; margin-left: 0rem;" id="answerofline"></p>
                             <p class="stopwrap" style="font-family:mathfont; margin-left: 0rem;" id="answerofline2"></p>
