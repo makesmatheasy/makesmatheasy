@@ -7079,6 +7079,7 @@ function tangeqution() {
     renderMathInElement(document.getElementById("centerrrp"));
 
 }
+<<<<<<< HEAD
 
 function chordeqution() {
     var a, b, c, d, e, f;
@@ -7110,6 +7111,8 @@ function chordeqution() {
     renderMathInElement(document.getElementById("centerrrp"));
 
 }
+=======
+>>>>>>> 19e3526669a65106e43359643fd5625070e0788d
 
 // number of diagonals in n sided convex polygon
 function nodiagnolfind() {
@@ -7768,6 +7771,35 @@ function solvescalenetriangle() {
     }
 }
 
+
+function solvecirtriangle() {
+    var r = document.getElementById("inputcirtrirad").value;
+    var a = document.getElementById("inputcirtria").value;
+    var areaoutput = document.getElementById("resultofareacirtri");
+    var perimeteroutput = document.getElementById("resultofcirtriperi");
+    var areatemp = "";
+    var perimetertemp = "";
+    var area= ((3.14*r)/3).toFixed(2);
+    var peri= 3.14*r;
+    if ((r != "") && (a != "" )) {
+
+        perimetertemp += "\\[P= \\pi \\times" + r + "\\]";
+        perimetertemp += "\\[Perimeter  \\space is \\space " + peri + "\\]";
+        perimeteroutput.innerHTML = perimetertemp;
+        areatemp += "\\[A= \\frac{ \\pi }{3} \\times" + r + "\\]";
+        areatemp += "\\[Area  \\space is \\space " + area + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(areaoutput);
+        renderMathInElement(perimeteroutput);
+        
+
+    } else {
+        areaoutput.innerHTML = "";
+        perimeteroutput.innerHTML = "";
+       
+    }
+}
 // created function for isosceles triangle
 function isoscelestrianglearea() {
     var eqside = document.getElementById("inputeqitside").value;
@@ -9403,6 +9435,22 @@ function solveconcavepent() {
     }
 }
 
+//Concave Pentagon
+function solveconcaveregularpent() {
+    var a = parseFloat(document.getElementById("regularpenta-a").value);
+    var tipDistField = document.getElementById("regularpenta-b");
+    var perimeterField = document.getElementById("regularpenta-p");
+    var areaField = document.getElementById("regularpenta-A");
+    var b = a/2 * (1 + Math.sqrt(5));
+    var p = 5 * a;
+    var A = a*a/4 * ( Math.sqrt(25 + 10 * Math.sqrt(5)) - Math.sqrt(10 + 2 * Math.sqrt(5)));
+    if (!isNaN(a)) {
+        tipDistField.innerHTML = `Distance of the tips (b):	= ${b.toFixed(3)} units`;
+        perimeterField.innerHTML = `Perimeter (p) = ${p.toFixed(3)} units`;
+        areaField.innerHTML = `Area (A) = ${A.toFixed(3)} sq.units`;
+    }
+}
+
 //created function for Decagon
 function solvedeca() {
     let side = document.getElementById("inputsidedeca").value;
@@ -9886,6 +9934,30 @@ function solvedoustar() {
 
 }
 //Truncated Shapes
+
+function solvetrunicosa() {
+    var a = parseFloat(document.getElementById("trunicosa-a").value);
+    var edgeLenOctField = document.getElementById("trunicosa-ax");
+    var areaField = document.getElementById("trunicosa-A");
+    var volField = document.getElementById("trunicosa-V");
+    var cirRadField = document.getElementById("trunicosa-rc");
+    var midRadField = document.getElementById("trunicosa-rm");
+    var avField = document.getElementById("trunicosa-av");
+    var ax = 3 * a;
+    var A = 3 * a*a * (10*Math.sqrt(3) + Math.sqrt(25 + 10*Math.sqrt(5)));
+    var V = a*a*a/4 * (125 + 43 * Math.sqrt(5));
+    var rc = a/4*Math.sqrt(58 + 18*Math.sqrt(5));
+    var rm = 3 / (4*a) * (1 + Math.sqrt(5));
+    if ((!isNaN(a))) {
+        edgeLenOctField.innerHTML = `Edge length octahedron (a') = ${ax.toFixed(3)}`;
+        areaField.innerHTML = `Surface area (A) = ${A.toFixed(3)}`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)}`;
+        cirRadField.innerHTML = `Circumsphere radius (rc) = ${rc.toFixed(3)}`;
+        midRadField.innerHTML = `Midsphere radius (rm) = ${rm.toFixed(3)}`;
+        avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A/V).toFixed(3)}`;
+    }
+}
+
 function solvetruntetra() {
     var a = document.getElementById("inputtruntetraside").value;
 
@@ -15064,17 +15136,26 @@ function cirinsemi1find() {
 }
 
 function cirinsemi2find() {
-    let l = parseInt(document.getElementById("cirinsemi2in").value)
-    let b = parseInt(document.getElementById("cirinsemi21in").value)
-    let h = parseInt(document.getElementById("cirinsemi22in").value)
-    if (!isNaN(l) && !isNaN(b) && !isNaN(h)) {
+    var l = parseInt(document.getElementById("cirinsemi2in").value)
+    var b = parseInt(document.getElementById("cirinsemi21in").value)
+    var output = document.getElementById("cirinsemi2ans");
+    var temp = "";
+    if (!isNaN(l) && !isNaN(b)) {
         var a = (l * b) / (l + b);
-        let ans = a * a;
-        document.getElementById("cirinsemi2ans").innerHTML = ans
+        var ans = a * a;
+        temp += "\\[Area \\space of \\space a \\space largest \\space square \\space fit \\space in \\space right \\space angle \\space triangle \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space (\\frac{(base \\space of \\space triangle) \\times (perpendicular \\space of \\space triangle)}{(base \\space of \\space triangle) + (perpendicular \\space of \\space triangle)})^2\\]"
+        temp += "\\[\\space = \\space (\\frac{("+l+") \\times ("+b+")}{("+l+") + ("+b+")})^2\\]"
+        temp += "\\[\\space = \\space (\\frac{"+(l*b)+"}{"+(l+b)+"})^2\\]"
+        temp += "\\[\\space = \\space ("+a+")^2\\]"
+        temp += "\\[\\space = \\space "+ans.toFixed(3)+"\\]"
+
+        output.innerHTML = temp;
     }
     else {
-        document.getElementById("cirinsemi2ans").innerHTML = "Please enter valid input"
+        output.innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
     }
+    renderMathInElement(output);
 }
 
 function cirinsemi3find() {
@@ -17395,6 +17476,21 @@ function phi5(n) {
         result -= parseInt(result / n);
     return result;
 }
+
+function lance_cal(){
+    let x = parseInt(document.getElementById("lance_x").value);
+    let y = parseInt(document.getElementById("lance_y").value);
+    let z = parseInt(document.getElementById("lance_z").value);
+
+    var area = z * ( u - y ) / 2 - x * ( z - y/2 );
+    var peri = 2z * arccos ( 1 - y / ( 2 * z ) ) + y;
+    document.getElementById("lance_res").innerHTML = "Area : "+ area+" and perimeter : "+peri;
+}
+function arccos(degrees) {
+    var radians = (degrees*Math.PI)/180;
+    return Math.arccos(radians);
+}
+
 //Harmonic Mean
 function calcexhmsol() {
     var a = document.getElementById("aval2").value = 2;
