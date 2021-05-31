@@ -25905,6 +25905,32 @@ function sphcartcal() {
     renderMathInElement(outputy);
     renderMathInElement(outputz);
 }
+function sphpolarcal() {
+    var r = parseFloat(document.getElementById("sphcartr").value);
+    var o = parseFloat(document.getElementById("sphcarto").value);
+
+    var outputx = document.getElementById("sphpolarpans");
+    var outputy = document.getElementById("sphpolaroans");
+    var ans = "";
+
+    var x = (r * Math.sin(o) * Math.cos(fi)).toFixed(2);
+    var y = (r * Math.sin(o) * Math.sin(fi)).toFixed(2);
+
+    var r = Math.sqrt(x * x + y * y).toFixed(2);
+    var o = Math.atan(y / x).toFixed(2);
+
+    var ansx = "r: " + r;
+    var ansy = "θ: " + o;
+    if (isNaN(r) || isNaN(o)) {
+        ans += "Please fill all the field";
+        outputx.innerHTML = ans;
+        outputy.innerHTML = "";
+    }
+    else {
+        outputx.innerHTML = ansx;
+        outputy.innerHTML = ansy;
+    }
+}
 
 function cartcylcal() {
     var x = (document.getElementById("cartcylx").value);
