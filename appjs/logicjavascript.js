@@ -3161,6 +3161,12 @@ function impse2find() {
     }
 }
 
+function calceximpse3find(){
+    var n = document.getElementById("impse7");
+    n.value = 5;
+    
+    impse3find();
+}
 function impse3find() {
     let n = parseInt(document.getElementById("impse7").value)
     if (!isNaN(n)) {
