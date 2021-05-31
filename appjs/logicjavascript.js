@@ -15424,6 +15424,16 @@ function apgphp() {
     renderMathInElement(output);
 }
 //Constant/Increasing/Decreasing GP
+function calcexconstGp(){
+    var a = document.getElementById("term151");
+    var b = document.getElementById("term152");
+
+    a.value = 2;
+    b.value = 4;
+
+    constGp();
+}
+
 function constGp() {
     var a = parseInt(document.getElementById("term151").value)
     var b = parseInt(document.getElementById("term152").value)
