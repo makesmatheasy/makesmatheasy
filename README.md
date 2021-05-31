@@ -354,6 +354,7 @@ Other Tech/Libraries
     - Arbelos
     - Helix
     - Spherical Triangle
+    - Right Kite
 
   - Name Of 3D Shapes
   - 3D Shapes Calculator
