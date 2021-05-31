@@ -22592,19 +22592,25 @@
     <img src="images/bilinear.png" class="img-fluid" style="display: block; margin-left:auto; margin-right:auto; height:244px;"><br>
 
     <form action="">
-        <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Coordinates: <input type="number" name="bicx1" id="bicx1" width="5em" placeholder="Enter x₁"> 
-            <input type="number" name="bicy1" id="bicy1" width="5em" placeholder="Enter y₁"><input type="number" name="bicx2" id="bicx2" width="5em" placeholder="Enter x₂"><input type="number" name="bicy2" id="bicy2" width="5em" placeholder="Enter y₂">
-            <p>&nbsp;</p></p>
         
-          <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Values: <input type="number" name="bicq11" id="bicq11" width="5em" placeholder="Enter Q₁₁"> 
-              <input type="number" name="bicq21" id="bicq21" width="5em" placeholder="Enter Q₂₁"><input type="number" name="bicq12" id="bicq12" width="5em" placeholder="Enter Q₁₂"><input type="number" name="bicq22" id="bicq22" width="5em" placeholder="Enter Q₂₂">
-              <p>&nbsp;</p></p>
-          <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Interpolated Point: <input type="number" name="bicx" id="bicx" width="5em" placeholder="Enter x"> 
-              <input type="number" name="bicy" id="bicy" width="5em" placeholder="Enter y">
-              <p>&nbsp;</p></p>      
-          <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="bilinearcal()">Calculate</button>
-          <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
-    </form>
+            <div class="form-group justify-content-center" style="display: grid;">
+                <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Coordinates: <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicx1" id="bicx1" width="5em" placeholder="Enter x₁"> 
+                <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicy1" id="bicy1" width="5em" placeholder="Enter y₁"><input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicx2" id="bicx2" width="5em" placeholder="Enter x₂"><input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicy2" id="bicy2" width="5em" placeholder="Enter y₂">
+                <p>&nbsp;</p></p>
+            
+              <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Corner Point Values: <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicq11" id="bicq11" width="5em" placeholder="Enter Q₁₁"> 
+                  <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicq21" id="bicq21" width="5em" placeholder="Enter Q₂₁"><input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicq12" id="bicq12" width="5em" placeholder="Enter Q₁₂"><input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicq22" id="bicq22" width="5em" placeholder="Enter Q₂₂">
+                  <p>&nbsp;</p></p>
+              <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Interpolated Point: <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicx" id="bicx" width="5em" placeholder="Enter x"> 
+                  <input type="number" style="width: 100%; max-width: 250px;" class="form-control" name="bicy" id="bicy" width="5em" placeholder="Enter y">
+                  <p>&nbsp;</p></p>
+            </div>
+             
+              <div class="d-flex justify-content-center form-group justify-content-center" style="display: grid;">     
+                <button type="button" class="btn btn-outline-light mr-1" onclick="bilinearcal()">Calculate</button>
+                <button type="button" class="btn btn-outline-light mr-1" onclick="this.form.reset();">Reset</button>
+             </div>
+            </form>
     
     <p>&nbsp;</p>
     <p id="bilinearans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
