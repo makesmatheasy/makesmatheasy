@@ -26846,15 +26846,26 @@ function isDisNum(num) {
 // Krishnamurthy Number
 function isKrishnaNum(num) {
     let sum = 0;
-    let temp = num;
+    let temp=num;
+    let ans ="",s="";
+    ans += "Step 1: Number => " + num;
     while (temp != 0) {
+        s+=`!${temp%10}+`;
         sum = sum + fac(temp % 10);
         temp = parseInt(temp / 10);
     }
-    if (sum == num)
-        document.getElementById('krishans').innerHTML = num + " is a Krishnamurthy Number";
-    else
-        document.getElementById('krishans').innerHTML = num + " is not a Krishnamurthy Number";
+    s = s.substring(0, s.length - 1);
+    const rs = s => [...s].reverse().join('');
+    ans += `<br> Step 2: Sum of factorial of each digit => ${rs(s)} = ${sum}`;
+    if (sum == num){
+        ans += `<br> Step 3: Clearly the sum of the factorial of digits is equal to the number itself.`;
+        ans += `<br> Step 4: Hence ${num} is a Krishnamurthy Number`;
+    }
+    else{
+        ans += `<br> Step 3: Clearly the sum of the factorial of digits is not equal to the number itself.`;
+        ans += `<br> Step 4: Hence ${num} is not a Krishnamurthy Number`;
+    }
+    document.getElementById('krishans').innerHTML = ans;
 }
 // Automorphic Number
 function isAutoNum(num) {
