@@ -26684,10 +26684,18 @@ function isTrimorNum(Num) {
         Num = parseInt(Num / 10, 10);
         cube = parseInt(cube / 10, 10);
     }
-    if(!flag)
-        document.getElementById('trimorans').innerHTML = n +" is a Trimorphic Number";
-    else
-        document.getElementById('trimorans').innerHTML = n +" is not a Trimorphic Number";
+    let ans ="";
+    ans += "Step 1: Number => " + n;
+    ans += `<br> Step 2: Cube of the number => ${n}*${n}*${n} = ${n*n*n}`;
+    if(!flag){
+        ans += `<br> Step 3: Clearly the cube of the number ends with ${n}`;
+        ans += `<br> Step 4: Hence ${n} is a Trimorphic Number`;
+    }
+    else{
+        ans += `<br> Step 3: Clearly the cube of the number doesn't ends with ${n}`;
+        ans += `<br> Step 4: Hence, ${n} is not a Trimorphic Number`;
+    }
+    document.getElementById('trimorans').innerHTML = ans;
 }
 // Harshad Number
 function isHarNum(num) {
