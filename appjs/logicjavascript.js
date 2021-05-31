@@ -24341,6 +24341,46 @@ function tvalue_SD(diff, length) {
     return Math.sqrt(val);
 }
 
+// Regression coefficient calculator
+function regressionvalue(){
+    let list1 = document.getElementById("valuex").value;
+    let list2 = document.getElementById("valuey").value;
+
+
+    if (list1 == "" || list2 == "") {
+        document.getElementById('regressionans').innerHTML = "Please input all the numbers to find answer";
+    }
+    else {
+        list1 = list1.split(" ");
+        list2 = list2.split(" ");
+        let n1 = list1.length;
+        let n2 = list2.length;
+        if (list1.length != list2.length) {
+            document.getElementById('regressionans').innerHTML = "Number of inputs in both dataset should be same";
+        }
+        else{
+            let sumx=0;
+            let sumy=0;
+            let sumxy=0;
+            let sumx2=0;
+            let sumy2=0;
+        for (var i = 0; i < n1; i++) {
+            list1[i] = parseInt(list1[i]);
+            list2[i] = parseInt(list2[i]);
+            sumx=sumx+list1[i];
+            sumy=sumy+list2[i];
+            sumxy=sumxy+(list1[i]*list2[i]);
+            sumx2=sumx2+Math.pow(list1[i],2);
+            sumy2=sumy2+Math.pow(list2[i],2);
+        }//for
+        var bxy=((n1*sumxy)-(sumx*sumy))/((n1*sumx2)-(Math.pow(sumx,2)));
+        var byx=((n1*sumxy)-(sumx*sumy))/((n1*sumy2)-(Math.pow(sumy,2)));
+        document.getElementById('regressionans').innerHTML = "bxy= "+bxy+" and bxy= "+ byx;
+    }//else
+    }//else
+
+}//function
+
 function abvalue() {
     let n1 = parseInt(document.getElementById("absize1").value);
     let n2 = parseInt(document.getElementById("absize2").value);

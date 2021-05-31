@@ -261,6 +261,7 @@ function openit(id) {
         "#thdif",
         "#corgeo",
         "#ttest",
+        "#regressiontest",
         "#abundants",
         "#abtest",
         "#ftest",
