@@ -7079,7 +7079,6 @@ function tangeqution() {
     renderMathInElement(document.getElementById("centerrrp"));
 
 }
-<<<<<<< HEAD
 
 function chordeqution() {
     var a, b, c, d, e, f;
@@ -7111,8 +7110,6 @@ function chordeqution() {
     renderMathInElement(document.getElementById("centerrrp"));
 
 }
-=======
->>>>>>> 19e3526669a65106e43359643fd5625070e0788d
 
 // number of diagonals in n sided convex polygon
 function nodiagnolfind() {
