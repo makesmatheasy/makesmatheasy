@@ -24607,3 +24607,20 @@ function isHarNum(num) {
     else
         document.getElementById('harans').innerHTML = num +" is not a Harshad Number";
 }
+// Trimorphic Number
+function isTrimorNum(Num) {
+    let n=Num;
+    let cube = Num * Num * Num,flag=0;
+    while (Num > 0) {
+        if (Num % 10 != cube % 10){
+            flag=1;
+            break;
+        }
+        Num = parseInt(Num / 10, 10);
+        cube = parseInt(cube / 10, 10);
+    }
+    if(!flag)
+        document.getElementById('trimorans').innerHTML = n +" is a Trimorphic Number";
+    else
+        document.getElementById('trimorans').innerHTML = n +" is not a Trimorphic Number";
+}

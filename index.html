@@ -3127,6 +3127,21 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="trimornumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Trimorphic Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Trimorphic Number','trimornum','c','trimornumimgfav')"><img
+                                        id="trimornumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
@@ -37785,7 +37800,7 @@ N is the population size.
         </div>
     </div>
     <!--roman numeral end-->
-<!-- Armstrong -->
+    <!-- Armstrong -->
     <div class="collapse" id="armnum" style="text-align: center;">
         <div class="container">
             <h1 style="color: white;font-family:mathfont;text-align: center;">Armstrong Number Checker</h2>
@@ -37859,8 +37874,8 @@ N is the population size.
         </div>
     </div>
     <!-- Neon Number end -->
-       <!-- Krishnamurthy Number start-->
-       <div class="collapse" id="krishnum" style="text-align: center;">
+    <!-- Krishnamurthy Number start-->
+    <div class="collapse" id="krishnum" style="text-align: center;">
         <div class="container">
             <h1 style="color: white;font-family:mathfont;text-align: center;">Krishnamurthy Number Checker</h2>
             <br>
@@ -37935,7 +37950,7 @@ N is the population size.
         </div>
     </div>
     <!-- Pronic number end -->
-    <!-- Pronic number start-->
+    <!-- Harshad Number start-->
     <div class="collapse" id="harnum" style="text-align: center;">
         <div class="container">
             <h2 style="color: white;font-family:mathfont;text-align: center;">Harshad Number Checker</h2>
@@ -37959,7 +37974,32 @@ N is the population size.
             </div>
         </div>
     </div>
-    <!-- Pronic number end -->
+    <!-- Harshad Number end -->
+    <!-- Trimorphic Number start-->
+    <div class="collapse" id="trimornum" style="text-align: center;">
+        <div class="container">
+            <h2 style="color: white;font-family:mathfont;text-align: center;">Trimorphic Number Checker</h2>
+            <br>
+            <p>A number is called Trimorphic number if and only if its cube ends in the same digits as the number itself. </p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="trimorn" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="isTrimorNum(document.getElementById('trimorn').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="trimorans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Trimorphic Number end -->
 </div>
 <!--#######-------all modals here-------#######-->
 
