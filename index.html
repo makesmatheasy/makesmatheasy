@@ -17999,6 +17999,10 @@
                     <td><a data-toggle="modal" data-target="#slopeline"
                             style="text-decoration:none;" href="#">Line</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#circularsegment"
+                            style="text-decoration:none;" href="#">Circular Segment</a></td>
+                </tr>
             </table>
         </div>
 
@@ -28330,6 +28334,60 @@ N is the population size.
                             <p class="stopwrap" id="resultofline" style="font-family:mathfont; margin-top: 3.125rem"></p>
                             <p class="stopwrap" style="font-family:mathfont; margin-left: 0rem;" id="answerofline"></p>
                             <p class="stopwrap" style="font-family:mathfont; margin-left: 0rem;" id="answerofline2"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="circularsegment" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Circular Segment</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Angle (Θ)</h5>
+                                    <p class="text-center">\[\theta = 2 \times \arccos \left ( 1 - \frac{h}{r} \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Arc length (l)</h5>
+                                    <p class="text-center">\[l = r \times \theta\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Chord length (s)</h5>
+                                    <p class="text-center">\[s = 2 \times \sqrt {2 \times r \times h - h^2}\]</p>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = l + s\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = r \times \frac{l}{2} - s \times \frac{\left ( r - h \right )}{2}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/circular-segment.png" class="img-fluid d-block mx-auto">
+                                </div>
+                            </div>
+                            <input class="form__field" type="number" placeholder="Enter Circle radius (r)" id="circularsegment-r" oninput="circularsegmentsolve();" >
+                            <input class="form__field" type="number" placeholder="Enter Height (h)" id="circularsegment-h" oninput="circularsegmentsolve();">
+                            <p class="stopwrap" id="circularsegment-theta"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="circularsegment-l"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="circularsegment-s"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="circularsegment-p"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="circularsegment-A"
+                                       style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
