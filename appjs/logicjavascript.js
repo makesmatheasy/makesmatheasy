@@ -17331,45 +17331,54 @@ function cal_func_stats() {
     }
 }
 
-function sieve2(){
+function sieve2find(){
     let limit = parseInt(document.getElementById("sieve2").value)
-    if (limit > 2)
-        document.getElementById('sieve2ans').innerHTML =2 + " ";
-    if (limit > 3)
-        document.getElementById('sieve2ans').innerHTML = 3 + " ";
-    let sieve = new Array()
-    sieve[limit] = 0;
-    for (let i = 0; i < limit; i++)
-        sieve[i] = false;
-    for (let x = 1; x * x < limit; x++)
-    {
-        for (let y = 1; y * y < limit; y++)
+    if(!isNaN(limit)){
+        document.getElementById('sieve2exp').innerHTML = "\\[Given a limit, print all primes smaller than or equal to the given limit.\\]"
+        document.getElementById('sieve2exp').innerHTML = "\\[The sieve of Atkin is a modern algorithm for finding all prime numbers up to a specified integer.\\]"
+        document.getElementById('sieve2exp').innerHTML = "\\[Compared with the ancient Sieve of Eratosthenes, which marks off multiples of primes, it does some preliminary work and then marks off multiples of squares of primes\\]"
+        document.getElementById('sieve2exp').innerHTML = "\\[Square the number and mark all multiples of that square as non-prime. Note that the multiples that can be factored by 2, 3, or 5 need not be marked, as these will be ignored in the final enumeration of primes.\\]"
+        renderMathInElement(document.getElementById('sieve2exp'))
+        if (limit > 2)
+            document.getElementById('sieve2ans').innerHTML =2 + " ";
+        if (limit > 3)
+            document.getElementById('sieve2ans').innerHTML = 3 + " ";
+        let sieve = new Array()
+        sieve[limit] = 0;
+        for (let i = 0; i < limit; i++)
+            sieve[i] = false;
+        for (let x = 1; x * x < limit; x++)
         {
-            let n = (4 * x * x) + (y * y);
-            if (n <= limit && (n % 12 == 1 ||
-                                n % 12 == 5))
-                sieve[n] ^= true;
- 
-            n = (3 * x * x) + (y * y);
-            if (n <= limit && n % 12 == 7)
-                sieve[n] = true;
- 
-            n = (3 * x * x) - (y * y);
-            if (x > y && n <= limit &&
-                            n % 12 == 11)
-                sieve[n] ^= true;
+            for (let y = 1; y * y < limit; y++)
+            {
+                let n = (4 * x * x) + (y * y);
+                if (n <= limit && (n % 12 == 1 ||
+                                    n % 12 == 5))
+                    sieve[n] ^= true;
+     
+                n = (3 * x * x) + (y * y);
+                if (n <= limit && n % 12 == 7)
+                    sieve[n] = true;
+     
+                n = (3 * x * x) - (y * y);
+                if (x > y && n <= limit &&
+                                n % 12 == 11)
+                    sieve[n] ^= true;
+            }
         }
-    }
-    for (let r = 5; r * r < limit; r++) {
-        if (sieve[r]) {
-            for (i = r * r; i < limit;
-                            i += r * r)
-                sieve[i] = false;
+        for (let r = 5; r * r < limit; r++) {
+            if (sieve[r]) {
+                for (i = r * r; i < limit;
+                                i += r * r)
+                    sieve[i] = false;
+            }
         }
+        for (let a = 5; a < limit; a++)
+            if (sieve[a])
+                document.getElementById('sieve2ans').innerHTML = a , " ";
     }
-    for (let a = 5; a < limit; a++)
-        if (sieve[a])
-            document.getElementById('sieve2ans').innerHTML = a , " ";
+    else 
+        document.getElementById('sieve2ans').innerHTML = "Please enter valid input"
 }
 
 //sum of nterms of an Arithmetic Progression
