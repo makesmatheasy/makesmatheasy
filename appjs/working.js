@@ -28,6 +28,11 @@ $("#armnumbtn").click(function(){
     closenav();
     clearall();
 });
+$("#perfectbtn").click(function(){
+    openit("#perfectnum");
+    closenav();
+    clearall();
+});
 // Disarium Number
 $("#disnumbtn").click(function(){
     openit("#disnum");
