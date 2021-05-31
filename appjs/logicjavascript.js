@@ -17907,19 +17907,39 @@ function hypf() {
 }
 //Inequalities of Triangles
 function ineqtrifind() {
-    console.log("Hii")
-    let s1 = parseInt(document.getElementById("ineqtriin1").value)
-    let s2 = parseInt(document.getElementById("ineqtriin2").value)
-    let s3 = parseInt(document.getElementById("ineqtriin3").value)
-    if (s1 + s2 > s3 && s2 + s3 > s1 && s1 + s3 > s2) {
-        if ((Math.abs(s1 - s2)) < s3 && (Math.abs(s2 + s3)) < s1 && (Math.abs(s1 + s3)) < s2) {
-            document.getElementById("ineqtrians").innerHTML = "Yes the triangle with given side lengths can exist"
+    var s1 = parseInt(document.getElementById("ineqtriin1").value)
+    var s2 = parseInt(document.getElementById("ineqtriin2").value)
+    var s3 = parseInt(document.getElementById("ineqtriin3").value)
+    var output = document.getElementById("ineqtrians");
+    var temp = "";
+    temp += "\\[To \\space check \\space the \\space Inequalities \\space of \\space Triangles,\\]"
+    temp += "\\[we \\space check \\space (length \\space of \\space side \\space 1), \\space (length \\space of \\space side \\space 2) \\space and \\space (length \\space of \\space side \\space 3)\\]"
+    temp += "\\[That \\space is \\space here, \\space "+s1+", \\space "+s2+" \\space and \\space "+s3+"\\]"
+    
+    if (!isNaN(s1) && !isNaN(s2) && !isNaN(s3)){
+        if (s1 + s2 > s3 && s2 + s3 > s1 && s1 + s3 > s2) {
+            temp += "\\[Since, \\space here,\\]"
+            temp += "\\["+s1+" + "+s2+" \\space is \\space greater \\space than, \\space "+s3+" \\]";
+            temp += "\\[\\space and, \\space "+s2+" + "+s3+" \\space is \\space greater \\space than, \\space "+s1+"\\]"
+            temp += "\\[\\space and, \\space "+s1+" \\space and \\space  "+s1+" + "+s3+" \\space is \\space greater \\space than, \\space "+s2+"\\]"
+            if ((Math.abs(s1 - s2)) < s3 && (Math.abs(s2 + s3)) < s1 && (Math.abs(s1 + s3)) < s2) {
+                temp +=  "\\[Yes \\space the \\space triangle \\space with \\space given \\space side \\space lengths \\space can \\space exist\\]"
+            } else {
+                temp += "\\[No \\space the \\space triangle \\space with \\space given \\space side \\space lengths \\space cannot \\space exist\\]"
+            }
         } else {
-            document.getElementById("ineqtrians").innerHTML = "No the triangle with given side lengths cannot exist"
+            temp += "\\[Since, \\space here,\\]"
+            temp += "\\["+s1+" + "+s2+" \\space is \\space NOT \\space greater \\space than, \\space "+s3+" \\]";
+            temp += "\\[\\space and, \\space "+s2+" + "+s3+" \\space is \\space NOT \\space greater \\space than, \\space "+s1+"\\]"
+            temp += "\\[\\space and, \\space "+s1+" \\space and \\space  "+s1+" + "+s3+" \\space is \\space NOT \\space greater \\space than, \\space "+s2+"\\]"
+            temp += "\\[Since, \\space the \\space conditions \\space does \\space not \\space satisfy,\\]"
+            temp +="\\[No \\space the \\space triangle \\space with \\space given \\space side \\space lengths \\space cannot \\space exist\\]"
         }
-    } else {
-        document.getElementById("ineqtrians").innerHTML = "No the triangle with given side lengths cannot exist"
+    } else{
+        temp +="\\[Please \\space enter \\space valid \\space input\\]"
     }
+    output.innerHTML = temp;
+    renderMathInElement(output);
 }
 
 //spheroidal cap Calculator added
