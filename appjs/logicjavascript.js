@@ -8718,12 +8718,17 @@ function helixsolve() {
     var s = 2 * Math.PI * r * Math.sqrt(1 + k * k) * t;
 
     if (!isNaN(r) && !isNaN(h) && !isNaN(t)) {
-        slopeField.innerHTML = `Slope (k) = ${k}`;
-        curvatureField.innerHTML = `Curvature (κ) = ${kp}`;
-        torsionField.innerHTML = `Torsion (w) = ${w}`;
-        arcLenField.innerHTML = `Arc length (s) = ${s}`;
+        slopeField.innerHTML = "\\[Slope \\space (k) = \\frac{"+h.toFixed(3)+"}{( 2 \\times \\pi \\times "+r.toFixed(3)+" )} = "+k.toFixed(3)+"\\]";
+        curvatureField.innerHTML = "\\[Curvature \\space (\\kappa) = \\frac{1}{( "+r.toFixed(3)+" \\times ( 1 + "+k.toFixed(3)+"^2 )} = "+kp.toFixed(3)+"\\]";
+        torsionField.innerHTML = "\\[Torsion \\space (w) = \\frac{"+k.toFixed(3)+"}{"+r.toFixed(3)+" \\times ( 1 + "+k.toFixed(3)+"^2 )} = "+w.toFixed(3)+"\\]";
+        arcLenField.innerHTML = "\\[Arc \\space length \\space (s) = 2 \\times \\pi \\times "+r.toFixed(3)+" \\times \\sqrt{1 + "+k.toFixed(3)+"^2} \\times "+t.toFixed(3)+" = "+s.toFixed(3)+"\\]";
+        renderMathInElement(slopeField);
+        renderMathInElement(curvatureField);
+        renderMathInElement(torsionField);
+        renderMathInElement(arcLenField);
     }
 }
+
 // Right Kite
 
 function rightkitesolve() {
@@ -26877,16 +26882,27 @@ function perfectvalue() {
 }
 // Neon Number
 function isNeonNum(num) {
-    let sq = num * num;
+    let sq = num * num,ans="",s="";
     let sum_digits = 0;
+    ans += "Step 1: Number => " + num;
+    ans += `<br> Step 2: Square of the number => ${num}*${num} = ${sq}`;
     while (sq != 0) {
+        s+=`${sq%10}+`;
         sum_digits = sum_digits + sq % 10;
         sq = Math.floor(sq / 10);
     }
-    if (sum_digits == num)
-        document.getElementById('neonans').innerHTML = num + " is a Neon number";
-    else
-        document.getElementById('neonans').innerHTML = num + " is not a Neon number";
+    s = s.substring(0, s.length - 1);
+    const rs = s => [...s].reverse().join('');
+    ans += `<br> Step 3: Sum of digits of square of the number => ${rs(s)} = ${sum_digits}`;
+    if (sum_digits == num){
+        ans += `<br> Step 4: Clearly the sum of digits of square of the number is equal to the number.`;
+        ans += `<br> Step 5: Hence ${num} is a Neon number`;
+    }
+    else{
+        ans += `<br> Step 4: Clearly the sum of digits of square of the number is not equal to the number.`;
+        ans += `<br> Step 5: Hence ${num} is not a Neon number`;
+    }
+    document.getElementById('neonans').innerHTML = ans;
 }
 // Disarium Number
 function isDisNum(num) {
