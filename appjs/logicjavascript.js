@@ -7021,6 +7021,37 @@ function director_c() {
     renderMathInElement(document.getElementById("centerrr"));
 
 }
+function chordeqution() {
+    var a, b, c, d, e, f;
+    g = parseInt(document.getElementById("acenterrp").value);
+    f = parseInt(document.getElementById("bcenterrp").value);
+    c = parseInt(document.getElementById("ccenterrp").value);
+    a = parseInt(document.getElementById("bcenterrpx").value);
+    b = parseInt(document.getElementById("bcenterrpy").value);
+    var x  = g/2;
+    var y = f/2;
+
+    var one = a+x;
+    var two = b+y;
+    var three = c + x*a +y*b;
+
+    
+        document.getElementById("centererp").innerHTML = "\\[Equation  \\space Of Chord \\space of  \\space Contact \\space -> \\newline";
+        document.getElementById("centererp").innerHTML += " g\\space = \\frac {" + g + "} { ( \\space " + 2 + " ) } " + " \\space = " + x + "\\newline";
+        document.getElementById("centererp").innerHTML += " h\\space = \\frac {" + f + "} { (  \\space " + 2 + " ) } " + " \\space = " + y + "\\newline"; 
+        document.getElementById("centererp").innerHTML += " Equation \\space = \\space \\ ( \\space a \\space + \\space g) \\space  x  + \\space ( \\space b \\space + \\space f ) \\space  y   \\space + ( \\space  ga \\space + fy \\space  + c \\space ) \\newline \\] ";
+
+        
+        document.getElementById("centerrrp").innerHTML += " \\[  "+ one + "x \\space + (" +  two + ") y \\space +("+three + ") \\space = \\space 0 \\newline \\] ";
+       
+
+    
+
+    renderMathInElement(document.getElementById("centererp"));
+    renderMathInElement(document.getElementById("centerrrp"));
+
+}
+
 function tanglenght() {
     var a, b, c, d, e, f;
     g = parseInt(document.getElementById("acenterrp").value);
@@ -7049,6 +7080,7 @@ function tanglenght() {
     renderMathInElement(document.getElementById("centerrrp"));
 
 }
+
 function tangeqution() {
     var a, b, c, d, e, f;
     var g = parseInt(document.getElementById("acenterrp").value);
