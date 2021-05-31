@@ -310,6 +310,7 @@ function openit(id) {
         "#errpers",
         "#log_values",
         "#oops",
+        "#cirtri",
         "#halfcone",
         "#astroid",
         "#squarecube",
