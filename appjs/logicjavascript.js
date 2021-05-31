@@ -15656,7 +15656,21 @@ function mnap() {
 
 }
 
+function calcexmngpsum(){
+    var m = document.getElementById("mterm1");
+    var n = document.getElementById("nterm1");
+    var mtherm = document.getElementById("mthterm1");
+    var ntherm = document.getElementById("nthterm1");
+    var pterm = document.getElementById("pterm1");
 
+    m.value = 10;
+    n.value = 5;
+    mtherm.value = 2560;
+    ntherm.value = 80;
+    pterm.value = 30;
+
+    mngpsum();
+}
 function mngpsum() {
     var m = parseInt(document.getElementById("mterm1").value)
     var n = parseInt(document.getElementById("nterm1").value)
