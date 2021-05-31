@@ -5127,6 +5127,23 @@
                     </tr>
                 </table>
             </li>
+            <!-- Regression coefficient calculator -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="regressionbtn"
+                               style="font-size:0.875rem;cursor: pointer;background:transparent;border:none;">Regression Coefficient Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('regressiontest','#regressiontest','c','regressiontestfav')"><img
+                                        id="regressiontestfav"  src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -14904,6 +14921,27 @@
                 <p id="SD1" style="text-align: left;"></p>
                 <p id="SD2" style="text-align: left;"></p>
             </div>
+        </div>
+
+         <!-- Regression-test -->
+         <div class="collapse" id="regressiontest">
+            <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Regression Coefficient Calculator</h1>
+            <p style="margin-top: 2rem;">
+                The Regression Coefficient is the constant ‘b’ in the regression equation that tells about the change
+                 in the value of dependent variable corresponding to the unit change in the independent variable.
+            </p>
+            <br><br>
+            <form action="">
+                <input class = "form__field"type="text" id="valuex" placeholder="Enter list of number separated by SPACE ">
+                <br><br>
+                <input class = "form__field"type="text" id="valuey" placeholder="Enter list of number separated by SPACE">
+                <br><br>
+                <button class = "btn btn-light" type="button" onclick="regressionvalue()">Test</button>&nbsp;
+                <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+            </form>
+            
+            <p id="regressionans"></p>
+            
         </div>
 
 <!-- t -test -->
@@ -39315,9 +39353,7 @@ N is the population size.
                 <p class="stopwrap" style="color:white;" id="perfectans"></p><br>
         </div>
     </div>
-=======
->>>>>>> upstream/main
->>>>>>> 9c3b3392b955d0eee2ea2e4b1802300b75565417
+
     <!-- Disarium Number start-->
     <div class="collapse" id="disnum" style="text-align: center;">
         <div class="container">

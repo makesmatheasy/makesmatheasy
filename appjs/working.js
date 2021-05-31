@@ -615,6 +615,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#regressionbtn").click(function () {
+        openit("#regressiontest");
+        closenav();
+        clearall();
+    });   
     $("#abtestbtn").click(function () {
         openit("#abtest");
         closenav();
