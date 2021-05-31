@@ -25653,6 +25653,17 @@ function recinsemifind() {
     renderMathInElement(result);
 }
 
+function ininpolyfind(){
+    var n = parseInt(document.getElementById("ininpolyn").value);
+    var a = parseInt(document.getElementById("ininpolyr").value);
+    var inrad = a/(2 * math.tan(math.pi/n));
+    var incirarea = math.pi * r *r;
+    var circlearea = 0.5  * n * a  * a ;
+    document.getElementById("ininpolynans1").innerHTML = "Inradius: "+inrad.toFixed(2)
+    document.getElementById("ininpolynans1").innerHTML = "Incircle area: "+incirarea.toFixed(2)
+    document.getElementById("ininpolynans1").innerHTML = "Circle area: "+circlearea.toFixed(2)
+}
+
 function cirrecfind() {
     let r = parseInt(document.getElementById("cirrec").value)
     let result = document.getElementById("cirrecans")
