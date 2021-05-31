@@ -18660,19 +18660,24 @@ function combinationcal(nval, rval) {
 //Roots of Unity Calculator
 function rootsunityfind() {
     let n = document.getElementById("rootsunityin").value;
+    var r = document.getElementById("rootsunityans");
     if (n == "" || isNaN(n)) {
-        document.getElementById("rootsunityans").innerHTML = "Please enter proper inputs";
+        r.innerHTML = "Please enter proper inputs";
     }
     else {
         let n = parseInt(document.getElementById("rootsunityin").value)
+        r.innerHTML += "Finding theta<br>";
         var theta = (3.14 * 2 / n);
         for (let k = 0; k < n; k++) {
+            
             var real = Math.cos(k * theta);
+            r.innerHTML += k+" th real value<br>";
             var img = Math.sin(k * theta);
+            r.innerHTML += k+" th imaginery value<br>";
             if (img > 0)
-                document.getElementById("rootsunityans").innerHTML = real.toFixed(6) + " + " + img.toFixed(6) + "i<br>";
+                r.innerHTML += "The root of unity: "+ real.toFixed(6) + " + " + img.toFixed(6) + "i<br>";
             else
-                document.getElementById("rootsunityans").innerHTML = real.toFixed(6) + "   " + img.toFixed(6) + "i<br>"
+                r.innerHTML += "The root of unity: "+real.toFixed(6) + "   " + img.toFixed(6) + "i<br>"
         }
     }
 }
