@@ -16096,13 +16096,23 @@ renderMathInElement(result);
 
 function typenum47find(){
     var n = parseInt(document.getElementById("typenum47").value)
-    let prime=[];
-    SieveOfEratosthenes(n, prime);
-    for (let k = 2; (( 1 << k) - 1) <= n; k++){
-        let num = ( 1 << k) - 1;
-        if (prime[(num)])
-            document.getElementById("typenum47exp").innerHTML=num + " "
+    if(!isNaN(n)){
+        let prime=[];
+        SieveOfEratosthenes(n, prime);
+        for (let k = 2; (( 1 << k) - 1) <= n; k++){
+            let num = ( 1 << k) - 1;
+            if (prime[(num)])
+                document.getElementById("typenum47ans").innerHTML=num + " "
+        }
+        document.getElementById("typenum47exp").innerHTML= "\\[Mersenne Prime is a prime number that is one less than a power of two.\\]"
+        document.getElementById("typenum47exp").innerHTML= "\\[In other words, any prime is Mersenne Prime if it is of the form 2k-1 where k is an integer greater than or equal to 2.\\]"
+        document.getElementById("typenum47exp").innerHTML= "\\[First few Mersenne Primes are 3, 7, 31 and 127\\]"
+        document.getElementById("typenum47exp").innerHTML= "\\[The idea is to generate all the primes less than or equal to the given number n using Sieve of Eratosthenes.\\]"
+        document.getElementById("typenum47exp").innerHTML= "\\[Once we have generated all such primes, we iterate through all numbers of the form 2k-1 and check if they are primes or not.\\]"
+        renderMathInElement(document.getElementById("typenum47exp"));
     }
+    else
+        document.getElementById("typenum47ans").innerHTML= " Please enter valid input"
 }
 
 function typenum12find() {
