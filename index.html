@@ -6926,6 +6926,7 @@
                     </p >
     
                 </div><br>
+                
                 <button type="button" class="btn btn-light" onclick=centersolve()>
                     Center
                 </button>
@@ -6944,6 +6945,10 @@
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
                    </button><br><br><br>
+                </form>
+            
+                <h1 id = "centerer"></h1>
+                <h1 id = "centerrr"></h1> 
 
                    <h3 style="text-align: center;">Angle Bisector </h3><br>
             <form action="">
@@ -6969,16 +6974,34 @@
             
             </form>
             <br>
-            <p id="pppdcq1explaneo" style="font-family:mathfont;;width:auto;"
-                class="stopwrap"
-               align="right"></p>
-            <p id="pppdcq1outputo"> </p> 
+        
+
+
+            <h3 style="text-align: center;">Circle and a point</h3><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        <p>\[Equation \space of \space Circle \space : \space  \space  \space  \space \]</p> <p>\[x^2 \space + \space \]</p>  <p>\[y^2 \space + \space \]</p> <input type="text" id="acenterrp" size=3 value='' placeholder="g">  <p>\[x \space + \space \]</p>  +
+                    <input type="text" id="bcenterrp" size=3 value='' placeholder="h"> <p>\[y \space + \space \]</p> + <input type="text" id="ccenterrp" size=3 value='' placeholder="C">  <p>\[\space = \space 0 \newline \]</p>
+                        <br><br>
+                    </p >
+                </div><br>
+                <p>\[Point \space  =  \space  \](<input type="text" id="bcenterrpx" size=5 value='' placeholder="a"> , 
+                <input type="text" id="bcenterrpy" size=5 value='' placeholder="b">)</p><br><br>
+                <button type="button" class="btn btn-light" onclick=tanglenght()>
+                    Tangent length
+                </button>
+                
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                   </button><br><br><br>
+                </form>
+            
+                <h1 id = "centererp"></h1>
+                <h1 id = "centerrrp"></h1> 
 
                
-            </form>
-            
-        <h1 id = "centerer"></h1>
-        <h1 id = "centerrr"></h1>   
+   
         </div>
         <div class="collapse" id="vecalg">
             <div class="stopwrap">
@@ -7410,15 +7433,12 @@
             <br>
             <h5 id="cirinsemi2ans"></h5>
             <br>
-            <h4>Area of a Largest square fit in a semicircle</h4>
-            <br>
+            <h4>Area of a Largest square fit in a semicircle</h4><br>
             <form action="">
-                <input type="text" id="sqinsemi2in" placeholder="Enter radius of semicircle" class="form__field">
-                <br>
+                <input type="text" id="sqinsemi2in" placeholder="Enter radius of semicircle" class="form__field"><br>
                 <button type="button" class="btn btn-dark" onclick="sqinsemi2find()">Find</button>
                 <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-            </form>
-            <br>
+            </form><br>
             <h5 id="sqinsemi2ans"></h5>
             <br>
             <h4>Maximize a value for a semicircle of given radius</h4>
@@ -10118,6 +10138,7 @@
             <button type="button" class="btn btn-dark" onclick="lacube13find()">Find</button>
             <br>
             <p id="lacube13ans"></p>
+            <p id="lacube13exp"></p>
             <br>
             <h2>Check whether a number can be represented by sum of two cubes</h2>
             <br>
@@ -15211,12 +15232,16 @@
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Chi-Square Test</h1>
             <p style="margin: 0 auto 4rem auto; font-style: italic;">(Single Row Data)</p>
             <p style="margin: 0 auto 6rem auto; font-style: italic;">A chi-square (χ2) statistic is a test that measures how a model compares to actual observed data. The data used in calculating a chi-square statistic must be random, raw, mutually exclusive, drawn from independent variables, and drawn from a large enough sample.</p>
-            <input class = "form__field"type="text" id="obsList" placeholder="Enter Observed List Separated by SPACE">
-            <br><br>
-            <input class = "form__field"type="number" id="sigValue" placeholder="Enter given Significance value (χ2)">
-            <br><br>
-        
-            <button class = "btn btn-light" onclick="chivalue()">Test</button>
+            <form action="">
+                <input class = "form__field"type="text" id="obsList" placeholder="Enter Observed List Separated by SPACE">
+                <br><br>
+                <input class = "form__field"type="number" id="sigValue" placeholder="Enter given Significance value (χ2)">
+                <br><br>
+            
+                <button class = "btn btn-light" onclick="chivalue()">Test</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <p id="chians"></p>
             <br>
             <p id="chitestans"></p>
@@ -15230,6 +15255,7 @@
                 Lead Time is used in manufacturing, supply chain management, and project management.</p>
            <br>
            <br>
+           <form action="">
             <input class = "form__field"type="number" id="pre" placeholder="Pre Processing Time (in minutes)">
             <br><br>
             <input class = "form__field"type="number" id="pro" placeholder="Processing Time(in minutes)">
@@ -15237,6 +15263,9 @@
             <input class = "form__field"type="number" id="post" placeholder="Post Processing Time (in minutes)">
             <br><br>
             <button class = "btn btn-light" onclick="leadvalue()">Test</button>
+            <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+           </form>
+            
             <p id="leadans"></p>
             <br>
           </div>
@@ -15248,13 +15277,17 @@
           Takt time is your sell rate and can easily be categorized as the heartbeat of your work process. It allows you to optimize your capacity in
           the most appropriate way to meet demand without keeping too much inventory in reserve. </p>
          <br>
-          <input class = "form__field"type="number" id="works" placeholder="Total time available at work (in minutes)">
-          <br><br>
-          <input class = "form__field"type="number" id="demands" placeholder="Average Customer Demand">
-          <br><br>
-          <input class = "form__field"type="number" id="breaks" placeholder="Enter BreakTime if any else input 0 (in minutes)">
-          <br><br>
-          <button class = "btn btn-light" onclick="taktvalue()">Test</button>
+         <form action="">
+            <input class = "form__field"type="number" id="works" placeholder="Total time available at work (in minutes)">
+            <br><br>
+            <input class = "form__field"type="number" id="demands" placeholder="Average Customer Demand">
+            <br><br>
+            <input class = "form__field"type="number" id="breaks" placeholder="Enter BreakTime if any else input 0 (in minutes)">
+            <br><br>
+            <button class = "btn btn-light" onclick="taktvalue()">Test</button>
+            <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+         </form>
+          
           <p id="taktans"></p>
           <br>
         </div>
@@ -15265,6 +15298,7 @@
                  inspection time, move time, and wait time.Notice the process in the throughput time calculation that is considered value-added time is the process time. This is the only step that actually produces a product.
                   The rest of the time is administrative and logistical non-value-added time.</p>
            <br>
+           <form action="">
             <input class = "form__field"type="number" id="process" placeholder="Process Time(in minutes)">
             <br><br>
             <input class = "form__field"type="number" id="inspection" placeholder="Inspection Time (in minutes)">
@@ -15274,6 +15308,9 @@
             <input class = "form__field"type="number" id="queue" placeholder="Queue Time(in minutes)">
             <br><br>
             <button class = "btn btn-light" onclick="throughputvalue()">Test</button>
+            <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+           </form>
+            
             <p id="throughputans"></p>
             <br>
           </div>
@@ -15283,11 +15320,15 @@
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Cycle Time Calculator</h1>
             <p style="margin: 0 auto 6rem auto; font-style: italic;">Cycle Time is the time it takes you to complete the production process of one product,
                  from start to finish.It’s one of the most crucial flow metrics that’ll help you run a project smoothly efficiently.  </p>
-            <input class = "form__field"type="number" id="produce" placeholder="Net Production Time (in minutes)">
-            <br><br>
-            <input class = "form__field"type="number" id="units" placeholder="Number of units produced">
-            <br><br>
-            <button class = "btn btn-light" onclick="cyclevalue()">Test</button>
+            <form action="">
+                <input class = "form__field"type="number" id="produce" placeholder="Net Production Time (in minutes)">
+                <br><br>
+                <input class = "form__field"type="number" id="units" placeholder="Number of units produced">
+                <br><br>
+                <button class = "btn btn-light" onclick="cyclevalue()">Test</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <p id="cycleans"></p>
             <br>
           </div>
@@ -18029,6 +18070,10 @@
                            style="text-decoration:none;" href="#">Rhombus</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#rightkite"
+                           style="text-decoration:none;" href="#">Right Kite</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#roundcorner"
                            style="text-decoration:none;" href="#">Round corner</a></td>
                 </tr>
@@ -18141,6 +18186,10 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#trapezium"
                            style="text-decoration:none;" href="#">Trapezium</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#trunsquare"
+                           style="text-decoration:none;" href="#">Truncated Square</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#tshape"
@@ -18622,6 +18671,14 @@
                             <tr>
                                 <td><a data-toggle="modal" data-target="#tricupola"
                                         style="text-decoration:none;" href="#">Triangular Cupola</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#sqcupola"
+                                        style="text-decoration:none;" href="#">Square Cupola</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#pentcupola"
+                                        style="text-decoration:none;" href="#">Pentagonal Cupola</a></td>
                             </tr>
                             </table>
                         </div>
@@ -22364,7 +22421,8 @@
 <div id="mecs" class="collapse">
     <h1 style="text-align: center;">MARGIN OF ERROR CALCULATOR </h1>
     <br>
-    <input type="number" name="conf" class="form__field" id="conf" width="5em" placeholder="Enter Z-score">
+    <form action="">
+        <input type="number" name="conf" class="form__field" id="conf" width="5em" placeholder="Enter Z-score">
     <br>
     <input type="number" name="samsize" class="form__field" id="samsize" placeholder="Enter sample size">
     <br>
@@ -22374,6 +22432,8 @@
     <br>
     <div style="display:flex; justify-content:center;align-items:center;">
     <button type="button" class="btn btn-outline-light" onclick="mecal()">Calculate</button>
+    <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+    </form>
     </div>
     <p id="mecans" style="color:#ababab !important; text-align: center; font-size:22px; font-family:mathfont">
         <br>
@@ -22604,7 +22664,7 @@ N is the population size.
         <p>&nbsp;</p>
         <input type="text" name="wmcw" class="form__field" id="wmcw" placeholder="Enter weight of inputs respectively">
         <p>&nbsp;</p>
-        <button type="button" class="btn btn-outline-light" onclick="wmccal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light mr-2" onclick="wmccal()">Calculate</button>
         <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
     </form>
     
@@ -22612,7 +22672,10 @@ N is the population size.
     <p>&nbsp;</p>
     <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">The Weighted mean for given set of non negative data {x1, x2, x3, ...xn} with non negative weights {w1, w2, w3, ...wn}<br>
          can be derived from the formula: </p>
-    <img src="images\wmean.jpg" class="img-fluid" style="margin-left: 21.875rem;">
+        <div class="d-flex justify-content-center">
+            <img src="images\wmean.jpg" class="img-fluid" style="width: 100%; max-width: 450px;">
+        </div>
+    
     <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">where<br>
         x is the repeating value<br>
         w is the number of occurrences of x (weight)<br>
@@ -22786,6 +22849,7 @@ N is the population size.
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     <br>
     <h5 id="typenum8ans"></h5>
+    <h5 id="typenum8exp"></h5>
     </form>
     <br>
     </form>
@@ -25102,9 +25166,9 @@ N is the population size.
             Example
         </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>
-    
+    </form>    
     <p id="impse4ans"></p>
+    <p id="impse4exp"></p>
     <br>
     <h4>Moser-de Bruijn Sequence</h4><br>
     <form action="">
@@ -29168,6 +29232,69 @@ N is the population size.
                 </div>
             </div>
         </div>
+        
+        <div class="modal fade" id="trunsquare" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Square</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Missing length (e)</h5>
+                                    <p class="text-center">\[e = \frac{b}{\sqrt 2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Length (l)</h5>
+                                    <p class="text-center">\[l = \sqrt 2 \times \left ( a + e \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height (h)</h5>
+                                    <p class="text-center">\[h = a + 2e\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Diagonal (d)</h5>
+                                    <p class="text-center">\[d = \sqrt{a^2 + \left ( a + 2e \right )^2}\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truncated-square.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = 4 \times \left ( a + b \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \left ( a + 2e \right )^2 - 2e^2\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter First side (a)"
+                                   id="trunsquare-a" oninput="trunsquaresolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Second side (b)"
+                                   id="trunsquare-b" oninput="trunsquaresolve()">
+                            <br>
+                            <p class="stopwrap" id="trunsquare-e" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunsquare-l" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunsquare-h" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunsquare-d" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunsquare-p" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunsquare-A" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="tshape" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -29445,6 +29572,74 @@ N is the population size.
                             <p class="stopwrap" id="resultOfShortSideLshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfPerimeterLshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultOfAreaLshape" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="modal fade" id="rightkite" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Right Kite</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Symmetry diagonal (e)</h5>
+                                    <p class="text-center">\[e = \sqrt{a^2 + b^2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Other diagonal (f)</h5>
+                                    <p class="text-center">\[f = \frac{2ab}{e}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumcircle radius (r<sub>c</sub>)</h5>
+                                    <p class="text-center">\[r_{c} = \frac{e}{2}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Incircle radius (r<sub>i</sub>)</h5>
+                                    <p class="text-center">\[r_{i} = \frac{ab}{ a + b }\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = 2\left ( a + b \right )\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/right-kite.png" class="img-fluid">
+                                    </div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = a \times b\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Obtuse angle (α)</h5>
+                                    <p class="text-center">\[\alpha =  2 \times \arccos \left ( \frac{a^2 + e^2 - b^2}{2ae} \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Acute angle (γ)</h5>
+                                    <p class="text-center">\[\gamma =  180 \degree - \alpha\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Short side (a)"
+                                   id="rightkite-a" oninput="rightkitesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Long side (b)"
+                                   id="rightkite-b" oninput="rightkitesolve()">
+                            <br>
+                            <p class="stopwrap" id="symDiaRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="othDiaRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="circumCirRadRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="inCirRadRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="perimeterRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="areaRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="obtuseAngRightkite" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="acuteAngRightkite" style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -32163,6 +32358,99 @@ N is the population size.
             </div>
         </div>
     </div>
+    <div class="modal fade" id="sqcupola" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Square cupola</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Volume</h5>
+                                <p class="text-center">\[V = 1 + \frac{2 \sqrt{2}}{3} \space a^3\]</p>
+                                <p class="text-center">a = edge length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = (7 + 2 \sqrt{2} + \sqrt{3}) \space a^2\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/4-cupola.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length (a)" id="inputsqcupolaedge"
+                                   oninput="solvesqcupola();">
+                        <p class="stopwrap" id="resultofsqcupolavol"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofsqcupolaarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="pentcupola" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pentagonal cupola</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Volume</h5>
+                                <p class="text-center">\[V = \frac{1}{6} (5 + 4\sqrt{5}) \space a^3\]</p>
+                                <p class="text-center">a = edge length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{1}{4} \space [20 + 5 \sqrt{3} + \sqrt{5 \space (145 + 62 \sqrt{5})}] \space a^2\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/5-cupola.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length (a)" id="inputpentcupolaedge"
+                                   oninput="solvepentcupola();">
+                        <p class="stopwrap" id="resultofpentcupolavol"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofpentcupolaarea"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="cylinder" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -39089,7 +39377,6 @@ N is the population size.
             </form>
             <br>
             <div class="form-group text-center">
-                <p class="stopwrap" style="color:white;" id="autosq"></p><br>
                 <p class="stopwrap" style="color:white;" id="autoans"></p><br>
             </div>
         </div>
