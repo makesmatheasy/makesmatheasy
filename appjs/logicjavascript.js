@@ -4603,7 +4603,8 @@ function sieveSundaram() {
 }
 
 function Hosoya(n, m) {
-    if ((n == 0 && m == 0) || (n == 1 && m == 0) || (n == 1 && m == 1) || (n == 2 && m == 1)) {
+    if ((n == 0 && m == 0) || (n == 1 && m == 0) || (n == 1 && m == 1) || (n == 2 && m == 1))
+    {
         return 1;
     }
     if (n > m)
@@ -15440,11 +15441,7 @@ function calcexgolds3find() {
 function golds3find() {
     let a = document.getElementById("golds4").value
     let b = document.getElementById("golds5").value
-<<<<<<< HEAD
-    if (!isNaN(a) || !isNaN(b)) {
-=======
     if(!isNaN(a)|| !isNaN(b)){
->>>>>>> 957d14fbfd8ca04e5b7c312a718c17b42ec1e8e9
         document.getElementById("golds3exp").innerHTML += "\\[Two\\space numbers\\space are\\space said\\space to\\space be\\space in\\space silver\\space ratio\\space if\\space \\]"
         document.getElementById("golds3exp").innerHTML += "\\[The\\space ratio\\space of\\space the\\space sum\\space of\\space the\\space smaller\\space and\\space twice\\space the\\space larger\\space number\\space to\\space the\\space larger\\space number\\space is\\space the\\space same\\space as\\space the\\space ratio\\space of\\space the\\space larger\\space one\\space to\\space the\\space smaller\\space one.\\]"
         document.getElementById("golds3exp").innerHTML += "\\[\\frac{2*A+B}{A} = \\frac{A}{B} = \\delta_{\\varsigma} = {1+ \sqrt{2}} = 2.414  \\]"
