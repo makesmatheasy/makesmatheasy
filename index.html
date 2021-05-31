@@ -22602,11 +22602,15 @@
         <form action="">
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Polar</p>
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-                <input type="number" id="cartpolarx" width="5em" placeholder="Enter the X coordinate"> 
-                <input type="number" id="cartpolary" width="5em" placeholder="Enter the Y coordinate">
+                <div class="d-flex justify-content-center form-group">
+                <input type="number" style="width: 100%;" class="form-control" id="cartpolarx" width="5em" placeholder="Enter the X coordinate"> 
+                <input type="number" style="width: 100%;" class="form-control" id="cartpolary" width="5em" placeholder="Enter the Y coordinate">
+                </div>
                 <p>&nbsp;</p></p>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="cartpolarcal()">Calculate</button>
-        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+                <div class="d-flex justify-content-center form-group">
+                    <button type="button" class="btn btn-outline-light mr-1" onclick="cartpolarcal()">Calculate</button>
+                    <button type="button" class="btn btn-outline-light mr-1" onclick="this.form.reset();">Reset</button>
+                </div>
         </form>
         
     <p>&nbsp;</p>
@@ -22617,12 +22621,16 @@
     <form action="">
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Polar to Cartesian</p>
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
-            <input type="number" id="polarcartr" placeholder="Enter the length of the line (r)"> 
-            <input type="number" id="polarcarto" placeholder="Enter the polar angle (θ)">
+        <div class="d-flex justify-content-center form-group">
+            <input type="number" style="width: 100%;" class="form-control" id="polarcartr" placeholder="Enter the length of the line (r)"> 
+            <input type="number" style="width: 100%;" class="form-control" id="polarcarto" placeholder="Enter the polar angle (θ)">
+         </div>
             <p>&nbsp;</p></p>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="polarcartcal()">Calculate</button>
-    <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
-    </form>
+            <div class="d-flex justify-content-center form-group">
+                <button type="button" class="btn btn-outline-light mr-1" onclick="polarcartcal()">Calculate</button>
+                <button type="button" class="btn btn-outline-light mr-1" onclick="this.form.reset();">Reset</button>
+            </div>
+            </form>
             
         <p>&nbsp;</p>
         <p id="polarcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
