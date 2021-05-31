@@ -26829,16 +26829,27 @@ function perfectvalue() {
 }
 // Neon Number
 function isNeonNum(num) {
-    let sq = num * num;
+    let sq = num * num,ans="",s="";
     let sum_digits = 0;
+    ans += "Step 1: Number => " + num;
+    ans += `<br> Step 2: Square of the number => ${num}*${num} = ${sq}`;
     while (sq != 0) {
+        s+=`${sq%10}+`;
         sum_digits = sum_digits + sq % 10;
         sq = Math.floor(sq / 10);
     }
-    if (sum_digits == num)
-        document.getElementById('neonans').innerHTML = num + " is a Neon number";
-    else
-        document.getElementById('neonans').innerHTML = num + " is not a Neon number";
+    s = s.substring(0, s.length - 1);
+    const rs = s => [...s].reverse().join('');
+    ans += `<br> Step 3: Sum of digits of square of the number => ${rs(s)} = ${sum_digits}`;
+    if (sum_digits == num){
+        ans += `<br> Step 4: Clearly the sum of digits of square of the number is equal to the number.`;
+        ans += `<br> Step 5: Hence ${num} is a Neon number`;
+    }
+    else{
+        ans += `<br> Step 4: Clearly the sum of digits of square of the number is not equal to the number.`;
+        ans += `<br> Step 5: Hence ${num} is not a Neon number`;
+    }
+    document.getElementById('neonans').innerHTML = ans;
 }
 // Disarium Number
 function isDisNum(num) {
