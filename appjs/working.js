@@ -33,6 +33,11 @@ $("#perfectbtn").click(function(){
     closenav();
     clearall();
 });
+$("#emripbtn").click(function(){
+    openit("#emripnum");
+    closenav();
+    clearall();
+});
 // Disarium Number
 $("#disnumbtn").click(function(){
     openit("#disnum");
