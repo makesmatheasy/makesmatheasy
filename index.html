@@ -326,6 +326,14 @@
 <ul id="favourite" class="collapse text-center"></ul>
 <nav id="navbar-main" style="z-index:30">
     <ul id="slide-out" class="sidenav ulstyle">
+        <div class="text-center mt-4 justify-content-center">
+            <div class="col">
+                <img src="images/makesmatheasylogo.png" style="width: 48%;filter: invert(0%);">
+            </div>
+            <div class="col">
+                <h4>Makes Math Easy</h4>
+            </div>
+    </div>
         <li class="listyle home list_menu_items" style="margin-top: 1.25rem;"><a id="homeoption"
                                                                                  style="cursor: pointer;font-size: 1.1875rem;letter-spacing: 0.125rem;color: pink;">Home</a>
         </li>
@@ -3036,6 +3044,22 @@
                     </tr>
                 </table>
             </li>
+                        <!-- Perfect no -->
+                        <li>
+                            <table class="table">
+                                <tr>
+                                    <td style="border-top: none;">
+                                        <a id="perfectbtn"
+                                           style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Perfect Number</a>
+                                    </td>
+                                    <td style="float:right;border-top: none;">
+                                            <span onclick="addtofavourite('Perfect Number','#perfectnum','c','perfectnumimgfav')"><img
+                                                    id="perfectnumimgfav" src="images/unfavourite.png"
+                                                    style="height:1.5625rem;filter: none;"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
             <li>
                 <table class="table">
                     <tr>
@@ -3136,6 +3160,21 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Trimorphic Number','trimornum','c','trimornumimgfav')"><img
                                         id="trimornumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="eurnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Eulerian Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Eulerian Number','eurnum','c','eurnumimgfav')"><img
+                                        id="eurnumimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -6904,7 +6943,37 @@
                 </button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
-                   </button><br>
+                   </button><br><br><br>
+
+                   <h3 style="text-align: center;">Angle Bisector </h3><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        Line Equation A :   <input type="text" id="aba1" size=3 value='' placeholder="A">  x  +
+                    <input type="text" id="abb1" size=3 value='' placeholder="B" > y + <input type="text" id="abc1" size=3 value='' placeholder="C"> = 0
+                        <br><br>
+                        Line Equation B :   <input type="text" id="aba2" size=3 value='' placeholder="A">  x  +
+                    <input type="text" id="abb2" size=3 value='' placeholder="B" > y + <input type="text" id="abc2" size=3 value='' placeholder="C"> = 0
+                        <br><br>
+                    <button type="button" class="btn btn-light" onclick=angleb()>
+                        Find 
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                       </button><br><br>
+                    </p>
+                </div>
+                <p id="abr" style="font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            
+            </form>
+            <br>
+            <p id="pppdcq1explaneo" style="font-family:mathfont;;width:auto;"
+                class="stopwrap"
+               align="right"></p>
+            <p id="pppdcq1outputo"> </p> 
+
                
             </form>
             
@@ -7337,10 +7406,20 @@
                 <br>
                 <button type="button" class="btn btn-dark" onclick="cirinsemi2find()">Find</button>
                 <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-            </form>
-            
+            </form> 
             <br>
             <h5 id="cirinsemi2ans"></h5>
+            <br>
+            <h4>Area of a Largest square fit in a semicircle</h4>
+            <br>
+            <form action="">
+                <input type="text" id="sqinsemi2in" placeholder="Enter radius of semicircle" class="form__field">
+                <br>
+                <button type="button" class="btn btn-dark" onclick="sqinsemi2find()">Find</button>
+                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            </form>
+            <br>
+            <h5 id="sqinsemi2ans"></h5>
             <br>
             <h4>Maximize a value for a semicircle of given radius</h4>
             <br>
@@ -10025,6 +10104,7 @@
             <button type="button" class="btn btn-dark" onclick="lacube11find()">Find</button>
             <br>
             <p id="lacube11ans"></p>
+            <p id="lacube11exp"></p>
             <br>
             <h2>Check whether a number can be represented by difference of two squares</h2><br>
             <input type="text" id="lacube13" class="form__field" placholder="Enter the number"><br>
@@ -10054,6 +10134,7 @@
             <button type="button" class="btn btn-dark" onclick="lacube15find()">Find</button>
             <br>
             <p id="lacube15ans"></p>
+            <p id="lacube15exp"></p>
         </div>
         <!-- Complex Number Calculations Begin-->
         <div class="collapse" id="complex1collapse">
@@ -13184,6 +13265,7 @@
             <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
             <br>
             <h5 id="golds4ans"></h5>
+            <h5 id="golds4exp"></h5>
             <br>
             </form>
         </div>
@@ -13647,6 +13729,7 @@
                 <br>
             </form>            
             <p id="alisum5ans" style="font-size: 26px;"></p>
+            <p id="alisum5exp" style="font-size: 26px;"></p>
         </div>
         <!-- start of Sum of divisors  calculator -->
          <div>
@@ -14000,6 +14083,7 @@
         
                 <br><br>
                 <button class = "btn btn-light" type="button" onclick="ppvCal()">Calculate</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
             </form>
         
             <p id="ppvans"></p>
@@ -14018,6 +14102,7 @@
         
                 <br><br>
                 <button class = "btn btn-light" type="button" onclick="npvCal()">Calculate</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
             </form>
         
             <p id="npvans"></p>
@@ -14347,7 +14432,23 @@
         <!-- sensitivity and Specificity starts -->
     <div class="collapse" id="sensi">
         <h1 style="font-family:mathfont; text-align:center;">Sensitivity and Specificity</h1>
-        <form action="">
+        <br>
+        <h4>Sensitivity</h4>
+        <p>Sensitivity is the ability of a test to correctly classify an individual as ′diseased′</p>
+        <p>Sensitivity = a / a+c
+
+            = a (true positive) / a+c (true positive + false negative)
+            
+            = Probability of being test positive when disease present.</p>
+            <br>
+            <h4>Specificity</h4>
+            <p>The ability of a test to correctly classify an individual as disease- free is called the test′s specificity.</p>
+             <p>Specificity = d / b+d
+
+                = d (true negative) / b+d (true negative + false positive)
+                
+                = Probability of being test negative when disease absent.</p>
+            <form action="">
             <input type="text" id="tp" class="form__field" placeholder="Enter True Positive value(TP)">
             <p>&nbsp;</p>
             <input type="text" id="tn" class="form__field" placeholder="Enter True Negative value(TN)">
@@ -15065,35 +15166,43 @@
         <div class="collapse" id="confi-inter">
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Confidence Interval</h1>
             <p style="text-align: left">\[ CI = X̄ ± Z * \frac{s}{\sqrt{n}}\]</p>
-            <input class = "form__field"type="number" id="nconfiinput" placeholder="Enter Sample size (n)">
-            <br><br>
-            <input class = "form__field"type="number" id="xconfiinput" placeholder="Enter Sample Mean (X̄)">
-            <br><br>
-            <input class = "form__field"type="number" id="sdconfiinput" placeholder="Enter Standard Deviation σ (s)">
-            <br><br>
-            <label for="">Confidence Level</label>
-            <br>
-            <select name="clinput" id="clinput">
-                <option value=0.70>70%</option>
-                <option value=0.75>75%</option>
-                <option value=0.80>80%</option>
-                <option value=0.85>85%</option>
-                <option value=0.90>90%</option>
-                <option value=0.95>95%</option>
-                <option value=0.98>98%</option>
-                <option value=0.99>99%</option>
-                <option value=0.995>99.5%</option>
-            </select>
-            <br><br>
-            <button class = "btn btn-light" onclick="confivalue()">Calculate</button>
+            <form action="">
+                <input class = "form__field"type="number" id="nconfiinput" placeholder="Enter Sample size (n)">
+                <br><br>
+                <input class = "form__field"type="number" id="xconfiinput" placeholder="Enter Sample Mean (X̄)">
+                <br><br>
+                <input class = "form__field"type="number" id="sdconfiinput" placeholder="Enter Standard Deviation σ (s)">
+                <br><br>
+                <label for="">Confidence Level</label>
+                <br>
+                <select name="clinput" id="clinput">
+                    <option value=0.70>70%</option>
+                    <option value=0.75>75%</option>
+                    <option value=0.80>80%</option>
+                    <option value=0.85>85%</option>
+                    <option value=0.90>90%</option>
+                    <option value=0.95>95%</option>
+                    <option value=0.98>98%</option>
+                    <option value=0.99>99%</option>
+                    <option value=0.995>99.5%</option>
+                </select>
+                <br><br>
+                <button class = "btn btn-light" onclick="confivalue()">Calculate</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <p id="civalue"></p>
         </div>
          
         <div class="collapse" id="odds">
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Odds Calculator</h1>
-            <input class = "form__field"type="number" id="forsuccess" placeholder="Enter chances for success"><br><br>
-            <input class = "form__field"type="number" id="agsuccess" placeholder="Enter chances against success"><br><br>
-            <button class = "btn btn-light" onclick="oddsCalc()">Calculate</button>
+            <form action="">
+                <input class = "form__field"type="number" id="forsuccess" placeholder="Enter chances for success"><br><br>
+                <input class = "form__field"type="number" id="agsuccess" placeholder="Enter chances against success"><br><br>
+                <button class = "btn btn-light" onclick="oddsCalc()">Calculate</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Reset</button>
+            </form>
+            
             <p id="oddsAns"></p>
         </div>
         
@@ -18250,14 +18359,12 @@
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
             <h5 id="cylinderincubeans"></h5></form>
             <br>
-            <h4>Largest cylinder that can be inscribed within a sphere</h4>
-            <br>
+            <h4>Largest cylinder that can be inscribed within a sphere</h4><br>
             <form action="">
-            <input type="text" id="cylinderinsphere" class="form__field" placeholder="Enter the side length of sphere">
-            <br>
+            <input type="text" id="cylinderinsphere" class="form__field" placeholder="Enter the side length of sphere"><br>
             <button type="button" class="btn btn-dark" onclick="cylinderinspherefind()">Find</button>
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
-            <h5 id="cylinderinsphereans"></h5></form>
+            <h5 id="cylinderinsphereans"></h5><br></form>
             <br>
             <h4>Largest cube that can be inscribed within a cylinder </h4>
             <br>
@@ -18316,6 +18423,16 @@
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
             <h5 id="cscu4ans"></h5>
             <h5 id="cscu4exp"></h5>
+            </form>   
+            <br>
+            <h4>Volume of Largest right pyramid that can be inscribed within a sphere</h4>
+            <br>
+            <form action="">
+            <input type="text" id="pyinsph" class="form__field" placeholder="Enter the radius of sphere">
+            <br>
+            <button type="button" class="btn btn-dark" onclick="pyinsphfind()">Find</button>
+            <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
+            <h5 id="pyinsphans"></h5>
             </form>   
             <br>
             <h4>Largest sphere that can be inscribed inside a cube</h4>
@@ -18769,6 +18886,10 @@
                             </table>
                         </div>
                     </td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#rhombicuboctahedron"
+                        style="text-decoration:none;" href="#">Rhombicuboctahedron</a></td>
                 </tr>
                 <tr>
                     <td>
@@ -21512,7 +21633,10 @@
         <input type="text"id="gcdin1" placeholder="Enter number 1" class="form__field">
         <input type="text"id="gcdin2" placeholder="Enter number 2" class="form__field">
         <br>
-        <button class="btn btn-dark" onclick="gcdfind()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="gcdfind()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick=calcexgcdfind()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br>
     </form>
@@ -21525,6 +21649,9 @@
         <input type="text"id="gcdin3" placeholder="Enter number " class="form__field">
         <br>
         <button class="btn btn-dark" onclick="gcd1find()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick=calcexgcd1find()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br>
     </form>
@@ -21575,30 +21702,19 @@
     
 </div>
 
-<div class="collapse" id="hypers">
-    <h1 style="color: white;font-family:mathfont">Hyperperfect Number Checker</h2><p>&nbsp;</p>
-    <form action="">
-        <input style="color: white; font-family:mathfont" type="text"id="hypers1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-        <input style="color: white; font-family:mathfont" type="text"id="hypers2" placeholder="Enter the value of K" class="form__field"><p>&nbsp;</p>
-        <button class="btn btn-dark" onclick="hyperfind()">Check</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-    </form>
-    
-    <p>&nbsp;</p>
-    <p style="font-family:mathfont" id="hyperans"></p><br>
-</div>
-<div class="collapse" id="adams" style="text-align: center;">
+<div class="collapse" id="hypers" style="text-align: center;">
     <div class="container">
-        <h1 style="color: white;font-family:mathfont;text-align: center;">Adam Number Checker</h2>
+        <h1 style="color: white;font-family:mathfont;text-align: center;">Hyperperfect Number Checker</h2>
         <br>
-        <p>Adam number is a number when reversed, the square of the number and the square of the reversed number should be numbers which are reverse of each other.</p>
+        <p>A number n is called k-hyperperfect if: <strong>n = 1 + k ∑ <sub>i</sub> d <sub>i</sub></strong> where all d<sub>i</sub> are the proper divisors of n.</p>
         <br>
         <form action="">
             <div class="form-group">
-                <input style="color: white; font-family:mathfont" type="number" id="adam1" placeholder="Enter the input number" class="form__field">
+                <input style="color: white; font-family:mathfont" type="number" id="hypers1" placeholder="Enter the input number" class="form__field">
+                <input style="color: white; font-family:mathfont" type="number" id="hypers2" placeholder="Enter the value of K" class="form__field">
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="adamfind()">Check</button>
+                <button type="button" class="btn btn-light" onclick="hyperfind()">Check</button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
                 </button>
@@ -21606,21 +21722,35 @@
         </form>
         <br>
         <div class="form-group text-center">
-            <p class="stopwrap" style="color:white;" id="adamans""></p>
+            <p class="stopwrap" style="color:white;" id="hyperans"></p><br>
         </div>
     </div>
 </div>
 
-<div class="collapse" id="kaps">
-    <h1 style="color: white;font-family:mathfont">Kaprekar Number</h2><p>&nbsp;</p>
-    <form action="">
-        <input style="color: white; font-family:mathfont" type="text"id="kap1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-        <button class="btn btn-dark" onclick="kapfind()">FInd</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-    </form>
-    <p>&nbsp;</p>
-    <p style="font-family:mathfont" id="kapans"></p><br>
+<div class="collapse" id="kaps" style="text-align: center;">
+    <div class="container">
+        <h1 style="color: white;font-family:mathfont;text-align: center;">Kaprekar Number Checker</h2>
+        <br>
+        <p>A Kaprekar number is a number whose square when divided into two parts and such that sum of parts is equal to the original number and none of the parts has value 0.</p>
+        <br>
+        <form action="">
+            <div class="form-group">
+                <input style="color: white; font-family:mathfont" type="number" id="kap1" placeholder="Enter the input number" class="form__field">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="kapfind()">FInd</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+        <br>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="kapans"></p><br>
+        </div>
+    </div>
 </div>
+
 <div class="collapse" id="abundants" style="text-align: center;">
     <div class="container">
         <h1 style="color: white;font-family:mathfont;text-align: center;">Abundant Number</h2>
@@ -21667,18 +21797,6 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-
-<div class="collapse" id="woods">
-    <h1 style="color: white;font-family:mathfont">Woodall Number</h2><p>&nbsp;</p>
-    <form action="">
-        <input style="color: white; font-family:mathfont" type="text"id="wood1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-        <button class="btn btn-dark" onclick="woodfind()">FInd</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-    </form>
-    <p>&nbsp;</p>
-    <p style="font-family:mathfont" id="woodans"></p><br>
-=======
 <div class="collapse" id="woods" style="text-align: center;">
     <div class="container">
         <h2 style="color: white;font-family:mathfont;text-align: center;">Woodall Number</h2>
@@ -21703,7 +21821,6 @@
             <p class="stopwrap" style="color:white;" id="woodans"></p><br>
         </div>
     </div>
->>>>>>> 4a906d9164f30e481325f2317718a1714be7ac2a
 </div>
 
 
@@ -21719,6 +21836,9 @@
             </div>
             <div class="form-group">
                 <button type="button" class="btn btn-light" onclick="dbltimeCal()">Calculate</button>
+                <button type="button" class="btn btn-light" onclick=calcexdbltimeCal()>
+                    Example
+                   </button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
                 </button>
@@ -21739,7 +21859,10 @@
     <form action="">
         <input type="text"id="logvalue" placeholder="Enter the log value" class="form__field"><br><br>
         <input type="text"id="logbase" placeholder="Enter the base" class="form__field"><br><br>
-        <button class="btn btn-dark" onclick="antilogCal()">Calculate</button>
+        <button type="button" class="btn btn-dark" onclick="antilogCal()">Calculate</button>
+        <button type="button" class="btn btn-dark" onclick=calcexantilogCal()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br><br>
     </form>
@@ -21767,6 +21890,9 @@
         <input type="text"id="initialVal" placeholder="Enter the initial value" class="form__field"><br>
         <input type="text"id="finalVal" placeholder="Enter the final value" class="form__field"><br>
         <button class="btn btn-dark" onclick="perchngCal()">Calculate</button>
+        <button type="button" class="btn btn-dark" onclick=calcexperchngCal()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br><br>
     </form>
@@ -21778,14 +21904,10 @@
 <!-- Percentage off starts -->
 <div class="collapse" id="peroff">
     <h2 style="text-align:center;">Percentage Off</h2><br>
-    <form action="">
-        <input type="text"id="originalPrice" placeholder="Enter the original price" class="form__field"><br><br>
-        <input type="text"id="offper" placeholder="Enter the off percentage" class="form__field"><br><br>
-        <input type="text"id="salestax" placeholder="Enter the sales tax percentage" class="form__field"><br><br>
-        <button class="btn btn-dark" onclick="peroffCal()">Calculate</button><br><br>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-    </form>
-    
+    <input type="text"id="originalPrice" placeholder="Enter the original price" class="form__field"><br><br>
+    <input type="text"id="offper" placeholder="Enter the off percentage" class="form__field"><br><br>
+    <input type="text"id="salestax" placeholder="Enter the sales tax percentage" class="form__field"><br><br>
+    <button class="btn btn-dark" onclick="peroffCal()">Calculate</button><br><br>
     <p id="peroffans1" style= "font-family:mathfont"></p><br>
     <p id="peroffans2" style= "font-family:mathfont"></p><br>
 </div>
@@ -21917,7 +22039,13 @@
 
 
 <div class="collapse" id="hypergeos"> 
-    <h1 >Hypergeometric Distribution PMF Calculator</h1>
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;" >Hypergeometric Distribution PMF Calculator</h1>
+    <p style="margin-top: 2rem;">
+        The hypergeometric distribution is a discrete probability distribution that describes the probability of k successes
+         (random draws for which the object drawn has a specified feature) in n draws, without replacement, from a finite population of size 
+         N that contains exactly K objects with that feature, wherein each draw is either a success or a failure.
+         In contrast, the binomial distribution describes the probability of k successes in n draws with replacement.
+    </p>
     <p>&nbsp;</p>
     <form action="">
         <input type="text" name="hypergeos1" class="form__field" id="hypergeos1" width="5em" placeholder="Successes of Sample">
@@ -21933,14 +22061,16 @@
     </form>
     
     <p>&nbsp;</p>
-    <p id="hypergeosans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
-    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>\[P.M.F = P(X = k) 
-        = \frac{\binom{K}{k} \binom{N - K}{n-k}}{\binom{N}{n}}\]</p> where,
+    
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;"><p>
+        In the below formula:
         <br> K = the number of successes in the population 
         <br> k = the number of observed successes
         <br> N = the population size
         <br> n = the number of draws
+        \[Hypergeometric \space distribution \space P.M.F = P(X = k) = \frac{\binom{K}{k} \binom{N - K}{n-k}}{\binom{N}{n}}\]</p> 
     </div>
+    <p id="hypergeosans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
 </div>
 
 
@@ -22573,6 +22703,16 @@ N is the population size.
     <h5 id="typenum2ans"></h5>
     <br>
     </form>
+    <br>
+    <h2>Mersenne Prime</h2>
+    <br>
+    <input type="text" id="typenum47" class="form__field"placeholder="Enter the number ">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum47find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum47ans"></h5>
+    <h5 id="typenum47exp"></h5>
     <h2>Check for Amicable Pair</h2>
     <br>
     <form>
@@ -22753,6 +22893,7 @@ N is the population size.
     <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     <br>
     <h5 id="typenum20ans"></h5>
+    <h5 id="typenum20exp"></h5>
     <br>
     </form>
 </div>
@@ -22764,6 +22905,7 @@ N is the population size.
         <input type="number" name="pvalueinp" class="form__field" id="rawscore" width="5em" placeholder="Enter the Z score">
         <p>&nbsp;</p>
         <button type="button" class="btn btn-outline-light" onclick="pvaluecal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
         <p id="pvalueans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
         <p>&nbsp;</p>
     </form>
@@ -24966,6 +25108,7 @@ N is the population size.
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>    
     <p id="impse99ans"></p>
+    <p id="impse99exp"></p>
     <br>
     <h4>Sum of Arcuin's sequence</h4><br>
     <form action="">
@@ -25071,6 +25214,7 @@ N is the population size.
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>    
     <p id="impse24ans"></p>
+    <p id="impse24exp"></p>
     <br>
     <h4>Sum of the series 1 / 1 + (1 + 2) / (1 * 2) + (1 + 2 + 3) / (1 * 2 * 3) + – – – – – – upto n terms.</h4>
     <br>
@@ -35805,6 +35949,70 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="rhombicuboctahedron" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Rhombicuboctahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 2 \times a^2 \times \left ( 9 + \sqrt 3 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac {2}{3} \times a^3 \times \left ( 6 + 5\sqrt2 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumsphere radius (r<sub>c</sub>)</h5>
+                                    <p class="text-center">\[r_{c} = \frac{a}{2} \times \sqrt{5 + 2\sqrt2}\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/rhombicuboctahedron.png" class="img-fluid mx-auto d-block">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius (r<sub>m</sub>)</h5>
+                                    <p class="text-center">\[r_{m} = \frac{a}{2} \times \sqrt{4 + 2\sqrt2}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface-to-volume ratio (A/V)</h5>
+                                    <p class="text-center">\[\frac{A}{V}\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Edge length (a)" id="rhombicuboctahedron-a"
+                                       oninput="solverhombicuboctahedron();">
+                            <p class="stopwrap" id="rhombicuboctahedron-A"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="rhombicuboctahedron-V"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="rhombicuboctahedron-rc"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="rhombicuboctahedron-rm"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="rhombicuboctahedron-av"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="truncocta" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -38698,6 +38906,29 @@ N is the population size.
                 <p class="stopwrap" style="color:white;" id="armans"></p><br>
         </div>
     </div>
+     <!-- Perfect -->
+     <div class="collapse" id="perfectnum" style="text-align: center;">
+        <div class="container">
+            <h1 style="color: white;font-family:mathfont;text-align: center;">Perfect Number Checker</h2>
+            <br>
+            <p> A perfect number is a positive integer that is equal to the sum of its positive divisors, excluding the number itself.</p>
+            <br>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="perfectno" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="perfectvalue()">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+                <p class="stopwrap" style="color:white;" id="perfectans"></p><br>
+        </div>
+    </div>
     <!-- Disarium Number start-->
     <div class="collapse" id="disnum" style="text-align: center;">
         <div class="container">
@@ -38874,6 +39105,32 @@ N is the population size.
         </div>
     </div>
     <!-- Trimorphic Number end -->
+    <!-- Eulerian Number start-->
+    <div class="collapse" id="eurnum" style="text-align: center;">
+        <div class="container">
+            <h2 style="color: white;font-family:mathfont;text-align: center;">Eulerian Number</h2>
+            <br>
+            <p>The Eulerian Number A(n, m), is the number of permutations of the numbers 1 to n in which exactly m elements are greater than previous element. </p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="eurn" placeholder="Enter the value of n" class="form__field">
+                    <input style="color: white; font-family:mathfont" type="number" id="eurm" placeholder="Enter the value of m" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="isEurNum(document.getElementById('eurn').value,document.getElementById('eurm').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="eurans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Eulerian Number end -->
 </div>
 <!--#######-------all modals here-------#######-->
 
