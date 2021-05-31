@@ -15890,6 +15890,33 @@ function golds3find() {
         document.getElementById("golds3ans").innerHTML = "Not a Valid Input"
 }
 
+function golds5find(){
+    let n = document.getElementById("golds7").value
+    if(!isNaN(n)){
+        if (!prime[n])
+        document.getElementById("golds5ans").innerHTML = false; 
+        var product = 1;
+        var i = 0;
+    
+        while (product < n) {
+            product = product * arr[i];
+    
+            if (product + 1 == n || product - 1 == n)
+                document.getElementById("golds5ans").innerHTML = true;
+    
+            i++;
+        }
+        document.getElementById("golds5exp").innerHTML = "\\[Generate all prime number in the range using Sieve of Eratosthenes.\\]"
+        document.getElementById("golds5exp").innerHTML = "\\[Check if n is prime or not, If n is not prime Then print No\\]"
+        document.getElementById("golds5exp").innerHTML = "\\[Else, starting from first prime (i.e 2 ) start multiplying next prime number and keep checking if product + 1 = n or product – 1 = n or not\\]"
+        document.getElementById("golds5exp").innerHTML = "\\[A Primorial prime is a prime number of the form pn# + 1 or pn# – 1 , where pn# is the primorial of pn i.e the product of first n prime numbers.\\]"
+        document.getElementById("golds5ans").innerHTML = false;
+        renderMathInElement(document.getElementById("golds5exp"))
+    }
+    else
+        document.getElementById("golds5ans").innerHTML = "Please enter valid input"
+}
+
 function gold4find() {
     let n = document.getElementById("golds6").value
     if (!isNaN(n)) {
