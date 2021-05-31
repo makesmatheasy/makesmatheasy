@@ -14599,6 +14599,16 @@ function cirinsemi4find() {
     renderMathInElement(document.getElementById("cirinsemifind4ans"));
 }
 
+function sqinsemi2find(){
+    var r = parseInt(document.getElementById("sqinsemi2in").value)    
+    if (r < 0){
+        return;
+    }
+    //area of the square
+    a = 4 * (r**2) / 5;
+    document.getElementById("sqinsemi2ans").innerHTML = a; 
+}
+
 function cirinsemi5find() {
     var r = parseInt(document.getElementById("cirinsemi5in").value)
     var area = (3.14 * r ** 2) / 4;
