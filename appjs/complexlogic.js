@@ -2164,6 +2164,29 @@ document.getElementById("kurtans").innerHTML=ans;
 renderMathInElement(document.getElementById("kurtans"));
 
 }
+
+function bmifind()
+{
+    a=document.getElementById("bmis1").value;  
+    b=document.getElementById("bmis2").value;  
+    c=document.getElementById("bmis3").value;   
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Please enter all field to find answer";
+    }
+    else
+    {
+        a=parseFloat(a);
+        b=parseFloat(b);
+        c=parseFloat(c);
+       var height= (a*0.308)+(b*0.0245);
+        var bm= c/(height**2);
+
+        ans="Your B.M.I is: "+bm;
+    }
+    document.getElementById("bmians").innerHTML=ans;
+}
 function clockcal()
 {
     a=document.getElementById("hclock").value;  
@@ -2603,4 +2626,5 @@ function wagcal()
     document.getElementById("wagans").innerHTML=ans+explain;
     renderMathInElement(document.getElementById("wagans"))
 }
+
 

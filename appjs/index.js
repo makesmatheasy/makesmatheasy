@@ -431,6 +431,7 @@ function openit(id) {
         "#ex3",
         "#lappro",
         "#coprimeex",
+        "#bmis",
         "#rankcal",
         "#bayes-probabilitycollapse",
         "#elonpentpyr",
