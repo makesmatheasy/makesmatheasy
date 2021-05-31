@@ -16178,7 +16178,7 @@ function golds5find(){
         document.getElementById("golds5ans").innerHTML = "Please enter valid input"
 }
 
-function gold4find() {
+function golds4find() {
     let n = document.getElementById("golds6").value
     if (!isNaN(n)) {
         document.getElementById("golds4exp").innerHTML = "\\[Catalan numbers satisfy the following recursive formula. \\]"
