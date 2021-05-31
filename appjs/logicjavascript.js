@@ -14038,6 +14038,36 @@ function trirect() {
    renderMathInElement(output);
 }
 
+
+function minarfind() {
+    let l = parseFloat(document.getElementById("minar1").value)
+    let b = parseFloat(document.getElementById("minar2").value)
+    var output = document.getElementById("minarans")
+    var ans = ""
+    if (l < 0 || b < 0) {
+        ans += "\\[Length \\space and \\space Breadth \\space of \\space a \\space Rectangle \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
+    }
+    else if (!isNaN(l) && !isNaN(b) ) {
+        let large = Math.max(l, b);
+        let small = Math.min(l, b);
+       
+        if (large >= 2 * small)
+        {
+            ans+=large * large;
+        }
+        else
+        {
+            ans+=(2 * small) * (2 * small);
+        } 
+        output.innerHTML = ans; 
+    }
+    else {
+            ans += "\\[Please \\space enter \\space all \\space input \\]"
+            output.innerHTML = ans;
+    }
+    renderMathInElement(output);
+}
 function receq1() {
     let n = parseInt(document.getElementById("receq1").value)
     var output = document.getElementById("receq1ans")
@@ -14907,7 +14937,7 @@ function typenum15find()
     renderMathInElement(result);
 }
 
-}    
+    
 
 
 function simpleSieve(){
@@ -24246,17 +24276,11 @@ function relrisk() {
     let ans = "";
     var output = document.getElementById('relriskans');
     if (a == "" || b == "" || c == "" || d == "") {
-<<<<<<< HEAD
-        output.innerHTML = "Enter all the inputs";
-||||||| 343865d
-        document.getElementById("relriskans").innerHTML = "Enter all the inputs";
-=======
         output.innerHTML = "Enter all the inputs";
     }
     else if(isNaN(a)||isNaN(b)||isNaN(c)||isNaN(d))
     {
         document.getElementById("relriskans").innerHTML = "All inputs should be numeric";
->>>>>>> afdd3b431abaa559e8d0216341dd56b83c3ef158
     }
     else {
         let ab = a+b; 
