@@ -3775,6 +3775,22 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
+                            <a id="odshapescalbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">1-D Shapes Calculator</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('1-D Shapes Calculator','#odshapescal','c','odshapesimgfav')"><img
+                                        id="odshapesimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
                             <a id="2d-shape-insbtn"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;"> 2-D Shapes Inscribed
                             </a>
@@ -17349,6 +17365,15 @@
             </div>
             
         </div>
+        <div class="collapse" id="odshapescal">
+            <h2>Calculator for 1-D Shapes</h2>
+            <table class="table">
+                <tr>
+                    <td><a data-toggle="modal" data-target="#slopeline"
+                            style="text-decoration:none;" href="#">Line</a></td>
+                </tr>
+            </table>
+        </div>
 
         <div class="collapse" id="shapescal">
             <h2>Calculator for Shapes</h2>
@@ -17455,10 +17480,6 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#lemniscate" 
                             style="text-decoration:none;" href="#">Lemniscate</a></td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#slopeline" 
-                            style="text-decoration:none;" href="#">Line</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#lshape" 

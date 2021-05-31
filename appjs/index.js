@@ -178,6 +178,7 @@ function openit(id) {
         "#numcubesRanges",
         "#segcals",
         "#hydroz",
+        "#odshapescal",
         "#shapescal",
         "#tdshapescal",
         "#fdshapescal",
