@@ -27894,5 +27894,9 @@ function isEurNum(n, m) {
 }
 
 function CulNum(num){
-    document.getElementById('culans').innerHTML = "The result is: " + (((1 << num) * num) + 1);
+    let ans = "";
+    ans += "Step 1: Number => " + num;
+    ans += `<br> Step 2: The value of 2n * n + 1 => 2^${num}*${num} + 1 = ${(Math.pow(2,num) * num) + 1}`;
+    ans += `<br> Step 3: Hence the result is: ${(((1 << num) * num) + 1)} `;
+    document.getElementById('culans').innerHTML = ans;
 }
