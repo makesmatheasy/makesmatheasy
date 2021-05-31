@@ -6188,6 +6188,19 @@ function vecpoints() {
 }
 
 //Resultant Vector Calculator
+
+function calcexvector_res(){
+    var a = document.getElementById('abc');
+    var b = document.getElementById('def');
+    var c = document.getElementById('ang3');
+
+    a.value = 3;
+    b.value = 4;
+    c.value = 90;
+
+    vector_res();
+}
+
 function vector_res() {
     var a = parseFloat(document.getElementById('abc').value);
     var b = parseFloat(document.getElementById('def').value);
@@ -6659,6 +6672,32 @@ function solvecubo() {
 
 }
 //Tetrahedron Calculator
+
+function calcexvectortetra(){
+    a = document.getElementById("inp12");
+    b = document.getElementById("inp13");
+    c = document.getElementById("inp14");
+    d = document.getElementById("inp21");
+    e = document.getElementById("inp25");
+    f = document.getElementById("inp23");
+    g = document.getElementById("inp31");
+    h = document.getElementById("inp32");
+    i = document.getElementById("inp35");
+
+    a.value = 2;
+    b.value = 1;
+    c.value = 3;
+    d.value = 1;
+    e.value = 2;
+    f.value = 3;
+    g.value = 2;
+    h.value = 3;
+    i.value = 4;
+
+    vectortetra();
+
+}
+
 function vectortetra() {
     var a, b, c, d, e, f, g, h, i;
     a = parseInt(document.getElementById("inp12").value);
@@ -7180,6 +7219,21 @@ function vectorquad() {
     }
 }
 //Area of Triangle
+
+function calcexvectortria(){
+    a = document.getElementById("inp90").value=2;
+    b = document.getElementById("inp98").value=2;
+    c = document.getElementById("inp97").value=3;
+    d = document.getElementById("inp96").value=4;
+    e = document.getElementById("inp95").value=5;
+    f = document.getElementById("inp94").value=1;
+    g = document.getElementById("inp93").value=1;
+    h = document.getElementById("inp92").value=4;
+    i = document.getElementById("inp91").value=4;
+
+    vectortria();
+}
+
 function vectortria() {
     var a, b, c, d, e, f, g, h, i;
     a = parseInt(document.getElementById("inp90").value);
