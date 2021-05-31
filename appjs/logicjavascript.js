@@ -1378,6 +1378,37 @@ function paralleloarea() {
     }
 }
 //Intersection of Two Lines
+
+function calcexvectorline(){
+    var a = document.getElementById("i1");
+    var b = document.getElementById("i2");
+    var c = document.getElementById("i3");
+    var d = document.getElementById("i4");
+    var e = document.getElementById("i5");
+    var f = document.getElementById("i6");
+    var g = document.getElementById("i7");
+    var h = document.getElementById("i8");
+    var i = document.getElementById("i9");
+    var j = document.getElementById("i10");
+    var k = document.getElementById("i11");
+    var l = document.getElementById("i12");
+    a.value = 1;
+    b.value = 2;
+    c.value = -1;
+    d.value = 5;
+    e.value = -3;
+    f.value = 2;
+    g.value = 10;
+    h.value = -5;
+    i.value = 3;
+    j.value = 7;
+    k.value = 8;
+    l.value = -3;
+
+    vectorline();
+    
+}
+
 function vectorline() {
     let a = parseInt(document.getElementById("i1").value)
     let b = parseInt(document.getElementById("i2").value)
@@ -5531,6 +5562,32 @@ function vectorcross() {
 }
 
 //Shortest Distance
+
+function calcexvectordistance(){
+    a = document.getElementById("in11");
+    b = document.getElementById("in22");
+    c = document.getElementById("in33");
+    d = document.getElementById("in44");
+    e = document.getElementById("in55");
+    f = document.getElementById("in66");
+    g = document.getElementById("in77");
+    h = document.getElementById("in88");
+    i = document.getElementById("in99");
+
+    a.value = 1;
+    b.value = 2;
+    c.value = 2;
+    d.value = 2;
+    e.value = 4;
+    f.value = 3;
+    g.value = 2;
+    h.value = 1;
+    i.value = 3;
+
+    vectordistance();
+
+}
+
 function vectordistance() {
     var a, b, c, d, e, f, g, h, i;
     a = parseInt(document.getElementById("in11").value);
