@@ -4547,13 +4547,22 @@ function calcexalisum3find() {
 
 function alisum3find() {
     let n = parseInt(document.getElementById("alisum3").value);
-    document.getElementById("alisum3ans").innerHTML = "";
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j <= i; j++)
-            document.getElementById("alisum3ans").innerHTML += Hosoya(i, j) + " ";
-
-        document.getElementById("alisum3ans").innerHTML += "<br/>";
+    if(!isNaN(n)){
+        document.getElementById("alisum3ans").innerHTML = "";
+        for (let i = 0; i < n; i++) {
+            for (let j = 0; j <= i; j++)
+                document.getElementById("alisum3ans").innerHTML += Hosoya(i, j) + " ";
+    
+            document.getElementById("alisum3ans").innerHTML += "<br/>";
+        }
+        document.getElementById("alisum3exp").innerHTML = "\\[The Fibonnaci triangle or Hosoya’s triangle is a triangular arrangement of numbers based on Fibonacci numbers.\\]"
+        document.getElementById("alisum3exp").innerHTML = "\\[Each number is the sum of two numbers above in either the left diagonal or the right diagonal. \\]"
+        document.getElementById("alisum3exp").innerHTML = "\\[Thus, the two outermost diagonals are the Fibonacci numbers, while the numbers on the middle vertical lines are the squares of the Fibonacci numbers.\\]"
+        document.getElementById("alisum3exp").innerHTML = "\\[All the other numbers in the triangle are the product of two distinct Fibonacci numbers greater than the row sums are the first convolved Fibonnaci numbers.\\]"
+        renderMathInElement(document.getElementById("alisum3exp"))
     }
+    else
+        document.getElementById("alisum3ans").innerHTML = "Please enter valid input"
 }
 
 
