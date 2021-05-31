@@ -276,6 +276,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#pentatop").click(function () {
+        openit("#pentatop");
+        closenav();
+        clearall();
+    });
     $("#perat").click(function () {
         openit("#perats");
         closenav();

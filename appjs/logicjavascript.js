@@ -6140,6 +6140,18 @@ function vectorcross() {
     }
 }
 
+function penta_cal() {
+    let a = parseInt(document.getElementById("penta_n").value);
+    if (!isNaN(parseInt(a))){
+       var r = n * (n + 1) *(n + 2) * (n + 3)/ 24;
+       document.getElementById("penta_res").innerHTML = a+" th Pentatope number : " + r;
+    }
+    else{
+        document.getElementById("penta_res").innerHTML = "Invalid input";
+    }
+
+}
+
 //Shortest Distance
 
 function calcexvectordistance() {
