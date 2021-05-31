@@ -14288,6 +14288,31 @@ function golds3find() {
         document.getElementById("golds3ans").innerHTML = "Not a Valid Input"
 }
 
+function gold4find(){
+    let n = document.getElementById("golds6").value
+    for (let i = 0; i < n; i++)
+        document.getElementById("golds4ans").innerHTML = catalan(i) + " " ;
+}
+function catalan(n)
+{
+    c = binomialCoeff(2 * (n), n);
+    return Math.floor(c / (n + 1));
+}
+
+function binomialCoeff(n, k)
+{
+    let res = 1;
+    if (k > n - k)
+        k = n - k;
+    for (let i = 0; i < k; ++i)
+    {
+        res *= (n - i);
+        res = Math.floor(res / (i + 1));
+    }
+ 
+    return res;
+}
+
 // profit/loss calculations over discount
 function discount() {
     var dis = parseFloat(document.getElementById("dis").value);
