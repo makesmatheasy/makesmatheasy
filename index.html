@@ -14822,7 +14822,23 @@
             <p style="margin-top: 2rem;">Lead Time is the delay that occurs between the initiation and completion of a process.
                 Lead Time is used in manufacturing, supply chain management, and project management.</p>
            <br>
-           <br>
+           <br><p style="margin-top:2rem; text-align: left;">What is the unknown value:</p>
+           <select class="btn btn-light" name="unknown" id="lead" onchange="getLead()">
+               <option>Select</option>
+               <option value="supply">Lead Time (Supply chain management)</option>
+               <option value="manufacture">Lead Time (manufacturing)</option>
+           </select>
+           <br><br>
+           <div id="leadsupply" style="display:none;">
+               <input class="form__field" type="number" id="supplydelay" placeholder="Supply Delay (in days)">
+               <br><br>
+               <input class="form__field" type="number" id="reorder" placeholder="Reordering delay (in days)">
+               <br><br>
+               <button class = "btn btn-light" onclick="leadsupply()">Test</button>
+               <p id="leadsupplydelay"></p>
+               <p id="stepswork"></p>
+           </div>
+           <div id="leadmanufacture" style="display:none;">
             <input class = "form__field"type="number" id="pre" placeholder="Pre Processing Time (in minutes)">
             <br><br>
             <input class = "form__field"type="number" id="pro" placeholder="Processing Time(in minutes)">
@@ -14832,6 +14848,7 @@
             <button class = "btn btn-light" onclick="leadvalue()">Test</button>
             <p id="leadans"></p>
             <br>
+           </div>
           </div>
         
  <!-- TaktTime Calculator -->

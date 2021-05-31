@@ -14907,7 +14907,7 @@ function typenum15find()
     renderMathInElement(result);
 }
 
-}    
+
 
 
 function simpleSieve(){
@@ -23088,6 +23088,45 @@ function chivalue() {
     }}
 }
 
+function getLead() {
+    selectElement =
+        document.querySelector('#lead');
+    output = selectElement.value;
+    var arr = ["supply", "manufacture"];
+    for (var i = 0; i < arr.length; i++) {
+        var lead = 'lead' + arr[i];
+        document.getElementById(lead).style.display = "none";
+    }
+
+    if (output == "supply") {
+        document.getElementById('leadsupply').style.display = "block";
+    } else if (output == "manufacture") {
+        document.getElementById('leadmanufacture').style.display = "block";
+    } 
+}
+
+//lead time for supply chain
+function leadsupply() {
+    var num1 = document.getElementById("supplydelay").value; 
+    var num2 = document.getElementById("reorder").value;
+    if(num1==""||num2=="")
+    {
+        document.getElementById("leadsupplydelay").innerHTML="Please fill all the fields";
+    }
+    else{
+     num1 =parseFloat(num1);
+     num2 =parseFloat(num2);
+     var lead=num1+num2;
+     var ans="\\[Lead \\space Time \\space (supply \\space chain \\space management)= Supply  \\space  Delay + Reordering  \\space Delay    \\]" 
+     ans+="\\["+num1+"+"+num2+" \\]"
+     ans+="\\[ Lead \\space Time \\space (supply \\space chain \\space management) ="+lead.toFixed(4)+" \\space days \\]"
+     ans+="\\[= "+(lead*24).toFixed(4)+" \\space hours\\]"
+     document.getElementById("leadsupplydelay").innerHTML=ans;
+     renderMathInElement(document.getElementById("leadsupplydelay"));
+        
+    }
+}
+
 
 //lead time calculator
 function leadvalue() {
@@ -23103,9 +23142,8 @@ function leadvalue() {
      num2 =parseFloat(num2);
      num3 =parseFloat(num3);
      var lead=num1+num2+num3;
-     console.log(num1+" "+num2+" "+num3);
      var ans="\\[Lead \\space Time \\space (manufacturing)= \\space  Pre-processing + Processing + Post-processing \\space  time \\]" 
-     ans+="\\["+num1+"+"+num3+"+"+num2+" \\]"
+     ans+="\\["+num1+"+"+num2+"+"+num3+" \\]"
      ans+="\\[ Lead \\space Time \\space (manufacturing) ="+lead.toFixed(4)+" \\space minutes \\]"
      ans+="\\[= "+(lead*60).toFixed(4)+" \\space seconds\\]"
      document.getElementById("leadans").innerHTML=ans;
@@ -24246,17 +24284,11 @@ function relrisk() {
     let ans = "";
     var output = document.getElementById('relriskans');
     if (a == "" || b == "" || c == "" || d == "") {
-<<<<<<< HEAD
-        output.innerHTML = "Enter all the inputs";
-||||||| 343865d
-        document.getElementById("relriskans").innerHTML = "Enter all the inputs";
-=======
         output.innerHTML = "Enter all the inputs";
     }
     else if(isNaN(a)||isNaN(b)||isNaN(c)||isNaN(d))
     {
         document.getElementById("relriskans").innerHTML = "All inputs should be numeric";
->>>>>>> afdd3b431abaa559e8d0216341dd56b83c3ef158
     }
     else {
         let ab = a+b; 
