@@ -14972,17 +14972,26 @@ function cirinsemi1find() {
 }
 
 function cirinsemi2find() {
-    let l = parseInt(document.getElementById("cirinsemi2in").value)
-    let b = parseInt(document.getElementById("cirinsemi21in").value)
-    let h = parseInt(document.getElementById("cirinsemi22in").value)
-    if (!isNaN(l) && !isNaN(b) && !isNaN(h)) {
+    var l = parseInt(document.getElementById("cirinsemi2in").value)
+    var b = parseInt(document.getElementById("cirinsemi21in").value)
+    var output = document.getElementById("cirinsemi2ans");
+    var temp = "";
+    if (!isNaN(l) && !isNaN(b)) {
         var a = (l * b) / (l + b);
-        let ans = a * a;
-        document.getElementById("cirinsemi2ans").innerHTML = ans
+        var ans = a * a;
+        temp += "\\[Area \\space of \\space a \\space largest \\space square \\space fit \\space in \\space right \\space angle \\space triangle \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space (\\frac{(base \\space of \\space triangle) \\times (perpendicular \\space of \\space triangle)}{(base \\space of \\space triangle) + (perpendicular \\space of \\space triangle)})^2\\]"
+        temp += "\\[\\space = \\space (\\frac{("+l+") \\times ("+b+")}{("+l+") + ("+b+")})^2\\]"
+        temp += "\\[\\space = \\space (\\frac{"+(l*b)+"}{"+(l+b)+"})^2\\]"
+        temp += "\\[\\space = \\space ("+a+")^2\\]"
+        temp += "\\[\\space = \\space "+ans.toFixed(3)+"\\]"
+
+        output.innerHTML = temp;
     }
     else {
-        document.getElementById("cirinsemi2ans").innerHTML = "Please enter valid input"
+        output.innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
     }
+    renderMathInElement(output);
 }
 
 function cirinsemi3find() {
