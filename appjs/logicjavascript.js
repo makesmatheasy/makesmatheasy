@@ -7049,7 +7049,66 @@ function tanglenght() {
     renderMathInElement(document.getElementById("centerrrp"));
 
 }
+function tangeqution() {
+    var a, b, c, d, e, f;
+    var g = parseInt(document.getElementById("acenterrp").value);
+    var f = parseInt(document.getElementById("bcenterrp").value);
+    var c = parseInt(document.getElementById("ccenterrp").value);
+    var a = parseInt(document.getElementById("bcenterrpx").value);
+    var b = parseInt(document.getElementById("bcenterrpy").value);
+    var x  = g/2;
+    var y = f/2;
 
+    var one = a+x;
+    var two = b+y;
+    var three = c + x*a +y*b;
+
+    
+        document.getElementById("centererp").innerHTML = "\\[Equation  \\space Of tangent \\space of  \\space circle \\space -> \\newline";
+        document.getElementById("centererp").innerHTML += " g\\space = \\frac {" + g + "} { ( \\space " + 2 + " ) } " + " \\space = " + x + "\\newline";
+        document.getElementById("centererp").innerHTML += " h\\space = \\frac {" + f + "} { (  \\space " + 2 + " ) } " + " \\space = " + y + "\\newline"; 
+        document.getElementById("centererp").innerHTML += " Equation \\space = \\space \\ ( \\space a \\space + \\space g) \\space  x  + \\space ( \\space b \\space + \\space f ) \\space  y   \\space + ( \\space  ga \\space + fy \\space  + c \\space ) \\newline \\] ";
+
+        
+        document.getElementById("centerrrp").innerHTML = " \\[  "+ one + "x \\space + (" +  two + ") y \\space +("+three + ") \\space = \\space 0 \\newline \\] ";
+       
+
+    
+
+    renderMathInElement(document.getElementById("centererp"));
+    renderMathInElement(document.getElementById("centerrrp"));
+
+}
+
+function radeq() {
+    var a, b, c, d, e, f;
+    var g1 = parseInt(document.getElementById("acenterrpr1").value);
+    var f1 = parseInt(document.getElementById("bcenterrpr1").value);
+    var c1 = parseInt(document.getElementById("ccenterrpr1").value);   
+    var g2 = parseInt(document.getElementById("acenterrpr2").value);
+    var f2 = parseInt(document.getElementById("bcenterrpr2").value);
+    var c2 = parseInt(document.getElementById("ccenterrpr2").value);
+    
+    var x  = g/2;
+    var y = f/2;
+
+    var one = g1-g2;
+    var two = f1-f2;
+    var three = c1-c2;
+
+    
+        document.getElementById("centererpr").innerHTML = "\\[Radial  \\space Axis  \\space of  \\space circles \\space = \\space A \\space - \\space B  \\newline \\] ";
+        
+        
+        document.getElementById("centerrrpr").innerHTML = " \\[  "+ one + "x \\space + (" +  two + ") y \\space +("+three + ") \\space = \\space 0 \\newline \\] ";
+       
+
+    
+
+    renderMathInElement(document.getElementById("centererpr"));
+    renderMathInElement(document.getElementById("centerrrpr"));
+
+}
 // number of diagonals in n sided convex polygon
 function nodiagnolfind() {
     var n = parseInt(document.getElementById('nodiagnol').value);
@@ -7707,6 +7766,35 @@ function solvescalenetriangle() {
     }
 }
 
+
+function solvecirtriangle() {
+    var r = document.getElementById("inputcirtrirad").value;
+    var a = document.getElementById("inputcirtria").value;
+    var areaoutput = document.getElementById("resultofareacirtri");
+    var perimeteroutput = document.getElementById("resultofcirtriperi");
+    var areatemp = "";
+    var perimetertemp = "";
+    var area= ((3.14*r)/3).toFixed(2);
+    var peri= 3.14*r;
+    if ((r != "") && (a != "" )) {
+
+        perimetertemp += "\\[P= \\pi \\times" + r + "\\]";
+        perimetertemp += "\\[Perimeter  \\space is \\space " + peri + "\\]";
+        perimeteroutput.innerHTML = perimetertemp;
+        areatemp += "\\[A= \\frac{ \\pi }{3} \\times" + r + "\\]";
+        areatemp += "\\[Area  \\space is \\space " + area + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        renderMathInElement(areaoutput);
+        renderMathInElement(perimeteroutput);
+        
+
+    } else {
+        areaoutput.innerHTML = "";
+        perimeteroutput.innerHTML = "";
+       
+    }
+}
 // created function for isosceles triangle
 function isoscelestrianglearea() {
     var eqside = document.getElementById("inputeqitside").value;
@@ -9339,6 +9427,22 @@ function solveconcavepent() {
         trileglenoutput.innerHTML = "";
         perioutput.innerHTML = "";
         areaoutput.innerHTML = "";
+    }
+}
+
+//Concave Pentagon
+function solveconcaveregularpent() {
+    var a = parseFloat(document.getElementById("regularpenta-a").value);
+    var tipDistField = document.getElementById("regularpenta-b");
+    var perimeterField = document.getElementById("regularpenta-p");
+    var areaField = document.getElementById("regularpenta-A");
+    var b = a/2 * (1 + Math.sqrt(5));
+    var p = 5 * a;
+    var A = a*a/4 * ( Math.sqrt(25 + 10 * Math.sqrt(5)) - Math.sqrt(10 + 2 * Math.sqrt(5)));
+    if (!isNaN(a)) {
+        tipDistField.innerHTML = `Distance of the tips (b):	= ${b.toFixed(3)} units`;
+        perimeterField.innerHTML = `Perimeter (p) = ${p.toFixed(3)} units`;
+        areaField.innerHTML = `Area (A) = ${A.toFixed(3)} sq.units`;
     }
 }
 
@@ -15027,17 +15131,26 @@ function cirinsemi1find() {
 }
 
 function cirinsemi2find() {
-    let l = parseInt(document.getElementById("cirinsemi2in").value)
-    let b = parseInt(document.getElementById("cirinsemi21in").value)
-    let h = parseInt(document.getElementById("cirinsemi22in").value)
-    if (!isNaN(l) && !isNaN(b) && !isNaN(h)) {
+    var l = parseInt(document.getElementById("cirinsemi2in").value)
+    var b = parseInt(document.getElementById("cirinsemi21in").value)
+    var output = document.getElementById("cirinsemi2ans");
+    var temp = "";
+    if (!isNaN(l) && !isNaN(b)) {
         var a = (l * b) / (l + b);
-        let ans = a * a;
-        document.getElementById("cirinsemi2ans").innerHTML = ans
+        var ans = a * a;
+        temp += "\\[Area \\space of \\space a \\space largest \\space square \\space fit \\space in \\space right \\space angle \\space triangle \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space (\\frac{(base \\space of \\space triangle) \\times (perpendicular \\space of \\space triangle)}{(base \\space of \\space triangle) + (perpendicular \\space of \\space triangle)})^2\\]"
+        temp += "\\[\\space = \\space (\\frac{("+l+") \\times ("+b+")}{("+l+") + ("+b+")})^2\\]"
+        temp += "\\[\\space = \\space (\\frac{"+(l*b)+"}{"+(l+b)+"})^2\\]"
+        temp += "\\[\\space = \\space ("+a+")^2\\]"
+        temp += "\\[\\space = \\space "+ans.toFixed(3)+"\\]"
+
+        output.innerHTML = temp;
     }
     else {
-        document.getElementById("cirinsemi2ans").innerHTML = "Please enter valid input"
+        output.innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
     }
+    renderMathInElement(output);
 }
 
 function cirinsemi3find() {
@@ -17380,6 +17493,21 @@ function phi5(n) {
         result -= parseInt(result / n);
     return result;
 }
+
+function lance_cal(){
+    let x = parseInt(document.getElementById("lance_x").value);
+    let y = parseInt(document.getElementById("lance_y").value);
+    let z = parseInt(document.getElementById("lance_z").value);
+
+    var area = z * ( u - y ) / 2 - x * ( z - y/2 );
+    var peri = 2z * arccos ( 1 - y / ( 2 * z ) ) + y;
+    document.getElementById("lance_res").innerHTML = "Area : "+ area+" and perimeter : "+peri;
+}
+function arccos(degrees) {
+    var radians = (degrees*Math.PI)/180;
+    return Math.arccos(radians);
+}
+
 //Harmonic Mean
 function calcexhmsol() {
     var a = document.getElementById("aval2").value = 2;
@@ -20497,11 +20625,17 @@ function multBinDecHexOct() {
 
     var x1;
     var x2;
-
+    let flag = 0;
     if (firstBase === "Binary") {
         x1 = calculatefrac(input1, 2);
-        print += "<h5>Step1 : Convert the " + firstBase + " number in Input 1 to decimal</h5>";
-        print += input1 + "->" + x1 + "<br>";
+        if(/[^0-1]/g.test(input1)){
+            print += "<h5>Step1 : Convert the " + firstBase + " number in Input 1 to decimal</h5>";
+            print += input1 + "->" + x1 + "<br>";
+        }
+        else{
+            print = "Enter the valid input";
+            flag = 1;
+        }
     } else if (firstBase === "Octal") {
         x1 = calculatefrac(input1, 8);
         print += "<h5>Step1 : Convert the " + firstBase + " number in Input 1 to decimal</h5>";
@@ -20517,9 +20651,15 @@ function multBinDecHexOct() {
     }
 
     if (secondBase === "Binary") {
-        x2 = calculatefrac(input2, 2);
-        print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
-        print += input2 + "->" + x2 + "<br>";
+        if(/[^0-1]/g.test(input2)){
+            x2 = calculatefrac(input2, 2);
+            print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
+            print += input2 + "->" + x2 + "<br>";
+        }
+        else{
+            print = "Enter the valid input";
+            flag = 1;
+        }
     } else if (secondBase === "Octal") {
         x2 = calculatefrac(input2, 8);
         print += "<h5>Step2 : Convert the " + secondBase + " number in Input 2 to decimal</h5>";
@@ -20538,22 +20678,25 @@ function multBinDecHexOct() {
     print += "<h5>Step3 : Now multiply the decimal values found in STEP1 and STEP2</h5>";
     print += x1 + "&nbsp; X &nbsp;" + x2 + "&nbsp; = &nbsp;" + x3;
 
-    if (resultType === "Binary") {
-        result.innerHTML = "Answer in binary=" + parseInt(fracDectoBinHexOct(x3, 2));
-        print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
-        print += x3 + "->" + parseInt(fracDectoBinHexOct(x3, 2));
-    } else if (resultType === "Octal") {
-        result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3, 8);
-        print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
-        print += x3 + "->" + fracDectoBinHexOct(x3, 8);
-    } else if (resultType === "Hexa Decimal") {
-        result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3, 16);
-        print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
-        print += x3 + "->" + fracDectoBinHexOct(x3, 16);
-    } else if (resultType === "Decimal") {
-        result.innerHTML = "Answer in Decimal=" + fracDectoBinHexOct(x3, 10);
-        print += "<h5>Step4 : Answer in " + resultType + "</h5>";
-        print += x3.toString();
+    if(flag === '0'){
+
+        if (resultType === "Binary") {
+            result.innerHTML = "Answer in binary=" + parseInt(fracDectoBinHexOct(x3, 2));
+            print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
+            print += x3 + "->" + parseInt(fracDectoBinHexOct(x3, 2));
+        } else if (resultType === "Octal") {
+            result.innerHTML = "Answer in Octal=" + fracDectoBinHexOct(x3, 8);
+            print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
+            print += x3 + "->" + fracDectoBinHexOct(x3, 8);
+        } else if (resultType === "Hexa Decimal") {
+            result.innerHTML = "Answer in Hexa Decimal=" + fracDectoBinHexOct(x3, 16);
+            print += "<h5>Step4 : To find the result in " + resultType + " convert the answer found in STEP3 to " + resultType + "</h5>";
+            print += x3 + "->" + fracDectoBinHexOct(x3, 16);
+        } else if (resultType === "Decimal") {
+            result.innerHTML = "Answer in Decimal=" + fracDectoBinHexOct(x3, 10);
+            print += "<h5>Step4 : Answer in " + resultType + "</h5>";
+            print += x3.toString();
+        }
     }
     work.innerHTML = print;
 }
