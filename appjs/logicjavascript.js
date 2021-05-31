@@ -9799,6 +9799,34 @@ function solvetruntetra() {
         document.getElementById("resultoftruntetraarea").innerHTML = "";
     }
 }
+
+// Truncated Square
+
+function trunsquaresolve() {
+    var a = parseFloat(document.getElementById("trunsquare-a").value);
+    var b = parseFloat(document.getElementById("trunsquare-b").value);
+    var missingLenField = document.getElementById("trunsquare-e");
+    var lenField = document.getElementById("trunsquare-l");
+    var heightField = document.getElementById("trunsquare-h");
+    var diagField = document.getElementById("trunsquare-d");
+    var periField = document.getElementById("trunsquare-p");
+    var areaField = document.getElementById("trunsquare-A");
+    var e = b / Math.sqrt(2);
+    var l = Math.sqrt(2) * (a + e);
+    var h = a + 2*e;
+    var d = Math.sqrt(a*a + Math.pow(a+2*e, 2));
+    var p = 4*(a+b);
+    var A = Math.pow(a + 2*e, 2) - 2*e*e;
+    if ((!isNaN(a)) && (!isNaN(b))) {
+        missingLenField.innerHTML = `Missing length (e) = ${e.toFixed(3)} units`;
+        lenField.innerHTML = `Length (l) = ${l.toFixed(3)} units`;
+        heightField.innerHTML = `Height (h) = ${h.toFixed(3)} units`;
+        diagField.innerHTML = `Diagonal (d) = ${d.toFixed(3)} units`;
+        periField.innerHTML = `Peimeter (p) = ${p.toFixed(3)} units`;
+        areaField.innerHTML = `Area (A) = ${A.toFixed(3)} sq.units`;
+    }
+}
+
 // Truncated Dodecahedron
 
 function solvetrundodeca() {
