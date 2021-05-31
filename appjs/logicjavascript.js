@@ -4974,6 +4974,31 @@ function directl() {
     }
 }
 
+function transl() {
+    var x1, y1, x2, y2, m, n;
+    x1 = parseFloat(document.getElementById('ctx1').value);
+    y1 = parseFloat(document.getElementById('cty1').value);
+    x2 = parseFloat(document.getElementById('ctx2').value);
+    y2 = parseFloat(document.getElementById('cty2').value);
+    m = parseFloat(document.getElementById('ctm1').value);
+    n = parseFloat(document.getElementById('ctm2').value);
+
+    if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(m) || isNaN(n)) {
+        document.getElementById('comt2').innerHTML = "\\[ Please \\space enter \\space all \\space input \\]";
+        renderMathInElement(document.getElementById("comt1"));
+        document.getElementById('comt1').innerHTML = "";
+    }
+    else {
+        document.getElementById('comt1').innerHTML = "\\[ Length \\space of \\space Transvers \\space common \\space tangent \\space = \\sqrt{(C1C2)^2 - (r1+r1)^2} \\] ";
+
+        var answer = Math.sqrt((x1-x2)^2 + (y1-y2)^2 - (m+n)^2);
+        
+        document.getElementById('comt2').innerHTML = "\\[ = " + answer  + " \\] ";
+        renderMathInElement(document.getElementById("comt1"));
+        renderMathInElement(document.getElementById("comt2"));
+    }
+}
+
 function vectorsection() {
     var x1, y1, x2, y2, m, n;
     x1 = parseFloat(document.getElementById('inp001').value);
