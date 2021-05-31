@@ -134,9 +134,6 @@ function excircum_2() {
     var excirout = document.getElementById("excircum2");
     var excirtemp = "";
 
-
-    var result1 = R1*Math.sqrt(1+(8*cos(A1/2)*cos(B1/2)*cos(C1/2)));
-
     var result1 = R1 * Math.sqrt(1 + (8 * cos(A1 / 2) * cos(B1 / 2) * cos(C1 / 2)));
 
     if (isNaN(A1) || isNaN(R1) || isNaN(B1) || isNaN(C1)){
@@ -9621,7 +9618,6 @@ function solvetruntetra() {
         document.getElementById("resultoftruntetraarea").innerHTML = "";
     }
 }
-
 // Truncated Dodecahedron
 
 function solvetrundodeca() {
@@ -16411,7 +16407,6 @@ function nap() {
     //}
     var p = document.getElementById("nAPseries2")
     var temp = ""
-
     if (isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(b))) {
 
         temp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
@@ -16419,7 +16414,7 @@ function nap() {
         renderMathInElement(p);
         return;
     }
-    
+
     else{
         var d = (b - a) / (n + 1);
     for (var i = 1, series = "", num = 0; i <= n; i++) {
@@ -16436,6 +16431,7 @@ function nap() {
     p.innerHTML = temp;
     renderMathInElement(p);
     }
+    
 
 }
 //Constant/Increasing/Decreasing AP
@@ -16596,7 +16592,7 @@ function ngp() {
         renderMathInElement(p);
         return;
     }
-    
+
     else{
         var d = Math.pow((b / a), 1 / (n + 1))
     for (var i = 1, series = "", num = 0; i <= n; i++) {
@@ -16661,15 +16657,21 @@ function apsum() {
             document.getElementById("printAP").innerHTML = "Invalid AP"
         }
         else {
+            let steps = "";
+            steps += "\\[Calculate\\space difference(d)=\\space "+val[1]+" - "+val[0]+" \\]";
+            steps += "\\[Sum\\of\\space AP\\space=\\space \\frac{n}{2} \\times (2\\times a + (n-1)\\times d)\\]";
+            steps += "\\[Sum\\of\\space AP\\space=\\space \\frac{"+n+"}{2} \\times (2\\times "+val[0]+" + ("+n+"-1)\\times "+d+")\\]";
             var d = val[1] - val[0];
-            document.getElementById("printAP").innerHTML = "Common difference for the entered AP is &nbsp;" + d + "<br>";
+            
             for (i = 0; i < n; i++) {
                 document.getElementById("printAP").innerHTML += eval(String(i + "*" + d + "+" + val[0])) + ",";
                 s = eval(String(s + "+" + i + "*" + d + "+" + val[0]))
             }
-            document.getElementById("printAP").innerHTML += "<br>The Sum of &nbsp;" + n + "&nbsp; terms of the given AP is &nbsp;" + s;
+            steps += "\\[Sum\\of\\space AP\\space=\\space "+s+"\\]";
+            document.getElementById("printAP").innerHTML = steps;
         }
     }
+    renderMathInElement(document.getElementById("printAP"))
 }
 //Mean Calculators
 function calcexamsol(){
@@ -18700,7 +18702,6 @@ function nextPrime(num) {
     nextPrimeResult.innerHTML += "Therefore next prime number of " + num + " is: " + res;
     }
 }
-
 //Sum of divisors Function
 //Sum of divisors Function
 function sumDivisor(num) {
@@ -19896,7 +19897,7 @@ function triinfind() {
     let n = parseInt(document.getElementById("triin").value)
     if (!isNaN(a)) {
         if(n<0)
-           document.getElementById("triinans").innerHTML ="\\[Length \\space of \\space side \\space of \\space square \\space cannot \\space be \\space negative\\]";
+        document.getElementById("triinans").innerHTML ="\\[Length \\space of \\space side \\space of \\space square \\space cannot \\space be \\space negative\\]";
         else{
             let a=n/Math.sqrt(2);
             let b=Math.sqrt(n*n+n*n/4);
@@ -19911,6 +19912,7 @@ function triinfind() {
         document.getElementById("triinans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
     }
     renderMathInElement(document.getElementById("triinans"));
+}
 }
 //----------------------------
 
@@ -25971,9 +25973,14 @@ function antilogCal(){
     }
     else{
         let ans = Math.pow(base,val); //trick to find antilog
-        output.innerHTML = "Antilog of " + val + " with base " + base + " is " + ans;
-    }
+        let steps  = "";
+        steps += "\\[ y\\space =\\space log_b(x) \\]";
+        steps += "\\[x\\space =\\space log_b^{-1}(y)\\space =\\space b ^ y\\]";
+        steps += "\\[=\\space "+ans+"\\]";
 
+        output.innerHTML = steps;
+    }
+    renderMathInElement(output);
 }
 function logbaseCal(){
     let a = document.getElementById("logbasea").value;
@@ -26304,3 +26311,13 @@ function isTrimorNum(Num) {
     else
         document.getElementById('trimorans').innerHTML = n +" is not a Trimorphic Number";
 }
+// Harshad Number
+function isHarNum(num) {
+    let sum = 0;
+    for (let temp = num; temp > 0; temp = parseInt(temp / 10, 10))
+        sum += temp % 10;
+    if(num % sum == 0)
+        document.getElementById('harans').innerHTML = num +" is a Harshad Number";
+    else
+        document.getElementById('harans').innerHTML = num +" is not a Harshad Number";
+} 
