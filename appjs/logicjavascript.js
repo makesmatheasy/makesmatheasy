@@ -16797,16 +16797,25 @@ function typenum15find() {
 
 function typenum48find(){
     var n = parseInt(document.getElementById("typenum48").value)
-    let isPrime = [];
-    SieveOfEratosthenes(n, isPrime);
-    let primes = [];
-    let j = 0;           
-    for (let p = 2; p <= n; p++)
-        if (isPrime[p] != 0)
-            primes[j++] = p;
-    for (let k = 0; k < j; k++)
-        if (isPrime[k + 1])
-            document.getElementById("typenum48ans").innerHTML = primes[k]+ " ";
+    if(!isNaN(n)){
+        document.getElementById("typenum48exp").innerHTML = "\\[Super-prime numbers (also known as higher order primes) are the subsequence of prime numbers that occupy prime-numbered positions within the sequence of all prime numbers. \\]"
+        document.getElementById("typenum48exp").innerHTML = "\\[First few Super-Primes are 3, 5, 11 and 17.\\]"
+        document.getElementById("typenum48exp").innerHTML = "\\[The idea is to generate all the primes less than or equal to the given number N using Sieve of Eratosthenes. \\]"
+        document.getElementById("typenum48exp").innerHTML = "\\[ Once we have stored all the primes in the array, we iterate through the array and print all prime number which occupies prime number position in the array. \\]"
+        renderMathInElement(document.getElementById("typenum48exp").innerHTML);
+        let isPrime = [];
+        SieveOfEratosthenes(n, isPrime);
+        let primes = [];
+        let j = 0;           
+        for (let p = 2; p <= n; p++)
+            if (isPrime[p] != 0)
+                primes[j++] = p;
+        for (let k = 0; k < j; k++)
+            if (isPrime[k + 1])
+                document.getElementById("typenum48ans").innerHTML = primes[k]+ " ";
+    }
+    else 
+        document.getElementById("typenum48ans").innerHTML = "Please enter valid input"
 }
 
 function simpleSieve() {
