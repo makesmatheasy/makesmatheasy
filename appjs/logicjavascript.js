@@ -2985,7 +2985,12 @@ function solveper() {
     }
 }
 
-
+function calceximpse13findd(){
+    var n = document.getElementById("impse32");
+    n.value = 5;
+    
+    impse13findd();
+}
 function impse13findd() {
     var n = (document.getElementById("impse32").value);
     let a = 1, b = 2;
