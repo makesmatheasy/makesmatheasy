@@ -22887,9 +22887,32 @@ function etc1find() {
 }
 
 function etc2find() {
-    let n = parseInt(document.getElementById("etc2").value)
-    let ans = phi1(n) == phi1(2 * n)
-    document.getElementById("etc2ans").innerHTML = ans
+    var n = parseInt(document.getElementById("etc2").value)
+    var ans = phi1(n) == phi1(2 * n)
+    var output = document.getElementById("etc2ans");
+    var temp = "";
+    if (!isNaN(n))
+    {
+        temp += "\\[Given \\space an \\space integer \\space N, \\]"
+        temp += "\\[\\space the \\space task \\space is \\space to \\space check \\space whether \\space the \\space Euler’s \\space Totient \\space Function \\]"
+        temp += "\\[\\space of \\space N \\space and \\space 2 \\times N \\space are \\space the \\space same \\space or \\space not\\]"
+        temp += "\\[If \\space they \\space are \\space found \\space to \\space be \\space the \\space same, \\space print \\space True\\]"
+        temp += "\\[\\space Otherwise, \\space print \\space False\\]"
+        
+        temp += "\\[First, \\space we \\space Consider \\space all \\space prime \\space factors \\space of \\space n \\]"
+        temp += "\\[And, \\space then \\space subtract \\space their \\space multiples \\space from \\space result\\]"
+        temp += "\\[We \\space take \\space a \\space Function \\space to \\space check \\space if \\space phi(n) \\space is \\space equals \\space phi(2*n)\\]"
+        temp += "\\[where \\space phi() \\space is \\space the \\space Euler’s \\space Totient \\space Function\\]"
+        temp += "\\[Therefore, \\space the \\space idea \\space is \\space to \\space check \\space if \\space N \\space is \\space odd \\space or \\space not\\]"
+        temp += "\\[\\space If \\space found \\space to \\space be \\space true, \\space print \\space 'True, \\space Otherwise, \\space print \\space 'False'\\]"
+    }
+    else
+    {
+        temp += "\\[Please enter valid input\\]"
+    }
+    temp += ans
+    output.innerHTML = temp ;
+    renderMathInElement(output);
 }
 
 function __gcd(a, b) {
