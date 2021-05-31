@@ -19067,6 +19067,7 @@ function external_radius() {
         cirout.innerHTML = cirtemp;
     }
     renderMathInElement(cirout);
+    
 }
 
 // function to find double factorial
