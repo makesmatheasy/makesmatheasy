@@ -276,6 +276,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#pentatop").click(function () {
+        openit("#pentatop");
+        closenav();
+        clearall();
+    });
     $("#perat").click(function () {
         openit("#perats");
         closenav();
@@ -1618,7 +1623,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#lancentarcbtn").click(function () {
+        openit("#lancentarc");
+        closenav();
+        clearall();
+    });
 
     $("#bayesprobabilitycollapsebtn").click(function () {
         openit("#bayes-probabilitycollapse");
