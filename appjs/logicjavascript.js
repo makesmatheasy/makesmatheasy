@@ -7092,6 +7092,21 @@ function vectorquad() {
     }
 }
 //Area of Triangle
+
+function calcexvectortria(){
+    a = document.getElementById("inp90").value=2;
+    b = document.getElementById("inp98").value=2;
+    c = document.getElementById("inp97").value=3;
+    d = document.getElementById("inp96").value=4;
+    e = document.getElementById("inp95").value=5;
+    f = document.getElementById("inp94").value=1;
+    g = document.getElementById("inp93").value=1;
+    h = document.getElementById("inp92").value=4;
+    i = document.getElementById("inp91").value=4;
+
+    vectortria();
+}
+
 function vectortria() {
     var a, b, c, d, e, f, g, h, i;
     a = parseInt(document.getElementById("inp90").value);
