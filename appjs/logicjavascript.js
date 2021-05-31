@@ -26602,16 +26602,39 @@ function isAutoNum(num) {
 }
 // Pronic Number
 function isProNum(num) {
-    let flag=0;
-    for (let i = 0;i <= parseInt(Math.sqrt(num));i++)
+    let flag=0,i;
+    for (i = 0;i <= parseInt(Math.sqrt(num));i++)
         if (num == i * (i + 1)){
             flag=1;
             break;
         }
-    if(flag)
-        document.getElementById('proans').innerHTML = num +" is a Pronic number";
-    else
-        document.getElementById('proans').innerHTML = num +" is not a Pronic number";
+    let ans ="";
+    ans += "Step 1: Number => " + num;
+    if(isPrime(num)){
+        ans += `<br> Step 2: ${num} = 1*${num}`;
+        ans += `<br> Step 3: Clearly the number is not a product
+        of two consecutive integers`;
+        ans += `<br> Step 4: Hence ${num} is not a Pronic number`;
+    }
+    else{
+        if(flag){
+            ans += `<br> Step 2: ${num} = ${i}*${i+1}`;
+            ans += `<br> Step 3: Clearly the number is a product
+            of two consecutive integers`;
+            ans += `<br> Step 4: Hence ${num} is a Pronic number`;
+        }
+        else{
+            let j;
+            for (j = 2;j <= parseInt(Math.sqrt(num));j++)
+                if (num%j==0)
+                    break;
+            ans += `<br> Step 2: ${num} = ${j}*${num/j}`;
+            ans += `<br> Step 3: Clearly the number is not a product
+            of two consecutive integers`;
+            ans += `<br> Step 4: Hence ${num} is not a Pronic number`;
+        }
+    }
+    document.getElementById('proans').innerHTML = ans;
 }
 // Harshad Number
 function isHarNum(num) {
