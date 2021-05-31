@@ -4966,6 +4966,25 @@ function vectorsub() {
     }
 }
 //Angle Calculator
+
+function calcexvactorangle3(){
+    var a = document.getElementById('vaa1');
+    var b = document.getElementById('vab1');
+    var c = document.getElementById('vac1');
+    var d = document.getElementById('vaa2');
+    var e = document.getElementById('vab2');
+    var f = document.getElementById('vac2');
+
+    a.value = 5;
+    b.value = -2;
+    c.value = 3;
+    d.value = -4;
+    e.value = 5;
+    f.value = 7;
+
+    vactorangle3();
+}
+
 function vactorangle3() {
     var a = parseFloat(document.getElementById('vaa1').value);
     var b = parseFloat(document.getElementById('vab1').value);
@@ -5272,6 +5291,25 @@ function projector() {
 }
 
 //Product Calculator
+
+function calcexvectordot(){
+    var a = document.getElementById('d1e');
+    var b = document.getElementById('d2e');
+    var c = document.getElementById('d3e');
+    var d = document.getElementById('e1d');
+    var e = document.getElementById('e2d');
+    var f = document.getElementById('e3d');
+
+    a.value = 1;
+    b.value = 2;
+    c.value = 3;
+    d.value = 4;
+    e.value = -5;
+    f.value = 6;
+
+    vectordot();
+}
+
 function vectordot() {
     var a = parseFloat(document.getElementById('d1e').value);
     var b = parseFloat(document.getElementById('d2e').value);
@@ -5294,6 +5332,24 @@ function vectordot() {
         document.getElementById("dotex").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space = \\space ( " + (a) + " * " + (d) + " ) \\space + \\space ( " + (b) + " * " + (e) + " )  \\space + \\space ( " + (c) + " * " + (f) + " )  \\space \\newline \\] ";
         renderMathInElement(document.getElementById("dotex"));
     }
+}
+
+function calcexvectorcross(){
+    var a = document.getElementById('d1e');
+    var b = document.getElementById('d2e');
+    var c = document.getElementById('d3e');
+    var d = document.getElementById('e1d');
+    var e = document.getElementById('e2d');
+    var f = document.getElementById('e3d');
+
+    a.value = 2;
+    b.value = 3;
+    c.value = 4;
+    d.value = 5;
+    e.value = 6;
+    f.value = 7;
+
+    vectorcross();
 }
 
 function vectorcross() {
