@@ -27533,7 +27533,12 @@ function calcexackermannFunction(num1,num2){
 
 }
 function ackermannFunction(num1, num2) {
-    document.getElementById("ackermannResult").innerHTML = "The result is : " + ackermann(num1, num2);
+    let ans = "";
+    ans += `Step 1: The vaule of m and n => ${num1} ${num2}`;
+    ans += `<br> Step 2: These values of m and n are passed in the ackermann function`;
+    ans += `<br> Step 3: With the help of recursion we arrive at the final result`;
+    ans += `<br> Step 4: Hence the result is: ${ackermann(num1, num2)} `;
+    document.getElementById("ackermannResult").innerHTML = ans;
 }
 function isWoodall(x) {
     if (x % 2 == 0)
