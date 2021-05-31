@@ -21633,8 +21633,25 @@ function ssscal() {
 }
 //Euler Totient Calculators
 function etc1find() {
-    let n = parseInt(document.getElementById("etc1").value)
-    let phi = new Array(n + 1);
+    var n = parseInt(document.getElementById("etc1").value)
+    var phi = new Array(n + 1);
+    var output = document.getElementById("etc1ans");
+    var temp = "";
+
+    temp += "\\[1) \\space Create \\space an \\space array \\space phi[1..n] \\space to \\space store \\space Φ \\space values \\space of \\space all \\space numbers \\space from \\space 1 --> n\\]"
+    
+    temp += "\\[2) \\space Initialize \\space all \\space values \\space such \\space that \\space phi[i] \\space stores \\space i. \\space This \\space initialization \\space serves \\space 2 \\space purposes-\\]"
+    temp += "\\[\\space a) \\space To \\space check \\space if \\space phi[i] \\space is \\space already \\space evaluated \\space or \\space not\\]" 
+    temp += "\\[\\space \\space [Note that the maximum possible phi value of a number i is i-1]\\]"
+    temp += "\\[\\space b) \\space To \\space initialize \\space phi[i] \\space as \\space i \\space is \\space a \\space multiple \\space in \\space above \\space product \\space formula\\]"
+    
+    temp += "\\[3) \\space Run \\space a \\space loop \\space for \\space p \\space = \\space 2 --> n\\]"
+    temp += "\\[\\space a) \\space If \\space phi[p] \\space is \\space p, \\space means \\space p \\space is \\space not \\space evaluated \\space yet \\space and \\space p \\space is \\space a \\space prime \\space number\\]"
+    temp += "\\[\\space \\space [otherwise \\space phi[p] \\space must \\space have \\space been \\space updated \\space in \\space step \\space 3.b]\\]"
+    
+    temp += "\\[\\space b) \\space Traverse \\space through \\space all \\space multiples \\space of \\space p \\space and \\space update \\space all \\space multiples \\space of \\space p \\space by \\space multiplying \\space with \\space (1-1/p)\\]"
+    temp += "\\[4) \\space Run \\space a \\space loop \\space from \\space i = 1 --> n \\space and \\space print \\space all \\space Ph[i] \\space values\\]"
+    
     for (let i = 1; i <= n; i++)
         phi[i] = i;
     for (let p = 2; p <= n; p++) {
@@ -21647,7 +21664,10 @@ function etc1find() {
     }
 
     for (let i = 1; i <= n; i++)
-        document.getElementById("etc1ans").innerHTML = ("Totient of " + i + " is " + phi[i] + "</br>");
+        temp = "\\[Totient \\space of \\space " + i + " \\space is \\space" + phi[i] + "\\]";
+
+    output.innerHTML  = temp;
+    renderMathInElement(output);
 }
 
 function etc2find() {
