@@ -18467,6 +18467,10 @@
                            style="text-decoration:none;" href="#">Disphenoid</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#doucalotte"
+                           style="text-decoration:none;" href="#">Double Calotte</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#doublept"
                            style="text-decoration:none;" href="#">Double Point</a></td>
                 </tr>
@@ -36782,6 +36786,61 @@ N is the population size.
                             style="font-family:mathfont;"></p>
                       </div>
                     <!-- ------HERE------ -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="doucalotte" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Double Calotte</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Width</h5>
+                                <p class="text-center">\[b = 2 \space \sqrt{\frac{h}{2} (2 r - \frac{h}{2})} \]</p>
+                                <p class="text-center">h = double calotte height</p>
+                                <p class="text-center">r = sphere radius</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Surface area</h5>
+                                <p class="text-center">\[A = 2 π r h\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Volume</h5>
+                                <p class="text-center">\[V = \frac{π}{6} \space (3 r - \frac{h}{2}) \space h^2 \]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/double-calotte.png" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number"
+                                   placeholder="Enter sphere radius (r)" id="inputdoucalsphrad"
+                                   oninput="solvedoucalotte();">
+                        <input class="form__field" type="number"
+                                   placeholder="Enter double calotte height (h)" id="inputdoucalhei"
+                                   oninput="solvedoucalotte();">
+                        <p class="stopwrap" id="resultofdoucalwidth"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultofdoucalarea"
+                            style="font-family:mathfont;"></p> 
+                        <p class="stopwrap" id="resultofdoucalvol"
+                            style="font-family:mathfont;"></p>
+                      </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"

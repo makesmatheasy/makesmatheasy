@@ -10455,6 +10455,32 @@ function solvehalfcy() {
         taoutput.innerHTML = "";
     }
 }
+// Double Calotte
+function solvedoucalotte() {
+    let r = document.getElementById("inputdoucalsphrad").value;
+    let h = document.getElementById("inputdoucalhei").value;
+    let widthoutput = document.getElementById("resultofdoucalwidth");
+    let areaoutput = document.getElementById("resultofdoucalarea");
+    let voloutput = document.getElementById("resultofdoucalvol");
+    var widthtemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    if ((r != "") && (h != "") ) {
+        widthtemp += "\\[Width \\space \\newline 2 \\sqrt{\\frac{" + h  + "}{2} \\space ( 2 (" + r + ") - \\frac{" + h  + "}{2})}" + "\\ = " + eval(String( 2 * (math.sqrt( (parseFloat(h)/2) * ((2 * parseFloat(r))- (parseFloat(h)/2))  )  ) )).toFixed(2) + "\\]";
+        widthoutput.innerHTML = widthtemp;
+        areatemp += "\\[Surface \\space area \\space \\newline 2 (3.14) (" + r + ")(" + h + ")" + "\\ = " + eval(String(2 * 3.141592653589 * parseFloat(r) * parseFloat(h))).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline \\frac{π}{6} ( 3 (" + r + ") - \\space \\frac{" + h + "}{2}) \\space (" + h + ")^2" + "\\ = " + eval(String( 0.523598776 * ( (3 * parseFloat(r)) - (parseFloat(h)/2) ) * parseFloat(h) * parseFloat(h)   )).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(widthoutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+    } else {
+        widthoutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
 
 function solvediagcy() {
     var h = document.getElementById("inputdiaghalfcyh").value;
