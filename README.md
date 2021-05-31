@@ -162,6 +162,7 @@ Other Tech/Libraries
     - Prime Factorization **( with steps for single number)**
   - Euclid GCD
   - Antilog calculator
+  - Change Log base
   - Doubling Time
   - Percentage change
   - Percentage off
@@ -244,11 +245,13 @@ Other Tech/Libraries
   - Smallest Number Divisible
   - Lucas series
   - Types of numbers
+  - Neon Number
   - Disarium Number
   - Krishnamurthy Number
   - Automorphic Number 
   - Pronic Number 
-
+  - Harshad Number
+  - Trimorphic Number
 
 - Basic Convertors
 
@@ -355,8 +358,10 @@ Other Tech/Libraries
     - Capsule
     - Cube
     - Cuboid
+    - Cupola
     - Cylinder
     - Cone
+    - Double Calotte
     - Sphere
     - Hollow Cylinder
     - Oblique Circular Cylinder
@@ -487,6 +492,7 @@ Other Tech/Libraries
   - np chart Calculator
   - Confidence Interval Calculator
   - PPV calculator
+  - NPV calculator
   - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation

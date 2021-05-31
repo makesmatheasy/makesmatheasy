@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["proans","autoans","disans","gammaprobAns","negbinoans","ackermannResult","nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["harans","proans","autoans","disans","gammaprobAns","negbinoans","ackermannResult","nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -43,6 +43,18 @@ $("#autonumbtn").click(function(){
 // Pronic Number
 $("#pronumbtn").click(function(){
     openit("#pronum");
+    closenav();
+    clearall();
+});
+// Harshad Number
+$("#harnumbtn").click(function(){
+    openit("#harnum");
+    closenav();
+    clearall();
+});
+//Trimorphic Number
+$("#trimornumbtn").click(function(){
+    openit("#trimornum");
     closenav();
     clearall();
 });
@@ -85,7 +97,12 @@ $("#cartbtn").click(function(){
     closenav();
     clearall();
 });
-
+ // Neon Number
+ $("#neonnumbtn").click(function(){
+    openit("#neonnum");
+    closenav();
+    clearall();
+});
 function closenav() {
     $('#slide-out').addClass('sidenav-close');
     setTimeout(function () {
@@ -722,6 +739,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#logbasebtn").click(function () {
+        openit("#logbase");
+        closenav();
+        clearall();
+    });
     $("#dbltimebtn").click(function () {
         openit("#dbltime");
         closenav();
@@ -986,6 +1008,11 @@ $(document).ready(function () {
 
     $("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
+        closenav();
+        clearall();
+    });
+    $("#odshapescalbtn").click(function () {
+        openit("#odshapescal");
         closenav();
         clearall();
     });
@@ -1590,6 +1617,32 @@ $(document).ready(function () {
     }); 
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
+        closenav();
+        clearall();
+    });
+    
+    $("#ppvbtn").click(function () {
+        openit("#ppv");
+        closenav();
+        clearall();
+    });
+    $("#relriskbtn").click(function () {
+        var temp = "\\[Formula:\\space \\frac{[\\frac{a}{(a+b)}]}{[\\frac{c}{(c+d)}]}\\]";
+        var output = document.getElementById("relriskform");
+        output.innerHTML = temp;
+        renderMathInElement(output);
+        openit("#relrisk");
+        closenav();
+        clearall();
+    }); 
+    $("#geoprobabilitybtn").click(function () {
+        openit("#geoprobability");   
+        closenav();
+        clearall();
+    });
+    
+    $("#npvbtn").click(function () {
+        openit("#npv");
         closenav();
         clearall();
     });

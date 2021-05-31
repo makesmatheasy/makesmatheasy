@@ -1226,12 +1226,38 @@ function disfind() {
         renderMathInElement(ans3);
     }
 }
+//to calculate the factorial
+function beta_fact(num)
+{ var f=1;
+    for(var i=1;i<=num;i++)
+    {f=(f*i);
+    }
+    return f;
+}
 //Beta Calculator
 function betafind() {
-    let num1 = parseInt(document.getElementById("betain1").value)
-    let num2 = parseInt(document.getElementById("betain2").value)
+    let num1 = document.getElementById("betain1").value;
+    let num2 = document.getElementById("betain2").value;
+    if(num1==""||num2=="")
+    { document.getElementById("betafindans").innerHTML="Please enter both fields"}
+    else{
+        num1=parseInt(num1);
+        num2=parseInt(num2);
+        var num12=num1+num2;
+        var num3=num1+num2-1;
+        var num4=beta_fact(num1-1);
+        var num5=beta_fact(num2-1);
+        var num6=beta_fact(num3);
     let ans = (math.gamma(num1) + math.gamma(num2)) /math.gamma(num1 + num2)
-    document.getElementById("betafindans").innerHTML = "The result is: " + ans;
+    var beta ="\\[B(x,y) = \\frac{\\Gamma \\left( "+num1+" \\right)+\\Gamma \\left( "+num2+" \\right)}{\\Gamma \\left( "+num12+" \\right)}\\]";
+     beta += "\\[\\frac{"+parseInt(parseInt(num1)-parseInt(1))+"! \\space + "+parseInt(parseInt(num2)-parseInt(1))+"!}{"+(parseInt(num3))+"!}\\]";
+     beta +="\\[\\frac{"+num4+"+"+num5+"}{"+num6+"}\\]"
+     beta +="\\[\\frac{"+parseInt(parseInt(num4)+parseInt(num5))+"}{"+num6+"}\\]"
+     beta +="\\[The \\space result \\space is \\space : \\space "+ans.toFixed(4)+"\\]"
+     console.log(ans);
+    document.getElementById("betafindans").innerHTML = beta;
+    renderMathInElement( document.getElementById("betafindans"));
+    }
 }
 //Heptadecagon Calculator
 function heptafind() {
@@ -1265,6 +1291,30 @@ function exterior() {
     document.getElementById("exteriorans").innerHTML = "The exterior angle is " + into
 }
 //Scalar Triple Product
+function calcexstp(){
+    var x1 = document.getElementById("vx1");
+    var y1 = document.getElementById("vy1");
+    var z1 = document.getElementById("vz1");
+    var x2 = document.getElementById("vx2");
+    var y2 = document.getElementById("vy2");
+    var z2 = document.getElementById("vz2");
+    var x3 = document.getElementById("vx3");
+    var y3 = document.getElementById("vy3");
+    var z3 = document.getElementById("vz3");
+    x1.value = 3;
+    y1.value = 5;
+    z1.value = 7;
+    x2.value = 2;
+    y2.value = 3;
+    z2.value = 4;
+    x3.value = 6;
+    y3.value = 6;
+    z3.value = 7;
+
+    stp();
+}
+
+
 function stp() {
     let vx1 = parseInt(document.getElementById("vx1").value)
     let vy1 = parseInt(document.getElementById("vy1").value)
@@ -1295,6 +1345,29 @@ function stp() {
     }
 }
 //Vector Triple Product
+function calcexvtp(){
+    var x1 = document.getElementById("vx1");
+    var y1 = document.getElementById("vy1");
+    var z1 = document.getElementById("vz1");
+    var x2 = document.getElementById("vx2");
+    var y2 = document.getElementById("vy2");
+    var z2 = document.getElementById("vz2");
+    var x3 = document.getElementById("vx3");
+    var y3 = document.getElementById("vy3");
+    var z3 = document.getElementById("vz3");
+    x1.value = 3;
+    y1.value = 5;
+    z1.value = 7;
+    x2.value = 2;
+    y2.value = 3;
+    z2.value = 4;
+    x3.value = 6;
+    y3.value = 6;
+    z3.value = 7;
+
+    vtp();
+}
+
 function vtp() {
     let vvx1 = parseInt(document.getElementById("vx1").value)
     let vvy1 = parseInt(document.getElementById("vy1").value)
@@ -1315,6 +1388,29 @@ function vtp() {
     }
 }
 //Volume of Parallelopiped
+function calcexparalleloarea(){
+    var x1 = document.getElementById("volpx1");
+    var y1 = document.getElementById("volpx2");
+    var z1 = document.getElementById("volpx3");
+    var x2 = document.getElementById("volpy1");
+    var y2 = document.getElementById("volpy2");
+    var z2 = document.getElementById("volpy3");
+    var x3 = document.getElementById("volpz1");
+    var y3 = document.getElementById("volpz2");
+    var z3 = document.getElementById("volpz3");
+    x1.value = 3;
+    y1.value = 5;
+    z1.value = 7;
+    x2.value = 2;
+    y2.value = 3;
+    z2.value = 4;
+    x3.value = 6;
+    y3.value = 6;
+    z3.value = 7;
+
+    paralleloarea();
+}
+
 function paralleloarea() {
     let vx1 = parseInt(document.getElementById("volpx1").value)
     let vy1 = parseInt(document.getElementById("volpx2").value)
@@ -1349,6 +1445,37 @@ function paralleloarea() {
     }
 }
 //Intersection of Two Lines
+
+function calcexvectorline(){
+    var a = document.getElementById("i1");
+    var b = document.getElementById("i2");
+    var c = document.getElementById("i3");
+    var d = document.getElementById("i4");
+    var e = document.getElementById("i5");
+    var f = document.getElementById("i6");
+    var g = document.getElementById("i7");
+    var h = document.getElementById("i8");
+    var i = document.getElementById("i9");
+    var j = document.getElementById("i10");
+    var k = document.getElementById("i11");
+    var l = document.getElementById("i12");
+    a.value = 1;
+    b.value = 2;
+    c.value = -1;
+    d.value = 5;
+    e.value = -3;
+    f.value = 2;
+    g.value = 10;
+    h.value = -5;
+    i.value = 3;
+    j.value = 7;
+    k.value = 8;
+    l.value = -3;
+
+    vectorline();
+    
+}
+
 function vectorline() {
     let a = parseInt(document.getElementById("i1").value)
     let b = parseInt(document.getElementById("i2").value)
@@ -1399,7 +1526,6 @@ function chordTangle() {
 }
 
 function chordlength() {
-    // when angle in the alternate segment is given
     var x = document.getElementById("clength1").value
     var r = document.getElementById("clength2").value
     if (x != "" && r!="") {
@@ -1407,8 +1533,8 @@ function chordlength() {
           document.getElementById("clengthans").innerHTML = "\\[Radius \\space cannot \\space  be \\space \\negative\\]"
         }
         else{
-          var l=2 * r * Math.sin(x * (3.14 / 180))
-          document.getElementById("clengthans").innerHTML = "\\[The \\space angle \\space between \\space chord \\space and \\space tangent \\space is " + l+"\\]";
+          var l=(2 * r * Math.sin(x * (3.14 / 180))).toFixed(3)
+          document.getElementById("clengthans").innerHTML = "\\[The \\space length \\space of \\space chord \\space is \\space " + l+"\\]"+"\\[Length \\space of \\space  chord \\space is \\space  given \\space  by :\\space 2*rsin(\\frac{3.14x}{180}) \\newline \\space \\space \\space =2*"+r+"*sin(\\frac{3.14*"+x+"}{180})="+l+"\\]";
         }
     }
     else {
@@ -1470,6 +1596,9 @@ function centcal() {
     var c2 = parseInt(document.getElementById("scc").value);
     var c3 = parseInt(document.getElementById("tcc").value);
 
+    var centout1 = document.getElementById("rcc");
+    var ans1 = "";
+
     var x1 = ((b1 * c2) - (b2 * c1)) / ((a2 * b1) - (a1 * b2));
     var y1 = ((c1 * a2) - (c2 * a1)) / ((a2 * b1) - (a1 * b2));
 
@@ -1479,16 +1608,36 @@ function centcal() {
     var x3 = ((b3 * c1) - (b1 * c3)) / ((a1 * b3) - (a3 * b1));
     var y3 = ((c3 * a1) - (c1 * a3)) / ((a1 * b3) - (a3 * b1));
 
-    if (!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3)) {
-        var ans = "( " + ((x1 + x2 + x3) / 3).toFixed(2).toString() + ", "
-            + ((y1 + y2 + y3) / 3).toFixed(2).toString() + " )";
+    var xans = (x1+x2+x3)/3
+    var yans = (y1+y2+y3)/3
 
-        document.getElementById("rcc").innerHTML = ans;
-        document.getElementById("rcch").innerHTML = "Centroid Of Triangle";
+if (!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3))
+ {
+ans1 += "\\[To \\space find \\space the Point \\space of \\space Intersection \\space between \\space lines : \\]"
+ans1 += "\\[(x , y) \\space = \\space [ \\frac{b1c2 - b2c1}{a1b2 - a2b1} \\space , \\space \\frac{a2c1 - a1c2}{a1b2 - a2b1} ] \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{(" + b1 + "\\times" + c2 + ") - (" + b2 + "\\times" + c1 + ")}{(" + a2 + "\\times" + b1 + ") - (" + a1 + "\\times" + b2 + ")} \\space , \\space \\frac{(" + c1 + "\\times" + a2 + ") - (" + c2 + "\\times" + a1 + ")}{(" + a2 + "\\times" + b1 + ") - (" + a1 + "\\times" + b2 + ")}) \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{" + b1 * c2 + " - " + b2 * c1 + "}{" + a2 * b1 + " - " + a1 * b2 + "} \\space , \\space \\frac{" + c1 * a2 + " - " + c2 * a1 + "}{" + a2 * b1 + " - " + a1 * b2 + "}) \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{" + ((b1 * c2)-(b2 * c1)) + "}{" + ((a2 * b1)-(a1 * b2)) + "} \\space , \\space \\frac{" + ((c1 * a2)-(c2 * a1)) + "}{" + ((a2 * b1)-(a1 * b2)) + "}) \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( " + x1.toFixed(2) + " \\space , \\space " +  y1.toFixed(2) + ") \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{(" + b2 + "\\times" + c3 + ") - (" + b3 + "\\times" + c2 + ")}{(" + a3 + "\\times" + b2 + ") - (" + a2 + "\\times" + b3 + ")} \\space , \\space \\frac{(" + c2 + "\\times" + a3 + ") - (" + c3 + "\\times" + a2 + ")}{(" + a3 + "\\times" + b2 + ") - (" + a2 + "\\times" + b3 + ")}) \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{" + b2 * c3 + " - " + b3 * c2 + "}{" + a3 * b2 + " - " + a2 * b3 + "} \\space , \\space \\frac{" + c2 * a3 + " - " + c3 * a2 + "}{" + a3 * b2 + " - " + a2 * b3 + "}) \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{" + ((b2 * c3)-(b3 * c2)) + "}{" + ((a3 * b2)-(a2 * b3)) + "} \\space , \\space \\frac{" + ((c2 * a3)-(c3 * a2)) + "}{" + ((a3 * b2)-(a2 * b3)) + "}) \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( " + x2.toFixed(2) + " \\space , \\space " +  y2.toFixed(2) + ") \\]"
+ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{(" + b3 + "\\times" + c1 + ") - (" + b1 + "\\times" + c3 + ")}{(" + a1 + "\\times" + b3 + ") - (" + a3 + "\\times" + b1 + ")} \\space , \\space \\frac{(" + c3 + "\\times" + a1 + ") - (" + c1 + "\\times" + a3 + ")}{(" + a1 + "\\times" + b3 + ") - (" + a3 + "\\times" + b1 + ")}) \\]"   
+ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{" + b3 * c1 + " - " + b1 * c3 + "}{" + a1 * b3 + " - " + a3 * b1 + "} \\space , \\space \\frac{" + c3 * a1 + " - " + c1 * a3 + "}{" + a1 * b3 + " - " + a3 * b1 + "}) \\]"
+ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{" + ((b3 * c1)-(b1 * c3)) + "}{" + ((a1 * b3)-(a3 * b1)) + "} \\space , \\space \\frac{" + ((c3 * a1)-(c1 * a3)) + "}{" + ((a1 * b3)-(a3 * b1)) + "}) \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( " + x3.toFixed(2) + " \\space , \\space " +  y3.toFixed(2) + ") \\]"
+ans1 += "\\[Centroid \\space of \\space a \\space Triangle \\ is \\space ( \\space \\frac{x_1+x_2+x_3}{3} \\space , \\space \\frac{y_1+y_2+y_3}{3} ) \\space \\]";
+ans1 += "\\[( \\space \\frac{ (" + x1.toFixed(2) + ") + (" + x2.toFixed(2) + ") + (" + x3.toFixed(2) + ") }{3} \\space , \\space \\frac{ (" + y1.toFixed(2) + ") + (" + y2.toFixed(2) + ") + (" + y3.toFixed(2) +  ") }{3} \\space ) \\]";
+ans1 += "\\[( " + xans.toFixed(2) + "," + yans.toFixed(2) + " )\\]";
+centout1.innerHTML = ans1;
+renderMathInElement(centout1)
     }
-    else {
-        document.getElementById("rcch").innerHTML = "Please enter all fields";
-        document.getElementById("rcc").innerHTML = "";
+else
+ {
+        ans1 += "\\[Please \\space enter \\space all \\space fields \\]";
+        centout1.innerHTML = ans1;
+        renderMathInElement(centout1)
     }
 }
 //Releaux Tetrahedron calculator
@@ -1579,6 +1728,9 @@ function cencirtcal() {
     var c2 = parseInt(document.getElementById("scc").value);
     var c3 = parseInt(document.getElementById("tcc").value);
 
+    var centout1 = document.getElementById("rcc");
+    var ans1 = "";
+
     var x1 = ((b1 * c2) - (b2 * c1)) / ((a2 * b1) - (a1 * b2));
     var y1 = ((c1 * a2) - (c2 * a1)) / ((a2 * b1) - (a1 * b2));
 
@@ -1610,13 +1762,29 @@ function cencirtcal() {
     var o2 = (((c4 * a5) - (c5 * a4)) / ((a5 * b4) - (a4 * b5))).toFixed(2);
 
     if (!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3)) {
-        var ans = "( " + o1 + ", " + o2 + " )";
-        document.getElementById("rcc").innerHTML = ans;
-        document.getElementById("rcch").innerHTML = "Circumcenter of Triangle";
-    }
+ ans1 += "\\[To \\space find \\space the Point \\space of \\space Intersection \\space between \\space lines : \\]"
+ans1 += "\\[(x , y) \\space = \\space [ \\frac{b1c2 - b2c1}{a1b2 - a2b1} \\space , \\space \\frac{a2c1 - a1c2}{a1b2 - a2b1} ] \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{(" + b1 + "\\times" + c2 + ") - (" + b2 + "\\times" + c1 + ")}{(" + a2 + "\\times" + b1 + ") - (" + a1 + "\\times" + b2 + ")} \\space , \\space \\frac{(" + c1 + "\\times" + a2 + ") - (" + c2 + "\\times" + a1 + ")}{(" + a2 + "\\times" + b1 + ") - (" + a1 + "\\times" + b2 + ")}) \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{" + b1 * c2 + " - " + b2 * c1 + "}{" + a2 * b1 + " - " + a1 * b2 + "} \\space , \\space \\frac{" + c1 * a2 + " - " + c2 * a1 + "}{" + a2 * b1 + " - " + a1 * b2 + "}) \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{" + ((b1 * c2)-(b2 * c1)) + "}{" + ((a2 * b1)-(a1 * b2)) + "} \\space , \\space \\frac{" + ((c1 * a2)-(c2 * a1)) + "}{" + ((a2 * b1)-(a1 * b2)) + "}) \\]"
+ans1 += "\\[(x1 , y1) \\space = \\space ( " + x1.toFixed(2) + " \\space , \\space " +  y1.toFixed(2) + ") \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{(" + b2 + "\\times" + c3 + ") - (" + b3 + "\\times" + c2 + ")}{(" + a3 + "\\times" + b2 + ") - (" + a2 + "\\times" + b3 + ")} \\space , \\space \\frac{(" + c2 + "\\times" + a3 + ") - (" + c3 + "\\times" + a2 + ")}{(" + a3 + "\\times" + b2 + ") - (" + a2 + "\\times" + b3 + ")}) \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{" + b2 * c3 + " - " + b3 * c2 + "}{" + a3 * b2 + " - " + a2 * b3 + "} \\space , \\space \\frac{" + c2 * a3 + " - " + c3 * a2 + "}{" + a3 * b2 + " - " + a2 * b3 + "}) \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{" + ((b2 * c3)-(b3 * c2)) + "}{" + ((a3 * b2)-(a2 * b3)) + "} \\space , \\space \\frac{" + ((c2 * a3)-(c3 * a2)) + "}{" + ((a3 * b2)-(a2 * b3)) + "}) \\]"
+ans1 += "\\[(x2 , y2) \\space = \\space ( " + x2.toFixed(2) + " \\space , \\space " +  y2.toFixed(2) + ") \\]"
+ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{(" + b3 + "\\times" + c1 + ") - (" + b1 + "\\times" + c3 + ")}{(" + a1 + "\\times" + b3 + ") - (" + a3 + "\\times" + b1 + ")} \\space , \\space \\frac{(" + c3 + "\\times" + a1 + ") - (" + c1 + "\\times" + a3 + ")}{(" + a1 + "\\times" + b3 + ") - (" + a3 + "\\times" + b1 + ")}) \\]"   
+ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{" + b3 * c1 + " - " + b1 * c3 + "}{" + a1 * b3 + " - " + a3 * b1 + "} \\space , \\space \\frac{" + c3 * a1 + " - " + c1 * a3 + "}{" + a1 * b3 + " - " + a3 * b1 + "}) \\]"
+ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{" + ((b3 * c1)-(b1 * c3)) + "}{" + ((a1 * b3)-(a3 * b1)) + "} \\space , \\space \\frac{" + ((c3 * a1)-(c1 * a3)) + "}{" + ((a1 * b3)-(a3 * b1)) + "}) \\]"
+ans1 += "\\[(x3 , y3) \\space = \\space ( " + x3.toFixed(2) + " \\space , \\space " +  y3.toFixed(2) + ") \\]"
+ans1 += "\\[Circumcenter \\space = \\space ( \\space \\frac{x1 \\times sin2A + x2 \\times sin2B + x3 \\times sin2C }{sin2A + sin2B + sin2C }, \\space \\frac{y1 \\times sin2A + y2 \\times sin2B + y3 \\times sin2C }{sin2A + sin2B + sin2C} )" + "\\] ";
+ans1 += "\\[Circumcenter \\space = \\space (" + o1 + "," + o2 + ")"  +"\\]";   
+centout1.innerHTML = ans1;
+renderMathInElement(centout1)
+}
     else {
-        document.getElementById("rcch").innerHTML = "Please enter all fields";
-        document.getElementById("rcc").innerHTML = "";
+        ans1 += "\\[Please \\space enter \\space all \\space fields \\]";
+        centout1.innerHTML = ans1;
+        renderMathInElement(centout1)
     }
 }
 
@@ -1634,6 +1802,10 @@ function cenintcal() {
     var c2 = parseInt(document.getElementById("scc").value);
     var c3 = parseInt(document.getElementById("tcc").value);
 
+    var centout1 = document.getElementById("rcc");
+    var ans1 = "";
+
+
     var x1 = ((b1 * c2) - (b2 * c1)) / ((a2 * b1) - (a1 * b2));
     var y1 = ((c1 * a2) - (c2 * a1)) / ((a2 * b1) - (a1 * b2));
 
@@ -1647,17 +1819,48 @@ function cenintcal() {
     var b = Math.sqrt(Math.pow((x1 - x3), 2) + Math.pow((y1 - y3), 2));
     var c = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
 
+    var in1 = ((a*x1)+(b*x2)+(c*x3))/(a+b+c)
+    var in2 = ((a*y1)+(b*y2)+(c*y3))/(a+b+c)
 
-    var o1 = ((((a * x1) + (b * x2) + (c * x3)) / (a + b + c))).toFixed(2);
-    var o2 = ((((a * y1) + (b * y2) + (c * y3)) / (a + b + c))).toFixed(2);
+    var in3 = ((a*x1)+(b*x2)+(c*x3));
+    var in4 = ((a*y1)+(b*y2)+(c*y3)) 
+
+    var in5 = a+b+c;
+
+    var in6 = (((a).toFixed(2))*((x1).toFixed(2)))
+    var in7 = (((b).toFixed(2))*((x2).toFixed(2)))
+    var in8 = (((c).toFixed(2))*((x3).toFixed(2)))
+    var in9 = ((((a).toFixed(2))*(y1).toFixed(2)))
+    var in10 = ((((b).toFixed(2))*(y2).toFixed(2)))
+    var in11 = (((c).toFixed(2))*((y3).toFixed(2)))
+
     if (!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3)) {
-        var ans = "( " + o1 + ", " + o2 + " )";
-        document.getElementById("rcc").innerHTML = ans;
-        document.getElementById("rcch").innerHTML = "Incenter of Triangle";
+        ans1 += "\\[To \\space find \\space the Point \\space of \\space Intersection \\space between \\space lines : \\]"
+        ans1 += "\\[(x , y) \\space = \\space [ \\frac{b1c2 - b2c1}{a1b2 - a2b1} \\space , \\space \\frac{a2c1 - a1c2}{a1b2 - a2b1} ] \\]"
+        ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{(" + b1 + "\\times" + c2 + ") - (" + b2 + "\\times" + c1 + ")}{(" + a2 + "\\times" + b1 + ") - (" + a1 + "\\times" + b2 + ")} \\space , \\space \\frac{(" + c1 + "\\times" + a2 + ") - (" + c2 + "\\times" + a1 + ")}{(" + a2 + "\\times" + b1 + ") - (" + a1 + "\\times" + b2 + ")}) \\]"
+        ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{" + b1 * c2 + " - " + b2 * c1 + "}{" + a2 * b1 + " - " + a1 * b2 + "} \\space , \\space \\frac{" + c1 * a2 + " - " + c2 * a1 + "}{" + a2 * b1 + " - " + a1 * b2 + "}) \\]"
+        ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{" + ((b1 * c2)-(b2 * c1)) + "}{" + ((a2 * b1)-(a1 * b2)) + "} \\space , \\space \\frac{" + ((c1 * a2)-(c2 * a1)) + "}{" + ((a2 * b1)-(a1 * b2)) + "}) \\]"
+        ans1 += "\\[(x1 , y1) \\space = \\space ( " + x1.toFixed(2) + " \\space , \\space " +  y1.toFixed(2) + ") \\]"
+        ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{(" + b2 + "\\times" + c3 + ") - (" + b3 + "\\times" + c2 + ")}{(" + a3 + "\\times" + b2 + ") - (" + a2 + "\\times" + b3 + ")} \\space , \\space \\frac{(" + c2 + "\\times" + a3 + ") - (" + c3 + "\\times" + a2 + ")}{(" + a3 + "\\times" + b2 + ") - (" + a2 + "\\times" + b3 + ")}) \\]"
+        ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{" + b2 * c3 + " - " + b3 * c2 + "}{" + a3 * b2 + " - " + a2 * b3 + "} \\space , \\space \\frac{" + c2 * a3 + " - " + c3 * a2 + "}{" + a3 * b2 + " - " + a2 * b3 + "}) \\]"
+        ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{" + ((b2 * c3)-(b3 * c2)) + "}{" + ((a3 * b2)-(a2 * b3)) + "} \\space , \\space \\frac{" + ((c2 * a3)-(c3 * a2)) + "}{" + ((a3 * b2)-(a2 * b3)) + "}) \\]"
+        ans1 += "\\[(x2 , y2) \\space = \\space ( " + x2.toFixed(2) + " \\space , \\space " +  y2.toFixed(2) + ") \\]"
+        ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{(" + b3 + "\\times" + c1 + ") - (" + b1 + "\\times" + c3 + ")}{(" + a1 + "\\times" + b3 + ") - (" + a3 + "\\times" + b1 + ")} \\space , \\space \\frac{(" + c3 + "\\times" + a1 + ") - (" + c1 + "\\times" + a3 + ")}{(" + a1 + "\\times" + b3 + ") - (" + a3 + "\\times" + b1 + ")}) \\]"   
+        ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{" + b3 * c1 + " - " + b1 * c3 + "}{" + a1 * b3 + " - " + a3 * b1 + "} \\space , \\space \\frac{" + c3 * a1 + " - " + c1 * a3 + "}{" + a1 * b3 + " - " + a3 * b1 + "}) \\]"
+        ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{" + ((b3 * c1)-(b1 * c3)) + "}{" + ((a1 * b3)-(a3 * b1)) + "} \\space , \\space \\frac{" + ((c3 * a1)-(c1 * a3)) + "}{" + ((a1 * b3)-(a3 * b1)) + "}) \\]"
+        ans1 += "\\[(x3 , y3) \\space = \\space ( " + x3.toFixed(2) + " \\space , \\space " +  y3.toFixed(2) + ") \\]"
+        ans1 += "\\[Incenter \\space  = \\space ( \\space \\frac{a \\times x1 + b \\times x2 + c \\times x3 }{a+b+c}, \\space \\frac{a \\times y1 + b \\times y2 + c \\times y3 }{a+b+c} )" + "\\]"
+        ans1 += "\\[( \\frac { (" + a.toFixed(2) + "\\times" + x1.toFixed(2) + ") + (" + b.toFixed(2) + "\\times" + x2.toFixed(2) + ") + (" + c.toFixed(2) + "\\times" + x3.toFixed(2) + ")}{ ( (" + a.toFixed(2) + ")+ (" + b.toFixed(2) + ") + (" + c.toFixed(2) + "))} \\space , \\space ( \\frac { (" + a.toFixed(2) + "\\times" + y1.toFixed(2) + ") + (" + b.toFixed(2) + "\\times" + y2.toFixed(2) + ") + (" + c.toFixed(2) + "\\times" + y3.toFixed(2) + ") }{ ((" + a.toFixed(2) + ") + (" + b.toFixed(2) + ") + (" + c.toFixed(2) + "))} ) \\]";
+        ans1 += "\\[( \\frac { ((" + in6.toFixed(2)  + " ) + (" + in7.toFixed(2)  + ") + (" + in8.toFixed(2)  + "))}{ " + in5.toFixed(2) + "} \\space , \\space ( \\frac { ((" + in9.toFixed(2) + ") + (" + in10.toFixed(2)  + ") + (" + in11.toFixed(2)  + "))}{ " + in5.toFixed(2) + "}) \\]";
+        ans1 += "\\[( \\frac { " + in3.toFixed(2)  + "}{" + in5.toFixed(2) + "} \\space , \\space \\frac { " + in4.toFixed(2) + "}{" + in5.toFixed(2) + "} ) \\]";
+        ans1 += "\\[(" + in1.toFixed(2) + "," + in2.toFixed(2) + ")"  +"\\]"
+        centout1.innerHTML = ans1;
+        renderMathInElement(centout1)
     }
     else {
-        document.getElementById("rcch").innerHTML = "Please enter all fields";
-        document.getElementById("rcc").innerHTML = "";
+        ans1 += "\\[Please \\space enter \\space all \\space fields \\]";
+        centout1.innerHTML = ans1;
+        renderMathInElement(centout1)
     }
 }
 
@@ -1675,6 +1878,10 @@ function cenextcal() {
     var c2 = parseInt(document.getElementById("scc").value);
     var c3 = parseInt(document.getElementById("tcc").value);
 
+    var centout1 = document.getElementById("rcc");
+    var ans1 = "";
+
+
     var x1 = ((b1 * c2) - (b2 * c1)) / ((a2 * b1) - (a1 * b2));
     var y1 = ((c1 * a2) - (c2 * a1)) / ((a2 * b1) - (a1 * b2));
 
@@ -1689,22 +1896,53 @@ function cenextcal() {
     var c = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
 
 
-    var excenteropx1 = ((-a * x1 + b * x2 + c * x3) / (-a + b + c)).toFixed(2);
-    var excenteropx2 = ((a * x1 - b * x2 + c * x3) / (a - b + c)).toFixed(2);
-    var excenteropx3 = ((a * x1 + b * x2 - c * x3) / (a + b - c)).toFixed(2);
+    var excenterop1 = ((-a * x1 + b * x2 + c * x3) / (-a + b + c));
+    var excenterop3 = ((a * x1 - b * x2 + c * x3) / (a - b + c));
+    var excenterop5 = ((a * x1 + b * x2 - c * x3) / (a + b - c));
 
-    var excenteropy1 = ((-a * y1 + b * y2 + c * y3) / (-a + b + c)).toFixed(2);
-    var excenteropy2 = ((a * y1 - b * y2 + c * y3) / (a - b + c)).toFixed(2);
-    var excenteropy3 = ((a * y1 + b * y2 - c * y3) / (a + b - c)).toFixed(2);
+    var excenterop2 = ((-a * y1 + b * y2 + c * y3) / (-a + b + c));
+    var excenterop4 = ((a * y1 - b * y2 + c * y3) / (a - b + c));
+    var excenterop6 = ((a * y1 + b * y2 - c * y3) / (a + b - c));
+
     if (!isNaN(a1) && !isNaN(a2) && !isNaN(a3) && !isNaN(b1) && !isNaN(b2) && !isNaN(b3) && !isNaN(c1) && !isNaN(c2) && !isNaN(c3)) {
-        document.getElementById("rcc").innerHTML = `The excentre for first side is ( ${excenteropx1} , ${excenteropy1} ) <br>`;
-        document.getElementById("rcc").innerHTML += `The excentre for second side is ( ${excenteropx2} , ${excenteropy2} ) <br>`;
-        document.getElementById("rcc").innerHTML += `The excentre for third side is ( ${excenteropx3} , ${excenteropy3} ) <br>`;
-        document.getElementById("rcch").innerHTML = "Excenter of Triangle";
-    }
-    else {
-        document.getElementById("rcch").innerHTML = "Please enter all fields";
-        document.getElementById("rcc").innerHTML = "";
+        ans1 += "\\[To \\space find \\space the Point \\space of \\space Intersection \\space between \\space lines : \\]"
+        ans1 += "\\[(x , y) \\space = \\space [ \\frac{b1c2 - b2c1}{a1b2 - a2b1} \\space , \\space \\frac{a2c1 - a1c2}{a1b2 - a2b1} ] \\]"
+        ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{(" + b1 + "\\times" + c2 + ") - (" + b2 + "\\times" + c1 + ")}{(" + a2 + "\\times" + b1 + ") - (" + a1 + "\\times" + b2 + ")} \\space , \\space \\frac{(" + c1 + "\\times" + a2 + ") - (" + c2 + "\\times" + a1 + ")}{(" + a2 + "\\times" + b1 + ") - (" + a1 + "\\times" + b2 + ")}) \\]"
+        ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{" + b1 * c2 + " - " + b2 * c1 + "}{" + a2 * b1 + " - " + a1 * b2 + "} \\space , \\space \\frac{" + c1 * a2 + " - " + c2 * a1 + "}{" + a2 * b1 + " - " + a1 * b2 + "}) \\]"
+        ans1 += "\\[(x1 , y1) \\space = \\space ( \\frac{" + ((b1 * c2)-(b2 * c1)) + "}{" + ((a2 * b1)-(a1 * b2)) + "} \\space , \\space \\frac{" + ((c1 * a2)-(c2 * a1)) + "}{" + ((a2 * b1)-(a1 * b2)) + "}) \\]"
+        ans1 += "\\[(x1 , y1) \\space = \\space ( " + x1.toFixed(2) + " \\space , \\space " +  y1.toFixed(2) + ") \\]"
+        ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{(" + b2 + "\\times" + c3 + ") - (" + b3 + "\\times" + c2 + ")}{(" + a3 + "\\times" + b2 + ") - (" + a2 + "\\times" + b3 + ")} \\space , \\space \\frac{(" + c2 + "\\times" + a3 + ") - (" + c3 + "\\times" + a2 + ")}{(" + a3 + "\\times" + b2 + ") - (" + a2 + "\\times" + b3 + ")}) \\]"
+        ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{" + b2 * c3 + " - " + b3 * c2 + "}{" + a3 * b2 + " - " + a2 * b3 + "} \\space , \\space \\frac{" + c2 * a3 + " - " + c3 * a2 + "}{" + a3 * b2 + " - " + a2 * b3 + "}) \\]"
+        ans1 += "\\[(x2 , y2) \\space = \\space ( \\frac{" + ((b2 * c3)-(b3 * c2)) + "}{" + ((a3 * b2)-(a2 * b3)) + "} \\space , \\space \\frac{" + ((c2 * a3)-(c3 * a2)) + "}{" + ((a3 * b2)-(a2 * b3)) + "}) \\]"
+        ans1 += "\\[(x2 , y2) \\space = \\space ( " + x2.toFixed(2) + " \\space , \\space " +  y2.toFixed(2) + ") \\]"
+        ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{(" + b3 + "\\times" + c1 + ") - (" + b1 + "\\times" + c3 + ")}{(" + a1 + "\\times" + b3 + ") - (" + a3 + "\\times" + b1 + ")} \\space , \\space \\frac{(" + c3 + "\\times" + a1 + ") - (" + c1 + "\\times" + a3 + ")}{(" + a1 + "\\times" + b3 + ") - (" + a3 + "\\times" + b1 + ")}) \\]"   
+        ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{" + b3 * c1 + " - " + b1 * c3 + "}{" + a1 * b3 + " - " + a3 * b1 + "} \\space , \\space \\frac{" + c3 * a1 + " - " + c1 * a3 + "}{" + a1 * b3 + " - " + a3 * b1 + "}) \\]"
+        ans1 += "\\[(x3 , y3) \\space = \\space ( \\frac{" + ((b3 * c1)-(b1 * c3)) + "}{" + ((a1 * b3)-(a3 * b1)) + "} \\space , \\space \\frac{" + ((c3 * a1)-(c1 * a3)) + "}{" + ((a1 * b3)-(a3 * b1)) + "}) \\]"
+        ans1 += "\\[(x3 , y3) \\space = \\space ( " + x3.toFixed(2) + " \\space , \\space " +  y3.toFixed(2) + ") \\]"
+        ans1 += "\\[The \\space coordinates \\space of \\space Excenters \\space are \\space given \\space by \\]";
+        ans1 += "\\[I1 \\space = \\space ( \\space \\frac{(-ax1)+(bx2)+(cx3)}{(-a)+(b)+(c)} \\space , \\space \\frac{(-ay1)+(by2)+(cy3)}{(-a)+(b)+(c)} \\space ) \\]";
+        ans1 +=  "\\[I1 \\space = \\space ( \\space \\frac{( " + (-a) + "\\times" + x1 + ") + (" + b + " \\times " + x2 + ") + (" + c + "\\times" + x3 + ") }{(" + (-a) + ") + (" + b + ") + (" + c + ")} \\space , \\space \\frac{( " + (-a)+ "\\times" + y1 + ") + (" + b + "\\times" + y2 + ") + (" + c + "\\times" + y3 + ") }{(" + (-a) + ") + (" + b + ") + (" + c + ")} ) \\]";
+        ans1 += "\\[I1 \\space = \\space ( \\space \\frac{( " + ((-a)*x1) + ") + (" + (b*x2) + ") + (" + (c*x3) + ") }{(" + (-a) + ") + (" + b + ") + (" + c + ")} \\space , \\space \\frac{( " + ((-a)*y1) + ") + (" + (b*y2) + ") + (" + (c*y3) + ") }{(" + (-a) + ") + (" + b + ") + (" + c + ")} ) \\]";    
+        ans1 +=  "\\[I1 \\space = \\space ( \\space \\frac{ " + (((-a)*x1)+(b*x2)+(c*x3)) + " }{" + ((-a)+b+c) + "} \\space , \\space \\frac{ " + (((-a)*y1)+(b*y2)+(c*y3)) + " }{" + ((-a)+b+c) + "} ) \\]";
+        ans1 +=  "\\[The \\space excenter \\space for \\space first \\space side \\space is \\space ( " + excenterop1.toFixed(2) + " , " + excenterop2.toFixed(2) + ") \\]";
+        ans1 += "\\[I2 \\space = \\space ( \\space \\frac{(ax1)-(bx2)+(cx3)}{(a)-(b)+(c)} \\space , \\space \\frac{(ay1)-(by2)+(cy3)}{(a)-(b)+(c)} \\space ) \\]";
+        ans1 +=  "\\[I2 \\space = \\space ( \\space \\frac{( " + (a) + "\\times" + x1 + ") - (" + (b) + " \\times " + x2 + ") + (" + c + "\\times" + x3 + ") }{(" + (a) + ") - (" + b + ") + (" + c + ")} \\space , \\space \\frac{( " + a + "\\times" + y1 + ") - (" + b + "\\times" + y2 + ") + (" + c + "\\times" + y3 + ") }{(" + (a) + ") - (" + b + ") + (" + c + ")} ) \\]";
+        ans1 += "\\[I2 \\space = \\space ( \\space \\frac{( " + ((a)*x1) + ") - (" + (b*x2) + ") + (" + (c*x3) + ") }{(" + (a) + ") - (" + b + ") + (" + c + ")} \\space , \\space \\frac{( " + ((a)*y1) + ") - (" + (b*y2) + ") + (" + (c*y3) + ") }{(" + (a) + ") - (" + b + ") + (" + c + ")} ) \\]";    
+        ans1 +=  "\\[I2 \\space = \\space ( \\space \\frac{ " + (((a)*x1)-(b*x2)+(c*x3)) + " }{" + (a-b+c) + "} \\space , \\space \\frac{ " + (((a)*y1)-(b*y2)+(c*y3)) + " }{" + (a-b+c) + "} ) \\]";
+        ans1 += "\\[The \\space excentre \\space for \\space second \\space side \\space is \\space ( " + excenterop3.toFixed(2) + " , " + excenterop4.toFixed(2) + ") \\]";
+        ans1 += "\\[I3 \\space = \\space ( \\space \\frac{(ax1)+(bx2)-(cx3)}{(a)+(b)-(c)} \\space , \\space \\frac{(ay1)+(by2)-(cy3)}{(a)+(b)-(c)} \\space ) \\]";
+        ans1 +=  "\\[I3 \\space = \\space ( \\space \\frac{( " + (a) + "\\times" + x1 + ") + (" + (b) + " \\times " + x2 + ") - (" + c + "\\times" + x3 + ") }{(" + (a) + ") + (" + b + ") - (" + c + ")} \\space , \\space \\frac{( " + a + "\\times" + y1 + ") + (" + b + "\\times" + y2 + ") - (" + c + "\\times" + y3 + ") }{(" + (a) + ") + (" + b + ") - (" + c + ")} ) \\]";
+        ans1 += "\\[I3 \\space = \\space ( \\space \\frac{( " + ((a)*x1) + ") + (" + (b*x2) + ") - (" + (c*x3) + ") }{(" + (a) + ") + (" + b + ") - (" + c + ")} \\space , \\space \\frac{( " + ((a)*y1) + ") + (" + (b*y2) + ") - (" + (c*y3) + ") }{(" + (a) + ") + (" + b + ") - (" + c + ")} ) \\]";    
+        ans1 +=  "\\[I3 \\space = \\space ( \\space \\frac{ " + (((a)*x1)+(b*x2)-(c*x3)) + " }{" + (a+b-c) + "} \\space , \\space \\frac{ " + (((a)*y1)+(b*y2)-(c*y3)) + " }{" + (a+b-c) + "} ) \\]";
+        ans1  += "\\[The \\space excentre \\space for \\space third \\space side \\space is \\space ( " + excenterop5.toFixed(2)  + " , " + excenterop6.toFixed(2) + ") \\]"; 
+        centout1.innerHTML = ans1;
+        renderMathInElement(centout1)
+            }
+        else
+         {
+                ans1 += "\\[Please \\space enter \\space all \\space fields \\]";
+                centout1.innerHTML = ans1;
+                renderMathInElement(centout1)
     }
 }
 //check for set value buttons
@@ -2983,7 +3221,12 @@ function solveper() {
     }
 }
 
+function calceximpse13findd(){
+    var n = document.getElementById("impse32");
+    n.value = 5;
 
+    impse13findd();
+}
 function impse13findd() {
     var n = (document.getElementById("impse32").value);
     let a = 1, b = 2;
@@ -2992,6 +3235,12 @@ function impse13findd() {
     document.getElementById("impseans32").innerHTML = sum;
 }
 
+function calceximpse36find(){
+    var nterm = document.getElementById("impse35");
+    nterm.value = 5;
+
+    impse36find();
+}
 function impse36find (){
     var nterm = parseInt((document.getElementById("impse35").value));
     var sum = (nterm * ((2 * (nterm**3)) + (12 * (nterm**2))  + (25 * nterm) + 21)) / 2
@@ -3001,6 +3250,13 @@ function impse36find (){
     else{
         document.getElementById("impseans35").innerHTML = "Please enter all Input"
     }
+}
+
+function calceximpsefind22(){
+    var n = document.getElementById("impse57");
+    n.value = 10;
+
+    impsefind22();
 }
 
 function impsefind22(){
@@ -3021,6 +3277,13 @@ function setBits(n)
     return count;
 }
 
+function calcexnth113find(){
+    var n = document.getElementById("imp113");
+    n.value = 10;
+
+    nth113find();
+}
+
 function nth113find(){
     var nterms = (document.getElementById("imp113").value);
     if (nterms != "") {
@@ -3035,7 +3298,11 @@ function nth113find(){
 }
 
 //Important Series and Sequences start
-
+function calceximpsefind(){
+    var x = document.getElementById("impse1").value = 3;
+    var n = document.getElementById("impse2").value = 5;
+    impsefind();
+}
 function impsefind() {
     var x = (document.getElementById("impse1").value);
     var n = (document.getElementById("impse2").value);
@@ -3052,6 +3319,15 @@ function impsefind() {
     }
 }
 
+function calceximpse1find(){
+    let x = document.getElementById("impse3");
+    let n = document.getElementById("impse4");
+
+    x.value = 2;
+    n.value = 5;
+
+    impse1find();
+}
 function impse1find() {
     let x = parseInt(document.getElementById("impse3").value)
     let n = parseInt(document.getElementById("impse4").value)
@@ -3076,10 +3352,32 @@ function impse1find() {
 }
 
 
+function calceximpsefind20(){
+    var n = document.getElementById("impse201");
+    n.value = 10;
+
+    impsefind20();
+}
+
+function impsefind20(){
+    var n = parseInt(document.getElementById("impse201").value)
+    var series = n * (Math.pow(n, 2) + 3 * n + 5 ) / 3;
+    document.getElementById("impseans20").innerHTML =  series;
+}
+
 function impse20find() {
     var n = parseInt(document.getElementById("impse20").value)
-    var series = n * (Math.pow(n, 2) + 3 * n + 5) / 3;
-    document.getElementById("impse20ans").innerHTML = series;
+    if(!isNaN(n)){
+        var series = n * (Math.pow(n, 2) + 3 * n + 5) / 3;
+        document.getElementById("impse20exp").innerHTML = "\\[It is basically a function with domain and co-domain as natural numbers and 0. \\]"
+        document.getElementById("impse20exp").innerHTML = "\\[if n > 0 and the number is not already included in the sequence,\\]"
+        document.getElementById("impse20exp").innerHTML = "\\[ a(n) = a(n - 1) - n \\]"
+        document.getElementById("impse20exp").innerHTML = "\\[else a(n) = a(n-1) + n. \\]"
+        document.getElementById("impse20ans").innerHTML = series;
+        renderMathInElement(document.getElementById("impse20exp"))
+    }
+    else
+        document.getElementById("impse20ans").innerHTML = "please enter valid input"
 }
 
 function impse21find() {
@@ -3104,6 +3402,15 @@ function impse21find() {
     }
 }
 
+function calceximpse2find(){
+    let x = document.getElementById("impse5");
+    let n = document.getElementById("impse6");
+
+    x.value = 2;
+    n.value = 5;
+
+    impse2find();
+}
 function impse2find() {
     let x = parseInt(document.getElementById("impse5").value)
     let n = parseInt(document.getElementById("impse6").value)
@@ -3121,6 +3428,12 @@ function impse2find() {
     }
 }
 
+function calceximpse3find(){
+    var n = document.getElementById("impse7");
+    n.value = 5;
+    
+    impse3find();
+}
 function impse3find() {
     let n = parseInt(document.getElementById("impse7").value)
     if (!isNaN(n)) {
@@ -3153,6 +3466,13 @@ function impse3find() {
     }
 }
 
+function calceximpse4find(){
+    var n = document.getElementById("impse8");
+    n.value = 10;
+
+    impse4find();
+}
+
 function impse4find() {
     var n = parseInt(document.getElementById("impse8").value)
     if (!isNaN(n)) {
@@ -3172,6 +3492,41 @@ function impse4find() {
     }
 }
 
+function impse5find(){
+    var n = parseInt(document.getElementById("impse99").value)    
+    for(let i = 0; i < n; i++)
+        document.getElementById("impse4ans").innerHTML = gen(i) + " "
+         
+    document.getElementById("impse4ans").innerHTML = "</br>"
+}
+
+function gen(n)
+{
+    if (n == 0)
+        return 0;
+ 
+    // S(1) = 1
+    else if (n == 1)
+        return 1;
+ 
+    // S(2 * n) = 4 * S(n)
+    else if (n % 2 == 0)
+        return 4 * gen(parseInt(n / 2, 10));
+ 
+    // S(2 * n + 1) = 4 * S(n) + 1
+    else if (n % 2 == 1)
+        return 4 * gen(parseInt(n / 2, 10)) + 1;
+         
+    return 0;
+}
+
+function calceximpse5find(){
+    var n = document.getElementById("impse9");
+    n.value = 10;
+
+    impse5find();
+}
+
 function impse5find() {
     var _n = document.getElementById("impse9").value;
     var n = parseInt(_n);
@@ -3185,6 +3540,13 @@ function impse5find() {
     }
     renderMathInElement(document.getElementById("impse5ans"));
     renderMathInElement(document.getElementById("impse5ans1"));
+}
+
+function calceximpse6find(){
+    var n = document.getElementById("impse10");
+    n.value = 10;
+
+    impse6find();
 }
 
 function impse6find() {
@@ -3203,6 +3565,15 @@ function impse6find() {
 
 }
 
+function calceximpse7find(){
+    var x = document.getElementById("impse1x");
+    var k = document.getElementById("impse11");
+    x.value = 9;
+    k.value = 20;
+
+    impse7find();
+}
+
 function impse7find() {
     var x = (document.getElementById("impse1x").value);
     var k = (document.getElementById("impse11").value);
@@ -3216,6 +3587,13 @@ function impse7find() {
     }
     renderMathInElement(document.getElementById("impse7ans"));
     renderMathInElement(document.getElementById("impse7ans1"));
+}
+
+function calceximpse8find(){
+    var n = document.getElementById("impse12");
+    n.value = 10;
+
+    impse8find();
 }
 
 function impse8find() {
@@ -3252,6 +3630,13 @@ function impse9find() {
     }
 }
 
+function calceximpse10find(){
+    var n = document.getElementById("impse14");
+    n.value = 10;
+
+    impse10find();
+}
+
 function impse10find() {
     let num = parseInt(document.getElementById("impse14").value)
     var result = 0;
@@ -3261,6 +3646,13 @@ function impse10find() {
         result = result + (i / fact);
     }
     document.getElementById("impse10ans").innerHTML = result.toFixed(5);
+}
+
+function calceximpse11find(){
+    var n = document.getElementById("impse15");
+    n.value = 10;
+
+    impse11find();
 }
 
 function impse11find() {
@@ -3275,6 +3667,13 @@ function impse11find() {
         document.getElementById("impse11ans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]";
     }
     renderMathInElement(document.getElementById("impse11ans"));
+}
+
+function calceximpse12find(){
+    var n = document.getElementById("impse16");
+    n.value = 10;
+
+    impse12find();
 }
 
 function impse12find() {
@@ -3361,6 +3760,13 @@ function impse20find() {
         document.getElementById("impse20ans").innerHTML = arr[i] + ", ";
 
     }
+}
+
+function calceximpse13find(){
+    var n = document.getElementById("impse17");
+    n.value = 10;
+
+    impse13find();
 }
 
 function impse13find() {
@@ -3623,6 +4029,13 @@ function collapselimitbox() {
     }
 }
 
+function calcexsolvelaplace(){
+    var lurl = document.getElementById("inputlaplace");
+    lurl.value = "e^t/2";
+
+    solvelaplace();
+}
+
 function solvelaplace() {
     var lurl = encodeURIComponent(document.getElementById("inputlaplace").value);
     window.open(
@@ -3651,6 +4064,13 @@ function dlp() {
         document.getElementById("dlpans").innerHTML = "The distance is  " + dlpans;
     }
 
+}
+
+function calcexsolveinverselaplace(){
+    var ilurl = document.getElementById("inputinverselaplace");
+    ilurl.value = "e^t/2";
+
+    solveinverselaplace();
 }
 
 function solveinverselaplace() {
@@ -3991,6 +4411,13 @@ function interpointsolve() {
     }
 }
 //Aliquot Sum
+function calcexalisumfind(){
+    var n = document.getElementById("alisum");
+    n.value = 3;
+
+    alisumfind();
+}
+
 function alisumfind() {
     let n = parseInt(document.getElementById("alisum").value)
     let sum = 0;
@@ -4015,6 +4442,14 @@ function alisumfind() {
         document.getElementById("aliexplain").innerHTML = explain1 + explain2;
         renderMathInElement(document.getElementById("aliexplain"));
     }
+}
+
+
+function calcexalisum1find(){
+    var num = document.getElementById("alisum1");
+    num.value = 20;
+
+    alisum1find();
 }
 
 function alisum1find() {
@@ -4046,6 +4481,15 @@ function alisum1find() {
     document.getElementById("alisum1ans").innerHTML = " Please ENer valid input"
 }
 
+
+function calcexalisum3find(){
+    var n = document.getElementById("alisum3");
+    n.value = 4;
+
+    alisum3find();
+
+}
+
 function alisum3find(){
     let n = parseInt(document.getElementById("alisum3").value);
     document.getElementById("alisum3ans").innerHTML = "";
@@ -4055,6 +4499,14 @@ function alisum3find(){
 
         document.getElementById("alisum3ans").innerHTML +=  "<br/>";
     }
+}
+
+
+function calcexalisum4find(){
+    var n = document.getElementById("alisum4");
+    n.value = 5;
+
+    alisum4find();
 }
 
 function alisum4find(){
@@ -4072,6 +4524,36 @@ function alisum4find(){
         document.getElementById("alisum4ans").innerHTML = "Please enter valid input"
 }
 
+function alisum5find(){
+    let n = parseInt(document.getElementById("alisum5").value)
+    sieveSundaram();
+    for (let i = 1 ; i<= n; i++)
+        document.getElementById("alisum5ans").innerHTML ="Primorial(P#) of " + i + " is " + calculatePrimorial(i) + "<br>";
+}
+
+function calculatePrimorial(n)
+{   
+    let result = 1;
+    for (let i = 0; i < n; i++)
+    result = result * primes[i];
+    return result;
+}
+
+let MAX = 100000;
+let primes = new Array();
+function sieveSundaram()
+{
+    let marked = new Array(MAX / 2 + 1).fill(0);
+    for (let i = 1; i <= (Math.sqrt(MAX) - 1) / 2 ; i++)
+        for (let j = (i * (i + 1)) << 1 ;
+            j <= MAX / 2 ; j += 2 * i + 1)
+            marked[j] = true;
+    primes.push(2);
+    for (let i = 1; i <= MAX / 2; i++)
+        if (marked[i] == false)
+            primes.push(2 * i + 1);
+}
+
 function Hosoya(n, m)
     {
         if ((n == 0 && m == 0) || (n == 1 && m == 0) || (n == 1 && m == 1) || (n == 2 && m == 1))
@@ -4087,6 +4569,14 @@ function Hosoya(n, m)
         else
             return 0;
     }
+
+
+function calcexalisum2find(){
+    var n = document.getElementById("alisum2");
+    n.value = 2;
+
+    alisum2find();
+}
 
 function alisum2find() {
     let n = parseInt(document.getElementById("alisum2").value)
@@ -4372,6 +4862,27 @@ function solvesection() {
     }
 }
 
+function calcexvectorsection(){
+    var x1 = document.getElementById("inp001");
+    var y1 = document.getElementById("inp002");
+    var z1 = document.getElementById("inp003");
+    var x2 = document.getElementById("inp004");
+    var y2 = document.getElementById("inp005");
+    var z2 = document.getElementById("inp006");
+    var m = document.getElementById("m1");
+    var n = document.getElementById("n11");
+    x1.value = 2;
+    y1.value = 3;
+    z1.value = 4;
+    x2.value = 4;
+    y2.value = 5;
+    z2.value = 6;
+    m.value = 2;
+    n.value = 1;
+
+    vectorsection();
+}
+
 function vectorsection() {
     var x1, y1, x2, y2, m, n;
     x1 = parseFloat(document.getElementById('inp001').value);
@@ -4400,6 +4911,26 @@ function vectorsection() {
     }
 }
 
+function calcexvectorsection2(){
+    var x1 = document.getElementById("inp001");
+    var y1 = document.getElementById("inp002");
+    var z1 = document.getElementById("inp003");
+    var x2 = document.getElementById("inp004");
+    var y2 = document.getElementById("inp005");
+    var z2 = document.getElementById("inp006");
+    var m = document.getElementById("m1");
+    var n = document.getElementById("n11");
+    x1.value = 2;
+    y1.value = 3;
+    z1.value = 4;
+    x2.value = 4;
+    y2.value = 5;
+    z2.value = 6;
+    m.value = 2;
+    n.value = 1;
+
+    vectorsection2();
+}
 
 function vectorsection2() {
     var x1, y1, x2, y2, m, n;
@@ -4896,6 +5427,23 @@ function countscfind() {
     }
 }
 //Vector Addition
+function calcexvectoradd(){
+    var a = document.getElementById("a1b");
+    var b = document.getElementById("a2b");
+    var c = document.getElementById("a3b");
+    var d = document.getElementById("b1c");
+    var e = document.getElementById("b2c");
+    var f = document.getElementById("b3c");
+    a.value = 3;
+    b.value = 6;
+    c.value = 9;
+    d.value = 12;
+    e.value = 15;
+    f.value = 18;
+
+    vectoradd();
+}
+
 function vectoradd() {
     var a = parseFloat(document.getElementById('a1b').value);
     var b = parseFloat(document.getElementById('a2b').value);
@@ -4925,6 +5473,23 @@ function vectoradd() {
     }
 }
 //Vector Subtraction
+function calcexvectorsub(){
+    var a = document.getElementById("a1b");
+    var b = document.getElementById("a2b");
+    var c = document.getElementById("a3b");
+    var d = document.getElementById("b1c");
+    var e = document.getElementById("b2c");
+    var f = document.getElementById("b3c");
+    a.value = 15;
+    b.value = 6;
+    c.value = 9;
+    d.value = 12;
+    e.value = 3;
+    f.value = 6;
+
+    vectorsub();
+}
+
 function vectorsub() {
     var a = parseFloat(document.getElementById('a1b').value);
     var b = parseFloat(document.getElementById('a2b').value);
@@ -4955,6 +5520,25 @@ function vectorsub() {
     }
 }
 //Angle Calculator
+
+function calcexvactorangle3(){
+    var a = document.getElementById('vaa1');
+    var b = document.getElementById('vab1');
+    var c = document.getElementById('vac1');
+    var d = document.getElementById('vaa2');
+    var e = document.getElementById('vab2');
+    var f = document.getElementById('vac2');
+
+    a.value = 5;
+    b.value = -2;
+    c.value = 3;
+    d.value = -4;
+    e.value = 5;
+    f.value = 7;
+
+    vactorangle3();
+}
+
 function vactorangle3() {
     var a = parseFloat(document.getElementById('vaa1').value);
     var b = parseFloat(document.getElementById('vab1').value);
@@ -4980,6 +5564,20 @@ function vactorangle3() {
         document.getElementById("vae").innerHTML = `\\[ Angle \\space Between \\space  \\space Vectors \\space (\\theta ) \\space  = cos^{-1}(\\frac{${x}}{\\sqrt{${y}} \\sqrt{${z}}})  \\space \\newline \\] `;
         renderMathInElement(document.getElementById("vae"));
     }
+}
+
+function calcexvectorangle2(){
+    var a = document.getElementById('vaa3');
+    var b = document.getElementById('vab3');
+    var c = document.getElementById('vaa4');
+    var d = document.getElementById('vab4');
+
+    a.value = 3;
+    b.value = 4;
+    c.value = 4;
+    d.value = 3;
+
+    vectorangle2();
 }
 
 function vectorangle2() {
@@ -5016,6 +5614,25 @@ function ktimes() {
         + " " + K * K * C
 }
 //Paraller vector
+
+fraction calcexvectpral(){
+    var a = document.getElementById('vpa1');
+    var b = document.getElementById('vpb1');
+    var c = document.getElementById('vpc1');
+    var d = document.getElementById('vpa2');
+    var e = document.getElementById('vpb2');
+    var f = document.getElementById('vpc2');
+
+    a.value = 4;
+    b.value = -5;
+    c.value = 2;
+    d.value = 6;
+    e.value = 3;
+    f.value = 4;
+
+    vectpral();
+}
+
 function vectpral() {
     var a, b, c, d, e, f, mul, mul1, mul2, mul3, mul4, mul5, ans, ans1, ans2;
     var a = parseFloat(document.getElementById('vpa1').value);
@@ -5072,6 +5689,32 @@ function vectpral() {
 }
 
 //Coplanar and Non-Coplanar Calculator
+
+function calcexvectorplanar(){
+    var a = document.getElementById('inp11');
+    var b = document.getElementById('inp22');
+    var c = document.getElementById('inp33');
+    var d = document.getElementById('inp44');
+    var e = document.getElementById('inp55');
+    var f = document.getElementById('inp66');
+    var g = document.getElementById('inp77');
+    var h = document.getElementById('inp88');
+    var i = document.getElementById('inp99');
+
+    a.value = 1;
+    b.value = 1;
+    c.value = 1;
+    d.value = 1;
+    e.value = 3;
+    f.value = 1;
+    g.value = 2;
+    h.value = 2;
+    i.value = 2;
+
+    vectorplanar();
+
+}
+
 function vectorplanar() {
     var a = parseFloat(document.getElementById('inp11').value);
     var b = parseFloat(document.getElementById('inp22').value);
@@ -5120,6 +5763,17 @@ function vectorplanar() {
     }
 }
 //Mono Vector Calculator
+function calcexvectormod(){
+    var a = document.getElementById("vma");
+    var b = document.getElementById("vmb");
+    var c = document.getElementById("vmc");
+    a.value = 3;
+    b.value = 6;
+    c.value = 9;
+
+    vectormod();
+}
+
 function vecotrmod() {
     var a = parseFloat(document.getElementById('vma').value);
     var b = parseFloat(document.getElementById('vmb').value);
@@ -5144,7 +5798,16 @@ function vecotrmod() {
     }
 }
 
+function calcexvectorunit(){
+    var a = document.getElementById("vma");
+    var b = document.getElementById("vmb");
+    var c = document.getElementById("vmc");
+    a.value = 3;
+    b.value = 6;
+    c.value = 9;
 
+    vectorunit();
+}
 
 function vectorunit() {
     var a = parseFloat(document.getElementById('vma').value);
@@ -5177,6 +5840,24 @@ function vectorunit() {
 }
 
 //Projection Calculato
+function calcexvectorscalar(){
+    var x1 = document.getElementById("inp09");
+    var y1 = document.getElementById("inp08");
+    var z1 = document.getElementById("inp07");
+    var x2 = document.getElementById("inp06");
+    var y2 = document.getElementById("inp05");
+    var z2 = document.getElementById("inp04");
+
+    x1.value = 2;
+    y1.value = 3;
+    z1.value = 4;
+    x2.value = 4;
+    y2.value = 5;
+    z2.value = 6;
+
+    vectorscalar();
+}
+
 function vectorscalar() {
     let a = parseFloat(document.getElementById('inp09').value);
     let b = parseFloat(document.getElementById('inp08').value);
@@ -5203,6 +5884,23 @@ function vectorscalar() {
     }
 }
 
+function calcexvectorproj(){
+    var x1 = document.getElementById("inp09");
+    var y1 = document.getElementById("inp08");
+    var z1 = document.getElementById("inp07");
+    var x2 = document.getElementById("inp06");
+    var y2 = document.getElementById("inp05");
+    var z2 = document.getElementById("inp04");
+
+    x1.value = 2;
+    y1.value = 3;
+    z1.value = 4;
+    x2.value = 4;
+    y2.value = 5;
+    z2.value = 6;
+
+    vectorproj();
+}
 
 function vectorproj() {
     let a = parseFloat(document.getElementById('inp09').value);
@@ -5230,6 +5928,24 @@ function vectorproj() {
         projoutput.innerHTML = projtemp;
         renderMathInElement(document.getElementById("vectorscalar1"));
     }
+}
+
+function calcexprojector(){
+    var x1 = document.getElementById("inp09");
+    var y1 = document.getElementById("inp08");
+    var z1 = document.getElementById("inp07");
+    var x2 = document.getElementById("inp06");
+    var y2 = document.getElementById("inp05");
+    var z2 = document.getElementById("inp04");
+
+    x1.value = 2;
+    y1.value = 3;
+    z1.value = 4;
+    x2.value = 4;
+    y2.value = 5;
+    z2.value = 6;
+
+    projector();
 }
 
 function projector() {
@@ -5261,6 +5977,25 @@ function projector() {
 }
 
 //Product Calculator
+
+function calcexvectordot(){
+    var a = document.getElementById('d1e');
+    var b = document.getElementById('d2e');
+    var c = document.getElementById('d3e');
+    var d = document.getElementById('e1d');
+    var e = document.getElementById('e2d');
+    var f = document.getElementById('e3d');
+
+    a.value = 1;
+    b.value = 2;
+    c.value = 3;
+    d.value = 4;
+    e.value = -5;
+    f.value = 6;
+
+    vectordot();
+}
+
 function vectordot() {
     var a = parseFloat(document.getElementById('d1e').value);
     var b = parseFloat(document.getElementById('d2e').value);
@@ -5283,6 +6018,24 @@ function vectordot() {
         document.getElementById("dotex").innerHTML = "\\[ Dot \\space Product \\space of \\space Vectors \\space (X.Y) \\space = \\space ( " + (a) + " * " + (d) + " ) \\space + \\space ( " + (b) + " * " + (e) + " )  \\space + \\space ( " + (c) + " * " + (f) + " )  \\space \\newline \\] ";
         renderMathInElement(document.getElementById("dotex"));
     }
+}
+
+function calcexvectorcross(){
+    var a = document.getElementById('d1e');
+    var b = document.getElementById('d2e');
+    var c = document.getElementById('d3e');
+    var d = document.getElementById('e1d');
+    var e = document.getElementById('e2d');
+    var f = document.getElementById('e3d');
+
+    a.value = 2;
+    b.value = 3;
+    c.value = 4;
+    d.value = 5;
+    e.value = 6;
+    f.value = 7;
+
+    vectorcross();
 }
 
 function vectorcross() {
@@ -5337,6 +6090,32 @@ function vectorcross() {
 }
 
 //Shortest Distance
+
+function calcexvectordistance(){
+    a = document.getElementById("in11");
+    b = document.getElementById("in22");
+    c = document.getElementById("in33");
+    d = document.getElementById("in44");
+    e = document.getElementById("in55");
+    f = document.getElementById("in66");
+    g = document.getElementById("in77");
+    h = document.getElementById("in88");
+    i = document.getElementById("in99");
+
+    a.value = 1;
+    b.value = 2;
+    c.value = 2;
+    d.value = 2;
+    e.value = 4;
+    f.value = 3;
+    g.value = 2;
+    h.value = 1;
+    i.value = 3;
+
+    vectordistance();
+
+}
+
 function vectordistance() {
     var a, b, c, d, e, f, g, h, i;
     a = parseInt(document.getElementById("in11").value);
@@ -5368,6 +6147,23 @@ function vectordistance() {
     }
 }
 //Vector Joining Two Points
+function calcexvecpoints(){
+    var a = document.getElementById("val1a");
+    var b = document.getElementById("val1b");
+    var c = document.getElementById("val1c");
+    var d = document.getElementById("val2b");
+    var e = document.getElementById("val2c");
+    var f = document.getElementById("val2d");
+    a.value = 2;
+    b.value = 3;
+    c.value = 4;
+    d.value = 5;
+    e.value = 6;
+    f.value = 7;
+
+    vecpoints();
+}
+
 function vecpoints() {
     var a, b, c, d, e, f;
     a = parseInt(document.getElementById("val1a").value);
@@ -5392,6 +6188,19 @@ function vecpoints() {
 }
 
 //Resultant Vector Calculator
+
+function calcexvector_res(){
+    var a = document.getElementById('abc');
+    var b = document.getElementById('def');
+    var c = document.getElementById('ang3');
+
+    a.value = 3;
+    b.value = 4;
+    c.value = 90;
+
+    vector_res();
+}
+
 function vector_res() {
     var a = parseFloat(document.getElementById('abc').value);
     var b = parseFloat(document.getElementById('def').value);
@@ -5736,17 +6545,56 @@ function pointri() {
     y3 = parseFloat(document.getElementById('q7w').value);
     p1 = parseFloat(document.getElementById('q4w').value);
     p2 = parseFloat(document.getElementById('q8w').value);
+    var areaop = document.getElementById("pointoutput");
+    var explaintemp = "";
     var area = Math.abs((x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2.0);
     var area1 = Math.abs((p1 * (y2 - y3) + x2 * (y3 - p2) + x3 * (p2 - y2)) / 2.0);
     var area2 = Math.abs((x1 * (p2 - y3) + p1 * (y3 - y1) + x3 * (y1 - p2)) / 2.0);
     var area3 = Math.abs((x1 * (y2 - p2) + x2 * (p2 - y1) + p1 * (y1 - y2)) / 2.0);
     var areatotal = area1 + area2 + area3;
-    if (area == areatotal) {
-        document.getElementById("pointoutput").innerHTML = "Point is Inside the Triangle"
+    if(!isNaN(x1) && !isNaN(y1) && !isNaN(x2) && !isNaN(y2) && !isNaN(x3) && !isNaN(y3) && !isNaN(p1) && !isNaN(p2)){
+        if (area != 0){
+            explaintemp += "\\[Area \\space of \\space Triangle (ABC)  = \\space  \\frac{1}{2} | \\space x1(y2-y3) \\space + x2(y3-y1) + x3(y1-y2) | \\] ";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") ((" + y2 + ") - (" + y3 + ")) + (" + x2 + ") ((" + y3 + ") - (" + y1 + ")) + (" + x3 + ") ((" + y1 + ") - (" + y2 + ")) | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") \\times (" + (y2 - y3) + ") + (" + x2 + ") \\times (" + (y3 - y1) + ") + (" + x3 + ") \\times (" + (y1 - y2) + ") \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (x1 * (y2 - y3)) + ") + (" + (x2 * (y3 - y1)) + ") + (" + (x3 * (y1 - y2)) + ") | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (area) + ") | \\]";
+            explaintemp += "\\[Area \\space of \\space Triangle (PAB)  = \\space  \\frac{1}{2} | \\space p1(y2-y3) \\space + x2(y3-p2) + x3(p2-y2) | \\] ";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + p1 + ") ((" + y2 + ") - (" + y3 + ")) + (" + x2 + ") ((" + y3 + ") - (" + p2 + ")) + (" + x3 + ") ((" + p2 + ") - (" + y2 + ")) | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + p1 + ") \\times (" + (y2 - y3) + ") + (" + x2 + ") \\times (" + (y3 - p2) + ") + (" + x3 + ") \\times (" + (p2 - y2) + ") \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (p1 * (y2 - y3)) + ") + (" + (x2 * (y3 - p2)) + ") + (" + (x3 * (p2 - y2)) + ") | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (area1) + ") | \\]";
+            explaintemp += "\\[Area \\space of \\space Triangle (PBC)  = \\space  \\frac{1}{2} | \\space x1(p2-y3) \\space + p1(y3-y1) + x3(y1-y2) | \\] ";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") ((" + p2 + ") - (" + y3 + ")) + (" + p1 + ") ((" + y3 + ") - (" + y1 + ")) + (" + x3 + ") ((" + y1 + ") - (" + p2 + ")) | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") \\times (" + (p2 - y3) + ") + (" + p1 + ") \\times (" + (y3 - y1) + ") + (" + x3 + ") \\times (" + (y1 - p2) + ") \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (x1 * (p2 - y3)) + ") + (" + (p1 * (y3 - y1)) + ") + (" + (x3 * (y1 - p2)) + ") | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (area2) + ") | \\]";
+            explaintemp += "\\[Area \\space of \\space Triangle (PAC)  = \\space  \\frac{1}{2} | \\space x1(y2-p2) \\space + x2(p2-y1) + p1(y1-y2) | \\] ";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") ((" + y2 + ") - (" + p2 + ")) + (" + x2 + ") ((" + p2 + ") - (" + y1 + ")) + (" + p1 + ") ((" + y1 + ") - (" + y2 + ")) | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + x1 + ") \\times (" + (y2 - p2) + ") + (" + x2 + ") \\times (" + (p2 - y1) + ") + (" + p1 + ") \\times (" + (y1 - y2) + ") \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (x1 * (y2 - p2)) + ") + (" + (x2 * (p2 - y1)) + ") + (" + (p1 * (y1 - y2)) + ") | \\]";
+            explaintemp += "\\[ \\frac{1}{2} | \\space (" + (area3) + ") | \\]";
+            explaintemp += "\\[Area \\space of \\space Triangle (PAB) \\space + \\space Area \\space of \\space Triangle (PBC) \\space + \\space Area \\space of \\space Triangle (PAC) \\space = \\space " + areatotal + " \\]"
+           
+            areaop.innerHTML = explaintemp;
+        }
+       if (area == areatotal) {
+        explaintemp += "\\[\\space Area \\space of \\space Triangle (ABC) \\space = Total \\space Area \\space (PAB + PAC + PBC) \\]"
+        explaintemp += "\\[Point \\space is \\space Inside \\space the \\space Triangle \\]"
+        areaop.innerHTML = explaintemp;
     }
     else {
-        document.getElementById("pointoutput").innerHTML = "Point is Not Inside the Triangle"
+        explaintemp += "\\[\\space Area \\space of \\space Triangle (ABC) \\space != Total \\space Area \\space (PAB + PAC + PBC) \\]"
+        explaintemp += "\\[Point \\space is \\space NOT \\space Inside \\space the \\space Triangle \\]"
+        areaop.innerHTML = explaintemp;
     }
+}
+    else{
+    explaintemp += "\\[Please \\space enter \\space all \\space fields \\]";
+    areaop.innerHTML = explaintemp;
+
+}
+renderMathInElement(areaop);
 }
 
 function pointcir() {
@@ -5824,6 +6672,32 @@ function solvecubo() {
 
 }
 //Tetrahedron Calculator
+
+function calcexvectortetra(){
+    a = document.getElementById("inp12");
+    b = document.getElementById("inp13");
+    c = document.getElementById("inp14");
+    d = document.getElementById("inp21");
+    e = document.getElementById("inp25");
+    f = document.getElementById("inp23");
+    g = document.getElementById("inp31");
+    h = document.getElementById("inp32");
+    i = document.getElementById("inp35");
+
+    a.value = 2;
+    b.value = 1;
+    c.value = 3;
+    d.value = 1;
+    e.value = 2;
+    f.value = 3;
+    g.value = 2;
+    h.value = 3;
+    i.value = 4;
+
+    vectortetra();
+
+}
+
 function vectortetra() {
     var a, b, c, d, e, f, g, h, i;
     a = parseInt(document.getElementById("inp12").value);
@@ -6271,7 +7145,7 @@ function intri() {
     a = parseFloat(document.getElementById('inputsidea5').value);
     b = parseFloat(document.getElementById('inputsideb6').value);
     c = parseFloat(document.getElementById('inputsidec7').value);
-    var output = document.getElementById("intri1");
+    var output1 = document.getElementById("intri1");
     var temp = " ";
     var s = (a + b + c) / 2;
     var k = (s * (s - a) * (s - b) * (s - c));
@@ -6279,13 +7153,20 @@ function intri() {
     var r = k1 / s;
     if (isNaN(a) || isNaN(b) || isNaN(c)) {
         temp += "\\[Please \\space enter \\space all \\space field \\]";
-        output.innerHTML = temp;
-        renderMathInElement(output);
+        output1.innerHTML = temp;
+        renderMathInElement(output1);
     }
     else {
+        temp += "\\[Semiperimeter \\space = \\space \\frac{a + b + c}{2} \\space = \\space \\frac{" + a + "+" + b + "+" + c + "}{2} \\space = \\space \\frac{" + (a + b +  c) + "}{2}  \\]"
+        temp += "\\[Semiperimeter \\space of \\space Triangle \\space is \\space " + s + " \\]"
+        temp += "\\[By \\space Heron's \\space Formula \\space Area \\space of \\space a \\space Triangle \\space is \\]"
+        temp += "\\[k \\space = \\space \\sqrt{s(s-a)(s-b)(s-c)}  \\space = \\space \\sqrt{" + s + "( " + s + "-" + a + ")(" + s + "-" + b + ")(" + s + "-" + c + ")} \\space = \\space  \\sqrt{"+ k + "} \\] "
+        temp += "\\[Area \\space of \\space Triangle \\space is \\space " + k1 + " \\]"
+        temp += "\\[k \\space = \\space r \\times s \\space where \\space  r \\space  is \\space  Inradius \\space  of \\space  the \\space  Triangle \\]"
+        temp += "\\[Inradius  \\space of \\space Triangle \\space = \\space \\frac{k}{s} \\space = \\space \\frac{ " + k1 + "}{" + s + "} \\]"
         temp += "\\[Inradius \\space of \\space Triangle \\space is: " + r + " \\]";
-        output.innerHTML = temp;
-        renderMathInElement(output);
+        output1.innerHTML = temp;
+        renderMathInElement(output1);
     }
 }
 
@@ -6338,6 +7219,21 @@ function vectorquad() {
     }
 }
 //Area of Triangle
+
+function calcexvectortria(){
+    a = document.getElementById("inp90").value=2;
+    b = document.getElementById("inp98").value=2;
+    c = document.getElementById("inp97").value=3;
+    d = document.getElementById("inp96").value=4;
+    e = document.getElementById("inp95").value=5;
+    f = document.getElementById("inp94").value=1;
+    g = document.getElementById("inp93").value=1;
+    h = document.getElementById("inp92").value=4;
+    i = document.getElementById("inp91").value=4;
+
+    vectortria();
+}
+
 function vectortria() {
     var a, b, c, d, e, f, g, h, i;
     a = parseInt(document.getElementById("inp90").value);
@@ -6817,12 +7713,30 @@ function solvestriangle() {
 }
 
 //ParaBoloid
+function calcexfindeq(){
+    var a1 = document.getElementById("ther");
+    var h1 = document.getElementById("theh");
+    a1.value = 5;
+    h1.value = 10;
+
+    findeq();
+}
+
 function findeq() {
     var a1 = parseInt(document.getElementById("ther").value)
     var h1 = parseInt(document.getElementById("theh").value)
     document.getElementById("xeqn").innerHTML = "x &nbsp  =&nbsp; " + a1 + "√u/" + Math.sqrt(h1) + " cosv "
     document.getElementById("yeqn").innerHTML = "y &nbsp;  =&nbsp; " + a1 + " √u/ " + Math.sqrt(h1) + " sinv "
     document.getElementById("zeqn").innerHTML = "z &nbsp;  =&nbsp;  u"
+}
+
+function calcexvolf(){
+    var a = document.getElementById("ther1");
+    var b = document.getElementById("theh1");
+    a.value = 61.77;
+    b.value = 38.22;
+
+    volf();
 }
 
 function volf() {
@@ -6843,6 +7757,13 @@ function volf() {
         ans.innerHTML = temp;
         renderMathInElement(ans);
     }
+}
+
+function calcexcentv(){
+    var a = document.getElementById("theh2");
+    a.value = 10;
+
+    centv();
 }
 
 function centv() {
@@ -7764,6 +8685,29 @@ function arbelossolve(){
         perimeterField.innerHTML = `Perimeter (p) = ${perimeter.toFixed(3)} units`;
         areaField.innerHTML = `Area (A) = ${area.toFixed(3)} sq.units`;
     }
+}
+
+// Grid Shape
+function gridshapesolve() {
+    var m = parseFloat(document.getElementById("gridshape-m").value);
+    var n = parseFloat(document.getElementById("gridshape-n").value);
+    var a = parseFloat(document.getElementById("gridshape-a").value);
+    var b = parseFloat(document.getElementById("gridshape-b").value);
+    var rectLenfield = document.getElementById("gridshape-c");
+    var rectWidfield = document.getElementById("gridshape-d");
+    var perifield = document.getElementById("gridshape-p");
+    var areafield = document.getElementById("gridshape-A");
+    var c = m * a + ( m + 1 ) * b;
+    var d = n * a + ( n + 1 ) * b;
+    var p = c + d + 4 * m * n * a;
+    var A = c * d - m * n * a*a;
+    if ((!isNaN(m)) && (!isNaN(n)) && (!isNaN(a)) && (!isNaN(b)) ) {
+        rectLenfield.innerHTML = `Rectangle length (c) = ${c.toFixed(3)}`;
+        rectWidfield.innerHTML = `Rectangle width (d) = ${d.toFixed(3)}`;
+        perifield.innerHTML = `Perimeter (p) = ${p.toFixed(3)}`;
+        areafield.innerHTML = `Area (A) = ${A.toFixed(3)}`;
+    }
+
 }
 
 // T - Shape
@@ -8756,6 +9700,78 @@ function solvetruntetra() {
         document.getElementById("resultoftruntetraarea").innerHTML = "";
     }
 }
+// Truncated Dodecahedron
+
+function solvetrundodeca() {
+    var a = parseFloat(document.getElementById("trundodeca-a").value);
+    var edgeLenOctField = document.getElementById("trundodeca-ax");
+    var areaField = document.getElementById("trundodeca-A");
+    var volField = document.getElementById("trundodeca-V");
+    var cirRadField = document.getElementById("trundodeca-rc");
+    var midRadField = document.getElementById("trundodeca-rm");
+    var avField = document.getElementById("trundodeca-av");
+    var ax = (5*a)/Math.sqrt(5);
+    var A = 5 * a*a * (Math.sqrt(3) + 6*Math.sqrt(5 + 2*Math.sqrt(5)));
+    var V = 5/12*a*a*a*(99+47*Math.sqrt(5));
+    var rc = a/4*Math.sqrt(74 + 30*Math.sqrt(5));
+    var rm = a/4*(5+3*Math.sqrt(5));
+    if ((!isNaN(a))) {
+        edgeLenOctField.innerHTML = `Edge length dodecahedron (a') = ${ax.toFixed(3)}`;
+        areaField.innerHTML = `Surface area (A) = ${A.toFixed(3)}`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)}`;
+        cirRadField.innerHTML = `Circumsphere radius (rc) = ${rc.toFixed(3)}`;
+        midRadField.innerHTML = `Midsphere radius (rm) = ${rm.toFixed(3)}`;
+        avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A/V).toFixed(3)}`;
+    }
+}
+
+// Snub Cube
+
+function solvesnubcube() {
+    var a = parseFloat(document.getElementById("snubcube-a").value);
+    var areaField = document.getElementById("snubcube-A");
+    var volField = document.getElementById("snubcube-V");
+    var cirRadField = document.getElementById("snubcube-rc");
+    var midRadField = document.getElementById("snubcube-rm");
+    var avField = document.getElementById("snubcube-av");
+    var t = 1.839286755;
+    var A = 2 * a * a *(3 + 4 * Math.sqrt(3));
+    var V = a*a*a*(3*Math.sqrt(t-1) + 4*Math.sqrt(t+1))/(3*Math.sqrt(2-t));
+    var rc = a * Math.sqrt(( 3 - t ) / ( 4 * ( 2 - t ) ));
+    var rm = a * Math.sqrt(1/ ( 4 * ( 2 - t ) ));
+    if ((!isNaN(a))) {
+        areaField.innerHTML = `Surface area (A) = ${A.toFixed(3)}`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)}`;
+        cirRadField.innerHTML = `Circumsphere radius (rc) = ${rc.toFixed(3)}`;
+        midRadField.innerHTML = `Midsphere radius (rm) = ${rm.toFixed(3)}`;
+        avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A/V).toFixed(3)}`;
+    }
+}
+
+// Truncated Octahedron
+
+function solvetruncocta() {
+    var a = parseFloat(document.getElementById("truncocta-a").value);
+    var edgeLenOctField = document.getElementById("truncocta-ax");
+    var areaField = document.getElementById("truncocta-A");
+    var volField = document.getElementById("truncocta-V");
+    var cirRadField = document.getElementById("truncocta-rc");
+    var midRadField = document.getElementById("truncocta-rm");
+    var avField = document.getElementById("truncocta-av");
+    var ax = 3 * a;
+    var A = 6*a*a * (1 + 2*Math.sqrt(2));
+    var V = 8*a*a*a * Math.sqrt(2);
+    var rc = a/2*Math.sqrt(10);
+    var rm = 3/2*a;
+    if ((!isNaN(a))) {
+        edgeLenOctField.innerHTML = `Edge length octahedron (a') = ${ax.toFixed(3)}`;
+        areaField.innerHTML = `Surface area (A) = ${A.toFixed(3)}`;
+        volField.innerHTML = `Volume (V) = ${V.toFixed(3)}`;
+        cirRadField.innerHTML = `Circumsphere radius (rc) = ${rc.toFixed(3)}`;
+        midRadField.innerHTML = `Midsphere radius (rm) = ${rm.toFixed(3)}`;
+        avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A/V).toFixed(3)}`;
+    }
+}
 
 function solvetruncube() {
     var a = parseInt(document.getElementById("inputtruncubeside").value);
@@ -9379,6 +10395,25 @@ function cubosolve() {
         diagoutput.innerHTML = "";
     }
 }
+//Triangular cupola
+function solvetricupola() {
+    let a = document.getElementById("inputtricupolaedge").value;
+    let areaoutput = document.getElementById("resultoftricupolaarea");
+    let voloutput = document.getElementById("resultoftricupolavol");
+    var areatemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline (3 + \\frac{5 \\sqrt{3}}{2}) \\space (" + a + ")^2" + "\\ = " + eval(String(7.330127 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline \\frac{5}{(3 \\sqrt{2})} \\space (" + a + ")^3" + "\\ = " + eval(String(1.1785113 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput); 
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
 //Partial Right Cylinder
 function solvepartialcy() {
     var height = document.getElementById("inputcyh").value;
@@ -9492,6 +10527,73 @@ function solvehalfcy() {
         renderMathInElement(taoutput);
         diatemp += "\\[d \\space = \\sqrt{" + h + "^2 + " + r + "^2 }" + "\\]";
         diatemp += "\\[Volume \\space diagonal \\space is \\space = \\space " + eval(String((d).toFixed(2))) + "\\]";
+        diaoutput.innerHTML = diatemp;
+        renderMathInElement(diaoutput);
+    }
+    else {
+        volumeoutput.innerHTML = "";
+        laoutput.innerHTML = "";
+        diaoutput.innerHTML = "";
+        taoutput.innerHTML = "";
+    }
+}
+// Double Calotte
+function solvedoucalotte() {
+    let r = document.getElementById("inputdoucalsphrad").value;
+    let h = document.getElementById("inputdoucalhei").value;
+    let widthoutput = document.getElementById("resultofdoucalwidth");
+    let areaoutput = document.getElementById("resultofdoucalarea");
+    let voloutput = document.getElementById("resultofdoucalvol");
+    var widthtemp = "";
+    var areatemp = "";
+    var voltemp = "";
+    if ((r != "") && (h != "") ) {
+        widthtemp += "\\[Width \\space \\newline 2 \\sqrt{\\frac{" + h  + "}{2} \\space ( 2 (" + r + ") - \\frac{" + h  + "}{2})}" + "\\ = " + eval(String( 2 * (math.sqrt( (parseFloat(h)/2) * ((2 * parseFloat(r))- (parseFloat(h)/2))  )  ) )).toFixed(2) + "\\]";
+        widthoutput.innerHTML = widthtemp;
+        areatemp += "\\[Surface \\space area \\space \\newline 2 (3.14) (" + r + ")(" + h + ")" + "\\ = " + eval(String(2 * 3.141592653589 * parseFloat(r) * parseFloat(h))).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline \\frac{π}{6} ( 3 (" + r + ") - \\space \\frac{" + h + "}{2}) \\space (" + h + ")^2" + "\\ = " + eval(String( 0.523598776 * ( (3 * parseFloat(r)) - (parseFloat(h)/2) ) * parseFloat(h) * parseFloat(h)   )).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(widthoutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+    } else {
+        widthoutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
+
+function solvediagcy() {
+    var h = document.getElementById("inputdiaghalfcyh").value;
+    var r = document.getElementById("inputdiaghalfcyr").value;
+    var volumeoutput = document.getElementById("resultofdiaghalfcyvol");
+    var laoutput = document.getElementById("resultofdiaghalfcyla");
+    var taoutput = document.getElementById("resultofdiaghalfcyba");
+    var diaoutput = document.getElementById("resultofdiaghalfcydia");
+    var voltemp = "";
+    var latemp = "";
+    var tatemp = "";
+    var diatemp = "";
+    var vol = 0.5 * 3.14 * r * r * h;
+    var lateral = 3.14 * r * h;
+    var d = Math.sqrt((h * h) + (2*2*r * r)).toFixed(2);
+    var area = (3.14 * r * (h + r+ (d*0.5))) ;
+    if ((h != "") && (r != "")) {
+        voltemp += "\\[V \\space = \\space \\frac{ \\pi \\times " + r + "\\times" + r + "\\times" + h + "}{2}" + "\\]";
+        voltemp += "\\[Volume \\space is \\space : \\space " + eval(String((vol).toFixed(2))) + "\\]";
+        volumeoutput.innerHTML = voltemp;
+        renderMathInElement(volumeoutput);
+        latemp += "\\[L \\space = \\pi \\times" + r + "\\times" + h + "\\]";
+        latemp += "\\[Lateral \\space Area \\space is \\space = \\space " + eval(String((lateral).toFixed(2))) + "\\]";
+        laoutput.innerHTML = latemp;
+        renderMathInElement(laoutput);
+        tatemp += "\\[A \\space = \\pi \\times " + r + "\\times" + "(" + h + "+" + r + " + \\frac{" + d + "}{2})" + "\\]";
+        tatemp += "\\[Surface \\space Area \\space is \\space = \\space " + eval(String((area).toFixed(2))) + "\\]";
+        taoutput.innerHTML = tatemp;
+        renderMathInElement(taoutput);
+        diatemp += "\\[d \\space = \\sqrt{" + h + "^2 + (2 \\times " + r + "^2 )}" + "\\]";
+        diatemp += "\\[Volume \\space diagonal \\space is \\space = \\space " + eval(String((d))) + "\\]";
         diaoutput.innerHTML = diatemp;
         renderMathInElement(diaoutput);
     }
@@ -10174,6 +11276,31 @@ function octpyramidsolve() {
         tsaoutput.innerHTML = "";
         lsaoutput.innerHTML = "";
 
+    }
+}
+//Elongated pentagonal bipyramid
+function solvepentelongbipy() {
+    let a = document.getElementById("inputpentelongbipyedge").value;
+    let heioutput = document.getElementById("resultofpentelongbipyhei");
+    let areaoutput = document.getElementById("resultofpentelongbipyarea");
+    let voloutput = document.getElementById("resultofpentelongbipyvol");
+    var areatemp = "";
+    var heitemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline (\\frac{5 \\sqrt{3}}{2} + 5) \\space (" + a + ")^2" + "\\ = " + eval(String(9.330127 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        heitemp += "\\[Height \\space \\newline ( 2 \\space \\sqrt{\\frac{(5 - \\sqrt{5})}{10} + 1}) \\space" + a + "\\ = " + eval(String(2.0514622 * a)).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        voltemp += "\\[Volume \\space \\newline (\\frac{(5 + \\sqrt{5})}{12} + \\frac{\\sqrt{25 + 10 \\sqrt{5}}}{4}) \\space (" + a + ")^3 \\space \\newline" + "\\ = " + eval(String(2.3234831 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(heioutput);
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        heioutput.innerHTML = "";
+        voloutput.innerHTML = "";
     }
 }
 //Pentagonal Pyramid
@@ -11077,6 +12204,45 @@ function solveanticone() {
     } else {
         voloutput.innerHTML = "";
         areaoutput.innerHTML = "";
+    }
+
+}
+
+function solvetrunanticone() {
+    var r = document.getElementById("inputtrunanticonerad").value;
+    var h = document.getElementById("inputtrunanticoneheight").value;
+    var i = document.getElementById("inputtrunanticonei").value;
+    var voloutput = document.getElementById("resultoftrunanticonevol");
+    var areaoutput = document.getElementById("resultoftrunanticonearea");
+    var radoutput = document.getElementById("resultoftrunanticonerad");
+    var thickoutput = document.getElementById("resultoftrunanticonethick");
+    var areatemp = "";
+    var voltemp = "";
+    var radtemp = "";
+    var thicktemp = "";
+    var w=(r)/(i)*h;
+    var s=r-w;
+    var area= 3.14*[(2*r*h)+((r+s)*Math.sqrt(h^2+w^2)) + (r*r) - (s*s)];
+    var vol= 3.14*h*[(r*r)-((r*r)+(r*s)+(s*s))/3];
+    if ((r != "") && (h != "") && (i != "")) {
+        voltemp += "\\[Volume \\space is \\space \\newline" + "\\pi \\times" + h + "[" + r + "^2" + "-(" + r + "^2+" + r + "\\times" + s + "+" + s + "^2)/3]" + "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Surface \\space Area \\space is \\space  \\newline" + "\\pi \\times [2\\times" + r + "\\times" + h + "+(" + r + "+" + s + ") * \\sqrt{" + h + "^2 +" + w + "^2} + " + r + "^2-" + s + "^2]" + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        radtemp += "\\[Radius \\space bottom \\space opening \\space is \\space  \\newline" + r + "-" + "\\frac{" + r + "}{" + i  + "}\\times" + h + "\\ = " + eval(String(s)).toFixed(2) + "\\]";
+        radoutput.innerHTML = radtemp;
+        thicktemp += "\\[Wall \\space bottom \\space thickness \\space is  \\newline" + "\\frac{" + r + "}{" + i  + "}\\times" + h + "\\ = " + eval(String(w)).toFixed(2) + "\\]";
+        thickoutput.innerHTML = thicktemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+        renderMathInElement(radoutput);
+        renderMathInElement(thickoutput);
+
+    } else {
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+        radoutput.innerHTML = "";
+        thickoutput.innerHTML = "";
     }
 
 }
@@ -13656,8 +14822,16 @@ function cirinsemi5find() {
 function cirinsemi6find() {
     let l = parseInt(document.getElementById("cirinsemi6in").value)
     let b = parseInt(document.getElementById("cirinsemi7in").value)
-    var r = ((l * b) / (2 * Math.sqrt((Math.pow(l, 2) + Math.pow(b, 2)))));
-    document.getElementById("cirinsemi6ans").innerHTML = r;
+    if(!isNaN(l)||!isNaN(b)){
+        var r = ((l * b) / (2 * Math.sqrt((Math.pow(l, 2) + Math.pow(b, 2)))));
+        document.getElementById("cirinsemi6exp").innerHTML = "\\[From the figure, it is clear that diagonals, x & y, are equal to the length and breadth of the rectangle. \\]"
+        document.getElementById("cirinsemi6exp").innerHTML = "\\[ radius of the circle, r, inside a rhombus is = xy/2√(x^2+y^2). \\]"
+        document.getElementById("cirinsemi6exp").innerHTML = "\\[radius of the circle in terms of l & b is = lb/2√(l^2+b^2).\\]"
+        document.getElementById("cirinsemi6ans").innerHTML = r;
+        renderMathInElement(document.getElementById("cirinsemi6exp"))
+    }
+    else
+        document.getElementById("cirinsemi6ans").innerHTML = "Please enter valid input"
 }
 
 function regpoly() {
@@ -13760,7 +14934,8 @@ function cirinsemi11find(){
     let N = n * 1.0;
     let M = m * 1.0;
     let h = H * Math.sqrt(N / (N + M));
-    document.getElementById("cirinsemi11ans").innerHTML = h;
+    document.getElementById("cirinsemi11ans").innerHTML ="\\["+h.toFixed(3)+"\\]"+"\\[Height \\space for \\space cut \\space = H*\\sqrt{\\frac{n}{n+m}}  \\newline \\space \\space ="+H+"*\\sqrt{\\frac{"+n+"}{"+n+"+"+m+"}}="+H+"*"+Math.sqrt(N / (N + M))+"="+h.toFixed(3)+"\\]";
+    renderMathInElement(document.getElementById("cirinsemi11ans"));
 }
 
 function countinfind(){
@@ -13869,7 +15044,13 @@ function sht6find() {
     let a = parseInt(document.getElementById("sht6in").value)
     if (!isNaN(a)) {
         var area = Math.sqrt(a) / 6;
+        document.getElementById("sht6exp").innerHTML = "\\[let r be the radius of circle, \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[hence it is the inradius of equilateral triangle, so r = a /(2 * √3) \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[diagonal of square, d = diameter of circle = 2 * r = a/ √3 \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[So, area of square, A = 0.5 * d * d \\]"
+        document.getElementById("sht6exp").innerHTML = "\\[hence A = (1/2) * (a^2) / (3) = (a^2/6)\\]"
         document.getElementById("sht6ans").innerHTML = area;
+        renderMathInElement(document.getElementById("sht6exp"));
     }
     else {
         document.getElementById("sht6ans").innerHTML = "Please enter valid input"
@@ -13900,18 +15081,29 @@ function eqrect() {
 
 function retfind13() {
     let a = parseFloat(document.getElementById("retin16").value)
+    var output =  document.getElementById("retans16");
+    var ans = "";
     let x = 1.268 * a;
+    let x1 = x**2;
     let area = 0.70477 * Math.pow(x, 2);
     if (a < 0) {
-        document.getElementById("retans16").innerHTML = "side length cannot be negative"
+        ans += "\\[side \\space length \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
     }
     else if (!isNaN(a)) {
-        document.getElementById("retans16").innerHTML = area.toFixed(4);
+        ans += "\\[Area \\space of \\space the \\space Reuleaux \\space Triangle (A) \\space = \\space \\frac{(π - \\sqrt{3}) \\times h^{2}}{2} \\space = \\space 0.70477 \\times h^{2} \\]"
+        ans += "\\[Length \\space of \\space the \\space side \\space of \\space inscribed \\space Square \\space is \\space x, \\space then \\]"
+        ans += "\\[ x \\space = \\space  1.268 \\times a \\]"
+        ans += "\\[Height \\space of \\space the \\space Reuleaux \\space Triangle \\space is \\space same \\space as \\space 1.268 \\times a  \\space so, \\space h \\space = \\space 1.268 \\times a \\]"
+        ans += "\\[A \\space = \\space 0.70477 \\times x^{2} \\space =  \\space 0.70477  \\times  (1.268 \\times " + a + ")^{2} \\space =  \\space 0.70477 \\times "  + x.toFixed(3) + "^{2}  \\space =  \\space 0.70477 \\times " + (x1).toFixed(3) + " \\space =  \\space " + area.toFixed(3) + " \\]" 
+        output.innerHTML = ans;
     }
     else {
-        document.getElementById("retans16").innerHTML = "Please enter valid input"
+        ans += "\\[Please \\space enter \\space valid \\space input \\]"
+        output.innerHTML = ans;
     }
-}
+    renderMathInElement(output);
+    }
 
 function trirect() {
     let l = parseFloat(document.getElementById("trirect1").value)
@@ -13937,6 +15129,36 @@ function trirect() {
    renderMathInElement(output);
 }
 
+
+function minarfind() {
+    let l = parseFloat(document.getElementById("minar1").value)
+    let b = parseFloat(document.getElementById("minar2").value)
+    var output = document.getElementById("minarans")
+    var ans = ""
+    if (l < 0 || b < 0) {
+        ans += "\\[Length \\space and \\space Breadth \\space of \\space a \\space Rectangle \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
+    }
+    else if (!isNaN(l) && !isNaN(b) ) {
+        let large = Math.max(l, b);
+        let small = Math.min(l, b);
+       
+        if (large >= 2 * small)
+        {
+            ans+=large * large;
+        }
+        else
+        {
+            ans+=(2 * small) * (2 * small);
+        } 
+        output.innerHTML = ans; 
+    }
+    else {
+            ans += "\\[Please \\space enter \\space all \\space input \\]"
+            output.innerHTML = ans;
+    }
+    renderMathInElement(output);
+}
 function receq1() {
     let n = parseInt(document.getElementById("receq1").value)
     var output = document.getElementById("receq1ans")
@@ -14004,6 +15226,15 @@ function gammafind() {
     let inpu = document.getElementById("gammain").value
     let ans = math.gamma(inpu)
     document.getElementById("gammafindans").innerHTML = "The gamma is " + ans
+}
+
+function calcexgolds1find(){
+    var a = document.getElementById("golds1");
+    var b = document.getElementById("golds2");
+    a.value = 61.77;
+    b.value = 38.22;
+
+    golds1find();
 }
 
 function golds1find() {
@@ -14098,6 +15329,14 @@ function nrec() {
     }
   renderMathInElement(output);
 }
+
+function calcexgolds2find(){
+    var a = document.getElementById("golds3");
+    a.value = 9;
+
+    golds2find();
+}
+
 function golds2find() {
     var a = document.getElementById("golds3").value;
     var output = document.getElementById("golds2exp");
@@ -14125,6 +15364,15 @@ function golds2find() {
         output.innerHTML = temp;
     }
     renderMathInElement(output);
+}
+
+function calcexgolds3find(){
+    var a = document.getElementById("golds4");
+    var b = document.getElementById("golds5");
+    a.value = 2.414;
+    b.value = 1;
+
+    golds3find();
 }
 
 function golds3find() {
@@ -14155,6 +15403,31 @@ function golds3find() {
     }
     else 
         document.getElementById("golds3ans").innerHTML = "Not a Valid Input"
+}
+
+function gold4find(){
+    let n = document.getElementById("golds6").value
+    for (let i = 0; i < n; i++)
+        document.getElementById("golds4ans").innerHTML = catalan(i) + " " ;
+}
+function catalan(n)
+{
+    c = binomialCoeff(2 * (n), n);
+    return Math.floor(c / (n + 1));
+}
+
+function binomialCoeff(n, k)
+{
+    let res = 1;
+    if (k > n - k)
+        k = n - k;
+    for (let i = 0; i < k; ++i)
+    {
+        res *= (n - i);
+        res = Math.floor(res / (i + 1));
+    }
+ 
+    return res;
 }
 
 // profit/loss calculations over discount
@@ -14422,14 +15695,12 @@ function solveperper() {
 //Print tetrahedral numbers upto Nth term
 
 function typenumfind() {
-    let n = document.getElementById("typenum0").value;
+    let n = parseInt(document.getElementById("typenum0").value);
     var ans = "\\[";
     var explain = "\\[N-th \\space tetrahedral \\space number =\\frac{N*(N+1)*(N+2)}{6}\\]" + "\\[";
-    if (n == "") {
-        ans += "Please enter number to find answer";
-    }
-    else {
-        n = parseInt(n);
+    var result = document.getElementById("typenumans1")
+    var ans1 = ""
+    if (!isNaN(n)) {
         var prev = 0;
         var curr;
         for (var i = 1; i <= n; i++) {
@@ -14443,43 +15714,27 @@ function typenumfind() {
         explain += "\\]";
         ans += "\\]";
         document.getElementById("typenumans").innerHTML = ans + explain;
-        renderMathInElement(document.getElementById("typenumans"));
+        ans1 += "";
+        result.innerHTML = ans1;
+
     }
-}
-function typenumfind() {
-    let n = document.getElementById("typenum0").value;
-    var ans = "\\[";
-    var explain = "\\[N-th \\space tetrahedral \\space number =\\frac{N*(N+1)*(N+2)}{6}\\]" + "\\[";
-    if (n == "") {
-        ans += "Please enter number to find answer";
+    else{
+            ans1 += "\\[Please \\space enter \\space all \\space Input \\]"
+            result.innerHTML = ans1;
+            document.getElementById("typenumans").innerHTML = ""
+
     }
-    else {
-        n = parseInt(n);
-        var prev = 0;
-        var curr;
-        for (var i = 1; i <= n; i++) {
-            curr = findTriangularNumber(i);
-            explain += "(\\frac{" + i + "*" + (i + 1) + "*" + (i + 2) + "}{6}=";
-            curr = prev + curr;
-            ans += curr + "\\space \\space ";
-            explain += curr + ")\\space ";
-            prev = curr;
-        }
-        explain += "\\]";
-        ans += "\\]";
-        document.getElementById("typenumans").innerHTML = ans + explain;
-        renderMathInElement(document.getElementById("typenumans"));
-    }
+    renderMathInElement(document.getElementById("typenumans"));
+    renderMathInElement(result);
 }
 //Print pentatope numbers upto Nth term
 function typenum1find() {
     let n = parseInt(document.getElementById("typenum1").value)
     var ans = "\\[";
     var explain = "\\[N-th \\space pentatope \\space number =\\frac{N*(N+1)*(N+2)*(N+3)}{24}\\]" + "\\[";
-    if (n == "") {
-        ans += "Please enter number to find answer";
-    }
-    else {
+    var result = document.getElementById("typenumans2")
+    var ans1 = ""
+    if (!isNaN(n)) {
         let prev = 0;
         let curr;
         for (let i = 1; i <= n; i++) {
@@ -14490,12 +15745,22 @@ function typenum1find() {
             explain += curr + ")\\space ";
             prev = curr;
         }
-    }
     explain += "\\]";
     ans += "\\]";
     document.getElementById("typenum1ans").innerHTML = ans + explain;
-    renderMathInElement(document.getElementById("typenum1ans"));
+    ans1 += "";
+    result.innerHTML = ans1;
+    
+    }
+    else{
+        ans1 += "\\[Please \\space enter \\space all \\space Input \\]"
+        result.innerHTML = ans1;
+        document.getElementById("typenum1ans").innerHTML = "";
 }
+renderMathInElement(document.getElementById("typenum1ans"));
+renderMathInElement(result);
+}
+
 //Hardy-Ramanujan Theorem
 function typenum2find() {
 
@@ -14556,6 +15821,9 @@ function divSums(n) {
 function typenum4find() {
     let N = parseInt(document.getElementById("typenum5").value)
     let s=0;
+    var result = document.getElementById("typeans4")
+    var ans1 = ""
+    if(!isNaN(N)){
     var ans="\\[Amicable \\space Number \\space in \\space this \\space range: \\space";
     var ans2="\\[Sum:\\space";
     for (let i = 2; i <= N; i++) {
@@ -14572,8 +15840,19 @@ function typenum4find() {
     ans+="\\]";
     ans2+="="+s+"\\]";
     document.getElementById("typenum4ans").innerHTML = "\\[Sum \\space of \\space Amicable \\space Numbers \\space upto \\space n:"+s+" \\]"+ans+ans2;
-    renderMathInElement(document.getElementById("typenum4ans"))
+    renderMathInElement(document.getElementById("typeans4"))
+    ans1 += "";
+    result.innerHTML = ans1;
 }
+else{
+        ans1 += "\\[Please \\space enter \\space all \\space Input \\]"
+        result.innerHTML = ans1;
+        document.getElementById("typenum1ans").innerHTML = "";
+}
+renderMathInElement(document.getElementById("typenum1ans"));
+renderMathInElement(result);
+}
+
 //Sum of Fibonacci numbers at even indexes upto N terms
 function typenum6find() {
     let n = parseInt(document.getElementById("typenum7").value)
@@ -14635,12 +15914,15 @@ function typenum8find() {
 
 function typenum9find() {
     let n = parseInt(document.getElementById("typenum11").value)
+    var result = document.getElementById("typenum9exp")
+    var ans1 = ""
     if(!isNaN(n)){
-        document.getElementById("typenum9exp").innerHTML = "\\[The\\space Fibonacci\\space numbers\\space are\\space the\\space numbers\\space in\\space the\\space following\\space integer\\space sequence. \\]"
-        document.getElementById("typenum9exp").innerHTML = "\\[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …. \\]"
-        document.getElementById("typenum9exp").innerHTML = "\\[The\\space even\\space number\\space Fibonacci\\space sequence \\space is,\\space 0, 2, 8, 34, 144, 610, 2584…. \\]"
-        document.getElementById("typenum9exp").innerHTML = "\\[If\\space we\\space take\\space a\\space closer\\space look\\space at\\space Fibonacci\\space sequence,\\space we\\space can\\space notice\\space that\\space every\\space third\\space number\\space in sequence\\space is even\\space and\\space the sequence\\space of evenv numbers follow\\space following\\space recursive\\space formula. \\]"
-        renderMathInElement(document.getElementById("typenum9exp"))
+        ans1 += "\\[The\\space Fibonacci\\space numbers\\space are\\space the\\space numbers\\space in\\space the\\space following\\space integer\\space sequence. \\]"
+        ans1 += "\\[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …. \\]"
+        ans1 += "\\[The\\space even\\space number\\space Fibonacci\\space sequence \\space is,\\space 0, 2, 8, 34, 144, 610, 2584…. \\]"
+        ans1 += "\\[If\\space we\\space take\\space a\\space closer\\space look\\space at\\space Fibonacci\\space sequence,\\space we\\space can\\space notice\\space that\\space every\\space third\\space number\\space in sequence\\space is even\\space and\\space the sequence\\space of evenv numbers follow\\space following\\space recursive\\space formula. \\]"
+       result.innerHTML = ans1;
+       renderMathInElement(result)
         if (n < 1)
             document.getElementById("typenum9ans").innerHTML = n;
         if (n == 1)
@@ -14651,6 +15933,8 @@ function typenum9find() {
     }
     else 
         document.getElementById("typenum9ans").innerHTML = "Please fill the field"
+        ans1 += "";
+        result.innerHTML = ans1;
 }
 
 function typenum10find() {
@@ -14678,6 +15962,9 @@ function typenum11find() {
 
 function typenum13find() {
     var n = parseInt(document.getElementById("typenum16").value)
+    var result = document.getElementById("typenumans131")
+    var ans1 = ""
+    if(!isNaN(n)){
     let dp = [];
     var explain="\\[Leonardo \\space Number(n)=1 \\space for \\space n=1 \\space \\space L(n-1)+L(n-2)+1 \\space for \\space n>1  \\]"+"\\[Leonardo \\space series \\space  upto \\space n :1 \\space,1 \\space ,";
     dp[0] = dp[1] = 1;
@@ -14693,7 +15980,16 @@ function typenum13find() {
         explain+="\\["+n+"th \\space Leonardo \\ Number is =L("+n+"-1)+L("+n+"-2)+1=L("+(n-1)+")+L("+(n-2)+")+1="+dp[n-1]+"+"+dp[n-2]+"+1="+dp[n]+"\\]";
     
     document.getElementById("typenum13ans").innerHTML ="\\["+n+"th \\space Leonardo \\space Number \\space is:"+dp[n]+"\\]"+explain;
-    renderMathInElement(document.getElementById("typenum13ans"))
+    ans1 += "";
+    result.innerHTML = ans1;
+    }
+    else{
+        ans1 += "\\[Please \\space enter \\space all \\space Input \\]"
+        result.innerHTML = ans1;
+        document.getElementById("typenum13ans").innerHTML = "";
+}
+renderMathInElement(document.getElementById("typenum13ans"));
+renderMathInElement(result);
 }
 
 function typenum12find() {
@@ -14755,22 +16051,35 @@ let arr = Array(1001).fill(true);
 function typenum15find()
 {
     var n = parseInt(document.getElementById("typenum18").value)
+    var result = document.getElementById("typenum15ans1")
+    var ans1 = ""
     if(!isNaN(n)){
         simpleSieve();
         var ans = find_sphene(n);
-        if (ans == 1)
+        if (ans == 1){
             document.getElementById("typenum15ans").innerHTML  =  "Yes"
-        else
-            document.getElementById("typenum15ans").innerHTML  =  "NO"
-        document.getElementById("typenum15exp").innerHTML = "\\[A Sphenic Number is a positive integer n which is product of exactly three distinct primes. \\]"
-        document.getElementById("typenum15exp").innerHTML = "\\[The first few sphenic numbers are 30, 42, 66, 70, 78, 102, 105, 110, 114, … \\]"
-        document.getElementById("typenum15exp").innerHTML = "\\[Sphenic number can be checked by fact that every sphenic number will have exactly 8 divisor SPHENIC NUMBER \\]"
-        renderMathInElement(document.getElementById("typenum15exp"))
+            ans1 +=  "\\[A \\space Sphenic \\space Number \\space is \\space a \\space positive \\space integer \\space n \\space which \\space is \\space product \\space of \\space exactly \\space three \\space distinct \\space primes. \\]"
+            ans1 += "\\[The \\space first \\space few \\space sphenic \\space numbers \\space are \\space 30, \\space 42, \\space 66, \\space 70, \\space 78, \\space 102, \\space 105, \\space 110,\\space 114, \\space … \\]"
+            ans1 += "\\[Sphenic \\space number \\space can \\space be \\space checked \\space by \\space fact \\space that \\space every \\space sphenic \\space number \\space will \\space have \\space exactly \\space 8 \\space divisor \\space SPHENIC \\space NUMBER \\]"
+           result.innerHTML = ans1;
+        }
+        else{
+        document.getElementById("typenum15ans").innerHTML  =  "NO"
+        ans1 +=  "\\[A \\space Sphenic \\space Number \\space is \\space a \\space positive \\space integer \\space n \\space which \\space is \\space product \\space of \\space exactly \\space three \\space distinct \\space primes. \\]"
+        ans1 += "\\[The \\space first \\space few \\space sphenic \\space numbers \\space are \\space 30, \\space 42, \\space 66, \\space 70, \\space 78, \\space 102, \\space 105, \\space 110,\\space 114, \\space … \\]"
+        ans1 += "\\[Sphenic \\space number \\space can \\space be \\space checked \\space by \\space fact \\space that \\space every \\space sphenic \\space number \\space will \\space have \\space exactly \\space 8 \\space divisor \\space SPHENIC \\space NUMBER \\]"
+       result.innerHTML = ans1;
+        }
     }
-    else 
+    else {
         document.getElementById("typenum15ans").innerHTML  = "Please enter valid input"
+        ans1 += "";
+        result.innerHTML = ans1;
+    }
+    renderMathInElement(result);
 }
 
+    
 
 
 function simpleSieve(){
@@ -14800,6 +16109,9 @@ function find_sphene(N) {
 function typenum14find() {
     var s = parseInt(document.getElementById("typenum17").value)
     var n = parseInt(document.getElementById("typenum172").value)
+    var result = document.getElementById("typenum14ans11")
+    var ans1 = ""
+    if(!isNaN(s) && !isNaN(n)){
     var ans="\\[";
     var explain="\\[n-th \\space term \\space of \\space s-gonal \\space number \\space is \\space given \\space as:\\frac{(s-2)n(n-1)}{2}\\]"+"\\[where, \\space s=number \\space of \\space sides \\space in \\space polygon \\space and \\space n=\\space term \\space of \\space s-gonal \\space number\\]"+"\\[";
     for (var i = 1; i <= n; i++) {
@@ -14818,7 +16130,16 @@ function typenum14find() {
     ans+="\\]";
     explain+="\\]";
     document.getElementById("typenum14ans").innerHTML=ans+explain;
-    renderMathInElement(document.getElementById("typenum14ans")) ;
+    ans1 += "";
+    result.innerHTML = ans1;
+}
+else{
+        ans1 += "\\[Please \\space enter \\space all \\space Input \\]"
+        result.innerHTML = ans1;
+        document.getElementById("typenum14ans").innerHTML = "";
+}
+renderMathInElement(document.getElementById("typenum14ans"));
+renderMathInElement(result);
 }
 function kaprekarRec(n, prev) {
     if (n == 0)
@@ -14874,6 +16195,8 @@ function typenum3find() {
     if (x == "" || y == "") {
         document.getElementById("typenum3ans").innerHTML = "\\[Please \\space enter \\space all \\space the \\space field \\space to \\space find \\space answer\\]";
         renderMathInElement(document.getElementById("typenum3ans"));
+        document.getElementById("typenum3ex").innerHTML = "";
+        renderMathInElement(document.getElementById("typenum3ex"))
     }
     else {
         let x = parseInt(document.getElementById("typenum3").value)
@@ -14929,6 +16252,37 @@ function findTriangularNumber(n) {
 
 function findTetrahedralNumber(n) {
     return ((n * (n + 1) * (n + 2)) / 6);
+}
+
+function typenum20find(){
+    var n = document.getElementById('typenum30').value;
+    var  prime=Array.from({length: n+1},
+        (_, i) => true);
+
+    for (p = 2; p * p <= n; p++){
+        if (prime[p] == true){
+            for (i = p * 2; i <= n; i += p)
+                prime[i] = false;
+        }
+    }
+    for (p = 2; p <= n; p++){
+        if (prime[p]){
+            var rev = reverse(p);
+            if (p != rev && rev <= n &&prime[rev]){
+                document.getElementById('typenum20ans').innerHTML = p + " " + rev + " ";
+                prime[rev] = false;
+            }
+        }
+    }
+}
+
+function reverse(x){
+    var rev = 0;
+    while (x > 0){
+        rev = (rev * 10) + x % 10;
+        x = parseInt(x / 10);
+    }
+    return rev;
 }
 
 
@@ -15162,6 +16516,9 @@ function nap() {
     var p = document.getElementById("nAPseries2")
     var temp = ""
 
+
+
+
     if (isNaN(parseInt(n)) || isNaN(parseInt(a)) || isNaN(parseInt(b))) {
 
         temp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
@@ -15169,7 +16526,11 @@ function nap() {
         renderMathInElement(p);
         return;
     }
+
     
+
+
+
     else{
         var d = (b - a) / (n + 1);
     for (var i = 1, series = "", num = 0; i <= n; i++) {
@@ -15186,6 +16547,10 @@ function nap() {
     p.innerHTML = temp;
     renderMathInElement(p);
     }
+
+
+    
+
 
 }
 //Constant/Increasing/Decreasing AP
@@ -15273,6 +16638,16 @@ function apgphp() {
     renderMathInElement(output);
 }
 //Constant/Increasing/Decreasing GP
+function calcexconstGp(){
+    var a = document.getElementById("term151");
+    var b = document.getElementById("term152");
+
+    a.value = 2;
+    b.value = 4;
+
+    constGp();
+}
+
 function constGp() {
     var a = parseInt(document.getElementById("term151").value)
     var b = parseInt(document.getElementById("term152").value)
@@ -15312,6 +16687,15 @@ function constGp() {
     renderMathInElement(output);
 }
 //Insert n-Geometric Mean between two numbers
+function calcexngp(){
+    var n = document.getElementById("nt2");
+    var a = document.getElementById("ft2");
+    var b = document.getElementById("lt2");
+    n.value = 3;
+    a.value = 2;
+    b.value = 32;
+    ngp();
+}
 function ngp() {
     var n = parseInt(document.getElementById("nt2").value)
     var a = parseInt(document.getElementById("ft2").value)
@@ -15327,7 +16711,10 @@ function ngp() {
         renderMathInElement(p);
         return;
     }
+
     
+
+
     else{
         var d = Math.pow((b / a), 1 / (n + 1))
     for (var i = 1, series = "", num = 0; i <= n; i++) {
@@ -15349,6 +16736,12 @@ function ngp() {
     }
 }
 //Insert n-Harmonic Mean between two numbers
+function calcexnhp(){
+    var n = document.getElementById("nt3").value = 5;
+    var a = document.getElementById("ft3").value = 2;
+    var b = document.getElementById("lt3").value = 3;
+    nhp();
+}
 function nhp() {
     var n = parseInt(document.getElementById("nt3").value)
     var a = parseInt(document.getElementById("ft3").value)
@@ -15386,15 +16779,21 @@ function apsum() {
             document.getElementById("printAP").innerHTML = "Invalid AP"
         }
         else {
+            let steps = "";
+            steps += "\\[Calculate\\space difference(d)=\\space "+val[1]+" - "+val[0]+" \\]";
+            steps += "\\[Sum\\of\\space AP\\space=\\space \\frac{n}{2} \\times (2\\times a + (n-1)\\times d)\\]";
+            steps += "\\[Sum\\of\\space AP\\space=\\space \\frac{"+n+"}{2} \\times (2\\times "+val[0]+" + ("+n+"-1)\\times "+d+")\\]";
             var d = val[1] - val[0];
-            document.getElementById("printAP").innerHTML = "Common difference for the entered AP is &nbsp;" + d + "<br>";
+            
             for (i = 0; i < n; i++) {
                 document.getElementById("printAP").innerHTML += eval(String(i + "*" + d + "+" + val[0])) + ",";
                 s = eval(String(s + "+" + i + "*" + d + "+" + val[0]))
             }
-            document.getElementById("printAP").innerHTML += "<br>The Sum of &nbsp;" + n + "&nbsp; terms of the given AP is &nbsp;" + s;
+            steps += "\\[Sum\\of\\space AP\\space=\\space "+s+"\\]";
+            document.getElementById("printAP").innerHTML = steps;
         }
     }
+    renderMathInElement(document.getElementById("printAP"))
 }
 //Mean Calculators
 function calcexamsol(){
@@ -15465,12 +16864,30 @@ function mnapsum() {
     var mtherm = parseFloat(document.getElementById("mthterm").value)
     var ntherm = parseFloat(document.getElementById("nthterm").value)
     var pterm = parseFloat(document.getElementById("pterm").value)
+    var output = document.getElementById("printmnAP");
+    var ans = "";
     var d = ((Math.abs(mtherm - ntherm)) / Math.abs((m - 1) - (n - 1)));
     var a = (mtherm - ((m - 1) * d));
     var sum = (pterm * (2 * a + (pterm - 1) * d)) / 2;
-    document.getElementById("printmnAP").innerHTML = sum
+    if(!isNaN(m) && !isNaN(n) && !isNaN(mtherm) && !isNaN(ntherm) && !isNaN(pterm)){
+        ans += "\\[Let \\space a \\space be \\space the \\space First \\space Term \\space and \\space d \\space be \\space the \\space Common \\space Difference \\space of \\space an \\space AP  \\]"
+        ans += "\\[mth \\space term \\space = \\space a + (m - 1)d \\]"
+        ans += "\\[mth \\space term \\space = \\space a + (n - 1)d \\]"
+        ans += "\\[a \\space = \\space   (  mth  - (( m - 1 ) \\times d )) \\space = \\space ( " + mtherm + " -(( " + m + " - 1 ) \\times " + d + ")) \\space  =  \\space " + a + " \\]"
+        ans += "\\[d  \\space = \\space | \\frac{  mth -  nth }{ (m - 1)  -  (n - 1) } | \\space = \\space | \\frac{ " + mtherm + "-" + ntherm + "}{" + (m - 1) + " - " + (n - 1) + "} | \\space = \\space " + d + " \\]"
+        ans += "\\[Sum \\space of \\space p \\space terms \\space = \\space \\frac{(p \\times ( 2 \\times a + (p - 1) \\times d ))}{2} \\space = \\space \\frac{(" + pterm + " \\times ( 2 \\times " + a + " + (" + pterm + " - 1) \\times " + d  + "))}{2} \\] "
+        ans += "\\[Sum \\space of \\space p \\space terms \\space is \\space " + sum + " \\]"
+        output.innerHTML = ans; 
+    }
+     else
+        {
+           ans += "\\[Please \\space enter \\space valid \\space input \\]"
+           output.innerHTML = ans;
+        }
+       renderMathInElement(output);
+   }
 
-}
+
 function calcexmnap(){
     var m = document.getElementById("mterm99").value=5;
     var n = document.getElementById("nterm98").value=2;
@@ -15496,7 +16913,21 @@ function mnap() {
 
 }
 
+function calcexmngpsum(){
+    var m = document.getElementById("mterm1");
+    var n = document.getElementById("nterm1");
+    var mtherm = document.getElementById("mthterm1");
+    var ntherm = document.getElementById("nthterm1");
+    var pterm = document.getElementById("pterm1");
 
+    m.value = 10;
+    n.value = 5;
+    mtherm.value = 2560;
+    ntherm.value = 80;
+    pterm.value = 30;
+
+    mngpsum();
+}
 function mngpsum() {
     var m = parseInt(document.getElementById("mterm1").value)
     var n = parseInt(document.getElementById("nterm1").value)
@@ -16795,19 +18226,39 @@ function hypf() {
 }
 //Inequalities of Triangles
 function ineqtrifind() {
-    console.log("Hii")
-    let s1 = parseInt(document.getElementById("ineqtriin1").value)
-    let s2 = parseInt(document.getElementById("ineqtriin2").value)
-    let s3 = parseInt(document.getElementById("ineqtriin3").value)
-    if (s1 + s2 > s3 && s2 + s3 > s1 && s1 + s3 > s2) {
-        if ((Math.abs(s1 - s2)) < s3 && (Math.abs(s2 + s3)) < s1 && (Math.abs(s1 + s3)) < s2) {
-            document.getElementById("ineqtrians").innerHTML = "Yes the triangle with given side lengths can exist"
+    var s1 = parseInt(document.getElementById("ineqtriin1").value)
+    var s2 = parseInt(document.getElementById("ineqtriin2").value)
+    var s3 = parseInt(document.getElementById("ineqtriin3").value)
+    var output = document.getElementById("ineqtrians");
+    var temp = "";
+    temp += "\\[To \\space check \\space the \\space Inequalities \\space of \\space Triangles,\\]"
+    temp += "\\[we \\space check \\space (length \\space of \\space side \\space 1), \\space (length \\space of \\space side \\space 2) \\space and \\space (length \\space of \\space side \\space 3)\\]"
+    temp += "\\[That \\space is \\space here, \\space "+s1+", \\space "+s2+" \\space and \\space "+s3+"\\]"
+    
+    if (!isNaN(s1) && !isNaN(s2) && !isNaN(s3)){
+        if (s1 + s2 > s3 && s2 + s3 > s1 && s1 + s3 > s2) {
+            temp += "\\[Since, \\space here,\\]"
+            temp += "\\["+s1+" + "+s2+" \\space is \\space greater \\space than, \\space "+s3+" \\]";
+            temp += "\\[\\space and, \\space "+s2+" + "+s3+" \\space is \\space greater \\space than, \\space "+s1+"\\]"
+            temp += "\\[\\space and, \\space "+s1+" \\space and \\space  "+s1+" + "+s3+" \\space is \\space greater \\space than, \\space "+s2+"\\]"
+            if ((Math.abs(s1 - s2)) < s3 && (Math.abs(s2 + s3)) < s1 && (Math.abs(s1 + s3)) < s2) {
+                temp +=  "\\[Yes \\space the \\space triangle \\space with \\space given \\space side \\space lengths \\space can \\space exist\\]"
+            } else {
+                temp += "\\[No \\space the \\space triangle \\space with \\space given \\space side \\space lengths \\space cannot \\space exist\\]"
+            }
         } else {
-            document.getElementById("ineqtrians").innerHTML = "No the triangle with given side lengths cannot exist"
+            temp += "\\[Since, \\space here,\\]"
+            temp += "\\["+s1+" + "+s2+" \\space is \\space NOT \\space greater \\space than, \\space "+s3+" \\]";
+            temp += "\\[\\space and, \\space "+s2+" + "+s3+" \\space is \\space NOT \\space greater \\space than, \\space "+s1+"\\]"
+            temp += "\\[\\space and, \\space "+s1+" \\space and \\space  "+s1+" + "+s3+" \\space is \\space NOT \\space greater \\space than, \\space "+s2+"\\]"
+            temp += "\\[Since, \\space the \\space conditions \\space does \\space not \\space satisfy,\\]"
+            temp +="\\[No \\space the \\space triangle \\space with \\space given \\space side \\space lengths \\space cannot \\space exist\\]"
         }
-    } else {
-        document.getElementById("ineqtrians").innerHTML = "No the triangle with given side lengths cannot exist"
+    } else{
+        temp +="\\[Please \\space enter \\space valid \\space input\\]"
     }
+    output.innerHTML = temp;
+    renderMathInElement(output);
 }
 
 //spheroidal cap Calculator added
@@ -16863,6 +18314,32 @@ function solvesphere_shell() {
 
     } else {
         aoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        areaoutput.innerHTML = "";
+    }
+
+}
+
+function solvedoublept() {
+    var r = document.getElementById("inputdoubleptr").value;
+    var a = document.getElementById("inputdoublepta").value;
+    var b = document.getElementById("inputdoubleptb").value;
+    var c = document.getElementById("inputdoubleptc").value;
+    var voloutput = document.getElementById("resultofdoubleptvol");
+    var areaoutput = document.getElementById("resultofdoubleptarea");
+    var areatemp = "";
+    var voltemp = "";
+    var vol = 3.14*r*r*(a+(0.33*b)+(0.33*c));
+    var area=3.14*r*(2*a + Math.sqrt((b*b)+(r*r)) + Math.sqrt((c*c)+(r*r)));
+    if ((a!= "") && (r != "") && (b != "") && (c != "")) {
+        voltemp += "\\[Volume \\space of \\space Double \\space Point \\space \\newline  \\pi \\times" + r + "\\times" + r + "\\times (" + a + "+ \\frac{" + b + "}{3} + \\frac{" + c + "}{3})" + "\\sqrt{" + c + "^2 + " + r + "^2 }" + "\\ = " + eval(String(vol)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        areatemp += "\\[Area \\space of \\space Double \\space Point \\space  \\newline" + "\\pi \\times" + r + "\\times(2" + a + "+" + "\\sqrt{" + b + "^2+" + r +"^2}" + "\\sqrt{" + c + "^2+" + r + "^2})" + "\\ = " + eval(String(area)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(areaoutput);
+
+    } else {
         voloutput.innerHTML = "";
         areaoutput.innerHTML = "";
     }
@@ -17141,6 +18618,14 @@ function cylinderincubefind() {
     renderMathInElement(output);
 }
 
+function cylinderinspherefind() {
+    var r = parseInt(document.getElementById("cylinderinsphere").value)
+    a = r*r*r;
+    var ans = (4 * math.pi * r**3);
+    var v = ans/ (3 * math.sqrt(3));
+    document.getElementById("cylinderinsphereans").innerHTML = v;    
+}
+
 function cubeincylinderfind() {
     let r = parseInt(document.getElementById("cubeincylinder").value)
     let h = parseInt(document.getElementById("cubeincylinder1").value)
@@ -17329,18 +18814,24 @@ function isPrime(n) {
 }
 
 function nextPrime(num) {
+    var ans = document.getElementById("nextPrimeResult");
     if (num <= 1)
-        return 2;
+        nextPrimeResult.innerHTML += "The next prime number of " + num + " is: " + 2 + " since it is the first prime number";
+    else{
     let res = num;
     let isFound = false;
+    nextPrimeResult.innerHTML += "Check whether the next number is prime or not<br>";
     while (!isFound) {
         res++;
-        if (isPrime(res))
+        nextPrimeResult.innerHTML += "The next number is " + res + "<br>";
+        if (isPrime(res)){
             isFound = true;
+            nextPrimeResult.innerHTML += res + " is prime number<br>";
+        }
     }
-    document.getElementById("nextPrimeResult").innerHTML = "The next prime number of " + num + " is: " + res;
+    nextPrimeResult.innerHTML += "Therefore next prime number of " + num + " is: " + res;
+    }
 }
-
 //Sum of divisors Function
 //Sum of divisors Function
 function sumDivisor(num) {
@@ -17625,7 +19116,12 @@ function polymax4find() {
         let s = val;
         res = (N - 1) * (N - 2);
         finalResult = res + s;
+        document.getElementById("polymax4exp").innerHTML = "\\[we are supposed to count the total number of closed loops possible in the given polygon after division.\\]"
+        document.getElementById("polymax4exp").innerHTML = "\\[There will be N cycles already created due to the division of polygon. One out of N blocks will form a cycle with rest (N – 1) blocks.\\]"
+        document.getElementById("polymax4exp").innerHTML = "\\[The remaining (N – 1) blocks will form cycle with other (N – 2) blocks.\\]"
+        document.getElementById("polymax4exp").innerHTML = "\\[Total Cycles = 2 * N – 1) + (N – 1) * (N – 2) \\]"
         document.getElementById("polymax4ans").innerHTML = finalResult;
+        renderMathInElement(document.getElementById("polymax4exp"))
     }
     else {
         document.getElementById("polymax4ans").innerHTML = "Please enter valid input"
@@ -17721,30 +19217,56 @@ function regang() {
 //-------------------------------
 
 function co_prime_calc(){
-    let n = parseInt(document.getElementById("co_num1").value);
-    let m = parseInt(document.getElementById("co_num2").value);
-    const smaller = n > m ? n : m;
-    for(let ind = 2; ind < smaller; ind++){
-      const condition1 = n % ind === 0;
-      const condition2 = m % ind === 0;
-      if(condition1 && condition2){
-         document.getElementById("co_prime_res").innerHTML = "NO the numbers "+n+" and "+m+" are not co-prime";
-      }
-   }
-   document.getElementById("co_prime_res").innerHTML = "YES the numbers "+n+" and "+m+" are co-prime";
+    var n = parseInt(document.getElementById("co_num1").value);
+    var m = parseInt(document.getElementById("co_num2").value);
+    var output = document.getElementById("co_prime_res");
+    var temp = "";
+    if (!isNaN(n) && !isNaN(m)){
+        const smaller = n < m ? n : m;
+        temp += "\\[To \\space check \\space whether \\space two \\space numbers \\space are \\space Co-prime \\space or \\space not \\space we \\space take \\space two \\space numbers,\\]"
+        temp += "\\[Here, \\space we \\space are \\space taking \\space "+n+" \\space and \\space "+m+" \\space and \\space storing \\space the \\space smaller \\space one \\space in \\space smaller \\space variable\\]"
+        temp += "\\[The \\space value \\space of \\space smaller \\space variable \\space here, \\space will \\space be, "+smaller+"\\]"
+        temp += "\\[Then \\space we \\space take \\space a \\space loop \\space from \\space 2 \\space to \\space  smaller \\space i.e. \\space "+smaller+"\\]"
 
+        for(let ind = 2; ind < smaller; ind++){
+        const condition1 = n % ind === 0;
+        const condition2 = m % ind === 0;
+        if(condition1 && condition2){
+            temp += "\\[For \\space "+ind+" \\space value \\space while \\space iterating \\space through \\space the \\space loop, \\]"
+            temp += "\\[Both \\space "+n+" \\space \\% \\space ("+ind+") \\space and \\space "+m+"\\space \\% \\space ("+ind+") \\space equals \\space to \\space 0\\]"
+            temp += "\\[Hence, \\space the \\space numbers \\space "+n+" \\space and \\space "+m+" \\space are \\space NOT \\space Co-prime\\]"
+            output.innerHTML = temp;
+            renderMathInElement(output);
+            return;
+        }
+    }
+    temp += "\\[Since, \\space after \\space iterating \\space over \\space the \\space whole \\space loop,\\]"
+    temp += "\\[Both \\space "+n+" \\space \\%  \\space (value) \\space and \\space "+m+" \\space \\% \\space  (value) \\space NEVER \\space equals \\space to \\space 0\\]"
+    temp += "\\[Hence, \\space the \\space numbers \\space "+n+" \\space and \\space "+m+" \\space are \\space Co-prime\\]"
+    output.innerHTML = temp;
+    renderMathInElement(output);
+    } else{
+        temp = "\\[Please \\space enter \\space valid \\space input \\space \\]"
+        output.innerHTML = temp;
+        renderMathInElement(output);
+    }
 }
 
 //Side of a regular n-sided polygon circumscribed in a circle
 function polymax7find() {
     let n = parseInt(document.getElementById("polymax7").value)
     let r = parseInt(document.getElementById("polymax71").value)
-    if (!isNaN(n) && !isNaN(r)) {
+    if (!isNaN(n) || !isNaN(r)) {
         var theta, theta_in_radians;
         theta = 360 / n;
         theta_in_radians = theta * 3.14 / 180;
         let ans = 2 * r * Math.sin(theta_in_radians / 2);
+        document.getElementById("polymax7exp").innerHTML ="\\[Consider the image above and let angle AOB be theta then theta = 360 / n. \\]"
+        document.getElementById("polymax7exp").innerHTML ="\\[In right angled triangle $\Delta AOC$   , angle ACO = 90 degrees and angle AOC = theta / 2. \\]"
+        document.getElementById("polymax7exp").innerHTML ="\\[So, AC = OA * sin(theta / 2) = r * sin(theta / 2) \\]"
+        document.getElementById("polymax7exp").innerHTML ="\\[Therefore, side of the polygon, AB = 2 * AC i.e. 2 * r * sin(theta / 2).\\]"
         document.getElementById("polymax7ans").innerHTML = ans
+        renderMathInElement(document.getElementById("polymax7exp"))
     }
     else {
         document.getElementById("polymax7ans").innerHTML = "Please enter valid input"
@@ -17800,12 +19322,22 @@ function polymax10find() {
 }
 
 function polymax11find(){
-    let n = parseInt(document.getElementById("polymax20").value)
-    let m = parseInt(document.getElementById("polymax21").value)
-    if (M > parseInt(N / 2)) {
-        document.getElementById("polymax11ans").innerHTML = M - parseInt(N / 2);
+    let N = parseInt(document.getElementById("polymax20").value)
+    let M = parseInt(document.getElementById("polymax21").value)
+    if(!isNaN(N)||!isNaN(M)){
+        if (M > parseInt(N / 2)) {
+            document.getElementById("polymax11exp").innerHTML = "\\[If M > N / 2: The vertex will always be M — (N / 2).\\]"
+            document.getElementById("polymax11exp").innerHTML = "\\[If M ≤ N / 2: The vertex will always be M + (N / 2).\\]"
+            document.getElementById("polymax11ans").innerHTML = M - parseInt(N / 2);
+            renderMathInElement(document.getElementById("polymax11ans"))
+        }
+        document.getElementById("polymax11exp").innerHTML = "\\[If M > N / 2: The vertex will always be M — (N / 2).\\]"
+        document.getElementById("polymax11exp").innerHTML = "\\[If M ≤ N / 2: The vertex will always be M + (N / 2).\\]"
+        document.getElementById("polymax11ans").innerHTML = M + parseInt(N / 2);
+        renderMathInElement(document.getElementById("polymax11ans"))
     }
-    document.getElementById("polymax11ans").innerHTML = M + parseInt(N / 2);
+    else
+        document.getElementById("polymax11ans").innerHTML = "Please enter valid input"
 }
 
 //Sum of numbers from 1 to N which are in Lucas Sequence
@@ -18215,7 +19747,6 @@ function subBinDecHexOct() {
             x3 = x1 - x2;
 
             result.innerHTML = fracDectoBinHexOct(x3,2);
-            work.innerHTML = "";
         }
         else if(base === "Decimal"){
             x1 = parseFloat(input1);
@@ -18224,7 +19755,6 @@ function subBinDecHexOct() {
             x3 = x1 - x2;
 
             result.innerHTML = parseFloat(x3);
-            work.innerHTML = "";
         }
         else if(base === "Octal"){
             x1 = calculatefrac(input1,8);
@@ -18233,6 +19763,14 @@ function subBinDecHexOct() {
             x3 = x1 - x2;
 
             result.innerHTML = fracDectoBinHexOct(x3,8);
+        }
+        else if(base === "Hexa Decimal"){
+            x1 = calculatefrac(input1,16);
+            x2 = calculatefrac(input2,16);
+
+            x3 = x1 - x2;
+
+            result.innerHTML = fracDectoBinHexOct(x3,16);
         }
     }else{
     if (input1.length > input2.length) {
@@ -18489,20 +20027,22 @@ function triinfind() {
     let n = parseInt(document.getElementById("triin").value)
     if (!isNaN(a)) {
         if(n<0)
-           document.getElementById("triinans").innerHTML ="Length of side of square cannot be negative";
+        document.getElementById("triinans").innerHTML ="\\[Length \\space of \\space side \\space of \\space square \\space cannot \\space be \\space negative\\]";
         else{
             let a=n/Math.sqrt(2);
             let b=Math.sqrt(n*n+n*n/4);
             let c=b;
             let s=(a+b+c)/2;
             let area=Math.sqrt(s*(s-a)*(s-b)*(s-c));
-            document.getElementById("triinans").innerHTML = area.toFixed(2);
+            document.getElementById("triinans").innerHTML = "\\[Area \\space="+area.toFixed(2)+"\\]"+"\\[Sides \\space of \\space triangle \\space formed \\space is \\space given \\space by \\space: a=\\frac{n}{\\sqrt{2}} \\space ,\\space  b=c=\\sqrt{n^{2}+(\\frac{n}{2})^{2}}\\]"+"\\[ a=\\frac{"+n+"}{\\sqrt{2}}="+a.toFixed(3)+"\\space , \\space b=c=\\sqrt{"+n+"^2+(\\frac{"+n+"}{2})^2}="+b.toFixed(3)+"\\]"+"\\[ By \\space ,Heron's \\space Formula \\space Area=\\sqrt{s(s-a)(s-b)(s-c)} \\space and \\space s=\\frac{a+b+c}{2} \\newline Area="+area.toFixed(3)+"\\]";
         }   
         
     }
     else {
-        document.getElementById("triinans").innerHTML = "Please enter valid input"
+        document.getElementById("triinans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
     }
+    renderMathInElement(document.getElementById("triinans"));
+}
 }
 //----------------------------
 
@@ -19168,7 +20708,12 @@ function polymax1find() {
     if (!isNaN(n)) {
         var num;
         num = n * (n - 4);
+        document.getElementById("polymax1exp").innerHTML = "\\[To make a triangle with one side common with a polygon the two vertices adjacent to the chosen common vertices cannot be considered as the third vertex of a triangle.\\]"
+        document.getElementById("polymax1exp").innerHTML = "\\[First select any one edge from the polygon. Consider this edge to be the common edge. Number of ways to select an edge in a polygon would be equal to n.\\]"
+        document.getElementById("polymax1exp").innerHTML = "\\[Now ,to form a triangle ,select any of the (n-4) vertices left .Two vertices of the common edge and two vertices adjacent to the common edge cannot be considered.\\]"
+        document.getElementById("polymax1exp").innerHTML = "\\[Number of triangle formed by joining the vertices of an n-sided polygon with one side common would be equal to n * ( n – 4) .\\]"
         document.getElementById("polymax1ans").innerHTML = num;
+        renderMathInElement(document.getElementById("polymax1exp"))
     }
     else {
         document.getElementById("polymax1ans").innerHTML = "Please enter valid input"
@@ -19654,20 +21199,39 @@ function convertbcd() {
         if(input.length % 4 != 0 ){
             result.innerHTML = "Error : Invalid BCD input (BCD Code comes in sets of nibbles(4 bits)"
         }else{
+            x = "";
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space BCD \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\space digits \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + parseInt(temp,2).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space the \\space decimal \\space digits \\space to \\]";
+            print += "\\[\\space get \\space the \\space result \\space in \\space Decimal \\space \\]";
+            print += "\\[\\rightarrow "+x+"\\]";
             if(input.length / 4 == x.length ){
                 result.innerHTML = x;
             }else{
                 result.innerHTML = "Error : Invalid BCD input (decimal value of each digit cant exceed 9)";
             }
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     }else if (fromCode == "Decimal" && toCode == "BCD Code"){
         print +="\\[STEP \\space 1 \\space : \\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
@@ -19741,20 +21305,39 @@ function convertbcd() {
             result.innerHTML = "Error : Invalid BCD input (BCD Code comes in sets of nibbles(4 bits)"
         }else{
             x = "";
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space BCD \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\space digits \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + parseInt(temp,2).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]"
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space the \\space decimal \\space digits \\space \\]";
+            print += "\\[\\rightarrow "+x+"\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space binary  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(2)+"\\]";
             if(input.length / 4 == x.length ){
                 result.innerHTML = parseInt(x).toString(2);//converted dec to bin
             }else{
                 result.innerHTML = "Error : Invalid BCD input (decimal value of each digit cant exceed 9)";
             }
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     } else if (fromCode == "Octal" && toCode == "BCD Code") {
         print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space octal \\space to \\space decimal \\]";
@@ -19797,20 +21380,41 @@ function convertbcd() {
             result.innerHTML = "Error : Invalid BCD input (BCD Code comes in sets of nibbles(4 bits)"
         }else{
             x = "";
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space BCD \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\space digits \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + parseInt(temp,2).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space the \\space decimal \\space digits \\space \\]";
+            print += "\\[\\rightarrow "+x+"\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space binary  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(2)+"\\]";
+            print += "\\[STEP \\space 5 \\space : Convert \\space binary \\space result \\space to \\space octal  \\]";
+            print += "\\["+parseInt(x).toString(2)+" \\space becomes \\space "+parseInt(x).toString(8)+"\\]";
             if(input.length / 4 == x.length ){
                 result.innerHTML = parseInt(x).toString(8);//converted dec to oct
             }else{
                 result.innerHTML = "Error : Invalid BCD input (decimal value of each digit cant exceed 9)";
             }
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     } else if (fromCode == "Hexadecimal" && toCode == "BCD Code") {
         print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space hexadecimal \\space to \\space decimal \\]";
@@ -19853,20 +21457,41 @@ function convertbcd() {
             result.innerHTML = "Error : Invalid BCD input (BCD Code comes in sets of nibbles(4 bits)"
         }else{
             x = "";
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space BCD \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\space digits \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + parseInt(temp,2).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space the \\space decimal \\space digits \\space \\]";
+            print += "\\[\\rightarrow "+x+"\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space binary  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(2)+"\\]";
+            print += "\\[STEP \\space 5 \\space : Convert \\space binary \\space result \\space to \\space hexadecimal  \\]";
+            print += "\\["+parseInt(x).toString(2)+" \\space becomes \\space "+parseInt(x).toString(16)+"\\]";
             if(input.length / 4 == x.length ){
                 result.innerHTML = parseInt(x).toString(16);//converted dec to hexdec
             }else{
                 result.innerHTML = "Error : Invalid BCD input (decimal value of each digit cant exceed 9)";
             }
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     }
 
@@ -19916,170 +21541,340 @@ function convertex3() {
     let result = document.getElementById("ex3-result");
     const fromBase = document.getElementById("ex3-select1").value;
     const toBase = document.getElementById("ex3-select2").value;
+    var work = document.getElementById("ex3-work");
+    var print = "\\[\\underline{Working \\space Steps}\\]";
     var x = "_";
 
     if (fromBase === "Decimal" && toBase === "Excess-3") {
+        print += "\\[\\textbf{Converting \\space Decimal \\space Code \\space to \\space Excess-3 \\space Code}\\]"
+        print +="\\[STEP \\space 1 \\space : Add \\space 3 \\space to \\space each \\space digit \\space and \\space then \\]"
+        print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
         for (var i = 0; i < input.length; i++) {
             var y = (parseInt(input[i]) + 3).toString(2);
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                print +="\\[\\rightarrow \\space  "+input[i]+" \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i]) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + +temp;
             }
         }
+        print +="\\[STEP \\space 2 \\space : \\space Combine \\space the \\space nibbles \\space to \\]"
+        print += "\\[\\space get \\space your \\space result \\space in \\space Excess-3 \\space Code \\]";
+        print +="\\[Result \\space in \\space Excess-3 \\space Code \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     } else if (fromBase === "Binary" && toBase === "Excess-3") {
-        r = parseInt(input, 2).toString();
-        for (var i = 0; i < r.length; i++) {
-            var y = (parseInt(r[i]) + 3).toString(2);
+        print += "\\[\\textbf{Converting \\space Binary \\space Code \\space to \\space Excess-3 \\space Code}\\]"
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space binary \\space to \\space decimal \\]";
+        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 2).toString() + "\\]";
+        input = parseInt(input, 2).toString();
+        print +="\\[STEP \\space 2 \\space : Add \\space 3 \\space to \\space each \\space digit \\space and \\space then \\]"
+        print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
+
+        for (var i = 0; i < input.length; i++) {
+            var y = (parseInt(input[i]) + 3).toString(2);
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],2) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],2) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],2) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],2) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + +temp;
             }
         }
+        print +="\\[STEP \\space 3 \\space : \\space Combine \\space the \\space nibbles \\space to \\]"
+        print += "\\[\\space get \\space your \\space result \\space in \\space Excess-3 \\space Code \\]";
+        print +="\\[Result \\space in \\space Excess-3 \\space Code \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     } else if (fromBase === "Octal" && toBase === "Excess-3") {
-        r = parseInt(input, 8).toString();
-        for (var i = 0; i < r.length; i++) {
-            var y = (parseInt(r[i]) + 3).toString(2);
+        print += "\\[\\textbf{Converting \\space Octal \\space Code \\space to \\space Excess-3 \\space Code}\\]"
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space octal \\space to \\space decimal \\]";
+        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 8).toString() + "\\]";
+        input = parseInt(input, 8).toString();
+        print +="\\[STEP \\space 2 \\space : Add \\space 3 \\space to \\space each \\space digit \\space and \\space then \\]"
+        print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
+
+        for (var i = 0; i < input.length; i++) {
+            var y = (parseInt(input[i]) + 3).toString(2);
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],8) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],8) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],8) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],8) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + +temp;
             }
         }
+        print +="\\[STEP \\space 3 \\space : \\space Combine \\space the \\space nibbles \\space to \\]"
+        print += "\\[\\space get \\space your \\space result \\space in \\space Excess-3 \\space Code \\]";
+        print +="\\[Result \\space in \\space Excess-3 \\space Code \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     } else if (fromBase === "Hexa decimal" && toBase === "Excess-3") {
-        r = parseInt(input, 16).toString();
-        for (var i = 0; i < r.length; i++) {
-            var y = (parseInt(r[i]) + 3).toString(2);
+        print += "\\[\\textbf{Converting \\space Hexa Decimal \\space Code \\space to \\space Excess-3 \\space Code}\\]"
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space hexadecimal \\space to \\space decimal \\]";
+        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 16).toString() + "\\]";
+        input = parseInt(input, 16).toString();
+        print +="\\[STEP \\space 2 \\space : Add \\space 3 \\space to \\space each \\space digit \\space and \\space then \\]"
+        print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
+
+        for (var i = 0; i < input.length; i++) {
+            var y = (parseInt(input[i]) + 3).toString(2);
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],16) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],16) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],16) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                print +="\\[\\rightarrow \\space  " + input[i] + " \\space + \\space 3 \\space \\rightarrow " + (parseInt(input[i],16) + 3) + " \\space becomes \\space " + temp + "\\space \\]";
+                x = x + +temp;
             }
         }
+        print +="\\[STEP \\space 3 \\space : \\space Combine \\space the \\space nibbles \\space to \\]"
+        print += "\\[\\space get \\space your \\space result \\space in \\space Excess-3 \\space Code \\]";
+        print +="\\[Result \\space in \\space Excess-3 \\space Code \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     }else if(fromBase === "Excess-3" && toBase === "Decimal"){
         var x = "",y="";
         var temp ="";
         if(input.length % 4 != 0 ){
-            x = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
+            result.innerHTML = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
         }else{
             x = "";
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space Excess-3 \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\space digits \\]";
+            print +="\\[then \\space subtract \\space 3 \\space from \\space each \\space decimal \\space digit \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + (parseInt(temp,2)-3).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
+                    print += "\\[" + parseInt(temp,2) + " \\space - \\space 3 \\space \\rightarrow \\space " + (parseInt(temp,2)-3).toString() + " \\]";
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space the \\space decimal \\space digits \\space to \\]";
+            print += "\\[\\space get \\space the \\space result \\space in \\space Decimal \\space \\]";
+            print += "\\[\\rightarrow "+x+"\\]";
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString();
             }else if(parseInt(x)<0){
-                x = "Error : Invalid input (decimal value of each digit cant subceed 0)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant subceed 0)";
             }else{
-                x = "Error : Invalid input (decimal value of each digit cant exceed 9)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant exceed 9)";
             }
+            result.innerHTML = "Answer -> " + x;
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     }else if(fromBase === "Excess-3" && toBase === "Binary"){
         var x = "",y="";
         var temp ="";
         if(input.length % 4 != 0 ){
-            x = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
+            result.innerHTML = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
         }else{
             x = "";
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space Excess-3 \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\space digits \\]";
+            print +="\\[then \\space subtract \\space 3 \\space from \\space each \\space decimal \\space digit \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + (parseInt(temp,2)-3).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
+                    print += "\\[" + parseInt(temp,2) + " \\space - \\space 3 \\space \\rightarrow \\space " + (parseInt(temp,2)-3).toString() + " \\]";
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space the \\space decimal \\space values \\space obtained \\space \\]";
+            print += "\\[\\rightarrow " + x + "\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space binary  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(2)+"\\]";
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString(2);
             }else if(parseInt(x)<0){
-                x = "Error : Invalid input (decimal value of each digit cant subceed 0)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant subceed 0)";
             }else{
-                x = "Error : Invalid input (decimal value of each digit cant exceed 9)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant exceed 9)";
             }
+            result.innerHTML = "Answer -> " + x;
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     }else if(fromBase === "Excess-3" && toBase === "Octal"){
         var x = "",y="";
         var temp ="";
         if(input.length % 4 != 0 ){
-            x = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
+            result.innerHTML = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
         }else{
             x = "";
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space Excess-3 \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\space digits \\]";
+            print +="\\[then \\space subtract \\space 3 \\space from \\space each \\space decimal \\space digit \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + (parseInt(temp,2)-3).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
+                    print += "\\[" + parseInt(temp,2) + " \\space - \\space 3 \\space \\rightarrow \\space " + (parseInt(temp,2)-3).toString() + " \\]";
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space the \\space decimal \\space values \\space obtained \\space \\]";
+            print += "\\[\\rightarrow " + x + "\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space octal  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(8)+"\\]";
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString(8);
             }else if(parseInt(x)<0){
-                x = "Error : Invalid input (decimal value of each digit cant subceed 0)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant subceed 0)";
             }else{
-                x = "Error : Invalid input (decimal value of each digit cant exceed 9)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant exceed 9)";
             }
+            result.innerHTML = "Answer -> " + x;
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     }else if(fromBase === "Excess-3" && toBase === "Hexa decimal"){
         var x = "",y="";
         var temp ="";
         if(input.length % 4 != 0 ){
-            x = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
+            result.innerHTML = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
         }else{
             x = "";
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space Excess-3 \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\space digits \\]";
+            print +="\\[then \\space subtract \\space 3 \\space from \\space each \\space decimal \\space digit \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     x = x + (parseInt(temp,2)-3).toString();
+                    print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
+                    print += "\\[" + parseInt(temp,2) + " \\space - \\space 3 \\space \\rightarrow \\space " + (parseInt(temp,2)-3).toString() + " \\]";
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space the \\space decimal \\space values \\space obtained \\space \\]";
+            print += "\\[\\rightarrow " + x + "\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space hexadecimal  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(16)+"\\]";
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString(16);
             }else if(parseInt(x)<0){
-                x = "Error : Invalid input (decimal value of each digit cant subceed 0)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant subceed 0)";
             }else{
-                x = "Error : Invalid input (decimal value of each digit cant exceed 9)";
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant exceed 9)";
             }
+            result.innerHTML = "Answer -> " + x;
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     }
 
@@ -20089,8 +21884,6 @@ function convertex3() {
     } else if (fromBase === "Binary" && input.search(/^[10]+$/) == -1) {
         x = "Binary code can only have 0's and 1's";
     }
-
-    result.innerHTML = x;
 }
 
 //Function which performs conversion of Decimal to 2421
@@ -20099,10 +21892,17 @@ function convertdec2421() {
     let result = document.getElementById("dec2421-result");
     const type1 = document.getElementById("dec2421-select1").value;
     const type = document.getElementById("dec2421-select").value;
+    var work =document.getElementById("dec2421-work");
+    var print = "\\[\\underline{Working \\space Steps}\\]"
 
     if(type === "Decimal" && type1 === "2421 Code"){
     var x = "_";
     var y = "";
+    print +="\\[STEP \\space 1 \\space : \\space Check \\space each \\space digit \\space and \\]"
+    print +="\\[\\space Add \\space 6 \\space to \\space the \\space digit \\space if \\space it \\space is \\space >4 and \\space then \\]";
+    print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+    var x="_",y="";temp ="";
+
     for (var i = 0; i < input.length; i++) {
         if (parseInt(input[i]) < 5) {
             y = (parseInt(input[i]) + 0).toString(2);
@@ -20111,19 +21911,48 @@ function convertdec2421() {
         }
 
         if (y.length == 1) {
-            x = x + "000" + y + "_   ";
+            temp =  "000" + y + "_   ";
+            if (parseInt(input[i]) < 5) {
+                print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+            } else if (parseInt(input[i]) > 4) {
+                print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+            }
+            x = x + temp;
         }
         if (y.length == 2) {
-            x = x + "00" + y + "_   ";
+            temp = "00" + y + "_   ";
+            if (parseInt(input[i]) < 5) {
+                print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+            } else if (parseInt(input[i]) > 4) {
+                print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+            }
+            x = x + temp;
         }
         if (y.length == 3) {
-            x = x + "0" + y + "_   ";
+            temp = "0" + y + "_   ";
+            if (parseInt(input[i]) < 5) {
+                print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+            } else if (parseInt(input[i]) > 4) {
+                print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+            }
+            x = x + temp;
         }
         if (y.length == 4) {
-            x = x + +y + "_   ";
+            temp = y + "_   ";
+            if (parseInt(input[i]) < 5) {
+                print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+            } else if (parseInt(input[i]) > 4) {
+                print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+            }
+            x = x + temp;
         }
       }
-      result.innerHTML = x;
+      print +="\\[STEP \\space 2 \\space : \\space Combine \\space the \\space nibbles \\space to \\]"
+      print += "\\[\\space get \\space your \\space result \\space in \\space 2421 \\space Code \\]";
+      print +="\\[Result \\space in \\space 2421 \\space Code \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+      result.innerHTML ="Answer -> " +x;
+      work.innerHTML = print;
+      renderMathInElement(work);
     }else if (type === "2421 Code" && type1 === "Decimal"){
         var x = "";
         var y = "";
@@ -20131,35 +21960,65 @@ function convertdec2421() {
         if(input.length % 4 != 0 ){
             result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
         }else{
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space 2421 \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\]";
+            print +="\\[ \\space then \\space subtract \\space 6 \\space from \\space the \\space decimal \\space values \\space if \\]"
+            print +="\\[ \\space decimal \\space value \\space  of \\space each \\space nibble  \\space >=11 \\space and \\space <=15 \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
-                        x = "Invalid 2421 Input";
+                        result.innerHTML = "Invalid 2421 Input";
                     }
                     if(parseInt(temp,2) > 4){
                         x = x + (parseInt(temp,2) - 6).toString();
+                        print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
+                        print += "\\[As \\space 11<="+parseInt(temp,2).toString()+"<=15 \\space so,\\]";
+                        print += "\\[" + parseInt(temp,2) + " \\space - \\space 6 \\space \\rightarrow \\space " + (parseInt(temp,2)-6).toString() + " \\]";
                     }else{
                         x = x + parseInt(temp,2).toString();
+                        print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
                     }
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space all \\space the \\space decimal \\space digits \\space found \\space from \\space STEP2 \\]";
+            print += "\\[\\space to \\space get \\space the \\space result \\space in \\space Decimal \\space \\]";
+            print += "\\[\\rightarrow "+x+"\\]";
+
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString();
             }else if(parseInt(x)<0){
-                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+                result.innerHTML = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
             }else{
-                x = "Error : Invalid 2421 input";
+                result.innerHTML = "Error : Invalid 2421 input";
             }
-            result.innerHTML = x;
+            result.innerHTML = "Answer -> " + x;
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     }else if(type === "Binary" && type1 === "2421 Code"){
         var x = "_";
         var y = "";
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space binary \\space to \\space decimal \\]";
+        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 2).toString() + "\\]";
         input = parseInt(input,2).toString();
+        print +="\\[\\space Add \\space 6 \\space to \\space the \\space digit \\space if \\space it \\space is \\space >4 and \\space then \\]";
+        print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
+
         for (var i = 0; i < input.length; i++) {
             if (parseInt(input[i]) < 5) {
                 y = (parseInt(input[i]) + 0).toString(2);
@@ -20168,19 +22027,48 @@ function convertdec2421() {
             }
     
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
         }
-        result.innerHTML = x;
+        print +="\\[STEP \\space 2 \\space : \\space Combine \\space the \\space nibbles \\space to \\]"
+        print += "\\[\\space get \\space your \\space result \\space in \\space 2421 \\space Code \\]";
+        print +="\\[Result \\space in \\space 2421 \\space Code \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     }else if (type === "2421 Code" && type1 === "Binary"){
         var x = "";
         var y = "";
@@ -20188,36 +22076,66 @@ function convertdec2421() {
         if(input.length % 4 != 0 ){
             result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
         }else{
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space 2421 \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\]";
+            print +="\\[ \\space then \\space subtract \\space 6 \\space from \\space the \\space decimal \\space values \\space if \\]"
+            print +="\\[ \\space decimal \\space value \\space  of \\space each \\space nibble  \\space >=11 \\space and \\space <=15 \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
-                        x = "Invalid 2421 Input";
+                        result.innerHTML = "Invalid 2421 Input";
                     }
                     if(parseInt(temp,2) > 4){
                         x = x + (parseInt(temp,2) - 6).toString();
+                        print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
+                        print += "\\[As \\space 11<="+parseInt(temp,2).toString()+"<=15 \\space so,\\]";
+                        print += "\\[" + parseInt(temp,2) + " \\space - \\space 6 \\space \\rightarrow \\space " + (parseInt(temp,2)-6).toString() + " \\]";
                     }else{
                         x = x + parseInt(temp,2).toString();
+                        print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
                     }
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space all \\space the \\space decimal \\space digits \\space found \\space from \\space STEP2 \\]";
+            print += "\\[\\rightarrow " + x + "\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space binary  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(2)+"\\]";
+            
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString(2);
             }else if(parseInt(x)<0){
-                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+                result.innerHTML = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
             }else{
-                x = "Error : Invalid 2421 input";
+                result.innerHTML = "Error : Invalid 2421 input";
             }
-            result.innerHTML = x;
+            result.innerHTML = "Answer -> " + x;
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
-    }else if(type === "Octal"){
-
+    }else if(type === "Octal" && type1 === "2421 Code"){
         var x = "_";
         var y = "";
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space octal \\space to \\space decimal \\]";
+        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 8).toString() + "\\]";
         input = parseInt(input,8).toString();
+        print +="\\[\\space Add \\space 6 \\space to \\space the \\space digit \\space if \\space it \\space is \\space >4 and \\space then \\]";
+        print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
+
         for (var i = 0; i < input.length; i++) {
             if (parseInt(input[i]) < 5) {
                 y = (parseInt(input[i]) + 0).toString(2);
@@ -20226,19 +22144,48 @@ function convertdec2421() {
             }
     
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
         }
-        result.innerHTML = x;
+        print +="\\[STEP \\space 2 \\space : \\space Combine \\space the \\space nibbles \\space to \\]"
+        print += "\\[\\space get \\space your \\space result \\space in \\space 2421 \\space Code \\]";
+        print +="\\[Result \\space in \\space 2421 \\space Code \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     }else if (type === "2421 Code" && type1 === "Octal"){
         var x = "";
         var y = "";
@@ -20246,36 +22193,65 @@ function convertdec2421() {
         if(input.length % 4 != 0 ){
             result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
         }else{
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space 2421 \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\]";
+            print +="\\[ \\space then \\space subtract \\space 6 \\space from \\space the \\space decimal \\space values \\space if \\]"
+            print +="\\[ \\space decimal \\space value \\space  of \\space each \\space nibble  \\space >=11 \\space and \\space <=15 \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
-                        x = "Invalid 2421 Input";
+                        result.innerHTML = "Invalid 2421 Input";
                     }
                     if(parseInt(temp,2) > 4){
                         x = x + (parseInt(temp,2) - 6).toString();
+                        print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
+                        print += "\\[As \\space 11<="+parseInt(temp,2).toString()+"<=15 \\space so,\\]";
+                        print += "\\[" + parseInt(temp,2) + " \\space - \\space 6 \\space \\rightarrow \\space " + (parseInt(temp,2)-6).toString() + " \\]";
                     }else{
                         x = x + parseInt(temp,2).toString();
+                        print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
                     }
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space all \\space the \\space decimal \\space digits \\space found \\space from \\space STEP2 \\]";
+            print += "\\[\\rightarrow " + x + "\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space octal  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(8)+"\\]";
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString(8);
             }else if(parseInt(x)<0){
-                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+                result.innerHTML = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
             }else{
-                x = "Error : Invalid 2421 input";
+                result.innerHTML = "Error : Invalid 2421 input";
             }
-            result.innerHTML = x;
+            result.innerHTML = "Answer -> " + x;
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
-    }else if(type === "Hexa decimal"){
+    }else if(type === "Hexa decimal" && type1 === "2421 Code"){
         var x = "_";
         var y = "";
 
+        print +="\\[STEP \\space 1 \\space : \\space Convert \\space input \\space from \\space hexadecimal \\space to \\space decimal \\]";
+        print +="\\[" + input + " \\space \\rightarrow \\space " + parseInt(input, 16).toString() + "\\]";
         input = parseInt(input,16).toString();
+        print +="\\[\\space Add \\space 6 \\space to \\space the \\space digit \\space if \\space it \\space is \\space >4 and \\space then \\]";
+        print +="\\[\\space Convert \\space each \\space decimal \\space digits \\space into \\space nibbles \\]";
+        var x="_",y="";temp ="";
         for (var i = 0; i < input.length; i++) {
             if (parseInt(input[i]) < 5) {
                 y = (parseInt(input[i]) + 0).toString(2);
@@ -20284,19 +22260,48 @@ function convertdec2421() {
             }
 
             if (y.length == 1) {
-                x = x + "000" + y + "_   ";
+                temp =  "000" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 2) {
-                x = x + "00" + y + "_   ";
+                temp = "00" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 3) {
-                x = x + "0" + y + "_   ";
+                temp = "0" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
             if (y.length == 4) {
-                x = x + +y + "_   ";
+                temp = y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space <= \\space 4)"+ input[i] +" \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print +="\\[\\rightarrow \\space (As \\space "+input[i]+" \\space > \\space 4) "+input[i]+" \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
             }
         }
-        result.innerHTML = x;
+        print +="\\[STEP \\space 2 \\space : \\space Combine \\space the \\space nibbles \\space to \\]"
+        print += "\\[\\space get \\space your \\space result \\space in \\space 2421 \\space Code \\]";
+        print +="\\[Result \\space in \\space 2421 \\space Code \\rightarrow \\space " + x.replace(/_/g, "") + " \\space \\]";
+        result.innerHTML ="Answer -> " +x;
+        work.innerHTML = print;
+        renderMathInElement(work);
     }else if (type === "2421 Code" && type1 === "Hexa decimal"){
         var x = "";
         var y = "";
@@ -20304,30 +22309,55 @@ function convertdec2421() {
         if(input.length % 4 != 0 ){
             result.innerHTML = "Error : Invalid 2421 input (2421 Code comes in sets of nibbles(4 bits)"
         }else{
+            var t = input;
+            var nib = "";
+            print +="\\[STEP \\space 1 \\space : \\space Break \\space 2421 \\space CODE \\space into \\space nibbles \\]";
+            print +="\\[";
+            for(var j = 1 ; j <= t.length;j = j+3){
+                nib = t.substring(j-1,j+3);
+                if (nib.length == 4)
+                print += +nib+" \\space ";
+                nib= "";
+            }
+            print += "\\]";
+            print +="\\[STEP \\space 2 \\space : \\space Convert \\space each \\space nibble \\space into \\space decimal \\]";
+            print +="\\[ \\space then \\space subtract \\space 6 \\space from \\space the \\space decimal \\space values \\space if \\]"
+            print +="\\[ \\space decimal \\space value \\space  of \\space each \\space nibble  \\space >=11 \\space and \\space <=15 \\]";
             for(var i = 0; i < input.length; i++){
                 if((i+1) % 4 == 0){
                     temp = temp + input[i]; //for 4 th value
                     if(temp == "0101" || temp == "0110" || temp == "0111" || temp == "1000" || temp == "1001" || temp == "1010"){
-                        x = "Invalid 2421 Input";
+                        result.innerHTML = "Invalid 2421 Input";
                     }
                     if(parseInt(temp,2) > 4){
                         x = x + (parseInt(temp,2) - 6).toString();
+                        print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
+                        print += "\\[As \\space 11<="+parseInt(temp,2).toString()+"<=15 \\space so,\\]";
+                        print += "\\[" + parseInt(temp,2) + " \\space - \\space 6 \\space \\rightarrow \\space " + (parseInt(temp,2)-6).toString() + " \\]";
                     }else{
                         x = x + parseInt(temp,2).toString();
+                        print += "\\[\\rightarrow \\space "+temp+" \\space becomes \\space "+parseInt(temp,2).toString()+"\\]";
                     }
                     temp = "";
                 }else{
                     temp = temp + input[i];
                 }
             }
+            print += "\\[STEP \\space 3 \\space : \\space Combine \\space all \\space the \\space decimal \\space digits \\space found \\space from \\space STEP2 \\]";
+            print += "\\[\\rightarrow " + x + "\\]";
+            print += "\\[STEP \\space 4 \\space : Convert \\space decimal \\space result \\space to \\space hexa decimal  \\]";
+            print += "\\["+x+" \\space becomes \\space "+parseInt(x).toString(16)+"\\]";
+
             if(input.length / 4 == x.length ){
                 x = parseInt(x).toString(16);
             }else if(parseInt(x)<0){
-                x = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
+                result.innerHTML = "Error : Invalid 2421 input (decimal value of each digit cant subceed 0)";
             }else{
-                x = "Error : Invalid 2421 input";
+                result.innerHTML = "Error : Invalid 2421 input";
             }
-            result.innerHTML = x;
+            result.innerHTML = "Answer -> " + x;
+            work.innerHTML = print;
+            renderMathInElement(work);
         }
     }
 }
@@ -20595,6 +22625,15 @@ function convertBinhex() {
     }
 }
 //Expansion Calculator
+function calcexexc1find(){
+    var n = document.getElementById("exc1");
+    var x = document.getElementById("exc2");
+    n.value = 4;
+    x.value = 2;
+
+    exc1find();
+}
+
 function exc1find() {
     let terms = parseInt(document.getElementById("exc1").value)
     let x = parseInt(document.getElementById("exc2").value)
@@ -20619,6 +22658,15 @@ else{
 }
 }
 
+function calcexexc2find(){
+    var n = document.getElementById("exc3");
+    var x = document.getElementById("exc4");
+    n.value = 4;
+    x.value = 2;
+
+    exc2find();
+}
+
 function exc2find() {
     let n = parseInt(document.getElementById("exc3").value)
     let x = parseInt(document.getElementById("exc4").value)
@@ -20637,6 +22685,15 @@ else{
 }
 }
 
+function calcexexc3find(){
+    var n = document.getElementById("exc5");
+    var x = document.getElementById("exc6");
+    n.value = 4;
+    x.value = 2;
+
+    exc3find();
+}
+
 function exc3find() {
     let num = parseInt(document.getElementById("exc5").value)
     let x = parseInt(document.getElementById("exc6").value)
@@ -20651,6 +22708,13 @@ function exc3find() {
 else{
     document.getElementById("exc3ans").innerHTML = "Please enter valid input"
 }
+}
+
+function calcexexc4find(){
+    var n = document.getElementById("exc7");
+    n.value = 4;
+
+    exc4find();
 }
 
 function exc4find() {
@@ -21428,8 +23492,25 @@ function ssscal() {
 }
 //Euler Totient Calculators
 function etc1find() {
-    let n = parseInt(document.getElementById("etc1").value)
-    let phi = new Array(n + 1);
+    var n = parseInt(document.getElementById("etc1").value)
+    var phi = new Array(n + 1);
+    var output = document.getElementById("etc1ans");
+    var temp = "";
+
+    temp += "\\[1) \\space Create \\space an \\space array \\space phi[1..n] \\space to \\space store \\space Φ \\space values \\space of \\space all \\space numbers \\space from \\space 1 --> n\\]"
+    
+    temp += "\\[2) \\space Initialize \\space all \\space values \\space such \\space that \\space phi[i] \\space stores \\space i. \\space This \\space initialization \\space serves \\space 2 \\space purposes-\\]"
+    temp += "\\[\\space a) \\space To \\space check \\space if \\space phi[i] \\space is \\space already \\space evaluated \\space or \\space not\\]" 
+    temp += "\\[\\space \\space [Note that the maximum possible phi value of a number i is i-1]\\]"
+    temp += "\\[\\space b) \\space To \\space initialize \\space phi[i] \\space as \\space i \\space is \\space a \\space multiple \\space in \\space above \\space product \\space formula\\]"
+    
+    temp += "\\[3) \\space Run \\space a \\space loop \\space for \\space p \\space = \\space 2 --> n\\]"
+    temp += "\\[\\space a) \\space If \\space phi[p] \\space is \\space p, \\space means \\space p \\space is \\space not \\space evaluated \\space yet \\space and \\space p \\space is \\space a \\space prime \\space number\\]"
+    temp += "\\[\\space \\space [otherwise \\space phi[p] \\space must \\space have \\space been \\space updated \\space in \\space step \\space 3.b]\\]"
+    
+    temp += "\\[\\space b) \\space Traverse \\space through \\space all \\space multiples \\space of \\space p \\space and \\space update \\space all \\space multiples \\space of \\space p \\space by \\space multiplying \\space with \\space (1-1/p)\\]"
+    temp += "\\[4) \\space Run \\space a \\space loop \\space from \\space i = 1 --> n \\space and \\space print \\space all \\space Ph[i] \\space values\\]"
+    
     for (let i = 1; i <= n; i++)
         phi[i] = i;
     for (let p = 2; p <= n; p++) {
@@ -21442,13 +23523,39 @@ function etc1find() {
     }
 
     for (let i = 1; i <= n; i++)
-        document.getElementById("etc1ans").innerHTML = ("Totient of " + i + " is " + phi[i] + "</br>");
+        temp = "\\[Totient \\space of \\space " + i + " \\space is \\space" + phi[i] + "\\]";
+
+    output.innerHTML  = temp;
+    renderMathInElement(output);
 }
 
 function etc2find() {
-    let n = parseInt(document.getElementById("etc2").value)
-    let ans = phi1(n) == phi1(2 * n)
-    document.getElementById("etc2ans").innerHTML = ans
+    var n = parseInt(document.getElementById("etc2").value)
+    var ans = phi1(n) == phi1(2 * n)
+    var output = document.getElementById("etc2ans");
+    var temp = "";
+    if (!isNaN(n))
+    {
+        temp += "\\[Given \\space an \\space integer \\space N, \\]"
+        temp += "\\[\\space the \\space task \\space is \\space to \\space check \\space whether \\space the \\space Euler’s \\space Totient \\space Function \\]"
+        temp += "\\[\\space of \\space N \\space and \\space 2 \\times N \\space are \\space the \\space same \\space or \\space not\\]"
+        temp += "\\[If \\space they \\space are \\space found \\space to \\space be \\space the \\space same, \\space print \\space True\\]"
+        temp += "\\[\\space Otherwise, \\space print \\space False\\]"
+        
+        temp += "\\[First, \\space we \\space Consider \\space all \\space prime \\space factors \\space of \\space n \\]"
+        temp += "\\[And, \\space then \\space subtract \\space their \\space multiples \\space from \\space result\\]"
+        temp += "\\[We \\space take \\space a \\space Function \\space to \\space check \\space if \\space phi(n) \\space is \\space equals \\space phi(2*n)\\]"
+        temp += "\\[where \\space phi() \\space is \\space the \\space Euler’s \\space Totient \\space Function\\]"
+        temp += "\\[Therefore, \\space the \\space idea \\space is \\space to \\space check \\space if \\space N \\space is \\space odd \\space or \\space not\\]"
+        temp += "\\[\\space If \\space found \\space to \\space be \\space true, \\space print \\space 'True, \\space Otherwise, \\space print \\space 'False'\\]"
+    }
+    else
+    {
+        temp += "\\[Please enter valid input\\]"
+    }
+    temp += ans
+    output.innerHTML = temp ;
+    renderMathInElement(output);
 }
 
 function __gcd(a, b) {
@@ -22583,6 +24690,14 @@ function cirrecfind() {
     renderMathInElement(result);
 }
 //Hyperbolic trignometric ratios
+function calcexhypertrigno(){
+    var x1 = document.getElementById("hypertrignoin");
+
+    x1.value = 5;
+
+    hypertrigno();
+}
+
 function hypertrigno() {
     var i = (document.getElementById("hypertrignoin").value);
     var hyperout = document.getElementById("hyperresult");
@@ -22664,9 +24779,11 @@ function perratcal() {
 //Minimum side of square embedded in Regular polygon with N sides
 function embedfind() {
     let n = parseInt(document.getElementById("embedin").value)
+    let output = document.getElementById("embedans")
+    let ans1 = "";
     let pi = Math.acos(-1.0);
     let proAngleVar;
-
+if(!isNaN(n)){
     // Projection angle variation
     // when the number of
     // sides are in multiple of 4
@@ -22701,8 +24818,22 @@ function embedfind() {
     // Return the portion of side
     // forming the square
     let ans = opt2 / Math.sin(pi / n) / 2;
-    document.getElementById("embedans").innerHTML = ans
+    ans1 += "\\[N \\space represents \\space the \\space number \\space of \\space sides \\space of \\space a \\space regular \\space polygon \\space with \\space n \\space vertices \\]"
+    ans1 += "\\[A \\space Polygon \\space is \\space a  \\space convex \\space figure \\space and \\space has \\space equal \\space sides \\space and \\space equal \\space angles \\]"
+    ans1 += "\\[When \\space Number \\space of \\space sides \\space is \\space multiple \\space of \\space 4 \\]"
+    ans1 += "\\[Projection Angle \\space = \\space π \\times \\frac{180}{N} \\times \\frac{1}{180} \\space = \\space π  \\times \\frac{180}{"+ n + "} \\times \\frac{1}{180}  \\]"
+    ans1 += "\\[When \\space Number \\space of \\space sides \\space is \\space not \\space multiple \\space of \\space 4 \\]"
+    ans1 += "\\[Projection Angle \\space = \\space π \\times \\frac{180}{2 \\times N} \\times \\frac{1}{180} \\space = \\space π  \\times \\frac{180}{2 \\times"+ n + "} \\times \\frac{1}{180} \\]"
+    ans1 += "\\[Regular \\space Polygon \\space with \\space " + n + "sides \\space can \\space easily \\space embed \\space with \\space side \\space " + ans + " \\]"
+    output.innerHTML = ans1;
 }
+else{
+    ans1 += "\\[Please \\space enter \\space valid \\space input \\]"
+    output.innerHTML = ans1;
+}
+renderMathInElement(output);
+}
+
 //MARGIN OF ERROR CALCULATOR
 function mecal() {
     var num1 = document.getElementById("conf").value;
@@ -24006,9 +26137,35 @@ function antilogCal(){
     }
     else{
         let ans = Math.pow(base,val); //trick to find antilog
-        output.innerHTML = "Antilog of " + val + " with base " + base + " is " + ans;
-    }
+        let steps  = "";
+        steps += "\\[ y\\space =\\space log_b(x) \\]";
+        steps += "\\[x\\space =\\space log_b^{-1}(y)\\space =\\space b ^ y\\]";
+        steps += "\\[=\\space "+ans+"\\]";
 
+        output.innerHTML = steps;
+    }
+    renderMathInElement(output);
+}
+function logbaseCal(){
+    let a = document.getElementById("logbasea").value;
+    let b = document.getElementById("logbaseb").value;
+    let x = document.getElementById("logbasex").value;
+
+    let output = document.getElementById("logbasex");
+    if(a=="" || b=="" || x==""){
+        output.innerHTML = "Enter all the inputs";
+    }
+    else{
+        let steps = "";
+        let ans = (Math.log(x) / Math.log(b))/(Math.log(a) / Math.log(b));
+        let temp1 = Math.log(x) / Math.log(b);
+        let temp2 = Math.log(a) / Math.log(b);
+        steps += "\\[log_a(x)\\space = \\frac{log_b(x)}{log_b(a)}\\]";
+        steps += "\\[log_a(x)\\space = \\frac{"+temp1+"}{"+temp2+"}\\]";
+        steps += "\\[log_a(x)\\space = "+ans+"\\]";
+        output.innerHTML =  steps;
+    }
+    renderMathInElement(output);
 }
 
 function relrisk() {
@@ -24082,6 +26239,38 @@ function ppvCal() {
         document.getElementById('ppvans').innerHTML = "Positive Predictive Value " + ans.toFixed(2);
     }
   }
+// NPV Calculator
+function npvCal() {
+    let sensi = document.getElementById("npvsensi").value;
+    let speci = document.getElementById("npvspeci").value;
+    let prev = document.getElementById("npvprev").value;
+
+    let ans = "";
+    let steps = "";
+    if(sensi=="" || speci=="" || prev==""||isNaN(sensi)||isNaN(speci)||isNaN(prev)){
+        ans = "Enter valid inputs"
+        document.getElementById("npvans").innerHTML = ans;
+    }
+    else{
+        ans = (speci * (1 - prev))/(((1 - sensi) * prev) + (speci * (1 - pre)));
+        ans = ans.toFixed(2);
+        steps += "\\[NPV =(Specificity \\times \\frac{(1 - Prevalence))}{((1 - Sensitivity) \\times Prevalence) + (Specificity \\times (1 - Prevalence))}\\]";
+        steps += "\\[=("+speci+" \\times \\frac{(1 - "+prev+"))}{((1 - "+sensi+") \\times "+prev+") + ("+speci+" \\times (1 - "+prev+"))}\\]";
+        steps += "\\[="+ans+"\\]";
+        document.getElementById('npvans').innerHTML = steps;
+        renderMathInElement(document.getElementById('npvans'));
+    }
+  }
+
+  function calcexvectsfind(){
+    var x1 = document.getElementById("vects1");
+    var y1 = document.getElementById("vects2");
+
+    x1.value = 1;
+    y1.value = 3;
+
+    vectsfind();
+}
 
   function vectsfind()
   {
@@ -24193,6 +26382,19 @@ function armstrongvalue(){
 
     }
 }
+// Neon Number
+function isNeonNum(num) {
+    let sq = num * num;   
+    let sum_digits = 0;
+    while (sq != 0) {
+        sum_digits = sum_digits + sq % 10;
+        sq = Math.floor(sq / 10);
+    }
+    if(sum_digits == num)
+        document.getElementById('neonans').innerHTML = num +" is a Neon number";
+    else
+        document.getElementById('neonans').innerHTML = num +" is not a Neon number";
+}
 // Disarium Number
 function isDisNum(num) {
    const res = String(num)
@@ -24246,3 +26448,40 @@ function isProNum(num) {
     else
         document.getElementById('proans').innerHTML = num +" is not a Pronic number";
 }
+// Harshad Number
+function isHarNum(num) {
+    let sum = 0;
+    for (let temp = num; temp > 0; temp = parseInt(temp / 10, 10))
+        sum += temp % 10;
+    if(num % sum == 0)
+        document.getElementById('harans').innerHTML = num +" is a Harshad Number";
+    else
+        document.getElementById('harans').innerHTML = num +" is not a Harshad Number";
+}
+// Trimorphic Number
+function isTrimorNum(Num) {
+    let n=Num;
+    let cube = Num * Num * Num,flag=0;
+    while (Num > 0) {
+        if (Num % 10 != cube % 10){
+            flag=1;
+            break;
+        }
+        Num = parseInt(Num / 10, 10);
+        cube = parseInt(cube / 10, 10);
+    }
+    if(!flag)
+        document.getElementById('trimorans').innerHTML = n +" is a Trimorphic Number";
+    else
+        document.getElementById('trimorans').innerHTML = n +" is not a Trimorphic Number";
+}
+// Harshad Number
+function isHarNum(num) {
+    let sum = 0;
+    for (let temp = num; temp > 0; temp = parseInt(temp / 10, 10))
+        sum += temp % 10;
+    if(num % sum == 0)
+        document.getElementById('harans').innerHTML = num +" is a Harshad Number";
+    else
+        document.getElementById('harans').innerHTML = num +" is not a Harshad Number";
+} 
