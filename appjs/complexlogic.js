@@ -2669,7 +2669,13 @@ function Ranges()
 
         var d=max-min;
 
+       var ans= "The highest number is: "+max;
+        ans+="<br> The lowest number is: "+min;
+        ans+="<br>The Range is: "+max+" -"+" "+min+" = "+d;
+        document.getElementById('Meanresult').innerHTML = ans;
+
         document.getElementById('Meanresult').innerHTML = "Range is: "+d;
+
 
 
 }
