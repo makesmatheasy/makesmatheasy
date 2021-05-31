@@ -19013,6 +19013,10 @@
                                        style="text-decoration:none;" href="#">Rhombic Dodecahedron</a></td>
                             </tr>
                             <tr>
+                                <td><a data-toggle="modal" data-target="#rhombicuboctahedron"
+                                    style="text-decoration:none;" href="#">Rhombicuboctahedron</a></td>
+                            </tr>
+                            <tr>
                                 <td><a data-toggle="modal" data-target="#rhombohedron"
                                        style="text-decoration:none;" href="#">Rhombohedron</a></td>
                             </tr>
@@ -19107,12 +19111,69 @@
                         <div class="collapse" id="typesofpyramid" style="margin: 0.9375rem;">
                             <table>
                                 <tr>
-                                    <td><a data-toggle="modal" data-target="#pyramid"
-                                        style="text-decoration:none;" href="#">Square Pyramid</a></td>
+                                    <td>
+                                        <div onclick="$('#typesofbipyramid').slideToggle();"
+                                             style="color: var(--appimage);cursor: pointer;"> Bipyramids
+                                        </div>
+                                        <div class="collapse" id="typesofbipyramid" style="margin: 0.9375rem;">
+                                            <table>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#pentbipyramid"
+                                                    style="text-decoration:none;" href="#">Pentagonal Bipyramid</a></td>
+                                            </tr>
+                                            </table>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td><a data-toggle="modal" data-target="#sqelongbipyramid"
-                                        style="text-decoration:none;" href="#">Elongated square bipyramid</a></td>
+                                    <td>
+                                        <div onclick="$('#typesofelongpyramid').slideToggle();"
+                                             style="color: var(--appimage);cursor: pointer;"> Elongated Pyramids
+                                        </div>
+                                        <div class="collapse" id="typesofelongpyramid" style="margin: 0.9375rem;">
+                                            <table>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#eltripyramid"
+                                                    style="text-decoration:none;" href="#">Elongated Triangular Pyramid</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#elonsquare"
+                                                    style="text-decoration:none;" href="#">Elongated Square Pyramid</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#elonpentpyr"
+                                                    style="text-decoration:none;" href="#">Elongated Pentagonal Pyramid</a></td>
+                                            </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div onclick="$('#typesofelongbipyramid').slideToggle();"
+                                             style="color: var(--appimage);cursor: pointer;"> Elongated bipyramids
+                                        </div>
+                                        <div class="collapse" id="typesofelongbipyramid" style="margin: 0.9375rem;">
+                                            <table>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#trielongbipyramid"
+                                                    style="text-decoration:none;" href="#">Elongated triangular bipyramid</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#sqelongbipyramid"
+                                                    style="text-decoration:none;" href="#">Elongated square bipyramid</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a data-toggle="modal" data-target="#pentelongbipyramid"
+                                                    style="text-decoration:none;" href="#">Elongated pentagonal bipyramid</a></td>
+                                            </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#pyramid"
+                                        style="text-decoration:none;" href="#">Square Pyramid</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#trusqpyramid"
@@ -19123,36 +19184,12 @@
                                         style="text-decoration:none;" href="#">Triangular Pyramid</a></td>
                                 </tr>
                                 <tr>
-                                    <td><a data-toggle="modal" data-target="#trielongbipyramid"
-                                        style="text-decoration:none;" href="#">Elongated triangular bipyramid</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#elonpentpyr"
-                                        style="text-decoration:none;" href="#">Elongated Pentagonal Pyramid</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#elonsquare"
-                                        style="text-decoration:none;" href="#">Elongated Square Pyramid</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#eltripyramid"
-                                        style="text-decoration:none;" href="#">Elongated Triangular Pyramid (Heptahedron)</a></td>
-                                </tr>
-                                <tr>
                                     <td><a data-toggle="modal" data-target="#recpyramid"
                                         style="text-decoration:none;" href="#">Rectangular Pyramid</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#pentpyramid"
                                         style="text-decoration:none;" href="#">Pentagonal Pyramid</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#pentelongbipyramid"
-                                        style="text-decoration:none;" href="#">Elongated pentagonal bipyramid</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a data-toggle="modal" data-target="#pentbipyramid"
-                                        style="text-decoration:none;" href="#">Pentagonal Bipyramid (Decahedron)</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#hexpyramid"
@@ -19165,10 +19202,6 @@
                             </table>
                         </div>
                     </td>
-                </tr>
-                <tr>
-                    <td><a data-toggle="modal" data-target="#rhombicuboctahedron"
-                        style="text-decoration:none;" href="#">Rhombicuboctahedron</a></td>
                 </tr>
                 <tr>
                     <td>
