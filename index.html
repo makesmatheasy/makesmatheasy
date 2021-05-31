@@ -2459,8 +2459,7 @@
                     <tr>
                         <td style="border-top: none;">
                             <a id="log-collapsebtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Logarithm
-                                Properties
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Logarithm Properties
                             </a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -5619,21 +5618,24 @@
         <div class="collapse" id="divide">
             <div class="dropdown-divider"></div>
             <div class="form-group text-center">
-                <table>
-                    <tr>
-                        <td>
-                            <input type="number" id="divisornumwith" class="form__field"
-                                   style="width:4.375rem;border-bottom:0.375rem solid var(--apppink);">
-                        </td>
-                        <td>
-                            <input type="number" id="dividendnum" class="form__field"
-                                   style="width:7.5rem;border-left:0.375rem solid var(--apppink);border-top:0.375rem solid var(--apppink);">
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-light" onclick="divisionwithsteps()">Solve</button>
-                        </td>
-                    </tr>
-                </table>
+                <form action="">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="number" id="divisornumwith" class="form__field"
+                                       style="width:4.375rem;border-bottom:0.375rem solid var(--apppink);">
+                            </td>
+                            <td>
+                                <input type="number" id="dividendnum" class="form__field"
+                                       style="width:7.5rem;border-left:0.375rem solid var(--apppink);border-top:0.375rem solid var(--apppink);">
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-light" onclick="divisionwithsteps()">Solve</button>
+                                <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
                 <!--                <div class="col-3">-->
                 <p id="resultofdivsteps" class="stopwrap"></p>
                 <!--                </div>-->
@@ -5653,6 +5655,7 @@
                         <input type="number" id="n2" class="form__field" style="display:inline-block;width:20%">
                         <label style="display:inline-block;font-family:mathfont;">&nbsp;?&nbsp;</label>
                         <button type="button" class="btn btn-light" onclick="checkdivisibility()">Check</button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
                     </div>
                 </form>
 
@@ -5674,6 +5677,7 @@
                     <input value="2t^2-3t" type="text" id="numvardivi" class="form__field"
                            style="width:7.5rem;border-left:0.375rem solid black;border-top:0.375rem solid black;">
                     <button type="button" id="variabledividebtn" class="btn btn-light">Solve</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
 
                 </form>
             </div>
@@ -6430,6 +6434,9 @@
                     </div><br>
                     <div class="form-group text-center">
                         <button type="button" class="btn btn-light" onclick="hypertrigno()"> Calculate </button>
+                        <button type="button" class="btn btn-light" onclick=calcexhypertrigno()>
+                            Example
+                        </button>
                         <button type="button" class="btn btn-light m-1" onclick="this.form.reset();"> Reset </button><br>
                     </div>
                 </form>
@@ -9432,6 +9439,10 @@
                             onclick="plotit('inputlaplace','laplaceplot',slap())">
                         Solve
                     </button>
+                    <button type="button" class="btn btn-light"
+                            onclick="calcexsolvelaplace()">
+                        Example
+                    </button>
                     <button type="button" id="solvelaplaceid" class="btn btn-outline-light"
                             onclick="solvelaplace()">
                         Show Steps
@@ -9462,6 +9473,10 @@
                     <button type="button" class="btn btn-light"
                             onclick="plotit('inputinverselaplace','inverselaplaceplot',sinvlap());">
                         Solve
+                    </button>
+                    <button type="button" class="btn btn-light"
+                    onclick="calcexsolveinverselaplace()">
+                     Example
                     </button>
                     <button type="button" id="solveinverselaplaceid"
                             class="btn btn-outline-light"
@@ -10221,7 +10236,7 @@
                 <input type="text" id="vmb" size=3 value='' placeholder="B"> j + <input type="text" id="vmc" size=3 value='' placeholder="C"> k
                     <br><br>
                         <br>
-                <button type="button" class="btn btn-light" onclick=vecotrmod()>
+                <button type="button" class="btn btn-light" onclick=vectormod()>
                     Modulus
                 </button>
                 <button type="button" class="btn btn-light" onclick=vectorunit()>
@@ -10229,6 +10244,12 @@
                 </button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
+                </button><br><br>
+                <button type="button" class="btn btn-light" onclick=calcexvectormod()>
+                    Modulus Example
+                </button>
+                <button type="button" class="btn btn-light" onclick=calcexvectorunit()>
+                    Unit Vector Example
                 </button><br>
                 </p>
             </div>
@@ -10260,6 +10281,12 @@
             </button>
             <button type="button" class="btn btn-light" onclick="this.form.reset();">
                 Reset
+            </button><br><br>
+            <button type="button" class="btn btn-light" onclick=calcexvectoradd()>
+                Vector Addition Example
+            </button>
+            <button type="button" class="btn btn-light" onclick=calcexvectorsub()>
+                Vector Subtraction Example
             </button><br>
                 </p>
             </div>
@@ -10291,6 +10318,12 @@
                     Dot
                 </button><button type="button" class="btn btn-light" onclick=vectorcross()>
                     Cross
+                </button><br>
+                <button type="button" class="btn btn-light" onclick=calcexvectordot()>
+                    Example For Dot
+                </button>
+                <button type="button" class="btn btn-light" onclick=calcexvectorcross()>
+                    Example For Cross
                 </button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
@@ -10322,6 +10355,9 @@
                 <button type="button" class="btn btn-light" onclick=vactorangle3()>
                     Solve
                 </button>
+                <button type="button" class="btn btn-light" onclick=calcexvactorangle3()>
+                    Example
+                </button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
                 </button><br>
@@ -10348,6 +10384,9 @@
                         <br>
                 <button type="button" class="btn btn-light" onclick=vectorangle2()>
                     Solve
+                </button>
+                <button type="button" class="btn btn-light" onclick=calcexvectorangle2()>
+                    Example
                 </button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
@@ -10413,6 +10452,15 @@
             </button>
             <button type="button" class="btn btn-light" onclick="this.form.reset();">
                 Reset
+            </button><br><br>
+            <button type="button" class="btn btn-light" onclick=calcexvectorscalar()>
+                Scalar Example
+            </button>
+            <button type="button" class="btn btn-light" onclick=calcexvectorproj()>
+                Vector Example
+            </button>
+            <button type="button" class="btn btn-light" onclick=calcexprojector()>
+                Projection Example
             </button><br>
             </p>
         </div>
@@ -10449,6 +10497,12 @@
             </button>
             <button type="button" class="btn btn-light" onclick="this.form.reset();">
                 Reset
+            </button><br><br>
+            <button type="button" class="btn btn-light" onclick=calcexvectorsection()>
+                Internal Example
+            </button>
+            <button type="button" class="btn btn-light" onclick=calcexvectorsection2()>
+                External Example
             </button><br>
     
             </p>
@@ -10508,6 +10562,9 @@
                     <br><br>
             <button type="button" class="btn btn-light" onclick=vecpoints()>
                 Find 
+            </button>
+            <button type="button" class="btn btn-light" onclick=calcexvecpoints()>
+                Example 
             </button>
             <button type="button" class="btn btn-light" onclick="this.form.reset();">
                 Reset
@@ -10715,6 +10772,9 @@
             <button type="button" class="btn btn-light" onclick=paralleloarea()>
                 Solve
             </button>
+            <button type="button" class="btn btn-light" onclick=calcexparalleloarea()>
+                 Example
+            </button>
             <button type="button" class="btn btn-light" onclick="this.form.reset();">
                 Reset
             </button><br>
@@ -10749,7 +10809,13 @@
             </button>
             <button type="button" class="btn btn-light" onclick="this.form.reset();">
                 Reset
-            </button><br>
+            </button><br><br>
+            <button type="button" class="btn btn-light" onclick=calcexstp()>
+                Scalar Example
+            </button>
+            <button type="button" class="btn btn-light" onclick=calcexvtp()>
+                Vector Example
+            </button>
             </p>
         </div>
     </form>
@@ -12046,6 +12112,9 @@
                 <input type="text" placeholder="Enter radius" id="ther">
                 <input type="text" name="" id="theh" placeholder="Enter Height">
                 <button type="submit" onclick="findeq()">Find equations</button>
+                <button type="submit" onclick=calcexfindeq()>
+                    Example
+                </button>
                 <h5 id="xeqn"></h5>
                 <h5 id="yeqn"></h5>
                 <h5 id="zeqn"></h5>
@@ -12056,6 +12125,9 @@
                 <input type="text" placeholder="Enter radius" id="ther1">
                 <input type="text" name="" id="theh1" placeholder="Enter Height">
                 <button type="submit" onclick="volf()">Find Volume</button>
+                <button type="submit" onclick=calcexvolf()>
+                    Example
+                </button>
                 <h5 id="volf"></h5>
             </div>
             <p>\[Geometric\space centroid\space = \]</p>
@@ -12063,6 +12135,9 @@
             <div style="text-align: center;">
                 <input type="text" name="" id="theh2" placeholder="Enter Height">
                 <button type="submit" onclick="centv()">Find Centroid</button>
+                <button type="submit" onclick=calcexcentv()>
+                    Example
+                </button>
                 <h5 id="volf1"></h5>
             </div>
             <p>A circular or elliptical paraboloid surface may be used as a parabolic reflector. Applications of this property are used in automobile headlights, solar furnaces, radar, and radio relay stations.</p>
@@ -12995,6 +13070,9 @@
             <input type="text" id="golds2" class="form__field"placeholder="Enter the number2">
             <br>
             <button type="button" class="btn btn-dark" onclick="golds1find()">Find</button>
+            <button type="button" class="btn btn-dark" onclick=calcexgolds1find()>
+                Example
+            </button>
             <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
             <br>
             <h5 id="golds1ans"></h5>
@@ -13009,12 +13087,14 @@
             <input type="text" id="golds3" class="form__field"placeholder="Enter the nth fibonacci number">
             <br>
             <button type="button" class="btn btn-dark" onclick="golds2find()">Find</button>
+            <button type="button" class="btn btn-dark" onclick=calcexgolds2find()>
+                Example
+            </button>
             <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
             <br>
             <h5 id="golds2ans"></h5>
             <h5 id="golds2exp"></h5>
             <br>
-            </form>
             <h2>Check whether two numbers are in silver ratio</h2>
             <br>
             <form>
@@ -13022,10 +13102,25 @@
             <input type="text" id="golds5" class="form__field"placeholder="Enter the number2">
             <br>
             <button type="button" class="btn btn-dark" onclick="golds3find()">Find</button>
+            <button type="button" class="btn btn-dark" onclick=calcexgolds3find()>
+                Example
+            </button>
             <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
             <br>
             <h5 id="golds3ans"></h5>
             <h5 id="golds3exp"></h5>
+            <br>
+            </form>
+            <br>
+            <h2>Nth Catalan Number</h2>
+            <br>
+            <form>
+            <input type="text" id="golds6" class="form__field"placeholder="Enter the number">
+            <br>
+            <button type="button" class="btn btn-dark" onclick="golds4find()">Find</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
+            <br>
+            <h5 id="golds4ans"></h5>
             <br>
             </form>
         </div>
@@ -13290,37 +13385,52 @@
             <br>
             <h4>Count of elements having Euler’s Totient value one less than itself</h4>
             <br>
-            <input type="text" id="text1" class="form__field" placeholder = "Enter the inputs and click on add button to add"></input>
-            <input type="text" id="onelow" class="form_field" placeholder ="Enter lower boundary">
-            <input type="text" id="oneupp" class="form_field" placeholder ="Enter upper boundary">
-            <br>
-            <button class="btn btn-dark" onclick="add_element_to_array()">ADD</button>
-            <button class="btn btn-dark" onclick="etc4find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="text1" class="form__field" placeholder = "Enter the inputs and click on add button to add"></input>
+                <input type="text" id="onelow" class="form_field" placeholder ="Enter lower boundary">
+                <input type="text" id="oneupp" class="form_field" placeholder ="Enter upper boundary">
+                <br>
+                <button class="btn btn-dark" onclick="add_element_to_array()">ADD</button>
+                <button class="btn btn-dark" onclick="etc4find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <h5 id="etc4ans"></h5>
             <br>
             <h4>Perfect totient number</h4>
             <br>
-            <input type="text" id="etc5" class="form__field" placeholder="ENter the number">
-            <br>
-            <button class="btn btn-dark" onclick="etc5find()">Find</button>
-            <br>
+            <form action="">
+                <input type="text" id="etc5" class="form__field" placeholder="ENter the number">
+                <br>
+                <button class="btn btn-dark" onclick="etc5find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>
+            
             <h5 id="etc5ans"></h5>
         </div>
         <!-- start of Hamming Dist -->
         <div>
             <div class="collapse" id="etf">
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the number : &nbsp; &nbsp; </label>
-                    <input type="number" id="etfnum" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="eulerTotient(document.getElementById('etfnum').value);">
-                        Solve
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the number : &nbsp; &nbsp; </label>
+                        <input type="number" id="etfnum" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="eulerTotient(document.getElementById('etfnum').value);">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="etfResult"></p>
                 </div>
@@ -13393,6 +13503,9 @@
                 <input type="text" id="alisum"class="form__field"placeholder="Enter the number of terms for aliquot sum">
                 <br><br>
                 <button class="btn btn-dark" onclick="alisumfind()">Find</button>
+                <button class="btn btn-dark" onclick="calcexalisumfind()">
+                    Example
+                </button>
                 <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
@@ -13406,6 +13519,9 @@
                 <input type="text" id="alisum1"class="form__field"placeholder="Enter the number ">
                 <br><br>
                 <button class="btn btn-dark" onclick="alisum1find()">Find</button>
+                <button class="btn btn-dark" onclick="calcexalisum1find()">
+                    Example
+                </button>
                 <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
@@ -13419,6 +13535,9 @@
                 <input type="text" id="alisum2"class="form__field"placeholder="Enter the number ">
                 <br><br>
                 <button class="btn btn-dark" onclick="alisum2find()">Find</button>
+                <button class="btn btn-dark" onclick="calcexalisum2find()">
+                    Example
+                </button>
                 <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
@@ -13431,6 +13550,9 @@
                 <input type="text" id="alisum3"class="form__field"placeholder="Enter the height of triangle ">
                 <br><br>
                 <button class="btn btn-dark" onclick="alisum3find()">Find</button>
+                <button class="btn btn-dark" onclick="calcexalisum3find()">
+                    Find
+                </button>
                 <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
             </form>
@@ -13443,12 +13565,25 @@
                 <input type="text" id="alisum4"class="form__field"placeholder="Enter the number ">
                 <br><br>
                 <button class="btn btn-dark" onclick="alisum4find()">Find</button>
+                <button class="btn btn-dark" onclick="calcexalisum4find()">
+                    Example
+                </button>
                 <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
                 <br>
-            </form>
-            
+            </form>            
             <p id="alisum4ans" style="font-size: 26px;"></p>
             <p id="alisum4exp" style="font-size: 26px;"></p>
+            <br>
+            <p>Primorial of a number</p>
+            <br>
+            <form action="">
+                <input type="text" id="alisum5"class="form__field"placeholder="Enter the number ">
+                <br><br>
+                <button class="btn btn-dark" onclick="alisum5find()">Find</button>
+                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+                <br>
+            </form>            
+            <p id="alisum5ans" style="font-size: 26px;"></p>
         </div>
         <!-- start of Sum of divisors  calculator -->
          <div>
@@ -13508,17 +13643,24 @@
         <!-- start of Catalan numbers calculator -->
         <div>
             <div class="collapse" id="catNum">
-                <div class="form-group" style="display:inline-block">
-                    <label>Enter the number : &nbsp; &nbsp; </label>
-                    <input type="number" id="cat-num" class="form__field" placeholder="x"
-                        style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="catalanNumbers(document.getElementById('cat-num').value);">
-                        Solve
-                    </button>
-                </div>
+                <form action="">
+                    <div class="form-group" style="display:inline-block">
+                        <label>Enter the number : &nbsp; &nbsp; </label>
+                        <input type="number" id="cat-num" class="form__field" placeholder="x"
+                            style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light"
+                                onclick="catalanNumbers(document.getElementById('cat-num').value);">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                
                 <div class="form-group text-center">
                     <p class="stopwrap" style="color:white;" id="catNumResult"></p>
                 </div>
@@ -14671,23 +14813,27 @@
             <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Z - Test</h1>
             <p style="text-align: left;">H<sub>o</sub> : μ = μ<sub>o</sub>  (Null Hypothesis)</p>
             <p style="text-align: left; margin-bottom: 2rem;">H<sub>a</sub> : μ ≠ μ<sub>o</sub>  (Alternative Hypothesis)</p>
-            <input class = "form__field"type="number" id="pm" placeholder="Enter Population Mean (µ0)">
-            <br><br>
-            <input class = "form__field"type="number" id="sm" placeholder="Enter Sample Mean (x)">
-            <br><br>
-            <input class = "form__field"type="number" id="sd" placeholder="Enter Standard Deviation (σ)">
-            <br><br>
-            <input class = "form__field"type="number" id="sn" placeholder="Enter Sample Number (n)">
-            <br><br>
-            <label for="">Significance Level</label>
-            <br>
-            <select name="alpha" id="alpha">
-                <option value=0.01>0.01</option>
-                <option value=0.05>0.05</option>
-                <option value=0.1>0.1</option>
-            </select>
-            <br><br>
-            <button class = "btn btn-light" onclick="zvalue()">Test</button>
+            <form action="">
+                <input class = "form__field"type="number" id="pm" placeholder="Enter Population Mean (µ0)">
+                <br><br>
+                <input class = "form__field"type="number" id="sm" placeholder="Enter Sample Mean (x)">
+                <br><br>
+                <input class = "form__field"type="number" id="sd" placeholder="Enter Standard Deviation (σ)">
+                <br><br>
+                <input class = "form__field"type="number" id="sn" placeholder="Enter Sample Number (n)">
+                <br><br>
+                <label for="">Significance Level</label>
+                <br>
+                <select name="alpha" id="alpha">
+                    <option value=0.01>0.01</option>
+                    <option value=0.05>0.05</option>
+                    <option value=0.1>0.1</option>
+                </select>
+                <br><br>
+                <button class = "btn btn-light" onclick="zvalue()">Test</button>
+                <button class = "btn btn-light" onclick="this.form.reset();">Result</button>
+            </form>
+            
             <p id="zworking"></p>
             <p id="ztestans"></p>
             <div id="stepsbox2">
@@ -16757,12 +16903,15 @@
         
         <div class="collapse" id="co_prime">
             <h2>Co-Prime Calculator</h2><br>
+            <form action="">
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="co_num1" placeholder="Enter first number"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="co_num2" placeholder="Enter second number "/>  <br> <br>
+                    <button  class = "btn btn-outline-light" onclick = "co_prime_calc()" >Find</button>
+                    <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button> <br>
+                </div>
+            </form>
             
-            <div class="form-group">
-                <input type="text" style="width: 250px;" class="form__field" name="a" id="co_num1" placeholder="Enter first number"/>
-                <input type="text" name="b" style="width: 250px;" class="form__field" id="co_num2" placeholder="Enter second number "/>  <br> <br>
-                <button  class = "btn btn-outline-light" onclick = "co_prime_calc()" >Find</button> <br>
-            </div>
                 <p  id="co_prime_res"></p><br><br>    
         </div>
 
@@ -16801,35 +16950,6 @@
              
         </div>
 
-        <div  id="coprimeex">
-            <h1 style="color: #da1085">Co-Prime Numbers Theory</h1><br>
-              <p>‘Co’ refers to a ‘pair’. So, we can define a pair of integers, let's say a and b, as coprime or primes to each other or 
-                  mutually prime or relatively prime if:<br></p>p>
-                  <h5>* the only positive integer that divides both of them to give a remainder zero is 1<br></h5>
-                  <h5>* In other words, the HCF of the two numbers is 1<br></h5>
-                  <h5>* Coprime numbers are denoted as gcd(a, b)=1 or (a, b)=1 or as “a is prime to b”</h5>
-              <br>
-              <h2 style="color: #da1085">How to find Coprime numbers?</h2>
-              <p>Let's understand it with the help of an example:<br>
-
-                Let's consider two numbers 6 and 15.
-                Now find out the factors of 6 and 15. We get the factors of 6 as 1, 2, 3, 6 and factors of 15 as 1, 3, 5, 15.On 
-                comparing the factors of these two numbers 6 and 15, we see that both these numbers have factors 1 and 3 in common. 
-                The HCF for this pair is 3. Therefore the pair is not coprime.
-              </p><br>
-              
-              <h2 style="color: #da1085">
-                Properties of Coprime numbers
-              </h2><br>
-                <h5>1) Numbers that are coprime may not necessarily be prime numbers themselves. For eg: (10,21), the numbers are not prime numbers if taken individually but they are coprime if considered as a pair. This concludes that composite numbers can be coprime numbers too.</h5><br>
-                <h5>2) Prime numbers are coprime by default. For eg: (2,3), (5,11), (19,23) and so on. Every prime number has only two factors i.e. 1 and the number itself. Therefore, the only common factor of a pair of two prime numbers will be 1.<br></h5>
-                <h5>3) Unity is considered coprime with everything else.<br></h5>
-               <h5>4) The concept of coprime is meaningful only with natural numbers.<br></h5>
-               <h5>5) Two successive integers are always coprime. For eg: (2,3), (11,12), (99,100) and so on; they have 1 as their HCF.<br></h5>
-               <h5>6) The sum of any two coprime numbers is always coprime with the product of the same two coprime numbers. For eg: The sum of 2 and 3 is 5 and the product of 2 and 3 is 6. Hence, 5 and 6 are coprime numbers.<br></h5>
-               <h5>7) If p and q are coprime numbers then p2 and q2 are also coprime numbers. For example, the squares of 5 and 6 i.e. 25 and 36 are also coprime to each other.<br></h5>
-             
-        </div>
 
         <div class="collapse" id="cevtha">
             <h2 style="text-align: center;font-size: 34px;">Ceva and Thales Theorem</h2>
@@ -17527,6 +17647,10 @@
                            style="text-decoration:none;" href="#">Ellipse</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#gridshape"
+                           style="text-decoration:none;" href="#">Grid</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#yin_yang"
                            style="text-decoration:none;" href="#">Half Yin-Yang</a></td>
                 </tr>
@@ -18182,6 +18306,10 @@
                                         style="text-decoration:none;" href="#">Anticone</a></td>
                                 </tr>
                                 <tr>
+                                    <td><a data-toggle="modal" data-target="#trun_anticone"
+                                        style="text-decoration:none;" href="#">Truncated Anticone</a></td>
+                                </tr>
+                                <tr>
                                     <td><a data-toggle="modal" data-target="#Cone"
                                         style="text-decoration:none;" href="#">Cone</a></td>
                                 </tr>
@@ -18235,6 +18363,10 @@
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#truncube"
                                         style="text-decoration:none;" href="#">Truncated Cube</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#snubcube"
+                                        style="text-decoration:none;" href="#">Snub Cube</a></td>
                                 </tr>
                             </table>
                         </div>
@@ -18310,6 +18442,10 @@
                                 <td><a data-toggle="modal" data-target="#halfcy"
                                         style="text-decoration:none;" href="#">Half Cylinder</a></td>
                             </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#diagcy"
+                                        style="text-decoration:none;" href="#">Diagonally halved Cylinder</a></td>
+                            </tr>
                             </table>
                         </div>
                     </td>
@@ -18317,6 +18453,10 @@
                 <tr>
                     <td><a data-toggle="modal" data-target="#disphenoid"
                            style="text-decoration:none;" href="#">Disphenoid</a></td>
+                </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#doublept"
+                           style="text-decoration:none;" href="#">Double Point</a></td>
                 </tr>
                 <tr>
                     <td><a data-toggle="modal" data-target="#ellipsoid"
@@ -20121,62 +20261,98 @@
             <div class="text-center">
                 <h2>Percentage Calculator</h2><br>
             </div>
-            <div class="coll">
-                <p>
-                    1) What is  <input type="text" id="y" size=3 value='' placeholder="Y">  % of
-                <input type="text" id="x" size=3 value='' placeholder="X">  ? 
-                    <br><br>
-                    
-                <button type="button" class="btn btn-light" onclick=solveper()>
-                    Calculate 
-                </button><br>
-                </p>
-            </div><br>
-            <p id="op" style= "font-family:mathfont"></p><br>
-            <p id="op1" style= "font-family:mathfont"></p><br>
-            <div class="coll">
-                <p>
-                    2) What % of  <input type="text" id="perX1" size=3 value='' placeholder="X">  is
-                <input type="text" id="perY1" size=3 value='' placeholder="Y">  ? 
-                    <br><br>
-                    
-                <button type="button" class="btn btn-light" onclick=solvepera()>
-                    Calculate 
-                </button><br>
-                </p>
-            </div><br>
-            <p id="perAns1" style= "font-family:mathfont"></p><br>
-            <p id="perAns2" style= "font-family:mathfont"></p><br>
-            <div class="coll">
-                <p>
-                    3)  <input type="text" id="perY2" size=3 value='' placeholder="Y">  out of what is <input type="text" id="perX2" size=3 value='' placeholder="X"> %  ? <br><br>    
-                <button type="button" class="btn btn-light" onclick=solvepercal()> Calculate </button><br></p>
-            </div><br>
-            <p id="s" style= "font-family:mathfont"></p><br>
-            <p id="s1" style= "font-family:mathfont"></p><br>
-            <div class="coll">
-                <p>
-                    4)  <input type="text" id="x3" size=3 value='' placeholder="X">  plus
-                <input type="text" id="y3" size=3 value='' placeholder="Y"> % is what? <br><br>   
-                <button type="button" class="btn btn-light" onclick=solvepercent()>Calculate </button><br></p></div><br>
-                <p id="r" style= "font-family:mathfont"></p><br>
-                <p id="r1" style= "font-family:mathfont"></p><br>
-            <div class="coll">
-                <p>
-                    5)  <input type="text" id="x4" size=3 value='' placeholder="X">  minus
-                <input type="text" id="y4" size=3 value='' placeholder="Y"> % is what? <br><br>
-                <button type="button" class="btn btn-light" onclick=solveperc()>Calculate </button><br></p></div><br>
-                <p id="t" style= "font-family:mathfont"></p><br>
-                <p id="t1" style= "font-family:mathfont"></p><br>
+            <form action="">
                 <div class="coll">
                     <p>
-                        6)<input type="text" id="x5" size=3 value='' placeholder="X">% of 
-                    <input type="text" id="y5" size=3 value='' placeholder="Y">%  is ? 
+                        1) What is  <input type="text" id="y" size=3 value='' placeholder="Y">  % of
+                    <input type="text" id="x" size=3 value='' placeholder="X">  ? 
                         <br><br>
                         
-                    <button type="button" class="btn btn-light" onclick=solveperper()>
+                    <button type="button" class="btn btn-light" onclick=solveper()>
                         Calculate 
-                    </button></div>p><br>
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset 
+                    </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
+            <p id="op" style= "font-family:mathfont"></p><br>
+            <p id="op1" style= "font-family:mathfont"></p><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        2) What % of  <input type="text" id="perX1" size=3 value='' placeholder="X">  is
+                    <input type="text" id="perY1" size=3 value='' placeholder="Y">  ? 
+                        <br><br>
+                        
+                    <button type="button" class="btn btn-light" onclick=solvepera()>
+                        Calculate 
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset 
+                    </button><br>
+                    </p>
+                </div>
+            </form>
+            <br>
+            <p id="perAns1" style= "font-family:mathfont"></p><br>
+            <p id="perAns2" style= "font-family:mathfont"></p><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        3)  <input type="text" id="perY2" size=3 value='' placeholder="Y">  out of what is <input type="text" id="perX2" size=3 value='' placeholder="X"> %  ? <br><br>    
+                    <button type="button" class="btn btn-light" onclick=solvepercal()> Calculate </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset 
+                    </button><br></p>
+                </div>
+            </form>
+            <br>
+            <p id="s" style= "font-family:mathfont"></p><br>
+            <p id="s1" style= "font-family:mathfont"></p><br>
+            <form action="">
+                <div class="coll">
+                    <p>
+                        4)  <input type="text" id="x3" size=3 value='' placeholder="X">  plus
+                    <input type="text" id="y3" size=3 value='' placeholder="Y"> % is what? <br><br>   
+                    <button type="button" class="btn btn-light" onclick=solvepercent()>Calculate </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset 
+                        </button><br></p></div>
+            </form>
+            <br>
+                <p id="r" style= "font-family:mathfont"></p><br>
+                <p id="r1" style= "font-family:mathfont"></p><br>
+                <form action="">
+                    <div class="coll">
+                        <p>
+                            5)  <input type="text" id="x4" size=3 value='' placeholder="X">  minus
+                        <input type="text" id="y4" size=3 value='' placeholder="Y"> % is what? <br><br>
+                        <button type="button" class="btn btn-light" onclick=solveperc()>Calculate </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset 
+                        </button><br></p></div>
+                </form>
+            <br>
+                <p id="t" style= "font-family:mathfont"></p><br>
+                <p id="t1" style= "font-family:mathfont"></p><br>
+                <form action="">
+                    <div class="coll">
+                        <p>
+                            6)<input type="text" id="x5" size=3 value='' placeholder="X">% of 
+                        <input type="text" id="y5" size=3 value='' placeholder="Y">%  is ? 
+                            <br><br>
+                            
+                        <button type="button" class="btn btn-light" onclick=solveperper()>
+                            Calculate 
+                        </button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset 
+                        </button></p></div>
+                </form>
+                <br>
                     <p id="perans1" style= "font-family:mathfont"></p><br>
                     <p id="perans2" style= "font-family:mathfont"></p><br>
                     </p>
@@ -20378,7 +20554,7 @@
                     </div>
                     <div class="col-4">        
                         <button type="button" class="btn btn-light" onclick=calcexmnap()>
-                            Find
+                            Example
                         </button>
                     </div>
                     <div class="col-4">
@@ -20544,12 +20720,17 @@
                 <br>
                 <br>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <button type="button" class="btn btn-light" onclick=ngp()>
                             Find
                         </button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-light" onclick=calcexngp()>
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
                         onclick="this.form.reset();">
                         Reset
@@ -20578,12 +20759,17 @@
                        style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
                 <br><br>
                 <div class="row">
-                    <div class="col-6">        
+                    <div class="col-4">        
                         <button type="button" class="btn btn-light" onclick=mngpsum()>
                             Find
                         </button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">        
+                        <button type="button" class="btn btn-light" onclick=calcexmngpsum()>
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
                         onclick="this.form.reset();">
                         Reset
@@ -20603,13 +20789,19 @@
                        style="border: none; background: transparent; width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                 <br>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
                         onclick="constGp()">
                             Find
                         </button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-light"
+                        onclick="calcexconstGp()">
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
                         onclick="ResetVal()">
                         Reset
@@ -20636,10 +20828,15 @@
                        placeholder="Enter number of terms"/>
                 <br>
                 <div class=" mt-3 row">
-                    <div class="col-6">      
+                    <div class="col-4">      
                         <button type="button" class="btn btn-light" onclick="hp()">Find</button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">      
+                        <button type="button" class="btn btn-light" onclick="calcexhp()">
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
                         onclick="this.form.reset();">
                         Reset
@@ -20662,12 +20859,17 @@
                 <br>
                 <br>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <button type="button" class="btn btn-light" onclick=nhp()>
                             Find
                         </button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">        
+                        <button type="button" class="btn btn-light" onclick=calcexnhp()>
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
                         onclick="this.form.reset();">
                         Reset
@@ -20689,10 +20891,15 @@
                         <input type="number" name="totno" class="form__field" id="totno" placeholder="Enter the number of term to find">
                         <p>&nbsp;</p>
                         <div class="row">
-                            <div class="col-6">      
+                            <div class="col-4">      
                                 <button type="button" class="btn btn-outline-light" onclick="hpcal()">Calculate</button>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">        
+                                <button type="button" class="btn btn-light" onclick=calcexhpcal()>
+                                    Example
+                                </button>
+                            </div>
+                            <div class="col-4">
                                 <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
                             </div>
                         </div>
@@ -20717,10 +20924,15 @@
                         <input type="number" name="totnum" class="form__field" id="totnum1" placeholder="Enter the number of term to find (n)">
                         <p>&nbsp;</p>
                         <div class="row">
-                            <div class="col-6">      
+                            <div class="col-4">      
                                 <button type="button" class="btn btn-outline-light" onclick="hpcal11()">Calculate</button>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">        
+                                <button type="button" class="btn btn-light" onclick=calcexhpcal11()>
+                                    Example
+                                </button>
+                            </div>
+                            <div class="col-4">
                                 <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
                             </div>
                         </div>
@@ -21248,7 +21460,10 @@
     <form action="">
         <input style="color: white; font-family:mathfont" type="text"id="vects1" placeholder="Enter the Vector space" class="form__field"><p>&nbsp;</p>
         <input style="color: white; font-family:mathfont" type="text"id="vects2" placeholder="Enter the input coordinates" class="form__field"><p>&nbsp;</p>
-        <button class="btn btn-dark" onclick="vectsfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="vectsfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calcexvectsfind()>
+             Example
+        </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     </form>
     
@@ -21344,13 +21559,32 @@
         </div>
     </div>
 </div>
-
-<div class="collapse" id="woods">
-    <h1 style="color: white;font-family:mathfont">Woodall Number</h2><p>&nbsp;</p>
-    <input style="color: white; font-family:mathfont" type="text"id="wood1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-    <button class="btn btn-dark" onclick="woodfind()">FInd</button><p>&nbsp;</p>
-    <p style="font-family:mathfont" id="woodans"></p><br>
+<div class="collapse" id="woods" style="text-align: center;">
+    <div class="container">
+        <h2 style="color: white;font-family:mathfont;text-align: center;">Woodall Number</h2>
+        <br>
+        <p>A Woodall number (W<sub>n</sub>) is any natural number of the form
+            \[W_n = n \cdot 2^n - 1\]
+            for some natural number n.  </p>
+        <br>
+        <form action="">
+            <div class="form-group">
+                <input style="color: white; font-family:mathfont" type="number" id="wood1" placeholder="Enter the input number" class="form__field">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="woodfind()">Find</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+        <br>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="woodans"></p><br>
+        </div>
+    </div>
 </div>
+
 
 <!-- doubling time starts -->
 <div class="collapse" id="dbltime" style="text-align: center;">
@@ -21935,18 +22169,16 @@ N is the population size.
 <div class="collapse" id="covs">
     <h1 style="font-family:mathfont; text-align:center;">COVARIANCE CALCULATOR </h1>
     <form action="">
-        <input type="text" name="setx" class="form__field" id="setx" placeholder="Enter dataset X">
-        <p>&nbsp;</p>
-        <input type="text" name="sety" class="form__field" id="sety" placeholder="Enter dataset Y">
-        <p>&nbsp;</p>
+        <input type="text" name="setx" class="form__field" id="setx" placeholder="Enter dataset X"><p>&nbsp;</p>
+        <input type="text" name="sety" class="form__field" id="sety" placeholder="Enter dataset Y"><p>&nbsp;</p>
         <button type="button" class="btn btn-outline-light" onclick="covcalcu()">Calculate</button>
         <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
     </form><p>&nbsp;</p>
     <p id="covans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Covariance indicates whether two variables X and Y are related by measuring how the variables change in relation to each other.<br>
-     It tells us if there is a relationship between two variables and which direction that relationship is in.<br>
-      A positive covariance means that the two variables are positively related, and they have the same direction. <br>
-      A negative covariance means that the variables are negatively related, and they have the opposite directions.
+    It tells us if there is a relationship between two variables and which direction that relationship is in.<br>
+    A positive covariance means that the two variables are positively related, and they have the same direction. <br>
+    A negative covariance means that the variables are negatively related, and they have the opposite directions.
 </div>
 
 <div class="collapse" id="rankcals">
@@ -22388,6 +22620,18 @@ N is the population size.
     <br>
     <h5 id="typenum16ans"></h5>
     <h5 id="typenum16exp"></h5>
+    <br>
+    </form>
+    <br>
+    <h2>Emirp numbers </h2>
+    <br>
+    <form>
+    <input type="text" id="typenum30" class="form__field"placeholder="Enter the number">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum20find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum20ans"></h5>
     <br>
     </form>
 </div>
@@ -24462,7 +24706,10 @@ N is the population size.
     <form action="">
         <input type="text" id="impse1"class="form__field"placeholder="Enter value of x">
         <input type="text" id="impse2"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impsefind()">Find</button>
+        <button class="text" onclick="impsefind()">Find</button>        
+        <button type="button" class="btn btn-light" onclick=calceximpsefind()>
+         Example
+        </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>
     
@@ -24472,8 +24719,11 @@ N is the population size.
     <h4>Sum of the sequence 3, 6, 11, ………</h4><br>
     <form action="">
         <input type="text" id="impse32"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse13findd()">Find</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <button type="button" class="btn btn-dark" onclick="impse13findd()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="calceximpse13findd()">
+            Example
+        </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>
     
     <p id="impseans32" style= "font-family:mathfont"></p><br>
@@ -24481,8 +24731,11 @@ N is the population size.
     <h4>Sum of first N terms of the series 2*3*5, 3*5*7, 4*7*9, …… </h4><br>
     <form action="">
         <input type="text" id="impse35"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse36find()">Find</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <button type="button" class="btn btn-dark" onclick="impse36find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="calceximpse36find()">
+            Example
+        </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>
     
     <p id="impseans35" style= "font-family:mathfont"></p><br>
@@ -24493,8 +24746,11 @@ N is the population size.
         <input type="text" id="impse3"class="form__field"placeholder="Enter value of x">
         <input type="text" id="impse4"class="form__field"placeholder="Enter no. of terms">
         <br>
-        <button class="btn btn-dark" onclick="impse1find()">Find</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <button type="button" class="btn btn-dark" onclick="impse1find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="calceximpse1find()">
+            Example
+        </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br>
     </form>
     
@@ -24506,8 +24762,11 @@ N is the population size.
         <input type="text" id="impse5"class="form__field"placeholder="Enter value of x">
         <input type="text" id="impse6"class="form__field"placeholder="Enter no. of terms">
         <br>
-        <button class="btn btn-dark" onclick="impse2find()">Find</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <button type="button" class="btn btn-dark" onclick="impse2find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="calceximpse2find()">
+            Example
+        </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br>
     </form>
     
@@ -24518,8 +24777,11 @@ N is the population size.
     <form action="">
         <input type="text" id="impse7"class="form__field"placeholder="Enter no. of terms">
         <br>
-        <button class="btn btn-dark" onclick="impse3find()">Find</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <button type="button" class="btn btn-dark" onclick="impse3find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="calceximpse3find()">
+            Example
+        </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br>
     </form>
     
@@ -24529,6 +24791,9 @@ N is the population size.
     <form action="">
         <input type="text" id="impse8"class="form__field"placeholder="Enter no. of terms"><br>
         <button class="btn btn-dark" onclick="impse4find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calceximpse4find()>
+            Example
+        </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>
     
@@ -24538,6 +24803,9 @@ N is the population size.
     <form action="">
         <input type="text" id="impse9"class="form__field"placeholder="Enter no. of terms"><br>
         <button class="btn btn-dark" onclick="impse5find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calceximpse5find()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>
     
@@ -24548,6 +24816,9 @@ N is the population size.
     <form action="">
         <input type="text" id="impse10"class="form__field"placeholder="Enter no. of terms"><br>
         <button class="btn btn-dark" onclick="impse6find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calceximpse6find()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>
     
@@ -24558,8 +24829,11 @@ N is the population size.
     <form action="">
         <input type="text" id="impse1x"class="form__field"placeholder="Enter value of x"><br>
         <input type="text" id="impse11"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse7find()">Find</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <button type="button" class="btn btn-dark" onclick="impse7find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calceximpse7find()>
+            Example
+           </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>
     
     <p id="impse7ans" style= "font-family:mathfont"></p><br>
@@ -24568,8 +24842,11 @@ N is the population size.
     <h4>Gijswijt’s Sequence</h4><br>
     <form action="">
         <input type="text" id="impse12"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse8find()">Find</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <button type="button" class="btn btn-dark" onclick="impse8find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calceximpse8find()>
+            Example
+           </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>
     
     <p id="impse8ans"></p>
@@ -24608,8 +24885,7 @@ N is the population size.
         <button class="btn btn-dark" onclick="impse20find()">Find</button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br>
-    </form>
-    
+    </form>    
     <p id="impse20ans"></p>
     <br>
     <h4>Collatz Sequence</h4><br>
@@ -24617,9 +24893,16 @@ N is the population size.
         <input type="text" id="impse21"class="form__field"placeholder="Enter no. of terms"><br>
         <button class="btn btn-dark" onclick="impse21find()">Find</button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>
-    
+    </form>    
     <p id="impse21ans"></p><p id="impse21exp"></p>
+    <br>
+    <h4>Sylvester’s Sequence</h4><br>
+    <form action="">
+        <input type="text" id="impse24"class="form__field"placeholder="Enter no. of terms"><br>
+        <button class="btn btn-dark" onclick="impse24find()">Find</button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>    
+    <p id="impse24ans"></p>
     <br>
     <h4>Sum of the series 1 / 1 + (1 + 2) / (1 * 2) + (1 + 2 + 3) / (1 * 2 * 3) + – – – – – – upto n terms.</h4>
     <br>
@@ -24639,6 +24922,9 @@ N is the population size.
         <input type="text" id="impse14"class="form__field"placeholder="Enter no. of terms">
         <br>
         <button class="btn btn-dark" onclick="impse10find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calceximpse10find()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br>
     </form>
@@ -24649,6 +24935,9 @@ N is the population size.
     <form action="">
         <input type="text" id="impse15"class="form__field"placeholder="Enter no. of terms"><br>
         <button class="btn btn-dark" onclick="impse11find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calceximpse11find()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>
     
@@ -24656,9 +24945,12 @@ N is the population size.
     <h4>Sum of first n terms of Quadratic Sequence 3 + 7 + 13 + ...... upto n terms </h4>
     <br>
     <form action="">
-        <input type="text" id="impse20"class="form__field"placeholder="Enter no. of terms">
+        <input type="text" id="impse201"class="form__field"placeholder="Enter no. of terms">
         <br>
         <button class="btn btn-dark" onclick="impsefind20()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calceximpsefind20()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     </form>
     
@@ -24668,6 +24960,9 @@ N is the population size.
     <form action="">
         <input type="text" id="impse16"class="form__field"placeholder="Enter no. of terms"><br>
         <button class="btn btn-dark" onclick="impse12find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calceximpse12find()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
     </form>
     
@@ -24679,6 +24974,9 @@ N is the population size.
         <input type="text" id="impse17"class="form__field"placeholder="Enter no. of terms">
         <br>
         <button class="btn btn-dark" onclick="impse13find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calceximpse13find()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br>
     </form>
@@ -24691,6 +24989,9 @@ N is the population size.
     <input type="text" id="impse57"class="form__field"placeholder="Enter no. of terms">
     <br>
     <button class="btn btn-dark" onclick="impsefind22()">Find</button>
+    <button type="button" class="btn btn-dark" onclick=calceximpsefind22()>
+        Example
+       </button>
     <br>
     <p id="impse57ans"></p>
     <br>
@@ -24700,6 +25001,9 @@ N is the population size.
         <input type="text" id="imp113"class="form__field"placeholder="Enter no. of terms">
         <br>
         <button class="btn btn-dark" onclick="nth113find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calcexnth113find()>
+            Example
+           </button>
         <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
         <br>
     </form>
@@ -28220,6 +28524,67 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="doublept" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Double Point</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \pi r^2 \Big(a + \frac{b}{3} + \frac{c}{3}) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface area</h5>
+                                    <p class="text-center">\[A = \pi r (2a + \sqrt{b^2 + r^2} + \sqrt{c^2+r^2}\]</p>
+                                    
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/double-point.png" class="img-fluid">
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius(r)" id="inputdoubleptr"
+                                       oninput="solvedoublept();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter cylinder height (a)" id="inputdoublepta"
+                                       oninput="solvedoublept();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter height first cone(b)" id="inputdoubleptb"
+                                       oninput="solvedoublept();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter height second cone(C)" id="inputdoubleptc"
+                                       oninput="solvedoublept();">
+                            <p class="stopwrap" id="resultofdoubleptvol"
+                                style="font-family:mathfont;"></p><br>
+                            <p class="stopwrap" id="resultofdoubleptarea"
+                                style="font-family:mathfont;"></p> <br>
+                           
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="trapezium" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -28824,6 +29189,65 @@ N is the population size.
                             <p class="stopwrap" id="heightDropshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="perimeterDropshape" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="areaDropshape" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="gridshape" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Grid</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Rectangle length (c)</h5>
+                                    <p class="text-center">\[c = m \times a + \left ( m + 1 \right ) \times b\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Rectangle width (d)</h5>
+                                    <p class="text-center">\[d = n \times a + \left ( n + 1 \right ) \times b\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = c + d + 4 \times m \times n \times a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = c \times d - m \times n \times a^2\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group ml-3">
+                                        <img src="images/grid.png" class="img-fluid mx-auto d-block">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Number of holes in length (m):"
+                                   id="gridshape-m" oninput="gridshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Number of holes in width (n)"
+                                   id="gridshape-n" oninput="gridshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Edge length hole (a)"
+                                   id="gridshape-a" oninput="gridshapesolve()">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter Bar thickness (b)"
+                                   id="gridshape-b" oninput="gridshapesolve()">
+                            <br>
+                            <p class="stopwrap" id="gridshape-c" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="gridshape-d" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="gridshape-p" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="gridshape-A" style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -31821,6 +32245,70 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="diagcy" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Diagoanlly Halved  Cylinder</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \frac{ \pi \times r^2 \times h}{2}  \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[A = \pi *r * ( h + r + \frac{d}{2})\]</p>
+                                     <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Lateral Area</h5>
+                                    <p class="text-center">\[L = \pi *r*h\]</p>
+                                     <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume diagonal</h5>
+                                    <p class="text-center">\[d = \sqrt{h^2+ (2r)^2}\]</p>
+
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/diagonally-halved-cylinder.png" class="img-fluid">
+                                    </div>
+
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <input class="form__field" type="number" placeholder="Enter cylinder radius r"
+                                    id="inputdiaghalfcyr"
+                                    oninput="solvediagcy()">
+                                <input class="form__field" type="number" placeholder="Enter height h"
+                                    id="inputdiaghalfcyh"
+                                    oninput="solvediagcy()">
+                                <br>
+                                <p class="stopwrap" id="resultofdiaghalfcyvol"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofdiaghalfcyla"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofdiaghalfcyba"
+                                style="font-family:mathfont;"></p>
+                                <p class="stopwrap" id="resultofdiaghalfcydia"
+                                style="font-family:mathfont;"></p>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="barrel" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -32530,6 +33018,70 @@ N is the population size.
             </div>
         </div> 
 
+        <div class="modal fade" id="trun_anticone" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Anticone</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Wall thickness bottom</h5>
+                                    <p class="text-center">\[w = \frac{r}{i}*h\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Radius bottom opening</h5>
+                                    <p class="text-center">\[s = r-w\]</p>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = \pi*h*[r^2-\frac{(r^2 + rs +s^2)}{3}] \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = \pi [2rh + (r+s) * \sqrt{h^2+w^2} + r^2 - s^2]\]</p>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truncated-anticone.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius (r)" id="inputtrunanticonerad"
+                                       oninput="solvetrunanticone();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter cylinder height (h)" id="inputtrunanticoneheight"
+                                       oninput="solvetrunanticone();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter cone height (i)" id="inputtrunanticonei"
+                                       oninput="solvetrunanticone();">
+                            <p class="stopwrap" id="resultoftrunanticonevol"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrunanticonearea"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrunanticonerad"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftrunanticonethick"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
         <div class="modal fade" id="sphere" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -32732,7 +33284,7 @@ N is the population size.
                                    placeholder="Enter First short side (c)" id="sharpkink-c"
                                    oninput="sharpKinkSolve();">
                             <input class="form__field" type="number"
-                                   placeholder="Enter Second short side (c')" id="sharpkink-cx"
+                                   placeholder="Enter Second short side (c)" id="sharpkink-cx"
                                    oninput="sharpKinkSolve();">
                             <input class="form__field" type="number"
                                    placeholder="Enter Angle (α)" id="sharpkink-alpha"
@@ -35141,6 +35693,73 @@ N is the population size.
                             <p class="stopwrap" id="truncocta-rm"
                                        style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="truncocta-av"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="snubcube" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Snub Cube</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Tribonacci Constant (t)</h5>
+                                    <p class="text-center">\[t = 1.8392867552\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 2a^2 \times \left ( 3 + 4 \sqrt 3 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = a^3 \times \frac {\left ( 3\times \sqrt {t - 1} + 4 \times \sqrt {t + 1} \right )} { \left ( 3 \times \sqrt {2 - t} \right )}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumsphere radius (r<sub>c</sub>)</h5>
+                                    <p class="text-center">\[r_{c} = a \times \sqrt { \frac {3 - t}{ 4 \times ( 2 - t )}}\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/snub-cube.png" class="img-fluid d-block mx-auto">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius (r<sub>m</sub>)</h5>
+                                    <p class="text-center">\[r_{m} = a \times \sqrt { \frac {1}{ 4 \times ( 2 - t )}}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface-to-volume ratio (A/V)</h5>
+                                    <p class="text-center">\[\frac{A}{V}\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Edge length (a)" id="snubcube-a"
+                                       oninput="solvesnubcube();">
+                            <p class="stopwrap" id="snubcube-A"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="snubcube-V"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="snubcube-rc"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="snubcube-rm"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="snubcube-av"
                                 style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
