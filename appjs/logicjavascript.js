@@ -14907,7 +14907,7 @@ function typenum15find()
     renderMathInElement(result);
 }
 
-}    
+    
 
 
 function simpleSieve(){
@@ -24246,17 +24246,11 @@ function relrisk() {
     let ans = "";
     var output = document.getElementById('relriskans');
     if (a == "" || b == "" || c == "" || d == "") {
-<<<<<<< HEAD
-        output.innerHTML = "Enter all the inputs";
-||||||| 343865d
-        document.getElementById("relriskans").innerHTML = "Enter all the inputs";
-=======
         output.innerHTML = "Enter all the inputs";
     }
     else if(isNaN(a)||isNaN(b)||isNaN(c)||isNaN(d))
     {
         document.getElementById("relriskans").innerHTML = "All inputs should be numeric";
->>>>>>> afdd3b431abaa559e8d0216341dd56b83c3ef158
     }
     else {
         let ab = a+b; 
@@ -24421,6 +24415,41 @@ function hyperfind() {
     }
     document.getElementById("hyperans").innerHTML = ans;
 }
+// special number
+function specialvalue(){
+    var num=document.getElementById("special").value;
+    if(num=="")
+    {
+        document.getElementById("specialans").innerHTML="Please input a no";
+    }
+    else{
+        num=parseInt(num);
+        number = num;  
+        var sum=0;
+        while (number > 0)  
+        {  
+        var digit =parseInt( number % 10);  
+        var fact=1;  
+         for(var i=1; i<=digit; i++)  
+         {  
+          fact=fact*i;  
+          }  
+        sum= parseInt(sum+ fact);  
+        number = parseInt(number / 10);
+         }  
+
+       if(num==sum)  
+        {  
+           document.getElementById("specialans").innerHTML=num+" is a special number"
+          }  
+        else  
+         {  
+          document.getElementById("specialans").innerHTML=num+" is not a special number"
+          }  
+    }
+}
+
+
 function armstrongvalue(){
     var num=document.getElementById("arm").value;
     var digits=Math.floor(Math.log10(num) + 1);

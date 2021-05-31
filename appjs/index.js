@@ -130,9 +130,11 @@ function collapseit(openit) {
 
 function openit(id) {
     var ids = [
+        
         "#harnum",
         "#pronum",
         "#autonum",
+        "#specialnum",
         "#armnum",
         "#disnum",
         "#gammaDist",

@@ -2943,6 +2943,22 @@
                     </tr>
                 </table>
             </li>
+              <!-- Special no -->
+              <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="specialbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Special Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Special Number','#specialnum','c','specialnumimgfav')"><img
+                                        id="specialnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -3021,6 +3037,7 @@
                     </tr>
                 </table>
             </li>
+          
             <!-- Armstrong no -->
             <li>
                 <table class="table">
@@ -3037,6 +3054,7 @@
                     </tr>
                 </table>
             </li>
+            
             <li>
                 <table class="table">
                     <tr>
@@ -15535,7 +15553,29 @@
                 <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;" id="emio3"></p>
             </div>
         </div>
-        
+         <!-- special no -->
+    <div class="collapse" id="specialnum" style="text-align: center;">
+        <div class="container">
+            <h1 style="color: white;font-family:mathfont;text-align: center;">Special Number Checker</h2>
+            <br>
+            <p>A number is said to be special number when the sum of factorial of its digits is equal to the number itself.</p>
+            <br>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="special" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="specialvalue()">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+                <p class="stopwrap" style="color:white;" id="specialans"></p><br>
+        </div>
+    </div>
         <div class="collapse" id="des">
             <h2 style="text-align:center;">Desargues' Theorem</h2>
             <br><br>
@@ -37616,6 +37656,7 @@ N is the population size.
         </div>
     </div>
     <!--roman numeral end-->
+   
 <!-- Armstrong -->
     <div class="collapse" id="armnum" style="text-align: center;">
         <div class="container">
