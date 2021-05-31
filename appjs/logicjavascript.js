@@ -19648,6 +19648,16 @@ function convertAnyBaseToAnyBase() {
 
 }
 //Euclid's GCD
+function calcexgcdfind(){
+    var n = document.getElementById("gcdin1");
+    var x = document.getElementById("gcdin2");
+
+    n.value = 12;
+    x.value = 10;
+
+    gcdfind();
+}
+
 function gcdfind() {
 
     let a = parseInt(document.getElementById("gcdin1").value)
@@ -19663,6 +19673,14 @@ function gcdfind() {
         return b;
     document.getElementById("gcdans").innerHTML = gcd(b % a, a);
 }
+}
+
+function calcexgcd1find(){
+    var n = document.getElementById("gcdin3");
+
+    n.value = 12;
+
+    gcd1find();
 }
 
 function gcd1find() {
@@ -26195,6 +26213,17 @@ function woodfind() {
     }
     document.getElementById("woodans").innerHTML = ans;
 }
+
+function calcexantilogCal(){
+    var n = document.getElementById("logvalue");
+    var x = document.getElementById("logbase");
+
+    n.value = 10;
+    x.value = 2;
+
+    antilogCal();
+}
+
 function antilogCal(){
     let val = document.getElementById("logvalue").value;
     let base = document.getElementById("logbase").value;
