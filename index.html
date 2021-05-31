@@ -18659,6 +18659,10 @@
                     </td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#rhombicuboctahedron"
+                        style="text-decoration:none;" href="#">Rhombicuboctahedron</a></td>
+                </tr>
+                <tr>
                     <td>
                         <div onclick="$('#typesofsphere').slideToggle();"
                              style="color: var(--appimage);cursor: pointer;"> Sphere
@@ -35615,6 +35619,70 @@ N is the population size.
                             <p class="stopwrap" id="resultoftruntetravol"
                                        style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultoftruntetraarea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="rhombicuboctahedron" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Rhombicuboctahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 2 \times a^2 \times \left ( 9 + \sqrt 3 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac {2}{3} \times a^3 \times \left ( 6 + 5\sqrt2 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumsphere radius (r<sub>c</sub>)</h5>
+                                    <p class="text-center">\[r_{c} = \frac{a}{2} \times \sqrt{5 + 2\sqrt2}\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/rhombicuboctahedron.png" class="img-fluid mx-auto d-block">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius (r<sub>m</sub>)</h5>
+                                    <p class="text-center">\[r_{m} = \frac{a}{2} \times \sqrt{4 + 2\sqrt2}\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface-to-volume ratio (A/V)</h5>
+                                    <p class="text-center">\[\frac{A}{V}\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Edge length (a)" id="rhombicuboctahedron-a"
+                                       oninput="solverhombicuboctahedron();">
+                            <p class="stopwrap" id="rhombicuboctahedron-A"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="rhombicuboctahedron-V"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="rhombicuboctahedron-rc"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="rhombicuboctahedron-rm"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="rhombicuboctahedron-av"
                                 style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
