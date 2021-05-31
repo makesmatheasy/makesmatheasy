@@ -15499,7 +15499,27 @@ function golds3find() {
         document.getElementById("golds3ans").innerHTML = "Not a Valid Input"
 }
 
-function gold4find(){
+function golds5find(){
+    let n = parseInt(document.getElementById("golds6").value)
+    if (!prime[n])
+        document.getElementById("golds5ans").innerHTML =  false;
+ 
+    var product = 1;
+    var i = 0;
+ 
+    while (product < n) {
+        product = product * arr[i];
+ 
+        if (product + 1 == n || product - 1 == n)
+            document.getElementById("golds5ans").innerHTML =  true;
+ 
+        i++;
+    }
+ 
+    document.getElementById("golds5ans").innerHTML =  false;
+}
+
+function golds4find(){
     let n = document.getElementById("golds6").value
     if(!isNaN(n)){
         document.getElementById("golds4exp").innerHTML = "\\[Catalan numbers satisfy the following recursive formula. \\]"
