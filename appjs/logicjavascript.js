@@ -3492,12 +3492,22 @@ function impse4find() {
     }
 }
 
-function impse5find(){
-    var n = parseInt(document.getElementById("impse99").value)    
-    for(let i = 0; i < n; i++)
-        document.getElementById("impse4ans").innerHTML = gen(i) + " "
-         
-    document.getElementById("impse4ans").innerHTML = "</br>"
+function impse99find(){
+    var n = parseInt(document.getElementById("impse99").value)  
+    if(!isNaN(n))  {
+        for(let i = 0; i < n; i++)
+            document.getElementById("impse99ans").innerHTML = gen(i) + " "
+             
+        document.getElementById("impse99ans").innerHTML = "</br>"
+        document.getElementById("impse99exp").innerHTML = "\\[The Moser-de Bruijn sequence is the sequence obtained by adding up the distinct powers of the number 4\\]"
+        document.getElementById("impse99exp").innerHTML = "\\[S(2 * n) = 4 * S(n)\\]"
+        document.getElementById("impse99exp").innerHTML = "\\[S(2 * n + 1) = 4 * S(n) + 1 with S(0) = 0 and S(1) = 1\\]"
+        document.getElementById("impse99exp").innerHTML = "\\[It may be noted here that any number which is the sum of non-distinct powers of 4 is not a part of the sequence. \\]"
+        document.getElementById("impse99exp").innerHTML = "\\[Thus, any number which is not a power of 4 and is present in the sequence must be the sum of the distinct powers of 4. \\]"
+        renderMathInElement(document.getElementById("impse99exp").innerHTML)
+    }
+    else 
+    document.getElementById("impse99ans").innerHTML = "Please enter valid input"
 }
 
 function gen(n)
