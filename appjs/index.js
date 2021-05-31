@@ -244,6 +244,7 @@ function openit(id) {
         "#singlematrixcollapse",
         "#algebraic-idencollapse",
         "#about",
+        "#pentatop",
         "#propcircle",
         "#propquad",
         "#pythtriple",
