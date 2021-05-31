@@ -10555,6 +10555,26 @@ function solvesqcupola() {
         voloutput.innerHTML = "";
     }
 }
+// Pentagonal cupola
+function solvepentcupola() {
+    let a = document.getElementById("inputpentcupolaedge").value;
+    let areaoutput = document.getElementById("resultofpentcupolaarea");
+    let voloutput = document.getElementById("resultofpentcupolavol");
+    var areatemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline \\frac{1}{4} \\space (20 + 5 \\sqrt{3} + \\sqrt{5 (145 + 62 \\sqrt{5})}) \\space (" + a + ")^2" + "\\space \\newline" + "\\ = " + eval(String(16.5797498 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline \\frac{1}{6} \\space (5 + 4 \\sqrt{5}) \\space (" + a + ")^3" + "\\ = " + eval(String(2.3240453 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
+
 //Partial Right Cylinder
 function solvepartialcy() {
     var height = document.getElementById("inputcyh").value;
