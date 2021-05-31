@@ -7518,6 +7518,26 @@ function threedissolve() {
     }
 }
 
+// Koch Curve
+function solvekochcurve() {
+    let n = document.getElementById("inputkochcuriterno").value;
+    let l = document.getElementById("inputkochcurlinelen").value;
+    let iterlenoutput = document.getElementById("resultofkochcuriterlen");
+    let heioutput = document.getElementById("resultofkochcurheight");
+    var iterlentemp = "";
+    var heitemp = "";
+    if ((n != "") && (l != "")) {
+        iterlentemp += "\\[Length \\space after \\space n \\space iterations \\space \\newline" + l + "\\times (\\frac{4}{3})^" + n + "\\ = " + eval(String(l * Math.pow(1.333333333 , n ) )).toFixed(2) + "\\]";
+        iterlenoutput.innerHTML = iterlentemp;
+        heitemp += "\\[Height \\space \\newline \\frac{\\sqrt{3}}{6} \\space (" + l + ")" + "\\ = " + eval(String(0.2886751 * l)).toFixed(2) + "\\]";
+        heioutput.innerHTML = heitemp;
+        renderMathInElement(iterlenoutput);
+        renderMathInElement(heioutput);
+    } else {
+        iterlenoutput.innerHTML = "";
+        heioutput.innerHTML = "";
+    }
+}
 //-----------------------------------------------------
 //shapes calculator
 function solveperisq() {

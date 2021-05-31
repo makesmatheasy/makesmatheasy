@@ -17920,6 +17920,10 @@
                     <td><a data-toggle="modal" data-target="#slopeline"
                             style="text-decoration:none;" href="#">Line</a></td>
                 </tr>
+                <tr>
+                    <td><a data-toggle="modal" data-target="#kochcurve"
+                            style="text-decoration:none;" href="#">Koch Curve</a></td>
+                </tr>
             </table>
         </div>
 
@@ -28254,6 +28258,54 @@ N is the population size.
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="kochcurve" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Koch Curve</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Length after n iterations</h5>
+                                    <p class="text-center">\[m = l \times (\frac{4}{3})^n \]</p>
+                                    <p class="text-center">n = number of iterations</p>
+                                    <p class="text-center">l = original line length</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Height</h5>
+                                    <p class="text-center">\[h = \frac{\sqrt{3}}{6} \space l \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/koch-curve.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                       placeholder="Enter no. of iterations (n)" id="inputkochcuriterno"
+                                       oninput="solvekochcurve();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter original line length (l)" id="inputkochcurlinelen"
+                                       oninput="solvekochcurve();">
+                            <p class="stopwrap" id="resultofkochcuriterlen"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofkochcurheight"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
                         </button>
                     </div>
                 </div>
