@@ -249,10 +249,12 @@ Other Tech/Libraries
   - Disarium Number
   - Krishnamurthy Number
   - Automorphic Number 
-  - Pronic Number 
+  - Pronic Number
   - Harshad Number
+  - Cullen Number 
   - Trimorphic Number
-
+  - Eulerian Number
+  
 - Basic Convertors
 
   - Currency Convertor
@@ -351,7 +353,9 @@ Other Tech/Libraries
     - X-Shape
     - Drop Shape
     - Arbelos
+    - Helix
     - Spherical Triangle
+    - Right Kite
 
   - Name Of 3D Shapes
   - 3D Shapes Calculator
@@ -472,6 +476,7 @@ Other Tech/Libraries
   - Hypergeometric Distribution Statistics
   - Exponential Distribution Calculator
   - Gamma Distribution Calculator
+  - Mean and Variance of Random variable
 - Statistics
 
   - Statistics Formulae
