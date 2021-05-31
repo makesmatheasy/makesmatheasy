@@ -17628,16 +17628,23 @@ function lacube10find() {
 
 function lacube11find() {
     let n = parseInt(document.getElementById("lacube12").value)
-    let s = new Map();
-    for (let i = 0; i * i <= n; ++i) {
-        s.set(i * i, 1);
-        if (s.has(n - i * i)) {
-            document.getElementById("lacube11ans").innerHTML = Math.sqrt(n - i * i) + "^2 + " + i + "^2<br>"
-            document.getElementById("lacube11ans").innerHTML = "true"
-            return true;
+    if(!isNaN(n)){
+        let s = new Map();
+        for (let i = 0; i * i <= n; ++i) {
+            s.set(i * i, 1);
+            if (s.has(n - i * i)) {
+                document.getElementById("lacube11ans").innerHTML = Math.sqrt(n - i * i) + "^2 + " + i + "^2<br>"
+                document.getElementById("lacube11ans").innerHTML = "true"
+                return true;
+            }
         }
+        document.getElementById("lacube11exp").innerHTML = "\\[The idea is that all the numbers can be represented as the difference of two squares except the numbers which yield the remainder of 2 when divided by 4. \\]"
+        document.getElementById("lacube11exp").innerHTML = "\\[Therefore, the idea is to simply check the remainder for 2 when the given number is divided by 4.\\]"
+        renderMathInElement(document.getElementById("lacube11exp"));
+        document.getElementById("lacube11ans").innerHTML = "false"
     }
-    document.getElementById("lacube11ans").innerHTML = "false"
+    else
+        document.getElementById("lacube11ans").innerHTML = "Please enter valid input"
 }
 
 function lacube12find() {
