@@ -5615,7 +5615,7 @@ function ktimes() {
 }
 //Paraller vector
 
-fraction calcexvectpral(){
+function calcexvectpral(){
     var a = document.getElementById('vpa1');
     var b = document.getElementById('vpb1');
     var c = document.getElementById('vpc1');
@@ -20029,7 +20029,7 @@ function triinfind() {
     }
     renderMathInElement(document.getElementById("triinans"));
 }
-}
+
 //----------------------------
 
 //Function for multiplication of any number system
@@ -26367,6 +26367,34 @@ function armstrongvalue(){
         }
 
     }
+}
+function perfectvalue(){
+    var num=document.getElementById("perfectno").value;
+    var digits=Math.floor(Math.log10(num) + 1);
+    if(num=="")
+    {
+        document.getElementById("perfectans").innerHTML="Please input a no";
+    }
+    else{
+        num=parseInt(num);
+        var temp = 0;
+        for(var i=1;i<=num/2;i++)
+          {
+              if(num%i === 0)
+               {
+                 temp += i;
+               }
+          }
+        
+          if(temp === num && temp !== 0)
+             {
+            document.getElementById("perfectans").innerHTML=num+" is a perfect number";
+             } 
+          else
+             {
+            document.getElementById("perfectans").innerHTML=num+" is not a perfect number";
+             }   }
+
 }
 // Neon Number
 function isNeonNum(num) {
