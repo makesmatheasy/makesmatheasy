@@ -7143,12 +7143,30 @@ function solvestriangle() {
 }
 
 //ParaBoloid
+function calcexfindeq(){
+    var a1 = document.getElementById("ther");
+    var h1 = document.getElementById("theh");
+    a1.value = 5;
+    h1.value = 10;
+
+    findeq();
+}
+
 function findeq() {
     var a1 = parseInt(document.getElementById("ther").value)
     var h1 = parseInt(document.getElementById("theh").value)
     document.getElementById("xeqn").innerHTML = "x &nbsp  =&nbsp; " + a1 + "√u/" + Math.sqrt(h1) + " cosv "
     document.getElementById("yeqn").innerHTML = "y &nbsp;  =&nbsp; " + a1 + " √u/ " + Math.sqrt(h1) + " sinv "
     document.getElementById("zeqn").innerHTML = "z &nbsp;  =&nbsp;  u"
+}
+
+function calcexvolf(){
+    var a = document.getElementById("ther1");
+    var b = document.getElementById("theh1");
+    a.value = 61.77;
+    b.value = 38.22;
+
+    volf();
 }
 
 function volf() {
@@ -7169,6 +7187,13 @@ function volf() {
         ans.innerHTML = temp;
         renderMathInElement(ans);
     }
+}
+
+function calcexcentv(){
+    var a = document.getElementById("theh2");
+    a.value = 10;
+
+    centv();
 }
 
 function centv() {
@@ -14482,6 +14507,15 @@ function gammafind() {
     document.getElementById("gammafindans").innerHTML = "The gamma is " + ans
 }
 
+function calcexgolds1find(){
+    var a = document.getElementById("golds1");
+    var b = document.getElementById("golds2");
+    a.value = 61.77;
+    b.value = 38.22;
+
+    golds1find();
+}
+
 function golds1find() {
     var a = parseFloat(document.getElementById("golds1").value)
     var b = parseFloat(document.getElementById("golds2").value)
@@ -14574,6 +14608,14 @@ function nrec() {
     }
   renderMathInElement(output);
 }
+
+function calcexgolds2find(){
+    var a = document.getElementById("golds3");
+    a.value = 9;
+
+    golds2find();
+}
+
 function golds2find() {
     var a = document.getElementById("golds3").value;
     var output = document.getElementById("golds2exp");
@@ -14601,6 +14643,15 @@ function golds2find() {
         output.innerHTML = temp;
     }
     renderMathInElement(output);
+}
+
+function calcexgolds3find(){
+    var a = document.getElementById("golds4");
+    var b = document.getElementById("golds5");
+    a.value = 2.414;
+    b.value = 1;
+
+    golds3find();
 }
 
 function golds3find() {
