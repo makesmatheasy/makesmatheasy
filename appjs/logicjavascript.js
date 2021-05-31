@@ -17556,6 +17556,14 @@ function cylinderincubefind() {
     renderMathInElement(output);
 }
 
+function cylinderinspherefind() {
+    var r = parseInt(document.getElementById("cylinderinsphere").value)
+    a = r*r*r;
+    var ans = (4 * math.pi * r**3);
+    var v = ans/ (3 * math.sqrt(3));
+    document.getElementById("cylinderinsphereans").innerHTML = v;    
+}
+
 function cubeincylinderfind() {
     let r = parseInt(document.getElementById("cubeincylinder").value)
     let h = parseInt(document.getElementById("cubeincylinder1").value)
