@@ -10496,6 +10496,25 @@ function solvetricupola() {
         voloutput.innerHTML = "";
     }
 }
+// Square cupola
+function solvesqcupola() {
+    let a = document.getElementById("inputsqcupolaedge").value;
+    let areaoutput = document.getElementById("resultofsqcupolaarea");
+    let voloutput = document.getElementById("resultofsqcupolavol");
+    var areatemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline (7 + 2 \\sqrt{2} + \\sqrt{3}) \\space (" + a + ")^2" + "\\ = " + eval(String(11.5604779 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline (1 + \\frac{2 \\sqrt{2}}{3}) \\space (" + a + ")^3" + "\\ = " + eval(String(1.942809 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
 //Partial Right Cylinder
 function solvepartialcy() {
     var height = document.getElementById("inputcyh").value;
