@@ -1005,6 +1005,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#odshapescalbtn").click(function () {
+        openit("#odshapescal");
+        closenav();
+        clearall();
+    });
     $("#fdshapescalbtn").click(function () {
         openit("#fdshapescal");
         closenav();
