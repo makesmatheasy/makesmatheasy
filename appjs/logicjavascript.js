@@ -7051,19 +7051,11 @@ function tanglenght() {
 }
 function tangeqution() {
     var a, b, c, d, e, f;
-<<<<<<< HEAD
     var g = parseInt(document.getElementById("acenterrp").value);
     var f = parseInt(document.getElementById("bcenterrp").value);
     var c = parseInt(document.getElementById("ccenterrp").value);
     var a = parseInt(document.getElementById("bcenterrpx").value);
     var b = parseInt(document.getElementById("bcenterrpy").value);
-=======
-    g = parseInt(document.getElementById("acenterrp").value);
-    f = parseInt(document.getElementById("bcenterrp").value);
-    c = parseInt(document.getElementById("ccenterrp").value);
-    a = parseInt(document.getElementById("bcenterrpx").value);
-    b = parseInt(document.getElementById("bcenterrpy").value);
->>>>>>> 19e3526669a65106e43359643fd5625070e0788d
     var x  = g/2;
     var y = f/2;
 
