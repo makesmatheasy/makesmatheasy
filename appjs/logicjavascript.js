@@ -16184,6 +16184,13 @@ function solveperper() {
 
 //Print tetrahedral numbers upto Nth term
 
+function calcextypenumfind(){
+    var n = document.getElementById("typenum0");
+    n.value = 10;
+
+    typenumfind();
+}
+
 function typenumfind() {
     let n = parseInt(document.getElementById("typenum0").value);
     var ans = "\\[";
@@ -16218,6 +16225,14 @@ function typenumfind() {
     renderMathInElement(result);
 }
 //Print pentatope numbers upto Nth term
+
+function calcextypenum1find(){
+    var n = document.getElementById("typenum1");
+    n.value = 10;
+
+    typenum1find();
+}
+
 function typenum1find() {
     let n = parseInt(document.getElementById("typenum1").value)
     var ans = "\\[";
@@ -16252,6 +16267,14 @@ function typenum1find() {
 }
 
 //Hardy-Ramanujan Theorem
+
+function calcextypenum2find(){
+    var n = document.getElementById("typenum2");
+    n.value = 10;
+
+    typenum2find();
+}
+
 function typenum2find() {
 
     let n = document.getElementById("typenum2").value;
@@ -16308,6 +16331,14 @@ function divSums(n) {
     return (result + 1);
 }
 //Sum of the all amicable numbers up to N
+
+function calcextypenum4find(){
+    var n = document.getElementById("typenum5");
+    n.value = 10;
+
+    typenum4find();
+}
+
 function typenum4find() {
     let N = parseInt(document.getElementById("typenum5").value)
     let s = 0;
@@ -16488,6 +16519,13 @@ function typenum13find() {
     }
     renderMathInElement(document.getElementById("typenum13ans"));
     renderMathInElement(result);
+}
+
+function calcextypenum47find(){
+    var n = document.getElementById("typenum47");
+    n.value = 10;
+
+    typenum47find();
 }
 
 function typenum47find() {
@@ -16697,6 +16735,14 @@ function findCombinationsUtil(arr, index, num, reducedNum) {
     }
 }
 //Check for Amicable Pair
+
+function calcextypenum3find(){
+    var n = document.getElementById("typenum3");
+    n.value = 10;
+
+    typenum3find();
+}
+
 function typenum3find() {
 
     let x = document.getElementById("typenum3").value;
