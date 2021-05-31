@@ -19732,7 +19732,7 @@ function subBinDecHexOct() {
             print += input1 + "->" + x1 + "<br>";
 
             x2 = calculatefrac(input2,2);
-            print += "<h5>Step1 : Convert the " + base + " number in Input 2 to decimal</h5>";
+            print += "<h5>Step2 : Convert the " + base + " number in Input 2 to decimal</h5>";
             print += input2 + "->" + x2 + "<br>";
 
             x3 = x1 - x2;
