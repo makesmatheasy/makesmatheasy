@@ -15537,30 +15537,42 @@ function cirinsemi10find() {
     let y1 = b = parseInt(document.getElementById("cirinsemi14in").value)
     let x2 = b = parseInt(document.getElementById("cirinsemi15in").value)
     let y2 = b = parseInt(document.getElementById("cirinsemi16in").value)
-    if (x1 == x2) {
-        document.getElementById("cirinsemi10ans").innerHTML = (x1 + y2 - y1)
-            + ", " + y1 + "<br>";
-
-        document.getElementById("cirinsemi10ans").innerHTML = (x2 + y2 - y1)
-            + ", " + y2;
-    }
-    else if (y1 == y2) {
-        document.getElementById("cirinsemi10ans").innerHTML = x1 + ", "
-            + (y1 + x2 - x1)
-            + "<br>";
-
-        document.getElementById("cirinsemi10ans").innerHTML = x2 + ", "
-            + (y2 + x2 - x1);
-    }
-    else if (Math.abs(x2 - x1)
-        === Math.abs(y2 - y1)) {
-
-        document.getElementById("cirinsemi10ans").innerHTML = x1 + ", " + y2
-            + "<br>";
-        document.getElementById("cirinsemi10ans").innerHTML = x2 + ", " + y1;
+    if(!isNaN(x1)||!isNaN(y1)||!isNaN(x2)||!isNaN(y2)){
+        document.getElementById("cirinsemi10exp").innerHTML = "\\[The approach is based on the fact that the length of all the sides of a square are equal. \\]"
+        document.getElementById("cirinsemi10exp").innerHTML = "\\[If no such vertices can be obtained for which the length of all the sides become equal,\\]"
+        document.getElementById("cirinsemi10exp").innerHTML = "\\[The given two vertices can either be the vertices of the side of the square or the vertices of the diagonal.\]"
+        document.getElementById("cirinsemi10exp").innerHTML = "\\[If the x-coordinates of the given two vertices are equal then the coordinates of the other two vertices will be:\\]"
+        document.getElementById("cirinsemi10exp").innerHTML = "\\[(X1 + Y2 – Y1, Y1) and (X2 + Y2 – Y1, Y2) \\]"
+        document.getElementById("cirinsemi10exp").innerHTML = "\\[If the y-coordinates of the given two vertices are equal, then the coordinates of the other two vertices will be:\\]"
+        document.getElementById("cirinsemi10exp").innerHTML = "\\[(X1, Y1 + X2 – X1) and (X2, Y2 + X2 – X1)\\]"
+        renderMathInElement(document.getElementById("cirinsemi10exp"))
+        if (x1 == x2) {
+            document.getElementById("cirinsemi10ans").innerHTML = (x1 + y2 - y1)
+                + ", " + y1 + "<br>";
+    
+            document.getElementById("cirinsemi10ans").innerHTML = (x2 + y2 - y1)
+                + ", " + y2;
+        }
+        else if (y1 == y2) {
+            document.getElementById("cirinsemi10ans").innerHTML = x1 + ", "
+                + (y1 + x2 - x1)
+                + "<br>";
+    
+            document.getElementById("cirinsemi10ans").innerHTML = x2 + ", "
+                + (y2 + x2 - x1);
+        }
+        else if (Math.abs(x2 - x1)
+            === Math.abs(y2 - y1)) {
+    
+            document.getElementById("cirinsemi10ans").innerHTML = x1 + ", " + y2
+                + "<br>";
+            document.getElementById("cirinsemi10ans").innerHTML = x2 + ", " + y1;
+        }
+        else
+            document.getElementById("cirinsemi10ans").innerHTML = "-1"
     }
     else
-        document.getElementById("cirinsemi10ans").innerHTML = "-1"
+        document.getElementById("cirinsemi10ans").innerHTML = "Please enter all the fields";
 }
 
 function cirinsemi11find() {
