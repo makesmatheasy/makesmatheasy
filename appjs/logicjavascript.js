@@ -26439,10 +26439,18 @@ function isHarNum(num) {
     let sum = 0;
     for (let temp = num; temp > 0; temp = parseInt(temp / 10, 10))
         sum += temp % 10;
-    if(num % sum == 0)
-        document.getElementById('harans').innerHTML = num +" is a Harshad Number";
-    else
-        document.getElementById('harans').innerHTML = num +" is not a Harshad Number";
+    let ans ="";
+    ans += "Step 1: Number => " + num;
+    ans += `<br> Step 2: Sum of the digits of the number => ${sum}`;
+    if(num % sum == 0){
+        ans += `<br> Step 3: Clearly the number is divisible by the sum of digits => ${num}%${sum}=0`;
+        ans += `<br> Step 4: Hence ${num} is a Harshad Number`;
+    }
+    else{
+        ans += `<br> Step 3: Clearly the number is not divisible by the sum of digits => ${num}%${sum}=${num%sum}`;
+        ans += `<br> Step 4: Hence ${num} is not a Harshad Number`;
+    }
+    document.getElementById('harans').innerHTML = ans;
 }
 // Trimorphic Number
 function isTrimorNum(Num) {
