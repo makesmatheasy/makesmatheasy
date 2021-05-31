@@ -18210,14 +18210,12 @@
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
             <h5 id="cylinderincubeans"></h5></form>
             <br>
-            <h4>Largest cylinder that can be inscribed within a sphere</h4>
-            <br>
+            <h4>Largest cylinder that can be inscribed within a sphere</h4><br>
             <form action="">
-            <input type="text" id="cylinderinsphere" class="form__field" placeholder="Enter the side length of sphere">
-            <br>
+            <input type="text" id="cylinderinsphere" class="form__field" placeholder="Enter the side length of sphere"><br>
             <button type="button" class="btn btn-dark" onclick="cylinderinspherefind()">Find</button>
             <button type="button" class = "btn btn-dark"onclick = "this.form.reset();">Reset</button><br>
-            <h5 id="cylinderinsphereans"></h5></form>
+            <h5 id="cylinderinsphereans"></h5><br></form>
             <br>
             <h4>Largest cube that can be inscribed within a cylinder </h4>
             <br>
@@ -21535,30 +21533,19 @@
     
 </div>
 
-<div class="collapse" id="hypers">
-    <h1 style="color: white;font-family:mathfont">Hyperperfect Number Checker</h2><p>&nbsp;</p>
-    <form action="">
-        <input style="color: white; font-family:mathfont" type="text"id="hypers1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-        <input style="color: white; font-family:mathfont" type="text"id="hypers2" placeholder="Enter the value of K" class="form__field"><p>&nbsp;</p>
-        <button class="btn btn-dark" onclick="hyperfind()">Check</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-    </form>
-    
-    <p>&nbsp;</p>
-    <p style="font-family:mathfont" id="hyperans"></p><br>
-</div>
-<div class="collapse" id="adams" style="text-align: center;">
+<div class="collapse" id="hypers" style="text-align: center;">
     <div class="container">
-        <h1 style="color: white;font-family:mathfont;text-align: center;">Adam Number Checker</h2>
+        <h1 style="color: white;font-family:mathfont;text-align: center;">Hyperperfect Number Checker</h2>
         <br>
-        <p>Adam number is a number when reversed, the square of the number and the square of the reversed number should be numbers which are reverse of each other.</p>
+        <p>A number n is called k-hyperperfect if: <strong>n = 1 + k ∑ <sub>i</sub> d <sub>i</sub></strong> where all d<sub>i</sub> are the proper divisors of n.</p>
         <br>
         <form action="">
             <div class="form-group">
-                <input style="color: white; font-family:mathfont" type="number" id="adam1" placeholder="Enter the input number" class="form__field">
+                <input style="color: white; font-family:mathfont" type="number" id="hypers1" placeholder="Enter the input number" class="form__field">
+                <input style="color: white; font-family:mathfont" type="number" id="hypers2" placeholder="Enter the value of K" class="form__field">
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-light" onclick="adamfind()">Check</button>
+                <button type="button" class="btn btn-light" onclick="hyperfind()">Check</button>
                 <button type="button" class="btn btn-light" onclick="this.form.reset();">
                     Reset
                 </button>
@@ -21566,10 +21553,11 @@
         </form>
         <br>
         <div class="form-group text-center">
-            <p class="stopwrap" style="color:white;" id="adamans""></p>
+            <p class="stopwrap" style="color:white;" id="hyperans"></p><br>
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 
 <div class="collapse" id="kaps">
     <h1 style="color: white;font-family:mathfont">Kaprekar Number</h2><p>&nbsp;</p>
@@ -21580,6 +21568,30 @@
     </form>
     <p>&nbsp;</p>
     <p style="font-family:mathfont" id="kapans"></p><br>
+=======
+<div class="collapse" id="kaps" style="text-align: center;">
+    <div class="container">
+        <h1 style="color: white;font-family:mathfont;text-align: center;">Kaprekar Number Checker</h2>
+        <br>
+        <p>A Kaprekar number is a number whose square when divided into two parts and such that sum of parts is equal to the original number and none of the parts has value 0.</p>
+        <br>
+        <form action="">
+            <div class="form-group">
+                <input style="color: white; font-family:mathfont" type="number" id="kap1" placeholder="Enter the input number" class="form__field">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="kapfind()">FInd</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+        <br>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="kapans"></p><br>
+        </div>
+    </div>
+>>>>>>> a11e4f79da6a5f6f8d995583f3f27dce5bad19eb
 </div>
 <div class="collapse" id="abundants" style="text-align: center;">
     <div class="container">
@@ -21627,18 +21639,6 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-
-<div class="collapse" id="woods">
-    <h1 style="color: white;font-family:mathfont">Woodall Number</h2><p>&nbsp;</p>
-    <form action="">
-        <input style="color: white; font-family:mathfont" type="text"id="wood1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
-        <button class="btn btn-dark" onclick="woodfind()">FInd</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-    </form>
-    <p>&nbsp;</p>
-    <p style="font-family:mathfont" id="woodans"></p><br>
-=======
 <div class="collapse" id="woods" style="text-align: center;">
     <div class="container">
         <h2 style="color: white;font-family:mathfont;text-align: center;">Woodall Number</h2>
@@ -21663,7 +21663,6 @@
             <p class="stopwrap" style="color:white;" id="woodans"></p><br>
         </div>
     </div>
->>>>>>> 4a906d9164f30e481325f2317718a1714be7ac2a
 </div>
 
 
