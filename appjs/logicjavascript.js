@@ -6459,7 +6459,7 @@ function intri() {
     a = parseFloat(document.getElementById('inputsidea5').value);
     b = parseFloat(document.getElementById('inputsideb6').value);
     c = parseFloat(document.getElementById('inputsidec7').value);
-    var output = document.getElementById("intri1");
+    var output1 = document.getElementById("intri1");
     var temp = " ";
     var s = (a + b + c) / 2;
     var k = (s * (s - a) * (s - b) * (s - c));
@@ -6467,13 +6467,20 @@ function intri() {
     var r = k1 / s;
     if (isNaN(a) || isNaN(b) || isNaN(c)) {
         temp += "\\[Please \\space enter \\space all \\space field \\]";
-        output.innerHTML = temp;
-        renderMathInElement(output);
+        output1.innerHTML = temp;
+        renderMathInElement(output1);
     }
     else {
+        temp += "\\[Semiperimeter \\space = \\space \\frac{a + b + c}{2} \\space = \\space \\frac{" + a + "+" + b + "+" + c + "}{2} \\space = \\space \\frac{" + (a + b +  c) + "}{2}  \\]"
+        temp += "\\[Semiperimeter \\space of \\space Triangle \\space is \\space " + s + " \\]"
+        temp += "\\[By \\space Heron's \\space Formula \\space Area \\space of \\space a \\space Triangle \\space is \\]"
+        temp += "\\[k \\space = \\space \\sqrt{s(s-a)(s-b)(s-c)}  \\space = \\space \\sqrt{" + s + "( " + s + "-" + a + ")(" + s + "-" + b + ")(" + s + "-" + c + ")} \\space = \\space  \\sqrt{"+ k + "} \\] "
+        temp += "\\[Area \\space of \\space Triangle \\space is \\space " + k1 + " \\]"
+        temp += "\\[k \\space = \\space r \\times s \\space where \\space  r \\space  is \\space  Inradius \\space  of \\space  the \\space  Triangle \\]"
+        temp += "\\[Inradius  \\space of \\space Triangle \\space = \\space \\frac{k}{s} \\space = \\space \\frac{ " + k1 + "}{" + s + "} \\]"
         temp += "\\[Inradius \\space of \\space Triangle \\space is: " + r + " \\]";
-        output.innerHTML = temp;
-        renderMathInElement(output);
+        output1.innerHTML = temp;
+        renderMathInElement(output1);
     }
 }
 
