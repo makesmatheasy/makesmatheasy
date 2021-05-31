@@ -1568,50 +1568,71 @@ function covcalcu(){
     var num1=document.getElementById("setx").value;
     var num2=document.getElementById("sety").value;
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var output = document.getElementById("covans");
     var s="";
     if(num1==""||num2=="") {
-       s= "Please enter number";
-    }else if(!valid.test(num1&&num2))
-    {
-        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
-    } else{
-    num1=num1.trim();
-    num1 = num1.split(" ");
-    var len1=parseInt(num1.length);
-    var number1=[], sum1=0, sum2=0;
-    for (i = 0; i < len1; i++){
-        number1[i] = parseFloat(num1[i].trim());
-        sum1+=number1[i];
-    }
-    sum1=sum1/len1;
-    num2=num2.trim();
-    num2 = num2.split(" ");
-    var len2=parseInt(num2.length);
-    if (len1 == 1 || len2 == 1){
-        document.getElementById("covans").innerHTML= "Please enter more than value for each data set";
+        s= "\\[Please \\space enter \\space number\\]";
+        output.innerHTML = s;
+        renderMathInElement(output);
         return;
-    }
-    if(len1!=len2) {
-        s="Your datasets X and Y contain different numbers of element";
+    }else if(!valid.test(num1&&num2)){
+        s= "\\[Enter \\space space \\space separated \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed\\]";
+        output.innerHTML = s;
+        renderMathInElement(output);
+        return;
+
     } else{
-    var number2=[];
-    for (i = 0; i < len2; i++) {
-        number2[i] = parseFloat(num2[i].trim());
-        sum2+=number2[i];
-    }
-    sum2=sum2/len2;
-    var covsum=0;
-    for (i = 0; i < len2; i++) {
-        var d=number2[i]-sum2;
-        var f=number1[i]-sum1;
-        covsum+=(d*f);
-    }
-    var cov=(covsum)/(len2-1);
-    s="The calculated covariance is: "+cov;
+        num1=num1.trim();
+        num1 = num1.split(" ");
+        var len1=parseInt(num1.length);
+        var number1=[], sum1=0, sum2=0;
+        for (i = 0; i < len1; i++){
+            number1[i] = parseFloat(num1[i].trim());
+            sum1+=number1[i];
+        }
+        sum1=sum1/len1;
+        num2=num2.trim();
+        num2 = num2.split(" ");
+        var len2=parseInt(num2.length);
+        if (len1 == 1 || len2 == 1){
+            s = "\\[Please \\space enter \\space more \\space than \\space value \\space for \\space each \\space data \\space set\\]";
+            output.innerHTML = s;
+            renderMathInElement(output);
+            return;
+        }
+        if(len1!=len2) {
+            s="\\[Your \\space datasets \\space X \\space and \\space Y \\space contain \\space different \\space numbers \\space of \\space element\\]";
+            output.innerHTML = s;
+            renderMathInElement(output);
+            return;
+        } 
+        else{
+            var number2=[];
+            for (i = 0; i < len2; i++) {
+                number2[i] = parseFloat(num2[i].trim());
+                sum2+=number2[i];
+            }
+            s += "\\[Calculate the mean value for xi by adding all values and dividing them by sample size\\]"
+            s += "\\[Calculate the mean value for yi by adding all values and dividing them by sample size\\]"
+            s += "\\[Now, calculate the x diff. It can be calculated by subtracting each element of x from the mean value of x\\]"
+            s += "\\[Do the same for y, calculate ydiff by subtracting all values of y from the mean value of y\\]"
+            s += "\\[ Multiply all values of xdiff and ydiff and place them in a new column\\]"
+            s += "\\[Add the last column values, which are the product of the two differences. Divide by the sample size,\\]"
+            s += "\\[he value after dividing by sample size is covariance,\\]"
+            sum2=sum2/len2;
+            var covsum=0;
+            for (i = 0; i < len2; i++) {
+                var d=number2[i]-sum2;
+                var f=number1[i]-sum1;
+                covsum+=(d*f);
+            }
+            var cov=(covsum)/(len2-1);
+            s += "\\[he value after dividing by sample size is covariance, which is "+cov+" in this case\\]"
+            s +=  "\\[The \\space calculated \\space covariance \\space is:\\space "+cov+"\\]";
+            output.innerHTML = s;
+            renderMathInElement(output);
     }
 }
-
-document.getElementById("covans").innerHTML=s;
 }
 
 function covcal() {
