@@ -231,6 +231,7 @@ function openit(id) {
         "#shapeinscribed",
         "#matrixprops",
         "#2d-shape-ins",
+        "#carpolarcal",
         "#cramer",
         "#lns",
         "#fractions",

@@ -1592,6 +1592,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#carpolarcalbtn").click(function () {
+        openit("#carpolarcal");
+        closenav();
+        clearall();
+    });
 
 
     $("#bayesprobabilitycollapsebtn").click(function () {
