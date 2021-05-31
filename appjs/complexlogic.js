@@ -582,6 +582,17 @@ function factorial(n){
   }
   
   // HP starts
+  function calcexhp(){
+    var a = document.getElementById("firstTerm");
+    var d = document.getElementById("diff");
+    var n = document.getElementById("noofTerms");
+
+    a.value = 1;
+    d.value = 3;
+    n.value = 5;
+
+    hp();
+  }
   function hp() {
     var a = document.getElementById("firstTerm").value;
     var d = document.getElementById("diff").value;
@@ -1237,6 +1248,12 @@ function factorial(n){
     }  
   }
 
+ function calcexhpcal(){
+    var x = document.getElementById("ath").value = 5;
+    var y = document.getElementById("differ").value = 2;
+    var z = document.getElementById("totno").value = 3;
+    hpcal();
+}
 function hpcal()
 {
     var x=parseInt(document.getElementById("ath").value);
@@ -1267,6 +1284,13 @@ function hpcal()
    }
 }
 
+
+function calcexhpcal11(){
+    var x = document.getElementById("lterm1").value = 5;
+    var y = document.getElementById("cdiffer1").value = 2;
+    var z = document.getElementById("totnum1").value = 3;
+    hpcal11();
+}
 function hpcal11()
 {
     var x=parseInt(document.getElementById("lterm1").value);
@@ -1506,105 +1530,145 @@ function dbltimeCal(){
 function perchngCal(){
     var initial = parseInt(document.getElementById("initialVal").value);
     var final = parseInt(document.getElementById("finalVal").value);
-    var ans = ((final-initial)/Math.abs(initial))*100;
     var output = document.getElementById("perchngans");
-    output.innerHTML = final  + " is a " + ans + "% change of " + initial;
+    var temp = "";
+
+    if (!isNaN(initial) && !isNaN(final))
+    {
+        var ans = ((final-initial)/Math.abs(initial))*100;
+
+        temp += "\\[The \\space Percentage \\space change \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{((Final value) - (Initial value))}{ |(Initial value)| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{(("+final+") - ("+initial+"))}{ |("+initial+")| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{"+(final-initial)+"}{ |("+initial+")| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{"+(final-initial)+"}{ "+(Math.abs(initial))+" } \\times 100\\]"
+        temp += "\\[\\space = \\space "+((final-initial)/Math.abs(initial)).toFixed(2)+" \\times 100\\]"
+        temp += "\\[\\space = \\space "+ans.toFixed(3)+"\\]"
+        temp += "\\[Hence, \\space\\]"
+        temp += "\\[\\space = \\space "+final+" \\space is \\space a \\space "+ans.toFixed(2)+" \\space \\% change \\space of \\space "+initial+"\\]"
+
+        output.innerHTML = temp;
+    }
+    else
+    {
+        temp += "\\[Please \\space enter \\space valid \\space input\\]"
+    }
+    renderMathInElement(output);
+}
+
+
+function peroffCal(){
+    var original = parseInt(document.getElementById("originalPrice").value);
+    var off = parseInt(document.getElementById("offper").value)/100;
+    var tax = parseInt(document.getElementById("salestax").value)/100;
+    var final = (original + (original*tax))*off;
+    var savings = original - final;
+    var output1 = document.getElementById("peroffans1");
+    var output2 = document.getElementById("peroffans2");
+    output1.innerHTML = "Final price: " + final.toFixed(2);
+    output2.innerHTML = "Your savings: " + savings;
 }
 
 function peroffCal(){
     var original = parseInt(document.getElementById("originalPrice").value);
-    var off = parseInt(document.getElementById("offper").value);
-    var tax = parseInt(document.getElementById("salestax").value);
+    var off = parseInt(document.getElementById("offper").value)/100;
+    var tax = parseInt(document.getElementById("salestax").value)/100;
+    var final = (original + (original*tax))*off;
+    var savings = original - final;
     var output1 = document.getElementById("peroffans1");
     var output2 = document.getElementById("peroffans2");
-    var temp1 = "";
-    var temp2 = "";
-    var final = (original + (original*(tax/100)))*(off/100);
-    var savings = original - final;
-
-    if(!isNaN(original) && !isNaN(tax) && !isNaN(off)){
-
-        temp1 += "\\[The \\space Percentage \\space Off \\space will \\space be,\\]"
-        temp1 += "\\[First, \\space we \\space calculate \\space the \\space final \\space value\\]"
-        temp1 += "\\[Final \\space Price \\space = \\space (Original \\space Price) +  ( (Original \\space Price) \\times \\frac{(Tax \\space value)}{100} ) \\times \\frac{(Off \\space value)}{100}\\]"
-        temp1 += "\\[\\space = \\space ("+original+") +  ( ("+original+") \\times \\frac{("+tax+")}{100} ) \\times \\frac{("+off+")}{100}\\]"
-        temp1 += "\\[\\space = \\space ("+original+") +  ( ("+original+") \\times "+(tax/100).toFixed(2)+" ) \\times "+(off/100).toFixed(2)+"\\]"
-        temp1 += "\\[\\space = \\space ("+original+") +  ( "+(original * (tax/100)).toFixed(2)+" ) \\times "+(off/100).toFixed(2)+"\\]"
-        temp1 += "\\[\\space = \\space "+(original * (original * (tax/100))).toFixed(2)+"  \\times "+(off/100).toFixed(2)+"\\]"
-        temp1 += "\\[\\space = \\space "+final.toFixed(3)+"\\]"
-
-        output1.innerHTML = temp1;
-
-        temp2 += "\\[Finally,\\space we \\space substract \\space this \\space (Final \\space Price) \\space value \\space from \\space the \\space (Orginal \\space Price)\\]"
-        temp2 += "\\[Savings \\space = \\space (Orginal \\space Price) \\space - \\space (Final \\space Price)\\]"
-        temp2 += "\\[\\space = \\space "+original+" - "+final.toFixed(2)+"\\]"
-        temp2 += "\\[\\space = \\space "+savings.toFixed(3)+"\\]"
-
-        output2.innerHTML = temp2;
-    } else{
-        temp1 = "\\[Please \\space enter \\space valid \\space input\\]"
-        output1.innerHTML = temp1;
-        temp2 = "";
-    }
-    renderMathInElement(output1);
-    renderMathInElement(output2);
+    output1.innerHTML = "Final price: " + final.toFixed(2);
+    output2.innerHTML = "Your savings: " + savings;
 }
 
 function moduloCal(){
     var x = parseInt(document.getElementById("modx").value);
     var y = parseInt(document.getElementById("mody").value);
     var r = x%y;
-    document.getElementById("moduloans").innerHTML = "x % y = " + r;
+    var output = document.getElementById("moduloans");
+    var xy = x/y;
+    var yy = y*xy;
+    
+    var step = "\\[x \\pmod y= \\space x - (frac{x}{y}) \\times y\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - (frac{"+x+"}{"+y+"}) \\times "+y+"\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - "+xy+" \\times "+y+"\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - "+yy+" \\]";
+    step += "\\[x \\pmod y= \\space "+r+" \\]";
+
+    output.innerHTML = step;
+
+    renderMathInElement(output);
 }
 
 function covcalcu(){
     var num1=document.getElementById("setx").value;
     var num2=document.getElementById("sety").value;
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var output = document.getElementById("covans");
     var s="";
     if(num1==""||num2=="") {
-       s= "Please enter number";
-    }else if(!valid.test(num1&&num2))
-    {
-        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
-    } else{
-    num1=num1.trim();
-    num1 = num1.split(" ");
-    var len1=parseInt(num1.length);
-    var number1=[], sum1=0, sum2=0;
-    for (i = 0; i < len1; i++){
-        number1[i] = parseFloat(num1[i].trim());
-        sum1+=number1[i];
-    }
-    sum1=sum1/len1;
-    num2=num2.trim();
-    num2 = num2.split(" ");
-    var len2=parseInt(num2.length);
-    if (len1 == 1 || len2 == 1){
-        document.getElementById("covans").innerHTML= "Please enter more than value for each data set";
+        s= "\\[Please \\space enter \\space number\\]";
+        output.innerHTML = s;
+        renderMathInElement(output);
         return;
-    }
-    if(len1!=len2) {
-        s="Your datasets X and Y contain different numbers of element";
+    }else if(!valid.test(num1&&num2)){
+        s= "\\[Enter \\space space \\space separated \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed\\]";
+        output.innerHTML = s;
+        renderMathInElement(output);
+        return;
+
     } else{
-    var number2=[];
-    for (i = 0; i < len2; i++) {
-        number2[i] = parseFloat(num2[i].trim());
-        sum2+=number2[i];
-    }
-    sum2=sum2/len2;
-    var covsum=0;
-    for (i = 0; i < len2; i++) {
-        var d=number2[i]-sum2;
-        var f=number1[i]-sum1;
-        covsum+=(d*f);
-    }
-    var cov=(covsum)/(len2-1);
-    s="The calculated covariance is: "+cov;
+        num1=num1.trim();
+        num1 = num1.split(" ");
+        var len1=parseInt(num1.length);
+        var number1=[], sum1=0, sum2=0;
+        for (i = 0; i < len1; i++){
+            number1[i] = parseFloat(num1[i].trim());
+            sum1+=number1[i];
+        }
+        sum1=sum1/len1;
+        num2=num2.trim();
+        num2 = num2.split(" ");
+        var len2=parseInt(num2.length);
+        if (len1 == 1 || len2 == 1){
+            s = "\\[Please \\space enter \\space more \\space than \\space value \\space for \\space each \\space data \\space set\\]";
+            output.innerHTML = s;
+            renderMathInElement(output);
+            return;
+        }
+        if(len1!=len2) {
+            s="\\[Your \\space datasets \\space X \\space and \\space Y \\space contain \\space different \\space numbers \\space of \\space element\\]";
+            output.innerHTML = s;
+            renderMathInElement(output);
+            return;
+        } 
+        else{
+            var number2=[];
+            for (i = 0; i < len2; i++) {
+                number2[i] = parseFloat(num2[i].trim());
+                sum2+=number2[i];
+            }
+            s += "\\[Calculate the mean value for xi by adding all values and dividing them by sample size\\]"
+            s += "\\[Calculate the mean value for yi by adding all values and dividing them by sample size\\]"
+            s += "\\[Now, calculate the x diff. It can be calculated by subtracting each element of x from the mean value of x\\]"
+            s += "\\[Do the same for y, calculate ydiff by subtracting all values of y from the mean value of y\\]"
+            s += "\\[ Multiply all values of xdiff and ydiff and place them in a new column\\]"
+            s += "\\[Add the last column values, which are the product of the two differences. Divide by the sample size,\\]"
+            s += "\\[he value after dividing by sample size is covariance,\\]"
+            sum2=sum2/len2;
+            var covsum=0;
+            for (i = 0; i < len2; i++) {
+                var d=number2[i]-sum2;
+                var f=number1[i]-sum1;
+                covsum+=(d*f);
+            }
+            var cov=(covsum)/(len2-1);
+            s += "\\[he value after dividing by sample size is covariance, which is "+cov+" in this case\\]"
+            s +=  "\\[The \\space calculated \\space covariance \\space is:\\space "+cov+"\\]";
+            output.innerHTML = s;
+            renderMathInElement(output);
     }
 }
-
-document.getElementById("covans").innerHTML=s;
 }
 
 function covcal() {
@@ -2289,28 +2353,35 @@ function ainvcal()
 
 }
 
-function hypergeos2cal()
-{
-    var num1=document.getElementById("hypergeos12").value;
-    var num2=document.getElementById("hypergeos22").value;
-    var num3=document.getElementById("hypergeos32").value;
-    var num4=document.getElementById("hypergeos42").value;
-    ans="";
-    if(num1==""||num2==""||num4==""||num3=="")
+function hypergeos2cal() {
+    var num1=parseFloat(document.getElementById("hypergeos12").value);
+    var num2=parseFloat(document.getElementById("hypergeos22").value);
+    var num3=parseFloat(document.getElementById("hypergeos32").value);
+    var num4=parseFloat(document.getElementById("hypergeos42").value);
+
+    var output = document.getElementById("hypergeos2ans");
+    var temp="";
+    var d= (num2*num3)/num4;
+
+    if(isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4))
     {
-        ans="Please fill all the field";
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
     }
     else
     {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
-      var d= (num2*num3)/num4;
-       ans="The value of hypergeometric distribution's mean is : "+d;
-   
+        var d= (num2*num3)/num4;
+        temp += "\\[The \\space value \\space of \\space hypergeometric \\space distribution \\space mean \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{(Sample \\space Size) \\times (Successes \\space of \\space Lot)}{(Lot \\space Size)}\\]"
+        temp += "\\[\\space = \\space \\frac{("+num2+") \\times ("+num3+")}{"+num4+"}\\]"
+        temp += "\\[\\space = \\space \\frac{"+(num2*num3)+"}{"+num4+"}\\]"
+        temp += "\\[\\space = \\space "+d.toFixed(3)+"\\]";
+        temp += "\\[Hence, \\space the \\space value \\space of \\space mean \\space is,\\]"
+        "\\[\\space = \\space "+d.toFixed(3)+"\\]"
+
+        output.innerHTML = temp;
     }
-    document.getElementById("hypergeos2ans").innerHTML=ans;
+    renderMathInElement(output);
 }
 
 function hypergeosvarcal()
@@ -2336,28 +2407,38 @@ function hypergeosvarcal()
     }
     document.getElementById("hypergeos2ans").innerHTML=ans;
 }
-function hypergeosvar2cal()
-{
-    var num1=document.getElementById("hypergeos12").value;
-    var num2=document.getElementById("hypergeos22").value;
-    var num3=document.getElementById("hypergeos32").value;
-    var num4=document.getElementById("hypergeos42").value;
-    ans="";
-    if(num1==""||num2==""||num4==""||num3=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
-      var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
-       ans="The value of hypergeometric distribution's variance is : "+Math.sqrt(d);
+function hypergeosvar2cal() {
+    var num1=parseFloat(document.getElementById("hypergeos12").value);
+    var num2=parseFloat(document.getElementById("hypergeos22").value);
+    var num3=parseFloat(document.getElementById("hypergeos32").value);
+    var num4=parseFloat(document.getElementById("hypergeos42").value);
+
+    var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
+    var ans = Math.sqrt(d);
+    var output = document.getElementById("hypergeos2ans");
+    var temp ="";
+    if(isNaN(num2) || isNaN(num1) || isNaN(num3) || isNaN(num4)) {
+        temp = "\\[Please \\space fill \\space all \\space the \\space field\\]";
+
+        output.innerHTML = temp;
+    } 
+    else {
+        temp += "\\[Hypergeometric \\space Standard \\space Deviation \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+num4+" - "+num3+") \\times ("+num4+" - "+num2+"))}{( "+num4+"^{2} \\times ("+num4+" - 1))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{( "+num4+"^{2} \\times ("+num4+" - 1))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{( "+num4+"^{2} \\times ("+(num4-1)+"))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+(num2*num3)+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space \\frac{ "+(num2*num3*(num4-num3)*(num4-num2))+" }{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space "+d.toFixed(3)+"\\]"
+        temp += "\\[Hence, \\space the \\space values \\space Hypergeometric \\space Standard \\space Deviation \\space is,\\]"
+        temp += "\\[\\space = \\sqrt{"+d.toFixed(2)+"} \\]"
+        temp += "\\[\\space = "+ans.toFixed(3)+" \\]"
+
+        output.innerHTML = temp;
    
     }
-    document.getElementById("hypergeos2ans").innerHTML=ans;
+    renderMathInElement(output);
 }
 
 function egccal()
@@ -2455,27 +2536,31 @@ function isPrime( n)
     {
         return (n != 0 )&& ((n & (n - 1)) == 0);
     }
- 
+
+
 function wagcal()
 {
     var num1=document.getElementById("wag1").value;
     ans="";
+    explain="";
     if(num1==""||isNaN(num1))
     {
-        ans="Please enter the number";
+        ans="\\[Please \\space enter \\space the \\space number\\]";
     }
     else
     {
         num1=parseInt(num1);
         if(isPrime(num1) && (isPowerOfTwo(num1 * 3 - 1)))
         {
-            ans=num1+" is a Wagstaff number"
+            ans="\\["+num1+" is \\space a \\space Wagstaff \\space number.\\]"
+            explain="\\["+num1+"\\space is \\space prime \\space and \\space"+num1+"="+"\\frac{2^{"+Math.log2(num1*3-1)+"}-1}{3}\\]";
         }
         else
         {
             ans=num1+" is not a Wagstaff number"   
         }
     }
-    document.getElementById("wagans").innerHTML=ans;
+    document.getElementById("wagans").innerHTML=ans+explain;
+    renderMathInElement(document.getElementById("wagans"))
 }
 
