@@ -26785,16 +26785,30 @@ function isNeonNum(num) {
 }
 // Disarium Number
 function isDisNum(num) {
+    let ans ="",s="",temp=num,ctr=0;
     const res = String(num)
         .split("")
         .reduce((acc, val, ind) => {
             acc += math.pow(+val, ind + 1);
             return acc;
         }, 0);
-    if (res == num)
-        document.getElementById("disans").innerHTML = num + " is a Disarium number";
-    else
-        document.getElementById("disans").innerHTML = num + " is not a Disarium number";
+    while (temp != 0) {
+        s+=`${temp%10}^${ctr+1} +`;
+        temp = parseInt(temp / 10);
+        ctr++;
+    }
+    s = s.substring(0, s.length - 1);
+    ans += "Step 1: Number => " + num;
+    ans += `<br> Step 2: Sum of digits powered with their respective positions => ${s} = ${res}`;
+    if (res == num){
+        ans += `<br> Step 3: Clearly the sum of its digits powered with their respective positions is equal to the number itself.`;
+        ans += `<br> Step 4: Hence ${num} is a Disarium number`;
+    }
+    else{
+        ans += `<br> Step 3: Clearly the sum of its digits powered with their respective positions is not equal to the number itself.`;
+        ans += `<br> Step 4: Hence ${num} is not a Disarium number`;
+    }
+    document.getElementById('disans').innerHTML =ans;
 };
 // Krishnamurthy Number
 function isKrishnaNum(num) {
