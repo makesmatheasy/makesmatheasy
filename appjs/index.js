@@ -159,6 +159,7 @@ function openit(id) {
         "#etf",
         "#etc",
         "#krishnum",
+        "#lancentarc"
         "#neonnum",
         "#equationssolver",
         "#quadeqncal",
@@ -315,6 +316,7 @@ function openit(id) {
         "#errpers",
         "#log_values",
         "#oops",
+        "#cirtri",
         "#halfcone",
         "#astroid",
         "#squarecube",

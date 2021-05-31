@@ -1331,6 +1331,25 @@
                     </tr>
                 </table>
             </li>
+
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="lancentarcbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">
+                                Lancent Arc Calculator
+                            </a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span
+                                        onclick="addtofavourite('Trigonometry Values','#lancentarc','c','lancentarcimgfav')"><img
+                                        id="lancentarcimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
              
             <li>
                 <table class="table">
@@ -6988,6 +7007,9 @@
                 </div><br>
                 <p>\[Point \space  =  \space  \](<input type="text" id="bcenterrpx" size=5 value='' placeholder="a"> , 
                 <input type="text" id="bcenterrpy" size=5 value='' placeholder="b">)</p><br><br>
+                <button type="button" class="btn btn-light" onclick=tangeqution()>
+                    Tangent Equation
+                </button>
                 <button type="button" class="btn btn-light" onclick=tanglenght()>
                     Tangent length
                 </button>
@@ -7420,19 +7442,14 @@
             <h5 id="cirinsemi1ans"></h5>
             <h5 id="cirinsemi1exp"></h5>
             <br>
-            <h4>Area of a largest square fit in a right angle triangle</h4>
-            <br>
+            <h4>Area of a largest square fit in a right angle triangle</h4><br>
             <form action="">
                 <input type="text" id="cirinsemi2in" placeholder="Enter base of triangle" class="form__field">
-                <input type="text" id="cirinsemi21in" placeholder="Enter perpendicular pf triangle" class="form__field">
-                <input type="text" id="cirinsemi22in" placeholder="Enter hypotneuse of triangle" class="form__field">
-                <br>
+                <input type="text" id="cirinsemi21in" placeholder="Enter perpendicular of triangle" class="form__field"><br>
                 <button type="button" class="btn btn-dark" onclick="cirinsemi2find()">Find</button>
                 <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-            </form> 
-            <br>
-            <h5 id="cirinsemi2ans"></h5>
-            <br>
+            </form> <br>
+            <h5 id="cirinsemi2ans"></h5><br>
             <h4>Area of a Largest square fit in a semicircle</h4><br>
             <form action="">
                 <input type="text" id="sqinsemi2in" placeholder="Enter radius of semicircle" class="form__field"><br>
@@ -14057,6 +14074,8 @@
                 </div>
             </div>
         </div>
+
+
         <!-- Negative Binomial Distribution Calculator-->
 <div class="collapse" id="negbino">
     <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Negative Binomial Distribution Calculator</h1>
@@ -17659,6 +17678,29 @@
                 <p  id="car_polar_res"></p><br><br>    
         </div>
 
+        <div class="collapse" id="lancentarcl">
+            <h2>Lancent Arc Calculator</h2><br>
+            <p id="lance">\[h = √ r * b - b² / 4\]</p>
+            <p id="lance">\[b = 2 (r - √ r² - h² )\]</p> 
+            <p id="lance">\[r = ( 4h² + b² ) / (4b)\]</p> 
+            <p id="lance">\[p = 2r * arccos [ 1 - b / ( 2 * r ) ] + b\]</p> 
+            <p id="lance">\[A = r * ( u - b ) / 2 - h * ( r - b/2 )\]</p> 
+            <form action="">
+                <div class="form-group">
+                    <input type="text" style="width: 250px;" class="form__field" name="a" id="lance_x" placeholder="Enter h:"/>
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="lance_y" placeholder="Enter b: "/>  
+                    <input type="text" name="b" style="width: 250px;" class="form__field" id="lance_z" placeholder="Enter r: "/> <br> <br>
+
+                    <button  class = "btn btn-outline-light" onclick = "lance_cal()" >Find</button>
+                    <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
+                    <br>
+                </div>
+            </form>   
+            
+                <p  id="lance_res"></p><br><br>    
+        </div>
+
+
         <div class="collapse" id="cylcarcal">
             <h2>Cylindrical to Cartesian Coordinate Calculator</h2><br>
             <p id="cylcar">\[x = pcosθ\]</p>
@@ -18094,6 +18136,10 @@
                            style="text-decoration:none;" href="#">Stadium</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#conregpenta"
+                           style="text-decoration:none;" href="#">Concave Regular Pentagon</a></td>
+                </tr>
+                <tr>
                     <td>
                         <div onclick="$('#typesofstarpolygons').slideToggle();"
                              style="color: var(--appimage);cursor: pointer;"> Star Polygons
@@ -18170,6 +18216,10 @@
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#scalenetriangle"
                                            style="text-decoration:none;" href="#">Scalene Triangle</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#cirtri"
+                                           style="text-decoration:none;" href="#">Circular Arc Triangle</a></td>
                                 </tr>
                                 <tr>
                                     <td><a data-toggle="modal" data-target="#triangle-cal"
@@ -18817,6 +18867,10 @@
                             <tr>
                                 <td><a data-toggle="modal" data-target="#truntetra"
                                     style="text-decoration:none;" href="#">Truncated Tetrahedron</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#trunicosa"
+                                    style="text-decoration:none;" href="#">Truncated Icosahedron</a></td>
                             </tr>
                             <tr>
                                 <td><a data-toggle="modal" data-target="#truncocta"
@@ -22545,17 +22599,24 @@ N is the population size.
     <h1 style="font-family:mathfont; text-align:center;">SOLVE FOR X</h1><br><br>
     <div class= "coll" style="margin-left:14.375rem"></div>
     <p>
-        <form action="">
-            <input type="text" id="solvex" size=5 value='' placeholder="a">X +
-            <input type="text" id="solvey" size=5 value='' placeholder="b"> =  <input type="text" id="solvez" size=5 value='' placeholder="c">
-           <br><br><br><br>
-            <button type="button" class="btn btn-light" style="width:8em" onclick=slvcal()>   Solve    </button>
-            <button type="button" class="btn btn-light" style="width:8em" onclick=calcexslvcal()>
-                Example
-            </button>
-            <button type="button" class="btn btn-light" style="width:8em" onclick="this.form.reset();">
-                Reset
-            </button>
+        <form action="" class="">
+            <div class="form-group d-flex justify-content-center">
+                <input type="text" class="form-control" id="solvex" size=5 value='' placeholder="a" style="width: 100%; max-width: 200px;">
+                <label for="#solvey" style="margin-top: 0.6rem;">X+</label>
+                <input type="text" class="form-control" id="solvey" size=5 value='' placeholder="b" style="width: 100%; max-width: 200px;">
+                <label for="#solvez" style="margin-top: 0.6rem;">=</label> 
+                <input type="text" class="form-control" id="solvez" size=5 value='' placeholder="c" style="width: 100%; max-width: 200px;">
+            </div>
+            <div class="form-group d-flex justify-content-center ml-2">
+                <button type="button" class="btn btn-light mb-5" style="width:8em" onclick=slvcal()>   Solve    </button><br><br>
+                <button type="button" class="btn btn-light mb-5" style="width:8em" onclick=calcexslvcal()>
+                    Example
+                </button><br><br>
+                <button type="button" class="btn btn-light mb-5" style="width:8em" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+            
         </form>
     
     <p>&nbsp;</p>
@@ -27716,6 +27777,58 @@ N is the population size.
                             <p class="stopwrap" id="resultofsemiperist"
                                style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="resultofareast"
+                               style="font-family:mathfont;"></p>
+                        </div>
+                        <!-- TILL HERE -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="cirtri" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Circular Arc Triangle</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = \frac{\pi}{3} r\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[p = \pi r \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/circular-arc-triangle.png" class="img-fluid">
+                                    </div>
+                                   
+                                   
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- ADDED THIS -->
+                            <input class="form__field" type="number"
+                                   placeholder="Enter radius(r)"
+                                   id="inputcirtrirad" oninput="solvecirtriangle();">
+                            <input class="form__field" type="number"
+                                   placeholder="Enter arc length(a)"
+                                   id="inputcirtria" oninput="solvecirtriangle();">
+                            <p class="stopwrap" id="resultofareacirtri"
+                               style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofcirtriperi"
                                style="font-family:mathfont;"></p>
                         </div>
                         <!-- TILL HERE -->
@@ -34031,6 +34144,59 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="conregpenta" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Concave Regular Pentagon</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="conatiner">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Distance of the tips (b)</h5>
+                                    <p class="text-center">\[b = \frac{a}{2} \times ( 1 + \sqrt 5 ) \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter (p)</h5>
+                                    <p class="text-center">\[p = 5 \times a\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Area (A)</h5>
+                                    <p class="text-center">\[A = \frac{a^2}{4} \times \left ( \sqrt{ 25 + 10\sqrt5} - \sqrt{10 + 2\sqrt 5} \right )\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/concave-regular-pentagon.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                    placeholder="Enter edge length (a)" id="regularpenta-a"
+                                    oninput="solveconcaveregularpent();">
+                            <p class="stopwrap" id="regularpenta-b"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="regularpenta-p"
+                                style="font-family:mathfont;"></p> 
+                            <p class="stopwrap" id="regularpenta-A"
+                                style="font-family:mathfont;"></p>
+                        </div>
+                        <!---TILL-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="ellipsoid" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -36252,7 +36418,74 @@ N is the population size.
                 </div>
             </div>
         </div>
-
+        <div class="modal fade" id="trunicosa" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Truncated Icosahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Edge length icosahedron (a')</h5>
+                                    <p class="text-center">\[a' = 3 \times a\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area (A)</h5>
+                                    <p class="text-center">\[A = 3a^2 \times \left ( 10\sqrt 3 + \sqrt{25+10 \times \sqrt 5} \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume (V)</h5>
+                                    <p class="text-center">\[V = \frac{a^3}{4} \times \left ( 125 + 43 \times \sqrt 5 \right )\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Circumsphere radius (r<sub>c</sub>)</h5>
+                                    <p class="text-center">\[r_{c} = \frac{a}{4} \times \sqrt{58+ 18 \times \sqrt 5}\]</p><br>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/truncated-icosahedron.png" class="img-fluid">
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Midsphere radius (r<sub>m</sub>)</h5>
+                                    <p class="text-center">\[r_{m} = \frac{3}{4a} \times \left ( 1 + \sqrt 5 \right )\]</p><br>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface-to-volume ratio (A/V)</h5>
+                                    <p class="text-center">\[\frac{A}{V}\]</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter Edge length (a)" id="trunicosa-a"
+                                       oninput="solvetrunicosa();">
+                            <p class="stopwrap" id="trunicosa-ax"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunicosa-A"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunicosa-V"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunicosa-rc"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunicosa-rm"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="trunicosa-av"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="truntetra" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
