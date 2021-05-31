@@ -470,6 +470,7 @@ function openit(id) {
         "#vects",
         "#prices",
         "#centcal",
+        "#madcs",
         "#cevtha",
         "#sum_n",
         "#percal",
