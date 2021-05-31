@@ -16178,7 +16178,39 @@ function golds5find(){
         document.getElementById("golds5ans").innerHTML = "Please enter valid input"
 }
 
-function gold4find() {
+function golds6find(){
+    let a = document.getElementById("golds8").value
+    let m = document.getElementById("golds9").value
+    if (__gcd(a, m) != 1)
+        document.write( "Inverse doesn't exist");
+ 
+    else {
+        document.write( "Modular multiplicative inverse is "
+             + power(a, m - 2, m));
+    }
+}
+function power(x, y, m)
+{
+    if (y == 0)
+        return 1;
+    var p = power(x, parseInt(y / 2), m) % m;
+    p = (p * p) % m;
+ 
+    return (y % 2 == 0) ? p : (x * p) % m;
+}
+function __gcd(a, b)
+{
+    if(b == 0)
+    {
+        return a;
+    }
+    else
+    {
+        return __gcd(b, a % b);
+    }
+}
+
+function golds4find() {
     let n = document.getElementById("golds6").value
     if (!isNaN(n)) {
         document.getElementById("golds4exp").innerHTML = "\\[Catalan numbers satisfy the following recursive formula. \\]"
