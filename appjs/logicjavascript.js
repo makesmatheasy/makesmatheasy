@@ -15894,44 +15894,53 @@ function receq1() {
     let n = parseInt(document.getElementById("receq1").value)
     var output = document.getElementById("receq1ans")
     var ans = ""
+    var explain=""
     if (n < 0) {
         ans += "\\[Side \\ cannot \\space be \\space negative \\]"
         output.innerHTML = ans;
     }
     else if (!isNaN(n)) {
         if (n & 1) {
+            explain+="\\[As,\\space side \\space is \\space odd \\space Count="
             let coun = 0, m, j, i;
             for (i = n - 2; i >= 1; i--) {
                 if (i >= 1) {
                     m = parseInt((n - i) / 2, 10);
                     j = parseInt((i * (i + 1)) / 2, 10);
                     coun += j * m;
+                    explain+=j+"*"+m+"+";
                 }
                 else {
                     m = parseInt(((n - 1) - i) / 2, 10);
                     j = parseInt((i * (i + 1)) / 2, 10);
                     coun += j * m;
+                    explain+=j+"*"+m+"+";
                 }
             }
             ans += coun;
+            explain+="="+coun+"\\]";
         }
         else {
+            explain+="\\[As,\\space side \\space is \\space even \\space Count="
             let coun = 0, m, j, i;
             for (i = n - 2; i >= 1; i--) {
                 if (i >= 1) {
                     m = parseInt(((n - 1) - i) / 2, 10);
                     j = parseInt((i * (i + 1)) / 2, 10);
                     coun += j * m;
+                    explain+=j+"*"+m+"+";
                 }
                 else {
                     m = parseInt((n - i) / 2, 10);
                     j = parseInt((i * (i + 1)) / 2, 10);
                     coun += j * m;
+                    explain+=j+"*"+m+"+";
                 }
             }
             ans += coun;
+            explain+="="+coun+"\\]";
         }
-        output.innerHTML = ans;
+        output.innerHTML = ans+explain;
     }
     else {
         ans += "\\[Please \\space enter \\space all \\space input \\]"
@@ -16887,31 +16896,6 @@ function primeFactors(n) {
 let arr = Array(1001).fill(true);
 function typenum15find() {
     var n = parseInt(document.getElementById("typenum18").value)
-<<<<<<< HEAD
-    simpleSieve();
-    var ans = find_sphene(n);
-    if (ans == 1)
-        document.getElementById("typenum15ans").innerHTML  =  "Yes"
-    else
-        document.getElementById("typenum15ans").innerHTML  =  "NO"
-
-
-    }    
-
-
-||||||| 6e7cb7c
-    simpleSieve();
-    var ans = find_sphene(n);
-    if (ans == 1)
-        document.getElementById("typenum15ans").innerHTML  =  "Yes"
-    else
-        document.getElementById("typenum15ans").innerHTML  =  "NO"
-
-
-    }    
-
-}
-=======
     var result = document.getElementById("typenum15ans1")
     var ans1 = ""
     if (!isNaN(n)) {
@@ -16939,7 +16923,6 @@ function typenum15find() {
     }
     renderMathInElement(result);
 }
->>>>>>> ba57fa8f23da84270ff16cce5d8eca59077bed1e
 
 function typenum48find(){
     var n = parseInt(document.getElementById("typenum48").value)
