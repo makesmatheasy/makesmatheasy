@@ -28477,80 +28477,83 @@ function hyperfind() {
     document.getElementById("hyperans").innerHTML = ans;
 }
 // special number
-function specialvalue() {
-    var num = document.getElementById("special").value;
-    if (num == "") {
-        document.getElementById("specialans").innerHTML = "Please input a no";
+function specialvalue(){
+    var num=document.getElementById("special").value;
+    if(num=="")
+    {
+        document.getElementById("specialans").innerHTML="Please input a no";
     }
-    else {
-        num = parseInt(num);
-        number = num;
-        var sum = 0;
-        while (number > 0) {
-            var digit = parseInt(number % 10);
-            var fact = 1;
-            for (var i = 1; i <= digit; i++) {
-                fact = fact * i;
-            }
-            sum = parseInt(sum + fact);
-            number = parseInt(number / 10);
-        }
+    else{
+        var re=0;
+        num=parseInt(num);
+        number = num;  
+        var sum=0;
+        while (number > 0)  
+        {  
+        var digit =parseInt( number % 10);  
+        var fact=1; 
+        re=(re*10)+digit; 
+         for(var i=1; i<=digit; i++)  
+         {  
+          fact=fact*i;  
+          }  
+        sum= parseInt(sum+ fact);  
+        number = parseInt(number / 10);
+         }  
+         var facto=1;
+         var ans="\\[";
+         var ans2="\\[";
+         while(re>0)
+         {  let d =parseInt(re% 10);
+             re = parseInt(re/10);
+             for(var i=1; i<=d; i++)  
+             {  
+              facto=facto*i;  
+              }  
+             if (re>0)
+             {
+             ans+=" "+d+"! +  ";
+             ans2+= " "+facto+" + ";
+         }
+              else
+             {
+              ans+=" "+d+"!  ";
+             ans2+= " "+facto+" ";
+ 
+         }
+ 
+         }
+ 
+         ans+= "\\]";
+         ans2+= "\\]";
+         ans2+= "\\["+sum+"\\]"
 
-        if (num == sum) {
-            document.getElementById("specialans").innerHTML = num + " is a special number"
-        }
-        else {
-            document.getElementById("specialans").innerHTML = num + " is not a special number"
-        }
+       if(num==sum)  
+        {  ans2+= "\\[Since \\space the \\space result \\space i.e \\space "+sum+" \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space "+num+" \\]";
+        ans2+="\\[\\therefore \\space "+num+" \\space  is \\space a \\space special \\space number\\]"
+           document.getElementById("specialans").innerHTML=ans+ans2;
+          }  
+        else  
+         {     ans2+= "\\[Since \\space the \\space result \\space i.e \\space "+sum+" \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space "+num+"\\]";
+         ans2+="\\[\\therefore \\space "+num+" \\space is \\space not \\space a \\space special\\space number\\]"
+          document.getElementById("specialans").innerHTML=ans+ans2;
+          }  
+          renderMathInElement(document.getElementById("specialans"));
     }
 }
 
 
-function armstrongvalue() {
-    var num = document.getElementById("arm").value;
-    var digits = Math.floor(Math.log10(num) + 1);
-    if (num == "") {
-        document.getElementById("armans").innerHTML = "Please input a no";
-        // Duck number
-        function duckvalue() {
-            var num = document.getElementById("duckno").value;
-            if (num == "") {
-                document.getElementById("duckans").innerHTML = "Please input a no";
-            }
-            else {
-                var temp = num.toString();
-                var l = temp.length;
-                let counter = 0;
-
-                for (var i = 1; i < l; i++) {
-                    chr = temp.charAt(i);
-                    if (chr == '0')
-                        counter++;
-                }
-
-                if (counter > 0 && temp.charAt(0) != '0')
-                    document.getElementById("duckans").innerHTML = temp + " is a duck number";
-                else
-                    document.getElementById("duckans").innerHTML = temp + " is not a duck number";
-            }
-
-        }
+function armstrongvalue(){
+    var num=document.getElementById("arm").value;
+    var digits=Math.floor(Math.log10(num) + 1);
+    if(num=="")
+    {
+        document.getElementById("armans").innerHTML="Please input a no";
     }
-}
-function armstrongvalue() {
-    var num = document.getElementById("arm").value;
-    var digits = Math.floor(Math.log10(num) + 1);
-    if (num == "") {
-        document.getElementById("armans").innerHTML = "Please input a no";
-    }
-    else {
-        var w = "";
-        let r = 0;
-        var ans = "\\[";
-        var ans2 = "\\[";
-        num = parseInt(num);
-        var temp = num;
-        var sum = 0;
+    else{
+        num=parseInt(num);
+        var temp=num;
+        var sum=0;
         while (temp > 0) {
             let d = temp % 10;
             sum = sum + parseInt(Math.pow(d, digits));
