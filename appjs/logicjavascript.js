@@ -3370,7 +3370,7 @@ function impse20find() {
         renderMathInElement(document.getElementById("impse20exp"))
     }
     else
-        document.getElementById("impse20ans").innerHTML = "please enter valid input"
+        document.getElementById("impse20ans").innerHTML = "please enter valid input ";
 }
 
 function calceximpse21find(){
