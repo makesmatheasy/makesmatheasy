@@ -19254,6 +19254,21 @@
                 </tr>
                 <tr>
                     <td>
+                        <div onclick="$('#typesofcatalansolids').slideToggle();"
+                             style="color: var(--appimage);cursor: pointer;">Catalan Solids
+                        </div>
+                        <div class="collapse" id="typesofcatalansolids" style="margin: 0.9375rem;">
+                            <table>
+                                <tr>
+                                    <td><a data-toggle="modal" data-target="#tetrakis_t"
+                                            style="text-decoration:none;" href="#">Triakis Tetrahedron</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <div onclick="$('#typesofcuboid').slideToggle();"
                              style="color: var(--appimage);cursor: pointer;"> Cuboid
                         </div>
@@ -30303,6 +30318,63 @@ N is the population size.
             </div>
         </div>
 
+        <div class="modal fade" id="concave_pent" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Concave Pentagon</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- added div with class container -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A= \frac{3}{4}a^2 \]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Perimeter</h5>
+                                    <p class="text-center">\[p = 3a + 2b\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Leg length of triangle(b)</h5>
+                                    <p class="text-center">\[b = \sqrt{2}* \frac{a}{2} \]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/claw.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <!-- --------FROM------- -->
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius large cicle (R)" id="inputlargerad"
+                                       oninput="solveclaw();">
+                            <input class="form__field" type="number"
+                                       placeholder="Enter radius small circle (r)" id="inputsmallrad"
+                                       oninput="solveclaw();">
+                            <p class="stopwrap" id="resultoflinelen"
+                                style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofclawperi"
+                                style="font-family:mathfont;"></p> 
+                            <p class="stopwrap" id="resultofclawarea"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                        <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="crossshape" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -33791,6 +33863,62 @@ N is the population size.
     <!-- properties of quadrilaterals ends-->
 
     <!--3-D shapes model -------->
+    <div class="modal fade" id="tetrakis_t" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Triakis Tetrahedron</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close"
+                            style="outline:none">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="text-center">Area</h5>
+                                <p class="text-center">\[A = \frac{3}{5} \times a^2 \times \sqrt{11}\]</p>
+                                <p class="text-center">a = edge length</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Volume</h5>
+                                <p class="text-center">\[V = \frac{3}{20} \space a^3 \sqrt{2}\]</p>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Height</h5>
+                                <p class="text-center">\[h = \frac{3}{5} \space a \sqrt{6}\]</p>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <img src="images/triakis-tetrahedron.png" class="img-fluid">
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <h5 class="text-center">Edge length pyramid</h5>
+                                <p class="text-center">\[b = \frac{3}{5} \space a\]</p>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <input class="form__field" type="number"
+                                   placeholder="Enter edge length (a)" id="inputtritetraedge"
+                                   oninput="solvetriatetra();">
+                        <p class="stopwrap" id="resultoftritetravol"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftritetraarea"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftritetraheight"
+                            style="font-family:mathfont;"></p>
+                        <p class="stopwrap" id="resultoftritetrab"
+                            style="font-family:mathfont;"></p>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="modal fade" id="tricupola" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">

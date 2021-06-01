@@ -11110,6 +11110,36 @@ function solvepentcupola() {
     }
 }
 
+function solvetriatetra() {
+    let a = document.getElementById("inputtritetraedge").value;
+    let areaoutput = document.getElementById("resultoftritetraarea");
+    let voloutput = document.getElementById("resultoftritetravol");
+    let heightoutput = document.getElementById("resultoftritetraheight");
+    let boutput = document.getElementById("resultoftritetrab");
+    var areatemp = "";
+    var voltemp = "";
+    var heighttemp = "";
+    var btemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline \\frac{3}{5} \\times" + a + "\\times" + a + "\\times \\sqrt{11}"+ "\\ = "  + eval(String(1.99  * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline \\frac{3}{20} \\times" + a + "\\times" + a + "\\times" + a + "\\sqrt{2}" + "\\ = " + eval(String(0.212 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        heighttemp += "\\[Height \\space \\newline \\frac{3}{5} \\times" + a  + "\\times \\sqrt{6}" + "\\ = " + eval(String(1.47* a)).toFixed(2) + "\\]";
+        heightoutput.innerHTML = heighttemp;
+        btemp += "\\[Edge \\space length \\space pyramid \\space \\newline \\frac{3}{5} \\times" + a  + "\\ = " + eval(String(0.6* a)).toFixed(2) + "\\]";
+        boutput.innerHTML = btemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+        renderMathInElement(heightoutput);
+        renderMathInElement(boutput);
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        heightoutput.innerHTML = "";
+        boutput.innerHTML = "";
+    }
+}
 //Partial Right Cylinder
 function solvepartialcy() {
     var height = document.getElementById("inputcyh").value;

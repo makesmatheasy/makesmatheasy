@@ -329,6 +329,7 @@ function openit(id) {
         "#halfcone",
         "#astroid",
         "#squarecube",
+        "#tetrakis_t",
         "#deca_prism",
         "#cardiod",
         "#log-collapse",
