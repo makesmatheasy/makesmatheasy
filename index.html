@@ -19481,6 +19481,10 @@
                                     style="text-decoration:none;" href="#">Truncated Octahedron</a></td>
                             </tr>
                             <tr>
+                                <td><a data-toggle="modal" data-target="#tria_octa"
+                                    style="text-decoration:none;" href="#">Triakis Octahedron</a></td>
+                            </tr>
+                            <tr>
                                 <td><a data-toggle="modal" data-target="#tetrahexahedron"
                                        style="text-decoration:none;" href="#">Tetrahexahedron</a></td>
                             </tr>
@@ -30837,6 +30841,53 @@ N is the population size.
                             <p class="stopwrap" id="trunsquare-d" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="trunsquare-p" style="font-family:mathfont;"></p>
                             <p class="stopwrap" id="trunsquare-A" style="font-family:mathfont;"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="tria_octa" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Triakis Octahedron</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = (2- \sqrt{2}) \times a^3\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Surface Area</h5>
+                                    <p class="text-center">\[A = 6a^2 \sqrt{23-16\sqrt{2}}\]</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Edge length pyramid</h5>
+                                    <p class="text-center">\[b = (2- \sqrt{2}) \times a\]</p>   
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/triakis-octahedron.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                   placeholder="Enter edge length octahedron(a)"
+                                   id="inputtriaoctaside" oninput="solvetriaocta()">
+                            <br>
+                            <p class="stopwrap" id="resultofvoltriaocta" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultoftsatriaocta" style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofbtriaocta" style="font-family:mathfont;"></p>
                         </div>
                     </div>
                     <div class="modal-footer">
