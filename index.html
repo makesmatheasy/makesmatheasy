@@ -3160,6 +3160,25 @@
                                 </tr>
                             </table>
                         </li>
+                        <!-- Emrip no -->
+                        <li>
+                            <table class="table">
+                                <tr>
+                                    <td style="border-top: none;">
+                                        <a id="emripbtn"
+                                           style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Emrip Number</a>
+                                    </td>
+                                    <td style="float:right;border-top: none;">
+                                            <span onclick="addtofavourite('Emrip Number','#emripnum','c','emripnumimgfav')"><img
+                                                    id="emripnumimgfav" src="images/unfavourite.png"
+                                                    style="height:1.5625rem;filter: none;"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+
+
+
             <li>
                 <table class="table">
                     <tr>
@@ -41471,6 +41490,30 @@ N is the population size.
             </form>
             <br>
                 <p class="stopwrap" style="color:white;" id="perfectans"></p><br>
+        </div>
+    </div>
+    <!-- Emrip Number -->
+    <div class="collapse" id="emripnum" style="text-align: center;">
+        <div class="container">
+            <h1 style="color: white;font-family:mathfont;text-align: center;">Emrip Number Checker</h2>
+            <br>
+            <p>An Emirp Number is a prime number that results in a different prime number when it is reversed. </p>
+            <br>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="emripno" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="emripvalue()">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+                <p class="stopwrap" style="color:white;" id="emripans"></p><br>
+                <p class="stopwrap" style="color:white;" id="emripans1"></p>
         </div>
     </div>
 
