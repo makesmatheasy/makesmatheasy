@@ -7721,6 +7721,29 @@ function solvekochcurve() {
 }
 //-----------------------------------------------------
 //shapes calculator
+
+function circularsegmentsolve() {
+    var r = parseFloat(document.getElementById("circularsegment-r").value);
+    var h = parseFloat(document.getElementById("circularsegment-h").value);
+    var thetaField = document.getElementById("circularsegment-theta");
+    var arcLenField = document.getElementById("circularsegment-l");
+    var chordLenField = document.getElementById("circularsegment-s");
+    var periField = document.getElementById("circularsegment-p");
+    var areaField = document.getElementById("circularsegment-a");
+    var theta = 2 * Math.acos(1 - h/r);
+    var l = r * theta;
+    var s = 2 * Math.sqrt(2*r*h - Math.pow(h, 2));
+    var p = l + s;
+    var A = r * l / 2 - s * ( r - h ) / 2;
+    if ((!isNaN(r)) && (!isNaN(h))) {
+        thetaField.innerHTML = `Angle (Θ) = ${theta.toFixed(3)} rad`;
+        arcLenField.innerHTML = `Arc length (l) = ${l.toFixed(3)}`;
+        chordLenField.innerHTML = `Chord length (s) = ${s.toFixed(3)}`;
+        periField.innerHTML = `Perimeter (p) = ${p.toFixed(3)}`;
+        areaField.innerHTML = `Area (A) = ${A.toFixed(3)}`;
+    }
+}
+
 function solveperisq() {
     var val = document.getElementById("inputsqside").value;
     if (val == "" || val < 0) {
