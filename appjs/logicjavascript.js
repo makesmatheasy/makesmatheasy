@@ -3373,6 +3373,12 @@ function impse20find() {
         document.getElementById("impse20ans").innerHTML = "please enter valid input"
 }
 
+function calceximpse21find(){
+    var n = document.getElementById("impse21");
+    n.value = 5;
+
+    impse21find();
+}
 function impse21find() {
     var n = parseInt(document.getElementById("impse21").value)
     if (!isNaN(n)) {
@@ -3649,6 +3655,12 @@ function impse24find() {
 }
 
 
+function calceximpse9find(){
+    let n = document.getElementById("impse13");
+    n.value = 4;
+
+    impse9find();
+}
 function impse9find() {
     let n = parseInt(document.getElementById("impse13").value)
     let res = 0.0;
@@ -3726,6 +3738,13 @@ function impse12find() {
     renderMathInElement(document.getElementById("impse12ans"));
 }
 
+function calceximpse18find(){
+    var n = document.getElementById("impse18");
+    n.value = 2;
+
+    impse18find();
+
+}
 function impse18find() {
     let n = parseInt(document.getElementById("impse18").value)
     if (!isNaN(n)) {
@@ -3753,6 +3772,13 @@ function impse18find() {
     }
 }
 
+
+function calceximpse19find(){
+    var n = document.getElementById("impse19");
+    n.value = 5;
+
+    impse19find();
+}
 function impse19find() {
     let n = parseInt(document.getElementById("impse19").value)
     let pPrevPrev = 1;
