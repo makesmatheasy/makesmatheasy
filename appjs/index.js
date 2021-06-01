@@ -259,6 +259,7 @@ function openit(id) {
         "#pentatop",
         "#propcircle",
         "#propquad",
+        "#rhomtria",
         "#pythtriple",
         "#rootsquadratic",
         "#planeintercept",
