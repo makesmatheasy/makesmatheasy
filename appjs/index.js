@@ -133,6 +133,7 @@ function openit(id) {
         "#trimornum",
         "#happynum",
         "#eurnum",
+        "#delnum",
         "#harnum",
         "#pronum",
         "#autonum",

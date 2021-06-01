@@ -3295,8 +3295,24 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="delnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Delannoy Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Delannoy Number','delnum','c','delnumimgfav')"><img
+                                        id="delnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
+
         <li class="list_menu_items" onclick="collapseit('convertortoggle'); changeImage5();"><a
                 style="cursor: pointer;font-size: 1rem;">Basic Convertors<img class="dropdownlogo"
                                                                               src="icons/down-chevron.svg"
@@ -41253,6 +41269,32 @@ N is the population size.
         </div>
     </div>
     <!-- Eulerian Number end -->
+        <!-- Delannoy Numberr start-->
+        <div class="collapse" id="delnum" style="text-align: center;">
+            <div class="container">
+                <h2 style="color: white;font-family:mathfont;text-align: center;">Delannoy Number</h2>
+                <br>
+                <p>A Delannoy number <strong>D</strong> describes the number of paths from the southwest corner (0, 0) of a rectangular grid to the northeast corner (m, n), using only single steps north, northeast, or east.  </p>
+                <br>
+                <form action="">
+                    <div class="form-group">
+                        <input style="color: white; font-family:mathfont" type="number" id="deln" placeholder="Enter the value of n" class="form__field">
+                        <input style="color: white; font-family:mathfont" type="number" id="delm" placeholder="Enter the value of m" class="form__field">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="DelNum(document.getElementById('deln').value,document.getElementById('delm').value)">Find</button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                <br>
+                <div class="form-group text-center">
+                    <p class="stopwrap" style="color:white;" id="delans"></p><br>
+                </div>
+            </div>
+        </div>
+        <!-- Delannoy Number end -->
     <!-- Cullen Number start-->
     <div class="collapse" id="culnum" style="text-align: center;">
         <div class="container">
