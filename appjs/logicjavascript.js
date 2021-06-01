@@ -28714,6 +28714,42 @@ function isAutoNum(num) {
     document.getElementById('autoans').innerHTML = ans;
 
 }
+// magic number
+function magicvalue(){
+    var num = document.getElementById("magicno").value;
+    var digits = Math.floor(Math.log10(num) + 1);
+    if (num == "") {
+        document.getElementById("magicans").innerHTML = "Please input a no";
+    }
+    else {
+        var sum = 0;
+        var ans = "";
+        var w = "";
+        num = parseInt(num);
+        number=num;
+        while (number > 9)              
+        {     
+        while (number > 0)  
+        {     
+        var remainder =parseInt( number % 10);   
+        sum = sum + remainder;  
+        
+        number =parseInt(number / 10);     
+        }  
+        number = sum;  
+        sum = 0;  
+        }  
+        if (number == 1)  
+        {  
+            document.getElementById("magicans").innerHTML=num+" is a magic number"
+        }  
+        else  
+        {  
+            document.getElementById("magicans").innerHTML=num+" is not a magic number"
+        }  
+        }  
+
+}
 // Pronic Number
 function isProNum(num) {
     let flag=0,i;

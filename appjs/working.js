@@ -90,6 +90,8 @@ $("#culnumbtn").click(function(){
 //Cullen Number
 $("#carnumbtn").click(function(){
     openit("#carnum");
+$("#magicbtn").click(function(){
+    openit("#magicnum");
     closenav();
     clearall();
 });
