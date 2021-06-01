@@ -26637,40 +26637,20 @@ function getLead() {
     selectElement =
         document.querySelector('#lead');
     output = selectElement.value;
-    var arr = ["supply", "manufacture"];
+    var arr = ["manufacture","project"];
     for (var i = 0; i < arr.length; i++) {
         var lead = 'lead' + arr[i];
         document.getElementById(lead).style.display = "none";
     }
 
-    if (output == "supply") {
-        document.getElementById('leadsupply').style.display = "block";
-    } else if (output == "manufacture") {
+    if (output == "manufacture") {
         document.getElementById('leadmanufacture').style.display = "block";
+    } else if (output == "project") {
+        document.getElementById('leadproject').style.display = "block";
     } 
 }
 
-//lead time for supply chain
-function leadsupply() {
-    var num1 = document.getElementById("supplydelay").value; 
-    var num2 = document.getElementById("reorder").value;
-    if(num1==""||num2=="")
-    {
-        document.getElementById("leadsupplydelay").innerHTML="Please fill all the fields";
-    }
-    else{
-     num1 =parseFloat(num1);
-     num2 =parseFloat(num2);
-     var lead=num1+num2;
-     var ans="\\[Lead \\space Time \\space (supply \\space chain \\space management)= Supply  \\space  Delay + Reordering  \\space Delay    \\]" 
-     ans+="\\["+num1+"+"+num2+" \\]"
-     ans+="\\[ Lead \\space Time \\space (supply \\space chain \\space management) ="+lead.toFixed(4)+" \\space days \\]"
-     ans+="\\[= "+(lead*24).toFixed(4)+" \\space hours\\]"
-     document.getElementById("leadsupplydelay").innerHTML=ans;
-     renderMathInElement(document.getElementById("leadsupplydelay"));
-        
-    }
-}
+
 
 
 //lead time calculator
@@ -26694,6 +26674,27 @@ function leadvalue() {
         document.getElementById("leadans").innerHTML = ans;
         renderMathInElement(document.getElementById("leadans"));
 
+    }
+}
+//lead time for project management
+function leadmangement() {
+    var num1 = document.getElementById("task1").value; 
+    var num2 = document.getElementById("task2").value;
+    if(num1==""||num2=="")
+    {
+        document.getElementById("leadpro").innerHTML="Please fill all the fields";
+    }
+    else{
+     num1 =parseFloat(num1);
+     num2 =parseFloat(num2);
+     var lead=num1-num2;
+     var ans="\\[Lead \\space Time \\space (project \\space management)= Time \\space for \\space Task 1 – Time \\space for \\space Task 2  \\]" 
+     ans+="\\["+num1+"-"+num2+" \\]"
+     ans+="\\[ Lead \\space Time \\space (project \\space management) ="+lead.toFixed(4)+" \\space days \\]"
+     ans+="\\[= "+(lead*24).toFixed(4)+" \\space hours\\]"
+     document.getElementById("leadpro").innerHTML=ans;
+     renderMathInElement(document.getElementById("leadpro"));
+        
     }
 }
 //takt time calculator
