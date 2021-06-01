@@ -22658,6 +22658,47 @@ function convertex3misc() {
         result.innerHTML = "Answer -> " + x;
     }
 }
+function convertex3misc2(){
+    const toBase = document.getElementById("misc2-1").value;
+    var input = document.getElementById("misc2-input").value;
+    let result = document.getElementById("misc2-result");
+
+    if (toBase === "Grey Code"){
+        var x = "", y = "";
+        var temp = "";
+        if (input.length % 4 != 0) {
+            result.innerHTML = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
+        } else {
+            x = "";
+
+            for (var i = 0; i < input.length; i++) {
+                if ((i + 1) % 4 == 0) {
+                    temp = temp + input[i]; //for 4 th value
+                    x = x + (parseInt(temp, 2) - 3).toString();
+                    print += "\\[\\rightarrow \\space " + temp + " \\space becomes \\space " + parseInt(temp, 2).toString() + "\\]";
+                    print += "\\[" + parseInt(temp, 2) + " \\space - \\space 3 \\space \\rightarrow \\space " + (parseInt(temp, 2) - 3).toString() + " \\]";
+                    temp = "";
+                } else {
+                    temp = temp + input[i];
+                }
+            }
+
+            if (input.length / 4 == x.length) {
+                input = parseInt(x).toString();
+            } else if (parseInt(x) < 0) {
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant subceed 0)";
+            } else {
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant exceed 9)";
+            }
+            var result1 = input;
+            var x = result1[0];
+            for (var i = 1; i < result1.length; i++) {
+                var m = parseInt(result1[i - 1] ^ result1[i]).toString();
+                x += m;
+            }
+        result.innerHTML = "Answer -> " + x;
+    }
+}
 function convertbcdmisc() {
     const toBase = document.getElementById("bcd-misc-1").value;
     var input = document.getElementById("bcdmisc-input").value;
