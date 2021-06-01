@@ -22663,7 +22663,7 @@ function convertex3misc2(){
     var input = document.getElementById("misc2-input").value;
     let result = document.getElementById("misc2-result");
 
-    if (toBase === "Grey Code"){
+    if (toBase === "2421 Code"){
         var x = "", y = "";
         var temp = "";
         if (input.length % 4 != 0) {
@@ -22690,12 +22690,53 @@ function convertex3misc2(){
             } else {
                 result.innerHTML = "Error : Invalid input (decimal value of each digit cant exceed 9)";
             }
-            var result1 = input;
-            var x = result1[0];
-            for (var i = 1; i < result1.length; i++) {
-                var m = parseInt(result1[i - 1] ^ result1[i]).toString();
-                x += m;
+            var x = "_", y = ""; temp = "";
+
+        for (var i = 0; i < input.length; i++) {
+            if (parseInt(input[i]) < 5) {
+                y = (parseInt(input[i]) + 0).toString(2);
+            } else if (parseInt(input[i]) > 4) {
+                y = (parseInt(input[i]) + 6).toString(2);
             }
+
+            if (y.length == 1) {
+                temp = "000" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space <= \\space 4)" + input[i] + " \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space > \\space 4) " + input[i] + " \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
+            }
+            if (y.length == 2) {
+                temp = "00" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space <= \\space 4)" + input[i] + " \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space > \\space 4) " + input[i] + " \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
+            }
+            if (y.length == 3) {
+                temp = "0" + y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space <= \\space 4)" + input[i] + " \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space > \\space 4) " + input[i] + " \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
+            }
+            if (y.length == 4) {
+                temp = y + "_   ";
+                if (parseInt(input[i]) < 5) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space <= \\space 4)" + input[i] + " \\space becomes \\space " + temp + "\\space \\]";
+                } else if (parseInt(input[i]) > 4) {
+                    print += "\\[\\rightarrow \\space (As \\space " + input[i] + " \\space > \\space 4) " + input[i] + " \\space + \\space 6 \\space \\rightarrow " + (parseInt(input[i]) + 6) + " \\space becomes \\space " + temp + "\\space \\]";
+                }
+                x = x + temp;
+            }
+        }
+
         result.innerHTML = "Answer -> " + x;
     }
 }
