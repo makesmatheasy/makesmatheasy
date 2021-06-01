@@ -5785,7 +5785,7 @@ function ktimes() {
     res.innerHTML += "Coefficient of x: "+B +"<br>";
     res.innerHTML += "Constant term: "+ C+"<br>";
     res.innerHTML += "Number of times the equation is to be multiplied: "+ K+"<br>";
-    res.innerHTML +="The Quadratic equation whose roots are K times the roots of given equation: " A + " " + K * B
+    res.innerHTML +="The Quadratic equation whose roots are K times the roots of given equation: " + A + " " + K * B
         + " " + K * K * C
 
 }
@@ -10343,7 +10343,7 @@ function solvetruncocta() {
         midRadField.innerHTML = midRadtemp;
 
         avtemp += "\\[Surface-to-volume \\space ratio \\space (A/V) \\space = \\space \\frac{"+A+"}{"+V+"}\\]"
-        avtemp += "\\[Surface-to-volume \\space ratio \\space (A/V) \\space = \\space "+(A?V).toFixed(3)+"\\]"
+        avtemp += "\\[Surface-to-volume \\space ratio \\space (A/V) \\space = \\space "+(A/V).toFixed(3)+"\\]"
         avField.innerHTML = avtemp;
     }
     else{
@@ -22415,6 +22415,7 @@ function convertex3misc(){
                     temp = temp + input[i];
                 }
             }
+        }
 
             if (input.length / 4 == x.length) {
                 input = parseInt(x).toString();
