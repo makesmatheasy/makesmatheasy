@@ -5608,6 +5608,44 @@ function solverhododeca() {
     }
 
 }
+
+function solverhomtria() {
+    var a = document.getElementById("inputrhotriaside").value;
+    var areaoutput = document.getElementById("resultofrhotriaarea");
+    var voloutput = document.getElementById("resultofrhotriavol");
+    var mroutput = document.getElementById("resultofrhotriamr");
+    var iroutput = document.getElementById("resultofrhotriair");
+    var areatemp = "";
+    var voltemp = "";
+    var mrtemp = "";
+    var irtemp = "";
+
+    if (a != "") {
+        areatemp += "\\[Surface \\space Area \\space of \\space Rhombic \\space \\newline Triacontahedron \\space \\newline " + 12 + "\\times "  + a + "\\times" + a + "\\times \\sqrt{5}" + "\\ = " + eval(String(26.833 * a * a)).toFixed(3) + "\\]";
+        areaoutput.innerHTML = areatemp;
+
+        voltemp += "\\[Volume \\space of \\space Rhombic \\space Triacontahedron \\space \\newline 4 \\times \\sqrt{5 + 2 \\sqrt{5}} \\times " + a + "\\times" + a + "\\times" + a + "\\ = " + eval(String(12.311 * a * a * a)).toFixed(3) + "\\]";
+        voloutput.innerHTML = voltemp;
+
+        mrtemp += "\\[Midsphere \\space radius \\space of \\space Rhombic \\space \\newline Triacontahedron \\space \\newline \\frac{" + a + "}{5} \\times (5 + \\sqrt{5})" +  "\\ = " + eval(String(1.447 * a)).toFixed(3) + "\\]";
+        mroutput.innerHTML = mrtemp;
+
+        irtemp += "\\[Insphere \\space radius \\space of \\space Rhombic \\space \\newline Triacontahedron \\space \\newline \\frac{3 \\times \\sqrt{5}}{\\sqrt{5 + 2 \\sqrt{5}} \\times" + a + "}" + "\\ = " + eval(String(1.376 * a)).toFixed(3) + "\\]";
+        iroutput.innerHTML = irtemp;
+
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+        renderMathInElement(mroutput);
+        renderMathInElement(iroutput);
+
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+        mroutput.innerHTML = "";
+        iroutput.innerHTML = "";
+    }
+
+}
 //Angle between planes calculator
 function angletwoplanesolve() {
     var a, b, c, d, a1, b1, c1, d1;
