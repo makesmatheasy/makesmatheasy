@@ -14,7 +14,7 @@ function cleardiv(arrayofclearids) {
 }
 function clearall() {
     setTimeout(function () {
-        cleardiv(["harans","proans","autoans","disans","gammaprobAns","negbinoans","ackermannResult","nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
+        cleardiv(["eurans","harans","proans","autoans","disans","gammaprobAns","negbinoans","ackermannResult","nLucNumResult","lucNumResult","smNumResult","catNumResult","dblFactResult","smDivResult","smPrimeResult","nextPrimeResult","distResult","resultintegration", "integralplot","etfResult", "resultdiff", "diffplot", "resulttable", "generatedmatrixsingle", "singlematrixresult", "singlematrixexplanation", "generatedmatrix1", "signofmatrix", "generatedmatrix2", "matrixresult", "explanationmatrixresult", "rootsquadraticresult", "inputroundoffoutput", "plotequationresult", "resultlaplace", "laplaceplot", "resultinverselaplace", "inverselaplaceplot", "resultpardiff", "resultmulsol", "soltri", "resultofdivsteps", "resultdivi", "divisibilitycheckresult", "divisibilitycheckresultexplanation", "dividefactor", "dividefactorresult", "factorresult", "resultfac", "resultlcm", "resultlcms", "hcfprimefactor", "resulthcf", "displayequation", "resultsimplifyequation", "resultexpandequation", "equationsmany", "resultsolverequation", "compresult"]);
     }, 1000);
 }
 
@@ -23,8 +23,32 @@ $("#clock").click(function(){
     closenav();
     clearall();
 });
+
+$("#wag").click(function () {
+    openit("#wags");
+    closenav();
+    clearall();
+});
+
+
+$("#wag").click(function () {
+    openit("#wags");
+    closenav();
+    clearall();
+});
+
+$("#specialbtn").click(function(){
+    openit("#specialnum");
+    closenav();
+    clearall();
+});
 $("#armnumbtn").click(function(){
     openit("#armnum");
+    closenav();
+    clearall();
+});
+$("#perfectbtn").click(function(){
+    openit("#perfectnum");
     closenav();
     clearall();
 });
@@ -34,9 +58,26 @@ $("#disnumbtn").click(function(){
     closenav();
     clearall();
 });
+$("#happybtn").click(function(){
+    openit("#happynum");
+    closenav();
+    clearall();
+});
 // Automorphic Number
 $("#autonumbtn").click(function(){
     openit("#autonum");
+    closenav();
+    clearall();
+});
+//Cullen Number
+$("#culnumbtn").click(function(){
+    openit("#culnum");
+    closenav();
+    clearall();
+});
+//Cullen Number
+$("#carnumbtn").click(function(){
+    openit("#carnum");
     closenav();
     clearall();
 });
@@ -52,11 +93,29 @@ $("#harnumbtn").click(function(){
     closenav();
     clearall();
 });
+//Trimorphic Number
+$("#trimornumbtn").click(function(){
+    openit("#trimornum");
+    closenav();
+    clearall();
+});
+$("#bmi").click(function(){
+    openit("#bmis");
+    closenav();
+    clearall();
+});
+//Eulerian Number
+$("#eurnumbtn").click(function(){
+    openit("#eurnum");
+    closenav();
+    clearall();
+});
 $("#wag").click(function () {
     openit("#wags");
     closenav();
     clearall();
 });
+
 $("#midrangebtn").click(function () {
     openit("#midrange");
     closenav();
@@ -74,12 +133,20 @@ $("#bilinearbtn").click(function(){
     closenav();
     clearall();
 });
+
+$("#madc").click(function(){
+    openit("#madcs");
+    closenav();
+    clearall();
+});
+
 // Krishnamurthy Number
 $("#krishnumbtn").click(function(){
     openit("#krishnum");
     closenav();
     clearall();
 });
+
 $("#manhat").click(function(){
     openit("#manhats");
     closenav();
@@ -256,6 +323,11 @@ $(document).ready(function () {
     });
     $("#bpmf").click(function () {
         openit("#bpmfs");
+        closenav();
+        clearall();
+    });
+    $("#pentatop").click(function () {
+        openit("#pentatop");
         closenav();
         clearall();
     });
@@ -598,6 +670,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });   
+    $("#regressionbtn").click(function () {
+        openit("#regressiontest");
+        closenav();
+        clearall();
+    });   
     $("#abtestbtn").click(function () {
         openit("#abtest");
         closenav();
@@ -779,6 +856,13 @@ $(document).ready(function () {
         clearall();
 
     });
+    $("#rsqr").click(function () {
+        openit("#rsqrs");
+        closenav();
+        clearall();
+
+    });
+
     $("#vect").click(function () {
         openit("#vects");
         closenav();
@@ -1002,6 +1086,11 @@ $(document).ready(function () {
 
     $("#tdshapescalbtn").click(function () {
         openit("#tdshapescal");
+        closenav();
+        clearall();
+    });
+    $("#odshapescalbtn").click(function () {
+        openit("#odshapescal");
         closenav();
         clearall();
     });
@@ -1518,6 +1607,11 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
+    $("#archimedeanbtn").click(function () {
+        openit("#archimedean");
+        closenav();
+        clearall();
+    });
     $("#degbtn").click(function () {
         openit("#degcal");
         closenav();
@@ -1581,7 +1675,21 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-
+    $("#carpolarcalbtn").click(function () {
+        openit("#carpolarcal");
+        closenav();
+        clearall();
+    });
+    $("#cylcarcalbtn").click(function () {
+        openit("#cylcarcal");
+        closenav();
+        clearall();
+    });
+    $("#lancentarcbtn").click(function () {
+        openit("#lancentarc");
+        closenav();
+        clearall();
+    });
 
     $("#bayesprobabilitycollapsebtn").click(function () {
         openit("#bayes-probabilitycollapse");
@@ -1591,6 +1699,11 @@ $(document).ready(function () {
 
     $("#condprobabilitybtn").click(function () {
         openit("#condprobability");
+        closenav();
+        clearall();
+    });
+    $("#randommeanbtn").click(function () {
+        openit("#randommean");
         closenav();
         clearall();
     });
@@ -1615,7 +1728,6 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-<<<<<<< HEAD
     $("#relriskbtn").click(function () {
         var temp = "\\[Formula:\\space \\frac{[\\frac{a}{(a+b)}]}{[\\frac{c}{(c+d)}]}\\]";
         var output = document.getElementById("relriskform");
@@ -1626,19 +1738,13 @@ $(document).ready(function () {
         clearall();
     }); 
     $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-||||||| 6f1ab91
-    $("#relriskbtn").click(function () {
-        openit("#relrisk");
+        openit("#geoprobability");   
         closenav();
         clearall();
-    }); 
-    $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
-=======
+    });
+    
     $("#npvbtn").click(function () {
         openit("#npv");
->>>>>>> 30dd34b8ec0ea576a9ad92c7a5c863555c9488e9
         closenav();
         clearall();
     });

@@ -249,10 +249,13 @@ Other Tech/Libraries
   - Disarium Number
   - Krishnamurthy Number
   - Automorphic Number 
-  - Pronic Number 
+  - Pronic Number
   - Harshad Number
-
-
+  - Cullen Number 
+  - Trimorphic Number
+  - Eulerian Number
+  - Carmichael Number
+  
 - Basic Convertors
 
   - Currency Convertor
@@ -351,15 +354,19 @@ Other Tech/Libraries
     - X-Shape
     - Drop Shape
     - Arbelos
+    - Helix
     - Spherical Triangle
+    - Right Kite
 
   - Name Of 3D Shapes
   - 3D Shapes Calculator
     - Capsule
     - Cube
     - Cuboid
+    - Cupola
     - Cylinder
     - Cone
+    - Double Calotte
     - Sphere
     - Hollow Cylinder
     - Oblique Circular Cylinder
@@ -470,6 +477,7 @@ Other Tech/Libraries
   - Hypergeometric Distribution Statistics
   - Exponential Distribution Calculator
   - Gamma Distribution Calculator
+  - Mean and Variance of Random variable
 - Statistics
 
   - Statistics Formulae
@@ -489,13 +497,8 @@ Other Tech/Libraries
   - p value Calculator
   - np chart Calculator
   - Confidence Interval Calculator
-<<<<<<< HEAD
-  - PPV calculator
-||||||| 6f1ab91
-=======
   - PPV calculator
   - NPV calculator
->>>>>>> 30dd34b8ec0ea576a9ad92c7a5c863555c9488e9
   - Odds Calculator
   - Skewness Calculator
   - Coefficient of Variation
