@@ -3199,6 +3199,42 @@ function solvepenta() {
 
     }
 }
+
+function solvepentakis() {
+    var a = document.getElementById("inputsidepentakis").value;
+    var voloutput = document.getElementById("resultofpentakisvol");
+    var saoutput = document.getElementById("resultofpentakisarea");
+    var boutput = document.getElementById("resultofpentakisb");
+    var voltemp = "";
+    var satemp = "";
+    var btemp = "";
+    var vol=9.394*a*a*a;
+    var area=21.981*a*a;
+    var b= 0.887*a;
+    if (a != "")  {
+        voltemp += "\\[ \\frac{15}{76} \\times " + a + "\\times" + a + "\\times" + a + "\\times (23 + 11 \\sqrt{5})" + "\\]";
+        voltemp += "\\[Volume \\space of \\space Pentakis \\space Dodecahedron \\space is \\space \\]";
+        voltemp += "\\[" + eval(String(vol)) + "\\]";
+        voloutput.innerHTML = voltemp;
+        satemp += "\\[ \\frac{15}{19} \\times" + a + "\\times" + a + "\\times \\sqrt{413+162 \\sqrt{5}}" + "\\]";
+        satemp += "\\[Surface \\space Area \\space of \\space Pentakis \\space Dodecahedron \\space is \\space \\]";
+        satemp += "\\[" + eval(String(area)) + "\\]";
+        saoutput.innerHTML = satemp;
+        btemp += "\\[ \\frac{3}{38} \\times (9+\\sqrt{5})" + "\\]";
+        btemp += "\\[Surface \\space Area \\space of \\space Pentakis \\space Dodecahedron \\space is \\space \\]";
+        btemp += "\\[" + eval(String(b)) + "\\]";
+        boutput.innerHTML = btemp;
+        renderMathInElement(voloutput);
+        renderMathInElement(saoutput);
+        renderMathInElement(boutput);
+    }
+    else {
+        voloutput.innerHTML = "";
+        saoutput.innerHTML = "";
+        boutput.innerHTML = "";
+
+    }
+}
 //Percentage Calculator
 function solveper() {
     var x = parseFloat(document.getElementById('x').value);
