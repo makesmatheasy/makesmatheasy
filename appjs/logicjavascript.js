@@ -28507,6 +28507,52 @@ function perfectvalue() {
     }
 
 }
+function isPrime(n)
+    {
+        
+        if (n <= 1)
+            return false;
+        for (i = 2; i < n; i++)
+            if (n % i == 0)
+                return false;
+ 
+        return true;
+    }
+function emripvalue(){
+    var num = document.getElementById("emripno").value;
+    if (num == "") {
+        document.getElementById("emripans").innerHTML = "Please input a number";
+        document.getElementById("emripans1").innerHTML ="";
+    }
+    else {
+        
+        n= parseInt(num);
+        if (isPrime(n) == false)
+        {document.getElementById("emripans").innerHTML = num+" is not a Emrip number";
+        document.getElementById("emripans1").innerHTML =  "As "+num+" is not a prime number";}
+        else{
+        let rev=0;
+       while (n > 0) {
+        var d = n % 10;
+        rev = rev * 10 + d;
+        n = parseInt(n/10);
+        }
+    var te= isPrime(rev);
+
+    if(te)
+    {
+        document.getElementById("emripans").innerHTML = num+" is a Emrip number";
+        document.getElementById("emripans1").innerHTML = "As the number "+num+ " and its reverse i.e. "+rev +" both are prime number";
+    }
+    else{
+        document.getElementById("emripans").innerHTML = num+" is not a Emrip number "
+        document.getElementById("emripans1").innerHTML =  "As the reverse of "+num+ " i.e. "+rev +" is not a prime number";
+
+    }
+}
+}
+
+}
 // Neon Number
 function isNeonNum(num) {
     let sq = num * num,ans="",s="";
