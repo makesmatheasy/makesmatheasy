@@ -139,6 +139,7 @@ function openit(id) {
         "#autonum",
         "#specialnum",
         "#armnum",
+        "#pallindromenum",
         "#perfectnum",
         "#disnum",
         "#gammaDist",
