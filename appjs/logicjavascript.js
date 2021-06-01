@@ -28761,30 +28761,44 @@ function magicvalue(){
     }
     else {
         var sum = 0;
-        var ans = "";
-        var w = "";
+        
+        var ans2 = "\\[";
         num = parseInt(num);
         number=num;
+        var ans="";
         while (number > 9)              
-        {     
+        {    
+            ans+= "\\["; 
         while (number > 0)  
         {     
         var remainder =parseInt( number % 10);   
-        sum = sum + remainder;  
-        
-        number =parseInt(number / 10);     
+        sum = sum + remainder;    
+        number =parseInt(number / 10); 
+        if (number > 0) {
+            ans += "  "+ remainder +" + ";
+        }
+        else{
+            ans += "  "+ remainder +" ";
+        } 
         }  
+        
+        ans+= "\\]";
+        ans += "\\[" + sum + "\\]";
+       
         number = sum;  
         sum = 0;  
         }  
         if (number == 1)  
-        {  
-            document.getElementById("magicans").innerHTML=num+" is a magic number"
+        {   ans += "\\[Since \\space the \\space sum \\space i.e \\space " + number + " \\space is \\space equal \\space to \\space 1 \\]";
+            ans += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space magic \\space number\\]"
+            document.getElementById("magicans").innerHTML=ans;
         }  
         else  
-        {  
-            document.getElementById("magicans").innerHTML=num+" is not a magic number"
+        {   ans += "\\[Since \\space the \\space sum \\space i.e \\space " + number + " \\space is \\space not \\space equal \\space to \\space 1 \\]";
+            ans += "\\[\\therefore \\space " + num + " \\space  is \\space not \\space a \\space magic \\space number\\]"
+            document.getElementById("magicans").innerHTML=ans;
         }  
+        renderMathInElement(document.getElementById("magicans"));
         }  
 
 }
