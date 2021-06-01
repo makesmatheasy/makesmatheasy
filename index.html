@@ -3376,6 +3376,36 @@
                     </tr>
                 </table>
             </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="culnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cullen Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Cullen Number','culnum','c','culnumimgfav')"><img
+                                        id="culnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="pellnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Pell Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Pell Number','pellnum','c','pellnumimgfav')"><img
+                                        id="pellnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <div class="dropdown-divider"></div>
         </div>
 
@@ -41995,6 +42025,31 @@ N is the population size.
         </div>
     </div>
     <!-- Cullen Number end -->
+         <!-- Pell Number start-->
+         <div class="collapse" id="pellnum" style="text-align: center;">
+            <div class="container">
+                <h2 style="color: white;font-family:mathfont;text-align: center;">Pell Number</h2>
+                <br>
+                <p>Pell numbers are numbers that are similar to the Fibonacci numbers but the formula is different.</p>
+                <br>
+                <form action="">
+                    <div class="form-group">
+                        <input style="color: white; font-family:mathfont" type="number" id="pelln" placeholder="Enter the value of n" class="form__field">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-light" onclick="PellNum(document.getElementById('pelln').value)">Find</button>
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+                <br>
+                <div class="form-group text-center">
+                    <p class="stopwrap" style="color:white;" id="pellans"></p><br>
+                </div>
+            </div>
+        </div>
+        <!-- Pell Number end -->
     <!-- Carmichael Numbers start-->
     <div class="collapse" id="carnum" style="text-align: center;">
         <div class="container">

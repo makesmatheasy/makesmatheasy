@@ -132,6 +132,7 @@ function openit(id) {
     var ids = [
         "#emripnum",
         "#magicnum",
+        "#pellnum",
         "#trimornum",
         "#happynum",
         "#eurnum",

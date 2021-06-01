@@ -119,7 +119,13 @@ $("#trimornumbtn").click(function () {
     closenav();
     clearall();
 });
-$("#bmi").click(function () {
+//Pell Number
+$("#pellnumbtn").click(function(){
+    openit("#pellnum");
+    closenav();
+    clearall();
+});
+$("#bmi").click(function(){
     openit("#bmis");
     closenav();
     clearall();

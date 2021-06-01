@@ -28968,3 +28968,20 @@ function DelNum(n, m) {
     document.getElementById('delans').innerHTML = "The result is: " + dp[m][n];
 
 }
+function PellNum(num) {
+    let flag=0;
+    if (num <= 2)
+        flag=1;
+    let a = 1;
+    let b = 2;
+    let c;
+    for (let i = 3; i <= num; i++) {
+        c = 2 * b + a;
+        a = b;
+        b = c;
+    }
+    if (!flag)
+        document.getElementById('pellans').innerHTML = "The result is: " + num;
+    else
+        document.getElementById('pellans').innerHTML = "The result is: " + b;
+}
