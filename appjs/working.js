@@ -47,6 +47,11 @@ $("#armnumbtn").click(function(){
     closenav();
     clearall();
 });
+$("#pallindromebtn").click(function(){
+    openit("#pallindromenum");
+    closenav();
+    clearall();
+});
 $("#perfectbtn").click(function(){
     openit("#perfectnum");
     closenav();

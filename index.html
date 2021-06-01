@@ -3113,6 +3113,22 @@
                     </tr>
                 </table>
             </li>
+            <!-- Pallindrome -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="pallindromebtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Pallindrome Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Pallindrome Number','#pallindromenum','c','pallindromenumimgfav')"><img
+                                        id="pallindromenumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
                         <!-- Perfect no -->
                         <li>
                             <table class="table">
@@ -41176,6 +41192,29 @@ N is the population size.
             </form>
             <br>
                 <p class="stopwrap" style="color:white;" id="armans"></p><br>
+        </div>
+    </div>
+    <!-- Pallindrome no -->
+    <div class="collapse" id="pallindromenum" style="text-align: center;">
+        <div class="container">
+            <h1 style="color: white;font-family:mathfont;text-align: center;">Pallindrome Number Checker</h2>
+            <br>
+            <p>An integer is a palindrome if the reverse of that number is equal to the original number.</p>
+            <br>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="pallin" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="pallindromevalue()">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+                <p class="stopwrap" style="color:white;" id="pallinans"></p><br>
         </div>
     </div>
 
