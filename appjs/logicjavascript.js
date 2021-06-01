@@ -17207,12 +17207,21 @@ function typenum15find() {
             ans1 += "\\[Sphenic \\space number \\space can \\space be \\space checked \\space by \\space fact \\space that \\space every \\space sphenic \\space number \\space will \\space have \\space exactly \\space 8 \\space divisor \\space SPHENIC \\space NUMBER \\]"
             result.innerHTML = ans1;
         }
+<<<<<<< HEAD
         else {
             document.getElementById("typenum15ans").innerHTML = "NO"
             ans1 += "\\[A \\space Sphenic \\space Number \\space is \\space a \\space positive \\space integer \\space n \\space which \\space is \\space product \\space of \\space exactly \\space three \\space distinct \\space primes. \\]"
             ans1 += "\\[The \\space first \\space few \\space sphenic \\space numbers \\space are \\space 30, \\space 42, \\space 66, \\space 70, \\space 78, \\space 102, \\space 105, \\space 110,\\space 114, \\space … \\]"
             ans1 += "\\[Sphenic \\space number \\space can \\space be \\space checked \\space by \\space fact \\space that \\space every \\space sphenic \\space number \\space will \\space have \\space exactly \\space 8 \\space divisor \\space SPHENIC \\space NUMBER \\]"
             result.innerHTML = ans1;
+=======
+        else{
+        document.getElementById("typenum15ans").innerHTML  =  "NO"
+        ans1 +=  "\\[A \\space Sphenic \\space Number \\space is \\space a \\space positive \\space integer \\space n \\space which \\space is \\space product \\space of \\space exactly \\space three \\space distinct \\space primes. \\]"
+        ans1 += "\\[The \\space first \\space few \\space sphenic \\space numbers \\space are \\space 30, \\space 42, \\space 66, \\space 70, \\space 78, \\space 102, \\space 105, \\space 110,\\space 114, \\space … \\]"
+        ans1 += "\\[Sphenic \\space number \\space can \\space be \\space checked \\space by \\space fact \\space that \\space every \\space sphenic \\space number \\space will \\space have \\space exactly \\space 8 \\space divisor \\space SPHENIC \\space NUMBER \\]"
+       result.innerHTML = ans1;
+>>>>>>> 2222ca52c40d29f201f3e45dbd85cae645a188e3
         }
     }
     else {
@@ -17222,6 +17231,11 @@ function typenum15find() {
     }
     renderMathInElement(result);
 }
+<<<<<<< HEAD
+=======
+
+}    
+>>>>>>> 2222ca52c40d29f201f3e45dbd85cae645a188e3
 
 function typenum48find() {
     var n = parseInt(document.getElementById("typenum48").value)
@@ -27447,8 +27461,12 @@ function sphcylcal() {
 
     var p = Math.sqrt(x * x + y * y).toFixed(3);
     var o = Math.tan(y / x).toFixed(3);
+<<<<<<< HEAD
 
 
+=======
+    
+>>>>>>> 2222ca52c40d29f201f3e45dbd85cae645a188e3
     var ansp;
     var anso;
     var ansz;
@@ -27483,12 +27501,21 @@ function cartsphcal() {
     var outputr = document.getElementById("cartsphrans");
     var outputo = document.getElementById("cartsphoans");
     var outputfi = document.getElementById("cartsphfians");
+<<<<<<< HEAD
     var r = Math.sqrt(x * x + y * y + z * z).toFixed(2);
     var o = Math.acos(z / r).toFixed(2);
     var fi = Math.atan(y / x).toFixed(2);
     var ans = "";
     var temp1 = x * x + y * y + z * z;
     var temp2 = (z / r).toFixed(2);
+=======
+    var r =  Math.sqrt(x*x + y*y + z*z).toFixed(2);
+    var o = Math.acos(z/r).toFixed(2);
+    var fi = Math.atan(y/x).toFixed(2);
+    var ans="";
+    var temp1 = x*x + y*y + z*z;
+    var temp2 = (z/r).toFixed(2);
+>>>>>>> 2222ca52c40d29f201f3e45dbd85cae645a188e3
     var ansr = "\\[r:\\space \\sqrt{x^2 + y^2 + z^2}\\]";
     ansr += "\\[=\\space \\sqrt{" + x + "^2 + " + y + "^2 + " + z + "^2}\\]";
     ansr += "\\[=\\space \\sqrt{" + temp1 + "} \\]";
@@ -28263,23 +28290,37 @@ function antilogCal() {
     if (val == "" || base == "") {
         output.innerHTML = "Enter all the inputs";
     }
+<<<<<<< HEAD
     else {
         let ans = Math.pow(base, val); //trick to find antilog
         let steps = "";
         steps += "\\[ y\\space =\\space log_b(x) \\]";
         steps += "\\[x\\space =\\space log_b^{-1}(y)\\space =\\space b ^ y\\]";
         steps += "\\[=\\space " + ans + "\\]";
+=======
+    else{
+        let ans = Math.pow(base,val); //trick to find antilog
+        let steps  = "";
+        steps += "\\[ y\\space =\\space log_b(x) \\]";
+        steps += "\\[x\\space =\\space log_b^{-1}(y)\\space =\\space b ^ y\\]";
+        steps += "\\[=\\space "+ans+"\\]";
+>>>>>>> 2222ca52c40d29f201f3e45dbd85cae645a188e3
 
         output.innerHTML = steps;
     }
     renderMathInElement(output);
 }
+<<<<<<< HEAD
 function logbaseCal() {
+=======
+function logbaseCal(){
+>>>>>>> 2222ca52c40d29f201f3e45dbd85cae645a188e3
     let a = document.getElementById("logbasea").value;
     let b = document.getElementById("logbaseb").value;
     let x = document.getElementById("logbasex").value;
 
     let output = document.getElementById("logbasex");
+<<<<<<< HEAD
     if (a == "" || b == "" || x == "") {
         output.innerHTML = "Enter all the inputs";
     }
@@ -28292,6 +28333,20 @@ function logbaseCal() {
         steps += "\\[log_a(x)\\space = \\frac{" + temp1 + "}{" + temp2 + "}\\]";
         steps += "\\[log_a(x)\\space = " + ans + "\\]";
         output.innerHTML = steps;
+=======
+    if(a=="" || b=="" || x==""){
+        output.innerHTML = "Enter all the inputs";
+    }
+    else{
+        let steps = "";
+        let ans = (Math.log(x) / Math.log(b))/(Math.log(a) / Math.log(b));
+        let temp1 = Math.log(x) / Math.log(b);
+        let temp2 = Math.log(a) / Math.log(b);
+        steps += "\\[log_a(x)\\space = \\frac{log_b(x)}{log_b(a)}\\]";
+        steps += "\\[log_a(x)\\space = \\frac{"+temp1+"}{"+temp2+"}\\]";
+        steps += "\\[log_a(x)\\space = "+ans+"\\]";
+        output.innerHTML =  steps;
+>>>>>>> 2222ca52c40d29f201f3e45dbd85cae645a188e3
     }
     renderMathInElement(output);
 }
@@ -28305,10 +28360,19 @@ function relrisk() {
     let ans = "";
     var output = document.getElementById('relriskans');
     if (a == "" || b == "" || c == "" || d == "") {
+<<<<<<< HEAD
+        output.innerHTML = "Enter all the inputs";
+||||||| 343865d
+        document.getElementById("relriskans").innerHTML = "Enter all the inputs";
+=======
         output.innerHTML = "Enter all the inputs";
     }
     else if (isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)) {
         document.getElementById("relriskans").innerHTML = "All inputs should be numeric";
+<<<<<<< HEAD
+=======
+>>>>>>> afdd3b431abaa559e8d0216341dd56b83c3ef158
+>>>>>>> 2222ca52c40d29f201f3e45dbd85cae645a188e3
     }
     else {
         let ab = a + b;
