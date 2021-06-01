@@ -53,6 +53,11 @@ $("#disnumbtn").click(function(){
     closenav();
     clearall();
 });
+$("#happybtn").click(function(){
+    openit("#happynum");
+    closenav();
+    clearall();
+});
 // Automorphic Number
 $("#autonumbtn").click(function(){
     openit("#autonum");
@@ -62,6 +67,12 @@ $("#autonumbtn").click(function(){
 //Cullen Number
 $("#culnumbtn").click(function(){
     openit("#culnum");
+    closenav();
+    clearall();
+});
+//Cullen Number
+$("#carnumbtn").click(function(){
+    openit("#carnum");
     closenav();
     clearall();
 });

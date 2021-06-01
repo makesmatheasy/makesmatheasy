@@ -131,6 +131,7 @@ function collapseit(openit) {
 function openit(id) {
     var ids = [
         "#trimornum",
+        "#happynum",
         "#eurnum",
         "#harnum",
         "#pronum",
@@ -142,6 +143,7 @@ function openit(id) {
         "#expoDist",
         "#ackermann",
         "#culnum",
+        "#carnum",
         "#lucNum",
         "#smNum",
         "#catNum",

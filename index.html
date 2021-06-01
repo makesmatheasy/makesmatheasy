@@ -3142,6 +3142,22 @@
                     </tr>
                 </table>
             </li>
+            <!-- Happy Number -->
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="happybtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Happy Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Happy Number','#happynum','c','happynumimgfav')"><img
+                                        id="happynumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
             <li>
                 <table class="table">
                     <tr>
@@ -3242,6 +3258,21 @@
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Cullen Number','culnum','c','culnumimgfav')"><img
                                         id="culnumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table class="table">
+                    <tr>
+                        <td style="border-top: none;">
+                            <a id="carnumbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Carmichael Number</a>
+                        </td>
+                        <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('Carmichael Number','carnum','c','culnumimgfav')"><img
+                                        id="carnumimgfav" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                         </td>
                     </tr>
@@ -5931,12 +5962,11 @@
             <h4 id="sieveans"></h4>
             <h2>Sieve of Atkin</h2>
             <br>
-            <input type="text" id="sieve2" class="form__field"placeholder="Enter the number">
-            <br>
+            <input type="text" id="sieve2" class="form__field"placeholder="Enter the number">            <br>
             <button type="button" class="btn btn-dark" onclick="sieve2find()">Find</button>
-            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-            <br>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>            <br>
             <h5 id="sieve2ans"></h5>
+            <h5 id="sieve2exp"></h5>
         </div>
         <!--        start factors-->
         <div class="collapse" id="factors">
@@ -13858,6 +13888,10 @@
                             Solve
                         </button>
                         <button type="button" class="btn btn-light"
+                                onclick="calcexeulerTotient(document.getElementById('etfnum').value);">
+                            Example
+                        </button>
+                        <button type="button" class="btn btn-light"
                                 onclick="this.form.reset();">
                             Reset
                         </button>
@@ -13885,6 +13919,10 @@
                             Solve
                         </button>
                         <button type="button" class="btn btn-light"
+                                onclick="calcexnextPrime(document.getElementById('nprime').value);">
+                            Example
+                        </button>
+                        <button type="button" class="btn btn-light"
                                 onclick="this.form.reset();">
                             Reset
                         </button>
@@ -13910,6 +13948,10 @@
                         <button type="button" class="btn btn-light"
                                 onclick="smallestPrimeDivisor(document.getElementById('smprimenum').value);">
                             Solve
+                        </button>
+                        <button type="button" class="btn btn-light"
+                                onclick="calcexsmallestPrimeDivisor(document.getElementById('smprimenum').value);">
+                            Example
                         </button>
                         <button type="button" class="btn btn-light"
                                 onclick="this.form.reset();">
@@ -14709,7 +14751,7 @@
         <div class="collapse" id="excircum">
             <h2 class="d-flex justify-content-center">Distance between excentre and circumcentre</h2><br>
                 <p>For OI1</p>
-                <p id="extcircum" style="0.1rem;">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>    
+                <p id="extcircum">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>    
                 <form action=""class="d-flex justify-content-center">
                     <div class="form-group">
                         <input type="text"  style="width: 250px;" class="form__field form-control" name="a" id="radius_2" placeholder="Enter External radius"/>
@@ -14724,7 +14766,7 @@
                     <p id="excircum1"></p><br><br>
 
                 <p>For OI2 and OI3</p>
-                <p id="extcircum" style="0.1rem;">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>    
+                <p id="extcircum">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>    
                 <form action=""class="d-flex justify-content-center">
                     <div class="form-group">
                         <input type="text"  style="width: 250px;" class="form__field form-control p-1" name="a" id="radius_3" placeholder="Enter External radius"/>
@@ -16669,12 +16711,17 @@
                 placeholder="Enter Angle of Elevation in degree(∠BCA)"
                 style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <button type="button" class="btn btn-light" onclick=heightdist5()>
                             Find
                         </button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-light" onclick=calcexheightdist5()>
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-4">
                         <button type="button" class="btn btn-light"
                         onclick="this.form.reset();">
                         Reset
@@ -16695,12 +16742,17 @@
                     placeholder="Enter Angle of Depression in degree(∠BCA)"
                     style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <button type="button" class="btn btn-light" onclick=heightdist8()>
                                 Find
                             </button>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
+                            <button type="button" class="btn btn-light" onclick=calcexheightdist8()>
+                                Example
+                            </button>
+                        </div>
+                        <div class="col-4">
                             <button type="button" class="btn btn-light"
                             onclick="this.form.reset();">
                             Reset
@@ -16721,12 +16773,17 @@
             placeholder="Enter Height (AB)"
             style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <button type="button" class="btn btn-light" onclick=heightdist2()>
                         Find
                     </button>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
+                    <button type="button" class="btn btn-light" onclick=calcexheightdist2()>
+                        Example
+                    </button>
+                </div>
+                <div class="col-4">
                     <button type="button" class="btn btn-light"
                     onclick="this.form.reset();">
                     Reset
@@ -19195,6 +19252,10 @@
                            style="text-decoration:none;" href="#">Disphenoid</a></td>
                 </tr>
                 <tr>
+                    <td><a data-toggle="modal" data-target="#snubdisphenoid"
+                           style="text-decoration:none;" href="#">Snub Disphenoid</a></td>
+                </tr>
+                <tr>
                     <td><a data-toggle="modal" data-target="#doucalotte"
                            style="text-decoration:none;" href="#">Double Calotte</a></td>
                 </tr>
@@ -19236,6 +19297,10 @@
                             <tr>
                                 <td><a data-toggle="modal" data-target="#dodecahedron"
                                        style="text-decoration:none;" href="#">Dodecahedron</a></td>
+                            </tr>
+                            <tr>
+                                <td><a data-toggle="modal" data-target="#disphenocingulum"
+                                       style="text-decoration:none;" href="#">Disphenocingulum</a></td>
                             </tr>
                             <tr>
                                 <td><a data-toggle="modal" data-target="#half_tetra"
@@ -22352,6 +22417,7 @@
     <p  id="bmians1"></p><br>
 
     
+>>>>>>> 8bd371ae4caeca64b2ead951686c8510ff5f35dd
 </div>
 
 <div class="collapse" id="hypers" style="text-align: center;">
@@ -22895,10 +22961,21 @@
         </form>
         
     <p>&nbsp;</p>
-    <p id="cartpolarans1" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
-    <p>&nbsp;</p>
-    <p id="cartpolarans2" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
-    <p>&nbsp;</p>
+        <form action="">
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Spherical to Polar</p>
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+                <input type="number" id="sphpolarr" width="5em" placeholder="Enter the radial distance"> 
+                <input type="number" id="sphtpolaro" width="5em" placeholder="Enter the polar angle">
+                <p>&nbsp;</p></p>
+                <p>&nbsp;</p>
+        <p id="sphpolarpans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+        <p>&nbsp;</p>
+        <p id="sphpolaroans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="sphpolarcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;" onclick="this.form.reset();">Reset</button>
+        </form>
+
+
     <form action="">
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Polar to Cartesian</p>
         <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
@@ -22924,6 +23001,7 @@
     <h1 style=" text-align: center; font-family:mathfont">Spherical Coordinate Calculator</h1>
         <p>&nbsp;</p>
         <form action="">
+            <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Spherical</p>
             <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
                 <div class="d-flex justify-content-center form-group">
                     <input type="number" style="width: 100%;" class="form-control" id="sphx" width="5em" placeholder="Enter X coordinate"> 
@@ -22933,8 +23011,8 @@
                 
                 <p>&nbsp;</p></p>
                 <div class="d-flex justify-content-center form-group">
-                    <button type="button" class="btn btn-outline-light mr-1" style="" onclick="sphcal()">Calculate</button>
-                    <button type="button" class="btn btn-outline-light mr-1" style="" onclick="this.form.reset();">Reset</button>
+                    <button type="button" class="btn btn-outline-light mr-1" onclick="sphcal()">Calculate</button>
+                    <button type="button" class="btn btn-outline-light mr-1" onclick="this.form.reset();">Reset</button>
                 </div>
         </form>
         
@@ -22955,8 +23033,8 @@
         
         <p>&nbsp;</p></p>
         <div class="d-flex justify-content-center form-group">
-        <button type="button" class="btn btn-outline-light mr-1" style="" onclick="cylsphcal()">Calculate</button>
-        <button type="button" class="btn btn-outline-light mr-1" style="" onclick="this.form.reset();">Reset</button>
+        <button type="button" class="btn btn-outline-light mr-1"  onclick="cylsphcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light mr-1"  onclick="this.form.reset();">Reset</button>
         </div>
         <p>&nbsp;</p>
     <p id="cylsphrans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
@@ -29590,6 +29668,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -29681,6 +29760,7 @@ N is the population size.
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -33633,6 +33713,7 @@ N is the population size.
                     <button type="button" class="btn btn-secondary"
                             data-dismiss="modal">Close
                     </button>
+                    <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                 </div>
             </div>
         </div>
@@ -33679,6 +33760,7 @@ N is the population size.
                     <button type="button" class="btn btn-secondary"
                             data-dismiss="modal">Close
                     </button>
+                    <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                 </div>
             </div>
         </div>
@@ -33725,6 +33807,7 @@ N is the population size.
                     <button type="button" class="btn btn-secondary"
                             data-dismiss="modal">Close
                     </button>
+                    <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                 </div>
             </div>
         </div>
@@ -33785,6 +33868,7 @@ N is the population size.
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
                         Close
                     </button>
+                    <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                 </div>
             </div>
         </div>
@@ -33849,6 +33933,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -33913,6 +33998,7 @@ N is the population size.
                    <button type="button" class="btn btn-secondary"
                            data-dismiss="modal">Close
                    </button>
+                   <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                </div>
            </div>
        </div>
@@ -33986,6 +34072,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34052,6 +34139,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -34119,6 +34207,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -34183,6 +34272,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -34247,6 +34337,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -34303,6 +34394,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34359,6 +34451,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34409,6 +34502,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34459,6 +34553,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34522,6 +34617,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34584,6 +34680,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34646,6 +34743,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34710,6 +34808,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34772,6 +34871,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34843,6 +34943,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34903,6 +35004,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -34957,6 +35059,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -35021,6 +35124,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -35076,6 +35180,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -35126,6 +35231,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -35179,6 +35285,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -35246,6 +35353,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -35305,6 +35413,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -35358,6 +35467,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -35412,6 +35522,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -35466,6 +35577,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -35526,6 +35638,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -35579,6 +35692,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -35643,6 +35757,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -35702,6 +35817,7 @@ N is the population size.
                     <button type="button" class="btn btn-secondary"
                             data-dismiss="modal">Close
                     </button>
+                    <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                 </div>
             </div>
         </div>
@@ -35755,6 +35871,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -35812,6 +35929,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -35869,6 +35987,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -35925,6 +36044,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -35989,6 +36109,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36048,6 +36169,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -36108,6 +36230,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -36162,6 +36285,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -36227,6 +36351,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -36290,6 +36415,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36342,6 +36468,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36397,6 +36524,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36462,6 +36590,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36532,6 +36661,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36604,6 +36734,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36662,6 +36793,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36714,6 +36846,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36782,6 +36915,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36835,6 +36969,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36887,6 +37022,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -36944,6 +37080,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37019,6 +37156,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37084,6 +37222,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37160,6 +37299,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37234,6 +37374,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37298,6 +37439,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37352,6 +37494,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37407,6 +37550,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37451,6 +37595,7 @@ N is the population size.
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37511,6 +37656,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37580,6 +37726,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37648,6 +37795,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37696,6 +37844,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37755,6 +37904,54 @@ N is the population size.
                                 style="font-family:mathfont;"></p>
                           </div>
                         <!-- ------HERE------ -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="disphenocingulum" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Disphenocingulum</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = (4 + 5 \space \sqrt{3}) \space a^2\]</p>
+                                    <p class="text-center">a = edge length</p>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = 3.7776453418585752  \space a^3\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/disphenocingulum.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                       placeholder="Enter side length (a)" id="inputdisphenoedge"
+                                       oninput="solvedisphenocingulum();">
+                            <p class="stopwrap" id="resultofdisphenoarea"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofdisphenovol"
+                                style="font-family:mathfont;"></p>
+                          </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"
@@ -37829,6 +38026,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -37896,6 +38094,54 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="snubdisphenoid" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Snub Disphenoid</h5>
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-label="Close"
+                                style="outline:none">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="text-center">Area</h5>
+                                    <p class="text-center">\[A = 3 \space \sqrt{3} \space a^2\]</p>
+                                    <p class="text-center">a = edge length</p>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="dropdown-divider"></div>
+                                    <h5 class="text-center">Volume</h5>
+                                    <p class="text-center">\[V = 0.85949364619130053 \space a^3\]</p>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <img src="images/snub-disphenoid.png" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <input class="form__field" type="number"
+                                       placeholder="Enter side length (a)" id="inputsnubdisedge"
+                                       oninput="solvesnubdis();">
+                            <p class="stopwrap" id="resultofsnubdisarea"
+                                       style="font-family:mathfont;"></p>
+                            <p class="stopwrap" id="resultofsnubdisvol"
+                                style="font-family:mathfont;"></p>
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
                     </div>
                 </div>
             </div>
@@ -37953,6 +38199,7 @@ N is the population size.
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38004,6 +38251,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38054,6 +38302,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38107,6 +38356,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38159,6 +38409,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                 Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>           
                     </div>
                 </div>
@@ -38217,6 +38468,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38275,6 +38527,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38335,6 +38588,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38393,6 +38647,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38451,6 +38706,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38512,6 +38768,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38576,6 +38833,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38641,6 +38899,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38694,6 +38953,7 @@ N is the population size.
                     <button type="button" class="btn btn-secondary"
                             data-dismiss="modal">Close
                     </button>
+                    <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                 </div>
             </div>
         </div>
@@ -38752,6 +39012,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -38823,6 +39084,7 @@ N is the population size.
                     <button type="button" class="btn btn-secondary"
                             data-dismiss="modal">Close
                     </button>
+                    <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                 </div>
             </div>
         </div>
@@ -38879,6 +39141,7 @@ N is the population size.
                     <button type="button" class="btn btn-secondary"
                             data-dismiss="modal">Close
                     </button>
+                    <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                 </div>
             </div>
         </div>
@@ -38934,6 +39197,7 @@ N is the population size.
                     <button type="button" class="btn btn-secondary"
                             data-dismiss="modal">Close
                     </button>
+                    <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                 </div>
             </div>
         </div>
@@ -38991,6 +39255,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -39042,6 +39307,7 @@ N is the population size.
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">Close
                             </button>
+                            <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                         </div>
                     </div>
                 </div>
@@ -39098,6 +39364,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -39168,6 +39435,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -39234,6 +39502,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -39293,6 +39562,7 @@ N is the population size.
                         <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Close
                         </button>
+                        <button type="button" class="btn btn-secondary" onclick="this.form.reset();"> Reset </button>
                     </div>
                 </div>
             </div>
@@ -40708,6 +40978,30 @@ N is the population size.
         </div>
     </div>
     <!-- Disarium Number end -->
+    <!-- Happy Number -->
+    <div class="collapse" id="happynum" style="text-align: center;">
+        <div class="container">
+            <h1 style="color: white;font-family:mathfont;text-align: center;">Happy Number Checker</h2>
+            <br>
+            <p>A number is called happy if it leads to 1 after a sequence of steps wherein each step number is replaced by the sum of squares of its digit.</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="happyno" placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="happyvalue()">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="happyans"></p><br>
+            </div>
+        </div>
+    </div>
     <!-- Neon Number start-->
     <div class="collapse" id="neonnum" style="text-align: center;">
         <div class="container">
@@ -40909,6 +41203,32 @@ N is the population size.
         </div>
     </div>
     <!-- Cullen Number end -->
+    <!-- Carmichael Numbers start-->
+    <div class="collapse" id="carnum" style="text-align: center;">
+        <div class="container">
+            <h2 style="color: white;font-family:mathfont;text-align: center;">Carmichael Number Checker</h2>
+            <br>
+            <p>A Carmichael number is an odd composite number n which satisfies Fermat's little theorem : a^(n-1) – 1 ≡ 0 mod n
+            for every choice of a satisfying (a,n) = 1</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="carn" placeholder="Enter the value of n" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="CarNum(document.getElementById('carn').value)">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="carans"></p><br>
+            </div>
+        </div>
+    </div>
+    <!-- Carmichael Numbers end -->
 </div>
 <!--#######-------all modals here-------#######-->
 

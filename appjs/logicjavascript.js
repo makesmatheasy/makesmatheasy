@@ -5785,7 +5785,7 @@ function ktimes() {
     res.innerHTML += "Coefficient of x: "+B +"<br>";
     res.innerHTML += "Constant term: "+ C+"<br>";
     res.innerHTML += "Number of times the equation is to be multiplied: "+ K+"<br>";
-    res.innerHTML +="The Quadratic equation whose roots are K times the roots of given equation: " A + " " + K * B
+    res.innerHTML +="The Quadratic equation whose roots are K times the roots of given equation: " + A + " " + K * B
         + " " + K * K * C
 
 }
@@ -10255,6 +10255,24 @@ function solvetrundodeca() {
         avField.innerHTML = `Surface-to-volume ratio (A/V) = ${(A / V).toFixed(3)}`;
     }
 }
+function solvesnubdis() {
+    let a = document.getElementById("inputsnubdisedge").value;
+    let areaoutput = document.getElementById("resultofsnubdisarea");
+    let voloutput = document.getElementById("resultofsnubdisvol");
+    var areatemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline 3 \\space \\sqrt{3} \\space (" + a + ")^2" + "\\ = " + eval(String(5.19615 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline 0.85949364619130053 \\space (" + a + ")^3" + "\\ = " + eval(String(0.85949 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
+    }
+}
 
 // Snub Cube
 
@@ -10325,7 +10343,7 @@ function solvetruncocta() {
         midRadField.innerHTML = midRadtemp;
 
         avtemp += "\\[Surface-to-volume \\space ratio \\space (A/V) \\space = \\space \\frac{"+A+"}{"+V+"}\\]"
-        avtemp += "\\[Surface-to-volume \\space ratio \\space (A/V) \\space = \\space "+(A?V).toFixed(3)+"\\]"
+        avtemp += "\\[Surface-to-volume \\space ratio \\space (A/V) \\space = \\space "+(A/V).toFixed(3)+"\\]"
         avField.innerHTML = avtemp;
     }
     else{
@@ -10380,6 +10398,25 @@ function solvetruncube() {
         volstartemp.innerHTML = "";
         rmocttemp.innerHTML = "";
         rctemp.innerHTML = "";
+    }
+}
+
+function solvedisphenocingulum() {
+    let a = document.getElementById("inputdisphenoedge").value;
+    let areaoutput = document.getElementById("resultofdisphenoarea");
+    let voloutput = document.getElementById("resultofdisphenovol");
+    var areatemp = "";
+    var voltemp = "";
+    if (a != "") {
+        areatemp += "\\[Area \\space \\newline (4 + 5 \\sqrt{3}) \\space (" + a + ")^2" + "\\ = " + eval(String(12.6603 * a * a)).toFixed(2) + "\\]";
+        areaoutput.innerHTML = areatemp;
+        voltemp += "\\[Volume \\space \\newline 3.7776453418585752 \\space (" + a + ")^3" + "\\ = " + eval(String(3.7776 * a * a * a)).toFixed(2) + "\\]";
+        voloutput.innerHTML = voltemp;
+        renderMathInElement(areaoutput);
+        renderMathInElement(voloutput);
+    } else {
+        areaoutput.innerHTML = "";
+        voloutput.innerHTML = "";
     }
 }
 
@@ -12658,6 +12695,18 @@ function heightdist9() {
 
 }
 
+
+function calcexheightdist5(){
+    var height = document.getElementById("height51");
+    var degree = document.getElementById("height52");
+
+    height.value = 20;
+    degree = 30;
+
+    heightdist5();
+
+}
+
 function heightdist5() {
     var height = parseFloat(document.getElementById("height51").value);
     var degree = parseFloat(document.getElementById("height52").value);
@@ -12680,6 +12729,17 @@ function heightdist5() {
     renderMathInElement(output);
 }
 
+function calcexheightdist8(){
+    var height = document.getElementById("height81");
+    var degree = document.getElementById("height82");
+
+    height.value = 15;
+    degree.value = 45;
+
+    heightdist8();
+
+}
+
 function heightdist8() {
     var height = parseFloat(document.getElementById("height81").value);
     var degree = parseFloat(document.getElementById("height82").value);
@@ -12700,6 +12760,16 @@ function heightdist8() {
     }
     output.innerHTML = temp;
     renderMathInElement(output);
+}
+
+function calcexheightdist2(){
+    var distance = document.getElementById("height21");
+    var height = document.getElementById("height31");
+
+    distance.value = 20;
+    height.value = 45;
+
+    heightdist2();
 }
 
 function heightdist2() {
@@ -15894,44 +15964,53 @@ function receq1() {
     let n = parseInt(document.getElementById("receq1").value)
     var output = document.getElementById("receq1ans")
     var ans = ""
+    var explain=""
     if (n < 0) {
         ans += "\\[Side \\ cannot \\space be \\space negative \\]"
         output.innerHTML = ans;
     }
     else if (!isNaN(n)) {
         if (n & 1) {
+            explain+="\\[As,\\space side \\space is \\space odd \\space Count="
             let coun = 0, m, j, i;
             for (i = n - 2; i >= 1; i--) {
                 if (i >= 1) {
                     m = parseInt((n - i) / 2, 10);
                     j = parseInt((i * (i + 1)) / 2, 10);
                     coun += j * m;
+                    explain+=j+"*"+m+"+";
                 }
                 else {
                     m = parseInt(((n - 1) - i) / 2, 10);
                     j = parseInt((i * (i + 1)) / 2, 10);
                     coun += j * m;
+                    explain+=j+"*"+m+"+";
                 }
             }
             ans += coun;
+            explain+="="+coun+"\\]";
         }
         else {
+            explain+="\\[As,\\space side \\space is \\space even \\space Count="
             let coun = 0, m, j, i;
             for (i = n - 2; i >= 1; i--) {
                 if (i >= 1) {
                     m = parseInt(((n - 1) - i) / 2, 10);
                     j = parseInt((i * (i + 1)) / 2, 10);
                     coun += j * m;
+                    explain+=j+"*"+m+"+";
                 }
                 else {
                     m = parseInt((n - i) / 2, 10);
                     j = parseInt((i * (i + 1)) / 2, 10);
                     coun += j * m;
+                    explain+=j+"*"+m+"+";
                 }
             }
             ans += coun;
+            explain+="="+coun+"\\]";
         }
-        output.innerHTML = ans;
+        output.innerHTML = ans+explain;
     }
     else {
         ans += "\\[Please \\space enter \\space all \\space input \\]"
@@ -16176,38 +16255,6 @@ function golds5find(){
     }
     else
         document.getElementById("golds5ans").innerHTML = "Please enter valid input"
-}
-
-function golds6find(){
-    let a = document.getElementById("golds8").value
-    let m = document.getElementById("golds9").value
-    if (__gcd(a, m) != 1)
-        document.write( "Inverse doesn't exist");
- 
-    else {
-        document.write( "Modular multiplicative inverse is "
-             + power(a, m - 2, m));
-    }
-}
-function power(x, y, m)
-{
-    if (y == 0)
-        return 1;
-    var p = power(x, parseInt(y / 2), m) % m;
-    p = (p * p) % m;
- 
-    return (y % 2 == 0) ? p : (x * p) % m;
-}
-function __gcd(a, b)
-{
-    if(b == 0)
-    {
-        return a;
-    }
-    else
-    {
-        return __gcd(b, a % b);
-    }
 }
 
 function golds4find() {
@@ -16919,31 +16966,6 @@ function primeFactors(n) {
 let arr = Array(1001).fill(true);
 function typenum15find() {
     var n = parseInt(document.getElementById("typenum18").value)
-<<<<<<< HEAD
-    simpleSieve();
-    var ans = find_sphene(n);
-    if (ans == 1)
-        document.getElementById("typenum15ans").innerHTML  =  "Yes"
-    else
-        document.getElementById("typenum15ans").innerHTML  =  "NO"
-
-
-    }    
-
-
-||||||| 6e7cb7c
-    simpleSieve();
-    var ans = find_sphene(n);
-    if (ans == 1)
-        document.getElementById("typenum15ans").innerHTML  =  "Yes"
-    else
-        document.getElementById("typenum15ans").innerHTML  =  "NO"
-
-
-    }    
-
-}
-=======
     var result = document.getElementById("typenum15ans1")
     var ans1 = ""
     if (!isNaN(n)) {
@@ -16971,7 +16993,6 @@ function typenum15find() {
     }
     renderMathInElement(result);
 }
->>>>>>> ba57fa8f23da84270ff16cce5d8eca59077bed1e
 
 function typenum48find(){
     var n = parseInt(document.getElementById("typenum48").value)
@@ -17363,45 +17384,54 @@ function cal_func_stats() {
     }
 }
 
-function sieve2(){
+function sieve2find(){
     let limit = parseInt(document.getElementById("sieve2").value)
-    if (limit > 2)
-        document.getElementById('sieve2ans').innerHTML =2 + " ";
-    if (limit > 3)
-        document.getElementById('sieve2ans').innerHTML = 3 + " ";
-    let sieve = new Array()
-    sieve[limit] = 0;
-    for (let i = 0; i < limit; i++)
-        sieve[i] = false;
-    for (let x = 1; x * x < limit; x++)
-    {
-        for (let y = 1; y * y < limit; y++)
+    if(!isNaN(limit)){
+        document.getElementById('sieve2exp').innerHTML = "\\[Given a limit, print all primes smaller than or equal to the given limit.\\]"
+        document.getElementById('sieve2exp').innerHTML = "\\[The sieve of Atkin is a modern algorithm for finding all prime numbers up to a specified integer.\\]"
+        document.getElementById('sieve2exp').innerHTML = "\\[Compared with the ancient Sieve of Eratosthenes, which marks off multiples of primes, it does some preliminary work and then marks off multiples of squares of primes\\]"
+        document.getElementById('sieve2exp').innerHTML = "\\[Square the number and mark all multiples of that square as non-prime. Note that the multiples that can be factored by 2, 3, or 5 need not be marked, as these will be ignored in the final enumeration of primes.\\]"
+        renderMathInElement(document.getElementById('sieve2exp'))
+        if (limit > 2)
+            document.getElementById('sieve2ans').innerHTML =2 + " ";
+        if (limit > 3)
+            document.getElementById('sieve2ans').innerHTML = 3 + " ";
+        let sieve = new Array()
+        sieve[limit] = 0;
+        for (let i = 0; i < limit; i++)
+            sieve[i] = false;
+        for (let x = 1; x * x < limit; x++)
         {
-            let n = (4 * x * x) + (y * y);
-            if (n <= limit && (n % 12 == 1 ||
-                                n % 12 == 5))
-                sieve[n] ^= true;
- 
-            n = (3 * x * x) + (y * y);
-            if (n <= limit && n % 12 == 7)
-                sieve[n] = true;
- 
-            n = (3 * x * x) - (y * y);
-            if (x > y && n <= limit &&
-                            n % 12 == 11)
-                sieve[n] ^= true;
+            for (let y = 1; y * y < limit; y++)
+            {
+                let n = (4 * x * x) + (y * y);
+                if (n <= limit && (n % 12 == 1 ||
+                                    n % 12 == 5))
+                    sieve[n] ^= true;
+     
+                n = (3 * x * x) + (y * y);
+                if (n <= limit && n % 12 == 7)
+                    sieve[n] = true;
+     
+                n = (3 * x * x) - (y * y);
+                if (x > y && n <= limit &&
+                                n % 12 == 11)
+                    sieve[n] ^= true;
+            }
         }
-    }
-    for (let r = 5; r * r < limit; r++) {
-        if (sieve[r]) {
-            for (i = r * r; i < limit;
-                            i += r * r)
-                sieve[i] = false;
+        for (let r = 5; r * r < limit; r++) {
+            if (sieve[r]) {
+                for (i = r * r; i < limit;
+                                i += r * r)
+                    sieve[i] = false;
+            }
         }
+        for (let a = 5; a < limit; a++)
+            if (sieve[a])
+                document.getElementById('sieve2ans').innerHTML = a , " ";
     }
-    for (let a = 5; a < limit; a++)
-        if (sieve[a])
-            document.getElementById('sieve2ans').innerHTML = a , " ";
+    else 
+        document.getElementById('sieve2ans').innerHTML = "Please enter valid input"
 }
 
 //sum of nterms of an Arithmetic Progression
@@ -19517,12 +19547,15 @@ function minsqfind() {
     let b = parseInt(document.getElementById("minsq2").value)
     if (!isNaN(l) && !isNaN(b)) {
         if (l < 0 || b < 0)
-            document.getElementById("minsqans").innerHTML = "\\[Dimension \\space cannot \\space be \\space negative\\]";
-        else {
-            var n = (l * b) / gcd(l, b);
-            document.getElementById("minsqans").innerHTML = "\\[Area \\space of \\space smallest \\space square \\space formed \\space with \\space given \\space rectangle=" + n * n + "\\]";
+           document.getElementById("minsqans").innerHTML = "\\[Dimension \\space cannot \\space be \\space negative\\]";
+        else{
+            var g=gcd(l,b);
+            var n = (l * b) / g;
+            document.getElementById("minsqans").innerHTML = "\\[Area \\space of \\space smallest \\space square \\space formed \\space with \\space given \\space rectangle="+n*n+"\\]";
+            document.getElementById("minsqans").innerHTML = "\\[Side \\space of \\space smallest \\space square \\space formed \\space with \\space given \\space rectangle=\\frac{(l * b)}{gcd(l, b)} \\newline \\space \\space =\\frac{"+l+"*"+b+"}{"+g+"}=\\frac{"+l*b+"}{"+g+"}="+n+" \\]";     
+            document.getElementById("minsqans").innerHTML = "\\[Area ="+n+"*"+n+"="+n*n+"\\]";
         }
-    }
+    }    
     else {
         document.getElementById("minsqans").innerHTML = "\\[Please \\space  enter \\space valid \\space input\\]";
     }
@@ -19585,6 +19618,11 @@ function std() {
 // standard deviation end
 
 //Smallest prime factor calculator
+function calcexsmallestPrimeDivisor(num){
+    num = 9;
+    smallestPrimeDivisor(num);
+}
+
 function smallestPrimeDivisor(num) {
     var res = 0;
     if (num % 2 == 0 || num == "") {
@@ -19620,6 +19658,12 @@ function smallestPrimeDivisor(num) {
 }
 
 //Euler's Totient Function
+
+function calcexeulerTotient(n){
+    n = 6;
+    eulerTotient(n);
+
+}
 
 function eulerTotient(n) {
     function gcd(a, b) {
@@ -19901,6 +19945,12 @@ function isPrime(n) {
     }
 
     return true;
+}
+
+function calcexnextPrime(num){
+    num =5;
+    nextPrime(num);
+
 }
 
 function nextPrime(num) {
@@ -22341,7 +22391,65 @@ function decimalTObcd(z = "") {
     return x;
 
 }
+function convertex3misc(){
+    const toBase = document.getElementById("misc-1").value;
+    var input = document.getElementById("misc-input").value;
+    let result = document.getElementById("misc-result");
 
+    if (toBase === "BCD Code"){
+        var x = "", y = "";
+        var temp = "";
+        if (input.length % 4 != 0) {
+            result.innerHTML = "Error : Invalid  input (Excess-3 Code comes in sets of nibbles(4 bits)"
+        } else {
+            x = "";
+
+            for (var i = 0; i < input.length; i++) {
+                if ((i + 1) % 4 == 0) {
+                    temp = temp + input[i]; //for 4 th value
+                    x = x + (parseInt(temp, 2) - 3).toString();
+                    print += "\\[\\rightarrow \\space " + temp + " \\space becomes \\space " + parseInt(temp, 2).toString() + "\\]";
+                    print += "\\[" + parseInt(temp, 2) + " \\space - \\space 3 \\space \\rightarrow \\space " + (parseInt(temp, 2) - 3).toString() + " \\]";
+                    temp = "";
+                } else {
+                    temp = temp + input[i];
+                }
+            }
+        }
+
+            if (input.length / 4 == x.length) {
+                input = parseInt(x).toString();
+            } else if (parseInt(x) < 0) {
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant subceed 0)";
+            } else {
+                result.innerHTML = "Error : Invalid input (decimal value of each digit cant exceed 9)";
+            }
+            
+
+            var x = "_", y = ""; temp = "";
+        for (var i = 0; i < input.length; i++) {
+            y = parseInt(input[i]).toString(2);
+            if (y.length == 1) {
+                temp = "000" + y + "_   ";
+                x = x + temp;
+            }
+            if (y.length == 2) {
+                temp = "00" + y + "_   ";
+                x = x + temp;
+            }
+            if (y.length == 3) {
+                temp = "0" + y + "_   ";
+                x = x + temp;
+            }
+            if (y.length == 4) {
+                temp = y + "_   ";
+                x = x + +temp;
+            }
+        }
+
+        result.innerHTML = "Answer -> " + x;
+    }
+}
 function convertbcdmisc(){
     const toBase = document.getElementById("bcd-misc-1").value;
     var input = document.getElementById("bcdmisc-input").value;
@@ -24652,10 +24760,23 @@ function randommeanCal() {
         xxp[i] = numbers[i]*numbers[i]*probs[i];
         sumv += xxp[i];
     }
-    
-    document.getElementById(randommeanans) = "Mean of random variable: " + sumx;
-    document.getElementById(randomvarans) = "Variance of random variable: " + sumv;
 
+    sumv = sumv-sumx**2;
+    var steps1 = "\\[To\\space calculate\\space the\\space Expected\\space Value:\\]"
+    steps1 += "\\[\\space multiply\\space each\\space value\\space by\\space its\\space probability\\space and\\space sum\\space them\\space up\\]";
+    steps1 += "\\[μ\\space =\\space Σ\\times x\\times p\\]";
+
+    var steps2 = "\\[To\\space calculate\\space the\\space Variance:\\]";
+    steps2 += "\\[square\\space each\\space value\\space and\\space multiply\\space by\\space its\\space probability\\]";
+    steps2 += "\\[sum\\space them\\space up\\space and\\space we\\space get\\space Σ\\timesx^2\\timesp\\]";
+    steps2 += "\\[then\\space subtract\\space the\\space square\\space of\\space the\\space Expected\\space Value\\space μ2\\]";
+    steps2 += "\\[Var(X)\\space =\\space Σ\\times x^2 \\times p − μ^2\\]";
+    
+    
+    document.getElementById(randommeanans) = steps1;
+    document.getElementById(randomvarans) = steps2;
+    renderMathInElement(document.getElementById(randommeanans));
+    renderMathInElement(document.getElementById(randomvarans));
 }
 
 //Form the Cubic equation from the given roots
@@ -26822,6 +26943,32 @@ function sphcartcal() {
     renderMathInElement(outputy);
     renderMathInElement(outputz);
 }
+function sphpolarcal() {
+    var r = parseFloat(document.getElementById("sphcartr").value);
+    var o = parseFloat(document.getElementById("sphcarto").value);
+
+    var outputx = document.getElementById("sphpolarpans");
+    var outputy = document.getElementById("sphpolaroans");
+    var ans = "";
+
+    var x = (r * Math.sin(o) * Math.cos(fi)).toFixed(2);
+    var y = (r * Math.sin(o) * Math.sin(fi)).toFixed(2);
+
+    var r = Math.sqrt(x * x + y * y).toFixed(2);
+    var o = Math.atan(y / x).toFixed(2);
+
+    var ansx = "r: " + r;
+    var ansy = "θ: " + o;
+    if (isNaN(r) || isNaN(o)) {
+        ans += "Please fill all the field";
+        outputx.innerHTML = ans;
+        outputy.innerHTML = "";
+    }
+    else {
+        outputx.innerHTML = ansx;
+        outputy.innerHTML = ansy;
+    }
+}
 
 function cartcylcal() {
     var x = (document.getElementById("cartcylx").value);
@@ -28039,6 +28186,37 @@ function isDisNum(num) {
     }
     document.getElementById('disans').innerHTML = ans;
 };
+function happyvalue()
+{var num = document.getElementById("happyno").value;
+if (num == "") {
+    document.getElementById("happyans").innerHTML = "Please input a no";
+}
+else {
+    let sum=0;
+    num = parseInt(num);
+    number=num;
+    while (number > 9)              
+    {     
+    while (number > 0)  
+    {     
+    var remainder =parseInt( number % 10);   
+    sum = sum + Math.pow(remainder,2);  
+
+    number =parseInt(number / 10);     
+    }  
+    number = sum;  
+    sum = 0;  
+    }  
+    if (number == 1)  
+    {  
+        document.getElementById("happyans").innerHTML=num+" is a Happy number"
+    }  
+    else  
+    {  
+        document.getElementById("happyans").innerHTML=num+" is not a Happy number"
+    }  
+    }  
+}
 // Krishnamurthy Number
 function isKrishnaNum(num) {
     let sum = 0;
@@ -28182,4 +28360,36 @@ function CulNum(num){
     ans += `<br> Step 2: The value of 2n * n + 1 => 2^${num}*${num} + 1 = ${(Math.pow(2,num) * num) + 1}`;
     ans += `<br> Step 3: Hence the result is: ${(((1 << num) * num) + 1)} `;
     document.getElementById('culans').innerHTML = ans;
+}
+
+function cargcd(a, b) {
+    if (a < b)
+        return cargcd(b, a);
+    if (a % b == 0)
+        return b;
+    return cargcd(b, a % b);
+}
+function carpower(x, y, mod) {
+    if (y == 0)
+        return 1;
+    let temp = carpower(x, parseInt(y / 2, 10), mod) % mod;
+    temp = (temp * temp) % mod;
+    if (y % 2 == 1)
+        temp = (temp * x) % mod;
+    return temp;
+}   
+function CarNum(num)
+{
+    let flag=0;
+    for (let b = 2; b < num; b++) {
+        if (cargcd(b, num) == 1)
+            if (carpower(b, num - 1, num) != 1){
+                flag = 1;
+                break;
+            }
+    }
+    if (!flag)
+        document.getElementById('carans').innerHTML = num + " is a Carmichael Number";
+    else
+        document.getElementById('carans').innerHTML = num + " is not a Carmichael Number";
 }
