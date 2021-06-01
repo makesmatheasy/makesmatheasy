@@ -5243,6 +5243,22 @@
                     </tr>
                 </table>
             </li>
+                        <!-- Moments calculator -->
+                        <li>
+                            <table class="table">
+                                <tr>
+                                    <td style="border-top: none;">
+                                        <a id="momentbtn"
+                                           style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Moments Calculator</a>
+                                    </td>
+                                    <td style="float:right;border-top: none;">
+                                            <span onclick="addtofavourite('moments Calculator','#momentscal','c','momentfav')"><img
+                                                    id="mcalimgfav" src="images/unfavourite.png"
+                                                    style="height:1.5625rem;filter: none;"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
             <li>
                 <table class="table">
                     <tr>
@@ -22404,7 +22420,22 @@
     
     <h4 id="gcd1ans"></h4>
 </div>
-
+                     <!-- Moments chart-->
+                     <div class="collapse" id="momentcal">
+                        <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Moments Calculator</h1>
+                        <p style="margin-top: 2rem;">
+                            Moments are a statistical tools ,used in statistical investigations .The moments of a distribution are the arithmetic
+                            means of the various powers of the deviations of items from some given number.
+                        </p>
+                        <p id="tformula" style="margin-bottom:4rem;"></p>
+                        <form action="">
+                            <input class = "form__field"type="text" id="valueofx" placeholder="Enter dataset separated by SPACE ">
+                            <br><br>
+                            <button class = "btn btn-light" type="button" onclick="momentvalue()">Test</button>
+                            <button class = "btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+                        </form>
+                        <p id="momentans"></p>
+                    </div>
 <div class="collapse" id="lns" style="text-align: center;">
     <div class="container">
         <h1 style="color: white;font-family:mathfont;text-align: center;">Ln Calculator</h2>
