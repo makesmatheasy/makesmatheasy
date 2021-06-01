@@ -11,6 +11,7 @@ function searchgoogle(value) {
         value = encodeURIComponent(value);
         window.open("https://www.google.com/search?q=" + value);
     }
+    
 }
 
 //-----------------------------------------------------
