@@ -28329,6 +28329,36 @@ function armstrongvalue(){
     if(num=="")
     {
         document.getElementById("armans").innerHTML="Please input a no";
+// Duck number
+function duckvalue(){
+    var num = document.getElementById("duckno").value;
+    if (num == "") {
+        document.getElementById("duckans").innerHTML = "Please input a no";
+    }
+    else {
+        var temp=num.toString();
+        var l = temp.length;  
+        let counter = 0;  
+ 
+        for(var i=1;i<l;i++)
+        {
+            chr = temp.charAt(i); 
+            if(chr=='0')
+                counter++;
+        }
+ 
+        if(counter>0 && temp.charAt(0)!='0')
+        document.getElementById("duckans").innerHTML =temp +" is a duck number";
+        else
+        document.getElementById("duckans").innerHTML =temp +" is not a duck number";
+        }
+
+}
+function armstrongvalue() {
+    var num = document.getElementById("arm").value;
+    var digits = Math.floor(Math.log10(num) + 1);
+    if (num == "") {
+        document.getElementById("armans").innerHTML = "Please input a no";
     }
     else {
         var w = "";

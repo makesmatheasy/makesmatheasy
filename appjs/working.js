@@ -39,6 +39,8 @@ $("#wag").click(function () {
 
 $("#specialbtn").click(function(){
     openit("#specialnum");
+$("#ducknumbtn").click(function(){
+    openit("#ducknum");
     closenav();
     clearall();
 });
