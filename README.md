@@ -256,6 +256,7 @@ Other Tech/Libraries
   - Eulerian Number
   - Carmichael Number
   
+  - Delannoy Number
 - Basic Convertors
 
   - Currency Convertor
