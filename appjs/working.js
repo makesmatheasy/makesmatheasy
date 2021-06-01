@@ -37,6 +37,11 @@ $("#wag").click(function () {
     clearall();
 });
 
+$("#specialbtn").click(function(){
+    openit("#specialnum");
+    closenav();
+    clearall();
+});
 $("#armnumbtn").click(function(){
     openit("#armnum");
     closenav();

@@ -28107,11 +28107,47 @@ function hyperfind() {
     }
     document.getElementById("hyperans").innerHTML = ans;
 }
-function armstrongvalue() {
-    var num = document.getElementById("arm").value;
-    var digits = Math.floor(Math.log10(num) + 1);
-    if (num == "") {
-        document.getElementById("armans").innerHTML = "Please input a no";
+// special number
+function specialvalue(){
+    var num=document.getElementById("special").value;
+    if(num=="")
+    {
+        document.getElementById("specialans").innerHTML="Please input a no";
+    }
+    else{
+        num=parseInt(num);
+        number = num;  
+        var sum=0;
+        while (number > 0)  
+        {  
+        var digit =parseInt( number % 10);  
+        var fact=1;  
+         for(var i=1; i<=digit; i++)  
+         {  
+          fact=fact*i;  
+          }  
+        sum= parseInt(sum+ fact);  
+        number = parseInt(number / 10);
+         }  
+
+       if(num==sum)  
+        {  
+           document.getElementById("specialans").innerHTML=num+" is a special number"
+          }  
+        else  
+         {  
+          document.getElementById("specialans").innerHTML=num+" is not a special number"
+          }  
+    }
+}
+
+
+function armstrongvalue(){
+    var num=document.getElementById("arm").value;
+    var digits=Math.floor(Math.log10(num) + 1);
+    if(num=="")
+    {
+        document.getElementById("armans").innerHTML="Please input a no";
     }
     else {
         var w = "";
