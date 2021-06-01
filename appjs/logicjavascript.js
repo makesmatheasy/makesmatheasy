@@ -28418,16 +28418,7 @@ function isTrimorNum(Num) {
     }
     document.getElementById('trimorans').innerHTML = ans;
 }
-// Harshad Number
-function isHarNum(num) {
-    let sum = 0;
-    for (let temp = num; temp > 0; temp = parseInt(temp / 10, 10))
-        sum += temp % 10;
-    if (num % sum == 0)
-        document.getElementById('harans').innerHTML = num + " is a Harshad Number";
-    else
-        document.getElementById('harans').innerHTML = num + " is not a Harshad Number";
-}
+
 // Eulerian Number
 function isEurNum(n, m) {
     let x, x_length = n + 1
