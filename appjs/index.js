@@ -138,6 +138,7 @@ function openit(id) {
         "#pronum",
         "#autonum",
         "#specialnum",
+        "#ducknum",
         "#armnum",
         "#pallindromenum",
         "#perfectnum",
