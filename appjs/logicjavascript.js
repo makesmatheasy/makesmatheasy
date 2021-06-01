@@ -25352,17 +25352,33 @@ function regressionvalue(){
             let sumx2=0;
             let sumy2=0;
         for (var i = 0; i < n1; i++) {
-            list1[i] = parseInt(list1[i]);
-            list2[i] = parseInt(list2[i]);
+            list1[i] = parseFloat(list1[i]);
+            list2[i] = parseFloat(list2[i]);
             sumx=sumx+list1[i];
             sumy=sumy+list2[i];
             sumxy=sumxy+(list1[i]*list2[i]);
             sumx2=sumx2+Math.pow(list1[i],2);
             sumy2=sumy2+Math.pow(list2[i],2);
         }//for
-        var bxy=((n1*sumxy)-(sumx*sumy))/((n1*sumx2)-(Math.pow(sumx,2)));
-        var byx=((n1*sumxy)-(sumx*sumy))/((n1*sumy2)-(Math.pow(sumy,2)));
-        document.getElementById('regressionans').innerHTML = "bxy= "+bxy+" and bxy= "+ byx;
+        var num=(n1*sumxy)-(sumx*sumy);
+        var denox=(n1*sumx2)-(Math.pow(sumx,2));
+        var denoy=(n1*sumy2)-(Math.pow(sumy,2));
+        var bxy=num/denoy;
+        var byx=num/denox;
+        var ans="";
+        ans+="\\[The \\space regression \\space coefficient \\space of \\space y \\space on \\space x \\space (b_{yx}): \\]"
+        ans+="\\[b_{yx} =\\frac{n \\sum xy -\\sum x \\sum y}{n \\sum x^{2} -(\\sum x)^{2}}\\]"
+        ans+="\\[\\frac{("+n1+" \\times "+sumxy+") - ("+sumx+" \\times "+sumy+")}{("+n1+" \\times "+sumx2+") -("+sumx+")^{2}}\\]"
+        ans+="\\[\\frac{"+num.toFixed(4)+"}{"+denox.toFixed(4)+"}\\]"
+        ans+="\\[b_{yx}="+byx.toFixed(4)+"\\]"
+        ans+="\\[The \\space regression \\space coefficient \\space of \\space x \\space on \\space y \\space (b_{xy}): \\]"
+        ans+="\\[b_{xy} =\\frac{n \\sum xy -\\sum x \\sum y}{n \\sum y^{2} -(\\sum y)^{2}}\\]"
+        ans+="\\[ \\frac{("+n1+" \\times "+sumxy+") - ("+sumx+" \\times "+sumy+")}{("+n1+" \\times "+sumy2+") -("+sumy+")^{2}}\\]"
+        ans+="\\[\\frac{"+num.toFixed(4)+"}{"+denoy.toFixed(4)+"}\\]"
+        ans+="\\[b_{xy}="+bxy.toFixed(4)+"\\]"
+        
+        document.getElementById('regressionans').innerHTML = ans;
+        renderMathInElement(document.getElementById('regressionans'));
     }//else
     }//else
 
