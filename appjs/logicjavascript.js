@@ -25905,6 +25905,83 @@ function npchart_sum(arr) {
 
     return sum;
 }
+function moment_1(arr,mean)
+{
+    let temp=0;
+    let sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum =arr[i]-mean;
+        temp=temp+sum;
+    }
+
+    return temp;
+}
+function moment_2(arr,mean)
+{   let temp=0;
+    let sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum =arr[i]-mean;
+        temp=temp+Math.pow(sum,2);
+    }
+
+    return temp;
+}
+function moment_3(arr,mean)
+{   let temp=0;
+    let sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum =arr[i]-mean;
+        temp=temp+Math.pow(sum,3);
+    }
+
+    return temp;
+}
+function moment_4(arr,mean)
+{   let temp=0;
+    let sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum =arr[i]-mean;
+        temp=temp+Math.pow(sum,4);
+    }
+
+    return temp;
+}
+function momentvalue() {
+    let list1 = document.getElementById("valueofx").value;
+    let sum=0;
+   
+    list1 = list1.split(" ");
+    let n1 = list1.length;
+    for (var i = 0; i < n1; i++) {
+        list1[i] = parseInt(list1[i]);
+        sum=sum+list1[i];
+    }
+    sum=sum/n1;
+    var mu1=moment_1(list1,sum)
+    var mu2=moment_2(list1,sum)
+    var mu3=moment_3(list1,sum)
+    var mu4=moment_4(list1,sum)
+    var ans=""
+    ans+="\\[\\mu_1 =\\frac{\\sum(x- \\bar{x})}{n}\\]"
+    ans+="\\[\\frac{"+mu1+"}{"+n1+"} \\]"
+    ans+="\\[\\mu_1 ="+parseFloat(parseFloat(mu1)/parseFloat(n1)).toFixed(4)+" \\]"
+
+    ans+="\\[\\mu_2 =\\frac{\\sum(x- \\bar{x})^{2}}{n}\\]"
+    ans+="\\[\\frac{"+mu2+"}{"+n1+"} \\]"
+    ans+="\\[\\mu_2 ="+parseFloat(parseFloat(mu2)/parseFloat(n1)).toFixed(4)+" \\]"
+
+    ans+="\\[\\mu_3 =\\frac{\\sum(x- \\bar{x})^{3}}{n}\\]"
+    ans+="\\[\\frac{"+mu3+"}{"+n1+"} \\]"
+    ans+="\\[\\mu_3 = "+parseFloat(parseFloat(mu3)/parseFloat(n1)).toFixed(4)+" \\]"
+
+    ans+="\\[\\mu_4 =\\frac{\\sum(x- \\bar{x})^{4}}{n}\\]"
+    ans+="\\[\\frac{"+mu4+"}{"+n1+"} \\]"
+    ans+="\\[\\mu_4 ="+parseFloat(parseFloat(mu4)/parseFloat(n1)).toFixed(4)+" \\]"
+    document.getElementById("momentans").innerHTML=ans;
+    
+    renderMathInElement(document.getElementById("momentans"))
+
+}
 
 
 function npvalue() {

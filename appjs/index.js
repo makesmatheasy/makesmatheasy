@@ -277,6 +277,7 @@ function openit(id) {
         "#pchart",
         "#rchart",
         "#sheppard",
+        "#momentcal",
         "#npchart",
         "#xchart",
         "#betagamma",
