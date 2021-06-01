@@ -2065,43 +2065,55 @@ function facpaircal()
 
 
 function skewcal()
-{   var num=document.getElementById("skewinput").value;
+{   
+var num=document.getElementById("skewinput").value;
 var ans="";
 if(num=="")
 {
     ans="Please enter datasets";
+    document.getElementById("skewans").innerHTML=ans;
 }
 else{
     num=num.trim();
     num = num.split(" ");
     var len=parseInt(num.length);
-   var sum=0;
+    var sum=0;
     var number=[]
+    let steps = "";
     for (i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
         sum+=number[i];
     }
+    
+    steps += "\\[Sum\\space of\\space data\\space set\\space you\\space entered:\\space "+sum+" \\]";
     sum=sum/len;
     var ansno=0;
     for (i = 0; i < len; i++)
-     {
-       var g=(number[i]-sum);
-       g=g**3;
-       ansno+=g;
-     }
+    {
+        var g=(number[i]-sum);
+        g=g**3;
+        ansno+=g;
+    }
+    
+    steps += "\\[Now\\space calculate\\space the\\space Mean\\space and\\space the\\space Standard\\space Deviation\\]";
+    steps += "\\[Subtract\\space the\\space mean\\space from\\space each\\space raw\\space score\\]";
+    steps += "\\[Raise\\space each\\space of\\space these\\space deviations\\space from\\space the\\space mean\\space to\\space the\\space third\\space power\\space and\\space sum\\]";
+    steps += "\\[Skewness\\space = \\space sum\\space of\\space the\\space deviations\\space from\\space the\\space mean,\\space raise\\space to\\space the\\space third\\space power,\\space divided\\space by\\space number\\space of\\space cases\\space minus\\space 1,\\space times\\space the\\space standard\\space deviation\\space raised\\space to\\space the\\space third\\space power.</p>\\]";
+    var varrzlt=0;
+    for (i = 0; i < len; i++) {
+        varrzlt = varrzlt + ((number[i])-sum)*((number[i])-sum);
+    }
+    
+    varrzlt = varrzlt/(len-1);
+    var sampstddev=Math.sqrt(varrzlt);
+    sampstddev=sampstddev**3;
+    var rzlt= ansno/((len-1)*sampstddev);
 
-     var varrzlt=0;
-     for (i = 0; i < len; i++) {
-         varrzlt = varrzlt + ((number[i])-sum)*((number[i])-sum);
-     }
-      
-     varrzlt = varrzlt/(len-1);
-     var sampstddev=Math.sqrt(varrzlt);
-     sampstddev=sampstddev**3;
-     var rzlt= ansno/((len-1)*sampstddev);
-     ans="The skewness is: "+rzlt;
+    steps += "\\[Skewness\\space = \\space "+rzlt+"\\]";
+
 }
-document.getElementById("skewans").innerHTML=ans;
+document.getElementById("skewans").innerHTML=steps;
+renderMathInElement(document.getElementById("skewans"));
 }
 // kurtosis calculator
 // kurtosis calculator
