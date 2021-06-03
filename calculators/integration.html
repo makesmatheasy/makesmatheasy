@@ -1,0 +1,55 @@
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="intvarselect" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Variable
+    </button>
+    <div class="dropdown-menu" aria-labelledby="intvarselect" onclick="dint();">
+        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">x</span>
+        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">y</span>
+        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">t</span>
+        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">u</span>
+        <span onclick="getintegralvar(this.innerText);" class="dropdown-item">v</span>
+        <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
+                oninput="getintegralvar(this.value);dint();"></span>
+    </div>
+</div>
+<div class="form-group">
+    <div class="form-check">
+        <input type="checkbox" id="enablelimit" value="Enable" onclick="collapselimitbox();dint();"
+            class="form-check-input">
+        <label class="form-check-label" for="enablelimit">Enable Limits</label><br>
+    </div>
+</div>
+<form action="">
+    <div class="form-group">
+        <input type="text" id="inputintegral" class="form__field" placeholder="Enter Function" oninput='dint()'>
+    </div>
+
+    <div class="form-group">
+        <div class="collapse" id="collapselimit">
+            <input type="text" id="upperlimit" placeholder="Upper Limit" class="form__field"
+                style="display:inline;width:30%" oninput='dint()'>
+            <input type="text" id="lowerlimit" placeholder="Lower Limit" class="form__field"
+                style="display:inline;width:30%" oninput='dint()'>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="button" class="btn btn-light" onclick="plotit('inputintegral','integralplot',sint())">
+            Solve
+        </button>
+        <button type="button" id="solveintegral" onclick="solveintegral()" class="btn btn-outline-light">Show
+            Steps
+        </button>
+        <button type="button" onclick="this.form.reset();" class="btn btn-outline-light">
+            Reset
+        </button>
+    </div>
+</form>
+
+<div class="form-group">
+    <p id="resultintegration" style="overflow-x:scroll;overflow-y:hidden;height:100%"></p>
+</div>
+<div class="form-group">
+    <p id="integralplot"></p>
+</div>

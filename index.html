@@ -768,7 +768,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="ipbtn"
+                            <span onclick="loadcalculator('study/inverseAndPeriodicityOfFunctions.html');"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Inverse and Periodicity of Functions</a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -785,9 +785,9 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="transbtn"
+                            <span onclick="loadcalculator('study/transformationOfFunctions.html')"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Transformation
-                                of Functions</a>
+                                of Functions</span>
 
                         </td>
                         <td style="float:right;border-top: none;">
@@ -806,8 +806,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="integrate"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Integration</a>
+                            <span onclick="loadcalculator('calculators/integration.html')"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Integration</span>
 
                         </td>
                         <td style="float:right;border-top: none;">
@@ -827,7 +827,7 @@
                     <tbody>
                     <tr>
                         <td style="border-top: none;">
-                            <a id="integration-idencollapsebtn"
+                            <span onclick="loadcalculator('study/integrationFormulas.html')"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Integration
                                 Formulae</a>
                         </td>
@@ -849,10 +849,10 @@
                     <tbody>
                     <tr>
                         <td style="border-top: none;">
-                            <a id="defintegration-idencollapsebtn"
+                            <span onclick="loadcalculator('study/definiteIntegrationFormulas.html')"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Definite
                                 Integration
-                                Formulae</a>
+                                Formulae</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                     <span
@@ -869,8 +869,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="mibtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Methods of Integration</a>
+                            <span onclick="loadcalculator('study/methodsOfIntegration.html')"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Methods of Integration</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -885,8 +885,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="imprtoprbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Improper to Proper Integral</a>
+                            <span onclick="onclick('study/improperToProperIntegral.html')"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Improper to Proper Integral</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -902,8 +902,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="differentiate"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Differentiation</a>
+                            <span onclick="loadcalculator('calculators/differentiation.html')"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Differentiation</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -921,7 +921,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="differentiate-rulecollapsebtn"
+                            <span onclick="loadcalculator('study/differentiationFormulas.html')"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Differentiation
                                 Formulae</a>
                         </td>
@@ -940,7 +940,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="partialdiff"
+                            <a onclick="loadcalculator('calculators/partialDifferentiation.html')"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Partial
                                 Differentiation</a>
                         </td>
@@ -960,9 +960,9 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="diffeqnbtn"
+                            <span onclick="loadcalculator('study/differentialEquations.html');"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Differential
-                                Equations</a>
+                                Equations</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span
@@ -977,7 +977,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="pdiffeqnbtn"
+                            <span onclick="loadcalculator('study/partialDifferentialEquations.html')"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Partial Differential Equations</a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -6399,80 +6399,7 @@
             <p id="resulttable" style="font-family:mathfont;;"></p>
         </div>
 
-        <div class="collapse" id="differentiatecollapse">
-            <div style="display: inline-block;" class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button"
-                        id="difforderselect"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order
-                    of Diff.
-                </button>
-                <div class="dropdown-menu" style="max-height:12.5rem;overflow-y:auto;"
-                     aria-labelledby="difforderselect" onclick="ddiff();">
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">1</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">2</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">3</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">4</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">5</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">6</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">7</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">8</span>
-                    <span onclick="getdifforder(this.innerText);" class="dropdown-item">9</span>
-                    <!--                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getintegralvar(this.value);dint();"></span>-->
-                </div>
-            </div>
 
-
-            <div style="display: inline-block;" class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button"
-                        id="diffvariableselect"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Variable
-                </button>
-                <div class="dropdown-menu" aria-labelledby="diffvariableselect"
-                     onclick="ddiff();">
-                                            <span onclick="getdiffvariable(this.innerText);"
-                                                  class="dropdown-item">x</span>
-                    <span onclick="getdiffvariable(this.innerText);"
-                          class="dropdown-item">y</span>
-                    <span onclick="getdiffvariable(this.innerText);"
-                          class="dropdown-item">t</span>
-                    <span onclick="getdiffvariable(this.innerText);"
-                          class="dropdown-item">u</span>
-                    <span onclick="getdiffvariable(this.innerText);"
-                          class="dropdown-item">v</span>
-                    <span class="dropdown-item"><input type="text" placeholder="Custom"
-                                                       maxlength='1'
-                                                       oninput="getdiffvariable(this.value);ddiff();"></span>
-                </div>
-            </div>
-
-            <form action="">
-                <div class="form-group">
-                    <input type="text" placeholder="Enter Function" id="inputdifferentiatequation"
-                           class="form__field"
-                           oninput="ddiff()">
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="plotit('inputdifferentiatequation','diffplot',sdiff())">
-                        Solve
-                    </button>
-                    <button type="button" class="btn btn-outline-light" id="diffsolvebutton">Show
-                        Steps
-                    </button>
-                    <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">
-                        Reset
-                    </button>
-                </div>
-            </form>
-            
-            <div class="form-group">
-                <p style="overflow-x:scroll;overflow-y:hidden;height:100%" id="resultdiff"></p>
-            </div>
-            <div class="form-group">
-                <p id="diffplot"></p>
-            </div>
-        </div>
          <!-- start of hyperbolic trigno calculator  -->
         <div class="collapse" id="hyperbolicratios">     
                 <h1 style="text-align: center;">Hyperbolic trignometric ratios </h1><br>    
@@ -6496,73 +6423,7 @@
                 </div>
         </div>
     
-	 <div class="collapse" id="integration-idencollapse">
 
-            <div class="stopwrap">
-                <div class="coll">
-                    <div class="left">
-                        <h4>Integration Formulae</h4>
-                        <p>\[1)\space\int x^n \,dx\space=\frac{x^{(n+1)}}{n+1}+c\]</p>
-                        <p>\[2)\space\int\frac{1}{x}\,dx\space=ln\,|x|+c\]</p>
-                        <p>\[3)\space\int e^x\,dx\space=e^x+c\]</p>
-                        <p>\[4)\space\int a^x\,dx\space=\frac{a^x}{ln\space a}+c\]</p>
-                        <p>\[5)\space\int ln\space x\,dx\space=x\,ln\space x-x+c\]</p>
-                        <p>\[6)\space\int sin\space x\,dx\space=-\,cos\space x+c\]</p>
-                        <p>\[7)\space\int cos\space x\,dx\space=sin\space x+c\]</p>
-                        <p>\[8)\space\int sec^2\space x\,dx\space=tan\space x+c\]</p>
-                        <p>\[9)\space\int cosec^2\space x\,dx\space=-\,cot\space x+c\]</p>
-                        <p>\[10)\space\int sec\space x\space tan\space x\,dx=sec\space x+c\]</p>
-                        <p>\[11)\space\int cosec\space x\space cot\space x\,dx=-\,cosec\space
-                            x+c\]</p>
-                        <p>\[12)\space\int\tan\space x\,dx=ln\,|sec\space x|+c\]</p>
-                        <p>\[13)\space\int\cot\space x\,dx=ln\,|sin\space x|=-\,ln\,|cosec\space
-                            x|+c\]</p>
-                        <p>\[14)\space\int\sec\space x\,dx=ln\,|tan\space x\,+\,sec\space
-                            x|=-\,ln\,|sec\space
-                            x\,-\,tan\space x|+c\]</p>
-                        <p>\[15)\space\int\cosec\space x\,dx=ln\,|cosec\space x\,-\,cot\space
-                            x|=ln\,|tan\,\frac{x}{2}|+c\]</p>
-                        <p>
-                            \[16)\space\int\frac{1}{x^2+a^2}\,dx=\frac{1}{a}\,tan^{-1}\lparen\frac{x}{a}\rparen+c\]
-                        </p>
-                        <p>
-                            \[17)\space\int\frac{1}{x^2-a^2}\,dx=\frac{1}{2a}\,ln\,|\frac{x-a}{x+a}|+c\]</p>
-                        <p>
-                            \[18)\space\int\frac{1}{a^2-x^2}\,dx=\frac{1}{2a}\,ln\,|\frac{x+a}{x-a}|+c\]</p>
-                        <p>
-                            \[19)\space\int\frac{1}{\sqrt{a^2-x^2}}\,dx=sin^{-1}(\frac{x}{a})+c\]</p>
-                        <p>
-                            \[20)\space\int\frac{1}{\sqrt{a^2+x^2}}\,dx=ln\,|x+\sqrt{x^2+a^2}|+c\]</p>
-                        <p>
-                            \[21)\space\int\frac{1}{\sqrt{x^2-a^2}}\,dx=ln\,|x+\sqrt{x^2-a^2}|+c\]</p>
-                        <p>
-                            \[22)\space\int\sqrt{a^2-x^2}\,dx=\frac{x}{2}\sqrt{a^2-x^2}\,+\,\frac{a^2}{2}sin^{-1}(\frac{x}{a})+c\]
-                        </p>
-                        <p>
-                            \[23)\space\int\sqrt{x^2-a^2}\,dx=\frac{x}{2}\sqrt{x^2-a^2}\,-\,\frac{a^2}{2}ln\,|x+\sqrt{x^2-a^2}|+c\]
-                        </p>
-                        <p>
-                            \[24)\space\int\sqrt{x^2+a^2}\,dx=\frac{x}{2}\sqrt{x^2+a^2}\,+\,\frac{a^2}{2}ln\,|x+\sqrt{x^2+a^2}|+c\]
-                        </p>
-                        <p>
-                            \[25)\space\int\frac{1}{|x|\,\sqrt{x^2-a^2}}\,dx=\frac{1}{a}\,sec^{-1}\lparen\frac{x}{a}\rparen+c\]
-                        </p>
-                        <p>\[26)\space\int f(ax+b) \,dx\space=\frac{1}{a}\,f(ax+b)\,+c\]</p>
-                        <p>\[27)\space\int \frac{f'(x)}{f(x)} \,dx\space=ln|f(x)|\,+c\]</p>
-                        <p>\[28)\space\int \frac{f'(x)}{\sqrt{f(x)}}
-                            \,dx\space=2\sqrt{f(x)}\,+c\]</p>
-                        <p>\[29)\space\int
-                            (f(x))^{n}\,f'(x)\,dx\space=\frac{(f(x))^{(n+1)}}{n+1}+c\]</p>
-                        <p>\[30)\space\int
-                            e^{x}\,(f(x)\,+\,f'(x)\,)\,dx\space=e^{x}\,f(x)\,+c\]</p>
-                        <p>\[31)\space\int e^{ax}sinbx
-                            \,dx\space=\frac{e^{ax}}{a^2+b^2}(asinbx-bcosbx)+c\]</p>
-                        <p>\[32)\space\int e^{ax}cosbx
-                            \,dx\space=\frac{e^{ax}}{a^2+b^2}(acosbx+bsinbx)+c\]</p>
-			</div>
-		    </div>
-		</div>
-	</div>
 
         <div class="collapse" id="corgeo">
             <div class="stopwrap">
@@ -8606,152 +8467,6 @@
 
         </div>
 
-        <div class="collapse" id="defintegration-idencollapse">
-            <div class="stopwrap">
-                <div class="coll">
-                    <div class="left">
-                        <h4>General Formula</h4>
-                        <p>\[1)\int\limits_{a}^{b}{f(x)dx=}\int\limits_{a}^{b}{f(t)dt}\]</p>
-                        <p>\[2)\int\limits_{a}^{b}{f(x)dx=}-\int\limits_{b}^{a}{f(x)dx}\]</p>
-                        <p>
-                            \[3)\int\limits_{a}^{b}{f(x)dx=}\int\limits_{a}^{c}{f(x)dx}+\int\limits_{c}^{b}{f(x)dx}\]</p>
-                        <p>
-                            \[4)\int\limits_{-a}^{a}{f(x)dx=\int\limits_{0}^{a}[f(x)+f(-x)]=\left\{
-                            \begin{matrix} 0 & if\,\,f\left( x \right)\,is\,odd\,function \\
-                            2\int\limits_{0}^{a}{f\left( x \right)dx} & if\,\,f\left( x
-                            \right)\,is\,even\,function \\ \end{matrix}
-                            \right.\,\,\,\,\,\,}\]</p>
-                    </div>
-                </div>
-
-                <div class="coll">
-                    <div class="left">
-                        <h4>Shifting</h4>
-                        <p>
-                            \[1)\space\int_{a}^b\,f(x)\,dx\space=\int_{a-c}^{b-c}\,f(x+c)\,dx\]</p>
-                        <p>
-                            \[2)\space\int_{a}^b\,f(x)\,dx\space=\int_{a+c}^{b+c}\,f(x-c)\,dx\]</p>
-                        <p>
-                            \[3)\space\int_{a}^b\,f(x)\,dx\space=\int_{ak}^{bk}\,\frac{1}{k}\,f(\frac{x}{k})\,dx\]</p>
-                        <p>\[4)\space\int_{a}^b\,f(x)\,dx\space=\int_{0}^{b-a}\,f(x+a)\,dx\]</p>
-                    </div>
-                </div>
-                <div class="coll">
-                    <div class="left">
-                        <h4>Periodicity</h4>
-                        <p>
-                            \[f(x)\,is\,a\,periodic\,function\,with\,period\,\,T\,and\,m\,and\,n\,are\,integers\]</p>
-                        <p>\[1)\space\int_{0}^{nT}\,f(x)\,dx\space=n\,\int_{0}^T\,f(x)\,dx\]</p>
-                        <p>
-                            \[2)\space\int_{nT}^{mT}\,f(x)\,dx\space=(m-n)\,\int_{0}^T\,f(x)\,dx\]</p>
-                        <p>
-                            \[3)\space\int_{a}^{a+nT}\,f(x)\,dx\space=n\,\int_{0}^T\,f(x)\,dx\]</p>
-                        <p>
-                            \[4)\space\int_{a+nT}^{a+mT}\,f(x)\,dx\space=(m-n)\,\int_{0}^T\,f(x)\,dx\]</p>
-                        <p>
-                            \[5)\space\int_{a+nT}^{b+nT}\,f(x)\,dx\space=\int_{a}^b\,f(x)\,dx\]</p>
-                    </div>
-                </div>
-                <div class="coll">
-                    <div class="left">
-                        <h4>King's Rule</h4>
-                        <p>\[1)\space\int_{a}^b\,f(x)\,dx\space=\int_{a}^b\,f(a+b-x)\,dx\]</p>
-                        <p>\[2)\space\int_{0}^a\,f(x)\,dx\space=\int_{0}^a\,f(a-x)\,dx\]</p>
-                        <p>\[3)\space\int_{-a}^a\,f(x)\,dx\space=\int_{-a}^a\,f(-x)\,dx\]</p>
-                        <p>\[4)\int\limits_{0}^{2a}{f(x)dx=\int\limits_{0}^{a}f(x) + \int_{0}^a
-                            f(2a-x)dx \space = \left\{ \begin{matrix} 0 & if\,\,f\left( 2a-x
-                            \right)\,-f(x) \\ 2\int\limits_{0}^{a}{f\left( x \right)dx} &
-                            if\,\,f\left( 2a-x \right)\,=f(x) \\ \end{matrix}
-                            \right.\,\,\,\,\,\,}\]</p>
-                    </div>
-                </div>
-                <div class="coll">
-                    <div class="left">
-                        <h4>Integration By Part</h4>
-                        <p>\[\int_{a}^{b} du(\frac{dv}{dx})dx=[uv]_{a}^{b}-\int_{a}^{b}
-                            v(\frac{du}{dx})dx\]</p>
-                    </div>
-                </div>
-                <div class="coll">
-                    <div class="left">
-                        <h4> Leibnitz's rule</h4>
-                        <center><p>\[For\,an\,integral\,of\,the\,form\,\displaystyle{
-                            \int_{a(x)}^{b(x)} f(x,t)\,dt, }\]</p>
-                            <p>\[where\,\displaystyle{ -\infty \lt a(x), b(x) \lt \infty
-                                },\,the\,derivative\,of\,this\,integral\,is\,expressible\,as\]</p>
-                            <p>\[\displaystyle{ \frac{d}{dx} \left (\int_{a(x)}^{b(x)}
-                                f(x,t)\,dt \right )= f\big(x,b(x)\big)\cdot \frac{d}{dx} b(x) -
-                                f\big(x,a(x)\big)\cdot \frac{d}{dx} a(x) +
-                                \int_{a(x)}^{b(x)}\frac{\partial}{\partial x} f(x,t) \,dt,
-                                }\]</p>
-                            <p>
-                                \[where\,the\,partial\,derivative\,indicates\,that\,inside\,the\,integral,\]
-                            <p>\[only\,the\,variation\,of\,f(x,
-                                t)\,with\,x\,is\,considered\,in\,taking\,the\,derivative.\]</p>
-                        </center>
-                    </div>
-                </div>
-                <div class="coll">
-                    <div class="left">
-                        <h4>Wallis Integrals</h4>
-                        <p>\[If\,\displaystyle{ W_n = \int_0^{\frac{\pi}{2}} \sin^n x \,dx
-                            }\,or\,\displaystyle{ W_n = \int_0^{\frac{\pi}{2}} \cos^n x \,dx.
-                            }\]</p>
-                        <p>\[then,\,\,\,If\,n\,is\,even,\,\,\displaystyle{
-                            W_{2p}=\frac{2p-1}{2p} \cdot \frac{2p-3}{2p-2} \cdots \frac{1}{2}
-                            W_0 = \frac{(2p-1)!!}{(2p)!!} \cdot \frac{\pi}{2} =
-                            \frac{(2p)!}{2^{2p} (p!)^2} \cdot \frac{\pi}{2}, }\]</p>
-
-                        <p>\[If\,n\,is\,odd,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot
-                            \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!}
-                            \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot
-                            \frac{\pi}{2}. }\]
-                        <p>
-
-
-                        <p>\[If\,n\,is\,odd,\,\,\displaystyle{ W_{2p}=\frac{2p-1}{2p} \cdot
-                            \frac{2p-3}{2p-2} \cdots \frac{1}{2} W_0 = \frac{(2p-1)!!}{(2p)!!}
-                            \cdot \frac{\pi}{2} = \frac{(2p)!}{2^{2p} (p!)^2} \cdot
-                            \frac{\pi}{2}} \]</p>
-                    </div>
-                </div>
-                <div class="coll">
-                    <div class="left">
-                        <h4>Inequalities</h4>
-                        <center><p>
-                            \[1)\,\,If\,at\,every\,point\,x\,of\,an\,interval\,[a,b]\,the\,inequalities\,g(x)\,≤\,f(x)\,≤\,h(x)\,are\,fulfilled\,,\,then\]</p>
-                        </center>
-                        <p>
-                            \[\space\int_{a}^b\,g(x)\,dx\space≤\int_{a}^{b}\,f(x)\,dx\space≤\int_{a}^{b}\,h(x)\,dx\]</p>
-                        <center><p>
-                            \[2)\,\,If\,m\,is\,the\,least\,value\,and\,M\,is\,the\,greatest\,value\,of\,function\,f(x)\,on\,the\,interval\,[a,b]\,,\,then\]</p>
-                        </center>
-                        <p>\[\space\,m\,(b-a)\space≤\int_{a}^b\,f(x)\,dx\space≤\,M\,(b-a)\]</p>
-                        <p>
-                            \[3)\space\,|\int_{a}^b\,f(x)\,dx\,|\space≤\int_{a}^b\,|\,f(x)\,|\,dx\]</p>
-                    </div>
-                </div>
-                <div class="coll">
-                    <div class="left">
-                        <h4>Some Standard Results</h4>
-                        <p>\[1)\space\int\limits_{0}^{\frac{\pi}{2}}logsinx \space dx \space =
-                            -\frac{\pi}{2}log2 \space=\int\limits_{0}^{\frac{\pi}{2}}logcosx
-                            \space dx\]</p>
-                        <p>\[2)\space\int\limits_{0}^{\frac{\pi}{2}}logsecx \space dx \space =
-                            \frac{\pi}{2}log2 \space=\int\limits_{0}^{\frac{\pi}{2}}logcosecx
-                            \space dx\]</p>
-                        <p>\[3)\space\int\limits_{0}^{\frac{\pi}{2}}logtanx \space dx \space =
-                            \,0 \space=\int\limits_{0}^{\frac{\pi}{2}}logcotx \space dx\]</p>
-                        <p>\[4)\space\int\limits_{a}^{b}{x}dx \space=\frac{b-a}{2} \space a,b
-                            \in I\]
-                        <p>\[5)\space\int \limits_{a}^{b}\frac{|x|}{x}dx \space = |b|-|a|\]
-
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
 
         <div class="collapse" id="differentiate-rulecollapse">
             <div class="stopwrap">
@@ -8814,253 +8529,8 @@
 
             </div>
         </div>
-        <div class="collapse" id="pdiffeqn">
-            <h2 style="text-align: center;">Partial Differential Equations</h2>
-            <br><br>
-            <h4>Charpit's Method</h4>
-            <p>This method is used for solving non-linear partial differential
-                equations of order one involving two independent variables.<br>
-                A general method for solving the most general non-linear partial
-                differential equation of order one i.e., the method for solving
-            </p>
-            <p>\[f(x,y,z,p,q)\space =\space 0\]</p>
-            <p>involving two independent variables x and y is given by Charpit and is
-                known as Charpit’s method. This method is applied to solve only
-                those partial differential equations which cannot be solved by already
-                known methods. The basic idea in Charpit’s method is the introduction
-                of another partial differential equation of order one of the form
-            </p>
-            <p>\[g(x,y,z,p,q)\space =\space\]</p>
-            <p>\[dz\space =\space pdx + qdy\]</p>
-            <p>This is a linear partial differential equation of order one with x, y,
-                z, p and q as independent variables and g as the dependent variable.
-                Thus, it can be solved by Lagrange’s method.
-            </p>
-            <p>Step 1. Transfer all the terms of given PDE to L.H.S. and denote the
-                entire expression in L.H.S. by f(x, y, z, p, q).
-            </p>
-            <p>Step 2. Write down the Charpit’s auxiliary equations.</p>
-            <p>Step 3. Find the values of ∂ f/ ∂ x , ∂ f/∂ y etc. occurring in Charpit’s auxiliary equations. Put them in Charpit auxiliary equations and
-                simplify.
-            </p>
-            <p>Step 4. Choose two proper fractions from Charpit’s auxiliary
-                equations such that the resulting integral may come out as simplest
-                relation involving at least one of p or q or both.
-            </p>
-            <br>
-            <h4>Clairaut's Method</h4>
-            <br>
-            <p>In mathematical analysis, Clairaut's equation (or the Clairaut equation) is a differential equation of the form</p>
-            <p>\[y(x)\space =\space x\frac{dy}{dx}\space +\space f(\frac{dy}{dx})\]</p>
-            <br>
-            <p>where f is continuously differentiable.</p>
-            <br>
-            <p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Solutions_to_Clairaut%27s_equation_where_f%28t%29%3Dt%5E2.png/120px-Solutions_to_Clairaut%27s_equation_where_f%28t%29%3Dt%5E2.png" alt="">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Solutions_to_Clairaut%27s_equation_where_f%28t%29%3Dt%5E3.png/120px-Solutions_to_Clairaut%27s_equation_where_f%28t%29%3Dt%5E3.png" alt="">
-            </p>
-            <p>The singular solution envelopes are x=-f^'(c) and y=f(c)-cf^'(c).</p>
-            <p>A partial differential equation known as Clairaut's equation is given by</p>
-            <p>\[u\space =\space x u_x\space + y u_y\space +\space f(u_x+u_y) \]</p>
-            <p>Boundary value, condition accompanying a differential equation in the solution of physical problems. In mathematical problems arising from physical situations, there are two considerations involved when 
-                finding a solution: (1) the solution and its derivatives must satisfy a differential equation, which describes how the quantity behaves within the region; and (2) the solution and its derivatives must 
-                satisfy other auxiliary conditions either describing the influence from outside the region (boundary values) or giving information about the solution at a specified time (initial values), representing
-                a compressed history of the system as it affects its future behaviour. A simple example of a boundary-value problem may be demonstrated by the assumption that a function satisfies the equation f′(x) = 2x
-                for any x between 0 and 1 and that it is known that the function has the boundary value of 2 when x = 1. The function f(x) = x2 satisfies the differential equation but not the boundary condition. The 
-                function f(x) = x2 + 1, on the other hand, satisfies both the differential equation and the boundary condition. The solutions of differential equations involve unspecified constants, or functions in the 
-                case of several variables, which are determined by the auxiliary conditions.
-            </p>
-        </div>
-        <div class="collapse" id="diffeqn">
-            <h2 style="text-align: center;">Differential Equations</h2>
-            <br><br>
-            <h4>1. Variable Seperable</h4>
-            <br>
-            <p style="text-align: center;">It can be used when, <br> All the y terms (including
-                dy) can be moved to one side of the equation, and <br>
-                All the x terms (including dx) to the other side.
-            </p>
-            <p>\[\frac{dx}{dy} = 4xy\ which\space can\space be\space written\space as, \\
-                \frac{dx}{x} = 4ydy\]
-            </p>
-            <br>
-            <h4>2. Equation reducible to variable seperable</h4>
-            <br>
-            <p>\[ The\space equation\space \frac{dy}{dx}-f(ax+by+c)\space can\space be\space
-                written\space as \\
-                \frac{dy}{dx}-f(t)\space keeping\space ax+by+c = t\space then\space solve \]
-            </p>
-            <br>
-            <h4>3. Homogenous Equations</h4>
-            <br>
-            <p style="text-align: center;">A differential equation, M dx + N dy = 0, is
-                homogeneous if replacement of x and y by λx and λy results in the original
-                function
-                multiplied by some power of λ, where the power of λ is called the degree of the
-                original function. If so, follow these steps.
-            </p>
-            <p>\[ Let\space y=vx\space so\space \frac{dy}{dx} = x\frac{dv}{dx}+v\]</p>
-            <p>\[Now\space put\space value\space of\space \frac{dy}{dx} in\space the\space
-                equation\space and\space solve\]</p>
-            <br>
-            <h4>4. First Order Linear Differential Equations</h4>
-            <br>
-            <p>When the equation is written in form</p>
-            <p>\[\frac{dy}{dx} + Py = Q,\space where\space P\space and\space Q\space are\space
-                functions\space of\space x\space or , \\
-                \frac{dx}{dy} + Px = Q,\space where\space P\space and\space Q\space are\space
-                functions\space of\space y\]
-            </p>
-            <p>Then these can be solved by - </p>
-            <p>\[Let\space Integrating\space Factor(I)\space =\space e^{\int P\,dx} (for\space
-                first\space equation\space) or, \\
-                I = e^{\int P \,dy}(for\space second\space equation)\]
-            </p>
-            <p>Put in \[yI = \int {QI} + c\] and integrate to get the answer</p>
-            <br>
-            <h4>5. Formulae (Exact Form)</h4>
-            <br>
-            <p>\[a)\space xdy \,+\,ydx\,=\,d(xy)\]</p>
-            <p>\[b)\space dx \,\plusmn\,ydx\,=\,d(x \plusmn y)\]</p>
-            <p>\[c)\space xdx \,+\,ydy\,=\,\frac{1}{2}d(x^2+y^2)\]</p>
-            <p>\[d)\space \frac{xdy \,-\,ydx}{x^2}\,=\,d(\frac{y}{x})\]</p>
-            <p>\[e)\space \frac{xdy \,-\,ydx}{y^2}\,=\,-d(\frac{x}{y})\]</p>
-            <p>\[f)\space \frac{2xydx \,-\,x^2dy}{y^2}\,=\,d(\frac{x^2}{y})\]</p>
-            <p>\[g)\space \frac{xdy \,-\,ydx}{x^2+y^2}\,=\,d(tan^{-1}\frac{y}{x})\]</p>
-            <p>\[h)\space \frac{xdx
-                \,+\,ydy}{\sqrt(x^2+y^2)}\,=\,\frac{1}{2}d(\frac{x^2+y^2}{\sqrt(x^2+y^2)})\]</p>
-            <p>\[i)\space \frac{ye^{x}dx\,-\,e^{x}dy}{y^2}\,=\,d(\frac{e^x}{y})\]</p>
-            <br>
-            <h4>6. Linear Differential Equation with constant coeffiecients</h4>
-            <h5>Definition</h5>
-            <p>A diff. equation,</p>
-            <p>\[(\frac{d^n}{dx^{n}}+a_1\frac{d^{n-1}}{dx^{n-1}}+......a)y\space =\space Q\]</p>
-            <p>Where  a1 , a2 ,............., an	are constants<br>
-                While Q is a function of x.					
-            </p>
-            <p>is called Linear differential equation of nth order first degree.</p>
-            <p>Above equation can be written as -</p>
-            <p>\[(D^n + a_1 D^{n-1} + a_2 D^{n-2}+....a_n) y\space =\space Q\space where,\, D -> \frac{d}{dx}\]</p>
-            <p>\[OR\]</p>
-            <p>\[f(D)\,y\,=\,Q\]</p>
-            <p>\[General\, Solution(y)\, =\, Complementary\, Function(y_c)\, +\, Particular\, Integral(y_p)\]</p>
-            <br>
-            <h5>How to find Complementary Function (C.F)?</h5>
-            <br>
-            <p>First of all consider, f(D).y=0</p>
-            <p>Put D = m and equate f(D) = 0 to get values of m</p>
-            <p>Case-1 : If m is real and distinct</p>
-            <p>\[y_c\space =\space C_1 e^{m_1 x} + C_2 e^{m_2 x} + .... \]</p>
-            <p>Case-2 : If m is real and equal</p>
-            <p>\[y_c\space =\space (C_1 + C_2 x + C_3 x^2 + ...) e^{mx}\]</p>
-            <p>Case-3 : If m is imaginary and distinct</p>
-            <p>\[y_c\space =\space e^{ax} (C_1 cos(bx)\space +\space C_2 sin(bx))\]</p>
-            <br>
-            <h5>How to find Particular Integral (P.I.)?</h5>
-            <br>
-            <p>To find P.I. check the nature of Q</p>
-            <p>\[y_p= \frac{1}{f(D)}*Q\]</p>
-            <p>Case-1: If Q = e<sup>ax</sup></p>
-            <p>Put D = a to get the desired P.I.</p>
-            <p>\[y_p\, = \frac{1}{f(a)}*Q\]</p>
-            <p>Case-2: If Q = sin(ax) OR cos(ax)</p>
-            <p>Put D<sup>2</sup> = -a<sup>2</sup> and use identities of trigo to solve </p>
-            <p>\[y_p\, = \frac{1}{f(-a^2)}*Q\]</p>
-            <p>Case-3: If Q = x<sup>m</sup> </p>
-            <p>take out least degree term and use binomial expansion to solve</p>
-            <p>\[y_p\, =\,f(D)^{-1}\,.\,x^{m}\]</p>
-            <p>Case-4: If Q = e<sup>ax</sup>.g(x)  where, g(x) is a function of x</p>
-            <p>Take out e<sup>ax</sup> by putting D to D+a and then solve</p>
-            <p>\[y_p\, =\, e^{ax}.\frac{1}{f(D+a)}.g(x)\]</p>
-            <p>Case-5: If Q = x.V (where, V is function of x)</p>
-            <p>\[y_p\, =\, x.\frac{1}{f(D)}.V\, +\, \frac{d}{dD}(\frac{1}{f(D)}).V \, (here,\, \frac{d}{dD}\, is\, nothing\, but\, ∫) \]</p>
-            <p>Case Of Failure: when f(a) or f(-a^2) or d(D+a) becomes 0</p>
-            <p>\[Note\, -In \, this\, case\, take\, out\, 'x'\, and\, diffrentiate\, the\, function.\]\[Repeat\, this\, step\, until\, the\, function\, not\, equals\, 0\]\[(As\, more\, than\, one\, case\, of\, failure\, can\, exist) \]</p>
-            <p>\[(For\, Q\, = e^{ax})\]</p>
-            <p>\[When\, f(a) = 0\,\]</p>
-            <p>\[y_p\,=\frac{1}{f(D)}.Q\,=x.\frac{1}{f(D)'}.Q\]</p>
-            <p>\[Repeat\, this\, step\,if\, you \, again\, get\, case\, of\, failure\]</p>
-            <br>
-            <h4>Homogenous Differential equations</h4>
-            <br>
-            <p>A linear differential equation of the form,</p>
-            <p>\[x^{n} \frac{d^{n}y}{dx^{n}} + a_1x^{n-1}\frac{d^{n-1}y}{dx^{n-1}}+a_2 x^{n-2}\frac{d^{n-2}y}{dx^{n-2}}+.....+a_n y\space =\space Q\]</p>
-            <p>with a<sub>0</sub>, a<sub>1</sub>, . . . , a<sub>n</sub> constants is called the homogeneous Euler-Cauchy equation of order n.</p>
-            <p>We introduce a new variable z where,</p>
-            <p>\[z\space =\space ln(x)\space or\space x\space =\space e^{z}\]</p>
-            <p>Then we change differentiation terms to</p>
-            <p>\[x\frac{d}{dx}\space =\space D\space,\space where\space D = \frac{d}{dz}\]</p>
-            <p>\[x^{2}\frac{d^{2}}{dx^{2}}\space =\space D(D-1)\space\space and\space\space x^{3}\frac{d^{3}}{dx^{3}}\space =\space D(D-1)(D-2) and\space so\space on\]</p>
-            <p>Now it reduces to linear differntial eqn with constant coefficients,find CF and PI to get solution and put back z = ln(x) to get final answer</p>
-            <h5>Legendre's Differential eqn</h5>
-            <p>A linear differential equation of the form,</p>
-            <p>\[(ax+b)^{n} \frac{d^{n}y}{dx^{n}} + a_1(ax+b)^{n-1}\frac{d^{n-1}y}{dx^{n-1}}+a_2 (ax+b)^{n-2}\frac{d^{n-2}y}{dx^{n-2}}+.....+a_n y\space =\space Q\]</p>
-            <p>Put ax+b = e<sup>z</sup> and solve line homogenous equations</p>
-            <p>\[(ax+b)\frac{dy}{dx}\space = \space bD\space (ax+b)^{2}\frac{d^{2}}{dx^{2}}\space =\space b^{2}D(D-1)\space and\space so\space on\]</p>
-            <br>
-            <h4>Solving Simultaneous Linear Differential Equation</h4>
-            <br>
-            <p>Each equation in a system will be assumed to have constant coefficients and be of the general form<br>
-                f(D)x + g(D)y + ....... + h(D)u = G(t)<br> where x, y, ...... , u are the dependent variables, t is the independent variable.
-            </p>
-            <br>
-            <p>A system of n equations in the n dependent variables x, y, ..... , u and independent variable t will have a solution consisting of n functions</p>
-            <p> x = x(t)<br>
-                y = y(t) <br>    
-                ............. <br>    
-                .............<br>    
-                u = u(t)
-            </p>
-            <p>
-                The method used to solve a system of n equations in n variables is analogous to the procedure used to solve a system of n linear equations in n unknowns in 
-                algebra. In algebra, we solve a system of n equations in n unknowns by eliminating unknowns between equations until we obtain an equation containing a 
-                single unknown, from which we deduce the value of the unknown. Then we substitute the value of that unknown into other equations to obtain the values of 
-                other unknowns. In solving systems of linear differential equations we go through the same type process to obtain an equation containing a single dependent 
-                variable. The equation in this single dependent variable will be a linear differential equation with constant coefficients. We then solve this equation, 
-                using methods for solving such equations, to obtain an expression for that dependent variable. We then substitute the expression for that variable into 
-                another equation to obtain an expression for another variable. As with the algebraic problem, we can also employ determinants.
-            </p>
-            <p><b>Theorem.</b> The number of constants in the general solution of a system of equations must equal the sum of the orders of the equations.</p>
-            <br>
-            <h4>Linear Differential equation of second order</h4>            
-            <br>
-            <p>NOTE - The coefficient of second order derivative should be 1</p>
-            <h5>Method-1 - Part of C.F. is known</h5>    
-            <p>Steps - </p>
-            <p>\[1.\space Compare\space the\space differential\space eqn\space with\space \frac{d^{2}y}{dx{2}}+P\frac{dy}{dx}+Qy\space =\space R\space and\space find\space value\space of\space P,Q,R\]</p>
-            <p>\[2.\space Apply\space conditions\space as\space per\space P,Q\space and\space find\space part\space of\space C.F.\space=\space u\]</p>
-            <p>\[3.\space Let\space y=uv\space be\space complete\space solution\space find\space \frac{dy}{dx},\frac{d^{2}y}{dx^{2}}\]</p>
-            <p>\[4.\space Put\space in\space  original\space question\]</p>
-            <p>\[5.\space Put\space P=\frac{dv}{dx} and\space\space solve\space using\space first\space order\space eqn\]</p>
-            <p>\[6.\space Integrate\space P\space to\space get\space v and\space find\space complete\space solution \]</p><br>
-            <h5>Method-2 - Removal of First Derivative</h5>
-            <p>Steps - </p>
-            <p>\[1.\space Find\space u\space = e^{-\frac{1}{2}\int P\,dx}\space I=Q-\frac{1}{2}\frac{dP}{dx}-\frac{P^{2}}{4}\space and S=\frac{R}{u}\]</p>
-            <p>\[2.\space If\space I\space is\space a constant\space or \frac{constant}{x^{2}}\space then this method is applicable\]</p>
-            <p>\[3. \space Put\space values\space in\space \frac{d^{2}v}{dx^{2}}+Iv = S\space and\space it\space becomes\space differential\space eqn\space with\space constant\space coefficients\]</p>
-            <br>
-            <h5>Method-3 - Changing the independent variable</h5>
-            <p>Steps - </p>
-            <p>\[1.\space Choose z such as (\frac{dz}{dx})^{2}\space = \space Q\]</p>
-            <p>\[2.\space Find \frac{d^{2}z}{dx^{2}}\]</p>
-            <p>\[3.\space Find\space P_1,Q_1,R_1\space\]</p>
-            <p>\[P_1\space =\space \frac{\frac{d^{2}z}{dx^{2}}+P\frac{dz}{dx}}{(\frac{dz}{dx})^{2}}\space,Q_1\space =\space \frac{Q}{(\frac{dz}{dx})^{2}}\space and\space R_1\space =\space \frac{R}{(\frac{dz}{dx})^{2}}\]</p>
-            <p>\[4.\space Put\space in\space \frac{d^{2}y}{dz^{2}}\space +\space P_1\frac{dy}{dx}\space +Q_1 y\space =\space R_1\space and\space solve\space
-                using\space differential\space eqn\space with\space constant\space coeffiecients\]
-            </p>
-            <br>
-            <h5>Method-4 - Variation of Parameters</h5>
-            <p>Steps - </p>
-            <p>\[1.\space Convert\space to\space homogenous\space eqns\space by\space putting\space x\space =\space e^{z}\space and\space z\space =\space logx\]</p>
-            <p>\[2.\space Put\space x^{2}\frac{d^{2}y}{dx^{2}}\space =\space D(D-1)\space and\space x\frac{dy}{dx}\space =\space D,\space where\space D\space is\space \frac{d}{dz}\]</p>
-            <p>\[3.\space Solve\space for\space C.F.\space and\space let\space it\space be\space y\space =\space u+v\]</p>
-            <p>\[4.\space Find\space out\space u v_1 - v u_1\space where\space u_1\space =\space \frac{du}{dx}\]</p>
-            <p>\[5.\space Let\space the\space complete\space solution\space be\space y\space =\space Au+Bv\]</p>
-            <p>\[A\space =\space -\int\frac{Rv}{u v_1 - v u_1}\,dx\space +\space C_1\]</p>
-            <p>\[B\space =\space \int\frac{Ru}{u v_1 - v u_1}\,dx\space +\space C_2\]</p>
-            <p>\[6.\space Put\space in\space equation\space to\space get\space the\space answer\]</p>
+        
 
-        </div>
         <div class="collapse" id="pows">
             <h2>Power Series</h2>
             <p>A power series about a, or just power series, is any series that can be written in the form,</p>
@@ -9218,160 +8688,9 @@
             <p style="color:#ababab !important">\[Length \space of \space Subnormal \space (MN) \space = \space
                 y_{1}f'(x_{1})\]</p>
         </div>
-        <div class="collapse" id="partialdiffcollapse">
-            <form action="">
-                <div class="form-group">
-                    <input type="text" id="inputpartialdiff" class="form__field"
-                           placeholder="Enter Function"
-                           oninput="dpardiff()">
-                    <input type="text" id="inputpartialorder" class="form__field"
-                           placeholder="Order"
-                           oninput="dpardiff()">
-                </div>
-                <div class="form-group">
-                    <button type="button" id="solvepardiff" class="btn btn-light">Solve</button>
-                    <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
-                </div>
-            </form>
-            
-            <div class="form-group">
-                <p style="overflow-x:scroll;overflow-y:hidden;height:100%"
-                   id="resultpardiff"></p>
-            </div>
-        </div>
-        <div class="collapse" id="ip">
-            <h2 style="text-align: center;">Inverse,Periodicity of Functions</h2>
-            <br><br>
-            <h4>What is a Period?</h4>
-            <p style="color: #ababab !important;">The time interval between two waves is known as a Period whereas a function that repeats its values
-                at regular intervals or periods is known as a Periodic Function. In other words, a periodic function is a function that repeats its values after every particular interval.</p>
-            <p>\[f(x+a)\space = \space f(x) for\space a>0\] </p>
-            <br>
-            <h4>How to find a period?</h4>
-            <ul>
-                <li style="color: #ababab; font-size: 1.25rem;">If a function repeats over at a constant period we say that is a periodic function.</li>
-                <li style="color: #ababab; font-size: 1.25rem;">It is represented like f(x) = f(x + p), p is the real number and this is the period of the function.</li>
-                <li style="color: #ababab; font-size: 1.25rem;">Period means the time interval between the two occurrences of the wave.</li>
-            </ul>
-            <img style="margin-left: 15.625rem;" src="https://cdn1.byjus.com/wp-content/uploads/2020/09/Amplitude-and-period-of-a-function1.png" alt="">
-            <br><br>
-            <p>\[If\space for\space f(x)\space period\space =\space T,\space then\space period\space for\space f(ax)\space =\space \frac{T}{a}\]</p>
-            <p>\[Rest\space for\space all\space other\space cases\space of\space functions,\space the\space period\space remains\space same\]</p>
-            <br>
-            <h4>What are inverse functions?</h4>
-            <p  style="color: #ababab !important;">An inverse function or an anti function is defined as a function, which can reverse into another function. In simple words, if any function “f” takes x to y then, the inverse of “f” will take y to x.</p>
-            <p  style="color: #ababab !important;"> If the function is denoted by ‘f’ or ‘F’, then the inverse function is denoted by f<sup>-1</sup>- or F<sup>-1</sup>.</p>
-            <br>
-            <h4>How to find inverse?</h4>
-            <p style="color: #ababab !important;" >The graph of the inverse of a function reflects two things, one is the function and second is the inverse of the function, over the line y = x.</p>
-            <p>\[The\space inverse\space function\space returns\space the\space original\space value\space for\space which\space a\space function\space gave\space the\space output.\]</p>
-        </div>
-        <div class="collapse" id="trans">
-            <h2 style="text-align: center;margin-bottom:0;">Transformation of Functions</h2>
-            <br><br>
-            <h5>If function f(x) changes to f(x) + b or f(x) - b - </h5>
-            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph-of-yfx.jpg.jpg"
-                 style="width:100%; height: 12.5rem;" alt="">
-            <h5>If f(x) changes to |f(x)| - </h5>
-            <p>The graph of f(x) and |f(x)| would coincide if f(x) > 0 and the portions where
-                f(x) < 0 would get inverted in the upwards direction.</p>
-            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph2.jpg.jpg"
-                 style="width:100%; height: 12.5rem;" alt="">
-            <h5>If f(x) changes to f(|x|) - </h5>
-            <p>Graphs of f(|x|) and f(x) would be identical in the first and the fourth
-                quadrants (as x > 0) and as such the graph of f(|x|) would be symmetrical about
-                the y-axis (as (|x|) is even).</p>
-            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph3.jpg.jpg"
-                 style="width:100%; height: 12.5rem;" alt="">
-            <h5>If y = f(x) changes to |y| = f(x)</h5>
-            <p>Graph of |y| = f(x) would exist only in the regions where f(x) is non-negative
-                and will be reflected about the x-axis only in those regions.</p>
-            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph4.jpg.jpg"
-                 style="width:100%; height: 12.5rem;" alt="">
-            <h5>If f(x) changes to af(x) - </h5>
-            <p>No change in period of function, The maxima and minima gets increased</p>
-            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph6.jpg.jpg"
-                 style="width:100%; height: 12.5rem;" alt="">
-            <h5>If f(x) changes to f(ax) - </h5>
-            <p>The period of function changes from <b>P to P/|a|</b></p>
-            <img src="https://files.askiitians.com/cdn1/cms-content/common/www.askiitians.comiit-jee-algebraset-relations-functionsimagesgraph7.jpg.jpg"
-                 style="width:100%; height: 12.5rem;" alt="">
-        </div>
-        <div class="collapse" id="integralcollapse">
 
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button"
-                        id="intvarselect"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Variable
-                </button>
-                <div class="dropdown-menu" aria-labelledby="intvarselect" onclick="dint();">
-                                            <span onclick="getintegralvar(this.innerText);"
-                                                  class="dropdown-item">x</span>
-                    <span onclick="getintegralvar(this.innerText);"
-                          class="dropdown-item">y</span>
-                    <span onclick="getintegralvar(this.innerText);"
-                          class="dropdown-item">t</span>
-                    <span onclick="getintegralvar(this.innerText);"
-                          class="dropdown-item">u</span>
-                    <span onclick="getintegralvar(this.innerText);"
-                          class="dropdown-item">v</span>
-                    <span class="dropdown-item"><input type="text" placeholder="Custom"
-                                                       maxlength='1'
-                                                       oninput="getintegralvar(this.value);dint();"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="form-check">
-                    <input type="checkbox" id="enablelimit" value="Enable"
-                           onclick="collapselimitbox();dint();"
-                           class="form-check-input">
-                    <label class="form-check-label" for="enablelimit">Enable Limits</label><br>
-                </div>
-            </div>
-            <form action="">
-                <div class="form-group">
-                    <input type="text" id="inputintegral" class="form__field"
-                           placeholder="Enter Function"
-                           oninput='dint()'>
-                </div>
-    
-                <div class="form-group">
-                    <div class="collapse" id="collapselimit">
-                        <input type="text" id="upperlimit" placeholder="Upper Limit"
-                               class="form__field"
-                               style="display:inline;width:30%" oninput='dint()'>
-                        <input type="text" id="lowerlimit" placeholder="Lower Limit"
-                               class="form__field"
-                               style="display:inline;width:30%" oninput='dint()'>
-                    </div>
-                </div>
-    
-                <div class="form-group">
-                    <button type="button" class="btn btn-light"
-                            onclick="plotit('inputintegral','integralplot',sint())">
-                        Solve
-                    </button>
-                    <button type="button" id="solveintegral" onclick="solveintegral()"
-                            class="btn btn-outline-light">Show
-                        Steps
-                    </button>
-                    <button type="button" onclick="this.form.reset();"
-                            class="btn btn-outline-light">
-                        Reset
-                    </button>
-                </div>
-            </form>
-            
-            <div class="form-group">
-                <p id="resultintegration"
-                   style="overflow-x:scroll;overflow-y:hidden;height:100%"></p>
-            </div>
-            <div class="form-group">
-                <p id="integralplot"></p>
-            </div>
-        </div>
-        
+
+
         <div class="collapse" id="lyear">     
             <h1 style="text-align: center;">Check Leap Year</h1><br>    
             <form action="">
@@ -12887,68 +12206,7 @@
           
         </div>
 <!--Standard Deviation end-->
-        <div class="collapse" id="imprtopr">
-            <h2 style="text-align: center;">Improper to Proper Integrals</h2>
-            <br><br>
-            <p>In mathematical analysis, an improper integral is the limit of a definite integral as an endpoint of the interval(s) of integration approaches either a specified real number, {\displaystyle -infinity to +infinity or in some instances as both endpoints approach limits. Such an integral is often written symbolically just like a standard definite integral, in some cases with infinity as a limit of integration.
 
-                Specifically, an improper integral is a limit of the form:
-            </p>
-            <p>\[{\displaystyle \lim _{b\to \infty }\int _{a}^{b}f(x)\,dx,\qquad \lim _{a\to -\infty }\int _{a}^{b}f(x)\,dx,}\]</p>
-            <br>
-            <p>By abuse of notation, improper integrals are often written symbolically just like standard definite integrals, perhaps with infinity among the limits of integration. When the definite integral exists (in the sense of either the Riemann integral or the more advanced Lebesgue integral), 
-                this ambiguity is resolved as both the proper and improper integral will coincide in value.
-            </p>
-            <p>Often one is able to compute values for improper integrals, even when the function is not integrable in the conventional sense (as a Riemann integral, for instance) because of a singularity in the function or because one of the bounds of integration is infinite.</p>
-            <p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Improperintegral2.png/200px-Improperintegral2.png" alt="">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Improperintegral1.png/200px-Improperintegral1.png" alt="">
-            </p>
-            <br>
-            <h4>How to convert Improper Integral to Proper Integral</h4>
-            <h6>Case -1 When one of the limit is infinity and other is a constant or both the limits are infinity</h6>
-            <br>
-            <p>a. When upper limit is infinity</p>
-            <p>\[\int_a^{\infty} f(x) \,dx\space =\space \lim_{t->\infty} \int_a^t f(x)\,dx \]</p>
-            <p>If the limit tends to a finite value the function converges else diverges</p>
-            <br>
-            <p>b. When lower limit is infinity</p>
-            <p>\[\int_{-\infty}^b f(x) \,dx\space =\space \lim_{t->-\infty} \int_t^b f(x) \,dx\]</p>
-            <p>If the limit tends to a finite value the function converges else diverges</p>
-            <br>
-            <p>c. When both the limits are infinity</p>
-            <p>\[\int_{-\infty}^{\infty} f(x) \,dx\space =\space \int_{-\infty}^c f(x)\,dx\space +\space \int_c^{\infty} f(x)\,dx \]</p>
-        </div>
-        <div class="collapse" id="mi">
-            <h2 style="text-align: center;">Methods of Integration</h2>
-            <br>
-            <h4 style="text-align: center;">1. Integration by Substitution</h4>
-            <br>
-            <p style="color:#ababab !important">Sometimes, it is really difficult to find the integration of a function, thus we can find the integration by introducing a new independent variable. This method is called Integration By Substitution.</p>
-            <p style="color:#ababab !important">The given form of integral function (say ∫f(x)) can be transformed into another by changing the independent variable x to t,</p>
-            <p style="color:#ababab !important">Substituting x = g(t) in the function ∫f(x), we get;</p>
-            <p style="color:#ababab !important">\[\frac{dx}{dt}\space =\space g^{'}t\]</p>
-            <p style="color:#ababab !important">\[Thus,\space I\space =\space \int f(x)\,dx\space =\space f(g(t))g^{'}t\,dt\]</p>
-            <br>
-            <h4 style="text-align: center;">2. Integration by Parts</h4>
-            <br>
-            <p  style="color:#ababab !important">Integration by parts requires a special technique for integration of a function, where the integrand function is the multiple of two or more function.
-                    <br>
-                Let us consider an integrand function to be f(x).g(x).
-                <br>
-                Mathematically, integration by parts can be represented as;
-            </p>
-            <p  style="color:#ababab !important" >\[\int f(x)g(x)\,dx\space =\space f(x)\int g(x)\,dx\space -\space \int f^{'}(x)\int g(x)\,dx\]</p>
-            <p  style="color:#ababab !important">For deciding the first and the second functions, one can follow the ILATE rule for integration.</p>
-            <p  style="color:#ababab !important">\[Inverse,Logarithmic,Arithmetic,Trigonometric,Exponential\space =\space ILATE\]</p>
-        
-            <h4 style="text-align: center;">3. Integration by Partial Fractions</h4>
-            <br>
-            <p  style="color:#ababab !important">We know that a Rational Number can be expressed in the form of p/q, where p and q are integers and q≠0. Similarly, a rational function is defined as the ratio of two polynomials which can be expressed in the form of partial fractions: P(x)/Q(x), where Q(x)≠0.</p>
-            <p  style="color:#ababab !important">There are in general two forms of partial fraction:</p>
-            <p  style="color:#ababab !important"><b>Proper partial fraction:</b> When the degree of the numerator is less than the degree of the denominator, then the partial fraction is known as a proper partial fraction.</p>
-            <p  style="color:#ababab !important"><b>Improper partial fraction:</b> When the degree of the numerator is greater than the degree of denominator then the partial fraction is known as an improper partial fraction. Thus, the fraction can be simplified into simpler partial fractions, that can be easily integrated.</p>
-        </div>
         <!--algebraic formulas list starts-->
         <div class="collapse" id="algebraic_formulascollapse">
             <div class="stopwrap">
