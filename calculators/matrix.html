@@ -1,0 +1,128 @@
+    <div class="row">
+        <button class="carddis" id="singlematrix"
+                onclick="$('#singlematrixcollapse').slideToggle();$('#multiplematrixcollapse').slideUp();clearall();">
+            Single Matrix
+        </button>
+    </div>
+    <div class="row">
+        <button id="twomatrix" class="carddis"
+                onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
+            Multiple Matrix
+        </button>
+    </div>
+
+<!--        single matrix-->
+<div class="collapse" id="singlematrixcollapse" style="text-align: center;">
+    <div class="form-group" style="display:inline-block">
+        <input type="number" id="srow1" class="form__field" placeholder="m"
+               style="width:4.375rem;display:inline;" oninput="checkfunctions()">
+        <label>&times; &nbsp;</label>
+        <input type="number" id="scolumn1" class="form__field" placeholder="n"
+               style="width:4.375rem;display:inline;" oninput="checkfunctions()">
+    </div>
+    <div class="form-group">
+        <div class="stopwrap bi"
+             style="border-radius:3.125rem;color:black !important;"
+             id="smatrixerror">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <select id="sopval" class="btn btn-outline-light"
+                onmousedown="this.value=''">
+            <option>Input Fields</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <div class="stopwrap">
+            <div id="generatedmatrixsingle"></div>
+        </div>
+    </div>
+    <div id="pow"></div>
+    <br>
+    <br>
+    <div class="form-group">
+        <button type="button" class="btn btn-light"
+                onclick="soperation(document.getElementById('sopval').value);">
+            Solve
+        </button>
+    </div>
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:var(--appimage);"
+           id="singlematrixresult"></p>
+    </div>
+    <!--                background-image: linear-gradient(to right top, #071324, #100d1c, #110713, #0c0308, #000000);-->
+    <div class="form-group">
+        <div class="stopwrap bi"
+             style="border-radius:3.125rem;color:black !important;"
+             id="singlematrixexplanation"></div>
+    </div>
+
+</div>
+<!--        multiple matrix-->
+<div class="collapse" id="multiplematrixcollapse" style="text-align: center;">
+    <div class="form-group">
+        <div style="display:inline-block">
+            <span style="color:var(--apppink); margin-right: 3.125rem;">Matrix 1</span><br>
+            <input type="number" id="row1" class="form__field" placeholder="m"
+                   style="width:4.375rem;display:inline;"
+                   oninput="checkfunctionsmultiple()">
+            <label style="margin-right: 3.125rem;">&times;</label>
+            <input type="number" id="column1" class="form__field" placeholder="n"
+                   style="width:4.375rem;display:inline;margin-left: 0.3125rem;"
+                   oninput="checkfunctionsmultiple()">
+        </div>
+        <div style="display:inline-block" style="color:var(--apppink);">
+            <span style="color:var(--apppink); margin-right: 3.125rem;">Matrix 2</span><br>
+            <input type="number" id="row2" class="form__field" placeholder="m"
+                   style="width:4.375rem;display:inline; margin-left: 0.625rem;"
+                   oninput="checkfunctionsmultiple()">
+            <label style="margin-right: 3.125rem;">&times;</label>
+            <input type="number" id="column2" class="form__field" placeholder="n"
+                   style="width:4.375rem;display:inline; margin-left: 0.3125rem;"
+                   oninput="checkfunctionsmultiple()">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="stopwrap bi"
+             style="border-radius:3.125rem;color:black !important;"
+             id="mmatrixerror">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <select id="opval" class="btn btn-outline-light" onmousedown="this.value=''"
+                onchange="signofmatrix(this.value);">
+            <option>Input Fields</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <div class="stopwrap">
+            <table class="center">
+                <td>
+                    <div id='generatedmatrix1'></div>
+                </td>
+                <td>
+                    <p style="font-size:3.125rem" id="signofmatrix"></p>
+                </td>
+                <td>
+                    <div id='generatedmatrix2'></div>
+                </td>
+            </table>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type='button' class="btn btn-light"
+                onclick="calloperation(document.getElementById('opval').value)">
+            Solve
+        </button>
+    </div>
+    <div class="form-group text-center">
+        <p class="stopwrap" id="matrixresult"
+           style="color:var(--appimage);;height:auto !important;"></p>
+    </div>
+    <div class="form-group text-center">
+        <p id="explanationmatrixresult" class="stopwrap"
+           style="font-family:mathfont;color:var(--appblack) !important;"></p>
+    </div>

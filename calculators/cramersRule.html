@@ -1,0 +1,25 @@
+<div class="text-center">
+    <h2><label>Cramer's Rule Calculator</label></h2>
+</div><br><br>
+<form action="">
+    <div class="coll">
+        <p> Enter 1st System of equations : <input type="text" id="cab" size=3 value='' placeholder="a1"> x +
+            <input type="text" id="cab1" size=3 value='' placeholder="b1"> y + <input type="text" id="cab2" size=3
+                value='' placeholder="c1"> = 0<br><br>
+            Enter 2nd System of equations : <input type="text" id="cab3" size=3 value='' placeholder="a2"> x +
+            <input type="text" id="cab4" size=3 value='' placeholder="b2"> y + <input type="text" id="cab5" size=3
+                value='' placeholder="c2"> = 0<br><br>
+            <button type="button" class="btn btn-light" onclick=cramer()>Solve</button>
+            <button type="button" class="btn btn-light" onclick=calcexcramer()>
+                Example
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </p>
+    </div>
+</form>
+<br>
+<div class="coll" style="text-align: center;">
+    <h5 id="cramerres" style="color: white; font-size: x-large;"></h5>
+</div>

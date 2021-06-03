@@ -41,7 +41,6 @@ Other Tech/Libraries
 - [SideNav from MaterializeCSS](https://materializecss.com/sidenav.html) for touch friendly SideNav only
 - [Flaticons](https://www.flaticon.com/) for Icons
 - [eMathHelp](https://www.emathhelp.net/) for Calculus Steps
-- [Numbers API](http://numbersapi.com/) for facts about numbers
 
 ---
 

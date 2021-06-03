@@ -265,14 +265,31 @@
             }
         }
     </style>
-    
 
+    <script>
+        function closenav() {
+            $('#slide-out').addClass('sidenav-close');
+            setTimeout(function () {
+                $('#slide-out').removeClass('sidenav-close');
+            }, 100);
+        }
+
+        function loadcalculator(filename) {
+
+            $('#mainsection').load(filename);
+            setTimeout(function(){
+                renderMathInElement(document.getElementById('mainsection'));
+            },1000)
+
+            closenav();
+        }
+    </script>
 </head>
 
 
 <body class="readonlybody hidescroll" onload="bodyload()">
     <!-- using darkmode.js to implement dark mode -->
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>-->
     <script>
                 window.onload = function () {
             var preloader = document.getElementById("preloader")
@@ -349,9 +366,9 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="mathrbtn"
+                            <span onclick="loadcalculator('study/mathematicalReasoning.html')"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Mathematical
-                                Reasoning</a>
+                                Reasoning</span>
                         </td>
                         <td style="float:right;border-top: none;">
                             <span onclick="addtofavourite('Mathematical Reasoning','#math','c','mathr')"><img id="mathr"
@@ -367,8 +384,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="euclidbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Euclid Geometry</a>
+                            <span
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;" onclick="loadcalculator('study/euclidGeometry.html')">Euclid Geometry</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Euclid Geometry','#euclid','c','euclidfav')"><img
@@ -385,9 +402,9 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="setopbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Operations
-                                on Sets</a>
+                            <span
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;" onclick="loadcalculator('study/operationsOnSets.html')">Operations
+                                on Sets</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Operations on Sets','#setop','c','setopfav')"><img
@@ -407,9 +424,9 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="srfbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sets,Relations
-                                and Functions</a>
+                            <span
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;" onclick="loadcalculator('study/setsRelationsFunctions.html')">Sets,Relations
+                                and Functions</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Sets,Relations and Functions','#srf','c','srffav')"><img
@@ -424,8 +441,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="relationtypescollapsebtn"
-                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Types of Relations</a>
+                            <span
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;" onclick="loadcalculator('study/typesOfRelations.html')">Types of Relations</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                     <span onclick="addtofavourite('Types of Relations and Functions','#relationtypes','c','relationparts')"><img
@@ -441,8 +458,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="setformulalistbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sets Formulas List</a>
+                            <span onclick="loadcalculator('study/setsFormulas.html')"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sets Formulas List</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Sets  Formulas List','#setformula','c','setlistfav')"><img
@@ -457,8 +474,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="sigmabtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sigma Notation</a>
+                            <span onclick="loadcalculator('study/sigma.html')"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sigma Notation</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Sigma Notation','#sigma','c','sigmafav')"><img
@@ -473,8 +490,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="matrixcollapsebtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Matrix</a>
+                            <span onclick="loadcalculator('calculators/matrix.html')"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Matrix</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Matrix','#matrixcollapse','c','matrixfav')"><img
@@ -491,9 +508,9 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="matrixpropsbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Properties
-                                of Matrices and Determinants</a>
+                            <span id="matrixpropsbtn"
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;" onclick="loadcalculator('study/propertiesMatricesDeterminants.html')">Properties
+                                of Matrices and Determinants</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Properties of Matrices and Determinants','#matrixprops','c','matrixpropsfav')"><img
@@ -510,8 +527,8 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="cramerbtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cramers Rule Calculator</a>
+                            <span onclick="loadcalculator('calculators/cramersRule.html')"
+                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cramers Rule Calculator</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Cramers Rule Calculator','#cramer','c','cramerfav')"><img
@@ -526,7 +543,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="slvx"
+                            <span onclick="loadcalculator('calculators/solveForX.html')" 
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Solve for X</a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -542,7 +559,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="caybtn"
+                            <span onclick="loadcalculator('study/cayleyHamiltonTheorm.html')"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Cayley Hamilton Theorem and Diagonalization</a>
                         </td>
                         <td style="float:right;border-top: none;">
@@ -558,9 +575,9 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">
-                            <a id="meanbtn"
+                            <span onclick="loadcalculator('calculators/meanAmGmHm.html')"
                                style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Mean
-                                Calculator(AM GM & HM)</a>
+                                Calculator(AM GM & HM)</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Mean Calculator','#mean','c','meanfav')"><img
@@ -576,9 +593,9 @@
                         <tbody>
                             <tr>
                             <td style="border-top: none;">
-                                <a id="sqseriescollapsebtn"
+                                <span onclick="loadcalculator('study/sequenceSeries.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sequence & Series
-                                 </a>
+                            </span>
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
@@ -594,9 +611,9 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">         
-                            <a id="sumbtn"
+                            <span onclick="loadcalculator('calculators/sumNtermsApGpHp.html')"
 
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of N terms of AP,GP & HP</a>
+                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum of N terms of AP,GP & HP</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Sum of N terms of AP,GP & HP','#sum_n','c','Nsumimgfav')"><img
@@ -610,7 +627,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">         
-                            <a id="impsebtn"style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Important Series and Sequences</a>
+                            <span onclick="loadcalculator('calculators/importantSeriesSequences.html')" style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Important Series and Sequences</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Important Series and Sequences','#impse','c','Nimpseimgfav')"><img
@@ -624,7 +641,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">         
-                            <a id="alibtn"style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Aliquot Sums</a>
+                            <span onclick="loadcalculator('calculators/aliquotSums.html')" style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Aliquot Sums</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Aliquot Sums','#ali','c','Naliimgfav')"><img
@@ -638,7 +655,7 @@
                 <table class="table">
                     <tr>
                         <td style="border-top: none;">         
-                            <a id="goldsbtn"style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Golden and Silver Ratio</a>
+                            <span onclick="loadcalculator('calculators/goldenSilverRatio.html')" style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Golden and Silver Ratio</span>
                         </td>
                         <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Golden and Silver Ratio','#golds','c','Ngsimgfav')"><img
@@ -5991,6 +6008,7 @@
     </div>
 
     <div class="container">
+        <div id="mainsection"></div>
         <!--    start home-->
         <div id="homecollapse" class=" d-flex align-items-center justify-content-center " style="z-index:11;position:relative;">
             <div class="form-group text-center">
@@ -6355,379 +6373,7 @@
             </form>
             <h5 id="ineqtrians"></h5><br>
         </div>
-        <div class="collapse" id="math">
-            <div class="stopwrap">
-                <div class="coll">
-                    <div class="left">
-                        <h4>Difference between Statement and Sentence in Logic</h4>
-                        <p>\[ A\, statement\, is\, a\, sentence\, which\, is\, either\, true\,
-                            or\, false,\]</p>
-                        <p>\[ but\, not\, both\, true\, and\, false\, simultaneously.\]
-                        </p>
-                        <p>\[ A \,sentence\, will\, not\, be\, considered\, to\, be\, a\,
-                            Statement\, if:\]</p>
-                        <p>\[ It\, is\, an\, exclamation,\, order,\, request,\, question,\,
-                            depicts\, time,\, places,\, pronouns.\]</p><br>
-                        <h4>Simple Statement</h4>
-                        <p>\[If\, a\, statement\, cannot\, be\, further\, broken\, down\, into\,
-                            various\, statements,\]</p>
-                        <p>\[ or\, in\, simpler\, words\, if\, it\, is\, concrete\, by\,
-                            itself,\, it\, is\, called\, a\, Simple\, Statement.\]</p><br>
-                        <h4>Compound Statement</h4>
-                        <p>\[If\, a\, statement\, can\, further\, be\, broken\, down\, into\,
-                            simpler\, statements\, so\, that\,from\,a\,main\]</p>
-                        <p>\[ statement,\, we\, can\, yield\, more\, than\, one\, statement,\,
-                            then\, it \,is\, called\, a\, Compound \,Statement.\]</p><br>
-                        <h4>Conjunction, Disjunction and Negation</h4>
-                        <h4>CONJUNCTION</h4>
-                        <p>\[The\, statement\, p^q\, has\, the\, truth\, value\, T(true)\, if\,
-                            both\, p\, and\, q\, have\, the\, truth\, value\, T.\]</p>
-                        <p>\[Similarly,\, the\, statement\, p^q\, has\, the\, truth\, value\,
-                            F(false)\, if\, either\, p\, or\, q \,have\, the\]</p>
-                        <p>\[truth \,value \,F \,or\, both\, have\, the\, truth \,value\,
-                            F.\]</p><br>
-                        <h4>DISJUNCTION</h4>
-                        <p>\[The\, statement\, pvq\, has\, the\, truth\, value\, F(false)\, if\,
-                            both\, p\, and \,q \,have \,the\, truth\, value\, F.\]</p>
-                        <p>\[Similarly,\, the\, statement\, pvq\, has\, the \,truth\, value
-                            \,T(true)\]</p>
-                        <p>\[ if\, either\, p \,or\, q\, have\, the\, truth\, value\, T\, or\,
-                            both\, have\, the\, truth\, value\, T.\]</p><br>
-                        <h4>NEGATION</h4>
-                        <p>\[~p\, has\, truth \,value\, T\, whenever\, p\, has\, truth\, value\,
-                            F.\]</p>
-                        <p>\[~p\, has\, truth\, value\, F\, whenever\, p\, has\, truth\, value\,
-                            T.\]</p><br>
-                        <h4>CONVERSE OF A CONDITIONAL STATEMENT</h4>
-                        <p>\[If\, p=>q\, is\, a\, conditional \,statement;\, then\, its\,
-                            converse\, is\, q=>p.\]</p><br>
-                        <h4>CONTRAPOSITIVE OF A CONDITIONAL STATEMENT</h4>
-                        <p>\[If\, a\, connective\, “if\, then”\, is\, used\, to\, make\, the\,
-                            compound\, statement\, if \,p\, then\, q,\]</p>
-                        <p>\[ it\, is\, a \,conditional\, statement.\,it\, is\, also\, called\,
-                            as\, an\, implication\]</p>
-                        <p>\[and\, is\, written \,as\, p => q.\]</p>
 
-                        <p>\[ CONTRAPOSITIVE\, of\, a\, Conditional\, Statement\, is:\, ~q =>
-                            ~p.\]</p>
-                        <br>
-                        <h4>Truth Table For Logical Operations</h4>
-                        <h4>AND operation:</h4>
-                        <table class="table table-bordered table-dark">
-                            <tbody class="abc">
-                            <tr>
-                                <td><span style="font-weight: 400;">p</span></td>
-                                <td><span style="font-weight: 400;">q</span></td>
-                                <td><span style="font-weight: 400;">p ∧ q</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <br>
-                        <h4>OR operation:</h4>
-                        <table class="table table-bordered table-dark">
-                            <tbody class="abc">
-                            <tr>
-                                <td><span style="font-weight: 400;">p</span></td>
-                                <td><span style="font-weight: 400;">q</span></td>
-                                <td><span style="font-weight: 400;">p ∨ q</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <br>
-                        <h4>Negation Operation:</h4>
-                        <table class="table table-bordered table-dark">
-                            <tbody class="abc">
-                            <tr>
-                                <td>p</td>
-                                <td>∼ p</td>
-                            </tr>
-                            <tr>
-                                <td>T</td>
-                                <td>F</td>
-                            </tr>
-                            <tr>
-                                <td>T</td>
-                                <td>F</td>
-                            </tr>
-                            <tr>
-                                <td>F</td>
-                                <td>T</td>
-                            </tr>
-                            <tr>
-                                <td>F</td>
-                                <td>T</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <br>
-                        <h4>Conditional Operation</h4>
-                        <table class="table table-bordered table-dark">
-                            <tbody class="abc">
-                            <tr>
-                                <td><span style="font-weight: 400;">p</span></td>
-                                <td><span style="font-weight: 400;">q</span></td>
-                                <td><span style="font-weight: 400;">p ⇒ q</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <br>
-                        <h4>Biconditional Operation:</h4>
-                        <table class="table table-bordered table-dark">
-                            <tbody class="abc">
-                            <tr>
-                                <td><span style="font-weight: 400;">p</span></td>
-                                <td><span style="font-weight: 400;">q</span></td>
-                                <td><span style="font-weight: 400;">p ⇔ q</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <br>
-                        <h4>Tautology and Fallacy</h4>
-                        <p>\[A\, tautology\, asserts \,that \,every \,possible\,
-                            interpretation\, has \,only\, one\, output, \,namely\, true.\]</p>
-                        <p>\[On \,the\, other\, hand,\, fallacy\, implies\, an \,assertion\,
-                            of\, false\, in\, every\, possible\, interpretation\]</p>
-                        <br>
-                        <table class="table table-bordered table-dark">
-                            <tbody class="abc">
-                            <tr>
-                                <td><span style="font-weight: 400;">p</span></td>
-                                <td><span style="font-weight: 400;">q</span></td>
-                                <td><span style="font-weight: 400;">p&nbsp;</span><span
-                                        style="font-weight: 400;">⇒q</span></td>
-                                <td><span style="font-weight: 400;">q&nbsp;</span><span
-                                        style="font-weight: 400;">⇒p</span></td>
-                                <td><span style="font-weight: 400;">(p⇒q)∨(q⇒p)</span></td>
-                                <td><span style="font-weight: 400;">∼{(p⇒q)&nbsp;</span><span
-                                        style="font-weight: 400;">∨(q⇒p)}</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-
-                        <h4>NAND Operation</h4>
-                        <p>\[The\, NAND\, Boolean\, function\, has\, the\, property\, of\, functional\, completeness.\]</p>
-                        <p> \[This\, means,\, any\, Boolean\, expression\, can\, be\, re-expressed\, by\, an\, equivalent\]</p> 
-                            <p>\[expression\, utilizing\, only\, NAND\, operations.\]</p>
-                        <p>\[A\, NAND\, operation\, is\, an\, inverted\, AND\, operation.\] </p>
-                        <br>
-                        <table class="table table-bordered table-dark">
-                            <tbody class="abc">
-                            <tr>
-                                <td><span style="font-weight: 400;">p</span></td>
-                                <td><span style="font-weight: 400;">q</span></td>
-                                <td><span style="font-weight: 400;">p NAND q</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <br>
-
-                        <h4>NOR Operation</h4>
-                        <p>\[In\, boolean\, logic,\, logical\, nor\, is\, a\, truth-functional\, operator\]</p>
-                        
-                            <p>\[which\, produces\, a\, result\, that\, is\, the\, negation\, of\, logical\, or.\]</p>
-                        <p>\[A\, NOR\, operation\, is\, an\, inverted\, OR\, operation.\] </p>
-                        <br>
-                        <table class="table table-bordered table-dark">
-                            <tbody class="abc">
-                            <tr>
-                                <td><span style="font-weight: 400;">p</span></td>
-                                <td><span style="font-weight: 400;">q</span></td>
-                                <td><span style="font-weight: 400;">p NOR q</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <br>
-
-                        <h4>XOR Operation</h4>
-                        <p>\[An\, XOR\, operation\, is\, made\, by\,  four\, NAND\, operations.\]</p>
-                        
-                        <br>
-                        <table class="table table-bordered table-dark">
-                            <tbody class="abc">
-                            <tr>
-                                <td><span style="font-weight: 400;">p</span></td>
-                                <td><span style="font-weight: 400;">q</span></td>
-                                <td><span style="font-weight: 400;">p XOR q</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                            </tr>
-                            <tr>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">T</span></td>
-                                <td><span style="font-weight: 400;">F</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="collapse" id="table">
             <form action="">
@@ -8519,114 +8165,7 @@
 
         </div>
         <!-- Start of types of relations  -->
-        <div class="collapse" id="relationtypes">
-             <div class="stopwrap">
-                <div class="coll">
-                    <div class="left">
-                       <h4 style="font-size:32px">Types of Relations </h4>
-                       <br>
-                       <br>
-                        <p style="color:#ababab !important;" >
-                         Sets and relation are interconnected with each other. The relation defines the relation between two
-                        given
-                        <br> sets. If there are two sets available, then to check if there is any connection between the two
-                        sets,<br>
-                         we use relations For example, An empty relation denotes none of the elements in the two sets is
-                        same.
-                         </p>
-                         <br>
-                         <p>There are 8 main types of relations which include:</p>
-                         <br>
-                <h4> 1. Empty Relation</h4>
-                <p style="color:#ababab !important;">An empty relation (or void relation) is one in which there is no relation between any
-                    <br>
-                    elements of a set. For example, if set A = {1, 2, 3} then, one of the void relations can
-                    be R = {x, y} <br>
-                    where, |x &#8211; y| = 8. For empty relation,
-                </p>
-                <p style="color:#ababab !important;"><strong>R = φ ⊂ A × A</strong><br /><br>
-                <h4> 2. Universal Relation</h4>
-                <p style="color:#ababab !important;">A universal (or full relation) is a type of relation in which every element of a <br>
-                    set is related to each other. Consider set A = {a, b, c}. Now one of the universal <br>
-                    relations will be R = {x, y} where, |x &#8211; y| ≥ 0. For universal relation,
-                <p style="color:#ababab !important;"><strong>R = A × A</strong><br /> </p></p>
-               <br>
-                    <h4> 3. Identity Relation</h4>
-                <p style="color:#ababab !important;" >In an identity relation, every element of a set is related to itself only. <br>
-                    For example,in a set A = {a, b, c}, the identity relation will be <br>
-                    I = {a, a}, {b, b}, {c, c}. For identity relation,</p>
-                <p style="color:#ababab !important;"><strong>I = {(a, a), a ∈ A}</strong><br /><br>
-                <h4> 4. Inverse Relation</h4>
-                <p style="color:#ababab !important;">Inverse relation is seen when a set has elements which are inverse pairs of <br>
-                    another set. For example if set A = {(a, b), (c, d)}, then inverse relation will be<br>
-                    R<sup>-1</sup> = {(b, a), (d, c)}. So, for an inverse relation,</p>
-                <p style="color:#ababab !important;"><strong>R<sup>-1</sup> = {(b, a): (a, b) ∈ R}</strong><br /><br>
-                <h4> 5. Reflexive Relation</h4>
-                <p style="color:#ababab !important;">In a reflexive relation, every element maps to itself. For example, consider a <br>
-                    set A = {1, 2,}. Now an example of reflexive relation will be<br>
-                    R = {(1, 1), (2, 2), (1, 2), (2, 1)}. The reflexive relation is given by-</p>
-                <p style="color:#ababab !important;"><strong>(a, a) ∈ R</strong><br /><br>
-                <h4> 6. Symmetric Relation</h4>
-                <p style="color:#ababab !important;">In a symmetric relation, if a=b is true then b=a is also true. In other words,<br>
-                    a relation R is symmetric only if (b, a) ∈ R is true when (a,b) ∈ R. An example of
-                    symmetric <br>
-                    relation will be R = {(1, 2), (2, 1)} for a set A = {1, 2}. So, for a symmetric
-                    relation,</p>
-                <p style="color:#ababab !important;"><strong>aRb ⇒ bRa, ∀ a, b ∈ A</strong><br /><br>
-                <h4> 7. Transitive Relation</h4>
-                <p style="color:#ababab !important;">For transitive relation, if (x, y) ∈ R, (y, z) ∈ R, then (x, z) ∈ R. For a transitive
-                    relation,</p>
-                <p style="color:#ababab !important;"><strong>aRb and bRc ⇒ aRc ∀ a, b, c ∈ A</strong><br /><br>
-                <h4> 8. Equivalence Relation</h4>
-                    <p style="color:#ababab !important;">If a relation is reflexive, symmetric and transitive at the same time it is known as
-                        an equivalence relation.<br /></p>
-                    <br>
-                    <h3 style="text-align: center;">Representation of Types of Relations</h3>
-                   <br>
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-dark">
-                                <thead>
-                                    <tr>
-                                        <th style="text-align:center; font-size: 20px;">Relation Type</th>
-                                        <th style="text-align:center; font-size:20px">Condition</th>
-                                    </tr>
-                                </thead>
-                            <tbody class="abc">
-                                <tr>
-                                    <td style="color:#ababab !important; font-size: 18px;">Empty Relation</td>
-                                    <td style="color:#ababab !important; font-size: 18px;">R = φ ⊂ A × A</td>
-                                </tr>
-                                <tr>
-                                    <td style="color:#ababab !important; font-size: 18px;">Universal Relation</td>
-                                    <td style="color:#ababab !important; font-size: 18px;">R = A × A</td>
-                                </tr>
-                                <tr>
-                                    <td style="color:#ababab !important; font-size: 18px;">Identity Relation</td>
-                                    <td style="color:#ababab !important; font-size: 18px;">I = {(a, a), a ∈ A}</td>
-                                </tr>
-                                <tr>
-                                    <td style="color:#ababab !important; font-size: 18px;">Inverse Relation</td>
-                                    <td style="color:#ababab !important; font-size: 18px;">R<sup>-1</sup> = {(b, a): (a, b) ∈ R}</td>
-                                </tr>
-                                <tr>
-                                    <td style="color:#ababab !important; font-size: 18px;">Reflexive Relation</td>
-                                    <td style="color:#ababab !important; font-size: 18px;">(a, a) ∈ R</td>
-                                </tr>
-                                <tr>
-                                    <td style="color:#ababab !important; font-size: 18px;">Symmetric Relation</td>
-                                    <td style="color:#ababab !important; font-size: 18px;">aRb ⇒ bRa, ∀ a, b ∈ A</td>
-                                </tr>
-                                <tr>
-                                    <td style="color:#ababab !important; font-size: 18px;">Transitive Relation</td>
-                                    <td style="color:#ababab !important; font-size: 18px;">aRb and bRc ⇒ aRc ∀ a, b, c ∈ A</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                      </div>
-                  </div>
-              </div>
-        </div>
-    </div>
+
         <div class="collapse" id="3dgeo">
             <div class="stopwrap">
                 <div class="coll">
@@ -9020,52 +8559,9 @@
             </div>
         </div>
         
-        <div class="collapse" id="sigma">
-            <div class="stopwrap">
-                <div class="coll">
-                    <div class="left">
-                        <h2 style="text-align: center;">Sigma Notation</h2>
-                        <br><br>
-                        <p>Ʃ is a letter of greek alphabets and it is called sigma. The symbol sigma (Ʃ) represents the sum of similar terms.</p>
-                    </div>
-                </div>
-                <div class="coll">
-                    <div class="left">
-                        <h3 style="text-align: center;">Properties of Sigma Notation</h3>
-                        <p>\[1.)  \sum_{r = 1}^{n} T_r \,=\,T1\,+\,T2\,+\,T3\,+....+\,T_n\, , \, when \, T_n \, is \, the \, general \, term \, of \, the \, series  \]</p>
-                        <p>\[2.)  \sum_{r = 1}^{n} \, ( \, T_r  ±  T_r^{'} \, ) \,= \,  \sum_{r = 1}^{n} T_r \, ± \, \sum_{r = 1}^{n} T_r^{'} \, [ sigma \, operator \, is \, distributive \, over \, addition \, and \, subtraction  ] \]</p>
-                        <p>\[3.)  \sum_{r = 1}^{n} T_r T_r^{'}  \, != \, ( \, \sum_{r = 1}^{n} T_r \, ) \, ( \, \sum_{r = 1}^{n} T_r^{'} \, ) \, [ \, sigma \, operator \, is \, not \, distributive \, over \, multiplication \, ] \]</p>
-                        <p>\[4.)  \sum_{r = 1}^{n} \frac{T_r}{T_r^{'}} \, != \, \frac{(\sum_{r = 1}^{n} T_r)}{(\sum_{r = 1}^{n} T_r^{'})} \, [ \, sigma \, operator \, is \, not \, distributive \, over \, division \, ] \]</p>
-                        <p>\[5.)  \sum_{r = 1}^{n} a \, T_r \, = \, a \, \sum_{r = 1}^{n} T_r \, [ \, where \, a \, is \, constant \, ] \]</p>
-                        <p>\[6.)  \sum_{j = 1}^{n} \sum_{i = 1}^{n} T_i T_j  \, = \, ( \, \sum_{i = 1}^{n} T_i \, ) \, ( \, \sum_{j = 1}^{n} T_j \, ) \, [ \, where \, i \, and \, j \, are \, independent  \, ] \]</p>
-                    </div>
-                </div>     
-            </div>
-        </div>
-
 
           <!--Set Formulas List starts-->
 
-          <div class="collapse" id="setformula">
-            <div class="stopwrap">
-                <div class="coll">
-                    <div class="left">
-                        <h4>Sets Formulas</h4>
-                        <p>\[1)\space If A\space and\space  B\space are\space overlapping\space sets\space n(AUB)\space =n(A) + n(B) - n(A⋂B)\]</p>
-                        <p>\[2)\space If A\space and\space  B\space are\space disjoint\space sets\space n(AUB)\space = n(A) + n(B)\]</p>
-                        <p>\[3)\space n(A)\space = n(AUB) + n(A⋂B) - n(B)\]</p>
-                        <p>\[4)\space n(A⋂B)\space = n(A) + n(B) - n(AUB)\]</p>
-                        <p>\[5)\space n(B)\space = n(AUB) + n(A⋂B) - n(A)\]</p>
-                        <p>\[6)\space n(U)\space = n(A) + n(B) - n(A⋂B) + n((AUB)^c)\]</p>
-                        <p>\[7)\space n((AUB)^c)\space = n(U) + n(A⋂B) - n(A) - n(B)\]</p>
-                        <p>\[8)\space n(AUB)\space = n(A-B) + n(B-A) + n(A⋂B)\]</p>
-                        <p>\[9)\space n(A-B)\space = n(AUB) - n(B) \]</p>
-                        <p>\[10)\space n(A-B)\space = n(A) - n(A⋂B) \]</p>
-                        <p>\[11)\space n(A^c)\space = n(U) - n(A) \]</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
           <!--Sets Formulas List ends-->
         <div class="collapse" id="log_values">
@@ -11501,541 +10997,15 @@
                 </div>
             </div>
         </div>
+             
+    
 
-                    <!-- Euclid Geometry -->
-
-                    <div class="collapse" id="euclid">
-                        <h2 style="text-align: center; margin-top: 50px;">Euclid Geometry - Axioms and Postulates</h2>
-                        <br>
-        
-                        <h4 style="text-align: center; padding-bottom:15px; margin-top: 20px;text-decoration: underline;">
-                            Euclid's Axioms</h4>
-        
-                        <p>\[ There\, are\, 7\, axioms\, in\, Euclid\, Geometry :-\]</p>
-        
-        
-                        <ul type="none" style="color: var(--appimage) !important;">
-                            <li
-                                style="color: white; font-size: 20px; position: relative; left: 10px; color: var(--appimage) !important;">
-                                \[1. \, Things\, which\, are\, equal\, to\, the\, same\, thing\, are\, equal\, to\, one\,another.\]</li>
-                            <li
-                                style="color: white; font-size: 20px; position: relative; right: 72px; color: var(--appimage) !important;">
-                                \[2. \, If\, equals\, are\, added\, to\, equals,\, the\, wholes\, are\, equal.\]
-                            </li>
-                            <li style="color: white; font-size: 20px;color: var(--appimage) !important;">
-                                \[3. \, If\, equals\, are\, subtracted\, from\, equals,\, the\, remainders\, are\, equal.\]</li>
-                            <li style="color: white; font-size: 20px;color: var(--appimage) !important;">
-                                \[4. \, Things\, which\, coincide\, with\, one \,another\, are\, equal\, to\, one\, another.\]
-                            </li>
-                            <li
-                                style="color: white; font-size: 20px;position: relative; right: 209px;color: var(--appimage) !important;">
-                                \[5. \, The\, whole\, is\, than\, the\, part. \]
-                            </li>
-                            <li style="color: white; font-size: 20px;color: var(--appimage) !important;">
-                                \[6. \,Things\, which\, are\, double\, of\, the\, same\, things\, are\, equal\, to\, another.\]
-                            </li>
-                            <li
-                                style="color: white; font-size: 20px;position: relative; left: 20px;color: var(--appimage) !important;">
-                                \[7. \, Things\, which are\, halves\, of \,the\, same\, things\, are\, equal\, to\, one \,another. \]</li>
-        
-                        </ul>
-        
-                        <br>
-                        <h4 style="text-align: center; padding-bottom:15px; margin-top: 20px;   text-decoration: underline;
-                        ">Euclid's Postulates</h4>
-                        <p style="text-align: center;">
-                            \[There\, are\, 5\, postulates\, in\, Euclid's\, Geometry\, :-\]</p>
-                        <ul type="none">
-                            <li
-                                style="color: white; font-size: 20px;position: relative;left: 30px;color: var(--appimage) !important;">
-                                \[1.\, A\, straight\, line\, can\, be\, drawn\, from\, anyone\, point\, to\, another\, point\]
-                            </li>
-                            <br>
-                            <div class="d-flex justify-content-center">
-                                <img style="width: 100%; height: 200px; max-width: 450px;"
-                                src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101848/Euclidean-Geometry-Postu-1-300x121-300x121.png"
-                                alt="">
-                            </div>
-                            <br>
-                            <br>
-                            <li
-                                style="color: white; font-size: 20px; position: relative; right: 20px;color: var(--appimage) !important;">
-                                <p>\[2.\, A\, terminated\, line\, can\, be\, further\, produced\, indefinitely\]</p>
-                            </li>
-                            <br>
-                            <div class="d-flex justify-content-center">
-                                <img style="width: 100%; height: 200px; max-width: 450px;"
-                                src="https://cdn1.byjus.com/wp-content/uploads/2018/11/maths/2016/09/12101952/Euclid-Postulates-300x50-300x50.png"
-                                alt="">
-                            </div>
-                            
-                            <br>
-                            <br>
-                            <li
-                                style="color: white; font-size: 20px; position: relative;right: 30px;color: var(--appimage) !important;">
-                                \[3.\, A\, circle\, can\, be\, drawn\, with\, any\, centre\, and \,any\, radius.\]
-                            </li>
-        
-                            <li
-                                style="color: white; font-size: 20px; position: relative;right: 100px;color: var(--appimage) !important;">
-                                \[4.\, All\, right\, angles\, are \,equal \,to \,one\, another.\]
-                            </li>
-        
-                            <li
-                                style="color: white; font-size: 20px; position: relative; right: 3px;color: var(--appimage) !important;">
-                                \[5.\, If\, a\, straight\, line\, falling\, on\, two\, other\,
-                                straight\,lines\,makes\]
-                                \[ the\, interior\, angles\, on\, the\, same\, side\, of\, it\, taken\,together\]
-                                \[less\, than\, two\, right\, angles,\, then\, the\, two\, straight\, lines,\]
-                                \[ if\, produced\, indefinitely,\, meet\, on\, the\, side\, on\, which\,the\]
-                                \[ sum\, of\, angles\, is \, less\, than\, two\, right\, angles.\]
-                            </li>
-                        </ul>
-        
-                    </div>
         
 
-        <div class="collapse" id="setop">
-            <h2 style="text-align: center;">Operations on Sets</h2>
-            <h5>1. Union</h5>
-            <p>The union of two sets is a set containing all elements that are in A or in B
-                (possibly both). For example,</p>
-            <p style="color:white !important;">\[\{1,2\}\cup\{2,3\} = \{1,2,3\}\]</p>
-            <div class="d-flex justify-content-center">
-                <img src="https://www.probabilitycourse.com/images/chapter1/union_b.png"
-                 style=" height: 12.5rem;" alt="">
-            <br><br>
-            </div>
-            <h5>2. Intersection</h5>
-            <p>The intersection of two sets A and B, denoted by A∩B, consists of all
-                elements that are both in A and B. For example,</p>
-            <p style="color:white !important;">\[\{1,2\}\cap\{2,3\} = \{2\}\]</p>
-            <div class="d-flex justify-content-center">
-                <img src="https://www.probabilitycourse.com/images/chapter1/intersection_b.png"
-                 style="width: 65%; height: 12.5rem;" alt="">
-                <br>
-            </div>
-            <br>
-            <p style="text-align: center;"><i>The intersection of A and B is the middle
-                part</i></p>
-            <br>
-            <div class="d-flex justify-content-center">
-                <img src="https://www.probabilitycourse.com/images/chapter1/intersection3_b.png"
-                 style=" height: 12.5rem;" alt="">
-            <br><br>
-            </div>
-            <h5>3. Disjoint</h5>
-            <p>Set A and set B are called disjoint sets if no element is common to A and B. 
-                i.e. A and B are disjoint sets then</p>
-            <p style="color:white !important; text-align: center !important;">\(A\cap B = ∅\)</p>
-            <p style="color:white !important;">For example, \[A = \{1,3,5\}, B = \{2,4,6\}\space and\space C = \{a,b,c\}\\
-                A\cap B\cap C = ∅\]</p>
-                <div class="d-flex justify-content-center">
-                    <img src="https://www.probabilitycourse.com/images/chapter1/disjoint_b.png"
-                    style=" height: 12.5rem;" alt="">
-                    <br><br>
-                </div>
-            <h5>4. Complement</h5>
-            <p>The complement of a set A, denoted by A<sup>c</sup> is elements in Universal
-                Set which are not in A</p>
-            <br>
-            <div class="d-flex justify-content-center">
-                <img src="https://www.probabilitycourse.com/images/chapter1/complement_b.png"
-                style=" height: 12.5rem;" alt="">
-                <br><br>
-            </div>
-            <h5>5. Difference</h5>
-            <p>The set A−B consists of elements that are in A but not in B. For example
-                if</p>
-            <p style="color:white !important;">\[A = \{1,2,3\}\space and\space B = \{3,5\} then,\\
-                A-B = \{1,2\}\]
-            </p>
-            <div class="d-flex justify-content-center">
-                <img src="https://www.probabilitycourse.com/images/chapter1/difference_b.png"
-                 style=" height: 12.5rem;" alt=""><br><br>
-            </div>
-            <br>
-            <h2 style="text-align: center;">Some conclusions from set operations</h2>
-            <p>Let S be the universal set, and A,B,C,D are subsets of S. Then,</p>
-            <ol>
-                <li style="color: white; font-size: 1.25rem;">A ∪ ∅ = A <p>Hence ∅ i.e. empty set is identity set for 'union operation'. </p></li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">A ∩ S = A <p>S i.e. universal set is identity set for 'intersection operation'. </p></li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">A ∪ S = S <p>A ⊂ S and A ∪ S = S</p> <p>⇒ if B ⊂ A then A ∪ B  = A i.e. union of super set and subset is super set.</p></li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">A ∩ ∅ = ∅ <p>∅ ⊂ A and A ∩ ∅ = ∅</p> <p>⇒ if B ⊂ A then A ∩ B  = B i.e. intersection of super set and subset is subset.</p></li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">If B ⊂ A, then A ∩ B  = B and A ∪ B  = A</li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">A ⊂ A ∪ B also B ⊂ A ∪ B</li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">A ∩ B ⊂ A also A ∩ B ⊂ B</li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">A ∩ B ⊂ A ⊂ A ∪ B and A ∩ B ⊂ B ⊂ A ∪ B i.e, A and B sets. A ∩ B is the smallest set and A ∪ B is largest set.
-                    <p>A contains A ∩ B and A is contained in A ∪ B.</p>
-                    <p>Similarly B contains A ∩ B and B is contained in A ∪ B.</p></li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">As A ∩ B ⊂ A<p>⇒ (A ∩ B) ∪ A = A [super set]</p><p>and (A ∩ B) ∩ A = (A ∩ B) [subset]</p></li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">As A ⊂ A ∪ B<p>⇒ A ∩ (A ∪ B) = A [subset]</p><p>and A ∪ (A ∪ B) = (A ∪ B) [super set]</p> </li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">(A - B) ∪ (A ∩ B) ∪ (B - A) = A ∪ B and (A - B), (A ∩ B), (B - A) are pairwise disjoint. i.e. 
-                    <p>(A - B) ∩ (A ∩ B) = ∅ </p><p>(A - B) ∩ (B - A) = ∅ </p><p>(A ∩ B) ∩ (B - A) = ∅ </p><p>Hence (A - B), (A ∩ B) and (B - A) are partitions of A ∪ B.</p></li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">A ∪ A' = S <p>i.e. Union of A and its complement gives identity set for intersection operation.</p></li>
-                <br>
-                <li style="color: white; font-size: 1.25rem;">A ∩ A' = ∅ <p>i.e. Intersection of A and its complement gives identity set for union operation.</p></li>
-                <br>
-            </ol>
-            <h4 style="text-align: center;">Remark:</h4>
-            <ul>
-                <li style="color:#ababab !important; font-size: 1.25rem;">Property 11 and 12 are very useful for Boolean algebra as in Boolean algebra these properties are formed in a way: a + a' = 1 
-                    i.e. sum of element and its complement gives multiplicative identity element and a. a' = 0 </li>
-                <br>
-                <li style="color: #ababab !important; font-size: 1.25rem;">Multiplication of element and its complement gives additive identity element.</li>
-            </ul>
-        </div>
-
-        <div class="collapse" id="srf">
-            <h2 style="text-align: center;">Sets,Relations and Functions</h2>
-            <br>
-            <h4 style="text-align: center;">What are Sets?</h4>
-            <p style="color:#ababab !important;">A set is the representation of a collection of objects; distinct objects with
-                one or more common properties.</p>
-            <div class="d-flex justify-content-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Venn_A_intersect_B.svg/1200px-Venn_A_intersect_B.svg.png"
-                style=" width: 18.75rem;" alt="">
-            </div>
-            <br>
-            <h4 style="text-align: center;">Types of Sets</h4>
-            <ol>
-                <li style="color:#ababab !important;list-style: none; text-align: center; font-size: 1.25rem;">Empty Set - A set with no
-                    elements. Empty sets are also called null sets or void sets and are
-                    denoted by { } or Φ.
-                </li>
-                <br>
-                <li style="color:#ababab !important;list-style: none; text-align: center; font-size: 1.25rem;">Singleton Set - A set with a
-                    single element. For example, {9}.
-                </li>
-                <br>
-                <li style="color:#ababab !important;list-style: none; text-align: center; font-size: 1.25rem;">Power Set - A set qualifies as
-                    the subset of another set if all of its elements are also the elements
-                    of that another set. A collection of all the subsets of a given set is a
-                    power set.
-                </li>
-                <br>
-                <li style="color:#ababab !important;list-style: none; text-align: center; font-size: 1.25rem;">Super Set - A super-set can be
-                    thought of as the parent set that at least contains all the elements of
-                    the subset and may or may not contain some extra elements.
-                </li>
-            </ol>
-            <br>
-            <h4 style="text-align: center;">What are Relations and Functions? </h4>
-            <p style="color:#ababab !important;">Relations and functions are the set operations that help to trace the
-                relationship between the elements of two or more distinct sets or between
-                the elements of the same set.</p>
-            <br>
-            <p style="color:#ababab !important;">The relation is the subset of the Cartesian product which contains only some
-                of the ordered pair based on the relationships defined between the first and
-                second elements. The relation is usually denoted by R.</p>
-            <br>
-            <p style="color:#ababab !important;">If every element of a set A is related with one and only one element of
-                another set then this kind of relation qualifies as a function. A function
-                is a special case of relation where no two ordered pairs can have the same
-                first element.</p>
-                <br>
-                <br>
-            <h4 style="text-align:center">Conditions to be a function - </h4>
-            <p style="color:#ababab !important;">A relation from a set X to a set Y is called a function if each element of X
-                is related to exactly one element in Y. That is, given an element x in X,
-                there is only one element in Y that x is related to.</p>
-            <div class="d-flex justify-content-center">
-                <img src="https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/08/20083400/Func_venn-300x225.png"
-                 alt="">
-            </div>
-            <br>
-            <br>
-            <h4 style="text-align:center">Types of Functions - </h4>
-            <ol>
-                <li style="color:#ababab !important;list-style: none; text-align: center; font-size: 1.25rem;">One to one function(Injective):
-                    For each element in the domain there is one and only one element in the
-                    range.
-                </li>
-                <br>
-                <li style="color:#ababab !important;list-style: none; text-align: center; font-size: 1.25rem;">Many to one function: When two or
-                    more elements from the domain are mapped to the same single elements in
-                    the range.
-                </li>
-                <br>
-                <li style="color:#ababab !important;list-style: none; text-align: center; font-size: 1.25rem;">Onto function(Surjective): When
-                    every element of the range has been mapped to an element in the domain.
-                </li>
-                <br>
-                <li style="color:#ababab !important;list-style: none; text-align: center; font-size: 1.25rem;">One-one and onto
-                    function(Bijective): A function which is both one to one and onto
-                    function.
-                </li>
-            </ol>
-        </div>
-
-        <div class="collapse" id="matrixcollapse">
-            <div class="row">
-                <button class="carddis" id="singlematrix"
-                        onclick="$('#singlematrixcollapse').slideToggle();$('#multiplematrixcollapse').slideUp();clearall();">
-                    Single Matrix
-                </button>
-            </div>
-            <div class="row">
-                <button id="twomatrix" class="carddis"
-                        onclick="$('#multiplematrixcollapse').slideToggle();$('#singlematrixcollapse').slideUp();clearall();">
-                    Multiple Matrix
-                </button>
-            </div>
-        </div>
-        <!--        single matrix-->
-        <div class="collapse" id="singlematrixcollapse" style="text-align: center;">
-            <div class="form-group" style="display:inline-block">
-                <input type="number" id="srow1" class="form__field" placeholder="m"
-                       style="width:4.375rem;display:inline;" oninput="checkfunctions()">
-                <label>&times; &nbsp;</label>
-                <input type="number" id="scolumn1" class="form__field" placeholder="n"
-                       style="width:4.375rem;display:inline;" oninput="checkfunctions()">
-            </div>
-            <div class="form-group">
-                <div class="stopwrap bi"
-                     style="border-radius:3.125rem;color:black !important;"
-                     id="smatrixerror">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <select id="sopval" class="btn btn-outline-light"
-                        onmousedown="this.value=''">
-                    <option>Input Fields</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <div class="stopwrap">
-                    <div id="generatedmatrixsingle"></div>
-                </div>
-            </div>
-            <div id="pow"></div>
-            <br>
-            <br>
-            <div class="form-group">
-                <button type="button" class="btn btn-light"
-                        onclick="soperation(document.getElementById('sopval').value);">
-                    Solve
-                </button>
-            </div>
-            <div class="form-group text-center">
-                <p class="stopwrap" style="color:var(--appimage);"
-                   id="singlematrixresult"></p>
-            </div>
-            <!--                background-image: linear-gradient(to right top, #071324, #100d1c, #110713, #0c0308, #000000);-->
-            <div class="form-group">
-                <div class="stopwrap bi"
-                     style="border-radius:3.125rem;color:black !important;"
-                     id="singlematrixexplanation"></div>
-            </div>
-
-        </div>
-        <!--        multiple matrix-->
-        <div class="collapse" id="multiplematrixcollapse" style="text-align: center;">
-            <div class="form-group">
-                <div style="display:inline-block">
-                    <span style="color:var(--apppink); margin-right: 3.125rem;">Matrix 1</span><br>
-                    <input type="number" id="row1" class="form__field" placeholder="m"
-                           style="width:4.375rem;display:inline;"
-                           oninput="checkfunctionsmultiple()">
-                    <label style="margin-right: 3.125rem;">&times;</label>
-                    <input type="number" id="column1" class="form__field" placeholder="n"
-                           style="width:4.375rem;display:inline;margin-left: 0.3125rem;"
-                           oninput="checkfunctionsmultiple()">
-                </div>
-                <div style="display:inline-block" style="color:var(--apppink);">
-                    <span style="color:var(--apppink); margin-right: 3.125rem;">Matrix 2</span><br>
-                    <input type="number" id="row2" class="form__field" placeholder="m"
-                           style="width:4.375rem;display:inline; margin-left: 0.625rem;"
-                           oninput="checkfunctionsmultiple()">
-                    <label style="margin-right: 3.125rem;">&times;</label>
-                    <input type="number" id="column2" class="form__field" placeholder="n"
-                           style="width:4.375rem;display:inline; margin-left: 0.3125rem;"
-                           oninput="checkfunctionsmultiple()">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="stopwrap bi"
-                     style="border-radius:3.125rem;color:black !important;"
-                     id="mmatrixerror">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <select id="opval" class="btn btn-outline-light" onmousedown="this.value=''"
-                        onchange="signofmatrix(this.value);">
-                    <option>Input Fields</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <div class="stopwrap">
-                    <table class="center">
-                        <td>
-                            <div id='generatedmatrix1'></div>
-                        </td>
-                        <td>
-                            <p style="font-size:3.125rem" id="signofmatrix"></p>
-                        </td>
-                        <td>
-                            <div id='generatedmatrix2'></div>
-                        </td>
-                    </table>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <button type='button' class="btn btn-light"
-                        onclick="calloperation(document.getElementById('opval').value)">
-                    Solve
-                </button>
-            </div>
-            <div class="form-group text-center">
-                <p class="stopwrap" id="matrixresult"
-                   style="color:var(--appimage);;height:auto !important;"></p>
-            </div>
-            <div class="form-group text-center">
-                <p id="explanationmatrixresult" class="stopwrap"
-                   style="font-family:mathfont;color:var(--appblack) !important;"></p>
-            </div>
-
-        </div>
-        <div class="collapse" id="cay">
-            <h2 style="text-align:center;">Cayley-Hamilton Theorem</h2>
-            <br>
-            
-            <p style="color:#ababab !important;">every square matrix over a commutative ring (such as the real or complex field) satisfies its own characteristic equation.</p>
-            <p style="color:#ababab !important;">A square matrix can be written as |A- λI|=0 and the corresponding eqn is</p>
-            <p> \[A^m+c_{m-1}A^{m-1}+...+c_0I\space=\space0\] </p>
-            <p style="color:#ababab !important;">The Cayley-Hamilton theorem states that an n×n matrix A is annihilated by its characteristic polynomial det(xI-A), which is monic of degree n.</p>
-            <br>
-            <br>
-            <h2 style="text-align:center">Diagonalization of Matrix</h2>
-            <br>
-            <p style="color:#ababab !important;">Matrix diagonalization is the process of taking a square matrix and converting it into a special type of matrix--a so-called diagonal matrix--that 
-                shares the same fundamental properties of the underlying matrix. Matrix diagonalization is equivalent to transforming the underlying system of 
-                equations into a special set of coordinate axes in which the matrix takes this canonical form. Diagonalizing a matrix is also equivalent to finding
-                the matrix's eigenvalues, which turn out to be precisely the entries of the diagonalized matrix. Similarly, the eigenvectors make up the new set of 
-                axes corresponding to the diagonal matrix.
-            </p>
-            <br>
-            <p style="color:#ababab !important;">The remarkable relationship between a diagonalized matrix, eigenvalues, and eigenvectors follows from the beautiful mathematical identity 
-                (the eigen decomposition) that a square matrix A can be decomposed into the very special form
-            </p>
-            <p>\[A\space =\space PDP^{-1}\]</p>
-            <p style="color:#ababab !important;">D is the diagonalized matrix and can be written as diagnol matrix containing eigen values on the major diagnol</p>
-        </div>
-        <div class="collapse" style="text-align: center;" id="matrixprops">
-            <br>
-            <h2>Properties of Matrices</h2><br>
-            <p>\[1.) \, If \, A \, be \, any \, matrix \, then \, the \, matrix \, obtained \, by \, interchanging \, the \, rows \, and \,
-                columns \, of \, A \, is \, called \\ the \, Transpose \, of \, A.\,
-                Transpose \, of \, the \, matrix \, A \, is \, denoted \, by \, A^{'} \, or \, A^{T}.\]
-            </p>
-            <p>\[2.)\, A \, square \, matrix \, A \, is \, called \, orthogonal \, if \, A \, A^{T} \, = \, I \, where \, I \, is \,
-                identity \, matrix. \]</p>
-            <p>\[3.)\, If \, the \, matrix \, product \, AB \, is \, defined, \, then \, (AB)^{T} \, =
-                B^{T}A^{T}. \]
-            </p>
-            <p>\[4.)\, AA^{-1} \, = \, I \, where \, A^{-1} \, is \, inverse \, of \, matrix \, A. \]</p>
-            <p>\[5.) \, (AB)^{-1} \, = \, B^{-1}A^{-1} \]</p>
-            <p>\[6.) \, A \, matrix \, is \, said \, to \, be \, Involutary \, if \, A^{2} \, = \, I. \]</p>
-            <p>\[7.) \, A \, matrix \, is \, said \, to \, be \, Idempotent \, if \, A^{2} \, = \, A. \]</p>
-            <p>\[8.) \, A \, matrix \, is \, said \, to \, be \, Nilpotent \, if \, A^{p} \, = \, 0, \, where \, p \, is \, any \,
-                positive \, integer. \]</p>
-            <p>\[9.) \, A \, square \, matrix \, A \, is \, called \, Periodic \, if \, A^{k+1} \, = \, A, \, where \, k \, is \, a \,
-                positive \, integer. \]</p>
-            <p>\[10.) \, A \, square \, matrix \, A \, is \, said \, to \, be \, a \, Singular \, if \, |A| \, = \, 0 \, and \, a \, square \, matrix \,
-                A \, is \, said \, to \, be \, Non \, Singular \\ if \, |A| \, != \, 0. \] </p>
-            <p>\[11.) \, A \, matrix \, is \, said \, to \, be \, symmetric \, if \, A \, = \, A^{T} \, and \, skew-symmetric \,
-                if \, A \, = \, -A^{T}. \]</p>
-            <p>\[12.) \, A \, matrix \, is \, said \, to \, be \, Hermitian \, if \, A \, = \, A^{θ} \, and \, Skew-Hermitian \,
-                if \, A \, = \, -A^{θ} \, where \, A^{θ} \, is \, transpose \\ conjugate \, of \, matrix. \]</p>
-            <p>\[13.) \, A \, square \, matrix \, A \, is \, said \, to \, be \, Unitary \, if \, AA^{θ} \, = \, I. \]</p>
-            <p>\[14.) \, If \, A \, be \, a \, square \, matrix, \, then \, AA^{θ} \, and \, A^{θ} \,A \, are \,
-                Hermitian \, matrix. \]</p>
-            <p>\[15.) \, If \, A \, be \, a \, square \, matrix \, of \, order \, n \, and \, C \, be \, the \, cofactor \, in \, A \, then \, the \,
-                transpose \, of \, the \, matrix \, of \, cofactors \\ of \,
-                element \, of \, A \, is \, called \, the \, adjoint \, of \, A \, and \, is \, denoted \, by \, adj(A). \, Thus \,
-                adj(A) \, = \, [C^{ij}]^{T}. \]</p>
-            <p>\[16.) \, A \, square \, matrix \, A(non-singular) \, of \, order \, n \, is \, said \, to \, be \, invertible, \, if \,
-                there \, exists \, a \, square \, matrix \, B \, of \, same \\ order \, such \, that \,
-                AB \, = \, I^{n} \, = \, BA \, then \, B \, is \, called \, the \, inverse \, of \, A \, and \, is \, denoted \,
-                by \, A^{-1}. \, Thus \, A^{-1} \, = \, adjA/|A|. \] </p>
-            <p>\[17.) \, If \, A \, is \, a \, non \, singular \, square \, matrix \, of \, order \, n \, then \, adj(adj A) \, =
-                 \, |A|^{n-2}A. \]</p>
-
-            <br><br>
-
-            <h2>Properties of Determinants</h2>
-            <br>
-            <p>\[1.) \, det(XY) \, = \, det(X)det(Y) \, where \, det \, is \, determinant, \, this \, is \, Distributive \,
-                property. \]</p>
-            <p>\[2.) \, If \, rows \, and \, columns \, are \, interchanged \, then \, value \, of \, determinant \, remains \,
-                same \, (value\, does \, not \, change), \\ det(X^{T}) \, = \, det(X) \]</p>
-            <p>\[3.) \, Determinant \, of \, inverse \, of \, a \, matrix \, is, \, det(X^{-1}) \, = \, -det(X) \]</p>
-            <p>\[4.) \, The \, determinant \, of \, a \, matrix \, will \, be \, 0 \, if \, all \, the \, elements \, of \, any \, one \,
-                column \, or \, row \, is \, 0. \]</p>
-            <p>\[5.) \, If \, two \, rows(or columns) \, of \, a \, determinant \, are \, identical \, then \, the \, values \, of \,
-                the \, determinant \, is \, zero. \]</p>
-            <p>\[6.) \, If \, determinant \, Δ \, becomes \, zero \, on \, putting \, x \, = \, α \, then \, we \, say \, that \, (x-α) \, is \, a \,
-                factor \, of \, Δ \]</p>
-            <p>\[7.) \, If \, X \, is \, orthogonal \, matrix \, then \, det(X) \, = \, ±1.\] </p>
-            <p>\[8.) \, If \, X \, is \, a \, skew-symmetric \, matrix \, of \, odd \, order \, then \, det(X) \, = \, 0. \]</p>
-            <p>\[9.) \, If \, X \, is \, a \, skew-symmetric \, matrix \, of \, even \, order \, then \, det(X) \, is \, a \, perfect \,
-                square. \]</p>
-            <p>\[10.) \, det(kX) \, = \, k^{n}det(X) \, where \, n \, is \, order \, of \, X \, and \, k \, is \, scalar. \]</p>
-            <p>\[11.) \, If \, all \, the \, elements \, of \, a \, determinant \, above \, or \, below \, the \, main \, diagonal \,
-                consist \, of \, zeros, \, determinant \, equals \\ to \, product \, of \, diagonal \, elements. \]</p>
-            <p>\[12.) \, A \, matrix \, A \, can \, be \, written \, as \, det(A- λI) \, = \, 0, \, the \, λ \, are \, eigen \, values \, of \,
-                the \, matrix. \]</p>
-            <p>\[13.) \, Determinant \, remains \, unaltered \, if \, its \, rows \, are \, changed \, into \, columns \, and \,
-                the \, columns \, into \, rows, \, this \, is \, property \\ of \, reflection. \]</p>
-            <p>\[14.) \, If \, i \, not \, equals \, to \, j, \, subtracting \, t \, times \, row \, i \, from \, row \, j \, doesn’t \, change \,
-                the \, determinant \, value. \]</p>
-            <p>\[15.) \, If \, det \, A \, is \, exactly \, 0, \, where \, det \, A \, is \, determinant \, of \, A, \, then \, A \, is \,
-                singular. \]</p>
-            <p>\[16.) \, If \, det \, A \, not \, equals \, to \, 0, \, where \, det \, A \, is \, determinant \, of \, A, \, then \, A \, is \,
-                invertible. \]</p>
-            <p>\[17.) \, The \, determinant \, of \, A \, is \, defined \, for \, all \, matrices \, A. \]</p>
         </div>
 
         <!-- Cramers Rule Calculator-->
-<div class="collapse" id="cramer">
-    <div class="text-center">
-        <h2><label>Cramer's Rule Calculator</label></h2>
-    </div><br><br>
-    <form action="">
-        <div class="coll">
-            <p> Enter 1st System of equations :   <input type="text" id="cab" size=3 value='' placeholder="a1">  x  +
-            <input type="text" id="cab1" size=3 value='' placeholder="b1"> y + <input type="text" id="cab2" size=3 value='' placeholder="c1"> = 0<br><br>
-                Enter 2nd System of equations :   <input type="text" id="cab3" size=3 value='' placeholder="a2"> x +
-            <input type="text" id="cab4" size=3 value='' placeholder="b2"> y + <input type="text" id="cab5" size=3 value='' placeholder="c2"> = 0<br><br>
-            <button type="button" class="btn btn-light" onclick=cramer()>Solve</button>
-            <button type="button" class="btn btn-light" onclick=calcexcramer()>
-                Example
-            </button>
-            <button type="button" class="btn btn-light" onclick="this.form.reset();">
-                Reset
-            </button>
-            </p>
-        </div>
-    </form>
-    <br>
-    <div class="coll" style="text-align: center;">
-    <h5 id="cramerres" style="color: white; font-size: x-large;"></h5>
-</div>
-</div>
+
 		       <div class="collapse" id="circlecollapse">
             <div class="stopwrap">
                 <table class="table table-bordered table-dark" >
@@ -12572,108 +11542,6 @@
             </div>
         </div>
 <!--  start of sequence and series  -->
-        <div class="collapse" id="sqseries">
-            <div class="stopwrap">
-                <div class="coll">
-                     <div class="left">
-                     <h4 style="font-size:34px;">Arithmetic Progression</h4>
-                     <br>
-                     <p style="color:#ababab !important"> A mathematical sequence in which the difference between<br> two consecutive terms
-                         is always a constant and it is abbreviated as AP.</p>
-                     <br>
-                     <h4 style="font-size:32px;">Notation in AP</h4>
-                    <p style="color:#ababab !important">
-                        In AP, we will come across three main terms, which are denoted as:<br>
-
-                    1. Common difference (d)<br>
-                    2. nth Term ( a<sub>n</sub> )<br>
-                    3. Sum of the first n terms ( s<sub>n</sub> )<br><br>
-                    <h4 style="font-size:32px;">Common Difference in Arithmetic Progression</h4>
-                    <p style="color:#ababab !important">
-                        In this progression, for a given series, the terms used are the first term, <br>
-                        the common difference between the two terms and nth term. Suppose, a1, a2, a3, …………….,<br>
-                         a<sub>n</sub> is an AP, then; the common difference “ d ” can be obtained as;</p>
-                         <h4>d = a2 – a1 = a3 – a2 = ……. = an – an – 1</h4>
-                         <p>Where “d” is a common difference. It can be positive, negative or zero.</p><br>
-                         <h4 style="font-size:32px;">First Term of AP</h4>
-                            <p style="color:#ababab !important">The AP can also be written in terms of common difference, as follows;
-                         <br>
-                         a, a + d, a + 2d, a + 3d, a + 4d, ………. ,a + (n – 1) d<br>
-                         where  “a” is the first term of the progression.</p><br>
-                         <h4 style="font-size:32px;">nth Term of an AP</h4>
-                         <p style="color:#ababab !important">a<sub>n</sub> = a + (n − 1) × d</p>
-                         <p style="color:#ababab !important">Where <br>
-                            a = First term<br>
-                            d = Common difference<br>
-                            n = number of terms<br>
-                            an = nth term<br><br>
-                          <h4 style="font-size:32px;">Sum of N Terms of AP</h4>
-                       <p style="color:#ababab !important">For any progression, the sum of n terms can be easily calculated. For an AP, <br>
-                        the sum of the first n terms can be calculated if the first term and the total<br>
-                         terms are known. The formula for the arithmetic progression sum is explained below:<br>
-                        Consider an AP consisting “n” terms.
-                        <p style="color:#ababab !important">S = n/2[2a + (n − 1) × d]</p><br>
-                       <h4 style="font-size:32px;"> Sum of AP when the Last Term is Given</h4>
-                       <p style="color:#ababab !important">Formula to find the sum of AP when first and last terms are given as follows:</p>
-                       <p style="color:#ababab !important"> S  = n/2 (first term + last term)</p><br>
-                        <h3 style="text-align: center;font-size:32px;">Formula Lists
-                        </h3>
-                        <br>
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-dark">
-                                <tbody class="abc">
-                                    <tr>
-                                        <td style="font-size:20px;color:#ababab !important">General Form of AP	</td>
-                                        <td style="font-size:20px;color:#ababab !important">a, a + d, a + 2d, a + 3d, . . .
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-size:20px;color:#ababab !important">The nth term of AP	</td>
-                                        <td style="font-size:20px;color:#ababab !important">a<sub>n</sub> = a + (n – 1) × d
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-size:20px;color:#ababab !important">Sum of n terms in AP</td>
-                                        <td style="font-size:20px;color:#ababab !important">S = n/2[2a + (n − 1) × d]
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-size:20px;color:#ababab !important">Sum of all terms in a finite<br> AP with the last term as ‘l’	</td>
-                                        <td style="font-size:20px;color:#ababab !important">n/2(a + l)
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                          </div>
-                       <br>
-                       <h4  style="font-size:34px;">Geometric Progressions</h4>
-                       <br>
-                       <p style="color:#ababab !important">If in a sequence of terms, each succeeding term is generated by multiplying<br>
-                         each preceding term with a constant value, then the sequence is called
-                          a geometric<br> progression. (GP), whereas the constant value is called the<br>
-                           common ratio. <br>For example, 2, 4, 8, 16, 32, 64, … is a GP, where the common ratio is 2.</p>
-                           <br>
-                           <p>
-                            <p>A sequence <span class="latex-for-amp" style="text-align: center; display: inline-block;"> \(a_1,a_2,a_3,…….a_n,….\) </span> is a G.P, then <br><br><span class="latex-for-amp" style="text-align: center; display: inline-block;">\(\frac{a_{k+1}}{a_k} = r~~~~~~~~~~~~ [k&gt;1]\)</span></p><br>
-                            <h4>Sum of Nth terms of G.P.</h4>
-                           <p style="color:#ababab !important">Consider the G.P,</p>
-                           <p ><span class="latex-for-amp" style="text-align: center; display: inline-block;">\(a,ar,ar^2,…..ar^{n-1}\)</span></p>
-                          <p>Let <span class="latex-for-amp" style="text-align: center; display: inline-block;">\(S_n,a,r\)</span> be the sum of n terms, first term and ratio of the G.P respectively.</p><br>
-                            <p ><span style="font-weight: 400;" style="text-align: center; display: inline-block;">\(Sn=\frac{a(r^n &#8211; 1)}{r-1}\)</span>
-                                <p style="color:#ababab !important" class="mathjax_equation">where r is note equal to 1</p><br>
-                                <h4>Sum To Infinity of GP</h4>
-                                <p style="color:#ababab !important">If the number of terms in a GP is not finite, then the GP is called <br>infinite GP. The formula to find the sum to infinity of the given GP is:</p><br>
-                                <p>\(S_{\infty}=\sum_{n=1}^{\infty} ar^{n-1}=\frac{a}{1-r}; -1&lt;r&lt;1\)</p>
-                                <p style="color:#ababab !important">Here,</p>
-                                <p style="color:#ababab !important">S<sub>∞</sub> = Sum of infinite geometric progression</p>
-                                <p style="color:#ababab !important">a = First term</p>
-                                <p style="color:#ababab !important">r = Common ratio</p>
-                                <p style="color:#ababab !important">n = Number of terms</p>
-                                                
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="collapse" id="parab">
             <h2 style="text-align: center;">ParaBoloid</h2>
@@ -13647,91 +12515,7 @@
             <p id="unitcircyans"></p>
         </div>
 
-        <div class="collapse" id="golds">
-            <h2 style="text-align: center; margin-bottom:20px;">Golden and Silver Ratio</h2>
-            <br><br>
-            </form>
-            <h2>Check whether two numbers are in golden ratio</h2>
-            <br>
-            <form>
-            <input type="text" id="golds1" class="form__field"placeholder="Enter the number1">
-            <input type="text" id="golds2" class="form__field"placeholder="Enter the number2">
-            <br>
-            <button type="button" class="btn btn-dark" onclick="golds1find()">Find</button>
-            <button type="button" class="btn btn-dark" onclick=calcexgolds1find()>
-                Example
-            </button>
-            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
-            <br>
-            <h5 id="golds1ans"></h5>
-            <h5 id="golds1exp"></h5>
-            <br>
-            </form>
-            <br>
-            </form>
-            <h2>Find nth Fibonacci number using Golden ratio</h2>
-            <br>
-            <form>
-            <input type="text" id="golds3" class="form__field"placeholder="Enter the nth fibonacci number">
-            <br>
-            <button type="button" class="btn btn-dark" onclick="golds2find()">Find</button>
-            <button type="button" class="btn btn-dark" onclick=calcexgolds2find()>
-                Example
-            </button>
-            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
-            <br>
-            <h5 id="golds2ans"></h5>
-            <h5 id="golds2exp"></h5>
-            <br>
-            <h2>Check whether two numbers are in silver ratio</h2>
-            <br>
-            <form>
-            <input type="text" id="golds4" class="form__field"placeholder="Enter the number">
-            <input type="text" id="golds5" class="form__field"placeholder="Enter the number2">
-            <br>
-            <button type="button" class="btn btn-dark" onclick="golds3find()">Find</button>
-            <button type="button" class="btn btn-dark" onclick=calcexgolds3find()>
-                Example
-            </button>
-            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
-            <br>
-            <h5 id="golds3ans"></h5>
-            <h5 id="golds3exp"></h5>
-            <br>
-            </form>
-            <br>
-            <h2>Nth Catalan Number</h2>
-            <br>
-            <form>
-            <input type="text" id="golds6" class="form__field"placeholder="Enter the number">
-            <br>
-            <button type="button" class="btn btn-dark" onclick="golds4find()">Find</button>
-            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>        
-            <br>
-            <h5 id="golds4ans"></h5>
-            <h5 id="golds4exp"></h5>
-            <br>
-            </form>
-            <br>
-            <h2>Check if a number is Primorial Prime or not</h2>            <br>
-            <form>
-            <input type="text" id="golds7" class="form__field"placeholder="Enter the number">            <br>
-            <button type="button" class="btn btn-dark" onclick="golds5find()">Find</button>
-            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>      
-            <br>
-            <h5 id="golds5ans"></h5 id="golds5exp"></h5> <br>
-            </form>
-            <br>
-            <h2>Fermat’s little theorem</h2>            <br>
-            <form>
-            <input type="text" id="golds8" class="form__field"placeholder="Enter the number"> 
-            <input type="text" id="golds9" class="form__field"placeholder="Enter the power">            <br>
-            <button type="button" class="btn btn-dark" onclick="golds6find()">Find</button>
-            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>      
-            <br>
-            <h5 id="golds6ans">
-            </form>
-        </div>
+
 
         <div class="collapse" id="hyptrigonoiden">
             <h2 style="text-align: center; margin-bottom:20px;">Hyperbolic Trigonometric Identities</h2>
@@ -14115,94 +12899,7 @@
             </div>
         </div>
         <!-- end of Smallest prime factor calculator -->
-        <div class="collapse"id="ali">
-            <h2>Aliquot Sum</h2>
-            <p> Aliquot Sum s(n) of a positive integer n is the sum of all proper divisors of n, that is, all divisors of n other than n itself.</p>
-            <br>
-            <form action="">
-                <input type="text" id="alisum"class="form__field"placeholder="Enter the number of terms for aliquot sum">
-                <br><br>
-                <button class="btn btn-dark" onclick="alisumfind()">Find</button>
-                <button class="btn btn-dark" onclick="calcexalisumfind()">
-                    Example
-                </button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                <br>
-            </form>
-            
-            <p id="alisumans" style="font-size: 26px;"></p>
-            <p id="aliexplain"></p>
-            <br>
-            <p>Primitive Abundant Number</p>
-            <br>
-            <form action="">
-                <input type="text" id="alisum1"class="form__field"placeholder="Enter the number ">
-                <br><br>
-                <button class="btn btn-dark" onclick="alisum1find()">Find</button>
-                <button class="btn btn-dark" onclick="calcexalisum1find()">
-                    Example
-                </button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                <br>
-            </form>
-            
-            <p id="alisum1ans" style="font-size: 26px;"></p>
-            <p id="alisum1exp" style="font-size: 26px;"></p>
-            <br>
-            <p>Check if a number can be expressed as sum two abundant numbers </p>
-            <br>
-            <form action="">
-                <input type="text" id="alisum2"class="form__field"placeholder="Enter the number ">
-                <br><br>
-                <button class="btn btn-dark" onclick="alisum2find()">Find</button>
-                <button class="btn btn-dark" onclick="calcexalisum2find()">
-                    Example
-                </button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                <br>
-            </form>            
-            <p id="alisum2ans" style="font-size: 26px;"></p>
-            <p id="alisum2exp" style="font-size: 26px;"></p>
-            <br>
-            <p>Hosoya’s Triangle</p>
-            <br>
-            <form action="">
-                <input type="text" id="alisum3"class="form__field"placeholder="Enter the height of triangle ">
-                <br><br>
-                <button class="btn btn-dark" onclick="alisum3find()">Find</button>
-                <button class="btn btn-dark" onclick="calcexalisum3find()"> Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>                <br>
-            </form>            
-            <p id="alisum3ans" style="font-size: 26px;"></p>
-            <p id="alisum3exp" style="font-size: 26px;"></p>
-            <br>
-            <p>Cassini’s Identity</p>
-            <br>
-            <form action="">
-                <input type="text" id="alisum4"class="form__field"placeholder="Enter the number ">
-                <br><br>
-                <button class="btn btn-dark" onclick="alisum4find()">Find</button>
-                <button class="btn btn-dark" onclick="calcexalisum4find()">
-                    Example
-                </button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                <br>
-            </form>            
-            <p id="alisum4ans" style="font-size: 26px;"></p>
-            <p id="alisum4exp" style="font-size: 26px;"></p>
-            <br>
-            <p>Primorial of a number</p>
-            <br>
-            <form action="">
-                <input type="text" id="alisum5"class="form__field"placeholder="Enter the number ">
-                <br><br>
-                <button class="btn btn-dark" onclick="alisum5find()">Find</button>
-                <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                <br>
-            </form>            
-            <p id="alisum5ans" style="font-size: 26px;"></p>
-            <p id="alisum5exp" style="font-size: 26px;"></p>
-        </div>
+
         <!-- start of Sum of divisors  calculator -->
          <div>
             <div class="collapse" id="sumDiv">
@@ -21513,597 +20210,6 @@
     
         </div>
 
-        <div class="collapse" id="sum_n">
-            <br>
-            <div class="text-center">
-                <h2><label>Sum of N terms of AP,GP and HP</label></h2><br><br>
-                <h2 class="d-flex justify-content-center">1) Sum of N terms of an Arithmetic Progression</h2>
-            </div>
-            <!--sum of nterms in A.P.-->
-            <br>
-            <h4 class="d-flex justify-content-center">If first term, number of terms and common difference is given</h4><br>
-            <form class="form-inline d-flex justify-content-center" id="myForm">
-                <input type="number" id="napterms" placeholder="Enter the Nterms  (n)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="rapterms" placeholder="Enter the first term(a) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="r1val"
-                       placeholder="Enter the difference between two consecutive terms (d) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-                <br>
-                <br>
-                <div class="row">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="sum_n_apsol('napterms','rapterms','r1val')">
-                            Find
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="ResetVal()">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=calcexsum_n_apsol()>
-                            Example
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <div class="form-group">
-                <p id="printAPseries" style="font-family:mathfont;width:auto;"
-                   class="stopwrap"></p>
-                <br>
-            </div>
-            <h4 class="d-flex justify-content-center">If first term,number of terms and last term is given</h4><br>
-            <form class="form-inline d-flex justify-content-center" id="myForm">
-                <input type="number" id="numterms" placeholder="Enter the Nterms  (n)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="ft" placeholder="Enter the first term(a) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="lt" placeholder="Enter the last term(l)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-                <br>
-                <br>
-                <div class="row">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=anotherap()>
-                            Find
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=calcexanotherap()>
-                            Example
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <br>
-            <div class="form-group">
-                <p id="printAPseries1" style="font-family:mathfont;width:auto;"
-                   class="stopwrap"></p>
-                <br>
-            </div>
-			<br>
-
-            <h4 class="d-flex justify-content-center">Insert n-Arthimetic Mean between two numbers</h4><br>
-            <form class="form-inline d-flex justify-content-center" id="myForm">
-                <input type="number" id="nt1" placeholder="Enter the Nterms  (n)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="ft1" placeholder="Enter the first number(a) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="lt1" placeholder="Enter the second number(b)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-                <br>
-                <br>
-                <div class="row">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=nap()>
-                            Find
-                        </button>
-                    </div>
-                    
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=calcexnap()>
-                            Example
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <br>
-            <div class="form-group">
-               <p id="nAPseries2" style="font-family:mathfont;width:auto;" class="stopwrap"></p><br>
-            </div>
-			<br>
-            <h4 class="d-flex justify-content-center">If number of terms and the AP is given</h4><br>
-            <form class="form-inline d-flex justify-content-center">
-                <input type="number" id="nterms" placeholder="Enter the Number of terms(n)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:30%; color: var(--appimage);"><br>
-
-                <input type="text" id="ap" placeholder="Enter AP(comma separated)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
-                <br><br>
-                <div class="row">
-                    <div class="col-4">        
-                        <button type="button" class="btn btn-light" onclick=apsum()>
-                            Find
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">        
-                        <button type="button" class="btn btn-light" onclick=calcexapsum()>
-                            Example
-                        </button>
-                    </div>
-                    
-                </div>
-            </form>
-            <p id="printAP" style="display:flex;font-family:mathfont;width:auto;" class="stopwrap"></p><br>
-            <br>
-            <h4 class="d-flex justify-content-center">Sum of P terms of an AP if mth and nth terms are given</h4><br>
-            <form class="form-inline d-flex justify-content-center">
-                <input type="number" id="mterm" placeholder="Enter the Number of terms (m)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
-                <input type="number" id="nterm" placeholder="Enter the Number of terms (n)"
-                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
-                       <input type="number" id="mthterm" placeholder="Enter the mth term (mth) "
-                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
-                       <input type="number" id="nthterm" placeholder="Enter the nth term (nth) "
-                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
-                       <input type="number" id="pterm" placeholder="Enter p terms (p)"
-                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
-                <br><br>
-                <div class="row">
-                    <div class="col-4">        
-                        <button type="button" class="btn btn-light" onclick=mnapsum()>
-                            Find
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">        
-                        <button type="button" class="btn btn-light" onclick=calcexmnapsum()>
-                            Example
-                        </button>
-                    </div>
-                    
-                </div>
-            </form>
-            <br><br>
-            <h5 id="printmnAP"  style="text-align: center;font-family:mathfont;width:auto;" class="stopwrap"></h5><br>
-            <br>
-            <h4 class="d-flex justify-content-center">Ratio of mth and nth terms of an AP</h4><br>
-            <form class="form-inline d-flex justify-content-center">
-                <input type="number" id="mterm99" placeholder="Enter the Number of terms (m)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
-                <input type="number" id="nterm98" placeholder="Enter the Number of terms (n)"
-                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
-                <br><br>
-                <div class="row">
-                    <div class="col-4">        
-                        <button type="button" class="btn btn-light" onclick=mnap()>
-                            Find
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">        
-                        <button type="button" class="btn btn-light" onclick=calcexmnap()>
-                            Example
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <br><br>
-            <h5 id="printmnAPans"  style="text-align: center;font-family:mathfont;width:auto;" class="stopwrap"></h5><br>
-            <br>
-            <h4 class="d-flex justify-content-center">Constant/Increasing/Decreasing AP</h4><br>
-            <form class="form-inline d-flex justify-content-center" id="myForm">
-            <!-- <form class="form-inline"> -->
-                <input type="number" id="term121" placeholder="Enter the first term  (a)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="term112" placeholder="Enter the second term (a+d) "
-                       style="border: none; background: transparent; width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <br>
-                <div class="row">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick=constAp()>
-                            Find
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick = this.form.reset();>
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick = calcexconstAp()>
-                            Example
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <div class="form-group">
-                <p id="printAPconst" style="font-family:mathfont;width:auto;"
-                   class="stopwrap"></p>
-                <br>
-            </div>
-            <br>
-            <h4 class="d-flex justify-content-center">Three consecutive term (AP, GP OR HP)</h4><br>
-            <form class="form-inline d-flex justify-content-center" id="myForm">
-                <input type="number" id="num131" placeholder="Enter the first term  (a)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="num141" placeholder="Enter the second term (b) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="num151" placeholder="Enter the third term (c)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-                <br>
-                <br>
-                <div class="row">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=apgphp()>
-                            Find
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=calcexapgphp()>
-                            Example
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <br>
-            <div class="form-group">
-                <p id="printapgphp" style="font-family:mathfont;width:auto;"
-                   class="stopwrap"></p>
-                <br>
-            </div>
-			<br>
-            <!-- sum of nterms in G.P.  -->
-       <h2 class="d-flex justify-content-center">2) Sum of N terms of a Geometric Progression</h2>
-       <div class="form-group d-flex justify-content-center">
-       <form>
-           <input type="number" style="width: 15.625rem;" class="form__field"
-                  id="firstterm"
-                  placeholder="Enter first term"/>
-           <input type="number" style="width: 15.625rem;" class="form__field" id="ratio"
-                  placeholder="Enter ratio between terms"/>
-           <input type="number" style="width: 15.625rem;" class="form__field" id="number"
-                  placeholder="Enter number of terms"/>
-           <br>
-           <div class=" mt-3 row">
-               <div class="col-4">
-                   <button type="button" class="btn btn-light" onclick=gp()>Find</button>
-               </div>
-               <div class="col-4">
-                   <button type="button" class="btn btn-light"
-                   onclick="this.form.reset();">
-                   Reset
-                   </button>
-               </div>
-               <div class="col-4">
-                <button type="button" class="btn btn-light" onclick=calcexgp()>
-                    Example
-                </button>
-            </div>
-           </div>
-           <br>
-       </form>
-       </div>    
-       <div class="form-group">
-           <p id="printGPseries" style="font-family:mathfont;width:auto;"
-              class="stopwrap"></p>
-           <br>
-           <p id="sumGP_formula" style="font-family:mathfont;width:auto;"
-              class="stopwrap"></p>
-           <br>
-       </div>
-
-            <h2 class="d-flex justify-content-center">Sum of infinite terms of a Geometric Progression with common ratio less than
-                1</h2>
-            <div class="form-group d-flex justify-content-center">
-                <form>
-                    <input type="number" style="width: 15.625rem;" class="form__field" id="fterm"
-                       placeholder="Enter first term"/>
-                <input type="number" style="width: 15.625rem;" class="form__field" id="r12"
-                       placeholder="Enter ratio between terms"/>
-                <br>
-                <div class="mt-3 row">
-                    <div class="col-4">      
-                         <button type="button" class="btn btn-light" onclick=igp()>Find</button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick = "this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=calcexigp()>
-                            Example
-                        </button>
-                    </div>
-                </div>
-                <br>
-                </form>
-                <br> <br>
-                <div style="color:var(--appimage); font-size: large;" id="sumigp"></div>
-            </div>
-            <br>
-
-            <h4 class="d-flex justify-content-center">Insert n-Geometric Mean between two numbers</h4><br>
-            <form class="form-inline d-flex justify-content-center" id="myForm">
-                <input type="number" id="nt2" placeholder="Enter the Nterms  (n)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="ft2" placeholder="Enter the first number(a) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="lt2" placeholder="Enter the second number(b)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-                <br>
-                <br>
-                <div class="row">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=ngp()>
-                            Find
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=calcexngp()>
-                            Example
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <br>
-            <div class="form-group">
-               <p id="nGPseries2" style="font-family:mathfont;width:auto;" class="stopwrap"></p>
-			  <br>
-            </div>
-            
-            <br>
-            <h4 class="d-flex justify-content-center">Sum of P terms of an GP if mth and nth terms are given</h4><br>
-            <form class="form-inline d-flex justify-content-center">
-                <input type="number" id="mterm1" placeholder="Enter the Number of terms (m)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
-                <input type="number" id="nterm1" placeholder="Enter the Number of terms (n)"
-                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
-                       <input type="number" id="mthterm1" placeholder="Enter the mth term (mth) "
-                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
-                       <input type="number" id="nthterm1" placeholder="Enter the nth term (nth) "
-                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);"><br>
-                       <input type="number" id="pterm1" placeholder="Enter p terms (p)"
-                       style="border: none; background: transparent;border-bottom: 0.0625rem solid white;width:40%; color: var(--appimage);">
-                <br><br>
-                <div class="row">
-                    <div class="col-4">        
-                        <button type="button" class="btn btn-light" onclick=mngpsum()>
-                            Find
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">        
-                        <button type="button" class="btn btn-light" onclick=calcexmngpsum()>
-                            Example
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <br><br>
-            <h5 id="printmnGP"  style="text-align: center;font-family:mathfont;width:auto;" class="stopwrap"></h5><br>
-            <br>
-            <h4 class="d-flex justify-content-center">Constant/Increasing/Decreasing GP</h4><br>
-            <form class="form-inline d-flex justify-content-center" id="myForm">
-            <!-- <form class="form-inline"> -->
-                <input type="number" id="term151" placeholder="Enter the first term  (a)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="term152" placeholder="Enter the second term (ar) "
-                       style="border: none; background: transparent; width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <br>
-                <div class="row">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="constGp()">
-                            Find
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="calcexconstGp()">
-                            Example
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <div class="form-group">
-                <p id="printGPconst" style="font-family:mathfont;width:auto;"
-                   class="stopwrap"></p>
-                <br>
-            </div>
-            <br>
-            <!-- sum of nterms in H.P.  -->
-            <h2 class="d-flex justify-content-center">3) Sum of N terms of a Harmonic Progression</h2>
-            <div class="form-group d-flex justify-content-center">
-                <form>
-                    <input type="number" style="width: 15.625rem;" class="form__field"
-                       id="firstTerm"
-                       placeholder="Enter first term"/>
-                <input type="number" style="width: 15.625rem;" class="form__field" id="diff"
-                       placeholder="Enter difference between terms"/>
-                <input type="number" style="width: 15.625rem;" class="form__field" id="noofTerms"
-                       placeholder="Enter number of terms"/>
-                <br>
-                <div class=" mt-3 row">
-                    <div class="col-4">      
-                        <button type="button" class="btn btn-light" onclick="hp()">Find</button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">      
-                        <button type="button" class="btn btn-light" onclick="calcexhp()">
-                            Example
-                        </button>
-                    </div>
-                </div>
-                <br>
-                </form>
-            </div>
-                <p id="printHPseries"></p>
-                <br><br>
-            <h4 class="d-flex justify-content-center">Insert n-Harmonic Mean between two numbers</h4><br>
-            <form class="form-inline d-flex justify-content-center" id="myForm">
-                <input type="number" id="nt3" placeholder="Enter the Nterms  (n)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="ft3" placeholder="Enter the first number(a) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                <input type="number" id="lt3" placeholder="Enter the second number(b)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
-                <br>
-                <br>
-                <div class="row">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=nhp()>
-                            Find
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                    <div class="col-4">        
-                        <button type="button" class="btn btn-light" onclick=calcexnhp()>
-                            Example
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <br>
-            <p id="nHPseries2" style="font-family:mathfont;width:auto;" class="stopwrap"></p>
-			<br>
-
-                <h2  class="d-flex justify-content-center" style="font-family:mathfont; text-align:center;">Harmonic Progression's N<sub>th</sub> term </h2>
-                <div class="form-group d-flex justify-content-center">
-                    <form>
-                        <input type="number" name="ath" class="form__field" id="ath" width="5em" placeholder="Enter first number">
-                        <p>&nbsp;</p>
-                        <input type="number" name="differ" class="form__field" id="differ" placeholder="Enter common difference">
-                        <p>&nbsp;</p>
-                        <input type="number" name="totno" class="form__field" id="totno" placeholder="Enter the number of term to find">
-                        <p>&nbsp;</p>
-                        <div class="row">
-                            <div class="col-4">      
-                                <button type="button" class="btn btn-light" onclick="hpcal()">Calculate</button>
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-light"
-                                onclick="this.form.reset();">
-                                Reset
-                                </button>
-                            </div>
-                            <div class="col-4">        
-                                <button type="button" class="btn btn-light" onclick=calcexhpcal()>
-                                    Example
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                <p id="hpans"></p>
-                </div>
-                <p>&nbsp;</p>
-                <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;">
-                    A Harmonic Progression (HP) is defined as a sequence of real numbers which is determined by taking the reciprocals of the arithmetic progression<br>
-                     that does not contain 0. In harmonic progression, any term in the sequence is considered as the<br>
-                      harmonic means of its two neighbours. For example, the sequence a, b, c, d, …is considered as an arithmetic progression; <br>
-                      the harmonic progression can be written as 1/a, 1/b, 1/c, 1/d, …
-                </div>
-                <br>
-                <h2  class="d-flex justify-content-center" style="font-family:mathfont; text-align:center;">Harmonic Progression's N<sub>th</sub> term from End </h2>
-                <div class="form-group d-flex justify-content-center">
-                    <form>
-                        <input type="number" name="lterm" class="form__field" id="lterm1" width="5em" placeholder="Enter last term (l)">
-                        <p>&nbsp;</p>
-                        <input type="number" name="cdiffer" class="form__field" id="cdiffer1" placeholder="Enter common difference (d)">
-                        <p>&nbsp;</p>
-                        <input type="number" name="totnum" class="form__field" id="totnum1" placeholder="Enter the number of term to find (n)">
-                        <p>&nbsp;</p>
-                        <div class="row">
-                            <div class="col-4">      
-                                <button type="button" class="btn btn-light" onclick="hpcal11()">Calculate</button>
-                            </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-light"
-                                onclick="this.form.reset();">
-                                Reset
-                                </button>
-                            </div>
-                            <div class="col-4">        
-                                <button type="button" class="btn btn-light" onclick=calcexhpcal11()>
-                                    Example
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                <p id="hpans11"></p>
-
-            </div>
-        </div>
-
 
         <!--Cost and selling prices-->
         <div class="collapse" id="prices">
@@ -22207,138 +20313,6 @@
         
         <!-- sum of nterms in H.P. ends -->
 
-        <div class="collapse text-center" id="mean">
-            <div class="text-center">
-                <h2><label>Mean Calculator</label></h2>
-            </div>
-            <br><br>
-            <h4 class="d-flex justify-content-center">Arithmetic Mean</h4><br>
-            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
-                        <input type="number" id="aval" placeholder="Enter the first term (a)"
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                        <input type="number" id="cval" placeholder="Enter the last term(c) "
-                     style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                     <div class="row">
-                        <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=amsol()>
-                     Solve
-                     </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light" onclick=calcexamsol()>
-                            Example
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-light"
-                        onclick="this.form.reset();">
-                        Reset
-                        </button>
-                    </div>
-                </div>
-            </form>
-            <br>
-            <div class="coll1" style="text-align: center;">
-            <p id="am_formula" style="font-family:mathfont;;width:auto;"
-               class="stopwrap"></p>
-            <h5 id="am"></h5>
-            </div>
-            <br><br>
-            <h4 class="d-flex justify-content-center">Geometric Mean</h4><br>
-            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
-                            <input type="number" id="aval1" placeholder="Enter the first term (a)"
-                          style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                        
-                            <input type="number" id="cval1" placeholder="Enter the last term(c) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                        
-                       <div class="row">
-                        <div class="col-4">
-                            <button type="button" class="btn btn-light" onclick=gmsol()>
-                                Solve
-                            </button>
-                        </div>
-                        <div class="col-4">
-                            <button type="button" class="btn btn-light" onclick=calcexgmsol()>
-                                Example
-                            </button>
-                        </div>
-                        <div class="col-4">
-                            <button type="button" class="btn btn-light"
-                            onclick="this.form.reset();">
-                            Reset
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <br>
-                <div class="coll1" style="text-align: center;">
-            <p id="gm_formula" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
-            <h5 id="gm"></h5>
-                </div>
-            <br><br>
-            <h4 class="d-flex justify-content-center">Harmonic Mean</h4><br>
-            <form class="form-inline d-flex flex-column align-items-center" id="myForm">
-                            <input type="number" id="aval2" placeholder="Enter the first term (a)"
-                         style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-
-                            <input type="number" id="cval2" placeholder="Enter the last term(c) "
-                       style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                       <div class="row">
-                        <div class="col-4">
-                            <button type="button" class="btn btn-light" onclick=hmsol()>
-                                Solve
-                            </button>
-                        </div>
-                        <div class="col-4">
-                            <button type="button" class="btn btn-light"
-                            onclick="this.form.reset();">
-                            Reset
-                            </button>
-                        </div>
-                        <div class="col-4">
-                            <button type="button" class="btn btn-light" onclick=calcexhmsol()>
-                                Example
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <br>
-                <div class="coll1" style="text-align: center;">
-            <p id="hm_formula" style="font-family:mathfont;;width:auto;"class="stopwrap"></p>
-            <h5 id="hm"></h5>
-                </div>
-                <br><br>
-                <h4 class="d-flex justify-content-center">To calculate HM when AM and GM are given</h4><br>
-                <form class="form-inline d-flex flex-column align-items-center" id="myForm">
-                            <input type="number" id="am11" placeholder="Enter Arthimetic Mean (AM)"
-                           style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                            <input type="number" id="gm11" placeholder="Enter Geometric Mean (GM) "
-                         style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
-                         <div class="row">
-                            <div class="col-4">
-                            <button type="button" class="btn btn-light" onclick=hmgm()>
-                         Solve
-                         </button>
-                        </div>
-                        <div class="col-4">
-                            <button type="button" class="btn btn-light"
-                            onclick="this.form.reset();">
-                            Reset
-                            </button>
-                        </div>
-                        <div class="col-4">
-                            <button type="button" class="btn btn-light" onclick=calcexhmgm()>
-                                Example
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <br>
-                <div class="coll1" style="text-align: center;">
-                <p id="hmgmans" style="font-family:mathfont;;width:auto;"class="stopwrap"></p>
-                </div>
-        </div>
         <!-- sum of nterms in G.P. ends  -->
         <div class="collapse" id="convdiv">
             <h2>Convergence and Divergence of Series
@@ -23588,34 +21562,6 @@ N is the population size.
 </div>
 
 
-<div class="collapse" id="slvxs">
-    <h1 style="font-family:mathfont; text-align:center;">SOLVE FOR X</h1><br><br>
-    <div class= "coll" style="margin-left:14.375rem"></div>
-    <p>
-        <form action="" class="">
-            <div class="form-group d-flex justify-content-center">
-                <input type="text" class="form-control" id="solvex" size=5 value='' placeholder="a" style="width: 100%; max-width: 200px;">
-                <label for="#solvey" style="margin-top: 0.6rem;">X+</label>
-                <input type="text" class="form-control" id="solvey" size=5 value='' placeholder="b" style="width: 100%; max-width: 200px;">
-                <label for="#solvez" style="margin-top: 0.6rem;">=</label> 
-                <input type="text" class="form-control" id="solvez" size=5 value='' placeholder="c" style="width: 100%; max-width: 200px;">
-            </div>
-            <div class="form-group d-flex justify-content-center ml-2">
-                <button type="button" class="btn btn-light mb-5" style="width:8em" onclick=slvcal()>   Solve    </button><br><br>
-                <button type="button" class="btn btn-light mb-5" style="width:8em" onclick=calcexslvcal()>
-                    Example
-                </button><br><br>
-                <button type="button" class="btn btn-light mb-5" style="width:8em" onclick="this.form.reset();">
-                    Reset
-                </button>
-            </div>
-            
-        </form>
-    
-    <p>&nbsp;</p>
-    <div id="slvans" style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"></div>
-    </p>
-</div>
 
 <div id="perats" class="collapse">
     <h1 style="font-family:mathfont; text-align:center;">Percentage to Ratio</h1><br><br>
@@ -26484,345 +24430,6 @@ N is the population size.
 </div>
 <!-- End of grey convertor -->
 
-<div class="collapse" id="impse">
-    <h2>Important Series and Sequences</h2>
-    <br><br>
-    <h4>Sum of the sequence x, xx, xxx, ………</h4><br>
-    <form action="">
-        <input type="text" id="impse1"class="form__field"placeholder="Enter value of x">
-        <input type="text" id="impse2"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="text" onclick="impsefind()">Find</button>        
-        <button type="button" class="btn btn-light" onclick=calceximpsefind()>
-         Example
-        </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>
-    
-    <p id="impseans" style= "font-family:mathfont"></p><br>
-    <p id="impseans1" style= "font-family:mathfont"></p><br>
-    <br>
-    <h4>Sum of the sequence 3, 6, 11, ………</h4><br>
-    <form action="">
-        <input type="text" id="impse32"class="form__field"placeholder="Enter no. of terms"><br>
-        <button type="button" class="btn btn-dark" onclick="impse13findd()">Find</button>
-        <button type="button" class="btn btn-dark" onclick="calceximpse13findd()">
-            Example
-        </button>
-        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>
-    
-    <p id="impseans32" style= "font-family:mathfont"></p><br>
-    <br>
-    <h4>Sum of first N terms of the series 2*3*5, 3*5*7, 4*7*9, …… </h4><br>
-    <form action="">
-        <input type="text" id="impse35"class="form__field"placeholder="Enter no. of terms"><br>
-        <button type="button" class="btn btn-dark" onclick="impse36find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick="calceximpse36find()">
-            Example
-        </button>
-        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>
-    
-    <p id="impseans35" style= "font-family:mathfont"></p><br>
-    <br>
-    <h4>Sum of series: 1 – x^2/2! + x^4/4! -…. upto nth term </h4>
-    <br>
-    <form action="">
-        <input type="text" id="impse3"class="form__field"placeholder="Enter value of x">
-        <input type="text" id="impse4"class="form__field"placeholder="Enter no. of terms">
-        <br>
-        <button type="button" class="btn btn-dark" onclick="impse1find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick="calceximpse1find()">
-            Example
-        </button>
-        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-        <br>
-    </form>
-    
-    <p id="impse1ans"></p>
-    <br>
-    <h4>Sum of the series 1 + x + x^2+ x^3+ .. + x^n</h4>
-    <br>
-    <form action="">
-        <input type="text" id="impse5"class="form__field"placeholder="Enter value of x">
-        <input type="text" id="impse6"class="form__field"placeholder="Enter no. of terms">
-        <br>
-        <button type="button" class="btn btn-dark" onclick="impse2find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick="calceximpse2find()">
-            Example
-        </button>
-        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-        <br>
-    </form>
-    
-    <p id="impse2ans"></p>
-    <br>
-    <h4>Sum of look and say sequence</h4>
-    <br>
-    <form action="">
-        <input type="text" id="impse7"class="form__field"placeholder="Enter no. of terms">
-        <br>
-        <button type="button" class="btn btn-dark" onclick="impse3find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick="calceximpse3find()">
-            Example
-        </button>
-        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-        <br>
-    </form>    
-    <p id="impse3ans"></p>
-    <p id="impse3exp"></p>
-    <br>
-    <h4>Sum of Gould's sequence</h4><br>
-    <form action="">
-        <input type="text" id="impse8"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse4find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calceximpse4find()>
-            Example
-        </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>    
-    <p id="impse4ans"></p>
-    <p id="impse4exp"></p>
-    <br>
-    <h4>Moser-de Bruijn Sequence</h4><br>
-    <form action="">
-        <input type="text" id="impse99"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse99find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calceximpse5find()>
-            Example
-        </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>    
-    <p id="impse99ans"></p>
-    <p id="impse99exp"></p>
-    <br>
-    <h4>Sum of Arcuin's sequence</h4><br>
-    <form action="">
-        <input type="text" id="impse9"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse5find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calceximpse5find()>
-            Example
-           </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>
-    
-    <p id="impse5ans" style= "font-family:mathfont"></p><br>
-    <p id="impse5ans1" style= "font-family:mathfont"></p><br>
-
-    <h4>Sum of the series 1+22+333+4444+…… upto n terms</h4><br>
-    <form action="">
-        <input type="text" id="impse10"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse6find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calceximpse6find()>
-            Example
-           </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>
-    
-    <p id="impse6ans"></p><br>
-    <p id="impse6ans1"></p><br>
-
-    <h4>Sum of the series 0.X + 0.XX + 0.XXX +… upto k terms</h4><br>
-    <form action="">
-        <input type="text" id="impse1x"class="form__field"placeholder="Enter value of x"><br>
-        <input type="text" id="impse11"class="form__field"placeholder="Enter no. of terms"><br>
-        <button type="button" class="btn btn-dark" onclick="impse7find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calceximpse7find()>
-            Example
-           </button>
-        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>
-    
-    <p id="impse7ans" style= "font-family:mathfont"></p><br>
-    <p id="impse7ans1" style= "font-family:mathfont"></p><br>
-    <br>
-    <h4>Gijswijt’s Sequence</h4><br>
-    <form action="">
-        <input type="text" id="impse12"class="form__field"placeholder="Enter no. of terms"><br>
-        <button type="button" class="btn btn-dark" onclick="impse8find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calceximpse8find()>
-            Example
-           </button>
-        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>
-    
-    <p id="impse8ans"></p>
-    <br>
-    <h4>Juggler Sequence</h4>
-    <br>
-    <form action="">
-        <input type="text" id="impse18"class="form__field"placeholder="Enter no. of terms">
-        <br>
-        <button class="btn btn-dark" onclick="impse18find()">Find</button>
-        <button class="btn btn-dark" onclick="calceximpse18find()">
-            Find
-        </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-        <br>
-    </form>
-    
-    <p id="impse18ans"></p>
-    <p id="impse18exp"></p>
-    <br>
-    <h4>Padovan Sequence</h4>
-    <br>
-    <form action="">
-        <input type="text" id="impse19"class="form__field"placeholder="Enter no. of terms">
-        <br>
-        <button class="btn btn-dark" onclick="impse19find()">Find</button>
-        <button class="btn btn-dark" onclick="calceximpse19find()">
-            Example
-        </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-        <br>
-    </form>
-    
-    <p id="impse19ans"></p>
-    <p id="impse19exp"></p>
-    <br>
-    <h4>Recamann Sequence</h4>
-    <br>
-    <form action="">
-        <input type="text" id="impse20"class="form__field"placeholder="Enter no. of terms">
-        <br>
-        <button class="btn btn-dark" onclick="impse20find()">Find</button>
-        <button class="btn btn-dark" onclick="calceximpse20find()">
-            Example
-        </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-        <br>
-    </form>    
-    <p id="impse20ans"></p>
-    <br>
-    <h4>Collatz Sequence</h4><br>
-    <form action="">
-        <input type="text" id="impse21"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse21find()">Find</button>
-        <button class="btn btn-dark" onclick="calceximpse21find()">
-            Example
-        </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>    
-    <p id="impse21ans"></p><p id="impse21exp"></p>
-    <br>
-    <h4>Sylvester’s Sequence</h4><br>
-    <form action="">
-        <input type="text" id="impse24"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse24find()">Find</button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>    
-    <p id="impse24ans"></p>
-    <p id="impse24exp"></p>
-    <br>
-    <h4>Sum of the series 1 / 1 + (1 + 2) / (1 * 2) + (1 + 2 + 3) / (1 * 2 * 3) + – – – – – – upto n terms.</h4>
-    <br>
-    <form action="">
-        <input type="text" id="impse13"class="form__field"placeholder="Enter no. of terms">
-        <br>
-        <button class="btn btn-dark" onclick="impse9find()">Find</button>
-        <button class="btn btn-dark" onclick="calceximpse9find()">
-            Find
-        </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-        <br>
-    </form>
-    
-    <p id="impse9ans"></p>
-    <br>
-    <h4>Sum of a Series 1/1! + 2/2! + 3/3! + 4/4! +…….+ n/n!</h4>
-    <br>
-    <form action="">
-        <input type="text" id="impse14"class="form__field"placeholder="Enter no. of terms">
-        <br>
-        <button class="btn btn-dark" onclick="impse10find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calceximpse10find()>
-            Example
-           </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-        <br>
-    </form>
-    
-    <p id="impse10ans"></p>
-    <br>
-    <h4>Sum of series 2/3 – 4/5 + 6/7 – 8/9 + ——- upto n terms </h4><br>
-    <form action="">
-        <input type="text" id="impse15"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse11find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calceximpse11find()>
-            Example
-           </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>
-    
-    <p id="impse11ans"></p><br>
-    <h4>Sum of first n terms of Quadratic Sequence 3 + 7 + 13 + ...... upto n terms </h4>
-    <br>
-    <form action="">
-        <input type="text" id="impse201"class="form__field"placeholder="Enter no. of terms">
-        <br>
-        <button class="btn btn-dark" onclick="impsefind20()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calceximpsefind20()>
-            Example
-           </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-    </form>
-    
-    <br>
-    <p id="impseans20"></p>
-    <br><h4>Sum of the series 1-2+3-4+5-6+7…….</h4><br>
-    <form action="">
-        <input type="text" id="impse16"class="form__field"placeholder="Enter no. of terms"><br>
-        <button class="btn btn-dark" onclick="impse12find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calceximpse12find()>
-            Example
-           </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-    </form>
-    
-    <p id="impse12ans"></p><br>
-    <br>
-    <h4>Sum of series 1*2*3 + 2*3*4+ 3*4*5 + . . . + n*(n+1)*(n+2)</h4>
-    <br>
-    <form action="">
-        <input type="text" id="impse17"class="form__field"placeholder="Enter no. of terms">
-        <br>
-        <button class="btn btn-dark" onclick="impse13find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calceximpse13find()>
-            Example
-           </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-        <br>
-    </form>
-    
-    <p id="impse13ans"></p>
-    <p id="impse13exp"></p>
-    <br>
-    <h4>Nth term of Ruler Function Series</h4>
-    <br>
-    <input type="text" id="impse57"class="form__field"placeholder="Enter no. of terms">
-    <br>
-    <button class="btn btn-dark" onclick="impsefind22()">Find</button>
-    <button type="button" class="btn btn-dark" onclick=calceximpsefind22()>
-        Example
-       </button>
-    <br>
-    <p id="impse57ans"></p>
-    <br>
-    <h4>Nth term of Series 12, 35, 81, 173, 357, …</h4>
-    <br>
-    <form action="">
-        <input type="text" id="imp113"class="form__field"placeholder="Enter no. of terms">
-        <br>
-        <button class="btn btn-dark" onclick="nth113find()">Find</button>
-        <button type="button" class="btn btn-dark" onclick=calcexnth113find()>
-            Example
-           </button>
-        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-        <br>
-    </form>
-    
-    <p id="nth113ans"></p>
-</div>
 
         <!-- start of Hamming Code -->
         <div>
