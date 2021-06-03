@@ -1,0 +1,199 @@
+<!--Calculator for trivial hyperbola solution-->
+<div class="stopwrap">
+    <table class="table table-bordered table-dark mb-4">
+        <thead>
+            <tr class="text-center">
+                <th scope="col" colspan="2">
+                    \[Choose\space your\space Equation \space type:\]
+
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="op_hyper" id="op1_hyper"
+                            oninput="cal_func_hyperbola();" checked>
+                        <label class="form-check-label" for="op1_hyper">
+                            \[\frac{x^2}{a^2}\space - \frac{y^2}{b^2}\space = 1\]
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="op_hyper" id="op2_hyper"
+                            oninput="cal_func_hyperbola();">
+                        <label class="form-check-label" for="op2_hyper">
+                            \[\frac{x^2}{b^2}\space - \frac{y^2}{a^2}\space = 1\]
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="op_hyper" id="op3_hyper"
+                            oninput="cal_func_hyperbola();">
+                        <label class="form-check-label" for="op3_hyper">
+                            \[{x^2}\space - {y^2}\space = {a^2}\]
+                        </label>
+                    </div>
+
+                    \[Eccentricity\space of\space hyperbola\space:\space \frac{\sqrt{a^2
+                    + b^2}}{a}\]
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="number" id="ahy-number" class="form__field" placeholder="Enter value of 'a'"
+                        oninput="cal_func_hyperbola();">
+                </th>
+                <th>
+                    <input type="number" id="bhy-number" class="form__field" placeholder="Enter value of 'b'"
+                        oninput="cal_func_hyperbola();">
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <h4 id="hyperbola_intro" style="color: var(--appwhite);"></h4>
+                    <div class="form-group" style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
+                        <p id="result_cal_func_hyperbola"></p>
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<!--Calculator code for trivial hyperbola solution ends here-->
+<br>
+<div class="stopwrap">
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col">\[Equation\]</th>
+                <th scope="col">\[Graph\]</th>
+                <th scope="col">\[Focus\]</th>
+                <th scope="col">\[Length\space of\space LR\]</th>
+                <th scope="col">\[Directrix\]</th>
+                <th scope="col">\[Length\space of\space Transverse\space Axis\]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">\[\frac{x^2}{a^2}\space-\frac{y^2}{b^2}\space=1\]</th>
+                <td><img src="images/Hyperbola1.png" class="img-fluid"></td>
+                <td>\[(±ae,0)\]</td>
+                <td>\[\frac{2b^2}{a}\]</td>
+                <td>\[x=±\frac{a}{e}\]</td>
+                <td>\[2a\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[\frac{y^2}{b^2}\space-\frac{x^2}{a^2}\space=1\]</th>
+                <td><img src="images/Hyperbola2.png" class="img-fluid"></td>
+                <td>\[(0,±be)\]</td>
+                <td>\[\frac{2a^2}{b}\]</td>
+                <td>\[y=±\frac{b}{e}\]</td>
+                <td>\[2b\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[{x^2}\space-{y^2}\space={a^2}\]</th>
+                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw5QUDKo9jqVjTyqagOTwt6qgP04QWO60TWw&usqp=CAU"
+                        class="img-fluid"></td>
+                <td>\[(0, ±a{\sqrt{2}} )\]</td>
+                <td>\[2a\]</td>
+                <td>\[x=±\frac{a}{\sqrt{2}}\]</td>
+                <td>\[2a\]</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <h2>Equations of Tangent of Hyperbola</h2>
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col">\[Equation\]</th>
+                <th scope="col">\[Parametric\space Coordinates\]</th>
+                <th scope="col">\[Equation\space of\space tangent\]</th>
+                <th scope="col">\[Condition\space of \space Tangency\]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">\[\frac{x^2}{a^2}\space-\frac{y^2}{b^2}\space=1\]</th>
+                <td>\[(asec\theta,btan\theta)\]</td>
+                <td>\[y=mx±\sqrt{am^2-b^2}\]</td>
+                <td>\[c=±\sqrt{am^2-b^2}\]</td>
+
+            </tr>
+            <tr>
+                <th scope="row">\[\frac{y^2}{b^2}\space-\frac{x^2}{a^2}\space=1\]</th>
+                <td>\[(bsec\theta,atan\theta)\]</td>
+                <td>\[y=mx±\sqrt{-bm^2+a^2}\]</td>
+                <td>\[c=±\sqrt{-bm^2+a^2}\]</td>
+
+            </tr>
+            <tr>
+                <th scope="row">\[{x^2}\space-{y^2}\space={a^2}\]</th>
+                <td>\[(asec\theta,atan\theta)\]</td>
+                <td>\[y=mx±\sqrt{am^2-a^2}\]</td>
+                <td>\[c=±\sqrt{am^2-a^2}\]</td>
+
+            </tr>
+
+        </tbody>
+    </table>
+    <h2>Equations of Normal of Hyperbola</h2>
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col">\[Equation\]</th>
+                <th scope="col">\[Parametric\space Coordinates\]</th>
+                <th scope="col">\[Equation\space of\space Normal\]</th>
+                <th scope="col">\[Condition\space of \space Normality\]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">\[\frac{x^2}{a^2}\space-\frac{y^2}{b^2}\space=1\]</th>
+                <td>\[(asec\theta,btan\theta)\]</td>
+                <td>\[\frac{ax}{sec\theta}+\frac{by}{tan\theta}=a^2+b^2\]</td>
+                <td>\[c=\frac{m(a^2+b^2)}{\sqrt{a^2-b^2m^2}}\]</td>
+
+            </tr>
+            <tr>
+                <th scope="row">\[\frac{y^2}{b^2}\space-\frac{x^2}{a^2}\space=1\]</th>
+                <td>\[(bsec\theta,atan\theta)\]</td>
+                <td>\[\frac{bx}{sec\theta}+\frac{ay}{tan\theta}=b^2+a^2\]</td>
+                <td>\[c=\frac{m(b^2-a^2)}{\sqrt{a^2m^2-b^2}}\]</td>
+
+            </tr>
+            <tr>
+                <th scope="row">\[{x^2}\space-{y^2}\space={a^2}\]</th>
+                <td>\[(asec\theta,atan\theta)\]</td>
+                <td>\[\frac{x}{sec\theta}+\frac{y}{tan\theta}=2a\]</td>
+                <td>\[c=\frac{2am}{\sqrt{1-m^2}}\]</td>
+
+            </tr>
+
+        </tbody>
+    </table>
+    <h2>Equations of Director Circle of Hyperbola</h2>
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col">\[Equation\]</th>
+                <th scope="col">\[Equation\space of\space Director\space Circle\]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">\[\frac{x^2}{a^2}\space-\frac{y^2}{b^2}\space=1\]</th>
+                <td>\[x^2\,+\,y^2\space\,=a^2\,-\,b^2\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[\frac{y^2}{b^2}\space-\frac{x^2}{a^2}\space=1\]</th>
+                <td>\[x^2\,+\,y^2\space\,=b^2\,-\,a^2\]</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
