@@ -3394,7 +3394,12 @@ function impsefind20() {
     var series = n * (Math.pow(n, 2) + 3 * n + 5) / 3;
     document.getElementById("impseans20").innerHTML = series;
 }
+function calceximpse20find(){
+    var n = document.getElementById("impse20");
+    n.value = 3;
 
+    impse20find();
+}
 function impse20find() {
     var n = parseInt(document.getElementById("impse20").value)
     if (!isNaN(n)) {
@@ -3410,7 +3415,7 @@ function impse20find() {
         document.getElementById("impse20ans").innerHTML = "please enter valid input ";
 }
 
-function calceximpse21find() {
+function calceximpse21find(){
     var n = document.getElementById("impse21");
     n.value = 5;
 
