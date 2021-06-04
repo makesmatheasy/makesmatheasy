@@ -24,19 +24,6 @@ $("#clock").click(function () {
     clearall();
 });
 
-$("#wag").click(function () {
-    openit("#wags");
-    closenav();
-    clearall();
-});
-
-
-$("#wag").click(function () {
-    openit("#wags");
-    closenav();
-    clearall();
-});
-
 $("#specialbtn").click(function () {
     openit("#specialnum");
     closenav();
@@ -358,7 +345,7 @@ $(document).ready(function () {
         closenav();
         clearall();
     });
-    $("#pentatop").click(function () {
+    $("#pentatopbtn").click(function () {
         openit("#pentatop");
         closenav();
         clearall();
@@ -1740,15 +1727,6 @@ $(document).ready(function () {
         clearall();
     });
 
-    $("#relriskbtn").click(function () {
-        var temp = "\\[Formula:\\space \\frac{[\\frac{a}{(a+b)}]}{[\\frac{c}{(c+d)}]}\\]";
-        var output = document.getElementById("relriskform");
-        output.innerHTML = temp;
-        renderMathInElement(output);
-        openit("#relrisk");
-        closenav();
-        clearall();
-    });
     $("#geoprobabilitybtn").click(function () {
         openit("#geoprobability");
         closenav();
@@ -1766,11 +1744,6 @@ $(document).ready(function () {
         output.innerHTML = temp;
         renderMathInElement(output);
         openit("#relrisk");
-        closenav();
-        clearall();
-    });
-    $("#geoprobabilitybtn").click(function () {
-        openit("#geoprobability");
         closenav();
         clearall();
     });

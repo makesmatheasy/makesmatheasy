@@ -28245,7 +28245,7 @@ function woodfind() {
 
 function calcexantilogCal() {
     var n = document.getElementById("logvalue");
-    var x = document.getElementById("logbase");
+    var x = document.getElementById("logbase5");
 
     n.value = 10;
     x.value = 2;

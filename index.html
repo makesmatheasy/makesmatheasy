@@ -1404,25 +1404,6 @@
                 </table>
             </li>
 
-
-            <li>
-                <table class="table">
-                    <tr>
-                        <td style="border-top: none;">
-                            <a id="circumradiusareabtn"
-                               style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Circum radius and Area of External Triangle
-                            </a>
-                        </td>
-                        <td style="float:right;border-top: none;">
-                                <span
-                                        onclick="addtofavourite('Circum radius and Area of External Triangle','#circumradiusarea','c','circumradiusareafav')"><img
-                                        id="circumradiusareafav" src="images/unfavourite.png"
-                                        style="height:1.5625rem;filter: none;"></span>
-                        </td>
-                    </tr>
-                </table>
-            </li>
-
             <li>
                 <table class="table">
                     <tr>
@@ -10316,12 +10297,6 @@
                 </div>
             </div>
         </div>
-             
-    
-
-        
-
-        </div>
 
         <!-- Cramers Rule Calculator-->
 
@@ -12023,7 +11998,7 @@
                 <p  id="externradius"></p><br>
         </div>
         
-        <div class="collapse" id="lancentarcl">
+        <div class="collapse" id="lancentarc">
             <h2>Lancent Arc Calculator</h2><br>
             <p id="lance">\[h = √ r * b - b² / 4\]</p>
             <p id="lance">\[b = 2 (r - √ r² - h² )\]</p> 
@@ -15504,8 +15479,8 @@
                 <div class="form-group">
                     <input type="text" style="width: 250px;" class="form__field" name="a" id="car_x" placeholder="Enter cartesian coordinate x:"/>
                     <input type="text" name="b" style="width: 250px;" class="form__field" id="car_y" placeholder="Enter cartesian coordinate y: "/>  <br> <br>
-                    <button  class = "btn btn-outline-light" onclick = "car_polar()" >Find</button>
-                    <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
+                    <button type="button"  class = "btn btn-outline-light" onclick = "car_polar()" >Find</button>
+                    <button type="button"  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
                     <br>
                 </div>
             </form>   
@@ -15521,8 +15496,8 @@
                     <input type="text" style="width: 250px;" class="form__field" name="a" id="penta_n" placeholder="Enter n:"/>
                     <br> <br>
 
-                    <button  class = "btn btn-outline-light" onclick = "penta_cal()" >Find</button>
-                    <button  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
+                    <button type="button"  class = "btn btn-outline-light" onclick = "penta_cal()" >Find</button>
+                    <button type="button"  class = "btn btn-outline-light" onclick = "this.form.reset();" >Reset</button>
                     <br>
                 </div>
             </form>   
@@ -19064,6 +19039,7 @@
     <input style="color: white; font-family:mathfont" type="text"id="adam1" placeholder="Enter the input number" class="form__field"><p>&nbsp;</p>
     <button class="btn btn-dark" onclick="adamfind()">Check</button><p>&nbsp;</p>
     <p style="font-family:mathfont" id="adamans"></p><br>
+    </div>
 <div class="collapse" id="vects">
     <h1 style="color: white;font-family:mathfont">Vector Magnitude Calculator</h2><p>&nbsp;</p>
     <form action="">
@@ -19270,7 +19246,7 @@
     <h2 style="text-align:center;">Antilog Calculator</h2><br>
     <form action="">
         <input type="text"id="logvalue" placeholder="Enter the log value" class="form__field"><br><br>
-        <input type="text"id="logbase" placeholder="Enter the base" class="form__field"><br><br>
+        <input type="text"id="logbase5" placeholder="Enter the base" class="form__field"><br><br>
         <button type="button" class="btn btn-dark" onclick="antilogCal()">Calculate</button>
         <button type="button" class="btn btn-dark" onclick=calcexantilogCal()>
             Example
