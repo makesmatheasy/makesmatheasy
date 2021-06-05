@@ -3865,11 +3865,11 @@ function impse20find() {
 
         arr[i] = curr;
         document.getElementById("impse20ans").innerHTML = arr[i] + ", ";
-        document.getElementById("impse20exp").innerHTML = "\\[It is basically a function with domain and co-domain as natural numbers and 0. \\]"
-        document.getElementById("impse20exp").innerHTML = "\\[if n > 0 and the number is not already included in the sequence,\\]"
-        document.getElementById("impse20exp").innerHTML = "\\[ a(n) = a(n - 1) - n \\]"
-        document.getElementById("impse20exp").innerHTML = "\\[else a(n) = a(n-1) + n. \\]"
-        renderMathInElement(document.getElementById("impse20exp"))
+        document.getElementById("impse20ans").innerHTML = "\\[It is basically a function with domain and co-domain as natural numbers and 0. \\]"
+        document.getElementById("impse20ans").innerHTML = "\\[if n > 0 and the number is not already included in the sequence,\\]"
+        document.getElementById("impse20ans").innerHTML = "\\[ a(n) = a(n - 1) - n \\]"
+        document.getElementById("impse20ans").innerHTML = "\\[else a(n) = a(n-1) + n. \\]"
+        renderMathInElement(document.getElementById("impse20ans"))
 
     }
     }else
