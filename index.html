@@ -25294,75 +25294,144 @@
 
 
     <!--End of Bayes Probability-->
+    <span class="calculatorbtn" onclick="$('#cal').fadeToggle();"><i class="fa fa-calculator"></i></span>
 
+    <div class="calculator collapse" id="cal">
+        <div class="row">
+            <div class="col-md-5" id="calpar">                
+                <input type="tel" oninput="calsol(this.value);chh(this.value)" id="txt">                                
+                <input readonly type="text" id="soltxt">
+            </div>
 
-    <div class="collapse" id="cal" style="z-index:9;position:relative;">
-        <div class="bodyof" id="calpar">
-            <form class="calculator" name="calc">
-                <input type="tel" class="value" id="txt" style="overflow-y:hidden;"
-                    oninput="calsol(this.value);chh(this.value)">
-                <input readonly type="text" class="soltext" id="soltxt">
+            <div class="col-md-7">
+                <div class="table-responsive">
+                    <table class="calgroupbtns table mx-auto w-auto">
+                        <tr>
+                            <td>
+                                <span class="calbtn" onclick="clearc()">C</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" onclick="more()" id="more">More</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">)</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" id="backspace"
+                                    onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
+                                class="bk" src="icons/backspace-arrow.png" style="height:1rem;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span id="e" class="calbtn">e</span>                                    
+                            </td>
+                            <td>
+                                <span class="calbtn" id="exp()" onclick="document.getElementById('txt').value+='e^';calsol(document.getElementById('txt').value);">e^</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" id="doubleZero"
+                                onclick="document.getElementById('txt').value+='00';calsol(document.getElementById('txt').value);">00</span>                                        
+                            </td>
+                            <td>
+                                <span class="calbtn"
+                                    onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">^</span>
+                            </td>
+                            <td>
+                                <span class="calbtn"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="calbtn" id="seven">7</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" id="eight">8</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" id="nine">9</span>
+                            </td>
+                            <td>
+                                <span class="calbtn"
+                                onclick="document.getElementById('txt').value+='/';calsol(document.getElementById('txt').value);"><img
+                                src="icons/divide.svg" height="13rem" alt="divide-icon" style="filter:invert(1);"></span>                                        
+                            </td>
+                            <td>
+                                <span class="calbtn" onclick="runSpeechRecognition('txt','txt','slogo','cal')"><img id="slogo"
+                                    src="images/speechlogo.png" height="13rem" style="filter: none;"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>                            
+                                <span class="calbtn" id="four">4</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" id="five">5</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" id="six">6</span>
+                            </td>
+                            <td>
+                                <span class="calbtn"
+                                onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);"><img
+                                src="icons/crossed.svg" height="13rem" alt="crossed-icon" style="filter:invert(1);"></span>                
+                            </td>
+                            <td>
+                                <span class="calbtn" id="percentage">%</span>
+                            </td>
+                        </tr>
 
+                        <tr>
+                            <td>
+                                <span class="calbtn" id="one">1</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" id="two">2</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" id="three">3</span>
+                            </td>
+                            <td>
+                                <span class="calbtn"
+                                onclick="document.getElementById('txt').value+='-';calsol(document.getElementById('txt').value);"><img
+                                src="icons/minus.svg" height="13rem" alt="minus-icon" style="filter:invert(1);"></span>                                
+                            </td>
+                            <td>
+                                <span id="deci" class="calbtn" onclick="todeci()">Deci.</span>
+                            </td>
+                        </tr>
 
-                <span class="clear" onclick="clearc()">C</span>
-                <span id="more" onclick="more();">More</span>
-                <span
-                    onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
-                <span
-                    onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">)</span>
-                <span class="back" id="backspace"
-                    onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
-                        class="bk" src="icons/backspace-arrow.png" style="height:1.875rem;"></span>
+                        <tr>
+                            <td>
+                                <span id="zero" class="calbtn"
+                                onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">0</span>
+                            </td>
+                            <td>
+                                <span class="calbtn" id="dot"
+                                onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">.</span>
+                            
+                            </td>
+                            <td>
+                                <span id="sqrt" class="calbtn">√</span>                                
+                            </td>
+                            <td>
+                                <span class="calbtn"
+                                onclick="document.getElementById('txt').value+='+';calsol(document.getElementById('txt').value);"><img
+                                src="icons/add.svg" height="13rem" alt="add-icon" style="filter:invert(1);"></span>                                    
+                            </td>
+                            <td>
+                                <span class="calbtn" onclick="calsoleq(document.getElementById('txt').value)">=</span>
+                            </td>
+                        </tr>
 
-                <span id="e">e</span>
-                <span id="exp()"
-                    onclick="document.getElementById('txt').value+='e^';calsol(document.getElementById('txt').value);">exp()</span>
-
-                <span id="doubleZero"
-                    onclick="document.getElementById('txt').value+='00';calsol(document.getElementById('txt').value);">00</span>
-                <span class="exponent"
-                    onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">^</span>
-                <span class="exponent"
-                    onclick="document.getElementById('txt').value+='';calsol(document.getElementById('txt').value);"></span>
-
-                <span id="seven">7</span>
-                <span id="eight">8</span>
-                <span id="nine">9</span>
-                <span class="divi"
-                    onclick="document.getElementById('txt').value+='/';calsol(document.getElementById('txt').value);"><img
-                        src="icons/divide.svg" height="1.25rem" alt="divide-icon"></span>
-                <span onclick="runSpeechRecognition('txt','txt','slogo','cal')"><img id="slogo"
-                        src="images/speechlogo.png" height=1.875rem style="filter: none;"></span>
-
-
-                <span id="four">4</span>
-                <span id="five">5</span>
-                <span id="six">6</span>
-                <span class="mul"
-                    onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);"><img
-                        src="icons/crossed.svg" height="1.25rem" alt="crossed-icon"></span>
-                <!--                <span onclick="stoprecognition('txt','txt','slogo')"><img style="display:inline" id="sstop" src="speechstop.png" height=1.875rem></span>-->
-
-                <span id="percentage">%</span>
-                <span id="one">1</span>
-                <span id="two">2</span>
-                <span id="three">3</span>
-                <span class="sub"
-                    onclick="document.getElementById('txt').value+='-';calsol(document.getElementById('txt').value);"><img
-                        src="icons/minus.svg" height="1.25rem" alt="minus-icon"></span>
-                <span id="deci" onclick="todeci()">Deci.</span>
-                <span id="zero" class="zero"
-                    onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">0</span>
-                <span id="dot"
-                    onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">.</span>
-                <span id="sqrt">√</span>
-                <span class="plus"
-                    onclick="document.getElementById('txt').value+='+';calsol(document.getElementById('txt').value);"><img
-                        src="icons/add.svg" height="1.25rem" alt="add-icon"></span>
-                <span class="equal" onclick="calsoleq(document.getElementById('txt').value)">=</span>
-            </form>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
+    </div>    
 
     </div>
     </div>
