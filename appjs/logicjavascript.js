@@ -3394,26 +3394,20 @@ function impsefind20() {
     var series = n * (Math.pow(n, 2) + 3 * n + 5) / 3;
     document.getElementById("impseans20").innerHTML = series;
 }
-function calceximpse20find(){
-    var n = document.getElementById("impse20");
-    n.value = 3;
-
-    impse20find();
-}
-function impse20find() {
-    var n = parseInt(document.getElementById("impse20").value)
-    if (!isNaN(n)) {
-        var series = n * (Math.pow(n, 2) + 3 * n + 5) / 3;
-        document.getElementById("impse20exp").innerHTML = "\\[It is basically a function with domain and co-domain as natural numbers and 0. \\]"
-        document.getElementById("impse20exp").innerHTML = "\\[if n > 0 and the number is not already included in the sequence,\\]"
-        document.getElementById("impse20exp").innerHTML = "\\[ a(n) = a(n - 1) - n \\]"
-        document.getElementById("impse20exp").innerHTML = "\\[else a(n) = a(n-1) + n. \\]"
-        document.getElementById("impse20ans").innerHTML = series;
-        renderMathInElement(document.getElementById("impse20exp"))
-    }
-    else
-        document.getElementById("impse20ans").innerHTML = "please enter valid input ";
-}
+// function impse20find() {
+//     var n = parseInt(document.getElementById("impse20").value)
+//     if (!isNaN(n)) {
+//         var series = n * (Math.pow(n, 2) + 3 * n + 5) / 3;
+//         document.getElementById("impse20exp").innerHTML = "\\[It is basically a function with domain and co-domain as natural numbers and 0. \\]"
+//         document.getElementById("impse20exp").innerHTML = "\\[if n > 0 and the number is not already included in the sequence,\\]"
+//         document.getElementById("impse20exp").innerHTML = "\\[ a(n) = a(n - 1) - n \\]"
+//         document.getElementById("impse20exp").innerHTML = "\\[else a(n) = a(n-1) + n. \\]"
+//         document.getElementById("impse20ans").innerHTML = series;
+//         renderMathInElement(document.getElementById("impse20exp"))
+//     }
+//     else
+//         document.getElementById("impse20ans").innerHTML = "please enter valid input ";
+// }
 
 function calceximpse21find(){
     var n = document.getElementById("impse21");
@@ -3845,12 +3839,21 @@ function impse19find() {
         document.getElementById("impse19ans").innerHTML = "Please enter the field"
 }
 
+function calceximpse20find(){
+    var n = document.getElementById("impse20");
+    n.value = 3;
+
+    impse20find();
+}
+
 function impse20find() {
     let n = parseInt(document.getElementById("impse20").value)
     let arr = new Array(n);
     arr[0] = 0;
     document.getElementById("impse20ans").innerHTML = arr[0] + " ,";
-    for (let i = 1; i < n; i++) {
+
+    if (!isNaN(n)) {
+        for (let i = 1; i < n; i++) {
         let curr = arr[i - 1] - i;
         let j;
         for (j = 0; j < i; j++) {
@@ -3862,8 +3865,15 @@ function impse20find() {
 
         arr[i] = curr;
         document.getElementById("impse20ans").innerHTML = arr[i] + ", ";
+        document.getElementById("impse20ans").innerHTML = "\\[It is basically a function with domain and co-domain as natural numbers and 0. \\]"
+        document.getElementById("impse20ans").innerHTML = "\\[if n > 0 and the number is not already included in the sequence,\\]"
+        document.getElementById("impse20ans").innerHTML = "\\[ a(n) = a(n - 1) - n \\]"
+        document.getElementById("impse20ans").innerHTML = "\\[else a(n) = a(n-1) + n. \\]"
+        renderMathInElement(document.getElementById("impse20ans"))
 
     }
+    }else
+        document.getElementById("impse20ans").innerHTML = "please enter valid input ";
 }
 
 function calceximpse13find() {
