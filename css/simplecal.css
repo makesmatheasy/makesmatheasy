@@ -83,8 +83,8 @@
     margin: 10px 0 0 !important;
     color: var(--appwhite);
     line-height: 40px;
-    height: 40px;
-    width: 40px;
+    height: 70px;
+    width: 85px;
     border-radius: 10px;
     box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.317);
 }
