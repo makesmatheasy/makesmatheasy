@@ -534,28 +534,6 @@ function openit(id) {
     }
 }
 
-function loadfilesafterload() {
-    var aroffiles = [
-        "appjs/working.js",
-        "appjs/logicjavascript.js",
-        "appjs/matrixlogic.js",
-        "appjs/simplecallogic.js",
-        "appjs/searchbar.js",
-        "appjs/speechrecoforall.js",
-        "appjs/complexlogic.js",
-        "js/math.min.js",
-        "js/plotly-1.35.2.min.js",
-        "appjs/logValue.js",
-        "appjs/operations_on_fraction.js",
-        "appjs/conicSolve.js"
-    ];
-    for (i of aroffiles) {
-        var scriptelm = document.createElement("script");
-        scriptelm.src = i;
-        document.getElementsByTagName("body")[0].appendChild(scriptelm);
-    }
-}
-
 function bodyload() {
     var ar = JSON.parse(localStorage.getItem("favouritearray"));
     var oid = JSON.parse(localStorage.getItem("openingidarray"));

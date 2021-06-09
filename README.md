@@ -623,10 +623,10 @@ If you have any doubts please let us know in the comments.
 ---
 
 ### This project is a part of following Open Source Program
-<table style="width:80%">
+<table style="width:80%;background-color:white;border-radius:30px;">
   <tr>
   <td>
-
+  
   ![GirlScript Summer of Code](https://user-images.githubusercontent.com/60106112/121303779-19d9c680-c919-11eb-8954-36fd99115527.png)
 
   </td>
