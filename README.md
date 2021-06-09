@@ -1,6 +1,5 @@
 <img align="center" alt="Makes Math Easy" src="https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png">
 
-
 ![contributors](https://img.shields.io/github/contributors/sairish2001/makesmatheasy)
 ![Issues](https://img.shields.io/github/issues/sairish2001/makesmatheasy)
 ![Pull Requests](https://img.shields.io/github/issues-pr/sairish2001/makesmatheasy)
@@ -25,7 +24,6 @@ Solves various Math Problems along with Steps
 ---
 
 ### Tech Used
-
 
 <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Bootstrap**" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="jQuery" src="https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/>
 
@@ -521,13 +519,17 @@ Documentation Website :- [Link](https://sairish2001.github.io/makesmatheasy-docu
 - To add more useful calculators to solve Math problems along with steps
 - To show steps of Integration, Differentiation, Laplace, Partial Differentiation rather than showing on eMathHelp website by redirecting to it
 - Improving the UI
-- Adding Image/Handwriting recognition so that user can click/write a problem and converted to text for further processing
+- Release in 4 variants
+  - Webapp
+  - Library
+  - Android App
+  - IOS App
 
 Feel free to come up with new ideas yourself.
 
 # How to Contribute
 
-If you think that you can add a new feature or want to fix a bug. We invite you to contribute to MakesMathEasy and make this project better. To start contributing, follow the below instructions:
+If you think that you can add a new feature or want to fix a bug. We invite you to contribute to Makes Math Easy and make this project better. To start contributing, follow the below instructions:
 
 1. Create a folder at your desire location (usually at your desktop).
 
@@ -537,24 +539,24 @@ If you think that you can add a new feature or want to fix a bug. We invite you 
 
    Run command `git init`
 
-4. Fork the [repository](https://github.com/sairish2001/MakesMathEasy).
+4. Fork the [repository](https://github.com/makesmatheasy/makesmatheasy).
 
 5. Clone your forked repository of project.
 
 ```git clone
-git clone https://github.com/<your_username>/MakesMathEasy.git
+git clone https://github.com/<your_username>/makesmatheasy.git
 ```
 
 6. Navigate to the project directory.
 
 ```
-cd MakesMathEasy
+cd makesmatheasy
 ```
 
 7. Add a reference(remote) to the original repository.
 
 ```
-git remote add upstream https://github.com/sairish2001/MakesMathEasy.git
+git remote add upstream https://github.com/makesmatheasy/makesmatheasy.git
 ```
 
 8. Check the remotes for this repository.
@@ -611,7 +613,7 @@ git push -u origin <your_branch_name>
 
 18. Click on `Create pull request`.
 
-Congratulations🎉, you have made a PR to the MakesMathEasy.
+Congratulations🎉, you have made a PR to the Makes Math Easy.
 Wait for your submission to be accepted and your PR to be merged by a maintainer.
 
 If you have any doubts please let us know in the comments.
@@ -621,15 +623,27 @@ If you have any doubts please let us know in the comments.
 ---
 
 ### This project is a part of following Open Source Program
+<table style="width:80%">
+  <tr>
+  <td>
 
-![GirlScript Summer of Code](https://imgur.com/OIQHXht.png)
+  ![GirlScript Summer of Code](https://user-images.githubusercontent.com/60106112/121303779-19d9c680-c919-11eb-8954-36fd99115527.png)
+
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+
+  ![Lets Grow More Summer of Code](https://user-images.githubusercontent.com/60106112/121303829-28c07900-c919-11eb-8cf2-afd39b5c54ab.png)
+  </td>
+  </tr>
+</table>
+
 
 ### Project Maintainers
 
-- [Rajinderpal Singh](https://github.com/sairish2001) (Admin)
-- [Shrey Tripathi](https://github.com/shrey27tri01) (Mentor)
-- [Apeksha Manchanda](https://github.com/apekshamanchanda) (Mentor)
-- [Nidhi](https://github.com/Nidhirajput1301) (Mentor)
+- [Rajinderpal Singh](https://github.com/sairish2001) (Project Admin)
 
 ## 🌟 Contributors
 

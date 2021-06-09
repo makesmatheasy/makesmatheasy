@@ -8,12 +8,6 @@
     --appwhite: #eeeeee;
 }
 
-/* body {
-    background-color: var(--appblack);
-    overflow-x: hidden;
-    color:var(--apppink);
-} */
-
 .calculatorbtn {
     background-color: var(--apppink);
     text-align: center;
