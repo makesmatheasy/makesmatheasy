@@ -644,6 +644,7 @@ If you have any doubts please let us know in the comments.
 ### Project Maintainers
 
 - [Rajinderpal Singh](https://github.com/sairish2001) (Project Admin)
+- [Arpit Jain](https://github.com/arpit456jain) (Mentor)
 
 ## 🌟 Contributors
 
