@@ -1883,24 +1883,6 @@ function loader(action) {
     }
 }
 
-// Matrix
-function displaymatrix(val, ar, elid, m, n) {
-    temp = val + '\\\\'
-    temp += '\\begin{bmatrix}'
-    for (var i of ar) {
-        for (var j of i) {
-            temp += nerdamer(j).toTeX().toString() + "&"
-        }
-        temp = temp.slice(0, -1);
-        temp += '\\\\';
-    }
-    temp += '\\end{bmatrix}'
-    temp += '_{' + m + '\\times' + n + '}'
-    katex.render(temp, document.getElementById(elid), {
-        throwOnError: false
-    });
-}
-
 //single matrix
 function checkfunctionsmultiple() {
     removeall('opval')
@@ -2086,9 +2068,12 @@ function calculatetranspose() {
         var col=document.getElementById('scolumn1').value;
         var row=document.getElementById('srow1').value;
 
-        var data=transpose(matrixsingle,row,col);
-        displaymatrix('Transposed\\space Matrix', data['result'], 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+        var data=transpose(matrixsingle,row,col);        
+        document.getElementById('singlematrixresult').innerHTML=data['result'];        
         document.getElementById('singlematrixexplanation').innerHTML = data['steps'];
+
+        renderMathInElement(document.getElementById('singlematrixresult'));
+        renderMathInElement(document.getElementById('singlematrixexplanation'));        
     }, 100);
     setTimeout(function () {
         loader('hide');
@@ -2138,14 +2123,20 @@ function calculateminorsandcofactors(){
         var col = document.getElementById('scolumn1').value;
         sendtomatrixsingle();
         var data=minorsAndCoFactors(matrixsingle,row,col);   
-        displaymatrix('Co-Factor\\space Matrix', data['cofactors'], 'singlematrixresult', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value));
+
+        document.getElementById('singlematrixresult').innerHTML=data['cofactors'];
+        
         var el = document.createElement('div')
         el.id = 'minormat'
         el.style.margin = '10px';
         document.getElementById('singlematrixresult').appendChild(el);
-        displaymatrix('Minor\\space Matrix', data['minors'], 'minormat', String(document.getElementById('scolumn1').value), String(document.getElementById('srow1').value))
+        document.getElementById('minormat').innerHTML=data['minors'];
+        
         document.getElementById('singlematrixexplanation').innerHTML = data['steps'];
+        
         renderMathInElement(document.getElementById('singlematrixexplanation'));    
+        renderMathInElement(document.getElementById('minormat'));    
+        renderMathInElement(document.getElementById('singlematrixresult'));
 
     }, 100);
     setTimeout(function () {
@@ -2282,8 +2273,9 @@ function calculatesumofmatrix(){
         var col=document.getElementById('column2').value;
         var data=sumofmatrix(matrix1,matrix2,row,col);
         document.getElementById('explanationmatrixresult').innerHTML = data['steps'];
-        displaymatrix('Addition\\space Result', data['result'], 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
-        renderMathInElement(document.getElementById('explanationmatrixresult'));
+        document.getElementById('matrixresult').innerHTML=data['result'];
+        renderMathInElement(document.getElementById('explanationmatrixresult'));        
+        renderMathInElement(document.getElementById('matrixresult'));
     }, 100);
     setTimeout(function () {
         loader('hide');
@@ -2299,8 +2291,9 @@ function calculatesubtractofmatrix(){
         var col=document.getElementById('column2').value;
         var data=subtractofmatrix(matrix1,matrix2,row,col);
         document.getElementById('explanationmatrixresult').innerHTML = data['steps'];
-        displaymatrix('Subtraction\\space Result', data['result'], 'matrixresult', String(document.getElementById('row2').value), String(document.getElementById('column2').value))
+        document.getElementById('matrixresult').innerHTML=data['result'];
         renderMathInElement(document.getElementById('explanationmatrixresult'));        
+        renderMathInElement(document.getElementById('matrixresult'));
     }, 100);
     setTimeout(function () {
         loader('hide');
@@ -2318,9 +2311,9 @@ function calculatemulofmatrix(){
         var data=mulofmatrix(matrix1,matrix2,row1,col1,col2);
 
         document.getElementById('explanationmatrixresult').innerHTML = data['steps'];
+        document.getElementById('matrixresult').innerHTML = data['result'];
         renderMathInElement(document.getElementById('explanationmatrixresult'));
-        displaymatrix('Multiplication\\space Result', data['result'], 'matrixresult', String(document.getElementById('row1').value), String(document.getElementById('column2').value));
-
+        renderMathInElement(document.getElementById('matrixresult'));        
     }, 100);
     setTimeout(function () {
         loader('hide');

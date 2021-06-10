@@ -67,7 +67,18 @@ function sumofmatrix(matrix1, matrix2, row2, col2) {
         sumexplanation += "</div>"
         sumexplanation += '<br>';
     }
-    return { 'result': summ, 'steps': sumexplanation }
+    temp = '\\[Addition\\space Result' + '\\\\';
+    temp += '\\begin{bmatrix}'
+    for (var i of summ) {
+        for (var j of i) {
+            temp += nerdamer(j).toTeX().toString() + "&"
+        }
+        temp = temp.slice(0, -1);
+        temp += '\\\\';
+    }
+    temp += '\\end{bmatrix}';
+    temp += '_{' + row + '\\times' + col + '}\\]';
+    return { 'result': temp, 'steps': sumexplanation }
 }
 
 function subtractofmatrix(matrix1, matrix2, row2, col2) {
@@ -139,8 +150,19 @@ function subtractofmatrix(matrix1, matrix2, row2, col2) {
         subbexplanation += '</div>';
         subbexplanation += '<br>';
     }
-
-    return { 'result': subb, 'steps': subbexplanation };
+    temp = '\\[Subtraction\\space Result' + '\\\\';
+    temp += '\\begin{bmatrix}'
+    for (var i of subb) {
+        for (var j of i) {
+            temp += nerdamer(j).toTeX().toString() + "&"
+        }
+        temp = temp.slice(0, -1);
+        temp += '\\\\';
+    }
+    temp += '\\end{bmatrix}';
+    temp += '_{' + row + '\\times' + col + '}\\]';
+    
+    return { 'result': temp, 'steps': subbexplanation };
 }
 
 function mulofmatrix(matrix1, matrix2, row1, col1, col2) {
@@ -229,7 +251,20 @@ function mulofmatrix(matrix1, matrix2, row1, col1, col2) {
         }
         mulexplanation += '<br>';
     }
-    return { 'result': mul, 'steps': mulexplanation };
+
+    temp = '\\[Multiplication\\space Result' + '\\\\';
+    temp += '\\begin{bmatrix}'
+    for (var i of mul) {
+        for (var j of i) {
+            temp += nerdamer(j).toTeX().toString() + "&"
+        }
+        temp = temp.slice(0, -1);
+        temp += '\\\\';
+    }
+    temp += '\\end{bmatrix}';
+    temp += '_{' + row1 + '\\times' + col2 + '}\\]';
+
+    return { 'result': temp, 'steps': mulexplanation };
 }
 
 // single matrix
@@ -242,7 +277,20 @@ function transpose(matrixsingle, row, col) {
             trans[i][j] = matrixsingle[j][i];
         }
     }
-    return { 'result': trans, 'steps': 'Just Interchange Rows and Columns' };
+
+    temp = '\\[Transposed\\space Matrix' + '\\\\';
+    temp += '\\begin{bmatrix}'
+    for (var i of trans) {
+        for (var j of i) {
+            temp += nerdamer(j).toTeX().toString() + "&"
+        }
+        temp = temp.slice(0, -1);
+        temp += '\\\\';
+    }
+    temp += '\\end{bmatrix}';
+    temp += '_{' + col + '\\times' + row + '}\\]';
+
+    return { 'result': temp, 'steps': 'Just Interchange Rows and Columns' };
 }
 
 
@@ -471,12 +519,11 @@ function rank(matrixsingle, row, column) {
     let maximum = Math.max(row, column);
     if (rank > minimum) {
         rank = minimum - (maximum - rank);
-    }
+    }    
     rankexplanation += "\\[Count \\space number\\space of \\space non \\space zero \\space rows/columns,\\space that \\space will \\space be \\space rank.\\\\Rank\\space Of \\space Matrix=" + rank + "\\]";
     rankexplanation += "</div>";
 
     return { 'result': rank, 'steps': rankexplanation };
-
 }
 
 
@@ -552,7 +599,31 @@ function minorsAndCoFactors(matrixsingle, row, col) {
         }
     }
     temp += "</div>"
-    return { 'cofactors': cofactor, 'minors': minor, 'steps': temp };
+
+    var cofactors_temp = '\\[Co-Factor\\space Matrix' + '\\\\';
+    cofactors_temp += '\\begin{bmatrix}'
+    for (var i of cofactor) {
+        for (var j of i) {
+            cofactors_temp += nerdamer(j).toTeX().toString() + "&"
+        }
+        cofactors_temp = cofactors_temp.slice(0, -1);
+        cofactors_temp += '\\\\';
+    }
+    cofactors_temp += '\\end{bmatrix}';
+    cofactors_temp += '_{' + row + '\\times' + col + '}\\]';
+
+    var minor_temp = '\\[Minor\\space Matrix' + '\\\\';
+    minor_temp += '\\begin{bmatrix}'
+    for (var i of minor) {
+        for (var j of i) {
+            minor_temp += nerdamer(j).toTeX().toString() + "&"
+        }
+        minor_temp = minor_temp.slice(0, -1);
+        minor_temp += '\\\\';
+    }
+    minor_temp += '\\end{bmatrix}';
+    minor_temp += '_{' + row + '\\times' + col + '}\\]';
+    return { 'cofactors': cofactors_temp, 'minors': minor_temp, 'steps': temp };
 }
 
 //single matrix
