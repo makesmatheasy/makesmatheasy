@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright 2017 mathsisfun.com -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="71.9" height="71.4" version="1.1">
+<defs>
+	<linearGradient id="id1">
+		<stop offset="0" style="stop-color:#fcff9a; stop-opacity:0.78;"/>
+		<stop offset="1" style="stop-color:white; stop-opacity:0;"/>
+	</linearGradient>
+	<radialGradient id="id2" r="114.34" fx="130.341" fy="225.07" cx="130.3" cy="225.1" gradientTransform="matrix(0.882694,0.439603,-0.537372,1.079,125.436,-80.0508)" xlink:href="#id1" gradientUnits="userSpaceOnUse"/>
+</defs>
+<polyline points="182.79 172.62, 261.57 155.56, 301.55 226.59, 246.49 284.86, 174.82 251.45" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#5353d3; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="253.56 351.08, 246.49 284.86, 174.82 251.45, 116.22 285.85, 162.39 359.78" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#d3d380; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="76.281 209.84, 116.22 285.85, 174.82 251.45, 182.79 172.62, 129.87 133.76" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#808053; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="246.49 284.86, 253.56 351.08, 335.22 330.70, 362.58 239.02, 301.55 226.59" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#d3d380; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="261.57 155.56, 182.79 172.62, 129.87 133.76, 191.08 75.236, 283.82 98.384" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#adadd3; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="362.58 239.02, 359.90 149.54, 283.82 98.384, 261.57 155.56, 301.55 226.59" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#808053; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="116.22 285.85, 76.281 209.84, 92.492 222.25, 162.33 343.97, 162.39 359.78" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#8080ad; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="301.53 319.97, 162.33 343.97, 162.39 359.78, 253.56 351.08, 335.22 330.70" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#53532d; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="191.08 75.236, 185.38 114.64, 92.492 222.25, 76.281 209.84, 129.87 133.76" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#a0a0dd; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="359.90 149.54, 362.58 239.02, 335.22 330.70, 301.53 319.97, 320.25 174.80" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#8080ad; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="185.38 114.64, 191.08 75.236, 283.82 98.384, 359.90 149.54, 320.25 174.80" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#7373ce; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="162.33 343.97, 301.53 319.97, 320.25 174.80, 185.38 114.64, 92.492 222.25" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:#71c882; fill-opacity:0.75; stroke:black; stroke-width:1;"/>
+<polyline points="162.33 343.97, 301.53 319.97, 320.25 174.80, 185.38 114.64, 92.492 222.25" transform="matrix(0.25,0,0,0.25,-18.8989,-18.6542)" style="fill:url(#id2); stroke:black; stroke-width:1;"/>
+</svg>

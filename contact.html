@@ -37,7 +37,7 @@
 
         ::-webkit-scrollbar-button:single-button {
             display: block;
-            background-color: var(--appimage);
+            background-color: var(--appwhite);
             height: 20px;
         }
 
@@ -148,101 +148,39 @@ body img {
     </style>
 </head>
 <body>
-    <!-- using darkmode.js to implement dark mode -->
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script>
-        var options = {
-            bottom: '64px', // default: '32px'
-            right: '32px', // default: '32px'
-            left: 'unset', // default: 'unset'
-            time: '0.5s', // default: '0.3s'
-            mixColor: '#CAD5E2', // default: '#fff'--> changable according to dev needs for light mode
-            backgroundColor: '#232A36',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'-->for dark mode
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓' // default: ''
-        }
 
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-    </script>
-<!-- <a href="index.html">
-	    <button id="home">Home</button>
-       </a>
-        -->
         <nav id="navbar-main" style="z-index:30;">
             <ul id="slide-out" class="sidenav ulstyle" style="background-color: var(--appblack);">
-                <div class="text-center mt-5">
-                    <h2>Makes Math Easy</h2>
+                <div class="text-center mt-4 justify-content-center">
+                        <div class="col">
+                            <img src="images/makesmatheasylogo.png" style="width: 48%;">
+                        </div>
+                        <div class="col">
+                            <h4>Makes Math Easy</h4>
+                        </div>
                 </div>
                 <li class="list_menu_items"><a id="homeoption" style="cursor: pointer;font-size: 1rem;text-decoration: none;" href="index.html">Home</a></li>
-                <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 1rem;" onclick="change();">About</a></li>
-                <li class="list_menu_items"><a id="contactbutton"
-                    style="cursor: pointer;color:var(--appimage);font-size: 1rem;"
-                    onclick="location.reload();">Contact</a>
-                </li>
-                <li class="list_menu_items"><a href="whatsapp://send?text=Hey There! I came across this Amazing Web App *Makes Math Easy* %0a%0aIt solves various *Math Problems along with Steps*, will surely help you in Mathematics %0a------%0aHave a look! %0ahttps://sairish2001.github.io/makesmatheasy/
-                    " data-action="share/whatsapp/share" style="font-size: 1rem;text-decoration: none;">Share to Whatsapp<img
-                                    style="display:inline;height:1.5625rem;filter: none;" src="images/whatsapplogo.png"></a>
-                </li>
-                <li class="list_menu_items"><a data-toggle="modal" data-target="#settings"
-                                                           style="text-decoration:none;font-size: 1rem;" href="#">Settings</a></li>
+                <li class="list_menu_items"><a href="about.html" id="aboutbutton" style="cursor: pointer;font-size: 1rem;">About</a></li>                                                    
                     
-                    
-                <li style=" color:var(--appimage); position:relative;" class="icons p-1">
-                                <a href="https://www.instagram.com/makesmatheasy" target="_blank" class="p-0"><i class="fab fa-instagram icon fa-2x"></i></a>
-                                <a href="mailto:makesmatheasy@gmail.com" target="_blank" class="p-0" ><i class="fas fa-envelope icon fa-2x"></i></a>
-                                <a href="https://www.linkedin.com/in/rajinderpalsingh2001/" target="_blank"class="p-0" ><i class="fab fa-linkedin icon fa-2x"></i></a>
-                                <a href="https://discord.com/channels/811724426965811210/818825491065995264" target="_blank" class="p-0"><i class="fab fa-discord icon fa-2x"></i></a>
+                <li style=" color:var(--appwhite); position:relative;" class="icons p-1">
+                    <a href="https://www.instagram.com/makesmatheasy" target="_blank" class="p-0"><i class="fab fa-instagram icon fa-2x"></i></a>
+                    <a href="mailto:makesmatheasy@gmail.com" target="_blank" class="p-0" ><i class="fas fa-envelope icon fa-2x"></i></a>
+                    <a href="https://www.linkedin.com/in/rajinderpalsingh2001/" target="_blank"class="p-0" ><i class="fab fa-linkedin icon fa-2x"></i></a>
+                    <a href="https://discord.com/channels/811724426965811210/818825491065995264" target="_blank" class="p-0"><i class="fab fa-discord icon fa-2x"></i></a>
+                    <a href="https://github.com/sairish2001/makesmatheasy" target="_blank" class="p-0"><i class="fab fa-github icon fa-2x"></i></a>
                 </li>
                     
-                <li style="color:var(--appimage);font-size: 0.7rem; bottom: 0rem; position:relative;" id="copyright" class="text-center"> Copyright © 2021 Makes
+                <li style="color:var(--appwhite);font-size: 0.7rem; bottom: 0rem; position:relative;" id="copyright" class="text-center"> Copyright © 2021 Makes
                                 Math Easy. All Rights Reserved.</li>
                     
             </ul>
         </nav>
 
-            <div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Settings</h5>
-                            <button style="text-decoration:none" type="button" class="close"
-                                    data-dismiss="modal"
-                                    aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <p>Clear Favourites</p>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-light"
-                                                onclick="removefavourite();checkfavourite()">Clear
-                                        </button>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div>
-                                <p style="font-size: -0.1rem;">Kindly Restart The App to Apply Changes</p>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div> 
 <div id="main" style="z-index:31;">
     <div class="form-group " style="margin-top:1rem">
             <span style="position:fixed;z-index:100" id='slidebutton' data-target="slide-out"
                   class="sidenav-trigger"><img class="material-icons" src="icons/list.svg"
-                                               style="cursor:pointer; height: 2.5rem;padding-left: 0.625rem;"></span>
+                                               style="cursor:pointer; height: 2.5rem;padding-left: 0.625rem; filter: invert(100%);"></span>
         <br>
             <div class="container">
                 <div> 
@@ -256,41 +194,7 @@ body img {
                                 <h1>Makes Math Easy</h1>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="collapse card rounded" id="about">
-                        <div id=aboutHeading>
-                            <h5>MakesMathEasy solves various math problems along with steps. We
-                                provide speedy calculations,
-                                within a few ms. We work together, design, create and produce work
-                                that we are proud of. We
-                                believe that <strong>"MATH IS FUN"!</strong><br>
-            
-                            </h5>
-                        </div>
-                        <div class="card-body ">
-                            <h5 class="class-text"><strong>The IDEA:</strong> We offer mathematics in an
-                                enjoyable and
-                                easy-to-learn manner.</h5><br>
-                
-                            <h5><strong>Our commitment:</strong> The site will continue to
-                                grow
-                                over time. Keep coming back to find out what has been added.</h5><br>
-                
-                            <h5><strong>Feedback:</strong> If you like the site or would like
-                                to make comments or
-                                even contributions then <a id="aboutContact" href="contact.html">contact us.</a></h5><br>
-                
-                            <h5><strong>Developed By:</strong> Rajinderpal Singh <span
-                                    class="badge badge-light"
-                                    id="aboutBadge"
-                                    style="cursor:pointer;"
-                                    onclick="window.open('https://sairish2001.github.io')">Sairish</span>
-                            </h5>
-                        </div>
-                        
-                    </div>
-
+                    </div>                             
                     <iframe id="contactform"
                             src="https://docs.google.com/forms/d/e/1FAIpQLSe9iLIoN47Puox50aziGG-f1qZMmYm3tiF861QPZyBcZU-kSg/viewform?embedded=true"
                             width="100%" height="1150" frameborder="0" marginheight="0" marginwidth="0">Loading…
@@ -306,12 +210,7 @@ body img {
         $('.sidenav').sidenav();
         });
     </script>
-    <script>
-        function change(){
-            document.getElementById("about").style.display="block";
-            document.getElementById("contactform").style.display="none";
-        };
-    </script>
+    
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>

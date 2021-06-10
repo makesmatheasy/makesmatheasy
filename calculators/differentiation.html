@@ -1,0 +1,61 @@
+<div style="display: inline-block;" class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="difforderselect" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">Order
+        of Diff.
+    </button>
+    <div class="dropdown-menu" style="max-height:12.5rem;overflow-y:auto;" aria-labelledby="difforderselect"
+        onclick="ddiff();">
+        <span onclick="getdifforder(this.innerText);" class="dropdown-item">1</span>
+        <span onclick="getdifforder(this.innerText);" class="dropdown-item">2</span>
+        <span onclick="getdifforder(this.innerText);" class="dropdown-item">3</span>
+        <span onclick="getdifforder(this.innerText);" class="dropdown-item">4</span>
+        <span onclick="getdifforder(this.innerText);" class="dropdown-item">5</span>
+        <span onclick="getdifforder(this.innerText);" class="dropdown-item">6</span>
+        <span onclick="getdifforder(this.innerText);" class="dropdown-item">7</span>
+        <span onclick="getdifforder(this.innerText);" class="dropdown-item">8</span>
+        <span onclick="getdifforder(this.innerText);" class="dropdown-item">9</span>
+        <!--                    <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1' oninput="getintegralvar(this.value);dint();"></span>-->
+    </div>
+</div>
+
+
+<div style="display: inline-block;" class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="diffvariableselect" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Variable
+    </button>
+    <div class="dropdown-menu" aria-labelledby="diffvariableselect" onclick="ddiff();">
+        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">x</span>
+        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">y</span>
+        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">t</span>
+        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">u</span>
+        <span onclick="getdiffvariable(this.innerText);" class="dropdown-item">v</span>
+        <span class="dropdown-item"><input type="text" placeholder="Custom" maxlength='1'
+                oninput="getdiffvariable(this.value);ddiff();"></span>
+    </div>
+</div>
+
+<form action="">
+    <div class="form-group">
+        <input type="text" placeholder="Enter Function" id="inputdifferentiatequation" class="form__field"
+            oninput="ddiff()">
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-light" onclick="plotit('inputdifferentiatequation','diffplot',sdiff())">
+            Solve
+        </button>
+        <button type="button" class="btn btn-outline-light" id="diffsolvebutton">Show
+            Steps
+        </button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">
+            Reset
+        </button>
+    </div>
+</form>
+
+<div class="form-group">
+    <p style="overflow-x:scroll;overflow-y:hidden;height:100%" id="resultdiff"></p>
+</div>
+<div class="form-group">
+    <p id="diffplot"></p>
+</div>

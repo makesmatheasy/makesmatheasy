@@ -1,0 +1,99 @@
+    <h2 style="text-align: center;">Operations on Sets</h2>
+    <h5>1. Union</h5>
+    <p>The union of two sets is a set containing all elements that are in A or in B
+        (possibly both). For example,</p>
+    <p style="color:white !important;">\[\{1,2\}\cup\{2,3\} = \{1,2,3\}\]</p>
+    <div class="d-flex justify-content-center">
+        <img src="https://www.probabilitycourse.com/images/chapter1/union_b.png"
+         style=" height: 12.5rem;" alt="">
+    <br><br>
+    </div>
+    <h5>2. Intersection</h5>
+    <p>The intersection of two sets A and B, denoted by A∩B, consists of all
+        elements that are both in A and B. For example,</p>
+    <p style="color:white !important;">\[\{1,2\}\cap\{2,3\} = \{2\}\]</p>
+    <div class="d-flex justify-content-center">
+        <img src="https://www.probabilitycourse.com/images/chapter1/intersection_b.png"
+         style="width: 65%; height: 12.5rem;" alt="">
+        <br>
+    </div>
+    <br>
+    <p style="text-align: center;"><i>The intersection of A and B is the middle
+        part</i></p>
+    <br>
+    <div class="d-flex justify-content-center">
+        <img src="https://www.probabilitycourse.com/images/chapter1/intersection3_b.png"
+         style=" height: 12.5rem;" alt="">
+    <br><br>
+    </div>
+    <h5>3. Disjoint</h5>
+    <p>Set A and set B are called disjoint sets if no element is common to A and B. 
+        i.e. A and B are disjoint sets then</p>
+    <p style="color:white !important; text-align: center !important;">\(A\cap B = ∅\)</p>
+    <p style="color:white !important;">For example, \[A = \{1,3,5\}, B = \{2,4,6\}\space and\space C = \{a,b,c\}\\
+        A\cap B\cap C = ∅\]</p>
+        <div class="d-flex justify-content-center">
+            <img src="https://www.probabilitycourse.com/images/chapter1/disjoint_b.png"
+            style=" height: 12.5rem;" alt="">
+            <br><br>
+        </div>
+    <h5>4. Complement</h5>
+    <p>The complement of a set A, denoted by A<sup>c</sup> is elements in Universal
+        Set which are not in A</p>
+    <br>
+    <div class="d-flex justify-content-center">
+        <img src="https://www.probabilitycourse.com/images/chapter1/complement_b.png"
+        style=" height: 12.5rem;" alt="">
+        <br><br>
+    </div>
+    <h5>5. Difference</h5>
+    <p>The set A−B consists of elements that are in A but not in B. For example
+        if</p>
+    <p style="color:white !important;">\[A = \{1,2,3\}\space and\space B = \{3,5\} then,\\
+        A-B = \{1,2\}\]
+    </p>
+    <div class="d-flex justify-content-center">
+        <img src="https://www.probabilitycourse.com/images/chapter1/difference_b.png"
+         style=" height: 12.5rem;" alt=""><br><br>
+    </div>
+    <br>
+    <h2 style="text-align: center;">Some conclusions from set operations</h2>
+    <p>Let S be the universal set, and A,B,C,D are subsets of S. Then,</p>
+    <ol>
+        <li style="color: white; font-size: 1.25rem;">A ∪ ∅ = A <p>Hence ∅ i.e. empty set is identity set for 'union operation'. </p></li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">A ∩ S = A <p>S i.e. universal set is identity set for 'intersection operation'. </p></li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">A ∪ S = S <p>A ⊂ S and A ∪ S = S</p> <p>⇒ if B ⊂ A then A ∪ B  = A i.e. union of super set and subset is super set.</p></li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">A ∩ ∅ = ∅ <p>∅ ⊂ A and A ∩ ∅ = ∅</p> <p>⇒ if B ⊂ A then A ∩ B  = B i.e. intersection of super set and subset is subset.</p></li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">If B ⊂ A, then A ∩ B  = B and A ∪ B  = A</li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">A ⊂ A ∪ B also B ⊂ A ∪ B</li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">A ∩ B ⊂ A also A ∩ B ⊂ B</li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">A ∩ B ⊂ A ⊂ A ∪ B and A ∩ B ⊂ B ⊂ A ∪ B i.e, A and B sets. A ∩ B is the smallest set and A ∪ B is largest set.
+            <p>A contains A ∩ B and A is contained in A ∪ B.</p>
+            <p>Similarly B contains A ∩ B and B is contained in A ∪ B.</p></li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">As A ∩ B ⊂ A<p>⇒ (A ∩ B) ∪ A = A [super set]</p><p>and (A ∩ B) ∩ A = (A ∩ B) [subset]</p></li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">As A ⊂ A ∪ B<p>⇒ A ∩ (A ∪ B) = A [subset]</p><p>and A ∪ (A ∪ B) = (A ∪ B) [super set]</p> </li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">(A - B) ∪ (A ∩ B) ∪ (B - A) = A ∪ B and (A - B), (A ∩ B), (B - A) are pairwise disjoint. i.e. 
+            <p>(A - B) ∩ (A ∩ B) = ∅ </p><p>(A - B) ∩ (B - A) = ∅ </p><p>(A ∩ B) ∩ (B - A) = ∅ </p><p>Hence (A - B), (A ∩ B) and (B - A) are partitions of A ∪ B.</p></li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">A ∪ A' = S <p>i.e. Union of A and its complement gives identity set for intersection operation.</p></li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">A ∩ A' = ∅ <p>i.e. Intersection of A and its complement gives identity set for union operation.</p></li>
+        <br>
+    </ol>
+    <h4 style="text-align: center;">Remark:</h4>
+    <ul>
+        <li style="color:#ababab !important; font-size: 1.25rem;">Property 11 and 12 are very useful for Boolean algebra as in Boolean algebra these properties are formed in a way: a + a' = 1 
+            i.e. sum of element and its complement gives multiplicative identity element and a. a' = 0 </li>
+        <br>
+        <li style="color: #ababab !important; font-size: 1.25rem;">Multiplication of element and its complement gives additive identity element.</li>
+    </ul>

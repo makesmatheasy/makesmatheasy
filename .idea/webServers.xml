@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="16db5815-9a35-48a3-9302-33ada3ab7a52" name="localhost" url="https://localhost:5000">
+        <fileTransfer mountedRoot="C:\Users\Sairish\Documents\GitHub\makesmatheasy" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>

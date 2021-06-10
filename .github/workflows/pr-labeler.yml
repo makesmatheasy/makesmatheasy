@@ -1,23 +1,17 @@
-name: Add Labels 
-# The events that triggers the workflow
+name: Add label to Merged PR
+
+# The events for whcih this workflow wii be triggered
 on:
   pull_request_target:
-    branches:
-      - master
-    types:
-      - opened
+    types: [closed]
 
+# The machine will run each job when workflow will be triggered
 jobs:
-  add-label:
-    name: Add Labels
-    # The machine each job should run
+  automate-issues-labels:
     runs-on: ubuntu-latest
-    # The tasks each job should run
+    # These tasks will be run in each job
     steps:
-      - uses: actions/checkout@v2
-      - uses: christianvuerings/add-labels@v1
+      - name: initial labeling
+        uses: andymckay/labeler@master
         with:
-          labels: |
-            GSSOC21
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          add-labels: 'LGMSOC21'

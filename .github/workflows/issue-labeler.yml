@@ -11,4 +11,4 @@ jobs:
       - name: initial labeling
         uses: andymckay/labeler@master
         with:
-          add-labels: 'GSSOC21'
+          add-labels: 'LGMSOC21'

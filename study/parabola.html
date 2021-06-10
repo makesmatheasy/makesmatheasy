@@ -1,0 +1,211 @@
+<!--Calculator for trivial parabola solution-->
+<div class="stopwrap">
+    <table class="table table-bordered table-dark mb-4">
+        <thead>
+            <tr>
+                <th scope="col" colspan="2">\[Choose\space the\space calculator\space
+                    according\space to\space your\space equation\space type\]
+                </th>
+            </tr>
+            <tr>
+                <th scope="col">\[For\space Equation:\space y^2=4ax\]</th>
+                <th scope="col">\[For\space Equation:\space x^2=4ay\]</th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="number" id="a-number" class="form__field" placeholder="Enter value of 'a'"
+                        oninput="cal_func_parabola_y();">
+                </th>
+                <th>
+                    <input type="number" id="b-number" class="form__field" placeholder="Enter value of 'a'"
+                        oninput="cal_func_parabola_x();">
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="form-group" style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
+                        <p id="result_cal_func_parabola_y"></p>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group" style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
+                        <p id="result_cal_func_parabola_x"></p>
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<!--Calculator code for trivial parabola solution ends here-->
+<br>
+
+<div class="stopwrap">
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col">\[Equation\]</th>
+                <th scope="col">\[Graph\]</th>
+                <th scope="col">\[Focus\]</th>
+                <th scope="col">\[Length\space of\space LR\]</th>
+                <th scope="col">\[Equation\space of\space Directrix\]</th>
+                <th scope="col">\[Equation\space of\space Axis\]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">\[y^2=4ax\]</th>
+                <td><img src="images/Parabola1.png" class="img-fluid"></td>
+                <td>\[(a,0)\]</td>
+                <td>\[4a\]</td>
+                <td>\[x=-a\]</td>
+                <td>\[y=0\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[y^2=-4ax\]</th>
+                <td><img src="images/Parabola2.png" class="img-fluid"></td>
+                <td>\[(-a,0)\]</td>
+                <td>\[4a\]</td>
+                <td>\[x=a\]</td>
+                <td>\[y=0\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[x^2=4ay\]</th>
+                <td><img src="images/Parabola3.png" class="img-fluid"></td>
+                <td>\[(0,a)\]</td>
+                <td>\[4a\]</td>
+                <td>\[y=-a\]</td>
+                <td>\[x=0\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[x^2=-4ay\]</th>
+                <td><img src="images/Parabola4.png" class="img-fluid"></td>
+                <td>\[(0,-a)\]</td>
+                <td>\[4a\]</td>
+                <td>\[y=a\]</td>
+                <td>\[x=0\]</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <h2>Equations of Tangent of all Parabolas in slope form</h2>
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col">\[Equations\space of\]<br>\[Parabola\]</th>
+                <th scope="col">\[Point\space of\space contact\space in\]<br>\[\space
+                    terms\space of\space
+                    slope(m)\]
+                </th>
+                <th scope="col">\[Equation\space of\space tangent\space in\]<br>\[\space
+                    terms\space of\space
+                    slope(m)\]
+                </th>
+                <th scope="col">\[Condition\space of\space Tangency\]<br><br></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">\[y^2=4ax\]</th>
+                <td>\[(\frac{a}{m^2},\frac{2a}{m})\]</td>
+                <td>\[y=mx+\frac{a}{m}\]</td>
+                <td>\[c=\frac{a}{m}\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[y^2=-4ax\]</th>
+                <td>\[(-\frac{a}{m^2},-\frac{2a}{m})\]</td>
+                <td>\[y=mx-\frac{a}{m}\]</td>
+                <td>\[c=-\frac{a}{m}\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[x^2=4ay\]</th>
+                <td>\[(2am,am^2)\]</td>
+                <td>\[y=mx-am^2\]</td>
+                <td>\[c=-am^2\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[x^2=-4ay\]</th>
+                <td>\[(-2am,am^2)\]</td>
+                <td>\[y=mx+am^2\]</td>
+                <td>\[c=am^2\]</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Equations of Normal of all Parabolas in slope form</h2>
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col">\[Equations\space of\]<br>\[Parabola\]</th>
+                <th scope="col">\[Point\space of\space contact\space in\]<br>\[\space
+                    terms\space of\space
+                    slope(m)\]
+                </th>
+                <th scope="col">\[Equation\space of\space normal\space in\]<br>\[\space
+                    terms\space of\space
+                    slope(m)\]
+                </th>
+                <th scope="col">\[Condition\space of\space Normality\]<br><br></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">\[y^2=4ax\]</th>
+                <td>\[(am^2,-2am)\]</td>
+                <td>\[y=mx-2am-am^3\]</td>
+                <td>\[c=-2am-am^3\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[y^2=-4ax\]</th>
+                <td>\[(am^2,2am)\]</td>
+                <td>\[y=mx+2am+am^3\]</td>
+                <td>\[c=2am+am^3\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[x^2=4ay\]</th>
+                <td>\[(-\frac{2a}{m},\frac{a}{m^2})\]</td>
+                <td>\[y=mx+2a+\frac{a}{m^2}\]</td>
+                <td>\[c=2a+\frac{a}{m^2}\]</td>
+            </tr>
+            <tr>
+                <th scope="row">\[x^2=-4ay\]</th>
+                <td>\[(\frac{2a}{m},-\frac{a}{m^2})\]</td>
+                <td>\[y=mx-2a-\frac{a}{m^2}\]</td>
+                <td>\[c=-2a-\frac{a}{m^2}\]</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Director Circle of all Parabolas</h2>
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col">\[Equations\space of\space Parabola\]</th>
+                <th scope="col">\[Equation\space of\space Director\space Circle\]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">\[y^2=4ax\]</th>
+                <td>\[x\,+a\space=\,0\]</td>
+
+            </tr>
+            <tr>
+                <th scope="row">\[y^2=-4ax\]</th>
+                <td>\[x\,-a\space=\,0\]</td>
+
+            </tr>
+            <tr>
+                <th scope="row">\[x^2=4ay\]</th>
+                <td>\[y\,+a\space=\,0\]</td>
+
+            </tr>
+            <tr>
+                <th scope="row">\[x^2=-4ay\]</th>
+                <td>\[y\,-a\space=\,0\]</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

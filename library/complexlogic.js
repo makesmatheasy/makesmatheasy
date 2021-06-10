@@ -224,40 +224,38 @@ function volofcuboid() {
     renderMathInElement(document.getElementById("cuboidAns3"));
 }
 
-function euler()
-{
+function euler(){
   let explain="\\[Euler \\space Form \\space =re^{i\\theta}\\]";
   explain+="\\[where, \\space r=\\sqrt{real^2+imaginary^2} \\space\\space , \\space \\space \\theta=tan^{-1}\\frac{imaginary}{real}\\]";
   var r = parseInt(document.getElementById("cpereal").value);
   var i = parseInt(document.getElementById("cpeimg").value);
   var result= document.getElementById("comperesult");
-  var x = (Math.sqrt((r*r)+(i*i)));
-  var x1;
-  if(!Number.isInteger(x))
-  {
-    var j = (r*r)+(i*i);
-    x = "&#8730;  "+ j ;
-  }
-  explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
-  var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
-  explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
-  if(y<0)
-  {   
-      y=nerdamer((-1)*y).toString();
-      x1=x+"e^{-iπ"+y+"}";
-	  x=x+"e<sup>-iπ"+y+"</sup>";
-      explain+="-π" +y+"\\]";
-  }
-  else{
-	  y=y.toString();
-      x1=x+"e^{iπ"+y+"}";
-   x=x+"e<sup>iπ"+y+"</sup>";
-   explain+="π" +y+"\\]";
-  }
-  result.innerHTML = x;
-  explain+="\\[Euler \\space Form \\space ="+x1+"\\]";
-  document.getElementById('compeexplain').innerHTML=explain;
-  renderMathInElement(document.getElementById("compeexplain"));
+  if(!isNaN(r) && (!isNaN(i))){
+        var x = (Math.sqrt((r*r)+(i*i)));
+        var x1;
+        if(!Number.isInteger(x)){
+            var j = (r*r)+(i*i);
+            x = "&#8730;  "+ j ;
+        } explain+="\\[r=\\sqrt{("+r+")^2+("+i+")^2}="+x+"\\]";
+        var y = nerdamer((Math.atan(i/r))/3.141592653589793).evaluate();
+        explain+="\\[\\theta=tan^{-1}\\frac{"+i+"}{"+r+"}\\space radians=";
+        if(y<0) {   
+            y=nerdamer((-1)*y).toString();
+            x1=x+"e^{-iπ"+y+"}";
+            x=x+"e<sup>-iπ"+y+"</sup>";
+            explain+="-π" +y+"\\]";
+        } else{
+            y=y.toString();
+            x1=x+"e^{iπ"+y+"}";
+        x=x+"e<sup>iπ"+y+"</sup>";
+        explain+="π" +y+"\\]";
+        } result.innerHTML = x;
+        explain+="\\[Euler \\space Form \\space ="+x1+"\\]";
+        document.getElementById('compeexplain').innerHTML=explain;
+    } else{
+        document.getElementById('compeexplain').innerHTML= "\\[Please \\space enter \\space valid \\space input\\]";
+        result.innerHTML = "";
+    } renderMathInElement(document.getElementById("compeexplain"));
 }
 
 function npower()
@@ -584,6 +582,17 @@ function factorial(n){
   }
   
   // HP starts
+  function calcexhp(){
+    var a = document.getElementById("firstTerm");
+    var d = document.getElementById("diff");
+    var n = document.getElementById("noofTerms");
+
+    a.value = 1;
+    d.value = 3;
+    n.value = 5;
+
+    hp();
+  }
   function hp() {
     var a = document.getElementById("firstTerm").value;
     var d = document.getElementById("diff").value;
@@ -614,12 +623,12 @@ function factorial(n){
 }
 // HP ends
 
-function bpcal()
+function bpcal(op)
 {
-    var a=document.getElementById("psuc").value;
-    var b=document.getElementById("suc").value;
-    var c=document.getElementById("tri").value;
-    var ans="";
+    let a=document.getElementById("psuc").value;
+    let b=document.getElementById("suc").value;
+    let c=document.getElementById("tri").value;
+    let ans="";
 
    
     if(a==""||b==""||c=="")
@@ -630,21 +639,30 @@ function bpcal()
     {
         ans="Input Error: Probability can't be greater than 1";
     }
-    else if(b>c)
+    else if(b<c)
     {
         ans="Input Error: Successful events can't be greater than total number of trials.";
     }
    
     else{
+        if(op===1){
+            let pmf= factorial(c) / (factorial(b) * factorial(c-b));            
+            let n=Math.pow(a,b);
+            let s=1-a, t=c-b;
+            let m=Math.pow(s,t);
+            pmf=pmf*n*m;
+            pmf=pmf.toPrecision(5)
+            ans="The PMF is: " +pmf;
+        }
+        else if(op===2){
+            let mean= c*a;          
+            ans="The Mean is: " + mean;
+        }
+        else{
+            let variance = a*b*c;
+            ans="The Variance is: " + variance;
 
-        var pmf= factorial(c) / (factorial(b) * factorial(c-b));
-        console.log(pmf);
-        var n=Math.pow(a,b);
-        var s=1-a, t=c-b;
-        var m=Math.pow(s,t);
-        pmf=pmf*n*m;
-        pmf=pmf.toPrecision(5)
-        ans="The PMF is: " +pmf;
+        }
     }
     document.getElementById("bpans").innerHTML=ans;
 
@@ -698,83 +716,71 @@ function stresscalc()
 
     ans+="Stress is defined as “The restoring force per unit area of the material”. It is a tensor quantity. Denoted by Greek letter σ. Measured using Pascal or N/m2. Mathematically expressed as <br>    σ=F/A Where, <br>    F is the restoring force measured in Newton or N. <b>    A is the area of cross-section measured in m2. <br>    σ is the stress measured using N/m2 or Pa. <br>"
 }
-document.getElementById("stressans").innerHTML=ans;
-    
-
+document.getElementById("stressans").innerHTML=ans;  
 }
 
-function arcal()
-{
+function arcal() {
       var a=document.getElementById("ang12").value;
       var b=document.getElementById("rad").value;
       var y=document.getElementById("radit").value;
       var d=document.getElementById("angit").value;
-      var ans="";
-      if(a == "" && b == "")
-      {
-          ans="Error: All values are required to obtain answer";
-      }
-      else
-      {
-
-        if(d=="degree")
-        {
+      if(a == "" || b == "") {
+        document.getElementById("arcans1").innerHTML ="\\[Error: \\space All \\space values \\space are \\space required \\space to \\space obtain \\space answer\\]";
+        renderMathInElement(document.getElementById("arcans1"));
+        document.getElementById("arcans2").innerHTML = ""; document.getElementById("arcans3").innerHTML = ""; document.getElementById("arcans4").innerHTML = ""; 
+        document.getElementById("arcans5").innerHTML = ""; document.getElementById("arcans6").innerHTML = ""; return;
+        } else {
+        if(d=="degree") {
             b/=57.296;
-        }
-
-
+            document.getElementById("arcans1").innerHTML = "\\[\\frac{\\theta \\space (degree)}{57.296} \\space = "+b.toFixed(2)+" \\space (radian)\\]";
+            renderMathInElement(document.getElementById("arcans1")); } else{ document.getElementById("arcans1").innerHTML = ""; }
         var c= a*b;
-
-        if(y=="cm")
-        {
+        document.getElementById("arcans2").innerHTML = "\\[Arc \\space length = \\space "+a+" \\times "+b.toFixed(2)+" = \\space "+c.toFixed(3)+" \\space m\\]";
+        renderMathInElement(document.getElementById("arcans2"));
+        if(y=="cm") {
             c=c/100;
-        }
-        else if(y=="mm")
-        {
+            document.getElementById("arcans3").innerHTML = "\\[\\frac{Arc \\space length \\space (m)}{100} = \\space "+c.toFixed(3)+" \\space cm\\]";
+            renderMathInElement(document.getElementById("arcans3"));
+            document.getElementById("arcans4").innerHTML = ""; document.getElementById("arcans5").innerHTML = "";
+        } else if(y=="mm") {
             c=c/1000;
-        }
-        else if(y=="inch")
-        {
+            document.getElementById("arcans4").innerHTML = "\\[\\frac{Arc \\space length \\space (m)}{1000} = \\space "+c.toFixed(3)+" \\space mm\\]";
+            renderMathInElement(document.getElementById("arcans4"));
+            document.getElementById("arcans3").innerHTML = ""; document.getElementById("arcans5").innerHTML = "";
+        } else if(y=="inch") {
               c=c/0.0254;
-        }
-      
-        var k=c.toPrecision(5);
-
-             ans="The arc length is: "+k+" m";
-      }
-
-      document.getElementById("arcans").innerHTML=ans;
-
-
+                document.getElementById("arcans5").innerHTML = "\\[\\frac{Arc \\space length \\space (m)}{0.0254} = \\space "+c.toFixed(3)+" \\space inch\\]";
+                renderMathInElement(document.getElementById("arcans5"));
+                document.getElementById("arcans4").innerHTML = ""; document.getElementById("arcans3").innerHTML = "";
+        } else{
+            document.getElementById("arcans3").innerHTML = ""; document.getElementById("arcans4").innerHTML = ""; document.getElementById("arcans5").innerHTML = "";}
+        document.getElementById("arcans6").innerHTML ="\\[The \\space Arc \\space length \\space is: \\space "+c.toFixed(3)+" \\space "+y+"\\]";
+        renderMathInElement(document.getElementById("arcans6"));}
 }
 
 function cresccal() {
     var r1 = document.getElementById("cresc_rad1").value;
     var r2 = document.getElementById("cresc_rad2").value;
     var d = document.getElementById("cresc_dist").value;
-    var ans = "";
-    var lans1, lans2, dans;
     if (r1 == "" || r2 == "" || d == "") {
-        ans = "Error: All values are required to obtain answer";
+        document.getElementById("crescans1").innerHTML = "\\[Error: \\space All \\space values \\space are \\space required \\space to \\space obtain \\space answer \\space\\]";
+        document.getElementById("crescans2").innerHTML =""; document.getElementById("crescans3").innerHTML = ""; renderMathInElement(document.getElementById("crescans1"));
+    } else {
+        if (!isNaN(Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d))) && !isNaN(Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d))) ){ 
+            var lune1 = Math.trunc(2 * (Math.sqrt((r1 + r2 + d) * (r2 + d - r1) * (d + r1 - r2) * (r1 + r2 - d)) / 4) + r1 ** 2 * Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d)) - r2 ** 2 * Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d)));
+            var op = Math.trunc(Math.PI * r1 ** 2 - lune1);
+            var lune2 = Math.trunc(Math.PI * r2 ** 2 - op);
+            document.getElementById("crescans1").innerHTML = "\\[r1 = Radius \\space of \\space circle \\space 1 \\space = \\space "+r1+" \\newline r2 = Radius \\space of \\space circle \\space 2 \\space = \\space "+r2+" \\newline d = Circle \\space center \\space distance \\space = \\space "+d+"\\]";
+            document.getElementById("crescans2").innerHTML = "\\[Area \\space of \\space Lune \\space 1: \\newline 2 \\times \\frac{\\sqrt{(r1 + r2 + d) \\times (r2 + d - r1) \\times (d + r1 - r2) \\times (r1 + r2 - d)} }{4} + \\newline r1^2 \\times acos(\\frac{(r2^2 - r1^2 - d^2)}{(2^r1 \\times d)}) - r2^2 \\times acos(\\frac{(r2^2 + d^2 - r1^2)}{ (2 \\times r2 \\times d)})\\]";
+            document.getElementById("crescans3").innerHTML =  "\\[2 \\times \\frac{\\sqrt{("+r1+" + "+r2+" + "+d+") \\times ("+r2+" + "+d+" - "+r1+") \\times ("+d+" + "+r1+" - "+r2+") \\times ("+r1+" + "+r2+" - "+d+")} }{4} + \\newline "+r1+"^2 \\times acos(\\frac{("+r2+"^2 - "+r1+"^2 - "+d+"^2)}{(2^"+r1+" \\times "+d+")}) - "+r2+"^2 \\times acos(\\frac{("+r2+"^2 + "+d+"^2 - "+r1+"^2)}{ (2 \\times "+r2+" \\times "+d+")}) \\space   = \\space "+ lune1.toFixed(3)+"\\]";
+            document.getElementById("crescans5").innerHTML ="\\[Overlap \\space Area: \\space \\newline \\pi \\times r1^2 - (Area \\space of \\space Lune \\space 1) \\newline "+(math.pi).toFixed(2)+" \\times "+r1+"^2 - ("+lune1.toFixed(2)+") \\space = \\space "+op.toFixed(3)+"\\]";
+            document.getElementById("crescans6").innerHTML = "\\[ Area \\space of \\space Lune \\space 2:  \\space \\newline \\pi \\times r1^2 - (Overlap \\space Area) \\newline "+(math.pi).toFixed(2)+" \\times "+r2+"^2 - ("+op.toFixed(2)+") \\space = \\space "+lune2.toFixed(3)+"\\]";
+            renderMathInElement(document.getElementById("crescans1")); renderMathInElement(document.getElementById("crescans2"));
+            renderMathInElement(document.getElementById("crescans3")); renderMathInElement(document.getElementById("crescans5")); renderMathInElement(document.getElementById("crescans6"));
+        } else{
+            document.getElementById("crescans1").innerHTML  = "Error: Enter proper values";
+            document.getElementById("crescans2").innerHTML = ""; document.getElementById("crescans3").innerHTML = ""; }
     }
-    else {
-        var lune1 = Math.trunc(2 * (Math.sqrt((r1 + r2 + d) * (r2 + d - r1) * (d + r1 - r2) * (r1 + r2 - d)) / 4) + r1 ** 2 * Math.acos((r2 ** 2 - r1 ** 2 - d ** 2) / (2 * r1 * d)) - r2 ** 2 * Math.acos((r2 ** 2 + d ** 2 - r1 ** 2) / (2 * r2 * d)));
-        var op = Math.trunc(Math.PI * r1 ** 2 - lune1);
-        var lune2 = Math.trunc(Math.PI * r2 ** 2 - op);
-
-
-        lans1 = document.createElement('div');
-        lans1.innerHTML = "Area of Lune 1: " + lune1;
-
-        lans2 = document.createElement('div');
-        lans2.innerHTML = "Area of Lune 2: " + lune2;
-
-        dans = document.createElement('div');
-        dans.innerHTML = "Overlap Area: " + op;
-    }
-    document.getElementById("crescans").appendChild(lans1);
-    document.getElementById("crescans").appendChild(lans2);
-    document.getElementById("crescans").appendChild(dans);
 }
 
 function ssqcal()
@@ -850,6 +856,36 @@ function sspncal()
 
 }
 
+function ssfncal(){
+    var num=document.getElementById("ssfn").value;
+    num = parseInt(num);
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var poweroutput = document.getElementById("ssfnans");
+    var powertemp="";
+    if(!valid.test(num))
+    {
+        powertemp += "\\[Enter \\space any \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation \\space purpose \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
+    else if(num<1){
+        powertemp += "\\[Natural \\space Numbers \\space cannot \\space be \\space negative \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    } 
+    else{
+        var powersum=Math.trunc(( (num)**2 * (num + 1)**2 * (2 * num**2 + 2 * num - 1)  ));
+        var powersum1 = powersum/12;
+        powertemp += "\\[Sum \\space of \\space the \\space Power \\space Five \\space of \\space the \\space First \\space n \\space Natural \\space Numbers \\space is \\]";
+        powertemp += "\\[ \\sum {n}^5 \\space = \\space \\frac{n^2 (n+1)^2 (2n^2 + 2n -1 )}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space \\frac{"+num+"^2 \\times ("+num+"+1)^2 \\times (2 \\times "+num+"^2 + 2 \\times "+num+" \\space - \\space 1 )}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space \\frac{"+(num**2)+" \\times "+(num +1)+"^2 \\times (2 \\times "+(num**2)+" + 2 \\times "+num+" \\space - \\space 1 )}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space \\frac{"+powersum+"}{12}  \\]";
+        powertemp += "\\[ \\sum {"+num+"}^5 \\space = \\space "+powersum1.toFixed(2)+" \\]";
+        poweroutput.innerHTML = powertemp;
+        renderMathInElement(poweroutput);
+    }
+}
 
 function ssqncal()
 {
@@ -1147,23 +1183,36 @@ function segcal()
     var a=document.getElementById("segr").value;
     var b=document.getElementById("sega").value;
     var c=document.getElementById("angseg").value;
+    var output = document.getElementById("segans");
     var ans="";
     if(a==""||b=="")
     {
-        ans="Enter all the values to obtain answer";
+        ans += "\\[Enter \\space all \\space the \\space values \\space to \\space obtain \\space answer \\]";
+        output.innerHTML = ans;
+        renderMathInElement(output);
     }
     else{
 
     if(c=="degree")
     {
-        b=b/57.296;
+        var t=Math.sin(b);
+        ans += "\\[\\frac{1}{2} \\times " +  a + "^{2} \\times  ( ( \\frac{π}{180} ) " + b + " - sin (" + b + "))  \\]";
+        ans += "\\[\\frac{1}{2} \\times " + (a**2)  + " \\times  ( ( \\frac{π}{180} ) " + b + " - sin (" + b + ")) \\]";
+        ans += "\\[\\frac{1}{2} \\times " + ((a*a)*((Math.PI/180)*(b-t)))+ " \\]"
+        ans += "\\[Area \\space of \\space segment \\space in \\space degrees \\space is \\space " +  (((a*a)*((Math.PI/180)*(b-t)))*0.5) + " \\]";
+        output.innerHTML = ans;
     }
-   console.log(Math.sin(b));
-   var t=Math.sin(b);
-   var area= a*a*(b-t)*0.5
-    ans="The area of segment is: "+area;
+    else{
+        var t=Math.sin(b);
+        var area= a*a*(b-t)*0.5
+   ans += "\\[\\frac{1}{2} \\times " +  a + "^{2} \\times ( " + b + " - sin ( " + b + ")) \\]";
+   ans += "\\[\\frac{1}{2} \\times " + (a**2)  + " \\times (  " + b + " - sin(" + b + ")) \\]";
+   ans += "\\[\\frac{1}{2} \\times " + ((a*a)*(b-t)) + " \\]"
+   ans += "\\[Area \\space of \\space segment \\space in \\space radian \\space is \\space " + area + " \\]";
+   output.innerHTML = ans;
+    }
 }
-document.getElementById("segans").innerHTML=ans;
+renderMathInElement(output);
 }
 
 function impcal() {
@@ -1199,6 +1248,12 @@ function factorial(n){
     }  
   }
 
+ function calcexhpcal(){
+    var x = document.getElementById("ath").value = 5;
+    var y = document.getElementById("differ").value = 2;
+    var z = document.getElementById("totno").value = 3;
+    hpcal();
+}
 function hpcal()
 {
     var x=parseInt(document.getElementById("ath").value);
@@ -1229,6 +1284,40 @@ function hpcal()
    }
 }
 
+
+function calcexhpcal11(){
+    var x = document.getElementById("lterm1").value = 5;
+    var y = document.getElementById("cdiffer1").value = 2;
+    var z = document.getElementById("totnum1").value = 3;
+    hpcal11();
+}
+function hpcal11()
+{
+    var x=parseInt(document.getElementById("lterm1").value);
+    var y=parseInt(document.getElementById("cdiffer1").value);
+    var z=parseInt(document.getElementById("totnum1").value);
+    var ansout = document.getElementById("hpans11");
+    var anstemp ="";
+    if(!isNaN(parseInt(x)) && !isNaN(parseInt(y)) && !isNaN(parseInt(z)))
+   {
+    var numb = x - ((y - 1)*z);
+    var num6 = (1 / numb) ;
+    anstemp += "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space \\frac{1}{l-(n-1)d} \\]";
+    anstemp += "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space \\frac{1}{" + x +  "- (" + y + " - 1) \\times" + z + "} \\]";
+    anstemp +=  "\\[nth \\space Term \\space of \\space HP \\space from \\space End \\space = \\space" + (num6).toFixed(3) + "\\]";
+    ansout.innerHTML = anstemp;
+   }
+   else
+   {
+     anstemp += "\\[Enter \\space numbers \\space only. \\space Blank \\space inputs \\space are \\space not \\space allowed \\]";
+     ansout.innerHTML = anstemp;
+    
+   }
+   renderMathInElement(ansout);
+}
+
+
+
 function ppcal()
 {
     var a=document.getElementById("lamb").value;
@@ -1245,10 +1334,14 @@ function ppcal()
            var y=(2.718)**(-a);
            var z=factorial(b);
            var num= (s*y)/z;
-           ans="The answer is:" + num;
+           ans+="\\[\\space P(X{=}"+b+")= \\frac{"+a+"^"+b+" \\times e^{-"+a+"}}{"+b+"!}\\]";
+           ans+="\\[\\space P(X{=}"+b+")= \\frac{"+(s*y).toFixed(4)+"}{"+z+"}\\]";
+           ans+="\\[\\space P(X{=}"+b+")= "+num.toFixed(4)+"\\]";
+           ans+="The answer is  "+num.toFixed(4);
     }
 
     document.getElementById("ppans").innerHTML=ans;
+    renderMathInElement(document.getElementById("ppans"));
 
 }
 
@@ -1273,10 +1366,17 @@ function eircal()
         var z=parseInt(b);
         var rate_period= ((1+(x/z))**z)-1;
         var rate_p=rate_period*100;
+        var rate = (1+rate_period)**y - 1;
+        var rate_per = rate*100;
         ans +="\\[Effective \\space interest \\space rate \\space per \\space period(i) \\space \\] \\[=(1+ \\frac{r}{m})^{m}-1\\]";
-        ans +="\\[=(1+\\frac{" + x + "}{" + z + "})^{" + z + "})-1\\]";
+        ans +="\\[=(1+\\frac{" + x + "}{" + z + "})^{" + z + "}-1\\]";
         ans +="\\[="+ rate_period +"\\]";
-        ans +="\\[Effective \\space interest \\space Rate \\space per \\space period=" + rate_period +"\\space X \\space 100=" + rate_p + "\\% \\]";
+        ans +="\\[Effective \\space interest \\space Rate \\space per \\space period(i \\%)=" + rate_period +"\\space X \\space 100=" + rate_p + "\\% \\]";
+        ans +="\\[Effective \\space Interest \\space rate \\space for \\space m \\space periods(i_t) \\space \\]";
+        ans +="\\[= \\space (1+ \\frac{r}{m})^{mt}-1 \\]";
+        ans +="\\[= \\space (1+ \\frac{" + x + "}{" + z + "})^{" + z + "\\times" + y + "}-1 \\]";
+        ans +="\\[= \\space " + rate + "\\]";
+        ans +="\\[Effective \\space Interest \\space rate \\space for \\space m \\space periods(i_t \\%)=" + rate + "\\space \\times \\space 100=" + rate_per + "\\% \\]";
     }
     result.innerHTML = ans;
     renderMathInElement(result);
@@ -1350,6 +1450,25 @@ function confidence() {
     document.getElementById("confans").innerHTML = s;
 }
 
+function unitcircCal(){
+    var deg = document.getElementById("unitdeg").value;
+    if(deg==""||isNaN(deg))
+    {
+        document.getElementById("unitcircxans").innerHTML = "Please enter proper numeric value";
+
+    }
+    else{
+    var rad=0.0174533*deg;
+    var x = Math.cos(rad);
+    var y = Math.sin(rad);
+
+    document.getElementById("unitcircxans").innerHTML = "\\[X: " + x+"\\newline Y:  "+ y+"\\]";
+    document.getElementById("unitcircyans").innerHTML = "\\[X \\space =cos("+deg+"\\degree )="+x+"  \\space \\newline Y \\space =sin("+deg+"\\degree )="+y+"  \\]"
+    renderMathInElement(document.getElementById("unitcircxans"));
+    renderMathInElement(document.getElementById("unitcircyans"));
+    }
+}
+
 function wmccal()
 {
     var num1=document.getElementById("wmcx").value;
@@ -1401,84 +1520,211 @@ function wmccal()
         console.log(wsum);
         console.log(sum);
         var wm=sum/wsum;
-        ans="The calculated weighted mean is: "+wm;
-
-    }
-    
+        ans="The calculated weighted mean is: "+wm;}
     }
     document.getElementById("wmcans").innerHTML=ans;
 }
 
+function calcexdbltimeCal(){
+    var n = document.getElementById("inctime");
+
+    n.value = 2;
+
+    dbltimeCal();
+}
+
 function dbltimeCal(){
-    let inc = parseInt(document.getElementById("inctime").value);
-    let ans = Math.log(2) / Math.log(1 + inc);
-    document.getElementById("dbltimeans").innerHTML =  "doubling time: " + ans + " periods";
+    var inc = parseInt(document.getElementById("inctime").value);
+    var ans = Math.log(2) / Math.log(1 + inc);
+    document.getElementById("dbltimeans").innerHTML = "\\[Doubling \\space Time \\space is \\space \\space \\frac{log \\space (2) }{log \\space (1 + (\\% \\space per \\space period \\space increase)) } \\space \\space that \\space is, \\]";
+    renderMathInElement(document.getElementById("dbltimeans"));
+    document.getElementById("dbltimeans1").innerHTML = "\\[\\frac{log \\space (2)}{log \\space (1 + ("+inc+")) } \\space = \\space "+ans.toFixed(3)+" \\space periods\\]";
+    renderMathInElement(document.getElementById("dbltimeans1"));
+}
+
+function calcexperchngCal(){
+    var n = document.getElementById("initialVal");
+    var x = document.getElementById("finalVal");
+
+    n.value = 10;
+    x.value = 20;
+
+    perchngCal();
+}
+
+function perchngCal(){
+    var initial = parseInt(document.getElementById("initialVal").value);
+    var final = parseInt(document.getElementById("finalVal").value);
+    var output = document.getElementById("perchngans");
+    var temp = "";
+
+    if (!isNaN(initial) && !isNaN(final))
+    {
+        var ans = ((final-initial)/Math.abs(initial))*100;
+
+        temp += "\\[The \\space Percentage \\space change \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{((Final value) - (Initial value))}{ |(Initial value)| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{(("+final+") - ("+initial+"))}{ |("+initial+")| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{"+(final-initial)+"}{ |("+initial+")| } \\times 100\\]"
+        temp += "\\[\\space = \\space \\frac{"+(final-initial)+"}{ "+(Math.abs(initial))+" } \\times 100\\]"
+        temp += "\\[\\space = \\space "+((final-initial)/Math.abs(initial)).toFixed(2)+" \\times 100\\]"
+        temp += "\\[\\space = \\space "+ans.toFixed(3)+"\\]"
+        temp += "\\[Hence, \\space\\]"
+        temp += "\\[\\space = \\space "+final+" \\space is \\space a \\space "+ans.toFixed(2)+" \\space \\% change \\space of \\space "+initial+"\\]"
+
+        output.innerHTML = temp;
+    }
+    else
+    {
+        temp += "\\[Please \\space enter \\space valid \\space input\\]"
+    }
+    renderMathInElement(output);
+}
+
+function peroffCal(){
+    var original = parseInt(document.getElementById("originalPrice").value);
+    var off = parseInt(document.getElementById("offper").value);
+    var tax = parseInt(document.getElementById("salestax").value);
+    var output1 = document.getElementById("peroffans1");
+    var output2 = document.getElementById("peroffans2");
+    var temp1 = "";
+    var temp2 = "";
+    var final = (original + (original*(tax/100)))*(off/100);
+    var savings = original - final;
+
+    if(!isNaN(original) && !isNaN(tax) && !isNaN(off)){
+
+        temp1 += "\\[The \\space Percentage \\space Off \\space will \\space be,\\]"
+        temp1 += "\\[First, \\space we \\space calculate \\space the \\space final \\space value\\]"
+        temp1 += "\\[Final \\space Price \\space = \\space (Original \\space Price) +  ( (Original \\space Price) \\times \\frac{(Tax \\space value)}{100} ) \\times \\frac{(Off \\space value)}{100}\\]"
+        temp1 += "\\[\\space = \\space ("+original+") +  ( ("+original+") \\times \\frac{("+tax+")}{100} ) \\times \\frac{("+off+")}{100}\\]"
+        temp1 += "\\[\\space = \\space ("+original+") +  ( ("+original+") \\times "+(tax/100).toFixed(2)+" ) \\times "+(off/100).toFixed(2)+"\\]"
+        temp1 += "\\[\\space = \\space ("+original+") +  ( "+(original * (tax/100)).toFixed(2)+" ) \\times "+(off/100).toFixed(2)+"\\]"
+        temp1 += "\\[\\space = \\space "+(original * (original * (tax/100))).toFixed(2)+"  \\times "+(off/100).toFixed(2)+"\\]"
+        temp1 += "\\[\\space = \\space "+final.toFixed(3)+"\\]"
+
+        output1.innerHTML = temp1;
+
+        temp2 += "\\[Finally,\\space we \\space subtract \\space this \\space (Final \\space Price) \\space value \\space from \\space the \\space (Orginal \\space Price)\\]"
+        temp2 += "\\[Savings \\space = \\space (Orginal \\space Price) \\space - \\space (Final \\space Price)\\]"
+        temp2 += "\\[\\space = \\space "+original+" - "+final.toFixed(2)+"\\]"
+        temp2 += "\\[\\space = \\space "+savings.toFixed(3)+"\\]"
+
+        output2.innerHTML = temp2;
+    } else{
+        temp1 = "\\[Please \\space enter \\space valid \\space input\\]"
+        output1.innerHTML = temp1;
+        temp2 = "";
+    }
+    renderMathInElement(output1);
+    renderMathInElement(output2);
+}
+
+function moduloCal(){
+    var x = parseInt(document.getElementById("modx").value);
+    var y = parseInt(document.getElementById("mody").value);
+    var r = x%y;
+    var output = document.getElementById("moduloans");
+    var xy = x/y;
+    var yy = y*xy;
+    
+    var step = "\\[x \\pmod y= \\space x - (frac{x}{y}) \\times y\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - (frac{"+x+"}{"+y+"}) \\times "+y+"\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - "+xy+" \\times "+y+"\\]";
+    step += "\\[x \\pmod y= \\space "+x+" - "+yy+" \\]";
+    step += "\\[x \\pmod y= \\space "+r+" \\]";
+
+    output.innerHTML = step;
+
+    renderMathInElement(output);
 }
 
 function covcalcu(){
     var num1=document.getElementById("setx").value;
     var num2=document.getElementById("sety").value;
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
+    var output = document.getElementById("covans");
     var s="";
     if(num1==""||num2=="") {
-       s= "Please enter number";
-    }else if(!valid.test(num1&&num2))
-    {
-        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
-    } else{
-    num1=num1.trim();
-    num1 = num1.split(" ");
-    var len1=parseInt(num1.length);
-    var number1=[], sum1=0, sum2=0;
-    for (i = 0; i < len1; i++){
-        number1[i] = parseFloat(num1[i].trim());
-        sum1+=number1[i];
-    }
-    sum1=sum1/len1;
-    num2=num2.trim();
-    num2 = num2.split(" ");
-    var len2=parseInt(num2.length);
-    if (len1 == 1 || len2 == 1){
-        document.getElementById("covans").innerHTML= "Please enter more than value for each data set";
+        s= "\\[Please \\space enter \\space number\\]";
+        output.innerHTML = s;
+        renderMathInElement(output);
         return;
-    }
-    if(len1!=len2) {
-        s="Your datasets X and Y contain different numbers of element";
+    }else if(!valid.test(num1&&num2)){
+        s= "\\[Enter \\space space \\space separated \\space numbers. \\space Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed\\]";
+        output.innerHTML = s;
+        renderMathInElement(output);
+        return;
+
     } else{
-    var number2=[];
-    for (i = 0; i < len2; i++) {
-        number2[i] = parseFloat(num2[i].trim());
-        sum2+=number2[i];
-    }
-    sum2=sum2/len2;
-    var covsum=0;
-    for (i = 0; i < len2; i++) {
-        var d=number2[i]-sum2;
-        var f=number1[i]-sum1;
-        covsum+=(d*f);
-    }
-    var cov=(covsum)/(len2-1);
-    s="The calculated covariance is: "+cov;
+        num1=num1.trim();
+        num1 = num1.split(" ");
+        var len1=parseInt(num1.length);
+        var number1=[], sum1=0, sum2=0;
+        for (i = 0; i < len1; i++){
+            number1[i] = parseFloat(num1[i].trim());
+            sum1+=number1[i];
+        }
+        sum1=sum1/len1;
+        num2=num2.trim();
+        num2 = num2.split(" ");
+        var len2=parseInt(num2.length);
+        if (len1 == 1 || len2 == 1){
+            s = "\\[Please \\space enter \\space more \\space than \\space value \\space for \\space each \\space data \\space set\\]";
+            output.innerHTML = s;
+            renderMathInElement(output);
+            return;
+        }
+        if(len1!=len2) {
+            s="\\[Your \\space datasets \\space X \\space and \\space Y \\space contain \\space different \\space numbers \\space of \\space element\\]";
+            output.innerHTML = s;
+            renderMathInElement(output);
+            return;
+        } 
+        else{
+            var number2=[];
+            for (i = 0; i < len2; i++) {
+                number2[i] = parseFloat(num2[i].trim());
+                sum2+=number2[i];
+            }
+            s += "\\[Calculate the mean value for xi by adding all values and dividing them by sample size\\]"
+            s += "\\[Calculate the mean value for yi by adding all values and dividing them by sample size\\]"
+            s += "\\[Now, calculate the x diff. It can be calculated by subtracting each element of x from the mean value of x\\]"
+            s += "\\[Do the same for y, calculate ydiff by subtracting all values of y from the mean value of y\\]"
+            s += "\\[ Multiply all values of xdiff and ydiff and place them in a new column\\]"
+            s += "\\[Add the last column values, which are the product of the two differences. Divide by the sample size,\\]"
+            s += "\\[he value after dividing by sample size is covariance,\\]"
+            sum2=sum2/len2;
+            var covsum=0;
+            for (i = 0; i < len2; i++) {
+                var d=number2[i]-sum2;
+                var f=number1[i]-sum1;
+                covsum+=(d*f);
+            }
+            var cov=(covsum)/(len2-1);
+            s += "\\[he value after dividing by sample size is covariance, which is "+cov+" in this case\\]"
+            s +=  "\\[The \\space calculated \\space covariance \\space is:\\space "+cov+"\\]";
+            output.innerHTML = s;
+            renderMathInElement(output);
     }
 }
-
-document.getElementById("covans").innerHTML=s;
 }
 
 function covcal() {
     var num=document.getElementById("cvsd").value;
-    var s=""; 
+    var s="";
+    var output = document.getElementById("cvans");
     valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/;
     if(num==""){
-       s= "Please enter number";
+       s= "\\[Please \\space enter \\space number\\]";
     } else if(!valid.test(num)){
-        s= "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+        s= "\\[Enter \\space space \\space separated \\space numbers. \\newline Use \\space of \\space alphabets \\space and \\space special \\space character \\space is \\space not \\space allowed \\space for \\space calculation\\]";
     } else{
     num=num.trim();
     num = num.split(" ");
     var len=parseInt(num.length);
     if (len == 1){
-        document.getElementById("cvans").innerHTML= "Please enter more than one value";
+        s = "\\[Please \\space enter \\space more \\space than \\space one \\space value\\]";
         return;
     }
     var number=[]
@@ -1486,33 +1732,51 @@ function covcal() {
         number[i] = parseFloat(num[i].trim());
     }
     var sum=0;
+    s += "\\[First, \\space take \\space a \\space loop \\space upto \\space the \\space length \\space of \\space dataset, "+len+"\\]";
+    s += "\\[And, \\space add \\space all \\space of \\space the \\space data \\space in \\space dataset\\]";
     for (i = 0; i < len; i++) {
        sum=sum+number[i];
     }
     var mean=sum/len;
+    s += "\\[We \\space get \\space the \\space sum \\space here \\space "+sum+" \\space\\]";
+    s += "\\[Then \\space we \\space divide \\space this \\space sum \\space by \\space the \\space length \\space the \\space dataset\\]";
+    s += "\\[\\space Mean \\space = \\space \\frac{"+sum+"}{"+len+"}\\]"
+    s += "\\[\\space = \\space "+mean.toFixed(3)+"\\]"
     var varrzlt=0;
     for (i = 0; i < len; i++) {
         varrzlt = varrzlt + ((number[i]-mean)**2);
     }
+    s +="\\[Then \\space we \\space take \\space a \\space loop \\space where \\space each \\space data \\space from \\space dataset \\space is\\]";
+    s +="\\[Substracted \\space and \\space squared, \\space we \\space get, \\space "+varrzlt.toFixed(2)+ " \\space as \\space the \\space value\\]";
     varrzlt = varrzlt/(len-1);
+    s +="\\[This \\space value \\space is \\space now \\space divided \\space by \\space the \\space (length - 1)\\]";
+    s +="\\[\\space = \\space \\frac{"+varrzlt.toFixed(2)+"}{"+len+" - 1}\\]";
+    s +="\\[\\space = \\space \\frac{"+varrzlt.toFixed(2)+"}{"+(len - 1)+"}\\]";
+    s +="\\[\\space = \\space "+varrzlt.toFixed(3)+"\\]";
     var sdev = Math.sqrt(varrzlt);
-    s="The Coeffecient of Variation is: "+sdev/mean;
+    s +="\\[Finally, \\space the \\space Coeffecient \\space of \\space Variation \\space will \\space be,\\]";
+    s += "\\[\\space = \\space \\frac{(\\sqrt{"+varrzlt.toFixed(2)+"})}{"+mean+"}\\]";
+    s += "\\[\\space = \\space \\frac{"+sdev.toFixed(2)+"}{"+mean+"}\\]";
+    s += "\\[\\space = \\space "+(sdev/mean).toFixed(3)+"\\]";
     }
-    document.getElementById("cvans").innerHTML=s;
+    output.innerHTML=s;
+    renderMathInElement(output);
 }
+
 
 function rmscal()
 {
     var num=document.getElementById("rmi").value;
-    var ans="";
+    var answer="";
     if(num=="")
     {
-        ans="Please enter all the values";
+        answer="Please enter all the values";
     }
     else
     {
         var outputstring="";
         var s=0;
+        
         num=num.trim();
         num = num.split(" ");
         var len=parseInt(num.length);
@@ -1526,16 +1790,45 @@ function rmscal()
             sum=sum+(number[i]**2);
         }
 
-        sum=sum/len;
-        sum=Math.sqrt(sum);
-        ans="The root mean square of given input is: "+sum;
-        
-    }
-    document.getElementById("rmsans").innerHTML=ans;
+        avg=sum/len;
+        rmss=Math.sqrt(avg);
+        answer+="\\[RMS \\space = \\space \\sqrt{\\frac{1}{n} \\sum_i{x_i^2}}\\]"
+        answer+="\\[RMS \\space = \\space \\sqrt{\\frac{1}{"+len+"} \\times "+sum.toFixed(4)+"}\\]"
+        answer+="\\[RMS \\space = \\space \\sqrt{"+1/len.toFixed(4)+" \\times "+sum.toFixed(4)+"}\\]"
+        answer+="\\[RMS \\space = \\space \\sqrt{"+(1/len) * sum.toFixed(4)+"}\\]"
+        answer+="\\[RMS \\space = \\space "+Math.sqrt((1/len) * sum).toFixed(4)+"\\]"
+        answer+="\\[The \\space root \\space mean  \\space square \\space of\\space  given\\space  input \\space is: "+rmss.toFixed(4)+"\\]";
 
+    }
+    document.getElementById("rmsans").innerHTML=answer;
+
+    renderMathInElement(document.getElementById("rmsans"));
 }
 
-
+function pvaluecal()
+{ 
+    var z = parseFloat(document.getElementById("pvalueinp").value);
+    
+    var output = document.getElementById("pvalueans");
+    var temp = "";
+    var Zval = (1/Math.sqrt(2*3.14)* (2.71)**((z**2)/2));
+    var ans = 2*Zval;
+    var exp = "";
+    if(isNaN(z))
+    {
+        temp = "Please enter proper value";
+        output.innerHTML = temp;
+    }
+    else
+    {
+        exp += "\\[P\\space value\\space = \\space 2\\times \\phi (Z)\\]";
+        exp += "\\[\\phi (Z)\\space = \\space frac{1}{\\sqrt{(2\\times \\pi)} \\times (e)^{frac{z^2}{2}}} \\]";
+        exp += "\\[P\\space value\\space = \\space 2\\times frac{1}{\\sqrt{(2\\times 3.14)} \\times (2.71)^{frac{"+z+"^2}{2}}}\\]";
+        exp += "\\[P\\space value\\space = \\space "+ans+"\\]";
+        output.innerHTML = exp;
+    }
+    renderMathInElement(output);
+}
 
 
 
@@ -1629,6 +1922,76 @@ function suppangvercal(){
     renderMathInElement(document.getElementById("suppangverans"));
 }
 
+function compangcal(){
+    var a=document.getElementById("cang").value;
+    var ans="";
+    if(a==""){
+        ans="Enter the angle to find the complementary";
+    } else{
+        var t=parseInt(a);
+        var v=90-t;
+        ans="\\[The \\space complementary \\space angle \\space of \\space"+a+" \\space will \\space be \\newline 90 \\degree \\space - \\space t \\degree \\newline 90 \\degree \\space - \\space "+t+" \\degree \\newline = \\space "+v+" \\degree \\]";
+    }
+    document.getElementById("compangans").innerHTML=ans;
+    renderMathInElement(document.getElementById("compangans"));
+}
+
+function compangvercal(){
+    var a=document.getElementById("cvang1").value;
+    var b=document.getElementById("cvang2").value;
+    var ans="";
+    if(a==""||b==""){
+        ans="Enter both angles to verify";
+    } else{
+        var x=parseInt(a), y=parseInt(b);
+        if(x+y==90)
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space = 90 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Complementary\\]";
+        else
+            ans="\\[Here \\space \\space "+a+" \\degree \\space + \\space "+b+" \\degree \\space != 90 \\degree \\newline Hence, \\newline Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Not \\space Complementary\\]";
+    }
+    document.getElementById("compangverans").innerHTML=ans;
+    renderMathInElement(document.getElementById("compangverans"));
+}
+function cotermangcal(){
+    var a=document.getElementById("cotang").value;
+    var ans="";
+    var pos="\\[Positive \\space Coterminal \\space Angle:\\space";
+    var neg="\\[Negative \\space Coterminal \\space Angle:\\space";
+    if(a==""){
+        ans="Enter the angle to find the coterminal angle";
+    } else{
+        var t=parseInt(a);
+        for(let i=1;i<5;i++){
+            pos+=t+360*i+"°,";
+            neg+=t-360*i+"°,";
+        }
+        pos=pos.slice(0,-1)+"...\\]";
+        neg=neg.slice(0,-1)+"...\\]";
+        ans=pos+neg;
+    }
+    document.getElementById("cotermangans").innerHTML=ans;
+    renderMathInElement(document.getElementById("cotermangans"));
+}
+function cotvercal(){
+    var a=document.getElementById("cotang1").value;
+    var b=document.getElementById("cotang2").value;
+    var ans="";
+    if(a==""||b==""){
+        ans="Enter both angles to verify";
+    } else{
+        var x=parseInt(a), y=parseInt(b),m1,m2;
+        m1=x%360;
+        m2=y%360;
+        console.log(m1,m2)
+        if(m1==m2 ||Math.abs(m1)+Math.abs(m2)==360)
+            ans="\\[Here \\space \\space "+a+" \\degree \\space mod \\space360 \\degree \\space = "+b+" \\degree \\space mod \\space 360 \\degree \\newline Hence,Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space Coterminal\\]";
+        else
+            ans="\\[Here \\space \\space "+a+" \\degree \\space mod \\space360 \\degree \\space != "+b+" \\degree \\space mod \\space 360 \\degree \\newline Hence,  Both \\space the \\space entered \\space angles \\space "+a+"\\degree \\space and \\space "+b+"\\degree \\newline are \\space not \\space Coterminal\\]";
+            
+    }
+    document.getElementById("cotverans").innerHTML=ans;
+    renderMathInElement(document.getElementById("cotverans"));
+}
 function faccal(){
     var a=document.getElementById("facno").value;
     var ans="";
@@ -1701,43 +2064,152 @@ function facpaircal()
 
 
 function skewcal()
-{   var num=document.getElementById("skewinput").value;
+{   
+var num=document.getElementById("skewinput").value;
 var ans="";
 if(num=="")
 {
     ans="Please enter datasets";
+    document.getElementById("skewans").innerHTML=ans;
 }
 else{
     num=num.trim();
     num = num.split(" ");
     var len=parseInt(num.length);
-   var sum=0;
+    var sum=0;
     var number=[]
+    let steps = "";
     for (i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
         sum+=number[i];
     }
+    
+    steps += "\\[Sum\\space of\\space data\\space set\\space you\\space entered:\\space "+sum+" \\]";
     sum=sum/len;
     var ansno=0;
     for (i = 0; i < len; i++)
-     {
-       var g=(number[i]-sum);
-       g=g**3;
-       ansno+=g;
-     }
+    {
+        var g=(number[i]-sum);
+        g=g**3;
+        ansno+=g;
+    }
+    
+    steps += "\\[Now\\space calculate\\space the\\space Mean\\space and\\space the\\space Standard\\space Deviation\\]";
+    steps += "\\[Subtract\\space the\\space mean\\space from\\space each\\space raw\\space score\\]";
+    steps += "\\[Raise\\space each\\space of\\space these\\space deviations\\space from\\space the\\space mean\\space to\\space the\\space third\\space power\\space and\\space sum\\]";
+    steps += "\\[Skewness\\space = \\space sum\\space of\\space the\\space deviations\\space from\\space the\\space mean,\\space raise\\space to\\space the\\space third\\space power,\\space divided\\space by\\space number\\space of\\space cases\\space minus\\space 1,\\space times\\space the\\space standard\\space deviation\\space raised\\space to\\space the\\space third\\space power.</p>\\]";
+    var varrzlt=0;
+    for (i = 0; i < len; i++) {
+        varrzlt = varrzlt + ((number[i])-sum)*((number[i])-sum);
+    }
+    
+    varrzlt = varrzlt/(len-1);
+    var sampstddev=Math.sqrt(varrzlt);
+    sampstddev=sampstddev**3;
+    var rzlt= ansno/((len-1)*sampstddev);
 
-     var varrzlt=0;
-     for (i = 0; i < len; i++) {
-         varrzlt = varrzlt + ((number[i])-sum)*((number[i])-sum);
-     }
+    steps += "\\[Skewness\\space = \\space "+rzlt+"\\]";
 
-     varrzlt = varrzlt/(len-1);
-     var sampstddev=Math.sqrt(varrzlt);
-     sampstddev=sampstddev**3;
-     var rzlt= ansno/((len-1)*sampstddev);
-     ans="The skewness is: "+rzlt;
 }
-document.getElementById("skewans").innerHTML=ans;
+document.getElementById("skewans").innerHTML=steps;
+renderMathInElement(document.getElementById("skewans"));
+}
+// kurtosis calculator
+// kurtosis calculator
+function kurt_sum(arr) {
+    let sum = 0;
+    for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+
+    return sum;
+}
+
+function kurt_bar(arr, mean) {
+    let diff = 0
+    for (var i = 0; i < arr.length; i++) {
+        var temp = 0
+        temp = arr[i] - mean
+        temp = Math.pow(temp, 4)
+        diff += temp;
+    }
+
+    return diff
+}
+function kurtcal()
+{   var num=document.getElementById("kurtinput").value;
+     var num1=document.getElementById("kurtinput2").value;
+    
+var ans="";
+    if(num == ""|| num1 =="")
+    {
+        ans="Please fill both fields"
+    }
+    else{
+
+        num = num.split(" ");
+        let n1 = num.length;
+        for (var i = 0; i < n1; i++) {
+            num[i] = parseFloat(num[i]);
+        }
+        var sum=kurt_sum(num)
+        var mean=(sum/n1).toFixed(4);
+        var numer=kurt_bar(num,mean);
+        numer=numer.toFixed(4);
+        num1 = parseFloat(num1);
+    ans+="\\[In \\space the \\space below \\space formula :\\]"
+    ans+="\\[\\mu_4 => Fourth \\space central \\space moment\\]"
+    ans+="\\[\\sigma => Standard \\space deviation \\space of \\space the \\space sample\\]"
+    ans+="\\[\\bar{x} => Mean \\space of \\space the \\space sample\\]"
+    ans+="\\[N=>Sample \\space size\\]"
+
+    ans+="\\[Measure \\space of \\space kurtosis \\space \\beta_2 = \\frac{\\mu_4}{\\sigma^{4}}\\]"
+    ans+="\\[\\because \\mu_4= \\frac{\\sum_{i=1}^{n} (x_i- \\bar{x})^{4}}{N} \\]"
+    ans+="\\[\\therefore \\beta_2 = \\frac{\\sum_{i=1}^{n} (x_i- \\bar{x})^{4}}{N\\sigma^{4}} \\]"   
+    ans+="\\[\\beta_2 = \\frac{"+numer+"}{ ("+n1+") \\times"+num1+"^{4}}\\]"
+    ans+="\\[\\beta_2 = \\frac{"+numer+"}{"+(n1)+" \\times "+Math.pow(num1,4).toFixed(4)+"} \\]"
+    ans+="\\[\\beta_2 = "+(numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)+"\\]"
+
+    if((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)==3)
+    ans+="\\[Since \\space \\beta_2 \\space is \\space equal \\space to \\space 3 \\space the  \\space distribution  \\space is  \\space mesokurtic. \\]"
+    else if ((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)>3)
+    ans+="\\[Since \\space \\beta_2 \\space > \\space 3 \\space the  \\space distribution  \\space is  \\space leptokurtic. \\]"
+    else if ((numer/((n1)*Math.pow(num1,4)).toFixed(4)).toFixed(4)<3)
+    ans+="\\[Since \\space \\beta_2 \\space < \\space 3 \\space the  \\space distribution  \\space is  \\space platykurtic. \\]" 
+    }
+
+document.getElementById("kurtans").innerHTML=ans;
+renderMathInElement(document.getElementById("kurtans"));
+
+}
+
+function bmifind()
+{
+    a=document.getElementById("bmis1").value;  
+    b=document.getElementById("bmis2").value;  
+    c=document.getElementById("bmis3").value;   
+    var ans="";
+    if(a==""||b==""||c=="")
+    {
+        ans="Please enter all field to find answer";
+    }
+    else
+    {
+        a=parseFloat(a);
+        b=parseFloat(b);
+        c=parseFloat(c);
+       var height= (a*0.308)+(b*0.0245);
+        var bm= c/(height**2);
+
+       var vi="The B.M.I is the ratio of your weight in kg and your height in metre's square<br>"
+       vi+=" Square of your Height in metre is: "+height**2;
+       vi+="<br>Your weight is: "+c;
+       vi+="<br>Thus, your B.M.I is: "+ c+" / "+height**2;
+       document.getElementById("bmians1").innerHTML=vi;
+
+        ans="Your B.M.I is: "+bm;
+    }
+    document.getElementById("bmians").innerHTML=ans;
 }
 function clockcal()
 {
@@ -1826,60 +2298,74 @@ function perrankcal(){
 
 function halflifeCalc() {
     var decay = document.getElementById("decay").value;
+    var answer="";
+    var ans="";
+    if(decay=="")
+    {
+    //   answer="";
+    //   ans="";
+      document.getElementById("halflifeAns").innerHTML="Please enter the decay constant"
+    }
+    else{
     var lg = Math.log(2);
+    console.log(lg);
     var halfLife = lg / decay;
-    var ans = "Half Life of the element is " + halfLife;
-    document.getElementById("halflifeAns").innerHTML = ans;
+    
+    answer+="\\[t_\\frac{1}{2} \\space = \\space \\frac{ln(2)}{\\lambda}\\]"
+    answer+="\\[\\lambda => \\space decay \\space constant \\]"
+    answer+="\\[t_\\frac{1}{2} = \\space \\frac{"+lg.toFixed(4)+"}{"+decay+"}\\]"
+    answer+="\\[t_\\frac{1}{2} = \\space "+(lg.toFixed(4)/decay).toFixed(4)+"\\]"
+    ans = "Half Life of the element is " + halfLife.toFixed(4);
+    document.getElementById("halflifeAns").innerHTML = answer+ans;
+    renderMathInElement(document.getElementById("halflifeAns"));
+    }
+    
+    
 }
 
 function oocal()
 {
     var num4=document.getElementById("oocx").value;
     ans="";
+    var answer="";
     if(num4=="")
     {
-        ans="Please enter number";
+        answer="Please enter a number";
     }
     else
     {
-        var len=num4.length;
         var count=0;
-        for(var b=0;b<len;b++)
+        if(num4>5)
         {
-            if(num4[b]=='.')
+            while(num4>5)
             {
-                break;
+             num4=num4/10;
+             count=count+1;
             }
-            else 
-            {count++};
         }
-        ans="The order of mangnitude is : "+(count-1);
-    }
-    document.getElementById("ooans").innerHTML=ans;
-}
-function manhatcal()
-{
-    var num1=document.getElementById("mdx1").value;
-    var num2=document.getElementById("mdx2").value;
-    var num3=document.getElementById("mdx3").value;
-    var num4=document.getElementById("mdx4").value;
-    ans="";
-    if(num1==""||num2==""||num3==""||num4=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
+        else if(num4<=0.5)
+        {
+            while(num4 <= 0.5)
+            {num4=num4*10;
+            count=count-1;
+           }
+        }
+        else if(num4==5)
+        {
+            count=0;
+        }
+        answer+="\\[N \\space = \\space n \\times 10 ^ {x}\\]"
+        answer+="\\[Here, \\space N = \\space no \\space whose \\space order \\space of \\space magintude \\space we \\space have \\space to \\space find\\]"
+        answer+="\\[n \\space should \\space be \\space in \\space the \\space range : 0.5 < n \\leq 5\\]"
+        answer+="\\[x \\space => \\space order \\space of \\space magnitude \\]"
+        answer+="\\[N \\space = \\space "+num4+" \\times 10 ^ {"+count+"} \\]"
+        answer+="\\[The \\space order \\space of \\space mangnitude \\space is : "+(count)+"\\]";
 
-        var f=Maths.abs(num1-num3)+Maths.abs(num2-num4);
-        ans="The calculated Manhattan Distance is: "+f;
     }
-    document.getElementById("manhatans").innerHTML=ans;
+    document.getElementById("ooans").innerHTML=answer;
+    renderMathInElement(document.getElementById("ooans"));
 }
+
 function mifcal()
 {
     var num1=document.getElementById("mians1").value;
@@ -1947,73 +2433,297 @@ function ainvcal()
 
 }
 
-function hypergeos2cal()
-{
-    var num1=document.getElementById("hypergeos12").value;
-    var num2=document.getElementById("hypergeos22").value;
-    var num3=document.getElementById("hypergeos32").value;
-    var num4=document.getElementById("hypergeos42").value;
-    ans="";
-    if(num1==""||num2==""||num4==""||num3=="")
+function hypergeos2cal() {
+    var num1=parseFloat(document.getElementById("hypergeos12").value);
+    var num2=parseFloat(document.getElementById("hypergeos22").value);
+    var num3=parseFloat(document.getElementById("hypergeos32").value);
+    var num4=parseFloat(document.getElementById("hypergeos42").value);
+
+    var output = document.getElementById("hypergeos2ans");
+    var temp="";
+    var d= (num2*num3)/num4;
+
+    if(isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4))
     {
-        ans="Please fill all the field";
+        temp = "\\[Please \\space enter \\space valid \\space input\\]";
+        output.innerHTML = temp;
     }
     else
     {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
-      var d= (num2*num3)/num4;
-       ans="The value of hypergeometric distribution's mean is : "+d;
-   
+        var d= (num2*num3)/num4;
+        temp += "\\[The \\space value \\space of \\space hypergeometric \\space distribution \\space mean \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{(Sample \\space Size) \\times (Successes \\space of \\space Lot)}{(Lot \\space Size)}\\]"
+        temp += "\\[\\space = \\space \\frac{("+num2+") \\times ("+num3+")}{"+num4+"}\\]"
+        temp += "\\[\\space = \\space \\frac{"+(num2*num3)+"}{"+num4+"}\\]"
+        temp += "\\[\\space = \\space "+d.toFixed(3)+"\\]";
+        temp += "\\[Hence, \\space the \\space value \\space of \\space mean \\space is,\\]"
+        "\\[\\space = \\space "+d.toFixed(3)+"\\]"
+
+        output.innerHTML = temp;
     }
-    document.getElementById("hypergeos2ans").innerHTML=ans;
+    renderMathInElement(output);
 }
 
 function hypergeosvarcal()
 {
-    var num1=document.getElementById("hypergeos12").value;
-    var num2=document.getElementById("hypergeos22").value;
-    var num3=document.getElementById("hypergeos32").value;
-    var num4=document.getElementById("hypergeos42").value;
-    ans="";
-    if(num1==""||num2==""||num4==""||num3=="")
-    {
-        ans="Please fill all the field";
-    }
-    else
-    {
-        num1=parseFloat(num1);
-        num2=parseFloat(num2);
-        num3=parseFloat(num3);
-        num4=parseFloat(num4);
-      var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
-       ans="The value of hypergeometric distribution's variance is : "+d;
+    var num1=parseFloat(document.getElementById("hypergeos12").value);
+    var num2=parseFloat(document.getElementById("hypergeos22").value);
+    var num3=parseFloat(document.getElementById("hypergeos32").value);
+    var num4=parseFloat(document.getElementById("hypergeos42").value);
+    var output = document.getElementById("hypergeos2ans");
+    var temp ="";
+    if(isNaN(num2) || isNaN(num1) || isNaN(num3) || isNaN(num4)) {
+        temp = "\\[Please \\space fill \\space all \\space the \\space field\\]";
+
+        output.innerHTML = temp;
+    } 
+    else {
+        temp += "\\[Hypergeometric \\space variation \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+num4+" - "+num3+") \\times ("+num4+" - "+num2+"))}{( "+num4+"^{2} \\times ("+num4+" - 1))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{( "+num4+"^{2} \\times ("+num4+" - 1))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{( "+num4+"^{2} \\times ("+(num4-1)+"))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+(num2*num3)+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space \\frac{ "+(num2*num3*(num4-num3)(num4-num2))+" }{"+(num4*num4(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space "+d.toFixed(3)+"\\]"
+        temp += "\\[Hence, \\space the \\space values \\space Hypergeometric \\space Standard \\space Deviation \\space is,\\]"
+        temp += "\\[\\space = "+d.toFixed(3)+" \\]"
+
+        output.innerHTML = temp;
    
     }
-    document.getElementById("hypergeos2ans").innerHTML=ans;
+    renderMathInElement(output);
 }
-function hypergeosvar2cal()
+function hypergeosvar2cal() {
+    var num1=parseFloat(document.getElementById("hypergeos12").value);
+    var num2=parseFloat(document.getElementById("hypergeos22").value);
+    var num3=parseFloat(document.getElementById("hypergeos32").value);
+    var num4=parseFloat(document.getElementById("hypergeos42").value);
+
+    var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
+    var ans = Math.sqrt(d);
+    var output = document.getElementById("hypergeos2ans");
+    var temp ="";
+    if(isNaN(num2) || isNaN(num1) || isNaN(num3) || isNaN(num4)) {
+        temp = "\\[Please \\space fill \\space all \\space the \\space field\\]";
+
+        output.innerHTML = temp;
+    } 
+    else {
+        temp += "\\[Hypergeometric \\space Standard \\space Deviation \\space will \\space be,\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+num4+" - "+num3+") \\times ("+num4+" - "+num2+"))}{( "+num4+"^{2} \\times ("+num4+" - 1))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{( "+num4+"^{2} \\times ("+num4+" - 1))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{( "+num4+"^{2} \\times ("+(num4-1)+"))}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+num2+" \\times "+num3+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space \\frac{ ("+(num2*num3)+" \\times ("+(num4-num3)+") \\times ("+(num4-num2)+"))}{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space \\frac{ "+(num2*num3*(num4-num3)*(num4-num2))+" }{"+(num4*num4*(num4-1))+"}\\]"
+        temp += "\\[\\space = \\space "+d.toFixed(3)+"\\]"
+        temp += "\\[Hence, \\space the \\space values \\space Hypergeometric \\space Standard \\space Deviation \\space is,\\]"
+        temp += "\\[\\space = \\sqrt{"+d.toFixed(2)+"} \\]"
+        temp += "\\[\\space = "+ans.toFixed(3)+" \\]"
+
+        output.innerHTML = temp;
+   
+    }
+    renderMathInElement(output);
+}
+
+function egccal()
 {
-    var num1=document.getElementById("hypergeos12").value;
-    var num2=document.getElementById("hypergeos22").value;
-    var num3=document.getElementById("hypergeos32").value;
-    var num4=document.getElementById("hypergeos42").value;
+    var num1=document.getElementById("egc1").value;
+    var num2=document.getElementById("egc2").value;
+    var num3=document.getElementById("egc3").value;
     ans="";
-    if(num1==""||num2==""||num4==""||num3=="")
+    let explain="";
+    if(num1==""||num2==""||num3=="")
     {
-        ans="Please fill all the field";
+        ans="\\[Please \\space fill \\space all \\space the \\space field\\]";
     }
     else
     {
         num1=parseFloat(num1);
         num2=parseFloat(num2);
         num3=parseFloat(num3);
-        num4=parseFloat(num4);
-      var d= (num2*num3*(num4-num3)*(num4-num2))/(num4*num4*(num4-1));
-       ans="The value of hypergeometric distribution's variance is : "+Math.sqrt(d);
+        var si=(num1*((1+(num2/100))**num3)).toFixed(3);
+        ans="\\[The \\space effective \\space rate \\space of \\space growth \\space is: "+si+"\\]";
+        explain="\\[x(t)="+num1+"(1+\\frac{"+num2+"}{100})^"+num3+"\\]"+"\\[\\space "+num1+"("+((1+(num2/100))**num3).toFixed(3)+")\\]"+"\\[\\space ="+si+"\\]";
    
     }
-    document.getElementById("hypergeos2ans").innerHTML=ans;
+    document.getElementById("egcans").innerHTML=ans;
+    document.getElementById("egcexplain").innerHTML=explain;
+    renderMathInElement(document.getElementById("egcans"));
+    renderMathInElement(document.getElementById("egcexplain"));
 }
+function iskaprekar(n)
+{
+    if (n == 1)
+    return true;
+    let sq_n = n * n;
+    let count_digits = 0;
+    while (sq_n)
+    {
+        count_digits++;
+        sq_n = parseInt(sq_n / 10);
+    }
+ 
+    let sq_n1 = n * n; 
+    for (let r_digits = 1;
+        r_digits < count_digits;
+        r_digits++)
+    {
+        let eq_parts = Math.pow(10, r_digits);
+        if (eq_parts == n)
+            continue;
+        let sum = parseInt((sq_n1 / eq_parts) +
+                    sq_n1 % eq_parts);
+        if (sum == n)
+        return true;
+    }
+    return false;
+}
+function kapfind()
+{
+    let num=document.getElementById("kap1").value;
+    let ans="";
+    if(num==""||isNaN(num))
+    {
+        ans+="Please enter proper number";
+    }
+    else
+    {
+      ans += "Step 1: Number => " + num;
+      ans += `<br> Step 2: The Square of ${num} => ${num}^2 = ${Math.pow(num,2)}`;
+      if(iskaprekar(num))
+      {
+        ans += `<br> Step 3: The square can be divided into two parts <br>and such that sum of parts is equal to the original number `;
+        ans += `<br> Step 4: Hence ${num} is a Kaprekar Number `;
+      }
+      else
+      {
+        ans += `<br> Step 3: The square can't be divided into two parts <br>and such that sum of parts is equal to the original number `;
+        ans += `<br> Step 4: Hence ${num} is not a Kaprekar Number `;
+      }
+    }
+    document.getElementById("kapans").innerHTML=ans;
+}
+
+function isPrime( n)
+    {
+        if (n <= 1)
+            return false;
+        if (n <= 3)
+            return true;
+        if (n % 2 == 0 || n % 3 == 0)
+            return false;
+ 
+        for (var i = 5; i * i <= n; i = i + 6) {
+            if (n % i == 0 || n % (i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+   
+function wagcal()
+{
+    var num1=document.getElementById("wag1").value;
+    ans="";
+    if(num1==""||isNaN(num1))
+    {
+        ans="Please enter the number";
+    }
+    else
+    {
+        num1=parseInt(num1);
+        if(isPrime(num1) && (isPowerOfTwo(num1 * 3 - 1)))
+        {
+            ans=num1+" is a Wagstaff number"
+        }
+        else
+        {
+            ans=num1+" is not a Wagstaff number"   
+        }
+    }
+    document.getElementById("wagans").innerHTML=ans;
+}
+
+function Ranges()
+{
+   var num = document.getElementById('getNum').value;
+    
+    valid=/^([-]{0,1}\d{1,}[\.]{0,1}\d{0,}[ ]?)*$/
+
+
+    if(num=="")
+    {
+       document.getElementById('Meanresult').innerHTML = "Please enter number";
+    }
+    else if(!valid.test(num))
+    {
+        document.getElementById('Meanresult').innerHTML = "Enter space separated numbers. Use of alphabets and special character is not allowed for calculation purpose";
+    }
+    else
+    {
+        var outputstring="";
+        var s=0;
+        num=num.trim();
+        num = num.split(" ");
+        var len=parseInt(num.length);
+       
+        var number=[]
+        for (i = 0; i < len; i++) {
+            number[i] = parseFloat(num[i].trim());
+        }
+
+        var max=Math.max(...number);
+        var min=Math.min(...number);
+
+        var d=max-min;
+
+       var ans= "The highest number is: "+max;
+        ans+="<br> The lowest number is: "+min;
+        ans+="<br>The Range is: "+max+" -"+" "+min+" = "+d;
+        document.getElementById('Meanresult').innerHTML = ans;
+
+        document.getElementById('Meanresult').innerHTML = "Range is: "+d;
+
+
+
+}
+}
+
+
+
+    function isPowerOfTwo(n)
+    {
+        return (n != 0 )&& ((n & (n - 1)) == 0);
+    }
+
+
+function wagcal()
+{
+    var num1=document.getElementById("wag1").value;
+    ans="";
+    explain="";
+    if(num1==""||isNaN(num1))
+    {
+        ans="\\[Please \\space enter \\space the \\space number\\]";
+    }
+    else
+    {
+        num1=parseInt(num1);
+        if(isPrime(num1) && (isPowerOfTwo(num1 * 3 - 1)))
+        {
+            ans="\\["+num1+" is \\space a \\space Wagstaff \\space number.\\]"
+            explain="\\["+num1+"\\space is \\space prime \\space and \\space"+num1+"="+"\\frac{2^{"+Math.log2(num1*3-1)+"}-1}{3}\\]";
+        }
+        else
+        {
+            ans=num1+" is not a Wagstaff number"   
+        }
+    }
+    document.getElementById("wagans").innerHTML=ans+explain;
+    renderMathInElement(document.getElementById("wagans"))
+}
+
+

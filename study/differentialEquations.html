@@ -1,0 +1,215 @@
+<h2 style="text-align: center;">Differential Equations</h2>
+<br><br>
+<h4>1. Variable Seperable</h4>
+<br>
+<p style="text-align: center;">It can be used when, <br> All the y terms (including
+    dy) can be moved to one side of the equation, and <br>
+    All the x terms (including dx) to the other side.
+</p>
+<p>\[\frac{dx}{dy} = 4xy\ which\space can\space be\space written\space as, \\
+    \frac{dx}{x} = 4ydy\]
+</p>
+<br>
+<h4>2. Equation reducible to variable seperable</h4>
+<br>
+<p>\[ The\space equation\space \frac{dy}{dx}-f(ax+by+c)\space can\space be\space
+    written\space as \\
+    \frac{dy}{dx}-f(t)\space keeping\space ax+by+c = t\space then\space solve \]
+</p>
+<br>
+<h4>3. Homogenous Equations</h4>
+<br>
+<p style="text-align: center;">A differential equation, M dx + N dy = 0, is
+    homogeneous if replacement of x and y by λx and λy results in the original
+    function
+    multiplied by some power of λ, where the power of λ is called the degree of the
+    original function. If so, follow these steps.
+</p>
+<p>\[ Let\space y=vx\space so\space \frac{dy}{dx} = x\frac{dv}{dx}+v\]</p>
+<p>\[Now\space put\space value\space of\space \frac{dy}{dx} in\space the\space
+    equation\space and\space solve\]</p>
+<br>
+<h4>4. First Order Linear Differential Equations</h4>
+<br>
+<p>When the equation is written in form</p>
+<p>\[\frac{dy}{dx} + Py = Q,\space where\space P\space and\space Q\space are\space
+    functions\space of\space x\space or , \\
+    \frac{dx}{dy} + Px = Q,\space where\space P\space and\space Q\space are\space
+    functions\space of\space y\]
+</p>
+<p>Then these can be solved by - </p>
+<p>\[Let\space Integrating\space Factor(I)\space =\space e^{\int P\,dx} (for\space
+    first\space equation\space) or, \\
+    I = e^{\int P \,dy}(for\space second\space equation)\]
+</p>
+<p>Put in \[yI = \int {QI} + c\] and integrate to get the answer</p>
+<br>
+<h4>5. Formulae (Exact Form)</h4>
+<br>
+<p>\[a)\space xdy \,+\,ydx\,=\,d(xy)\]</p>
+<p>\[b)\space dx \,\plusmn\,ydx\,=\,d(x \plusmn y)\]</p>
+<p>\[c)\space xdx \,+\,ydy\,=\,\frac{1}{2}d(x^2+y^2)\]</p>
+<p>\[d)\space \frac{xdy \,-\,ydx}{x^2}\,=\,d(\frac{y}{x})\]</p>
+<p>\[e)\space \frac{xdy \,-\,ydx}{y^2}\,=\,-d(\frac{x}{y})\]</p>
+<p>\[f)\space \frac{2xydx \,-\,x^2dy}{y^2}\,=\,d(\frac{x^2}{y})\]</p>
+<p>\[g)\space \frac{xdy \,-\,ydx}{x^2+y^2}\,=\,d(tan^{-1}\frac{y}{x})\]</p>
+<p>\[h)\space \frac{xdx
+    \,+\,ydy}{\sqrt(x^2+y^2)}\,=\,\frac{1}{2}d(\frac{x^2+y^2}{\sqrt(x^2+y^2)})\]</p>
+<p>\[i)\space \frac{ye^{x}dx\,-\,e^{x}dy}{y^2}\,=\,d(\frac{e^x}{y})\]</p>
+<br>
+<h4>6. Linear Differential Equation with constant coeffiecients</h4>
+<h5>Definition</h5>
+<p>A diff. equation,</p>
+<p>\[(\frac{d^n}{dx^{n}}+a_1\frac{d^{n-1}}{dx^{n-1}}+......a)y\space =\space Q\]</p>
+<p>Where a1 , a2 ,............., an are constants<br>
+    While Q is a function of x.
+</p>
+<p>is called Linear differential equation of nth order first degree.</p>
+<p>Above equation can be written as -</p>
+<p>\[(D^n + a_1 D^{n-1} + a_2 D^{n-2}+....a_n) y\space =\space Q\space where,\, D -> \frac{d}{dx}\]</p>
+<p>\[OR\]</p>
+<p>\[f(D)\,y\,=\,Q\]</p>
+<p>\[General\, Solution(y)\, =\, Complementary\, Function(y_c)\, +\, Particular\, Integral(y_p)\]</p>
+<br>
+<h5>How to find Complementary Function (C.F)?</h5>
+<br>
+<p>First of all consider, f(D).y=0</p>
+<p>Put D = m and equate f(D) = 0 to get values of m</p>
+<p>Case-1 : If m is real and distinct</p>
+<p>\[y_c\space =\space C_1 e^{m_1 x} + C_2 e^{m_2 x} + .... \]</p>
+<p>Case-2 : If m is real and equal</p>
+<p>\[y_c\space =\space (C_1 + C_2 x + C_3 x^2 + ...) e^{mx}\]</p>
+<p>Case-3 : If m is imaginary and distinct</p>
+<p>\[y_c\space =\space e^{ax} (C_1 cos(bx)\space +\space C_2 sin(bx))\]</p>
+<br>
+<h5>How to find Particular Integral (P.I.)?</h5>
+<br>
+<p>To find P.I. check the nature of Q</p>
+<p>\[y_p= \frac{1}{f(D)}*Q\]</p>
+<p>Case-1: If Q = e<sup>ax</sup></p>
+<p>Put D = a to get the desired P.I.</p>
+<p>\[y_p\, = \frac{1}{f(a)}*Q\]</p>
+<p>Case-2: If Q = sin(ax) OR cos(ax)</p>
+<p>Put D<sup>2</sup> = -a<sup>2</sup> and use identities of trigo to solve </p>
+<p>\[y_p\, = \frac{1}{f(-a^2)}*Q\]</p>
+<p>Case-3: If Q = x<sup>m</sup> </p>
+<p>take out least degree term and use binomial expansion to solve</p>
+<p>\[y_p\, =\,f(D)^{-1}\,.\,x^{m}\]</p>
+<p>Case-4: If Q = e<sup>ax</sup>.g(x) where, g(x) is a function of x</p>
+<p>Take out e<sup>ax</sup> by putting D to D+a and then solve</p>
+<p>\[y_p\, =\, e^{ax}.\frac{1}{f(D+a)}.g(x)\]</p>
+<p>Case-5: If Q = x.V (where, V is function of x)</p>
+<p>\[y_p\, =\, x.\frac{1}{f(D)}.V\, +\, \frac{d}{dD}(\frac{1}{f(D)}).V \, (here,\, \frac{d}{dD}\, is\, nothing\, but\,
+    ∫) \]</p>
+<p>Case Of Failure: when f(a) or f(-a^2) or d(D+a) becomes 0</p>
+<p>\[Note\, -In \, this\, case\, take\, out\, 'x'\, and\, diffrentiate\, the\, function.\]\[Repeat\, this\, step\,
+    until\, the\, function\, not\, equals\, 0\]\[(As\, more\, than\, one\, case\, of\, failure\, can\, exist) \]</p>
+<p>\[(For\, Q\, = e^{ax})\]</p>
+<p>\[When\, f(a) = 0\,\]</p>
+<p>\[y_p\,=\frac{1}{f(D)}.Q\,=x.\frac{1}{f(D)'}.Q\]</p>
+<p>\[Repeat\, this\, step\,if\, you \, again\, get\, case\, of\, failure\]</p>
+<br>
+<h4>Homogenous Differential equations</h4>
+<br>
+<p>A linear differential equation of the form,</p>
+<p>\[x^{n} \frac{d^{n}y}{dx^{n}} + a_1x^{n-1}\frac{d^{n-1}y}{dx^{n-1}}+a_2 x^{n-2}\frac{d^{n-2}y}{dx^{n-2}}+.....+a_n
+    y\space =\space Q\]</p>
+<p>with a<sub>0</sub>, a<sub>1</sub>, . . . , a<sub>n</sub> constants is called the homogeneous Euler-Cauchy equation of
+    order n.</p>
+<p>We introduce a new variable z where,</p>
+<p>\[z\space =\space ln(x)\space or\space x\space =\space e^{z}\]</p>
+<p>Then we change differentiation terms to</p>
+<p>\[x\frac{d}{dx}\space =\space D\space,\space where\space D = \frac{d}{dz}\]</p>
+<p>\[x^{2}\frac{d^{2}}{dx^{2}}\space =\space D(D-1)\space\space and\space\space x^{3}\frac{d^{3}}{dx^{3}}\space =\space
+    D(D-1)(D-2) and\space so\space on\]</p>
+<p>Now it reduces to linear differntial eqn with constant coefficients,find CF and PI to get solution and put back z =
+    ln(x) to get final answer</p>
+<h5>Legendre's Differential eqn</h5>
+<p>A linear differential equation of the form,</p>
+<p>\[(ax+b)^{n} \frac{d^{n}y}{dx^{n}} + a_1(ax+b)^{n-1}\frac{d^{n-1}y}{dx^{n-1}}+a_2
+    (ax+b)^{n-2}\frac{d^{n-2}y}{dx^{n-2}}+.....+a_n y\space =\space Q\]</p>
+<p>Put ax+b = e<sup>z</sup> and solve line homogenous equations</p>
+<p>\[(ax+b)\frac{dy}{dx}\space = \space bD\space (ax+b)^{2}\frac{d^{2}}{dx^{2}}\space =\space b^{2}D(D-1)\space
+    and\space so\space on\]</p>
+<br>
+<h4>Solving Simultaneous Linear Differential Equation</h4>
+<br>
+<p>Each equation in a system will be assumed to have constant coefficients and be of the general form<br>
+    f(D)x + g(D)y + ....... + h(D)u = G(t)<br> where x, y, ...... , u are the dependent variables, t is the independent
+    variable.
+</p>
+<br>
+<p>A system of n equations in the n dependent variables x, y, ..... , u and independent variable t will have a solution
+    consisting of n functions</p>
+<p> x = x(t)<br>
+    y = y(t) <br>
+    ............. <br>
+    .............<br>
+    u = u(t)
+</p>
+<p>
+    The method used to solve a system of n equations in n variables is analogous to the procedure used to solve a system
+    of n linear equations in n unknowns in
+    algebra. In algebra, we solve a system of n equations in n unknowns by eliminating unknowns between equations until
+    we obtain an equation containing a
+    single unknown, from which we deduce the value of the unknown. Then we substitute the value of that unknown into
+    other equations to obtain the values of
+    other unknowns. In solving systems of linear differential equations we go through the same type process to obtain an
+    equation containing a single dependent
+    variable. The equation in this single dependent variable will be a linear differential equation with constant
+    coefficients. We then solve this equation,
+    using methods for solving such equations, to obtain an expression for that dependent variable. We then substitute
+    the expression for that variable into
+    another equation to obtain an expression for another variable. As with the algebraic problem, we can also employ
+    determinants.
+</p>
+<p><b>Theorem.</b> The number of constants in the general solution of a system of equations must equal the sum of the
+    orders of the equations.</p>
+<br>
+<h4>Linear Differential equation of second order</h4>
+<br>
+<p>NOTE - The coefficient of second order derivative should be 1</p>
+<h5>Method-1 - Part of C.F. is known</h5>
+<p>Steps - </p>
+<p>\[1.\space Compare\space the\space differential\space eqn\space with\space
+    \frac{d^{2}y}{dx{2}}+P\frac{dy}{dx}+Qy\space =\space R\space and\space find\space value\space of\space P,Q,R\]</p>
+<p>\[2.\space Apply\space conditions\space as\space per\space P,Q\space and\space find\space part\space of\space
+    C.F.\space=\space u\]</p>
+<p>\[3.\space Let\space y=uv\space be\space complete\space solution\space find\space
+    \frac{dy}{dx},\frac{d^{2}y}{dx^{2}}\]</p>
+<p>\[4.\space Put\space in\space original\space question\]</p>
+<p>\[5.\space Put\space P=\frac{dv}{dx} and\space\space solve\space using\space first\space order\space eqn\]</p>
+<p>\[6.\space Integrate\space P\space to\space get\space v and\space find\space complete\space solution \]</p><br>
+<h5>Method-2 - Removal of First Derivative</h5>
+<p>Steps - </p>
+<p>\[1.\space Find\space u\space = e^{-\frac{1}{2}\int P\,dx}\space I=Q-\frac{1}{2}\frac{dP}{dx}-\frac{P^{2}}{4}\space
+    and S=\frac{R}{u}\]</p>
+<p>\[2.\space If\space I\space is\space a constant\space or \frac{constant}{x^{2}}\space then this method is
+    applicable\]</p>
+<p>\[3. \space Put\space values\space in\space \frac{d^{2}v}{dx^{2}}+Iv = S\space and\space it\space becomes\space
+    differential\space eqn\space with\space constant\space coefficients\]</p>
+<br>
+<h5>Method-3 - Changing the independent variable</h5>
+<p>Steps - </p>
+<p>\[1.\space Choose z such as (\frac{dz}{dx})^{2}\space = \space Q\]</p>
+<p>\[2.\space Find \frac{d^{2}z}{dx^{2}}\]</p>
+<p>\[3.\space Find\space P_1,Q_1,R_1\space\]</p>
+<p>\[P_1\space =\space \frac{\frac{d^{2}z}{dx^{2}}+P\frac{dz}{dx}}{(\frac{dz}{dx})^{2}}\space,Q_1\space =\space
+    \frac{Q}{(\frac{dz}{dx})^{2}}\space and\space R_1\space =\space \frac{R}{(\frac{dz}{dx})^{2}}\]</p>
+<p>\[4.\space Put\space in\space \frac{d^{2}y}{dz^{2}}\space +\space P_1\frac{dy}{dx}\space +Q_1 y\space =\space
+    R_1\space and\space solve\space
+    using\space differential\space eqn\space with\space constant\space coeffiecients\]
+</p>
+<br>
+<h5>Method-4 - Variation of Parameters</h5>
+<p>Steps - </p>
+<p>\[1.\space Convert\space to\space homogenous\space eqns\space by\space putting\space x\space =\space e^{z}\space
+    and\space z\space =\space logx\]</p>
+<p>\[2.\space Put\space x^{2}\frac{d^{2}y}{dx^{2}}\space =\space D(D-1)\space and\space x\frac{dy}{dx}\space =\space
+    D,\space where\space D\space is\space \frac{d}{dz}\]</p>
+<p>\[3.\space Solve\space for\space C.F.\space and\space let\space it\space be\space y\space =\space u+v\]</p>
+<p>\[4.\space Find\space out\space u v_1 - v u_1\space where\space u_1\space =\space \frac{du}{dx}\]</p>
+<p>\[5.\space Let\space the\space complete\space solution\space be\space y\space =\space Au+Bv\]</p>
+<p>\[A\space =\space -\int\frac{Rv}{u v_1 - v u_1}\,dx\space +\space C_1\]</p>
+<p>\[B\space =\space \int\frac{Ru}{u v_1 - v u_1}\,dx\space +\space C_2\]</p>
+<p>\[6.\space Put\space in\space equation\space to\space get\space the\space answer\]</p>

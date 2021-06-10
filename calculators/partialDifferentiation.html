@@ -1,0 +1,14 @@
+<form action="">
+    <div class="form-group">
+        <input type="text" id="inputpartialdiff" class="form__field" placeholder="Enter Function" oninput="dpardiff()">
+        <input type="text" id="inputpartialorder" class="form__field" placeholder="Order" oninput="dpardiff()">
+    </div>
+    <div class="form-group">
+        <button type="button" id="solvepardiff" class="btn btn-light">Solve</button>
+        <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+    </div>
+</form>
+
+<div class="form-group">
+    <p style="overflow-x:scroll;overflow-y:hidden;height:100%" id="resultpardiff"></p>
+</div>

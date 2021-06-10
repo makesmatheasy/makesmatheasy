@@ -25,6 +25,7 @@ function back(vlu) {
 function replaceAll(string, search, replace) {
   return string.split(search).join(replace);
 }
+
 //Invalid expression button
 //Creating i button
 var btn = document.createElement("button");
@@ -39,14 +40,14 @@ function calsol(va) {
     var solution = nerdamer(va).evaluate().toString();
     var soo = (document.getElementById("txt").value = va);
     document.getElementById("soltxt").value = solution;
-    document.getElementById("txt").style.color = "black";  
+    document.getElementById("txt").style.color = 'white';  
     
   } catch (err) {
     document.getElementById("soltxt").value = "";
     document.getElementById("txt").style.color = "red"; //warning color for invalid expression
   }
   if(document.getElementById("soltxt").value != "")
-  attach.removeChild(btn);
+    attach.removeChild(btn);
 }
 
 function ans(hj) {

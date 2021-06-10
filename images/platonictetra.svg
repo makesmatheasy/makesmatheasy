@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright 2017 mathsisfun.com -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="69.2" height="72.3" version="1.1">
+<defs>
+	<linearGradient id="id1">
+		<stop offset="0" style="stop-color:#b2b2b2; stop-opacity:1;"/>
+		<stop offset="1" style="stop-color:#b2b2b2; stop-opacity:0;"/>
+	</linearGradient>
+	<linearGradient id="id2" xlink:href="#id1" x1="92.4" y1="273.5" x2="259.7" y2="273.5" gradientUnits="userSpaceOnUse"/>
+</defs>
+<polyline points="311.88 153.58, 93.551 183.97, 242.24 363.20" transform="matrix(0.175995,0.270184,-0.270184,0.175995,55.6518,-57.2552)" style="fill:#b2b24e; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="311.88 153.58, 259.68 192.44, 93.551 183.97" transform="matrix(0.175995,0.270184,-0.270184,0.175995,55.6518,-57.2552)" style="fill:#4e4eb2; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="311.88 153.58, 242.24 363.20, 259.68 192.44" transform="matrix(0.175995,0.270184,-0.270184,0.175995,55.6518,-57.2552)" style="fill:#4e4e4e; fill-opacity:0.5; stroke:black; stroke-width:1;"/>
+<polyline points="242.24 363.20, 93.551 183.97, 259.68 192.44" transform="matrix(0.175995,0.270184,-0.270184,0.175995,55.6518,-57.2552)" style="fill:url(#id2); stroke:black; stroke-width:1;"/>
+</svg>
