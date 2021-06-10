@@ -1,13 +1,7 @@
 :root {
   --apppink: #CAD5E2;
-  --appblack: #232a36;
-  --appimage: white;
-}
-
-:root .light-mode {
-  --apppink: white;
-  --appblack: #d3e0ea;
-  --appimage: black;
+  --appblack: #232a36;  
+  --appwhite:#ffffff;
 }
 @font-face {
   font-family: mainfont;
@@ -57,7 +51,7 @@ body img {
 
 
 p {
-  color: var(--appimage);
+  color: var(--appwhi);
   font-size: 1.25rem;
 }
 
@@ -101,7 +95,7 @@ p {
 a,
 p,
 label {
-  color: var(--appimage) !important;
+  color: var(--appwhite) !important;
   text-align: center;
   margin-bottom: 0.3125rem;
 }
@@ -114,7 +108,7 @@ h4 {
 }
 
 h5, h6 {
-  color: var(--appimage) !important;
+  color: var(--appwhite) !important;
 }
 
 .modal-title {
@@ -139,9 +133,10 @@ h5, h6 {
 }
 
 .ulstyle li a,.ulstyle li span {
-  color: var(--appimage) !important;
+  color: var(--appwhite) !important;
   font-family: mathfont;
   letter-spacing: 0.0625rem;
+  text-align: left;
 }
 
 .ulstyle li a:hover,
@@ -164,7 +159,7 @@ h5, h6 {
   letter-spacing: 0.125rem;
   width: 100%;
   border: 0;
-  border-bottom: 0.0625rem solid var(--appimage);
+  border-bottom: 0.0625rem solid var(--appwhite);
   outline: 0;
   color: white;
   padding: 0.4375rem 0;
@@ -375,7 +370,7 @@ h5, h6 {
 }
 
 .bor {
-  border-right: 0.2rem solid var(--appimage) !important;
+  border-right: 0.2rem solid var(--appwhite) !important;
   border-top: none !important;
 }
 
@@ -505,7 +500,7 @@ ul li .table {
 }
 
 #aboutContact:hover {
-  color: var(--appimage) !important;
+  color: var(--appwhite) !important;
 }
 
 @media (max-width:420px) {
@@ -604,142 +599,7 @@ font-size: 18px;
   object-fit: contain;
 }
 
-.darkmode--activated #mtm p{
-color: rgba(0,0,0,.9) !important;
-}
 
-.darkmode--activated #factors p {
-  color:#ababab !important;
-}
-
-.darkmode--activated .lcm{
-  margin-bottom: 14px;
-  margin-top: 19px;
-}
-
-.darkmode--activated input,
-.darkmode--activated button {
-  overflow: visible;
-  border-radius: 18px;
-  margin: 7px;
-  background-color: #050101;
-  color: white;
-  padding: 8px;
-}
-
-/*light mode*/
-
-.light-mode #euclid li{
-  color: black !important;
-}
-
-.light-mode .table td a {
-  color: var(--apppimage) !important;
-}
-
-.light-mode #factorsoption {
-  color: var(--apppimage) !important;
-}
-
-.light-mode #numberfact {
-  color: var(--apppimage) !important;
-  box-shadow: rgba(117, 110, 110, 0.3), rgba(rgba(201, 196, 196, 0.22));
-  background-color: #0571dd;
-}
-
-.light-mode .table td:hover {
-  text-decoration: none;
-  text-shadow: none;
-  font-weight: bold;
-  font-variant: small-caps;
-}
-.light-mode .btn.btn-outline-light {
-  color: black;
-  border-color: black;
-}
-.light-mode .stopwrap {
-  background: none;
-  color: white;
-}
-
-.light-mode .bi {
-  background-image: linear-gradient(to right top, #ccf2f4, #f4f9f9, #a4ebf3);
-  color: black;
-}
-.light-mode input {
-  color: black;
-}
-
-#resulttable table td {
-  color: var(--appimage);
-  border-color: var(--appimage);
-}
-
-.light-mode table.table-bordered.table-dark td,
-.light-mode table.table-bordered.table-dark th {
-  color: black;
-  border: none;
-  background-color: #d3e0ef;
-}
-.light-mode table.table-bordered.table-dark th {
-  border-color: black;
-  border-style: double;
-}
-.light-mode table.table-bordered td,
-.light-mode table.table-bordered th {
-  color: black;
-  border: none;
-  background-color: #d3e0ef;
-}
-.light-mode table.table-bordered.table-dark th {
-  border-color: black;
-  border-style: double;
-}
-.light-mode img {
-  filter: none;
-}
-span.mul img,
-span.divi img,
-span.plus img,
-span.sub img {
-  filter: none;
-}
-.light-mode span.mul img,
-.light-mode span.divi img,
-.light-mode span.plus img,
-.light-mode span.sub img {
-  filter: invert(100%);
-}
-.light-mode .favourites {
-  color: black !important;
-}
-
-.light-mode .nofavourites {
-  color: black !important;
-}
-.light-mode .favnew {
-  color: white !important;
-}
-.light-mode #fav-button {
-  border-color: #7868e6;
-}
-.light-mode #fav-button:hover {
-  background-color: white;
-  font-weight: bolder;
-}
-.light-mode .card h5{
-    color: rgb(18, 33, 82);
-}
-
-.light-mode .card{
-    background-color: transparent;
-    border: 0.125rem solid #dcd8f8;
-    box-shadow: 0.5rem 0.5rem 0.5rem #ccc7eb;
-    /* border-bottom: 0.1875rem solid #3a24c4;; */
-}
-.light-mode .card-header {
-    border-bottom: 0.1875rem solid #3a24c4;;
-}
 /* radio butons for conic hyperbola*/
 #op1_hyper:after,
 #op2_hyper:after,

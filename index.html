@@ -163,7 +163,7 @@
 
         ::-webkit-scrollbar-button:single-button {
             display: block;
-            background-color: var(--appimage);
+            background-
             height: 1.25rem;
         }
 
@@ -302,30 +302,12 @@
 </head>
 
 
-<body class="readonlybody hidescroll" onload="bodyload()">
-    <!-- using darkmode.js to implement dark mode -->
-    <!--    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>-->
+<body class="readonlybody hidescroll" onload="bodyload()">    
     <script>
         window.onload = function () {
             var preloader = document.getElementById("preloader")
             preloader.style.display = 'none';
         }
-
-        var options = {
-            bottom: '64px', // default: '32px'
-            right: '32px', // default: '32px'
-            left: 'unset', // default: 'unset'
-            time: '0.5s', // default: '0.3s'
-            mixColor: '#CAD5E2', // default: '#fff'--> changable according to dev needs for light mode
-            backgroundColor: '#232A36',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'-->for dark mode
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓' // default: ''
-        }
-
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
     </script>
     <!-- preloader starts  -->
     <div id="preloader">
@@ -370,7 +352,7 @@
             <li class="listyle home list_menu_items" style="margin-top: 1.25rem;"><a id="homeoption"
                     style="cursor: pointer;font-size: 1.1875rem;letter-spacing: 0.125rem;color: pink;">Home</a>
             </li>
-            <li class="list_menu_items"><a id="aboutbutton" style="cursor: pointer;font-size: 1rem;">About</a></li>
+            <li class="list_menu_items"><a href="about.html" id="aboutbutton" style="cursor: pointer;font-size: 1rem;">About</a></li>
             <li class="list_menu_items" onclick="collapseit('lineralgebratoggle'); changeImage0();"><a
                     style="cursor: pointer;font-size: 1rem;">Linear Algebra<img class="dropdownlogo"
                         src="icons/down-chevron.svg" id="imgClickAndChange0"></a></li>
@@ -6187,7 +6169,7 @@
 
 
             <li class="list_menu_items"><a id="contactbutton"
-                    style="cursor: pointer;color:var(--appimage);font-size: 1rem;"
+                    style="cursor: pointer;font-size: 1rem;"
                     onclick="window.open('contact.html')">Contact</a>
             </li>
 
@@ -6199,7 +6181,7 @@
                     style="text-decoration:none;font-size: 1rem;" href="#">Settings</a></li>
 
 
-            <li style=" color:var(--appimage); position:relative;" class="icons p-1">
+            <li style="  position:relative;" class="icons p-1">
                 <a href="https://www.instagram.com/makesmatheasy" target="_blank" class="p-0"><i
                         class="fab fa-instagram icon fa-2x"></i></a>
                 <a href="mailto:makesmatheasy@gmail.com" target="_blank" class="p-0"><i
@@ -6212,7 +6194,7 @@
                         class="fab fa-github icon fa-2x"></i></a>
             </li>
 
-            <li style="color:var(--appimage);font-size: 0.7rem; bottom: 0rem; position:relative;" id="copyright"
+            <li style="font-size: 0.7rem; bottom: 0rem; position:relative;" id="copyright"
                 class="text-center"> Copyright © 2021 Makes
                 Math Easy. All Rights Reserved.</li>
 
@@ -11424,7 +11406,7 @@
                 </div>
             </div>
             <div class="collapse" id="volume">
-                <h2 style="color: var(--appimage);">Volumetric Weight Calculator</h2>
+                <h2>Volumetric Weight Calculator</h2>
                 <br>
                 <form action="">
                     <div class="form-group">
@@ -11443,14 +11425,14 @@
                         <button class="btn btn-outline-light" onclick="volweight()">Calculate</button>
                         <button class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
                         <br><br><br>
-                        <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                        <p class="stopwrap" style=" font-size: xx-large; text-decoration: underline; text-align: left;
                     font-family:mathfont;" id="volweightAns"></p>
                     </div>
                 </form>
 
             </div>
             <div class="collapse" id="per_chng_vol">
-                <h2 style="color: var(--appimage);">Percentage change in Volume of a Sphere</h2><br>
+                <h2 >Percentage change in Volume of a Sphere</h2><br>
                 <div class="form-group">
                     <form action="">
                         <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="chngsidesphere"
@@ -11464,7 +11446,7 @@
                         <p class="stopwrap" id="sphereAns3" style="font-family:mathfont;"></p><br>
                     </form>
                 </div><br>
-                <h2 style="color: var(--appimage);">Percentage change in Volume of a Cube</h2><br>
+                <h2 >Percentage change in Volume of a Cube</h2><br>
                 <div class="form-group">
                     <form action="">
                         <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="chngsidecube"
@@ -11479,7 +11461,7 @@
                     <p class="stopwrap" id="cubeAns2" style="font-family:mathfont;"></p><br>
                     <p class="stopwrap" id="cubeAns3" style="font-family:mathfont;"></p><br>
                 </div><br>
-                <h2 style="color: var(--appimage);">Percentage change in Volume of a Cuboid</h2><br>
+                <h2 >Percentage change in Volume of a Cuboid</h2><br>
                 <div class="form-group">
                     <form action="">
                         <input type="text" class="form__field" name="a" id="chnglengthcuboid"
@@ -14752,7 +14734,7 @@
             </div>
 
             <div class="collapse" id="interest">
-                <h2 style="color: var(--appimage);">Simple and Compund Interest</h2>
+                <h2 >Simple and Compund Interest</h2>
                 <br>
                 <div class="form-group">
                     <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="first"
@@ -14764,7 +14746,7 @@
                     <br>
                     <br>
                     <div class="form-group">
-                        <span style="color: var(--appimage);">For Compound Interest related calculations:&nbsp;</span>
+                        <span >For Compound Interest related calculations:&nbsp;</span>
                         <select id="comp" class="btn btn-outline-light">
                             <option>Compounded Annually</option>
                             <option>Compounded Half-yearly</option>
@@ -14774,19 +14756,19 @@
                     </div>
                     <button class="btn btn-outline-light" onclick="simple_interest();">Find</button>
                     <br>
-                    <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;"
+                    <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
                         id="simpleinterstoutput1"></p>
-                    <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;"
+                    <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
                         id="simpleinterstoutput2"></p>
                     <p class="stopwrap" id="compoundinterestoutput1"
-                        style="color: var(--appimage); font-size: large; font-family:mathfont;"></p>
+                        style=" font-size: large; font-family:mathfont;"></p>
                     <p class="stopwrap" id="compoundinterestoutput2"
-                        style="color: var(--appimage); font-size: large; font-family:mathfont;"></p>
+                        style=" font-size: large; font-family:mathfont;"></p>
                 </div>
             </div>
 
             <div class="collapse" id="emical">
-                <h2 style="color: var(--appimage);">EMI Calculator</h2>
+                <h2 >EMI Calculator</h2>
                 <br>
                 <div class="form-group">
                     <form action="">
@@ -14805,14 +14787,14 @@
                     </form>
 
                     <br><br><br>
-                    <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;"
+                    <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
                         id="emio1"></p>
                     <br>
-                    <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;"
+                    <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
                         id="emio4"></p>
-                    <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;"
+                    <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
                         id="emio2"></p>
-                    <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;"
+                    <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
                         id="emio3"></p>
                 </div>
             </div>
@@ -14905,7 +14887,7 @@
             </div>
 
             <div class="collapse" id="gstcal">
-                <h2 style="color: var(--appimage);">GST Calculator</h2>
+                <h2 >GST Calculator</h2>
                 <br>
                 <div class="form-group">
                     <form action="">
@@ -14921,13 +14903,13 @@
                     </form>
 
                     <br><br><br>
-                    <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                    <p class="stopwrap" style=" font-size: xx-large; text-decoration: underline; text-align: left;
                 font-family:mathfont;" id="gst0"></p>
-                    <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;"
+                    <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
                         id="gst1"></p>
-                    <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                    <p class="stopwrap" style=" font-size: xx-large; text-decoration: underline; text-align: left;
                  font-family:mathfont;" id="gst2"></p>
-                    <p class="stopwrap" style="color:var(--appimage); font-size: large; font-family:mathfont;"
+                    <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
                         id="gst3"></p>
                 </div>
             </div>
@@ -14978,7 +14960,7 @@
                 <p id="goldrec_explain"></p>
             </div>
             <div class="collapse" id="degcal">
-                <h2 style="color: var(--appimage);">Polynomial Degree</h2>
+                <h2 >Polynomial Degree</h2>
                 <br>
                 <form action="">
                     <div class="form-group">
@@ -14987,7 +14969,7 @@
                         <button type="button" class="btn btn-outline-light" onclick="degcal()">Find</button>
                         <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
                         <br><br><br>
-                        <p class="stopwrap" style="color:var(--appimage); font-size: xx-large; text-decoration: underline; text-align: left;
+                        <p class="stopwrap" style=" font-size: xx-large; text-decoration: underline; text-align: left;
                     font-family:mathfont;" id="deg"></p>
                     </div>
                 </form>
@@ -15073,9 +15055,9 @@
                     given</h4><br>
                 <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                     <input type="number" id="height22" placeholder="Enter Distance (BC)"
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
                     <input type="number" id="height33" placeholder="Enter Angle of Elevation in degree(∠BCA)"
-                        style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; "><br>
                     <div class="row">
                         <div class="col-6">
                             <button type="button" class="btn btn-light" onclick=heightdist1()>
@@ -15101,9 +15083,9 @@
                     given</h4><br>
                 <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                     <input type="number" id="height92" placeholder="Enter Distance (BC)"
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
                     <input type="number" id="height93" placeholder="Enter Angle of Depression in degree(∠BCA)"
-                        style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; "><br>
                     <div class="row">
                         <div class="col-4">
                             <button type="button" class="btn btn-light" onclick=heightdist9()>
@@ -15131,9 +15113,9 @@
                     given</h4><br>
                 <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                     <input type="number" id="height51" placeholder="Enter Height (AB)"
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
                     <input type="number" id="height52" placeholder="Enter Angle of Elevation in degree(∠BCA)"
-                        style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; "><br>
                     <div class="row">
                         <div class="col-4">
                             <button type="button" class="btn btn-light" onclick=heightdist5()>
@@ -15161,9 +15143,9 @@
                     given</h4><br>
                 <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                     <input type="number" id="height81" placeholder="Enter Height (AB)"
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
                     <input type="number" id="height82" placeholder="Enter Angle of Depression in degree(∠BCA)"
-                        style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent;width: 20rem; border-bottom: 0.0625rem solid white; "><br>
                     <div class="row">
                         <div class="col-4">
                             <button type="button" class="btn btn-light" onclick=heightdist8()>
@@ -15190,9 +15172,9 @@
                 <h4 class="d-flex justify-content-center">To calculate Angle of Elevation </h4><br>
                 <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                     <input type="number" id="height21" placeholder="Enter Distance (BC)"
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
                     <input type="number" id="height31" placeholder="Enter Height (AB)"
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
                     <div class="row">
                         <div class="col-4">
                             <button type="button" class="btn btn-light" onclick=heightdist2()>
@@ -15219,9 +15201,9 @@
                 <h4 class="d-flex justify-content-center">To calculate Angle of Depression </h4><br>
                 <form class="form-inline d-flex flex-column align-items-center" id="myForm">
                     <input type="number" id="height511" placeholder="Enter Distance (BC)"
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
                     <input type="number" id="height41" placeholder="Enter Height (AB)"
-                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
                     <div class="row">
                         <div class="col-6">
                             <button type="button" class="btn btn-light" onclick=heightdist3()>
@@ -16854,7 +16836,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofcircle').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Circle
+                                style="cursor: pointer;"> Circle
                             </div>
                             <div class="collapse" id="typesofcircle" style="margin: 0.9375rem;">
                                 <table>
@@ -16961,7 +16943,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofpolygon').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Polygons
+                                style="cursor: pointer;"> Polygons
                             </div>
                             <div class="collapse" id="typesofpolygon" style="margin: 0.9375rem;">
                                 <table>
@@ -17056,7 +17038,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofrectangle').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Rectangle
+                                style="cursor: pointer;"> Rectangle
                             </div>
                             <div class="collapse" id="typesofrectangle" style="margin: 0.9375rem;">
                                 <table>
@@ -17111,7 +17093,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofstarpolygons').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Star Polygons
+                                style="cursor: pointer;"> Star Polygons
                             </div>
                             <div class="collapse" id="typesofstarpolygons" style="margin: 0.9375rem;">
                                 <table>
@@ -17162,7 +17144,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesoftriangle').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Triangles
+                                style="cursor: pointer;"> Triangles
                             </div>
                             <div class="collapse" id="typesoftriangle" style="margin: 0.9375rem;">
                                 <table>
@@ -17605,7 +17587,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofcap').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Cap
+                                style="cursor: pointer;"> Cap
                             </div>
                             <div class="collapse" id="typesofcap" style="margin: 0.9375rem;">
                                 <table>
@@ -17628,7 +17610,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofcone').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Cone
+                                style="cursor: pointer;"> Cone
                             </div>
                             <div class="collapse" id="typesofcone" style="margin: 0.9375rem;">
                                 <table>
@@ -17679,7 +17661,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofcube').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Cube
+                                style="cursor: pointer;"> Cube
                             </div>
                             <div class="collapse" id="typesofcube" style="margin: 0.9375rem;">
                                 <table>
@@ -17706,7 +17688,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofcatalansolids').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;">Catalan Solids
+                                style="cursor: pointer;">Catalan Solids
                             </div>
                             <div class="collapse" id="typesofcatalansolids" style="margin: 0.9375rem;">
                                 <table>
@@ -17721,7 +17703,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofcuboid').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Cuboid
+                                style="cursor: pointer;"> Cuboid
                             </div>
                             <div class="collapse" id="typesofcuboid" style="margin: 0.9375rem;">
                                 <table>
@@ -17740,7 +17722,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofcupola').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Cupola
+                                style="cursor: pointer;"> Cupola
                             </div>
                             <div class="collapse" id="typesofcupola" style="margin: 0.9375rem;">
                                 <table>
@@ -17763,7 +17745,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofcylinder').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Cylinder
+                                style="cursor: pointer;"> Cylinder
                             </div>
                             <div class="collapse" id="typesofcylinder" style="margin: 0.9375rem;">
                                 <table>
@@ -17843,7 +17825,7 @@
                     <tr>
                         <td>
                             <div onclick="$('#typesofhedron').slideToggle();"
-                                style="color: var(--appimage);cursor: pointer;"> Polyhedrons
+                                style="cursor: pointer;"> Polyhedrons
                             </div>
                             <div class="collapse" id="typesofhedron" style="margin: 0.9375rem;">
                                 <table>
@@ -17942,7 +17924,7 @@
             </tr>
             <tr>
                 <td>
-                    <div onclick="$('#typesofprisms').slideToggle();" style="color: var(--appimage);cursor: pointer;">
+                    <div onclick="$('#typesofprisms').slideToggle();" style="cursor: pointer;">
                         Prisms
                     </div>
                     <div class="collapse" id="typesofprisms" style="margin: 0.9375rem;">
@@ -17993,7 +17975,7 @@
             </tr>
             <tr>
                 <td>
-                    <div onclick="$('#typesofpyramid').slideToggle();" style="color: var(--appimage);cursor: pointer;">
+                    <div onclick="$('#typesofpyramid').slideToggle();" style="cursor: pointer;">
                         Pyramids
                     </div>
                     <div class="collapse" id="typesofpyramid" style="margin: 0.9375rem;">
@@ -18001,7 +17983,7 @@
                             <tr>
                                 <td>
                                     <div onclick="$('#typesofbipyramid').slideToggle();"
-                                        style="color: var(--appimage);cursor: pointer;"> Bipyramids
+                                        style="cursor: pointer;"> Bipyramids
                                     </div>
                                     <div class="collapse" id="typesofbipyramid" style="margin: 0.9375rem;">
                                         <table>
@@ -18017,7 +17999,7 @@
                             <tr>
                                 <td>
                                     <div onclick="$('#typesofelongpyramid').slideToggle();"
-                                        style="color: var(--appimage);cursor: pointer;"> Elongated Pyramids
+                                        style="cursor: pointer;"> Elongated Pyramids
                                     </div>
                                     <div class="collapse" id="typesofelongpyramid" style="margin: 0.9375rem;">
                                         <table>
@@ -18043,7 +18025,7 @@
                             <tr>
                                 <td>
                                     <div onclick="$('#typesofelongbipyramid').slideToggle();"
-                                        style="color: var(--appimage);cursor: pointer;"> Elongated bipyramids
+                                        style="cursor: pointer;"> Elongated bipyramids
                                     </div>
                                     <div class="collapse" id="typesofelongbipyramid" style="margin: 0.9375rem;">
                                         <table>
@@ -18104,7 +18086,7 @@
             </tr>
             <tr>
                 <td>
-                    <div onclick="$('#typesofsphere').slideToggle();" style="color: var(--appimage);cursor: pointer;">
+                    <div onclick="$('#typesofsphere').slideToggle();" style="cursor: pointer;">
                         Sphere
                     </div>
                     <div class="collapse" id="typesofsphere" style="margin: 0.9375rem;">
@@ -18135,7 +18117,7 @@
             </tr>
             <tr>
                 <td>
-                    <div onclick="$('#typesofwedge').slideToggle();" style="color: var(--appimage);cursor: pointer;">
+                    <div onclick="$('#typesofwedge').slideToggle();" style="cursor: pointer;">
                         Wedge
                     </div>
                     <div class="collapse" id="typesofwedge" style="margin: 0.9375rem;">
@@ -18166,7 +18148,7 @@
             </tr>
             <tr>
                 <td>
-                    <div onclick="$('#typesofshell').slideToggle();" style="color: var(--appimage);cursor: pointer;">
+                    <div onclick="$('#typesofshell').slideToggle();" style="cursor: pointer;">
                         Shell
                     </div>
                     <div class="collapse" id="typesofshell" style="margin: 0.9375rem;">
@@ -19353,7 +19335,7 @@
             <table class="table">
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#lengthcon" style="text-decoration:none;"
                                 href="#">Length</a>
                         </div>
@@ -19361,7 +19343,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#areacon" style="text-decoration:none;"
                                 href="#">Area</a>
                         </div>
@@ -19369,7 +19351,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#volcon" style="text-decoration:none;"
                                 href="#">Volume</a>
                         </div>
@@ -19377,7 +19359,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#masscon" style="text-decoration:none;"
                                 href="#">Mass</a>
                         </div>
@@ -19385,7 +19367,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#tempcon" style="text-decoration:none;"
                                 href="#">Temperature</a>
                         </div>
@@ -19393,7 +19375,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#prescon" style="text-decoration:none;"
                                 href="#">Pressure</a>
                         </div>
@@ -19401,7 +19383,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#energycon" style="text-decoration:none;"
                                 href="#">Energy</a>
                         </div>
@@ -19409,7 +19391,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#radiationcon" style="text-decoration:none;"
                                 href="#">Radiation</a>
                         </div>
@@ -19417,7 +19399,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#timecon" style="text-decoration:none;"
                                 href="#">Time</a>
                         </div>
@@ -19425,7 +19407,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#anglecon" style="text-decoration:none;"
                                 href="#">Angle</a>
                         </div>
@@ -19433,7 +19415,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#speedcon" style="text-decoration:none;"
                                 href="#">Speed</a>
                         </div>
@@ -19441,7 +19423,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#datacon" style="text-decoration:none;"
                                 href="#">Data</a>
                         </div>
@@ -19449,7 +19431,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#powercon" style="text-decoration:none;"
                                 href="#">Power</a>
                         </div>
@@ -19465,7 +19447,7 @@
             <table class="table">
                 <tr>
                     <td>
-                        <div style="color: var(--appimage);cursor: pointer;">
+                        <div style="cursor: pointer;">
                             <a data-toggle="modal" data-target="#spicon" style="text-decoration:none;"
                                 href="#">SPI/CGPA</a>
                         </div>
@@ -19523,7 +19505,7 @@
         <div class="collapse" id="factorial">
             <form class="form-inline">
                 <input type="number" id="factorialval" placeholder="Enter a Number"
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
                 <button type="button" class="btn btn-light" onclick="factorialsol('factorialval')">
                     Solve
                 </button>
@@ -19549,13 +19531,13 @@
             <br>
             <form>
                 <input type="number" id="binoa1" placeholder="Enter a1"
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
                 <input type="number" id="binoa0" placeholder="Enter a0 "
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
                 <input type="number" id="binob1" placeholder="Enter b1"
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
                 <input type="number" id="binob0" placeholder="Enter b0 "
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
                 <br><br>
                 <div class="form-group">
                     <button type="button" class="btn btn-light" onclick="binoexpCalc()">
@@ -19587,17 +19569,17 @@
             <p style="font-size: 23px;">Enter the coefficients.</p>
             <form action="">
                 <input type="number" id="foila" placeholder="a"
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">&nbsp;&nbsp;
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">&nbsp;&nbsp;
                 <input type="number" id="foilb" placeholder="b "
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">&nbsp;&nbsp;
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">&nbsp;&nbsp;
                 <input type="number" id="foiln" placeholder="Exponent n"
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br><br>
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br><br>
                 <input type="number" id="foilc" placeholder="c"
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">&nbsp;&nbsp;
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">&nbsp;&nbsp;
                 <input type="number" id="foild" placeholder="d "
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">&nbsp;&nbsp;
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">&nbsp;&nbsp;
                 <input type="number" id="foilm" placeholder="Exponent m"
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
                 <br><br>
                 <div class="form-group">
                     <button type="button" class="btn btn-light" onclick="foilcal()">
@@ -19616,9 +19598,9 @@
         <div class="collapse" id="binomialcoeff">
             <form class="form-inline">
                 <input type="number" id="valn" placeholder="Enter n"
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
                 <input type="number" id="valk" placeholder="Enter k "
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
                 <br>
                 <div class="form-group">
                     <button type="button" class="btn btn-light" onclick="binomialsolve('valn','valk')">
@@ -19665,11 +19647,11 @@
                     <div class="p-5">
                         <div class="">
                             <input type="number" id="xval" value='' placeholder="Enter x"
-                                style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                                style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
                         </div>
                         <div class="">
                             <input type="number" id="yval" value='' placeholder="Enter y"
-                                style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);"><br>
+                                style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
                             <br>
                         </div>
                     </div>
@@ -19971,9 +19953,9 @@
         <div class="collapse" id="pandc">
             <form class="form-inline">
                 <input type="number" id="nval" placeholder="Total items in the set (n)"
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
                 <input type="number" id="rval" placeholder="Item taken from the set (r) "
-                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: var(--appimage);">
+                    style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
 
 
                 <br>
@@ -22829,7 +22811,7 @@
             Algebra</h4> <br>
         <!-- font-family: KaTeX_Math; -->
 
-        <div class="container" style="align-content: center; color: var(--appimage) !important; margin: 0.3125rem;">
+        <div class="container" style="align-content: center; margin: 0.3125rem;">
             <div class="row">
                 <div class="col-md-4">
                     <center>
