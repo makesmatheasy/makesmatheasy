@@ -458,6 +458,10 @@ ul li .table {
   font-size: large;
 }
 
+.list_menu_items a{
+  transition: all 0.5s;
+}
+
 .list_menu_items a:hover {
   background: rgba(255, 136, 231,0.5)!important;
   /* background: var(--apppink) !important; */
