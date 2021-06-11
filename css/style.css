@@ -670,10 +670,15 @@ input[type='number'] {
 
 .fa-instagram{
   
-  color:#d6249f;
-  font-size:40px;
-}
+  display: inline-block;
+text-align: center;
+color: #fff;
+font-size: 40px;
+border-radius: 40%;
+background: #d6249f;
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 
+}
 
 
 .fa-linkedin {
