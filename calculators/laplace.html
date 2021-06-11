@@ -1,0 +1,67 @@
+<div id="laplacecollapse">
+    <div class="form-group">
+        <div class="text-center"><label>Laplace Transform</label></div>
+        <p class="text-center">
+            \[F(s)=\mathcal{L}\{f(t)\}=\int_{0}^{\infty}e^{-st} f(t).dt\]
+        </p>
+
+        <div style="display: inline-block;" class="form-group">
+            <label for="inputlaplace">\[f(t)=\]</label>
+        </div>
+        <div style="display: inline-block;" class="form-group">
+            <input type="text" id="inputlaplace" placeholder="Enter Function" class="form__field"
+                oninput="dlap()">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                onclick="plotit('inputlaplace','laplaceplot',slap())">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="calcexsolvelaplace()">
+                Example
+            </button>
+            <button type="button" id="solvelaplaceid" class="btn btn-outline-light"
+                onclick="solvelaplace()">
+                Show Steps
+            </button>
+        </div>
+        <div class="form-group">
+            <p id="resultlaplace"></p>
+        </div>
+        <div class="form-group">
+            <p id="laplaceplot"></p>
+        </div>
+    </div>
+
+    <div class="dropdown-divider"></div>
+    <div class="form-group">
+        <div class="text-center"><label>Inverse Laplace Transform</label></div>
+        <p class="text-center">\[\mathcal{L}^{−1}(F(s))\]</p>
+
+        <div style="display: inline-block;" class="form-group">
+            <label for="inputinverselaplace">\[F(s)=\]</label>
+        </div>
+        <div style="display: inline-block;" class="form-group">
+            <input type="text" id="inputinverselaplace" placeholder="Enter Function" class="form__field"
+                oninput="dinvlap()">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                onclick="plotit('inputinverselaplace','inverselaplaceplot',sinvlap());">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="calcexsolveinverselaplace()">
+                Example
+            </button>
+            <button type="button" id="solveinverselaplaceid" class="btn btn-outline-light"
+                onclick="solveinverselaplace()">Show Steps
+            </button>
+        </div>
+        <div class="form-group">
+            <p id="resultinverselaplace"></p>
+        </div>
+        <div class="form-group">
+            <p id="inverselaplaceplot"></p>
+        </div>
+    </div>
+</div>

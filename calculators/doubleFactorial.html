@@ -1,0 +1,24 @@
+<div>
+    <div id="dblFact">
+        <form action="">
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the number whose double factorial you want : &nbsp; &nbsp; </label>
+                <input type="number" id="dfnum" class="form__field" placeholder="x"
+                    style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                    onclick="doubleFactorial(document.getElementById('dfnum').value);">
+                    Solve
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="dblFactResult"></p>
+        </div>
+    </div>
+</div>

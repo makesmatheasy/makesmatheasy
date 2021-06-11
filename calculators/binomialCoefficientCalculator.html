@@ -1,0 +1,42 @@
+<div id="binomialcoeff">
+    <form class="form-inline">
+        <input type="number" id="valn" placeholder="Enter n"
+            style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
+        <input type="number" id="valk" placeholder="Enter k "
+            style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
+        <br>
+        <div class="form-group">
+            <button type="button" class="btn btn-light" onclick="binomialsolve('valn','valk')">
+                Find
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+    <br>
+    <div class="form-group">
+        <div id="bino_div">
+            <div id="bino_div_div1">
+                <p id="bino_wrong" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                    align="right">
+                </p>
+            </div>
+            <div id="bino_div_div2">
+                <p id="bino" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+                    align="right">
+                    Binomial coefficient&nbsp;
+                    <strong>
+                        <sup>n</sup>
+                        C
+                        <sub>k</sub>
+                    </strong>
+                    &nbsp;
+                    =
+                    &nbsp;
+                    <span id="bino_ans"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

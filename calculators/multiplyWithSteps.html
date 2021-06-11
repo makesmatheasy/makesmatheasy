@@ -1,0 +1,22 @@
+<div id="mulsolwithsteps">
+    <form class="form-inline">
+        <input type="number" id="numofmulsol" class="form__field" placeholder="Number"
+            style="display:inline;width:6.25rem;">
+        <label style="padding:0 0.3125rem 0 0.3125rem">×</label>
+        <input type="number" id="numwithofmulsol" class="form__field" placeholder="Number"
+            style="display:inline;width:6.25rem;">
+        <button type="button" class="btn btn-light"
+            onclick="multiplywithsteps('numofmulsol','numwithofmulsol')">
+            Solve
+        </button>
+        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+            Reset
+        </button>
+    </form>
+
+    <div class="form-group">
+        <p id="resultmulsol" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+            align="right"></p>
+    </div>
+
+</div>

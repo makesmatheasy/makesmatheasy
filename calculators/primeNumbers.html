@@ -1,0 +1,41 @@
+<div id="prime">
+    <form class="form-group">
+        <div class="text-center">
+            <h2><label>Primality Test</label></h2>
+        </div>
+        <input type="number" id="isprime" placeholder="Enter a Number"
+            style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
+        <button type="button" class="btn btn-light" onclick="check_prime('isprime')">
+            Check
+        </button>
+        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+            Reset
+        </button>
+    </form>
+    <br>
+    <div class="form-group">
+        <p id="isprimesol" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+            align="right"></p>
+    </div>
+
+    <div class="dropdown-divider"></div>
+    <form class="form-group">
+        <div class="text-center">
+            <h2><label>Primes till entered number</label></h2>
+        </div>
+        <input type="number" id="primetill" placeholder="Enter a Number"
+            style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color: aliceblue;">
+        <button type="button" class="btn btn-light" onclick="prime_till_num('primetill')">
+            Find
+        </button>
+        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+            Reset
+        </button>
+    </form>
+    <br>
+    <div class="form-group">
+        <p id="primetillsol" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+            align="right"></p>
+    </div>
+
+</div>

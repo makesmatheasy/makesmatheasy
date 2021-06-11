@@ -1,0 +1,27 @@
+<div id="gstcal">
+    <h2 >GST Calculator</h2>
+    <br>
+    <div class="form-group">
+        <form action="">
+            <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="O_Price"
+                placeholder="Enter Original Price" />
+            <input type="text" name="c" style="width: 15.625rem;" class="form__field" id="GST"
+                placeholder="Enter GST(%)" />
+            <p style="display: inline;"> % </p>
+            <br>
+            <br>
+            <button class="btn btn-outline-light" type="button" onclick="gstcal()">Calculate</button>
+            <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button>
+        </form>
+
+        <br><br><br>
+        <p class="stopwrap" style=" font-size: xx-large; text-decoration: underline; text-align: left;
+    font-family:mathfont;" id="gst0"></p>
+        <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
+            id="gst1"></p>
+        <p class="stopwrap" style=" font-size: xx-large; text-decoration: underline; text-align: left;
+     font-family:mathfont;" id="gst2"></p>
+        <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
+            id="gst3"></p>
+    </div>
+</div>

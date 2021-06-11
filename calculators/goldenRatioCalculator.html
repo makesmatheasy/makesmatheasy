@@ -1,0 +1,21 @@
+<div id="goldr">
+    <h1 style="text-align: center; margin-bottom: 4rem;">Golden Ratio Calculator</h1>
+    <h4 style="margin-bottom: 2rem;">The Golden Ratio, is obtained when two segment lengths have the same
+        proportion as the proportion of their sum to the larger of the two lengths. The golden ratio has a
+        value of approximately 1.618.</h4>
+    <h4 style="margin-bottom: 2rem;">If 'a' is longer section and 'b' is shorter
+        then,\[\frac{a+b}{b}=\frac{a}{b}\] </h4>
+    <h4>Enter any 1 field</h4>
+    <form action="">
+        <input class="form__field" type="number" placeholder="Longer Section(a)" id="gla" oninput="goldr()">
+        <br><br>
+        <input class="form__field" type="number" placeholder="Shorter Section(b)" id="gsb"
+            oninput="goldr()">
+        <br><br>
+        <input class="form__field" type="number" placeholder="Whole(a+b)" id="gs" oninput="goldr()">
+        <br><br>
+        <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="gold_explain"></p>
+</div>

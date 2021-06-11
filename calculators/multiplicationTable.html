@@ -1,0 +1,22 @@
+<div id="table">
+    <form action="">
+        <div class="form-group num-limit" style="display: inline-block;">
+            <input type="number" oninput="checklimit()" id="numtable" class="form__field"
+                placeholder="Enter Number">
+        </div>
+        <div class="form-group" style="display: inline-block;">
+            <input type="number" oninput="checklimit()" id="numending" name="ending" class="form__field"
+                placeholder="Upto">
+        </div>
+
+        <div class="form-group">
+            <button type="button" onclick="printtable()" class="btn btn-light">Print
+            </button>
+            <button type="button" onclick="this.form.reset();" class="btn btn-light">Reset
+            </button>
+        </div>
+    </form>
+
+    <span class="error"></span>
+    <p id="resulttable" style="font-family:mathfont;;"></p>
+</div>

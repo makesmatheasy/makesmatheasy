@@ -1,0 +1,28 @@
+<div id="eurnum" style="text-align: center;">
+    <div class="container">
+        <h2 style="color: white;font-family:mathfont;text-align: center;">Eulerian Number</h2>
+        <br>
+        <p>The Eulerian Number A(n, m), is the number of permutations of the numbers 1 to n in which exactly m
+            elements are greater than previous element. </p>
+        <br>
+        <form action="">
+            <div class="form-group">
+                <input style="color: white; font-family:mathfont" type="number" id="eurn"
+                    placeholder="Enter the value of n" class="form__field">
+                <input style="color: white; font-family:mathfont" type="number" id="eurm"
+                    placeholder="Enter the value of m" class="form__field">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                    onclick="isEurNum(document.getElementById('eurn').value,document.getElementById('eurm').value)">Find</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+        <br>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="eurans"></p><br>
+        </div>
+    </div>
+</div>

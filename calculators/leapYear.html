@@ -1,0 +1,23 @@
+<div id="lyear">
+    <h1 style="text-align: center;">Check Leap Year</h1><br>
+    <form action="">
+        <div class="form-group">
+            <input type="text" id="leapin" class="form__field" placeholder="Enter Year">
+        </div><br>
+        <div class="form-group">
+            <button type="button" class="btn btn-light" onclick="leap()">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+            <br>
+        </div>
+    </form>
+
+    <div class="form-group">
+        <p class="stopwrap" id="leapresult1" style="font-family:mathfont;"></p>
+        <p class="stopwrap" id="leapresult3" style="font-family:mathfont;"></p><br><br>
+        <p id="leapresult" style="overflow-x:scroll;overflow-y:hidden;height:100%"></p>
+    </div>
+</div>

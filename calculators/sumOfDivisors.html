@@ -1,0 +1,25 @@
+<div>
+    <div id="sumDiv">
+        <form action="">
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the number whose sum of divisors you want : &nbsp; &nbsp; </label>
+                <input type="number" id="smdivnum" class="form__field" placeholder="x"
+                    style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                    onclick="sumDivisor(document.getElementById('smdivnum').value);">
+                    Solve
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="smDivResult"></p>
+            <p class="stopwrap" style="color:white;" id="work_smDiv"></p>
+        </div>
+    </div>
+</div>

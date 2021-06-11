@@ -1,0 +1,68 @@
+<div id="etc">
+    <h2 style="text-align:center;">Euler Totient Calculators</h2>
+    <br><br>
+    <h4>Euler’s Totient function for all numbers smaller than or equal to n</h4>
+    <br>
+    <form action="">
+        <input type="text" id="etc1" class="form__field" placeholder="ENter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="etc1find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <h5 id="etc1ans"></h5>
+    <br>
+    <h4>Check if Euler Totient Function is same for a given number and twice of that number</h4>
+    <br>
+    <form action="">
+        <input type="text" id="etc2" class="form__field" placeholder="ENter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="etc2find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <h5 id="etc2ans"></h5>
+    <br>
+    <h4>Count integers in a range which are divisible by their euler totient value</h4>
+    <br>
+    <form action="">
+        <input type="text" id="etc3" class="form__field" placeholder="ENter the lower limit">
+        <input type="text" id="etc31" class="form__field" placeholder="ENter the upper limit">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="etc3find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <h5 id="etc3ans"></h5>
+    <br>
+    <h4>Count of elements having Euler’s Totient value one less than itself</h4>
+    <br>
+    <form action="">
+        <input type="text" id="text1" class="form__field"
+            placeholder="Enter the inputs and click on add button to add"></input>
+        <input type="text" id="onelow" class="form_field" placeholder="Enter lower boundary">
+        <input type="text" id="oneupp" class="form_field" placeholder="Enter upper boundary">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="add_element_to_array()">ADD</button>
+        <button type="button" class="btn btn-dark" onclick="etc4find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <h5 id="etc4ans"></h5>
+    <br>
+    <h4>Perfect totient number</h4>
+    <br>
+    <form action="">
+        <input type="text" id="etc5" class="form__field" placeholder="ENter the number">
+        <br>
+        <button class="btn btn-dark" type="button" onclick="etc5find()">Find</button>
+        <button class="btn btn-dark" type="button" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <h5 id="etc5ans"></h5>
+</div>
