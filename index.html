@@ -163,7 +163,7 @@
 
         ::-webkit-scrollbar-button:single-button {
             display: block;
-            background-
+            background-color: var(--appimage);
             height: 1.25rem;
         }
 
@@ -6240,26 +6240,27 @@
             </div>
         </div>
 
+        <div id="homecollapse" class=" d-flex align-items-center justify-content-center "
+        style="z-index:11;position:relative;">
+        <div class="form-group text-center">
+            <table style="margin-left: auto;margin-right: auto;">
+                <tr>
+                    <td>
+                        <p id="numberfact" style="display: inline-block;"></p>
+                    </td>
+                    <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg"
+                            alt="refresh"
+                            style="height: 1.25rem;padding-left: 1.25rem;padding-right: 0.625rem;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
         <div class="container">
             <div id="mainsection"></div>
             <!--    start home-->
-            <div id="homecollapse" class=" d-flex align-items-center justify-content-center "
-                style="z-index:11;position:relative;">
-                <div class="form-group text-center">
-                    <table style="margin-left: auto;margin-right: auto;">
-                        <tr>
-                            <td>
-                                <p id="numberfact" style="display: inline-block;"></p>
-                            </td>
-                            <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg"
-                                    alt="refresh"
-                                    style="height: 1.25rem;padding-left: 1.25rem;padding-right: 0.625rem;">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-            </div>
             <!--    end home-->
             <br>
             <div class="collapse" id="divide">
