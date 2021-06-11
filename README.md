@@ -55,7 +55,7 @@ Other Tech/Libraries
   - Mathematical Reasoning
   - Euclid Geometry (Axioms and Postulates)
   - Operations on Sets
-  - Sets,Relations and Functions
+  - Sets, Relations and Functions
   - Types of Relations
   - Sets Formulas List
   - Sigma Notation
@@ -74,9 +74,9 @@ Other Tech/Libraries
   - Cayley Hamilton Theorem and Diagonalization
   - Mean Calculator(AM GM & HM)
   - Sequence & Series
-  - Sum of Nterms of an Arithmetic Progression
-  - Sum of Nterms of a Geometric Progression
-  - Sum of Nterms of a Harmonic Progression
+  - Sum of N-terms of an Arithmetic Progression
+  - Sum of N-terms of a Geometric Progression
+  - Sum of N-terms of a Harmonic Progression
   - Important Series and Sequences
   - Aliquot Sums
 
@@ -132,11 +132,11 @@ Other Tech/Libraries
 
 - Trigonometry
 
-  - P/B/H Trigo
-  - Hyperbolic trignometrics ratios calculator
+  - P/B/H Trigonometry
+  - Hyperbolic trigonometric ratios calculator
   - Trigonometric Values
   - Trigonometric Identities
-  - Tigonometric Functions
+  - Trigonometric Functions
   - Inverse Trigonometric Identities
   - Hyperbolic Trigonometric Identities
   - Inverse Hyperbolic Trigonometric Identities
@@ -147,7 +147,7 @@ Other Tech/Libraries
   - Solution of Triangles
     - Law of Sines Calculator
     - Law of Cosines Calculator
-  - Sum and Difference Of Trignometric Function
+  - Sum and Difference Of Trigonometric Function
 
 - General Maths (with Steps)
   - Ackermann Function
@@ -307,15 +307,15 @@ Other Tech/Libraries
   - Coordinate Geometry Formula and Theorem
   - Segment Area Calculator
   - Curve Tracing
-  - Ceva's and Thale's Theorem
+  - Ceva's and Thales Theorem
   - Important Graph Calculators
   - Properties of Circles
   - Triangle Calculator
-  - Ineqaulities of Triangles
+  - Inequalities of Triangles
   - Properties of Quadrilaterals
   - Segment Area Calculator
   - Arc Length Calculator
-  - Area of Crescent and Lunes
+  - Area of Crescent and Lune
   - Platonic Solids
   - 2-D Shapes Inscribed
   - Name Of 2D Shapes
@@ -402,7 +402,7 @@ Other Tech/Libraries
   - Percentage change in volume of a sphere
   - Percentage change in volume of a Cuboid
   - Congruence and Similarity of Triangles
-  - Faulhaber Formula
+  - Faulhaber's Formula
 
 - Equations
 
@@ -443,7 +443,7 @@ Other Tech/Libraries
   - Milne Thomson Method
   - Contour Integration
   - Residue Methods
-  - Cauchy Integral,Liouville and Rouche Theorem
+  - Cauchy Integral,Liouville's and Rouche's Theorem
   - Operations for 1 complex number
     - Magnitude
     - Argument
@@ -466,7 +466,7 @@ Other Tech/Libraries
   - Conditional Probability
   - Joint Probability
   - Independent And Dependent Event Probability
-  - Probabilty Properties
+  - Probability  Properties
   - Binomial Distribution Calculator
   - Poisson Distribution Calculator
   - Hypergeometric Distribution Calculator
@@ -598,7 +598,7 @@ git add . <\files_that_you_made_changes>
 14. Commit your changes.
 
 ```
-git commit -m "relavant message"
+git commit -m "relevant message"
 ```
 
 15. Push the committed changes in your feature branch to your remote repository.
