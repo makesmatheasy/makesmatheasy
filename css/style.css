@@ -17,7 +17,10 @@
 }
 
 body {
-  background-color: var(--appblack);
+  background-image: url('/images/backgroung.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
   font-family: mainfont;
   overflow-x: hidden;
   height: 100vh;
