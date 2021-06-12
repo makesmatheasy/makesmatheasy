@@ -1,0 +1,31 @@
+<div id="emical">
+    <h2 >EMI Calculator</h2>
+    <br>
+    <div class="form-group">
+        <form action="">
+            <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="first1"
+                placeholder="Enter Amount" />
+            <input type="text" name="c" style="width: 15.625rem;" class="form__field" id="third3"
+                placeholder="Enter rate of interest(%)" />
+            <p style="display: inline;"> % </p>
+            <input type="text" name="b" style="width: 15.625rem;" class="form__field" id="second2"
+                placeholder="Enter time period(in Year) " />
+            <p style="display: inline;"> Year </p>
+            <br>
+            <br>
+            <button class="btn btn-outline-light" type="button" onclick="emical()">Calculate</button>
+            <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button>
+        </form>
+
+        <br><br><br>
+        <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
+            id="emio1"></p>
+        <br>
+        <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
+            id="emio4"></p>
+        <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
+            id="emio2"></p>
+        <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
+            id="emio3"></p>
+    </div>
+</div>

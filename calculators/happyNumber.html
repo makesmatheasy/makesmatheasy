@@ -1,0 +1,25 @@
+<div id="happynum" style="text-align: center;">
+    <div class="container">
+        <h1 style="color: white;font-family:mathfont;text-align: center;">Happy Number Checker</h2>
+            <br>
+            <p>A number is called happy if it leads to 1 after a sequence of steps wherein each step number is
+                replaced by the sum of squares of its digit.</p>
+            <br>
+            <form action="">
+                <div class="form-group">
+                    <input style="color: white; font-family:mathfont" type="number" id="happyno"
+                        placeholder="Enter the input number" class="form__field">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-light" onclick="happyvalue()">Find</button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            <br>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="happyans"></p><br>
+            </div>
+    </div>
+</div>

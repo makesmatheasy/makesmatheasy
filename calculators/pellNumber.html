@@ -1,0 +1,25 @@
+<div id="pellnum" style="text-align: center;">
+    <div class="container">
+        <h2 style="color: white;font-family:mathfont;text-align: center;">Pell Number</h2>
+        <br>
+        <p>Pell numbers are numbers that are similar to the Fibonacci numbers but the formula is different.</p>
+        <br>
+        <form action="">
+            <div class="form-group">
+                <input style="color: white; font-family:mathfont" type="number" id="pelln"
+                    placeholder="Enter the value of n" class="form__field">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                    onclick="PellNum(document.getElementById('pelln').value)">Find</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+        <br>
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="pellans"></p><br>
+        </div>
+    </div>
+</div>

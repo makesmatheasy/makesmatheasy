@@ -1,0 +1,39 @@
+<div id="log_values">
+
+    <legend style="color:rgba(243, 118, 218, 0.8)!important; font-size: 2.8125rem;">Log
+        Calculator
+    </legend>
+    <form action="">
+        <div class="col-6">
+            <div class="form-group">
+                <h5>Base</h5>
+
+                <input type="text" min="1" max="9999" step="1" id="log-base" value="0" class="form__field">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <h5>Number</h5>
+
+                <input type="text" min="1" max="9999" step="1" id="x-number" value="0" class="form__field">
+            </div>
+        </div>
+
+
+        <button type="button" class="btn btn-light" style="margin-top: 2.5rem" ; onclick="cal_log()">
+            FIND LOG
+        </button>
+        <button type="button" class="btn btn-light" style="margin-top: 2.5rem" ;
+            onclick="this.form.reset();">
+            RESET
+        </button>
+
+    </form>
+    <p>&nbsp;</p>
+    <div class="form-group" style=" margin-top: 2.5rem ; color: aliceblue ; display: inline;">
+        <h2 id="result"></h2>
+        <p id="work"></p>
+    </div>
+
+
+</div>

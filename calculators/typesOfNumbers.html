@@ -1,0 +1,276 @@
+<div id="typenum">
+    <h2>Print tetrahedral numbers upto Nth term</h2>
+    <p>&nbsp;</p>
+    <form>
+        <input type="text" id="typenum0" class="form__field" placeholder="Enter the number">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-dark" onclick="typenumfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calcextypenumfind()>
+            Example
+        </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+
+        <p>&nbsp;</p>
+        <h5 id="typenumans"></h5>
+        <h5 id="typenumans1"></h5>
+        <br>
+    </form>
+    <h2>Print pentatope numbers upto Nth term</h2>
+    <br>
+    <form>
+        <input type="text" id="typenum1" class="form__field" placeholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum1find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calcextypenum1find()>
+            Example
+        </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+
+        <br>
+        <h5 id="typenum1ans"></h5>
+        <h5 id="typenumans2"></h5>
+        <br>
+    </form>
+    <h2>Hardy-Ramanujan Theorem</h2>
+    <br>
+    <form>
+        <input type="text" id="typenum2" class="form__field" placeholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum2find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calcextypenum2find()>
+            Example
+        </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+
+        <br>
+        <h5 id="typenum2ans"></h5>
+        <br>
+    </form>
+    <br>
+    <h2>Mersenne Prime</h2>
+    <br>
+    <input type="text" id="typenum47" class="form__field" placeholder="Enter the number ">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum47find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick=calcextypenum47find()>
+        Example
+    </button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <br>
+    <h5 id="typenum47exp"></h5>
+    <h5 id="typenum47ans"></h5>
+    <br>
+    <h2>Super Prime</h2>
+    <br>
+    <input type="text" id="typenum48" class="form__field" placeholder="Enter the number ">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="typenum48find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    <br>
+    <h5 id="typenum48ans"></h5>
+    <h5 id="typenum48exp"></h5>
+    <h2>Check for Amicable Pair</h2>
+    <br>
+    <form>
+        <input type="text" id="typenum3" class="form__field" placeholder="Enter the number 1">
+        <input type="text" id="typenum4" class="form__field" placeholder="Enter the number 2">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum3find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calcextypenum3find()>
+            Example
+        </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+
+        <br>
+        <h5 id="typenum3ans"></h5>
+        <h5 id="typenum3ex"></h5>
+        <br>
+    </form>
+    <h2>Sum of the all amicable numbers up to N</h2>
+    <br>
+    <form>
+        <input type="text" id="typenum5" class="form__field" placeholder="Enter the last number in the range">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum4find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick=calcextypenum4find()>
+            Example
+        </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+
+        <br>
+        <h5 id="typenum4ans"></h5>
+        <h5 id="typeans4"></h5>
+        <br>
+    </form>
+    <h2>Find all combinations that add upto given number</h2>
+    <br>
+    <form>
+        <input type="text" id="typenum6" class="form__field" placeholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum5find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum5ans"></h5>
+        <br>
+    </form>
+    <h2>Sum of Fibonacci numbers at even indexes upto N terms</h2>
+    <br>
+    <form>
+        <input type="text" id="typenum7" class="form__field" placeholder="Enter the number of terms">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum6find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum6ans"></h5>
+    </form>
+    <br>
+    </form>
+    <h2>Check if a M-th fibonacci number divides N-th fibonacci number</h2><br>
+    <form>
+        <input type="text" id="typenum8" class="form__field" placeholder="Enter mth fibonacci number">
+        <input type="text" id="typenum9" class="form__field" placeholder="Enter nth fibonacci number"><br>
+        <button type="button" class="btn btn-dark" onclick="typenum7find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="typenum7ans"></h5>
+    </form><br></form>
+    <h2>Tribonacci Numbers</h2>
+    <br>
+    <form>
+        <input type="text" id="typenum10" class="form__field" placeholder="Enter number of terms">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum8find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum8ans"></h5>
+        <h5 id="typenum8exp"></h5>
+    </form>
+    <br>
+    </form>
+    <h2>Nth Even Fibonacci Number</h2>
+    <br>
+    <form>
+        <input type="text" id="typenum11" class="form__field" placeholder="Enter the number of terms">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum9find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum9ans"></h5>
+        <h5 id="typenum9exp"></h5>
+    </form>
+    <br>
+    </form>
+    <h2>Nth Even Fibonacci Number</h2>
+    <br>
+    <form>
+        <input type="text" id="typenum12" class="form__field" placeholder="Enter the number of terms">
+        <input type="text" id="typenum13" class="form__field" placeholder="Enter the modulo">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum10find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum10ans"></h5>
+    </form>
+    <br>
+    <h2>Check if given number can be represented as sum of two great numbers</h2>
+    <br>
+    <form>
+        <input type="text" id="typenum14" class="form__field" placeholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum11find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum11ans"></h5>
+        <br>
+    </form>
+    <br>
+    <h2>Kaprekar Constant </h2>
+    <br>
+    <form>
+        <input type="text" id="typenum15" class="form__field" placeholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum12find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum12ans"></h5>
+        <br>
+    </form>
+    <br>
+    <h2>Leonardo Number </h2>
+    <br>
+    <form>
+        <input type="text" id="typenum16" class="form__field" placeholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum13find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum13ans"></h5>
+        <h5 id="typenumans131"></h5>
+        <br>
+    </form>
+    <br>
+    <h2>Polygonal Number </h2>
+    <br>
+    <form>
+        <input type="text" id="typenum17" class="form__field" placeholder="Enter the number of sides of polygon">
+        <br>
+        <input type="text" id="typenum172" class="form__field"
+            placeholder="Enter the number of terms want to generate">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum14find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum14ans"></h5>
+        <h5 id="typenum14ans11"></h5>
+        <br>
+    </form>
+    <br>
+    <h2>Sphenic Number </h2>
+    <br>
+    <form>
+        <input type="text" id="typenum18" class="form__field" placeholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum15find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum15ans"></h5>
+        <h5 id="typenum15ans1"></h5>
+        <br>
+    </form>
+    <br>
+    <h2>Hoax Number </h2>
+    <br>
+    <form>
+        <input type="text" id="typenum19" class="form__field" placeholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum16find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum16ans"></h5>
+        <h5 id="typenum16exp"></h5>
+        <br>
+    </form>
+    <br>
+    <h2>Emirp numbers </h2>
+    <br>
+    <form>
+        <input type="text" id="typenum30" class="form__field" placeholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="typenum20find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="typenum20ans"></h5>
+        <h5 id="typenum20exp"></h5>
+        <br>
+    </form>
+    <br>
+    <h2>Dyck path</h2> <br>
+    <form>
+        <input type="text" id="typenum31" class="form__field" placeholder="Enter the number"> <br>
+        <button type="button" class="btn btn-dark" onclick="typenum21find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button> <br>
+        <h5 id="typenum21ans"></h5>
+        <h5 id="typenum21exp"></h5>
+        <br>
+    </form>
+</div>

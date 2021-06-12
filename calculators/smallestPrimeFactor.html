@@ -1,0 +1,32 @@
+<div>
+    <div id="smPrime">
+        <form action="">
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the number whose smallest prime factor you want : &nbsp; &nbsp; </label>
+                <input type="number" id="smprimenum" class="form__field" placeholder="x"
+                    style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                    onclick="smallestPrimeDivisor(document.getElementById('smprimenum').value);">
+                    Solve
+                </button>
+                <button type="button" class="btn btn-light"
+                    onclick="calcexsmallestPrimeDivisor(document.getElementById('smprimenum').value);">
+                    Example
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+
+        <div class="form-group text-center">
+            <p class="stopwrap" id="smPrimeResult1" style="font-family:mathfont;"></p><br>
+            <p class="stopwrap" id="smPrimeResult2" style="font-family:mathfont;"></p><br>
+            <p class="stopwrap" id="smPrimeResult3" style="font-family:mathfont;"></p><br>
+            <p class="stopwrap" id="smPrimeResult4" style="font-family:mathfont;"></p><br>
+            <p class="stopwrap" id="smPrimeResult5" style="font-family:mathfont;"></p><br>
+        </div>
+    </div>
+</div>
