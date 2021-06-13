@@ -62,7 +62,7 @@ Other Tech/Libraries
   - Matrix (with Steps)
     - Transpose
     - Minors and Co-Factors
-    - Determinant with Laplace(Upto 5×5)
+    - Determinant with Laplace(Up to 5×5)
     - Rank
     - Inverse
     - Addition
@@ -152,7 +152,7 @@ Other Tech/Libraries
 - General Maths (with Steps)
   - Ackermann Function
   - LCM
-    - Upto 20 numbers
+    - Up to 20 numbers
   - HCF
     - Calculating Factors of each number and picking common out of them
   - Factors
@@ -254,12 +254,12 @@ Other Tech/Libraries
   - Carmichael Number
   
   - Delannoy Number
-- Basic Convertors
+- Basic Converters
 
-  - Currency Convertor
+  - Currency Converter
     - Conversion to words **(eg. '243' to 'two hundred and forty three only')**
   - Conversion to words
-  - Unit Convertor
+  - Unit Converter
     - Length
     - Area
     - Volume
@@ -275,7 +275,7 @@ Other Tech/Libraries
     - Power
   - Improper to Mixed Fraction
   - Percentage and Ratio Converter
-  - SPI/CGPA Convertor
+  - SPI/CGPA Converter
   - Ascending and Descending Order
   - Date
   - Roman/Arabic Numerals
@@ -609,7 +609,7 @@ git push -u origin <your_branch_name>
 
 16. To create a pull request, click on `compare and pull requests`.
 
-17. Add appropriate title and description to your PR explaining your changes.
+17. Add an appropriate title and description to your PR explaining your changes.
 
 18. Click on `Create pull request`.
 
@@ -622,7 +622,7 @@ If you have any doubts please let us know in the comments.
 
 ---
 
-### This project is a part of following Open Source Program
+### This project is a part of the following Open Source Program
 <table style="width:80%;background-color:white;border-radius:30px;">
   <tr>
   <td>
