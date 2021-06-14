@@ -17,9 +17,9 @@
 }
 
 body {
-  background-image: url('/images/backgroung.jpg');
+  background-image: url('/images/background_image.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
   
   font-family: mainfont;
   overflow-x: hidden;
