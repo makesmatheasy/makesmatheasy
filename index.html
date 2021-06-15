@@ -163,7 +163,7 @@
 
         ::-webkit-scrollbar-button:single-button {
             display: block;
-            background-color: var(--appimage);
+            background-color: var(--apppink);
             height: 1.25rem;
         }
 
@@ -299,14 +299,20 @@
             closenav();
         }
     </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="appjs/index.js"></script>
 </head>
 
 
-<body class="readonlybody hidescroll" onload="bodyload()">    
+<body class="readonlybody hidescroll">
     <script>
         window.onload = function () {
             var preloader = document.getElementById("preloader")
             preloader.style.display = 'none';
+            bodyload();
         }
     </script>
     <!-- preloader starts  -->
@@ -2766,6 +2772,24 @@
                                 <span
                                     onclick="addtofavourite('Operations on Fraction','#fractions','c','facimgfrac')"><img
                                         id="facimgfrac" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                        </tr>
+                    </table>
+
+                </li>
+
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <span onclick="loadcalculator('calculators/solveFraction.html')"
+                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Solve Fraction</span>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span
+                                    onclick="addtofavourite('Solve Fraction','calculators/solveFraction.html','solvefacimgfrac')"><img
+                                        id="solvefacimgfrac" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
                         </tr>
@@ -10475,18 +10499,28 @@
 
             <div class="collapse" id="simpletrignocollapse">
                 <div class="row">
-                    <div class="col-6">
+                  <form action="">
+                    <div class="col-4">
                         <p class="text-center">Fill atleast any Two</p>
                         <br>
-                        <input type="number" id="p" class="form__field" placeholder="Perpendicular"
-                            oninput="solvesimpletrigo();checkforusetrigovalue();">
-                        <input type="number" id="b" class="form__field" placeholder="Base"
-                            oninput="solvesimpletrigo();checkforusetrigovalue();">
-                        <input type="number" id="h" class="form__field" placeholder="Hypotenuse"
-                            oninput="solvesimpletrigo();checkforusetrigovalue();">
+                        <input type="number" id="p" class="form__field" placeholder="Perpendicular">
+                        <input type="number" id="base" class="form__field" placeholder="Base">
+                        <input type="number" id="h" class="form__field" placeholder="Hypotenuse">
                     </div>
-                    <div class="col-6">
+                  </form>
+                    <div class="col-4">
                         <img src="images/righttriangle.png" style="height:12.5rem">
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-light" onclick="solvesimpletrigo();checkforusetrigovalue();">
+                            Solve
+                        </button>
+                        <button type="button" class="btn btn-light" type="button" onclick="this.form.reset();">
+                            Reset
+                        </button>
+                        <button type="button" class="btn btn-light" onclick=calcexsolvesimpletrigo()>
+                            Example
+                        </button>
                     </div>
                 </div>
                 <div class="form-group">
@@ -22754,19 +22788,27 @@
                 </div>
                 <div class="modal-body">
                     <table class="table">
-                        <tr>
-                            <td>
-                                <p>Clear Favourites</p>
-                            </td>
-                            <td>
-                                <button class="btn btn-light" onclick="removefavourite();checkfavourite()">Clear
-                                </button>
-                            </td>
-                        </tr>
+                    <tr>
+           
+                        <td>
+                            <p>Clear Favourites</p>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" onclick="removefavourite();checkfavourite()">Clear
+                            </button>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <p style="font-size: -0.1rem;">Kindly Restart The App to Apply Changes</p>
+                        </td>
+                        <td>
+                            <button class="btn btn-light1" onclick="window.location.reload();" style="background-color: white;">Restart
+                            </button>
+                        </td>
+                    </tr>
                     </table>
-                    <div>
-                        <p style="font-size: -0.1rem;">Kindly Restart The App to Apply Changes</p>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
@@ -34706,13 +34748,7 @@
     <script src="appjs/speechreco.js"></script>
     <!--    speech recognition ends-->
 
-    <!--script files-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-
-    <script src="appjs/index.js"></script>
+    <!--script files-->    
     <script>
         $(document).ready(function () {
             $('.sidenav').sidenav();

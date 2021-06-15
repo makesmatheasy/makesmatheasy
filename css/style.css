@@ -17,7 +17,10 @@
 }
 
 body {
-  background-color: var(--appblack);
+  background-image: url('../images/background_image.png');
+  background-repeat: repeat;
+  background-size:cover;
+  
   font-family: mainfont;
   overflow-x: hidden;
   height: 100vh;
@@ -738,6 +741,7 @@ background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 
   place-items: center;
   position: fixed;
   z-index: 9999;
+  top:0;
 }
 
 .center_div {
