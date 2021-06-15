@@ -10486,12 +10486,12 @@
                     <div class="col-6">
                         <p class="text-center">Fill atleast any Two</p>
                         <br>
-                        <input type="number" id="p" class="form__field" placeholder="Perpendicular"
-                            oninput="solvesimpletrigo();checkforusetrigovalue();">
-                        <input type="number" id="b" class="form__field" placeholder="Base"
-                            oninput="solvesimpletrigo();checkforusetrigovalue();">
-                        <input type="number" id="h" class="form__field" placeholder="Hypotenuse"
-                            oninput="solvesimpletrigo();checkforusetrigovalue();">
+                        <input type="number" id="p" class="form__field" placeholder="Perpendicular">
+                        <input type="number" id="base" class="form__field" placeholder="Base">
+                        <input type="number" id="h" class="form__field" placeholder="Hypotenuse">
+                        <button type="button" class="btn btn-light" onclick="solvesimpletrigo();checkforusetrigovalue();">
+                            Solve
+                        </button>
                     </div>
                     <div class="col-6">
                         <img src="images/righttriangle.png" style="height:12.5rem">

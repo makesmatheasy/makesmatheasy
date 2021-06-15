@@ -2017,14 +2017,10 @@ function glomefind() {
 
 //solve trigonometry values from right triangle
 function solvesimpletrigo() {
-    var pp = document.getElementById("p").value; s
-    var base = document.getElementById("b").value;
+    var pp = document.getElementById("p").value;
+    var base = document.getElementById("base").value;
     var hyp = document.getElementById("h").value;
-    if (
-        (pp == "" && base == "") ||
-        (base == "" && hyp == "") ||
-        (hyp == "" && pp == "")
-    ) {
+    if ((pp == "" && base == "") || (base == "" && hyp == "") || (hyp == "" && pp == "")) {
         document.getElementById("soltri").innerHTML =
             "Kindly fill Atleast 2 fields";
     }
