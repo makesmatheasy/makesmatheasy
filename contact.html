@@ -69,7 +69,7 @@
             src: url(../fonts/Product_Sans_Regular.ttf) format('truetype');
         }
         body {
-            background-color: #232a36;
+            background-color: white;
             font-family:mainfont;
             color: rgb(255, 136, 231);
             overflow-x: hidden;
@@ -125,6 +125,7 @@
 body img {
   filter: invert(0%);
 } 
+
 #home {
   position: relative;
   display: block;
@@ -145,6 +146,65 @@ body img {
 #home:hover {
   background-color: rgba(255, 244, 253, 0.993);
   font-weight: bolder;
+}
+
+.formmain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.formelem1{
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 10px;
+
+}
+.formelem2{
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 250px;
+    transition-duration: 0.5s;
+}
+.formelem2:hover{
+    width: 350px;
+}
+.formelem3{
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+    width: 250px;
+    transition-duration: 0.5s;
+}
+.formelem3:hover{
+    width: 350px;
+}
+.formelem4{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   margin: 20px;
+   
+}
+.formelem5{
+    background-color: rgb(22, 189, 0);
+    color: white;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+.formelem5:hover{
+    background-color: rgb(223, 238, 221);
+    color:green;
+    border: 2px solid green;
 }
     </style>
 </head>
@@ -196,10 +256,23 @@ body img {
                             </div>
                         </div>
                     </div>                             
-                    <iframe id="contactform"
+                    <!-- <iframe id="contactform"
                             src="https://docs.google.com/forms/d/e/1FAIpQLSe9iLIoN47Puox50aziGG-f1qZMmYm3tiF861QPZyBcZU-kSg/viewform?embedded=true"
                             width="100%" height="1150" frameborder="0" marginheight="0" marginwidth="0">Loading…
-                    </iframe>
+                    </iframe> -->
+                    <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe9iLIoN47Puox50aziGG-f1qZMmYm3tiF861QPZyBcZU-kSg/formResponse?embedded=true" class="formmain">
+
+                        <input type="text" name="entry.2005620554" class="formelem2" placeholder="Your Name">
+                        <textarea name="entry.1065046570" class="formelem3" placeholder="Message..." cols="30" rows="7"></textarea>
+                        <label for="elemId" class="formelem4">
+                            <span>Are you Enjoying Makes Maths Easy ?</span>
+                            <span>YES : <input type="radio" name="entry.1166974658" class="formelem1" id="elemId"></span>                            
+                            <span>NO : <input type="radio" name="entry.1166974658" class="formelem1" id="elemId"></span>                            
+                            <span>MAY BE : <input type="radio" name="entry.1166974658" class="formelem1" id="elemId"></span>
+                        </label>
+                        <button type="submit" class="formelem5">SUBMIT</button>
+                        
+                    </form>
                 </div>
             </div>
         </div>
