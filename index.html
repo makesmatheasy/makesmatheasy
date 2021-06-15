@@ -10483,6 +10483,7 @@
 
             <div class="collapse" id="simpletrignocollapse">
                 <div class="row">
+                  <form action="">
                     <div class="col-6">
                         <p class="text-center">Fill atleast any Two</p>
                         <br>
@@ -10492,7 +10493,14 @@
                         <button type="button" class="btn btn-light" onclick="solvesimpletrigo();checkforusetrigovalue();">
                             Solve
                         </button>
+                        <button type="button" class="btn btn-light" type="button" onclick="this.form.reset();">
+                            Reset
+                        </button>
+                        <button type="button" class="btn btn-light" onclick=calcexsolvesimpletrigo()>
+                            Example
+                        </button>
                     </div>
+                  </form>
                     <div class="col-6">
                         <img src="images/righttriangle.png" style="height:12.5rem">
                     </div>

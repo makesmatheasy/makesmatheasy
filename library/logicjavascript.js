@@ -2016,6 +2016,15 @@ function glomefind() {
 }
 
 //solve trigonometry values from right triangle
+
+function calcexsolvesimpletrigo(){
+    var pp = document.getElementById("p").value = 3;
+    var base = document.getElementById("base").value;
+    var hyp = document.getElementById("h").value = 5;
+
+    solvesimpletrigo();
+}
+
 function solvesimpletrigo() {
     var pp = document.getElementById("p").value;
     var base = document.getElementById("base").value;
