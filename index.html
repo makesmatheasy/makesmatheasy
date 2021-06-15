@@ -163,7 +163,7 @@
 
         ::-webkit-scrollbar-button:single-button {
             display: block;
-            background-color: var(--appimage);
+            background-color: var(--apppink);
             height: 1.25rem;
         }
 
@@ -299,14 +299,20 @@
             closenav();
         }
     </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="appjs/index.js"></script>
 </head>
 
 
-<body class="readonlybody hidescroll" onload="bodyload()">    
+<body class="readonlybody hidescroll">
     <script>
         window.onload = function () {
             var preloader = document.getElementById("preloader")
             preloader.style.display = 'none';
+            bodyload();
         }
     </script>
     <!-- preloader starts  -->
@@ -2766,8 +2772,8 @@
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
-                                    onclick="addtofavourite('Operations on Fraction','#fractions','c','facimgfrac')"><img
-                                        id="facimgfrac" src="images/unfavourite.png"
+                                    onclick="addtofavourite('Solve Fraction','calculators/solveFraction.html','solvefacimgfrac')"><img
+                                        id="solvefacimgfrac" src="images/unfavourite.png"
                                         style="height:1.5625rem;filter: none;"></span>
                             </td>
                         </tr>
@@ -34708,13 +34714,7 @@
     <script src="appjs/speechreco.js"></script>
     <!--    speech recognition ends-->
 
-    <!--script files-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-
-    <script src="appjs/index.js"></script>
+    <!--script files-->    
     <script>
         $(document).ready(function () {
             $('.sidenav').sidenav();
