@@ -1522,10 +1522,7 @@ $(document).ready(function () {
         closenav();
         
     });
-    $("#pmfbtn").click(function(){
-        openit("#binomial_pmf");
-        closenav();
-    });
+   
 
 
     $("#emibtn").click(function () {
