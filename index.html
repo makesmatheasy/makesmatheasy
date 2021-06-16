@@ -1446,10 +1446,10 @@
                         <tr>
                             <td style="border-top: none;">
 
-                                <a id="excircumbtn"
+                                <span onclick="loadcalculator('calculators/distanceBetweenExcentreAndCircumcentre.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Distance
                                     between excentre and circumcentre
-                                </a>
+                            </span>
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
@@ -10775,47 +10775,7 @@
                 <p id="dist_inex"></p><br><br>
             </div>
 
-            <div class="collapse" id="excircum">
-                <h2 class="d-flex justify-content-center">Distance between excentre and circumcentre</h2><br>
-                <p>For OI1</p>
-                <p id="extcircum">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>
-                <form action="" class="d-flex justify-content-center">
-                    <div class="form-group">
-                        <input type="text" style="width: 250px;" class="form__field form-control" name="a" id="radius_2"
-                            placeholder="Enter External radius" />
-                        <input type="text" name="b" style="width: 250px;" class="form__field form-control p-1"
-                            id="ang_1" placeholder="Enter angle A " />
-                        <input type="text" name="c" style="width: 250px;" class="form__field form-control p-1"
-                            id="ang_2" placeholder="Enter angle B" />
-                        <input type="text" name="d" style="width: 250px;" class="form__field form-control p-1"
-                            id="ang_3" placeholder="Enter angle C" /><br><br>
-                        <button class="btn btn-outline-light" type="button" onclick="excircum_1()">Find</button>
-                        <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button>
-                    </div>
-                </form>
-
-                <p id="excircum1"></p><br><br>
-
-                <p>For OI2 and OI3</p>
-                <p id="extcircum">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>
-                <form action="" class="d-flex justify-content-center">
-                    <div class="form-group">
-                        <input type="text" style="width: 250px;" class="form__field form-control p-1" name="a"
-                            id="radius_3" placeholder="Enter External radius" />
-                        <input type="text" name="b" style="width: 250px;" class="form__field form-control p-1"
-                            id="ang_A" placeholder="Enter angle A " />
-                        <input type="text" name="c" style="width: 250px;" class="form__field form-control p-1"
-                            id="ang_B" placeholder="Enter angle B" />
-                        <input type="text" name="d" style="width: 250px;" class="form__field form-control p-1"
-                            id="ang_C" placeholder="Enter angle C" /><br><br>
-                        <button class="btn btn-outline-light" type="button" onclick="excircum_2()">Find</button>
-                        <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button>
-                        <br>
-                    </div>
-                </form>
-
-                <p id="excircum2"></p><br><br>
-            </div>
+         
 
             <!-- sensitivity and Specificity starts -->
             <div class="collapse" id="sensi">
