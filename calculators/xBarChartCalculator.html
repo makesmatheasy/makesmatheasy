@@ -1,0 +1,28 @@
+<div id="xchart">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">X̄ chart Calculator</h1>
+    <p style="margin-top: 2rem;">
+        The X-bar chart is a type of Shewhart control chart that is used to monitor the arithmetic means of
+        successive samples of constant size, n.
+        This type of control chart is used for characteristics that can be measured on a continuous scale,
+        such as weight, temperature, thickness etc.
+    </p>
+    <p id="tformula" style="margin-bottom:4rem;"></p>
+    <form action="">
+        <input class="form__field" type="text" id="average"
+            placeholder="Enter list of sample averages (X̄) separated by SPACE ">
+        <br><br>
+        <input class="form__field" type="text" id="ranges"
+            placeholder="Enter list of sample ranges (R bar) bar separated by SPACE ">
+        <br><br>
+        <input class="form__field" type="number" id="A2" placeholder="Enter value of A2 (Average Limit)">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="xvalue()">Test</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+    <p id="xans"></p>
+    <div id="stepsbox">
+        <p id="xbar" style="text-align: left; margin-top: 2rem;"></p>
+        <p id="xucl"></p>
+        <p id="xlcl"></p>
+    </div>
+</div>

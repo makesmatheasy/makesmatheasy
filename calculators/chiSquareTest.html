@@ -1,0 +1,25 @@
+<div id="chitest">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Chi-Square Test</h1>
+    <p style="margin: 0 auto 4rem auto; font-style: italic;">(Single Row Data)</p>
+    <p style="margin: 0 auto 6rem auto; font-style: italic;">A chi-square (χ2) statistic is a test that
+        measures how a model compares to actual observed data. The data used in calculating a chi-square
+        statistic must be random, raw, mutually exclusive, drawn from independent variables, and drawn from
+        a large enough sample.</p>
+    <form action="">
+        <input class="form__field" type="text" id="obsList"
+            placeholder="Enter Observed List Separated by SPACE">
+        <br><br>
+        <input class="form__field" type="number" id="sigValue"
+            placeholder="Enter given Significance value (χ2)">
+        <br><br>
+
+        <button class="btn btn-light" type="button" onclick="chivalue()">Test</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="chians"></p>
+    <br>
+    <p id="chitestans"></p>
+    <br>
+    <p id="concluChi"></p>
+</div>

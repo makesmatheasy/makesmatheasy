@@ -1,0 +1,57 @@
+<div id="deviation">
+    <h1 style="font-family:mathfont; text-align:center;">STANDARD DEVIATION</h1>
+
+    <br>
+
+    <h3 style="text-align:center;">What is Standard Deviation</h3>
+
+    <br>
+
+    <p style="color:#ababab !important;">
+        Standard deviation is the measure of dispersion of a set of data from its mean. It measures the
+        absolute variability of a distribution; the higher the dispersion or variability, the greater is the
+        standard deviation and greater will be the magnitude of the deviation of the value from their mean.
+    </p>
+    <br>
+    <br>
+
+    <form action="">
+        <input type="text" id="stdinp" class="form__field"
+            placeholder="Input numbers to calculate Standard Deviation">
+        <p>&nbsp;</p>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-auto d-flex justify-content-center">
+                <button id="smpbtn" class="btn btn-secondary m-1" type="button" onclick="samvar()"
+                    style="font-family:mathfont;"> Sample Standard Deviation</button><br>
+            </div>
+            <br><br>
+            <div class="col-md-auto d-flex justify-content-center">
+                <button id="popbtn" class="btn btn-secondary m-1" type="button" onclick="popvar()"
+                    style="font-family:mathfont;"> Population Standard Deviation</button><br>
+            </div>
+            <br><br>
+            <div class="col-md-auto d-flex justify-content-center">
+                <button class="btn btn-secondary m-1" type="button" onclick="this.form.reset();"
+                    style="font-family:mathfont;">Reset</button>
+            </div>
+        </div>
+    </form>
+
+    <br>
+    <br>
+
+    <ul style="list-style-type:disc;">
+        <li style="color:#ababab !important; font-size:24px;"> Select Population if data contains all the
+            measurable values or all of the values you are interested in.</li>
+        <br>
+        <li style="color:#ababab !important; font-size:24px;"> Select Sample if the data is sample of large
+            or unlimited population an you wish to make a statement about entire population.</li>
+    </ul>
+
+    <br>
+    <br>
+
+    <div id='std-var-rslt' style="color:white;font-family:mathfont; text-align: center; font-size: 1.5em;">
+    </div>
+
+</div>

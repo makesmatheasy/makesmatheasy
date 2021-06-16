@@ -1,0 +1,83 @@
+<div id="rootsquadratic">
+    <div class="form-group">
+        <p id="quadraticequation">\[f(x)=ax^2+bx+c\]</p>
+        <div class="form-group text-center">
+            <button class="btn btn-outline-light" data-toggle="modal" data-target="#rootsrules">Rules
+            </button>
+            <div class="modal fade" id="rootsrules" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Rules for Roots of Quadratic
+                                Equation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="outline: none;">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>There are no Real Roots if \[b^2-4ac<0\]< /p>
+                                    <p>There is one Real Root if \[b^2-4ac=0\]</p>
+                                    <p>There are two Real Roots if \[b^2-4ac>0\]</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div style="display: inline-block;">
+                <p>\[a=\]</p>
+            </div>
+            <div style="display: inline-block;">
+                <input type="tel" class="form__field" id="coffa" placeholder="Enter Number"
+                    oninput="rootquadratic();">
+            </div>
+        </div>
+        <div class="form-group">
+            <div style="display: inline-block;">
+                <p>\[b=\]</p>
+            </div>
+            <div style="display: inline-block;">
+                <input type="tel" class="form__field" id="coffb" placeholder="Enter Number"
+                    oninput="rootquadratic();">
+            </div>
+        </div>
+        <div class="form-group">
+            <div style="display: inline-block;">
+                <p>\[c=\]</p>
+            </div>
+            <div style="display: inline-block;">
+                <input type="tel" class="form__field" id="coffc" placeholder="Enter Number"
+                    oninput="rootquadratic();">
+            </div>
+        </div>
+        <div class="form-group">
+            <p class="stopwrap" id="rootsquadraticresult"></p>
+        </div>
+    </div>
+    <h4>Nature of the roots of the Quadratic Equation ax<sup>2</sup> + bx + c, a ≠ 0, a, b, c ∈ R</h4>
+    <p>To find out the nature of the roots of a quadratic equation,</p>
+    <ol>
+        <li style="color: white; font-size: 1.25rem;">We find the value of the discriminant D. If D < 0, we
+                immediately say that equation has no solution in R.</li>
+                <br>
+        <li style="color: white; font-size: 1.25rem;">If D ≥ 0, then we examine whether it is a perfect
+            square of a rational number or not.
+            <ol type="i">
+                <li style="color: white; font-size: 1.25rem;">If D > 0 and D is not a perfect square, then
+                    roots are real and distinct.</li>
+                <li style="color: white; font-size: 1.25rem;">If D > 0 and it is a perfect square of a
+                    rational number and a, b, c ∈ Q,
+                    then the roots are real and rational. Roots are also distinct.</li>
+            </ol>
+        </li>
+        <br>
+        <li style="color: white; font-size: 1.25rem;">If D = 0 then the roots are real and equal and if a,
+            b, c ∈ Q the roots are equal rational numbers.</li>
+        <br>
+    </ol>
+</div>

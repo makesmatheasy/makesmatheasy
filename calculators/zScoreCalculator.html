@@ -1,0 +1,25 @@
+<div id="zscores">
+
+    <h1 style="font-family:mathfont; text-align:center;">Z SCORE CALCULATOR </h1>
+    <form>
+        <input type="number" name="rawscore" class="form__field" id="rawscore" width="5em"
+            placeholder="Enter Raw Score (x)">
+        <p>&nbsp;</p>
+        <input type="number" name="ppmean" class="form__field" id="ppmean" placeholder="Enter Population Mean (μ)">
+        <p>&nbsp;</p>
+        <input type="number" name="stdtn" class="form__field" id="stdtn"
+            placeholder="Enter Standard Deviation (σ) ">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="zscorecal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="zscoreans" style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont"></p>
+        <p>&nbsp;</p>
+    </form>
+    <p style="color: white; text-align: center; font-family:mathfont">The z-score, also referred to as standard
+        score, z-value, and normal score, among other things, is a dimensionless quantity that is used to indicate
+        the signed, fractional, number of standard deviations by which an event is above the mean value being
+        measured.<br>
+        Values above the mean have positive z-scores, while values below the mean have negative z-scores. <br>The
+        z-score can be calculated by subtracting the population mean from the raw score, or data point in question
+        (a test score, height, age, etc.), then dividing the difference by the population standard deviation</p>
+</div>

@@ -1,0 +1,63 @@
+<div id="joint-probabilitycollapse">
+    <h1 style="text-align: center; margin-bottom:20px;">Joint Probability </h1>
+    <p style="margin-bottom: 15px;">The probability that two events will both occur</p>
+    <h3 style="text-align:center;">Formula for Joint Probability</h3>
+    <p>Joint Probability = P(A ⋂ B) = P (A) x P(B) </p><br>
+    <p>Where:
+        <br>
+        P(A ⋂ B) is the notation for the joint probability of event “A” and “B”.<br>
+        P(A) is the probability of event “A” occurring.<br>
+        P(B) is the probability of event “B” occurring.<br><br>
+    </p>
+    <form action="">
+        <div style="justify-content: center;align-items: center;" class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Enter number of favourable outcomes in case of Event 1</h5>
+                    <input type="number" value="0" class="form__field" id="favourable1">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Enter number of possible outcomes in case of Event 1</h5>
+                    <input type="number" value="1" class="form__field" id="total1">
+                </div>
+            </div>
+        </div>
+        <div style="justify-content: center;align-items: center;" class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Enter number of favourable outcomes in case of Event 2</h5>
+                    <input type="number" value="0" class="form__field" id="favourable2">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Enter number of possible outcomes in case of Event 2</h5>
+                    <input type="number" value="1" class="form__field" id="total2">
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;" class="form-group">
+            <button type="button" class="btn btn-light" onclick="computejointprobability()">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="probability-result1"></p>
+    </div>
+
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="probability-result2"></p>
+    </div>
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="probability-result3"></p>
+    </div>
+
+
+</div>

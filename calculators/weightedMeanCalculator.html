@@ -1,0 +1,29 @@
+<div id="wmcs">
+
+
+    <h1 style="font-family:mathfont; text-align:center;">Weighted Mean Calculator </h1>
+    <form action="">
+        <input type="text" name="wmcx" class="form__field" id="wmcx" width="5em"
+            placeholder="Enter value of x seperated by space">
+        <p>&nbsp;</p>
+        <input type="text" name="wmcw" class="form__field" id="wmcw"
+            placeholder="Enter weight of inputs respectively">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light mr-2" onclick="wmccal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="wmcans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">The Weighted mean for given
+        set of non negative data {x1, x2, x3, ...xn} with non negative weights {w1, w2, w3, ...wn}<br>
+        can be derived from the formula: </p>
+    <div class="d-flex justify-content-center">
+        <img src="images\wmean.jpg" class="img-fluid" style="width: 100%; max-width: 450px;">
+    </div>
+
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">where<br>
+        x is the repeating value<br>
+        w is the number of occurrences of x (weight)<br>
+        x̄ is the weighted mean</p>
+</div>

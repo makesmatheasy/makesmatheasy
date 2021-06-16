@@ -1,0 +1,273 @@
+<div id="binary-hexadecimal">
+    <h2>Bin/Dec/Oct/Hex Converter</h2>
+    <div class="col-6">
+        <div class="form-group">
+            <h5>From</h5>
+            <select id="binary-hexadecimal-select1" class="form__field" onchange="convertBinhex()">
+                <option class="form_field" style="background-color: #232a36;">
+                    Binary
+                </option>
+                <option class="form_field" style="background-color: #232a36;">
+                    Decimal
+                </option>
+                <option class="form_field" style="background-color: #232a36;">
+                    Octal
+                </option>
+                <option class="form_field" style="background-color: #232a36;">
+                    Hexadecimal
+                </option>
+            </select>
+            <input type=" " id="binary-hexadecimal-input" value="0" class="form__field"
+                oninput="convertBinhex()">
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <h5>To</h5>
+            <select id="binary-hexadecimal-select2" class="form__field" onchange="convertBinhex()">
+                <option class="form__field" style="background-color: #232a36;">
+                    Binary
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Decimal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Octal
+                </option>
+                <option class="form__field" style="background-color: #232a36;">
+                    Hexadecimal
+                </option>
+
+            </select>
+        </div>
+        <label class="form__group" id="binary-hexadecimal-result">0</label>
+    </div>
+    <br>
+    <br>
+    <div class="col-6">
+        <div class="form-group">
+            <h3 style="text-align: center;">Bin/Dec/Oct/Hex Table</h3>
+            <table class="table table-bordered table-dark">
+                <tbody style="text-align: center;">
+                    <tr>
+                        <th scope="col">Decimal Numbers</strong></th>
+                        <th scope="col">Binary Numbers</strong></th>
+                        <th scope="col">Octal Numbers</strong></th>
+                        <th scope="col">Hexa Decimal Numbers</strong></th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>1</p>
+                        </th>
+                        <th scope="row">
+                            <p>1</p>
+                        </th>
+                        <th scope="row">
+                            <p>1</p>
+                        </th>
+                        <th scope="row">
+                            <p>1</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>2</p>
+                        </th>
+                        <th scope="row">
+                            <p>10</p>
+                        </th>
+                        <th scope="row">
+                            <p>2</p>
+                        </th>
+                        <th scope="row">
+                            <p>2</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>3</p>
+                        </th>
+                        <th scope="row">
+                            <p>11</p>
+                        </th>
+                        <th scope="row">
+                            <p>3</p>
+                        </th>
+                        <th scope="row">
+                            <p>3</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>4</p>
+                        </th>
+                        <th scope="row">
+                            <p>100</p>
+                        </th>
+                        <th scope="row">
+                            <p>4</p>
+                        </th>
+                        <th scope="row">
+                            <p>4</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>5</p>
+                        </th>
+                        <th scope="row">
+                            <p>101</p>
+                        </th>
+                        <th scope="row">
+                            <p>5</p>
+                        </th>
+                        <th scope="row">
+                            <p>5</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>6</p>
+                        </th>
+                        <th scope="row">
+                            <p>110</p>
+                        </th>
+                        <th scope="row">
+                            <p>6</p>
+                        </th>
+                        <th scope="row">
+                            <p>6</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>7</p>
+                        </th>
+                        <th scope="row">
+                            <p>111</p>
+                        </th>
+                        <th scope="row">
+                            <p>7</p>
+                        </th>
+                        <th scope="row">
+                            <p>7</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>8</p>
+                        </th>
+                        <th scope="row">
+                            <p>1000</p>
+                        </th>
+                        <th scope="row">
+                            <p>10</p>
+                        </th>
+                        <th scope="row">
+                            <p>8</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>9</p>
+                        </th>
+                        <th scope="row">
+                            <p>1001</p>
+                        </th>
+                        <th scope="row">
+                            <p>11</p>
+                        </th>
+                        <th scope="row">
+                            <p>9</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>10</p>
+                        </th>
+                        <th scope="row">
+                            <p>1010</p>
+                        </th>
+                        <th scope="row">
+                            <p>12</p>
+                        </th>
+                        <th scope="row">
+                            <p>A</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>11</p>
+                        </th>
+                        <th scope="row">
+                            <p>1011</p>
+                        </th>
+                        <th scope="row">
+                            <p>13</p>
+                        </th>
+                        <th scope="row">
+                            <p>B</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>12</p>
+                        </th>
+                        <th scope="row">
+                            <p>1100</p>
+                        </th>
+                        <th scope="row">
+                            <p>14</p>
+                        </th>
+                        <th scope="row">
+                            <p>C</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>13</p>
+                        </th>
+                        <th scope="row">
+                            <p>1101</p>
+                        </th>
+                        <th scope="row">
+                            <p>15</p>
+                        </th>
+                        <th scope="row">
+                            <p>D</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>14</p>
+                        </th>
+                        <th scope="row">
+                            <p>1110</p>
+                        </th>
+                        <th scope="row">
+                            <p>16</p>
+                        </th>
+                        <th scope="row">
+                            <p>E</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <p>15</p>
+                        </th>
+                        <th scope="row">
+                            <p>1111</p>
+                        </th>
+                        <th scope="row">
+                            <p>17</p>
+                        </th>
+                        <th scope="row">
+                            <p>F</p>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>

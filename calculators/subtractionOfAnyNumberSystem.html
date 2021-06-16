@@ -1,0 +1,44 @@
+<div id="subtract-all">
+    <div class="col-6">
+        <form action="">
+            <div class="form-group">
+                <h5>Choose Number System</h5><br>
+                <select id="subtract-all-select1" class="form__field">
+                    <option class="form_field" style="background-color: #232a36;">
+                        Binary
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Octal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Hexa Decimal
+                    </option>
+                </select>
+                <br><br>
+                <h2>Input Of Minuend</h2>
+                <input type=" " id="subtract-all-input1" value="0" class="form__field">
+                <br><br>
+                <h2>Input Of Subtrahend</h2>
+                <input type=" " id="subtract-all-input2" value="0" class="form__field">
+            </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <br><br>
+            <h2>Result Of Subtraction</h2>
+            <button type="button" class="btn btn-light" onclick="subBinDecHexOct()">
+                Find
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+        <label class="form__group" id="subtract-all-result"></label>
+        <p class="" id="subtract-all-working"></p>
+    </div>
+    </form>
+
+</div>

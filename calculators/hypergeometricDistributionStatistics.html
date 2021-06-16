@@ -1,0 +1,26 @@
+<div id="hypergeomeans">
+    <h1>Hypergeometric Distribution Statistics</h1>
+    <p>&nbsp;</p>
+    <form action="">
+        <input type="text" name="hypergeos12" class="form__field" id="hypergeos12" width="5em"
+            placeholder="Successes of Sample">
+        <p>&nbsp;</p>
+        <input type="text" name="hypergeos22" class="form__field" id="hypergeos22" placeholder="Sample Size">
+        <p>&nbsp;</p>
+        <input type="text" name="hypergeos32" class="form__field" id="hypergeos32"
+            placeholder="Successes of Lot">
+        <p>&nbsp;</p>
+        <input type="text" name="hypergeos42" class="form__field" id="hypergeos42" placeholder="Lot Size">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="hypergeos2cal()">Mean</button>
+        <button type="button" class="btn btn-outline-light" onclick="hypergeosvarcal()">Variance</button>
+        <button type="button" class="btn btn-outline-light" onclick="hypergeosvar2cal()">Standard
+            Deviation</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p>&nbsp;</p>
+    <p id="hypergeos2ans" style="color: white; font-size: 1.3em; font-family:mathfont"></p>
+
+
+</div>

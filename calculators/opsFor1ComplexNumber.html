@@ -1,0 +1,116 @@
+<div id="complex1collapse">
+    <h1>Calculations for 1 complex number</h1>
+    <form action="">
+        <div class="form-group" style="display:inline-block">
+            <label>Enter the real part : &nbsp; &nbsp; </label>
+            <input type="number" id="creal" class="form__field" placeholder="Real"
+                style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+            <label> Enter the imaginary part : &nbsp; &nbsp;</label>
+            <input type="number" id="cimg" class="form__field" placeholder="Imag"
+                style="width:3rem;display:inline;">
+        </div>
+        <div class="form-group">
+            <select id="comop" class="btn btn-outline-light">
+                <option>Available Operations:</option>
+                <option>Magnitude</option>
+                <option>Argument</option>
+                <option>Conjugate</option>
+                <option>SquareRoot</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light"
+                onclick="comOp(document.getElementById('comop').value);"> Solve </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();"> Reset </button>
+        </div>
+    </form>
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="comresult"></p>
+    </div>
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="comexplain"></p>
+    </div>
+
+    <h1>Polar representaion of complex number</h1>
+    <form action="">
+        <div class="form-group" style="display:inline-block">
+            <label>Enter the real part : &nbsp; &nbsp; </label>
+            <input type="number" id="cprealcx" class="form__field" placeholder="Real"
+                style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+            <label> Enter the imaginary part : &nbsp; &nbsp;</label>
+            <input type="number" id="cpimgcx" class="form__field" placeholder="Imag"
+                style="width:3rem;display:inline;">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light" onclick="polarcx()">
+                Find
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="comp1result"></p>
+    </div>
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="comp1explain"></p>
+    </div>
+    <h1>Find Euler Representaion of complex number</h1>
+    <form action="">
+        <div class="form-group" style="display:inline-block">
+            <label>Enter the real part : &nbsp; &nbsp; </label>
+            <input type="number" id="cpereal" class="form__field" placeholder="Real"
+                style="width:3rem;display:inline;"> &nbsp; &nbsp;
+            <label> Enter the imaginary part : &nbsp; &nbsp;</label>
+            <input type="number" id="cpeimg" class="form__field" placeholder="Imag"
+                style="width:3rem;display:inline;">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light" onclick="euler()">
+                Find
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+
+    <div class="form-group text-center">
+        <p style="color:white;" id="comperesult"></p>
+    </div>
+    <div class="form-group text-center">
+        <p style="color:white;" id="compeexplain"></p>
+    </div>
+    <h1>N-th Power of complex number</h1>
+    <form action="">
+        <div class="form-group" style="display:inline-block">
+            <label>Enter the real part : &nbsp; &nbsp; </label>
+            <input type="number" id="cpnreal" class="form__field" placeholder="Real"
+                style="width:3rem;display:inline;"> &nbsp; &nbsp;
+            <label> Enter the imaginary part : &nbsp; &nbsp;</label>
+            <input type="number" id="cpnimg" class="form__field" placeholder="Imag"
+                style="width:3rem;display:inline;">
+            <label> Enter the power : &nbsp; &nbsp;</label>
+            <input type="number" id="cpnpow" class="form__field" placeholder="Power"
+                style="width:3rem;display:inline;">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light" onclick="npower()">
+                Find
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+
+    <div class="form-group text-center">
+        <p style="color:white;" id="compnthresult"></p>
+    </div>
+    <div class="form-group text-center">
+        <p style="color:white;" id="compnthexplain"></p>
+    </div>
+
+</div>
