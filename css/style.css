@@ -17,10 +17,8 @@
 }
 
 body {
-  background-image: url('../images/background_image.png');
-  background-repeat: repeat;
+  background-color: #25282B;
   background-size:cover;
-  
   font-family: mainfont;
   overflow-x: hidden;
   height: 100vh;
