@@ -1522,6 +1522,7 @@ $(document).ready(function () {
         closenav();
         
     });
+   
 
 
     $("#emibtn").click(function () {

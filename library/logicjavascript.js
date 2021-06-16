@@ -247,6 +247,34 @@ function callr() {
 
 //call romanize
 //-----------------------------------------------------
+function binomialpmf()
+{
+    var n=parseFloat(document.getElementById("n").value);
+    var r=parseFloat(document.getElementById("r").value);
+    var x=parseFloat(document.getElementById("x"));
+    let y=1-x;
+    let p=(r/n);
+    var vi=""
+    if(n=="" || r=="" || x=="")
+   { 
+     document.getElementById("binopmf").innerHTML = "Please enter all the values to obtain required answer";}
+    else
+    {
+        let pmf=0;
+        vi+="\\[N=\\{${n}!}";
+        let N=factorialsol(n);
+        vi+="\\[R=\\{${r}!}";
+        let R= factorialsol(r);
+        vi+="\\[R=\\{${n-r}!}";
+        let NR=factorialsol((n-r));
+        let P=power(p,x);
+        let P1=power((1-p),y);
+        vi+="\\[pmf =\\frac{${N} \\${P} \\${P1}}{${R} \\${NR}]";
+        pmf=(N*P*P1)/(R*NR);
+        document.getElementById("binoans").innerHTML=pmf;
+
+    }
+}
 
 //-----------------------------------------------------
 //simple divide result

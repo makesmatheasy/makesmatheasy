@@ -524,6 +524,7 @@ function openit(id) {
         "#sqseries",
         "#impse",
         "#n_baseroot",
+        "#binomial",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
