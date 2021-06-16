@@ -92,12 +92,7 @@ function romanize(input) {
 
 //Distance between excentre and circumcentre
 
-function excircum_1(R,A,B,C) {
-    //var R = parseInt(document.getElementById("radius_2").value);
-    //var A = parseInt(document.getElementById("ang_1").value);
-    //var B = parseInt(document.getElementById("ang_2").value);
-    //var C = parseInt(document.getElementById("ang_3").value);
-    
+function excircum_1(R,A,B,C) {    
     var excirtemp = "";
     var result = R * Math.sqrt(1 + (8 * sin(A / 2) * sin(B / 2) * sin(C / 2)));
 
@@ -109,9 +104,7 @@ function excircum_1(R,A,B,C) {
         excirtemp += "\\[ \\space = \\space ( External \\space radius) \\times \\sqrt{1 + (8 \\times sin(\\frac{(angle A)}{2}) \\times sin(\\frac{(angle \\space C)}{2}) \\times sin(\\frac{(angle \\space C)}{2}) )  } \\space \\]";
         excirtemp += "\\[ \\space = \\space " + R + " \\times \\sqrt{1 + (8 \\times sin(\\frac{" + A + "}{2}) \\times sin(\\frac{" + B + "}{2}) \\times sin(\\frac{" + C + "}{2}) )  } \\space \\]";
         excirtemp += "\\[ \\space = \\space " + R + " \\times \\sqrt{" + (1 + (8 * sin(A / 2) * sin(B / 2) * sin(C / 2))).toFixed(2) + "} \\space \\]";
-        excirtemp += "\\[\\space = \\space " + result.toFixed(3) + " \\space \\]";
-
-        
+        excirtemp += "\\[\\space = \\space " + result.toFixed(3) + " \\space \\]";        
     }
     return {'result':result, 'steps':excirtemp}
 }
@@ -125,31 +118,23 @@ function cos(degrees) {
     var radians = (degrees * Math.PI) / 180;
     return Math.cos(radians);
 }
-function excircum_2() {
-
-    var R1 = parseInt(document.getElementById("radius_3").value);
-    var A1 = parseInt(document.getElementById("ang_A").value);
-    var B1 = parseInt(document.getElementById("ang_B").value);
-    var C1 = parseInt(document.getElementById("ang_C").value);
-    var excirout = document.getElementById("excircum2");
+function excircum_2(A1,R1,B1,C1) {
+    
     var excirtemp = "";
 
     var result1 = R1 * Math.sqrt(1 + (8 * cos(A1 / 2) * cos(B1 / 2) * cos(C1 / 2)));
 
     if (isNaN(A1) || isNaN(R1) || isNaN(B1) || isNaN(C1)) {
-        excirtemp += "\\[Please \\space enter \\space valid \\space input\\]";
-        excirout.innerHTML = excirtemp;
+        excirtemp += "\\[Please \\space enter \\space valid \\space input\\]";        
     } else {
         excirtemp += "\\[Distance \\space between \\space excentre \\space and \\space circumcentre \\space is \\space \\]";
         excirtemp += "\\[ \\space = \\space ( External \\space radius) \\times \\sqrt{1 + (8 \\times cos(\\frac{(angle A)}{2}) \\times cos(\\frac{(angle \\space C)}{2}) \\times cos(\\frac{(angle \\space C)}{2}) )  } \\space \\]";
         excirtemp += "\\[ \\space = \\space " + R1 + " \\times \\sqrt{1 + (8 \\times cos(\\frac{" + A1 + "}{2}) \\times cos(\\frac{" + B1 + "}{2}) \\times cos(\\frac{" + C1 + "}{2}) )  } \\space \\]";
         excirtemp += "\\[ \\space = \\space " + R1 + " \\times \\sqrt{" + (1 + (8 * cos(A1 / 2) * cos(B1 / 2) * cos(C1 / 2))).toFixed(2) + "} \\space \\]";
-        excirtemp += "\\[\\space = \\space " + result1.toFixed(3) + " \\space \\]";
-
-        excirout.innerHTML = excirtemp;
+        excirtemp += "\\[\\space = \\space " + result1.toFixed(3) + " \\space \\]";    
     }
-    renderMathInElement(excirout);
-
+    
+    return {'result':result1,'steps':excirtemp};
 }
 
 

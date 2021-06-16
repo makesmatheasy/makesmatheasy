@@ -1,8 +1,4 @@
-:root {
-  --apppink: #CAD5E2;
-  --appblack: #232a36;  
-  --appwhite:#ffffff;
-}
+
 @font-face {
   font-family: mainfont;
   src: url(../fonts/Product_Sans_Regular.ttf) format('truetype');
@@ -22,15 +18,6 @@ body {
   font-family: mainfont;
   overflow-x: hidden;
   height: 100vh;
-}
-
-body img {
-  filter: invert(100%);
-}
-
-
-#setopfav, #interestfav, #pricesfav {
-  filter: invert(0);
 }
 
 .container {

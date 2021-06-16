@@ -1,0 +1,52 @@
+<style>
+    .menu ul {
+        margin: 0;
+        /* To remove default bottom margin */
+        padding: 0;
+        /* To remove default left padding */
+        color:var(--appwhite);
+    }
+
+    .menu ul li {
+        list-style: none;
+        box-shadow: 0 0 10px black;
+        border-radius: 30px;
+        margin-bottom: 1rem;
+    }
+
+    .menu ul li span {
+        padding-left: 0.5rem;            
+    }
+
+    .menu ul li span img {
+        height: 1.5rem;
+        filter: invert(1);
+        float: right;
+        padding-right: 0.5rem;
+    }
+
+    .menu ul li {
+        padding: 10px;
+    }
+
+    .menu {            
+        border-radius: 30px;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="menu">
+    <ul>
+        <li onclick="loadcalculator('calculators/matrix.html','Matrix')">
+            <span>Matrix</span>
+            <span><img src="icons/unfavourite.png" alt=""></span>
+        </li>
+
+        <li>
+
+            <span>matrix</span>
+            <span><img src="icons/unfavourite.png" alt=""></span>
+
+        </li>
+    </ul>
+</div>
