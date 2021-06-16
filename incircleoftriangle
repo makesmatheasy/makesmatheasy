@@ -1,0 +1,30 @@
+#include <math.h>
+#include <stdio.h>
+#define PI 3.14159265
+
+// function to find area of inscribed circle
+float area(float a)
+{
+    return (a * a * (PI / 12));
+}
+
+// function to find Perimeter of inscribed circle
+float perimeter(float a)
+{
+    return (PI * (a / sqrt(3)));
+}
+
+
+int main()
+{
+    float a ;
+    printf("Enter a: ");
+    scanf("%f",&a);
+    printf("Area of inscribed circle is :%f\n",
+           area(a));
+
+    printf("Perimeter of inscribed circle is :%f",
+           perimeter(a));
+
+    return 0;
+}
