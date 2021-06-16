@@ -1228,11 +1228,7 @@ $(document).ready(function () {
         closenav();
         
     });
-    $("#excircumbtn").click(function () {
-        openit("#excircum");
-        closenav();
-        
-    });
+   
 
     $("#quadeqncalbtn").click(function () {
         openit("#quadeqncal");

@@ -92,19 +92,18 @@ function romanize(input) {
 
 //Distance between excentre and circumcentre
 
-function excircum_1() {
-    var R = parseInt(document.getElementById("radius_2").value);
-    var A = parseInt(document.getElementById("ang_1").value);
-    var B = parseInt(document.getElementById("ang_2").value);
-    var C = parseInt(document.getElementById("ang_3").value);
-    var excirout = document.getElementById("excircum1");
+function excircum_1(R,A,B,C) {
+    //var R = parseInt(document.getElementById("radius_2").value);
+    //var A = parseInt(document.getElementById("ang_1").value);
+    //var B = parseInt(document.getElementById("ang_2").value);
+    //var C = parseInt(document.getElementById("ang_3").value);
+    
     var excirtemp = "";
     var result = R * Math.sqrt(1 + (8 * sin(A / 2) * sin(B / 2) * sin(C / 2)));
 
     if (isNaN(A) || isNaN(R) || isNaN(B) || isNaN(C)) {
         excirtemp += "\\[Please \\space enter \\space valid \\space input\\]";
 
-        excirout.innerHTML = excirtemp;
     } else {
         excirtemp += "\\[Distance \\space between \\space excentre \\space and \\space circumcentre \\space is \\space \\]";
         excirtemp += "\\[ \\space = \\space ( External \\space radius) \\times \\sqrt{1 + (8 \\times sin(\\frac{(angle A)}{2}) \\times sin(\\frac{(angle \\space C)}{2}) \\times sin(\\frac{(angle \\space C)}{2}) )  } \\space \\]";
@@ -112,9 +111,9 @@ function excircum_1() {
         excirtemp += "\\[ \\space = \\space " + R + " \\times \\sqrt{" + (1 + (8 * sin(A / 2) * sin(B / 2) * sin(C / 2))).toFixed(2) + "} \\space \\]";
         excirtemp += "\\[\\space = \\space " + result.toFixed(3) + " \\space \\]";
 
-        excirout.innerHTML = excirtemp;
+        
     }
-    renderMathInElement(excirout);
+    return {'result':result, 'steps':excirtemp}
 }
 
 function sin(degrees) {
