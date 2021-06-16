@@ -1,0 +1,31 @@
+<div id="probabilitycollapse">
+    <h1 style="text-align: center; margin-bottom: 20px;">Empirical Probability</h1>
+    <form action="">
+        <div style="justify-content: center; align-items: center;" class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Enter number of favourable outcomes</h5>
+                    <input type="number" value="0" class="form__field" id="favourable">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <h5>Enter number of possible outcomes</h5>
+                    <input type="number" value="1" class="form__field" id="total">
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;" class="form-group">
+            <button type="button" class="btn btn-light" onclick="computeprobability()">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="probability-result"></p>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div id="bitwise-calc">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <h5>Choose your numbers system</h5>
+                <select id="bitwise-numbers-system" class="form__field" onchange="clearInputs()">
+                    <option class="form__field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Binary
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Octal
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Hexadecimal
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <h5>First number</h5>
+                <input type="text" value="0" class="form__field" id="bitwise-first-number" oninput="bitwiseCalc()">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <h5>Operation</h5>
+                <select id="bitwise-operation" class="form__field" onchange="bitwiseCalc()">
+                    <option class="form__field" style="background-color: #232a36;">
+                        AND
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        OR
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        NOT
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        XOR
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Left Shift
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Right Shift
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <h5>Second number</h5>
+                <input type="text" value="0" class="form__field" id="bitwise-second-number" oninput="bitwiseCalc()">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <h5>Result</h5>
+                <label class="form__field" id="bitwise-result">0</label>
+            </div>
+        </div>
+    </div>
+</div>

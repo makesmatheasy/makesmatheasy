@@ -1,0 +1,42 @@
+<div id="negbino">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Negative Binomial Distribution Calculator
+    </h1>
+
+    <p style="margin-top: 2rem; color:#ababab !important;">
+        The negative binomial distribution calculator, otherwise called the Pascal distribution calculator,
+        helps in
+        determining what is the probability of requiring n trials to achieve a fixed number of successes.
+    </p>
+    <br>
+    <p style=" color: white; margin-top:2rem; font-size:22px; text-align:center">Formula: P(Y=n) =
+        (n-1)C(r-1) * pr * (1-p)(n-r)</p>
+    <p style="text-align:center; color:#ababab !important; margin-top:2rem;">where,</p>
+    <p style="text-align:center; color:#ababab !important; margin-top:2rem;">n is the total number of trials
+    </p>
+    <p style="text-align:center; color:#ababab !important; margin-top:2rem;">r is the number of successes
+    </p>
+    <p style="text-align:center; color:#ababab !important; margin-top:2rem;">p is the probability of one
+        success</p>
+    <p style="text-align:center; color:#ababab !important; margin-top:2rem;">(n-1)C(r-1) is the number of
+        combinations</p>
+    <p style="text-align:center; color:#ababab !important; margin-top:2rem;">P(Y=n) is the probability of
+        the exact number of trials n needed to achieve r successes.</p>
+    <br>
+    <br>
+    <form action="">
+        <input class="form__field" type="text" id="negbinon" placeholder="Enter number of events">
+        <br><br>
+        <input class="form__field" type="text" id="negbinor" placeholder="Enter number of success">
+        <br><br>
+        <input class="form__field" type="text" id="negbinop" placeholder="Enter probability of one success">
+        <br>
+        <br>
+        <div style="display:flex;justify-content:center;align-items:center">
+            <button class="btn btn-light" type="button" onclick="negbinoCal()">Calculate</button>
+            <button style="width:86px;" class="btn btn-light" type="button"
+                onclick="this.form.reset();">Reset</button>
+        </div>
+    </form>
+
+    <p id="negbinoans"></p>
+</div>

@@ -1,0 +1,24 @@
+<div id="takttest">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Takt Time Calculator</h1>
+    <p style="margin-top: 2rem;">Takt time is the rate at which you need to complete a product to meet
+        customer demand.
+        Takt time is your sell rate and can easily be categorized as the heartbeat of your work process. It
+        allows you to optimize your capacity in
+        the most appropriate way to meet demand without keeping too much inventory in reserve. </p>
+    <br>
+    <form action="">
+        <input class="form__field" type="number" id="works"
+            placeholder="Total time available at work (in minutes)">
+        <br><br>
+        <input class="form__field" type="number" id="demands" placeholder="Average Customer Demand">
+        <br><br>
+        <input class="form__field" type="number" id="breaks"
+            placeholder="Enter BreakTime if any else input 0 (in minutes)">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="taktvalue()">Test</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="taktans"></p>
+    <br>
+</div>

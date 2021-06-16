@@ -1,0 +1,19 @@
+<div id="cycletest">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Cycle Time Calculator</h1>
+    <p style="margin: 0 auto 6rem auto; font-style: italic;">Cycle Time is the time it takes you to complete
+        the production process of one product,
+        from start to finish.It’s one of the most crucial flow metrics that’ll help you run a project
+        smoothly efficiently. </p>
+    <form action="">
+        <input class="form__field" type="number" id="produce"
+            placeholder="Net Production Time (in minutes)">
+        <br><br>
+        <input class="form__field" type="number" id="units" placeholder="Number of units produced">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="cyclevalue()">Test</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="cycleans"></p>
+    <br>
+</div>

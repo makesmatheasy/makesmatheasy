@@ -1,0 +1,75 @@
+<div id="adding-all">
+    <form action="">
+        <div class="col-6">
+            <div class="form-group">
+                <h2>1st Input</h2>
+                <h5>Choose Number System</h5>
+                <select id="adding-all-select1" class="form__field">
+                    <option class="form_field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Binary
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Octal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Hexa Decimal
+                    </option>
+                </select>
+                <input type=" " id="adding-all-input1" value="0" class="form__field">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <h2>2nd Input</h2>
+                <h5>Choose Number System</h5>
+                <select id="adding-all-select2" class="form__field">
+                    <option class="form__field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Binary
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Octal
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Hexa Decimal
+                    </option>
+                </select>
+                <input type=" " id="adding-all-input2" value="0" class="form__field">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <h2>Result Of Addition</h2>
+                <h5>Choose Number System</h5>
+                <select id="adding-all-result-type" class="form__field">
+                    <option class="form__field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Binary
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Octal
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Hexa Decimal
+                    </option>
+                </select>
+                <h5>Calculate</h5>
+            </div>
+            <label class="form__group" id="adding-all-result">0</label><br><br>
+            <button type="button" class="btn btn-light" onclick="addBinDecHexOct()">
+                Find
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+            <p class="" id="adding-all-working"></p>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+<div id="sheppard">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Sheppard's correction for moments
+        Calculator</h1>
+    <p style="margin-top: 2rem;">
+        Sheppard’s Correction for Grouping Errors are adjustments to calculated sample moments for grouped
+        data (i.e. data that has been binned).
+        The correction is named after W.F. Shepard, who noted than when moments are calculated for
+        continuous frequency distributions, it is assumed that
+        the data is centered around the class interval midpoints. This erroneous assumption introduces
+        “grouping errors” in calculation of moments.
+        Grouping errors only happen in even moments (e.g. second and fourth moments), so the correction
+        isn’t needed for odd-numbered moments.
+    </p>
+    <p id="tformula" style="margin-bottom:4rem;"></p>
+    <form action="">
+        <input class="form__field" type="number" id="mu2" placeholder="Enter value of μ2">
+        <br><br>
+        <input class="form__field" type="number" id="mu3" placeholder="Enter value of μ3">
+        <br><br>
+        <input class="form__field" type="number" id="mu4" placeholder="Enter value of μ4">
+        <br><br>
+        <input class="form__field" type="number" id="widths"
+            placeholder="Width of classes in distribution (h)">
+        <br><br>
+
+        <button class="btn btn-light" type="button" onclick="shepvalue()">Test</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+    <p id="shepans"></p>
+
+</div>

@@ -1,0 +1,33 @@
+<div id="randommean" style="text-align: center;">
+    <h1 style="text-align: center;">Mean and Variance of Random variable</h1><br><br>
+    <form action="">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="randommean1" placeholder="Enter the datasets">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="randommean2"
+                        placeholder="Enter probabability for each data">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light" onclick="randommeanCal()">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="randommeanans"></p>
+    </div>
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="randomvarans"></p>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div id="pchart">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">p chart Calculator</h1>
+    <p style="margin-top: 2rem;">
+        A p-chart is an attributes control chart used with data collected in subgroups of varying sizes.
+        Because the subgroup size can vary, it shows a proportion on nonconforming items rather than the
+        actual count.
+        Control limits of p-chart determines whether the process is in control or not.
+    </p>
+    <p id="tformula" style="margin-bottom:4rem;"></p>
+    <form action="">
+        <input class="form__field" type="text" id="defectives"
+            placeholder="Enter list of defective items separated by SPACE ">
+        <br><br>
+        <input class="form__field" type="number" id="samples" placeholder="Number of items/samples (n)">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="pvalue()">Test</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+    <p id="npans"></p>
+    <div id="stepsbox">
+        <p id="pbar" style="text-align: left; margin-top: 2rem;"></p>
+        <p id="ucl"></p>
+        <p id="lcl"></p>
+    </div>
+</div>

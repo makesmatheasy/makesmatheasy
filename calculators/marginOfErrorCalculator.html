@@ -1,0 +1,44 @@
+<div id="mecs">
+    <h1 style="text-align: center;">MARGIN OF ERROR CALCULATOR </h1>
+    <br>
+    <form action="">
+        <input type="number" name="conf" class="form__field" id="conf" width="5em" placeholder="Enter Z-score">
+        <br>
+        <input type="number" name="samsize" class="form__field" id="samsize" placeholder="Enter sample size">
+        <br>
+        <input type="number" name="proper" class="form__field" id="proper"
+            placeholder="Enter proportion percentage">
+        <br>
+        <input type="number" name="popsize" class="form__field" id="popsize"
+            placeholder="Enter population size (optional)">
+        <br>
+        <div style="display:flex; justify-content:center;align-items:center;">
+            <button type="button" class="btn btn-outline-light" onclick="mecal()">Calculate</button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+    </form>
+</div>
+<p id="mecans" style="color:#ababab !important; text-align: center; font-size:22px; font-family:mathfont">
+    <br>
+<p style="color:#ababab !important; text-align: center; font-size:22px; font-family:mathfont">The Margin of
+    Error (MOE) Calculator uses the following formulas:
+
+    <br>1. MOE = z * √(p*(1 - p))/√n <br>
+
+    2. MOE (with finite population correction) = z * √(p * (1 - p)) / √((N - 1) * n) / (N - n)<br>
+
+    Where:<br>
+
+    MOE is the margin of error,<br>
+
+    z is the z-score associated with a level of confidence,<br>
+
+    p is the sample proportion, expressed as a decimal,<br>
+
+    n is the sample size,<br>
+
+    N is the population size.
+
+</p>
+
+
+</div>

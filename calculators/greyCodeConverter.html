@@ -1,0 +1,165 @@
+<div>
+    <div id="grey-bin">
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h4>Binary-Grey Code Converter</h4><br>
+                    <h5>From</h5>
+                    <select id="grey-select1" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">Grey
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Binary
+                        </option>
+                    </select>
+                    <input type="number" id="grey-input" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <button type="button" class="btn btn-light" onclick="convertgrey()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="grey-result">0</label>
+                <p class="" id="grey-working"></p>
+            </div>
+        </form>
+        <br><br>
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h4>Decimal-Grey Code Converter</h4><br>
+                    <h5>From</h5>
+                    <select id="grey-select2" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">Grey
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Decimal
+                        </option>
+                    </select>
+                    <input type="number" id="greydec-input" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <button type="button" class="btn btn-light" onclick="convertgreydec()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="greydec2-result"></label>
+                <p class="" id="grey-dec-working"></p>
+            </div>
+        </form>
+
+        <br><br>
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h4>Octal-Grey Code Converter</h4><br>
+                    <h5>From</h5>
+                    <select id="grey-select3" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">Grey
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Octal
+                        </option>
+                    </select>
+                    <input type="number" id="greyoct-input" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <button type="button" class="btn btn-light" onclick="convertgreyoct()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="greyoct-result"></label>
+                <p class="" id="grey-oct-working"></p>
+            </div>
+        </form>
+
+        <br><br>
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h4>Hexa Decimal-Grey Code Converter</h4><br>
+                    <h5>From</h5>
+                    <select id="grey-select4" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">Grey
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Hexa Decimal
+                        </option>
+                    </select>
+                    <input type="" id="greyhexdec-input" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <button type="button" class="btn btn-light" onclick="convertgreyhexdec()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="greyhexdec-result"></label>
+                <p class="" id="grey-hexdec-working"></p>
+            </div>
+        </form>
+
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h4>Gray Code - Miscellaneous Converter</h4><br>
+                    <h5>From Grey Code </h5>
+
+                    <input type="number" id="greymisc-input" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <select id="grey-misc-1" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">BCD
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">Excess-3
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">2421
+                            Code
+                        </option>
+                    </select>
+                    <button type="button" class="btn btn-light" onclick="convertgreymisc()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="greymisc-result"></label>
+                <p class="" id="grey-misc-working"></p>
+            </div>
+        </form>
+
+    </div>
+</div>

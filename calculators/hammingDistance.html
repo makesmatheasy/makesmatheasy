@@ -1,0 +1,41 @@
+<div>
+    <div class="collapse" id="hamming-dist">
+        <form action="">
+            <div class="form-group" style="display:inline-block">
+                <h4>Choose Input Type</h4>
+                <select id="inpType" class="form__field">
+                    <option class="form_field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        String
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Hexadecimal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Binary
+                    </option>
+                </select>
+                <label>Enter the first number : &nbsp; &nbsp; </label>
+                <input type="text" id="inpFirst" class="form__field" placeholder="x"
+                    style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+                <label> Enter the second number : &nbsp; &nbsp;</label>
+                <input type="text" id="inpSecond" class="form__field" placeholder="y"
+                    style="width:3rem;display:inline;">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" onclick="hammingDistance();">
+                    Solve
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+            <div class="form-group text-center">
+                <p class="stopwrap" style="color:white;" id="distResult"></p>
+            </div>
+        </form>
+
+    </div>
+</div>

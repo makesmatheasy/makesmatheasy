@@ -1,0 +1,163 @@
+<div>
+    <div id="hamming-calc">
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>Encode a message by Hamming Code</h2>
+                    <h4>Choose Order</h4>
+                    <select id="hamming-select1" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Right-To-Left
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Left-To-Right
+                        </option>
+                    </select>
+                    <h4>Choose parity type</h4>
+                    <select id="hamming-select2" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Even
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Odd
+                        </option>
+                    </select>
+                    <input type=" " id="hamming-input" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>Compute Hamming Code</h5>
+                    <button type="button" class="btn btn-light" onclick="hammingCalc()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="hamming-result">0</label>
+            </div>
+        </form>
+        <br>
+        <br>
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>Detection of Error</h2>
+                    <h4>Choose Order</h4>
+                    <select id="detect-type1" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Right-To-Left
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Left-To-Right
+                        </option>
+                    </select>
+                    <h4>Choose Parity Type</h4>
+                    <select id="detect-type2" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Even
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Odd
+                        </option>
+                    </select>
+                    <input type=" " id="detect-input" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>Detect Error</h5>
+                    <button type="button" class="btn btn-light" onclick="hammingCalc1()">
+                        Find it
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="detect-result">0</label>
+            </div>
+        </form>
+        <br>
+        <br>
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>Correction of Error</h2>
+                    <h4>Choose Order</h4>
+                    <select id="crct-type1" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Right-To-Left
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Left-To-Right
+                        </option>
+                    </select>
+                    <h4>Choose Parity Type</h4>
+                    <select id="crct-type2" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Even
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Odd
+                        </option>
+
+                    </select>
+                    <input type=" " id="crct-input" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>Correct Message</h5>
+                    <button type="button" class="btn btn-light" onclick="hammingCalc2()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="crct-result">0</label>
+            </div>
+        </form>
+        <br>
+        <br>
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h2>Decode a message</h2>
+                    <h4>Choose Order</h4>
+                    <select id="decd-type1" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Right-To-Left
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Left-To-Right
+                        </option>
+                    </select>
+                    <h4>Choose Parity Type</h4>
+                    <select id="decd-type2" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">
+                            Even
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">
+                            Odd
+                        </option>
+                    </select>
+                    <input type=" " id="decd-input" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>Decoded Message</h5>
+                    <button type="button" class="btn btn-light" onclick="hammingCalc3()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="decd-result">0</label>
+            </div>
+        </form>
+    </div>
+</div>

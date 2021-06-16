@@ -1,0 +1,32 @@
+<div id="ttest">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">T - Test</h1>
+    <p style="margin-top: 2rem;">
+        The t-test is any statistical hypothesis test in which the test statistic follows a Student’s
+        t-distribution under the null hypothesis. It can be used to determine if two sets of data are
+        significantly different from each other, and is most commonly applied when the test statistic would
+        follow a normal distribution if the value of a scaling term in the test statistic were known.
+        Also number of values in each set should not exceed 30.
+        T-test uses means and standard deviations of two samples to make a comparison.
+    </p>
+    <p style="text-align: left; color: white; margin-top:2rem;">Formula for t-value:</p>
+    <p id="tformula" style="margin-bottom:4rem;"></p>
+    <form action="">
+        <input class="form__field" type="text" id="list1"
+            placeholder="Enter list of number separated by SPACE ">
+        <br><br>
+        <input class="form__field" type="text" id="list2"
+            placeholder="Enter list of number separated by SPACE">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="tvalue()">Test</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="testans"></p>
+    <div id="stepsbox">
+        <p id="steps" style="text-align: left; margin-top: 4rem;"></p>
+        <p id="mean1" style="text-align: left;"></p>
+        <p id="mean2" style="text-align: left;"></p>
+        <p id="SD1" style="text-align: left;"></p>
+        <p id="SD2" style="text-align: left;"></p>
+    </div>
+</div>

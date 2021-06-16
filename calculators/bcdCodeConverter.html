@@ -1,0 +1,184 @@
+<div>
+<div id="bcd">
+    <div class="main" style="padding-top: 2.5rem; padding-left: 2.5rem;">
+        <div class="col-6">
+            <div class="form-group">
+                <h2>BCD Code Converter</h2>
+                <h5>From</h5>
+                <select id="bcd-select1" class="form__field" onchange="convertbcd()">
+                    <option class="form_field" style="background-color: #232a36;">
+                        Binary
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Octal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Hexadecimal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        BCD Code
+                    </option>
+                </select>
+
+                <input type="text" id="bcd-input" value="0" class="form__field" oninput="convertbcd()">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <h5>To</h5>
+                <select id="bcd-select2" class="form__field" onchange="convertbcd()">
+                    <option class="form__field" style="background-color: #232a36;">
+                        BCD Code
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Binary
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Octal
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Hexadecimal
+                    </option>
+                </select>
+
+            </div>
+            <label class="form__group" id="bcd-result">0</label>
+            <p class="form__group" id="bcd-work"></p>
+        </div>
+        <br>
+        <br>
+
+        <form action="">
+            <div class="col-6">
+                <div class="form-group">
+                    <h4>BCD Code - Miscellaneous Converter</h4><br>
+                    <h5>From BCD Code </h5>
+
+                    <input type="number" id="bcdmisc-input" value="0" class="form__field">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <h5>To</h5>
+                    <select id="bcd-misc-1" class="form__field">
+                        <option class="form_field" style="background-color: #232a36;">Grey
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">Excess-3
+                            Code
+                        </option>
+                        <option class="form_field" style="background-color: #232a36;">2421
+                            Code
+                        </option>
+                    </select>
+                    <button type="button" class="btn btn-light" onclick="convertbcdmisc()">
+                        Find
+                    </button>
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+                <label class="form__group" id="bcdmisc-result"></label>
+                <p class="" id="bcd-misc-working"></p>
+            </div>
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--BCD Addition -->
+        <div class="col-6">
+            <div class="form-group">
+                <h2>BCD Code Addition </h2>
+                <input type="number" id="bcdadd-input1" value="0" class="form__field" oninput="bcdadd()">
+                <h1>+</h1>
+                <input type="number" id="bcdadd-input2" value="0" class="form__field" oninput="bcdadd()">
+            </div>
+        </div>
+        <div class="col-6">
+            <label class="form__group" id="bcdadd-result">0</label>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="main" style="padding-left: 50px;">
+        <br>
+        <br>
+        <h3 style="text-align: center;">Decimal/BCD(8421) Table</h3>
+        <table class="table table-bordered table-dark">
+            <tbody style="text-align: center;">
+                <tr>
+                    <th scope="col">Decimal Equivalent</strong></th>
+                    <th scope="col">BCD Code (8421)</strong></th>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>0</p>
+                    </th>
+                    <td>0 0 0 0</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>1</p>
+                    </th>
+                    <td>0 0 0 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>2</p>
+                    </th>
+                    <td>0 0 1 0</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>3</p>
+                    </th>
+                    <td>0 0 1 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>4</p>
+                    </th>
+                    <td>0 1 0 0</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>5</p>
+                    </th>
+                    <td>0 1 0 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>6</p>
+                    </th>
+                    <td>0 1 1 0</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>7</p>
+                    </th>
+                    <td>0 1 1 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>8</p>
+                    </th>
+                    <td>1 0 0 0</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>9</p>
+                    </th>
+                    <td>1 0 0 1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

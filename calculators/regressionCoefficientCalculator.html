@@ -1,0 +1,21 @@
+<div id="regressiontest">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Regression Coefficient Calculator</h1>
+    <p style="margin-top: 2rem;">
+        The Regression Coefficient is the constant ‘b’ in the regression equation that tells about the
+        change
+        in the value of dependent variable corresponding to the unit change in the independent variable.
+    </p>
+    <br><br>
+    <form action="">
+        <input class="form__field" type="text" id="valuex"
+            placeholder="Enter dataset x separated by SPACE ">
+        <br><br>
+        <input class="form__field" type="text" id="valuey" placeholder="Enter dataset y separated by SPACE">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="regressionvalue()">Test</button>&nbsp;
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="regressionans"></p>
+
+</div>
