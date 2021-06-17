@@ -4587,10 +4587,10 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
-                                <a id="faulbtn"
+                                <span onclick="loadcalculator('calculators/faulhaberFormula.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Faulhaber
                                     Formula
-                                </a>
+                                </span>
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Faulhaber Formula','#faul','c','faulimgfav')"><img
@@ -11887,30 +11887,6 @@
                     </tr>
 
                 </table>
-            </div>
-
-            <div class="collapse" id="faul">
-                <h2 style="text-align:center;">Faulhaber's Formula</h2>
-                <br><br>
-                <h4>Faulhaber formula is given by</h4>
-                <img
-                    src="https://wikimedia.org/api/rest_v1/media/math/render/svg/88bebc842478d967d767d8d1e44f524967b4c0e4"><br>
-                <p>Faulhaber's formula is also called Bernoulli's formula. Faulhaber did not know the properties of the
-                    coefficients
-                    discovered by Bernoulli. Rather, he knew at least the first 17 cases, as well as the existence of
-                    the
-                    Faulhaber polynomials for odd powers described below
-                </p>
-                <br>
-                <form action="">
-                    <input type="text" id="faulin" placeholder="Enter power of series">
-                    <br>
-                    <button onclick="faulfind()" type="button" class="btn btn-dark">Find</button>
-                    <button onclick="this.form.reset();" type="button" class="btn btn-dark">Reset</button>
-                </form>
-
-                <br>
-                <p id="faulans"></p>
             </div>
 
             <div class="collapse" id="sumquad">
