@@ -1,0 +1,21 @@
+<div id="cylcarcal">
+    <h2>Cylindrical to Cartesian Coordinate Calculator</h2><br>
+    <p id="cylcar">\[x = pcosθ\]</p>
+    <p id="cylcar">\[y = psinθ\]</p>
+    <p id="cylcar">\[z = z\]</p>
+    <form action="">
+        <div class="form-group">
+            <input type="text" style="width: 250px;" class="form__field" name="a" id="cylcar_p"
+                placeholder="Enter p:" />
+            <input type="text" name="b" style="width: 250px;" class="form__field" id="cylcar_the"
+                placeholder="Enter θ: " />
+            <input type="text" name="b" style="width: 250px;" class="form__field" id="cylcar_z"
+                placeholder="Enter z: " /> <br> <br>
+            <button class="btn btn-outline-light" type="button" onclick="cylin_car()">Find</button>
+            <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button>
+            <br>
+        </div>
+    </form>
+
+    <p id="cylcar_res"></p><br><br>
+</div>

@@ -1,0 +1,27 @@
+<div id="segcals">
+
+
+    <h1 style="font-family:mathfont; text-align:center;">Area of Segment Calculator</h1>
+    <form action="">
+        <input type="number" name="segr" class="form__field" id="segr" placeholder="Enter radius of sector">
+        <p>&nbsp;</p>
+        <input type="number" name="sega" class="form__field" id="sega" placeholder="Enter central angle of sector">
+        <select id="angseg" class="form__field">
+            <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
+            <option class="form__field" value="radian" style="background-color: #232a36;"> radian</option>
+        </select>
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="segcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    <p>&nbsp;</p>
+    <p id="segans" style="color: white; text-align: center; font-family:mathfont;"></p>
+    <p>&nbsp;</p>
+
+    <div style="color: white; text-align: center; font-family:mathfont; font-size: 1.3em;"> A segment of a circle
+        can be defined as a region bounded by a chord and a corresponding arc lying between the chord’s
+        endpoints.<br>Area of a Segment in Radians: A = (½) × r x r x (θ – Sin θ)
+        <br>Area of a Segment in Degrees: A = (½) × r x r x [(π/180) θ – sin θ]
+    </div>
+
+</div>

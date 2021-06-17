@@ -1,0 +1,63 @@
+<div id="cart">
+    <h1 style=" text-align: center; font-family:mathfont">Cartesian Coordinate Calculator</h1>
+    <p>&nbsp;</p>
+    <form action="">
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cylindrical to
+            Cartesian</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+        <div class="d-flex justify-content-center form-group">
+            <input type="number" class="form-control" style="width: 100%;" id="cylcartp"
+                placeholder="Enter the distance between the pole and the projected point">
+            <input type="number" class="form-control" style="width: 100%;" id="cylcarto"
+                placeholder="Enter the angle created by the line and the polar axis in degree">
+            <input type="number" class="form-control" style="width: 100%;" id="cylcartz"
+                placeholder="Enter the vertical distance between the original point and the projected point">
+        </div>
+
+        <p>&nbsp;</p>
+        </p>
+        <div class="d-flex justify-content-center form-group">
+            <button type="button" class="btn btn-outline-light" onclick="cylcartcal()">Calculate</button>
+            <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        </div>
+
+    </form>
+    <p>&nbsp;</p>
+    <p id="cylcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="cylcartyans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="cylcartzans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <form action="">
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Spherical to Cartesian
+        </p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+        <div class="d-flex justify-content-center form-group">
+            <input type="number" class="form-control" style="width: 100%;" id="sphcartr" width="5em"
+                placeholder="Enter the radial distance (r)">
+            <input type="number" class="form-control" style="width: 100%;" id="sphcarto" width="5em"
+                placeholder="Enter the polar angle (θ)">
+            <input type="number" class="form-control" style="width: 100%;" id="sphcartfi" width="5em"
+                placeholder="Enter the azimuth angle (φ)">
+        </div>
+
+        <p>&nbsp;</p>
+        </p>
+        <div class="d-flex justify-content-center form-group">
+            <button type="button" class="btn btn-outline-light" onclick="sphcartcal()">Calculate</button>
+            <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        </div>
+
+    </form>
+
+    <p>&nbsp;</p>
+    <p id="sphcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="sphcartyans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="sphcartzans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+
+</div>

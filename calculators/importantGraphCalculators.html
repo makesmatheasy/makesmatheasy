@@ -1,0 +1,354 @@
+<div id="igc">
+    <h2>Important Graph Calculators</h2><br><br>
+    <h4>FInding angle between chord and a tangent</h4><br>
+    <form action="">
+        <input type="text" class="form__field" id="ctangle"
+            placeholder="Enter angle in the alternate segment"><br>
+        <button type="button" class="btn btn-dark" onclick="chordTangle()">Find angle</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <h4 id="ctangleinfo"></h4>
+        <h4 id="ctangleans"></h4>
+        <br><br>
+    </form>
+    <h4>Length of the chord of the circle whose radius and the angle subtended at the center by the chord is
+        given</h4><br>
+    <form action="">
+        <input type="text" class="form__field" id="clength1"
+            placeholder="Enter angle subtended by chord at the center(x)"><br>
+        <input type="text" class="form__field" id="clength2" placeholder="Enter radius of circle(r)"><br>
+        <button type="button" class="btn btn-dark" onclick="chordlength()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <h4 id="clengthinfo"></h4>
+        <h4 id="clengthans"></h4>
+        <br><br>
+    </form>
+    <h4>Angle subtended by the chord when the angle subtended by another chord of same length is given</h4>
+    <br>
+    <form action="">
+        <input type="text" class="form__field" id="chsub"
+            placeholder="Enter angle subtended by another chord of same length"><br>
+        <button type="button" class="btn btn-dark" onclick="chordsub()">Find angle</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <p id="chsubinfo"></p>
+        <p id="chsubans"></p>
+        <br><br>
+    </form>
+    <h4>Angle subtended by the chord to center of the circle when the angle subtended by the another equal
+        chord of a congruent circle is given</h4><br>
+    <form action="">
+        <input type="text" class="form__field" id="chsub1"
+            placeholder="Enter angle subtended by another chord of a congruent circle"><br>
+        <button type="button" class="btn btn-dark" onclick="chordsub1()">Find angle</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <p id="chsub1info"></p>
+        <p id="chsub1ans"></p>
+        <br><br>
+    </form>
+    <h4>Angle on circumference subtended by the chord when the central angle subtended by the chord is given
+    </h4><br>
+    <form action="">
+        <input type="text" class="form__field" id="chsub2"
+            placeholder="Enter angle subtended by chord at centre"><br>
+        <button type="button" class="btn btn-dark" onclick="chordsub2()">Find angle</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <p id="chsub2info"></p>
+        <p id="chsub2ans"></p>
+        <br><br>
+    </form>
+    <h4>Possibility to create a polygon with a given angle</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter angle" id="anglecalc" /><br>
+        <button type="button" class="btn btn-dark" onclick="posse()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p id="posseans"></p>
+    </form>
+    <br>
+    <h4>Angle of rotational symmetry</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="rotside"><br>
+        <button type="button" class="btn btn-dark" onclick="rotfind()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p id="rotans"></p>
+    </form>
+    <br>
+    <h4>Minimum side of square embedded in Regular polygon with N sides</h4>
+    <br>
+    <form action="">
+        <input type="text" id="embedin" placeholder="Enter no. of vertices of the polygon"
+            class="form__field" />
+        <br>
+        <button type="button" class="btn btn-dark" onclick="embedfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h4 id="embedans"></h4>
+        <br>
+    </form>
+    <h4>Length of Diagonal of a n-sided regular polygon</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of side of regular polygon"
+            id="diagnin">
+        <input type="text" class="form__field" placeholder="Enter length of side" id="diagnin1"><br>
+        <button type="button" class="btn btn-dark" onclick="diagnfind()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p id="diagnans"></p><br>
+        <p id="diagnans1"></p>
+    </form>
+    <br>
+    <h4>Number of triangles formed by joining vertices of n-sided polygon with two common sides and no
+        common sides</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="numtin" /><br>
+        <button type="button" class="btn btn-dark" onclick="numtfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p id="numtans"></p><br>
+        <p id="numtans1"></p>
+    </form>
+    <br>
+    <h4>Number of rectangles in N*M grid</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter N" id="gridn" /><br>
+        <input type="text" class="form__field" placeholder="Enter M" id="gridm" /><br>
+        <button type="button" class="btn btn-dark" onclick="gridfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p id="gridans"></p><br>
+    </form>
+    <br>
+    <h4>Number of occurrences of a given angle formed using 3 vertices of a n-sided regular polygon</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="occin" />
+        <input type="text" class="form__field" placeholder="Enter angle" id="occin1" /><br>
+        <button type="button" class="btn btn-dark" onclick="occfind()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p class="stopwrap" id="occans" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="occans1" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="occans2" style="font-family:mathfont;"></p>
+    </form>
+    <br>
+    <h4>Number of ways a convex polygon of n+2 sides can split into triangles by connecting vertices</h4>
+    <br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="splittri" /><br>
+        <button type="button" class="btn btn-dark" onclick="splittrifind()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br><br>
+        <p class="stopwrap" id="splittrians1" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="splittrians2" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="splittrians3" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="splittrians4" style="font-family:mathfont;"></p>
+    </form>
+    <br>
+    <!-- duplicate n+2 sides (split tri found) -->
+    <h4>Check if given polygon is a convex polygon or not</h4>
+    <br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="convexcheckin" />
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="convexcheckin1" />
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="convexcheckin2" />
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="convexcheckin3" />
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="convexcheckin4" />
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="convexcheckin5" />
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="convexcheckin6" />
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="convexcheckin7" />
+        <br>
+        <button type="button" class="btn btn-dark" onclick="convexcheckfind()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h4 id="convexcheckans"></h4>
+        <h4 id="convexcheckexp"></h4>
+    </form>
+    <br>
+    <h4>Find number of diagonals in n sided convex polygon</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="nodiagnol" /><br>
+        <button type="button" class="btn btn-dark" onclick="nodiagnolfind()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p id="nodiagnolans"></p><br>
+        <p id="nodiagnolans1"></p>
+    </form>
+    <br>
+    <h4>Polygon with maximum sides that can be inscribed in an N-sided regular polygon</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="polymax" /><br>
+        <button type="button" class="btn btn-dark" onclick="polymaxfind()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p id="polymaxans" style="font-family:mathfont"></p>
+    </form>
+    <br>
+    <h4>Area of largest Circle inscribe in N-sided Regular polygon</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="circleinin" />
+        <input type="text" class="form__field" placeholder="Side Length" id="circleinin1"><br>
+        <button type="button" class="btn btn-dark" onclick="circleinfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <p id="circleinans"></p>
+    </form>
+    <br>
+    <h4>Area of largest Triangle inscribe in N-sided Regular polygon</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="triinin" />
+        <input type="text" class="form__field" placeholder="Side Length" id="triinin1"><br>
+        <button type="button" class="btn btn-dark" onclick="triinfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <p id="triinans"></p>
+    </form><br>
+    <h4>Area of a n-sided regular polygon with given side length</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="arinin" />
+        <input type="text" class="form__field" placeholder="Side Length" id="arinin1"><br>
+        <button type="button" class="btn btn-dark" onclick="arinfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p id="arinans" style="font-family:mathfont"></p><br>
+        <p id="arinans1" style="font-family:mathfont"></p>
+    </form><br>
+    <br>
+    <h4>Number of triangles formed by joining vertices of n-sided polygon with one side common</h4>
+    <br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="polymax1" />
+        <br>
+        <button type="button" class="btn btn-dark" onclick="polymax1find()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h4 id="polymax1ans"></h4>
+        <h4 id="polymax1exp"></h4>
+    </form>
+    <br>
+    <h4>Count of nested polygons that can be drawn by joining vertices internally</h4>
+    <br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="polymax2" />
+        <br>
+        <button type="button" class="btn btn-dark" onclick="polymax2find()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h4 id="polymax2ans"></h4>
+        <h4 id="polymax2exp"></h4>
+    </form>
+    <br>
+    <h4>Regular polygons inscribed to a circle</h4>
+    <br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter number of sides n" id="polyincirclen" />
+        <input type="text" id="polyincircler" placeholder="Enter circumradius r" class="form__field"><br>
+        <button type="button" class="btn btn-dark" onclick="polyincirclefind()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="polyincircleans1"></h5><br>
+        <h5 id="polyincircleans2"></h5><br>
+        <h5 id="polyincircleans3"></h5><br>
+    </form>
+    <br>
+    <h4>Ratio of area of two nested polygons formed by connecting midpoints of sides of a regular N-sided
+        polygon</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="regploygonmax3" /><br>
+        <button type="button" class="btn btn-dark" onclick="polymax3find()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p class="stopwrap" id="regpolygonmax3ans1" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="regpolygonmax3ans2" style="font-family:mathfont;"></p>
+    </form><br>
+    <h4>Number of cycles formed by joining vertices of n sided polygon at the center</h4>
+    <br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="polymax4" />
+        <br>
+        <button type="button" class="btn btn-dark" onclick="polymax4find()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h4 id="polymax4ans"></h4>
+        <h4 id="polymax4exp"></h4>
+    </form>
+    <br>
+    <h4>Apothem of a n-sided regular polygon </h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="regpolymax5" />
+        <input type="text" class="form__field" placeholder="Side Length" id="regpolymax51"><br>
+        <button type="button" class="btn btn-dark" onclick="polymax5find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br><br>
+        <p class="stopwrap" id="regpolymax5ans" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="regpolymax5ans1" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="regpolymax5ans2" style="font-family:mathfont;"></p>
+    </form><br>
+    <br>
+    <h4>Central angle of a N sided Regular Polygon</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="polymax6" /><br>
+        <button type="button" class="btn btn-dark" onclick="polymax6find()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p id="polymax6ans"></p>
+    </form><br>
+    <h4>Angle between 3 vertices in a N sided Regular Polygon</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter 1st vertex (a1)" id="regang1" />
+        <input type="text" class="form__field" placeholder="Enter 2nd vertex (a2)" id="regang2" />
+        <input type="text" class="form__field" placeholder="Enter 3rd vertex (a3)" id="regang3" />
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="regang4" /><br>
+        <button type="button" class="btn btn-dark" onclick="regang()">FInd</button><br>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <h5 id="regangans"></h5>
+    <br>
+    <h4>Side of a regular n-sided polygon circumscribed in a circle</h4>
+    <br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides of the polygon"
+            id="polymax7" />
+        <input type="text" class="form__field" placeholder="Enter radius of circle" id="polymax71" />
+        <br>
+        <button type="button" class="btn btn-dark" onclick="polymax7find()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h4 id="polymax7ans"></h4>
+        <h4 id="polymax7exp"></h4>
+    </form>
+    <br>
+    <h4>Number of cycles in a Polygon with lines from Centroid to Vertices</h4><br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter no. of sides" id="polymax8" /><br>
+        <button type="button" class="btn btn-dark" onclick="polymax8find()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p id="polymax8ans"></p><br>
+    </form>
+    <br>
+    <h4>Sum of sides of largest and smallest child polygons possible from a given polygon</h4>
+    <br>
+    <form action="">
+        <input type="text" class="form__field" placeholder="Enter the exterior angle of polygon"
+            id="polymax9" />
+        <br>
+        <button type="button" class="btn btn-dark" onclick="polymax9find()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h4 id="polymax9ans"></h4>
+        <br>
+        <h4>Circumcircle of any regular polygon</h4>
+        <br>
+        <form action="">
+            <input type="text" class="form__field" placeholder="Enter the no. of sides of polygon"
+                id="polymax10" />
+            <input type="text" class="form__field" placeholder="Enter the side length of polygon"
+                id="polymax11" />
+            <br>
+            <button type="button" class="btn btn-dark" onclick="polymax10find()">FInd</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            <br>
+            <h4 id="polymax10ans"></h4>
+            <h4 id="polymax10exp"></h4>
+        </form>
+        <br>
+        <h4>Vertex diagonally opposite to the vertex M from an N-sided polygon</h4>
+        <br>
+        <form action="">
+            <input type="text" class="form__field" placeholder="Enter the no. of sides of polygon"
+                id="polymax20" />
+            <input type="text" class="form__field" placeholder="Enter the mth vertex " id="polymax21" />
+            <br>
+            <button type="button" class="btn btn-dark" onclick="polymax11find()">FInd</button>
+            <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+            <br>
+            <h4 id="polymax11ans"></h4>
+            <h4 id="polymax11exp"></h4>
+        </form>
+</div>

@@ -1,0 +1,24 @@
+<div id="plotgraph">
+    <form action="">
+        <div class="form-group">
+            <input type="text" id="inputplotequation" class="form__field" placeholder="Enter Equation"
+                oninput="dploteq();document.getElementById('plotequationresult').innerHTML=''">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-light" type="button"
+                onclick="plotit('inputplotequation','plotequationresult',nerdamer(document.getElementById('inputplotequation').value).evaluate().toString());">
+                Plot
+            </button>
+            <button class="btn btn-light" type="button"
+                onclick="this.form.reset();dploteq();document.getElementById('plotequationresult').innerHTML=''">
+                Reset
+            </button>
+        </div>
+    </form>
+    <div class="form-group">
+        <p id="plotgrapheqdisplay"></p>
+    </div>
+    <div class="form-group">
+        <p id="plotequationresult"></p>
+    </div>
+</div>
