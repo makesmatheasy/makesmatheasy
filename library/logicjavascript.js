@@ -29177,5 +29177,5 @@ function interquartile(q1,q3)
         ans+="The Interquartile range of"+$q3$-$q1$;
         ans+=iq;   
     }
-    return{'result':iq,'steps:':ans};
+    return{'result':iq,'steps':ans};
 }
