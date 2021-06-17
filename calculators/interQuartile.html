@@ -1,18 +1,25 @@
-<div id="inter_quartile">
-    <h2 >Inter Quartile Range</h2>
-    <br>
-    <form action="">
-        <div class="form-group">
-            <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="exp"
-                placeholder="Enter the lower Quartile" /><br><br>
-                <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="exp"
-                placeholder="Enter the upper quartile" /><br><br>
-            <button type="button" class="btn btn-outline-light" onclick="binomialpmf">Calculate</button>
-            <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
-            <br><br><br>
-            <p class="stopwrap" style=" font-size: xx-large; text-decoration: underline; text-align: left;
-        font-family:mathfont;" id="deg"></p>
-        </div>
-    </form>
+<script>
+    function callinterquartile() {
+        var q1 = document.getElementById('q1interquartile').value;
+        var q3 = document.getElementById('q3interquartile').value;
+
+        var data = interquartile(q1,q3);
+
+        document.getElementById('outputsteps').innerHTML = data['steps'];
+        document.getElementById('outputresult').innerHTML = data['result'];
+        renderMathInElement(document.getElementById('outputsteps'));
+        renderMathInElement(document.getElementById('outputresult'));
+    }
+</script>
+<div>
+    <input type="number" id="q1interquartile" class="form__field">
+    <input type="number" id="num2interquartile" class="form__field">
+    <button type="button" class="btn btn-outline-light" onclick="callinterquartile() ">Solve</button>
+
+    <p id="outputresult" style="text-align: center;">
+
+    </p>
+    <p id="outputsteps" style="text-align: center;">
+
+    </p>
 </div>
- 
