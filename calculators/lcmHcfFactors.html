@@ -1,0 +1,105 @@
+    <form>
+        <div class="form-group d-flex justify-content-center">
+            <input style="text-align: center; max-width: 300px;" type="tel" id="numforfactorhcflcm"
+                class="form__field" placeholder="Enter Number(s) Space Separated">
+        </div>
+        <div class="form-group container-fluid " style="text-align: center;">
+
+
+            <button class="btn btn-light" type="button" style="margin:4px"
+                onclick="findFactors()">Factors</button>
+
+
+            <button type="button" style="margin:4px"
+                onclick="factorslcmhcfempty();factorselect('numforfactorhcflcm')"
+                class="btn btn-light prime">
+                Prime Factors
+            </button>
+
+
+            <button type="button" style="margin:4px"
+                onclick="factorslcmhcfempty();lcmsol('numforfactorhcflcm')" class="btn btn-light">
+                LCM
+            </button>
+
+
+            <button type="button" style="margin:4px"
+                onclick="factorslcmhcfempty();hcf('numforfactorhcflcm')" class="btn btn-light">
+                HCF
+            </button>
+
+
+            <button type="button" style="margin:4px" onclick="this.form.reset();" class="btn btn-light">
+                Reset
+            </button>
+
+        </div>
+    </form>
+
+    <!--            prime factors with steps-->
+    <p id="dividefactor" style="display:inline-block;;font-family:mathfont;"></p>
+    <p id="dividefactorresult" style="display:inline-block;;font-family:mathfont;"></p>
+    <p id="factorresult" class="stopwrap" style="display:block;;font-family:mathfont;"></p>
+    <p id="allfactor" style="display:block;;font-family:mathfont;"></p>
+    <!--            prime factors with steps-->
+
+    <!--lcm result-->
+    <div class="stopwrap">
+        <div class="btn-group">
+            <div class="col-sm-0" style="float:left;">
+                <p style="font-family:mathfont;display:inline-block;" id="resultfac"></p>
+            </div>
+            <div class="col-sm-0" style="padding-left:0.0625rem;float:left;">
+                <p style="font-family:mathfont;display:inline-block;" id="resultlcm"></p>
+            </div>
+        </div>
+    </div>
+    <div class="row stopwrap">
+        <p id="resultlcms" style="font-family:mathfont;float:left;"></p>
+    </div>
+    <!--lcm result-->
+    <p id="hcfprimefactor" style="font-family:mathfont" class="stopwrap"></p>
+    <p id="resulthcf" style="font-family:mathfont" class="stopwrap"></p>
+    <h4 class="lcm" style="text-align: center;">What is a factor?</h4>
+    <p>Factors of a number are numbers that divide the given number exactly without leaving any remainder.
+        That is, they are exact divisors of the given numbers. For example, the number 12 is divisible by 2,
+        3, 4, and 6.</p>
+    <h4 class="lcm" style="text-align: center;">What is HCF?</h4>
+    <p>The greatest common factor (GCF or GCD or HCF) of a set of whole numbers is the largest positive
+        integer that divides evenly all the given numbers with zero remainders.
+        HCF stands for Highest Common Factor. HCF is also known as GCF (Greatest Common Factor) or GCD
+        (Greatest Common Divisor).</p>
+    <p>The Highest Common Factor of two or more numbers is the highest number by which all the given numbers
+        are divisible without leaving any remainders.
+        Basically, it is the largest number that divides all the given numbers.</p>
+    <p class="lcm"><b>Let’s understand the concept of HCF with an example:</b></p>
+    <p>Consider two numbers: 12 and 18</p>
+    <div class="text-center">
+        <img src="https://d2cyt36b7wnvt9.cloudfront.net/exams/wp-content/uploads/2020/12/28185936/image90-300x96.png"
+            style=" height: 12.5rem;" class="img-fluid" alt="">
+    </div>
+    <!-- margin-left: 18.75rem; -->
+    <p>Factors of 12: 1, 2, 3, 4, 6, and 12 </p>
+    <p>Factors of 18: 1, 2, 3, 6, 9, and 18 </p>
+    <p>Both 12 and 18 have 1, 2, 3, and 6 as common factors, of which 6 is the highest. So, 6 is the HCF of
+        12 and 18.</p>
+    <h4 class="lcm" style="text-align: center;">What is LCM?</h4>
+    <p>LCM stands for Lowest or Least Common Multiple. The LCM of two or more numbers is the smallest
+        positive integer that is divisible by all the given numbers.</p>
+    <p style="text-align: center;"><b>Let’s understand the concept of LCM with an example:</b></p>
+    <p>Consider two numbers: 8 and 12.</p>
+    <p>The multiples of 8 are:</p>
+    <p> 8 X 1 = 8,<br>
+        8 X 2 = 16,<br>
+        8 X 3 = 24,<br>
+        8 X 4 = 32, and so on…
+    <p>The multiples of 12 are:</p>
+    <p> 12 X 1 = 12,<br>
+        12 X 2 = 24,<br>
+        12 X 3 = 36,<br>
+        12 X 4 = 48, and so on… </p>
+    <p>Of all these multiples of 8 and 12, 24 is the lowest and common multiple of both. So, 24 is the LCM
+        of 8 and 12.</p>
+    <h4 class="lcm" style="text-align: center;">LCM And HCF Formula</h4>
+    <p>The relation between HCF and LCM for two numbers is defined by the HCF and LCM formula given by:</p>
+    <p>Product of two numbers = (HCF of the two numbers) x (LCM of the two numbers)</p>
