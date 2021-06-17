@@ -29175,6 +29175,6 @@ function interquartile()
         iq=q3-q1;
         ans+="The Interquartile range of"+$q3$-$q1$;
         ans+=iq;
-        document.getElementById("binoans").innerHTML=iq;
+        document.getElementById("interans").innerHTML=iq;
     }
 }
