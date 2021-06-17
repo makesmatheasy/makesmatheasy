@@ -29157,3 +29157,24 @@ function solveFraction(num1, num2) {
     }
     return { 'result': result, 'steps': temp };
 }
+function interquartile()
+{
+    var ans="";
+    var q1=parseFloat(document.getElementById("q1").value);
+    ans += "Step 1: Input the lower quartile range => " + q1;
+    var q3=parseFloat(document.getElementById("q3").value);
+    ans += "Step 2: Input the upper quartile range => " + q3;
+
+    if(q1=="" || q2=="")
+    { 
+    document.getElementById("intequartile").innerHTML = "Please enter all the values to obtain required answer";}
+    else
+    {
+        ans+="Step3: Calculate the inter quartile range";
+        let iq="";
+        iq=q3-q1;
+        ans+="The Interquartile range of"+$q3$-$q1$;
+        ans+=iq;
+        document.getElementById("binoans").innerHTML=iq;
+    }
+}
