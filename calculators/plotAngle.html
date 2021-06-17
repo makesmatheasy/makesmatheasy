@@ -1,0 +1,27 @@
+<div id="plotangle">
+    <form action="">
+        <div class="form-group">
+            <input type="number" id="inputangle" class="form__field" placeholder="Enter Angle in Degree">
+        </div>
+        <div class="form-group">
+            <td>
+            </td>
+            <button class="btn btn-light" type="button" onclick="angleplot();">
+                Plot Angle
+            </button>
+            <button class="btn btn-light" type="button" onclick="this.form.reset();">
+                Reset
+            </button>
+            <p>Kindly press the button twice for re-entering the angle</p>
+
+        </div>
+
+    </form>
+
+    <div class="form-group">
+        <canvas id="plotangleres" width="1000" height="500"
+            style="border:0.0625rem solid #d3d3d3;background-color:white">
+        </canvas>
+
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div id="carpolarcal">
+    <h2>Cartesian Coordinates to Polar Coordinate Calculator</h2><br>
+    <p id="carpolar">\[r = √(x^2 + y^2)\]</p>
+    <p id="carpolar">\[θ = tan-1 ( y / x )\]</p>
+    <form action="">
+        <div class="form-group">
+            <input type="text" style="width: 250px;" class="form__field" name="a" id="car_x"
+                placeholder="Enter cartesian coordinate x:" />
+            <input type="text" name="b" style="width: 250px;" class="form__field" id="car_y"
+                placeholder="Enter cartesian coordinate y: " /> <br> <br>
+            <button type="button" class="btn btn-outline-light" onclick="car_polar()">Find</button>
+            <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+            <br>
+        </div>
+    </form>
+
+    <p id="car_polar_res"></p><br><br>
+</div>

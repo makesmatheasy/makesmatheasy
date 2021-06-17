@@ -1,0 +1,238 @@
+<div id="3dgeocalc">
+    <div class="text-center">
+        <h2><label>3-D Geometry Calculator</label></h2>
+    </div>
+    <br><br>
+    <h3>Equation of a plane</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Point A = (<input type="text" id="va1" size=5 value='' placeholder="Ax"> ,
+                <input type="text" id="va2" size=5 value='' placeholder="Ay"> , <input type="text" id="va3"
+                    size=5 value='' placeholder="Az">)
+                <br><br>
+                Point B = (<input type="text" id="vb1" size=5 value='' placeholder="Bx"> ,
+                <input type="text" id="vb2" size=5 value='' placeholder="By"> , <input type="text" id="vb3"
+                    size=5 value='' placeholder="Bz">)
+                <br><br>
+                Point C = (<input type="text" id="vc1" size=5 value='' placeholder="Cx"> ,
+                <input type="text" id="vc2" size=5 value='' placeholder="Cy"> , <input type="text" id="vc3"
+                    size=5 value='' placeholder="Cz">)
+                <br><br>
+                <button type="button" class="btn btn-light" onclick=equationplanesolve()>
+                    Find
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <h4 style="color:white" id="eqop"> </h4><br>
+    <h3>Distance between two Points</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Point A = (<input type="text" id="valx1" size=5 value='' placeholder="x1"> ,
+                <input type="text" id="valy1" size=5 value='' placeholder="y1"> , <input type="text"
+                    id="valz1" size=5 value='' placeholder="z1">)
+                <br><br>
+                Point B = (<input type="text" id="valx2" size=5 value='' placeholder="x2"> ,
+                <input type="text" id="valy2" size=5 value='' placeholder="y2"> , <input type="text"
+                    id="valz2" size=5 value='' placeholder="z2">)
+                <br><br>
+                <button type="button" class="btn btn-light" onclick=disttwopntsolve()>
+                    Find
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p id="dope" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
+    <h4 style="color:white; text-align: center;" id="dope1"> </h4>
+    <h3>Distance from point to plane calculator</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Plane Equation : <input type="text" id="a1s" size=3 value='' placeholder="A"> x +
+                <input type="text" id="b1s" size=3 value='' placeholder="B"> y + <input type="text" id="c1s"
+                    size=3 value='' placeholder="C"> z + <input type="text" id="d1s" size=3 value=''
+                    placeholder="D"> = 0
+                <br><br>
+                Point M = (<input type="text" id="mx1" size=5 value='' placeholder="Mx"> ,
+                <input type="text" id="my1" size=5 value='' placeholder="My"> , <input type="text" id="mz1"
+                    size=5 value='' placeholder="Mz">)
+                <br>
+                <br>
+                <button type="button" class="btn btn-light" onclick=displanesolve()>
+                    Calculate Distance
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p id="planept" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap" align="right">
+    </p>
+    <h4 style="color:white" id="displanept"> </h4><br>
+    <h4>Distance between perpendicular line and plane </h4>
+    <form action="">
+        <input type="text" id="la" placeholder="Enter 1st dr of line ">
+        <input type="text" id="lb" placeholder="Enter 2nd dr of line ">
+        <input type="text" id="lc" placeholder="Enter 3rd dr of line ">
+        <input type="text" id="cor1" placeholder="Enter x coordinate of a point ">
+        <input type="text" id="cor2" placeholder="Enter y coordinate of a point ">
+        <input type="text" id="cor3" placeholder="Enter z coordinate of a point ">
+        <br>
+        <input type="text" id="pa" placeholder="Enter 1st dr of plane ">
+        <input type="text" id="pb" placeholder="Enter 2nd dr of plane ">
+        <input type="text" id="pc" placeholder="Enter 3rd dr of plane ">
+        <input type="text" id="d" placeholder="Enter d of plane">
+        <br>
+        <button type="button" onclick="dlp()">Find</button>
+        <button type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <h5 id="dlpans"></h5>
+    <br>
+    <h4>Section Formula</h4>
+    <form action="">
+        <input type="text" id="corx1" placeholder="Enter x-coordinate of first point" class="form__field">
+        <input type="text" id="cory1" placeholder="Enter y-coordinate of first point" class="form__field">
+        <input type="text" id="corz1" placeholder="Enter z-coordinate of first point" class="form__field">
+        <input type="text" id="corx2" placeholder="Enter x-coordinate of second point" class="form__field">
+        <input type="text" id="cory2" placeholder="Enter y-coordinate of second point" class="form__field">
+        <input type="text" id="corz2" placeholder="Enter z-coordinate of second point" class="form__field">
+        <input type="text" id="rat" placeholder="Enter ratio" class="form__field">
+        <br>
+        <button type="button" onclick="sec3dfind()" class="btn btn-dark">Find</button>
+        <button type="button" onclick="this.form.reset();" class="btn btn-dark">Reset</button>
+    </form>
+
+    <br>
+    <h5 id="sec3dans"></h5>
+    <br>
+    <h3>Distance between two planes calculator</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Plane Equation 1: <input type="text" id="da1" size=3 value='' placeholder="A1"> x +
+                <input type="text" id="db1" size=3 value='' placeholder="B1"> y + <input type="text"
+                    id="dc1" size=3 value='' placeholder="C1"> z + <input type="text" id="dd1" size=3
+                    value='' placeholder="D1"> = 0
+                <br><br>
+                Plane Equation 2: <input type="text" id="da2" size=3 value='' placeholder="A2"> x +
+                <input type="text" id="db2" size=3 value='' placeholder="B2"> y + <input type="text"
+                    id="dc2" size=3 value='' placeholder="C2"> z + <input type="text" id="dd2" size=3
+                    value='' placeholder="D2"> = 0
+                <br>
+                <br>
+                <button type="button" class="btn btn-light" onclick=solvetwoplane()>
+                    Find Distance
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <h4 style="color:white" id="dplane"> </h4> <br>
+    <p id="dplane_work"></p>
+
+
+    <h3 style="text-align: center;">Angle between planes calculator</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Plane Equation 1: <input type="text" id="pa1" size=3 value='' placeholder="A1"> x +
+                <input type="text" id="pb1" size=3 value='' placeholder="B1"> y + <input type="text"
+                    id="pc1" size=3 value='' placeholder="C1"> z + <input type="text" id="pd1" size=3
+                    value='' placeholder="D1"> = 0
+                <br><br>
+                Plane Equation 2: <input type="text" id="pa2" size=3 value='' placeholder="A2"> x +
+                <input type="text" id="pb2" size=3 value='' placeholder="B2"> y + <input type="text"
+                    id="pc2" size=3 value='' placeholder="C2"> z + <input type="text" id="pd2" size=3
+                    value='' placeholder="D2"> = 0
+                <br>
+                <br>
+                <button type="button" class="btn btn-light" onclick=angletwoplanesolve()>
+                    Find Angle
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p id="angleplane" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
+    <h4 style="color:white; text-align: center;" id="angleplaneop"> </h4>
+    <br><br>
+
+    <h3 style="text-align: center;">Centroid of a Tetrahedron</h3>
+    <form action="">
+        <div class="coll">
+            <p>
+                Coordinate 1 = (<input type="text" id="a1m" size=5 value='' placeholder="x1"> ,
+                <input type="text" id="a2m" size=5 value='' placeholder="y1">, <input type="text" id="a3m"
+                    size=5 value='' placeholder="z1">)
+                <br>
+                Coordinate 2 = (<input type="text" id="a4m" size=5 value='' placeholder="x2"> ,
+                <input type="text" id="a5m" size=5 value='' placeholder="y2">, <input type="text" id="a6m"
+                    size=5 value='' placeholder="z2">)
+                <br>
+                Coordinate 3 = (<input type="text" id="a7m" size=5 value='' placeholder="x3"> ,
+                <input type="text" id="a8m" size=5 value='' placeholder="y3">, <input type="text" id="a9m"
+                    size=5 value='' placeholder="z3">)
+                <br>
+                Coordinate 4 = (<input type="text" id="a10m" size=5 value='' placeholder="x4"> ,
+                <input type="text" id="a11m" size=5 value='' placeholder="y4">, <input type="text" id="a12m"
+                    size=5 value='' placeholder="z4">)
+                <br><br>
+                <button type="button" class="btn btn-light" onclick=centsolve1()>
+                    Find Centroid
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+
+    <h4 id="centres" style="color: white;"></h4>
+    <h4 class="text-center" id="line22"> </h4> <br>
+    <h3>3-D Distance Calculator</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Point A = (<input type="text" id="3dinputx1" size=5 value='' placeholder="x1"> ,
+                <input type="text" id="3dinputy1" size=5 value='' placeholder="y1"> , <input type="text"
+                    id="3dinputz1" size=5 value='' placeholder="z1">)
+                <br><br>
+                Point B = (<input type="text" id="3dinputx2" size=5 value='' placeholder="x2"> ,
+                <input type="text" id="3dinputy2" size=5 value='' placeholder="y2"> , <input type="text"
+                    id="3dinputz2" size=5 value='' placeholder="z2">)
+                <br><br>
+                <button type="button" class="btn btn-light" onclick=threedissolve()>
+                    Find
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p id="opdis" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
+        text-align="right"></p>
+    <p style="display:flex;text-align: right; color:white;" id="opdis1"> </p><br>
+
+
+</div>

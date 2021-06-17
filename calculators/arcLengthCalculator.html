@@ -1,0 +1,37 @@
+<div id="arcs">
+    <h1 style="font-family:mathfont; text-align:center;">ARC LENGTH CALCULATOR </h1>
+    <form action="">
+        <input type="number" name="ang" class="form__field" id="ang12" placeholder="Enter central angle of circle">
+        <select id="angit" class="form__field">
+            <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
+            <option class="form__field" value="radian" style="background-color: #232a36;"> radian</option>
+        </select>
+        <p>&nbsp;</p>
+        <input type="number" name="rad" class="form__field" id="rad" placeholder="Enter radius of circle">
+        <select id="radit" class="form__field">
+            <option class="form__field" value="mm" style="background-color: #232a36;"> mm</option>
+            <option class="form__field" value="cm" style="background-color: #232a36;"> cm</option>
+            <option class="form__field" value="m" style="background-color: #232a36;"> m</option>
+            <option class="form__field" value="inch" style="background-color: #232a36;"> inch</option>
+        </select>
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="arcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p class="stopwrap" id="arcans1" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="arcans2" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="arcans3" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="arcans4" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="arcans5" style="font-family:mathfont;"></p><br>
+        <p class="stopwrap" id="arcans6" style="font-family:mathfont;"></p><br>
+    </form>
+
+    <div id="dt" style="color: white; text-align: center; font-family:mathfont;">The length of an arc depends on the
+        radius of a circle and the central angle θ. <br> L / θ = C / 2π<br>
+        As circumference C = 2πr,<br>
+
+        L / θ = 2πr / 2π<br>
+        L / θ = r<br>
+        We find out the arc length formula when multiplying this equation by θ:<br>
+
+        L = r * θ</div>
+</div>
