@@ -301,10 +301,9 @@ function performdivide() {
 //simple divide result
 
 //divide steps
-function divisionwithsteps() {
+function divisionwithsteps(dividend,divisor) {
     performdivide();
-    var dividend = document.getElementById("dividendnum").value;
-    var divisor = document.getElementById("divisornumwith").value;
+    
     var resultContainer = $("#resultofdivsteps");
     var numberFormatTester = new RegExp("^[1-9]{1}[0-9]*$");
     var isDecimal =
@@ -28873,13 +28872,11 @@ function isAutoNum(num) {
 
 }
 // magic number
-function magicvalue() {
-    var num = document.getElementById("magicno").value;
+function magicvalue(num) {
+    
     var digits = Math.floor(Math.log10(num) + 1);
-    if (num == "") {
-        document.getElementById("magicans").innerHTML = "Please input a no";
-    }
-    else {
+    
+  
         var sum = 0;
 
         var ans2 = "\\[";
@@ -28905,18 +28902,17 @@ function magicvalue() {
 
             number = sum;
             sum = 0;
-        }
+            
         if (number == 1) {
             ans += "\\[Since \\space the \\space sum \\space i.e \\space " + number + " \\space is \\space equal \\space to \\space 1 \\]";
             ans += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space magic \\space number\\]"
-            document.getElementById("magicans").innerHTML = ans;
         }
         else {
             ans += "\\[Since \\space the \\space sum \\space i.e \\space " + number + " \\space is \\space not \\space equal \\space to \\space 1 \\]";
             ans += "\\[\\therefore \\space " + num + " \\space  is \\space not \\space a \\space magic \\space number\\]"
-            document.getElementById("magicans").innerHTML = ans;
+            
         }
-        renderMathInElement(document.getElementById("magicans"));
+       return {'steps' : ans }
     }
 
 }
