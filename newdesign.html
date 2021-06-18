@@ -295,7 +295,7 @@
                 </a>
             </li>
 
-            <li id="calculatorselectoroption" onclick="openOption('appdata/calculator.html','Calculator')" >
+            <li id="calculatorselectoroption" onclick="openOption('appdata/calculator.html','Calculator')">
                 <a>
                     <img src="images/makesmatheasylogo.png" alt="calculator">
                     <span class="nav-text">
@@ -327,20 +327,69 @@
         <div id="mainsection"></div>
     </div>
 
-    <script>    
-        function loadcalculator(filename,displayname) {
-            $('#mainsection').load(filename);
-            document.getElementById('maintext').innerHTML=displayname;
-            setTimeout(function () {
-                renderMathInElement(document.getElementById('mainsection'));
-            }, 1000)            
+    <script>
+        function addFavourite(filename, displayname, imgid) {
+            try {
+                var dislocal = JSON.parse(localStorage.getItem('dislocalmap'));
+                var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+            } catch {
+                localStorage.setItem('dislocalmap', JSON.stringify({}));
+                localStorage.setItem('imglocalmap', JSON.stringify({}));
+
+                var dislocal = JSON.parse(localStorage.getItem('dislocalmap'));
+                var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+            }
+            dislocal[filename] = displayname;
+            imglocal[filename] = imgid;
+
+            document.getElementById(imgid).src = "icons/favourite.png";
+
+            localStorage.setItem('dislocalmap', JSON.stringify(dislocal));
+            localStorage.setItem('imglocalmap', JSON.stringify(imglocal));
         }
 
-        function openOption(path,displayname){
-            $('#mainsection').load(path);
-            document.getElementById('maintext').innerHTML=displayname;
+        function removeFavourite(filename, displayname, imgid) {
+            var dislocal = JSON.parse(localStorage.getItem('dislocalmap'));
+            var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+
+            document.getElementById(imglocal[filename]).src = "icons/unfavourite.png";
+
+            delete dislocal[filename];
+            delete imglocal[filename];
+
+            localStorage.setItem('dislocalmap', JSON.stringify(dislocal));
+            localStorage.setItem('imglocalmap', JSON.stringify(imglocal));
         }
-        openOption('appdata/search.html','Search')
+
+        function addtofavourites(el) {
+            var data = String(el.previousElementSibling.onclick).split(')')[1].split('(');
+            data = data[1].split(',');
+            var displayname = data[1].slice(1, -1);
+            var filename = data[0].slice(1, -1);
+
+            var dislocal = JSON.parse(localStorage.getItem('dislocalmap'));
+            var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+
+            if (dislocal[filename] == undefined) {
+                addFavourite(filename, displayname, el.id);
+            } else {
+                removeFavourite(filename, displayname, el.id);
+            }
+        }
+        
+        function loadcalculator(filename, displayname) {
+            $('#mainsection').load(filename);
+            document.getElementById('maintext').innerHTML = displayname;
+            setTimeout(function () {
+                renderMathInElement(document.getElementById('mainsection'));
+            }, 1000)
+        }
+
+        function openOption(path, displayname) {
+            $('#mainsection').load(path);
+            document.getElementById('maintext').innerHTML = displayname;
+        }
+        openOption('appdata/menu.html', 'Favourite')
     </script>
 </body>
 

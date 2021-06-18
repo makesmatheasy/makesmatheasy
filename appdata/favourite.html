@@ -1,0 +1,24 @@
+<script>
+    function resetFavourites() {
+        localStorage.setItem('dislocalmap', JSON.stringify({}));
+        localStorage.setItem('imglocalmap', JSON.stringify({}));
+        displayFavourites();
+    }
+    function displayFavourites() {
+        var dislocal = JSON.parse(localStorage.getItem('dislocalmap'));
+        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+        var temp = '';
+        for (filename in dislocal) {
+            temp += `<span onclick="loadcalculator('${filename}','${dislocal[filename]}')">${dislocal[filename]}</span>`;
+        }
+        if (temp == '') {
+            temp = "Nothing in favourites";
+        }
+        document.getElementById('favouritesshow').innerHTML = temp;
+    }
+    displayFavourites();
+</script>
+<button type="button" onclick="resetFavourites();">Clear</button>
+<div id="favouritesshow">
+
+</div>

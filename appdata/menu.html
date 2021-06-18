@@ -18,7 +18,7 @@
         padding-left: 0.5rem;            
     }
 
-    .menu ul li span img {
+    .menu ul li img {
         height: 1.5rem;
         filter: invert(1);
         float: right;
@@ -34,19 +34,27 @@
         margin-top: 20px;
     }
 </style>
-
+<script>
+    function checkFavourites(){        
+        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));        
+        for (filename in imglocal) {
+            document.getElementById(imglocal[filename]).src="icons/favourite.png";            
+        }        
+    }
+    checkFavourites();
+</script>
 <div class="menu">
     <ul>
-        <li onclick="loadcalculator('calculators/matrix.html','Matrix')">
-            <span>Matrix</span>
-            <span><img src="icons/unfavourite.png" alt=""></span>
+        <li>
+            <span onclick="loadcalculator('calculators/matrix.html','Matrix')">Matrix</span>
+            <img id="matrixfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
         </li>
 
         <li>
 
             <span>matrix</span>
-            <span><img src="icons/unfavourite.png" alt=""></span>
+            <img src="icons/unfavourite.png" alt="">
 
         </li>
-    </ul>
+    </ul>    
 </div>
