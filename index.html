@@ -1574,9 +1574,9 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
-                                <a id="unitcircbtn"
+                                <span onclick="loadcalculator('calculators/unitCircle.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Unit
-                                    Circle</a>
+                                    Circle</span>
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Unit Circle','#unitcirc','c','unitfav')"><img
@@ -1840,9 +1840,9 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
-                                <a id="modulobtn"
+                                <span onclick="loadcalculator('calculators/moduloCalculator.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Modulo
-                                    calculator</a>
+                                    calculator</span>
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Double Time ','#modulo','c','moduloimgfav')"><img
@@ -2291,7 +2291,7 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
-                                <a id="sosq"
+                                <span onclick="loadcalculator('calculators/sumOfSquaresCalculator.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Sum
                                     of Square of given number</a>
                             </td>
@@ -2378,9 +2378,9 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
-                                <a id="squarecubebtn"
+                                <span onclick="loadcalculator('calculators/previousPerfectSquareandCubeSmallerthanN.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Squares
-                                    and Cubes Calculator</a>
+                                    and Cubes Calculator</span>
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
@@ -2396,10 +2396,10 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
-                                <a id="nbaserootcollapsebtn"
+                                <span onclick="loadcalculator('calculators/nthbaserootcalculator.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">n-th
                                     base root calculator
-                                </a>
+                                </span>
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
@@ -4250,9 +4250,9 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
-                                <a id="segcal"
+                                <span onclick="loadcalculator('calculators/areaOfSegmentCalculator.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Segment
-                                    Area Calculator</a>
+                                    Area Calculator</span>
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span onclick="addtofavourite('Segment Area Calculator','#segcals','c','segfav')"><img
@@ -4267,7 +4267,7 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
-                                <a id="arc"
+                                <span onclick="loadcalculator('calculators/arcLengthCalculator.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;filter: none;">
                                     Arc Length Calculator</a>
                             </td>
@@ -4284,7 +4284,7 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
-                                <a id="crescent"
+                                <span onclick="loadcalculator('calculators/areaOfCrescentandLune.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;filter: none;">Area
                                     of Crescent and Lune</a>
                             </td>
@@ -4532,10 +4532,10 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
-                                <a id="volumebtn"
+                                <span onclick="loadcalculator('calculators/volumetricWeightCalculator.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Volumetric
                                     Weight Calculator
-                                </a>
+                                </span>
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
@@ -4551,10 +4551,10 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
-                                <a id="per_chng_volbtn"
+                                <span onclick="loadcalculator('calculators/percentageChangeinVolumeOfSphere.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Percentage
                                     Change in Volume Calculator
-                                </a>
+                                </span>
                             </td>
                             <td style="float:right;border-top: none;">
                                 <span
@@ -5520,8 +5520,6 @@
                 </li>
                 <div class="dropdown-divider"></div>
             </div>
-
-
             <!--End of Probability Section -->
 
             <!-- Start of Statistics section -->
@@ -6593,31 +6591,6 @@
                     </div>
                 </div>
             </div>
-
-             <!-- start of nth base  root calculator   -->
-            <div class="collapse" id="n_baseroot">
-                <h1 style="text-align: center;">n-th base root calculator </h1><br>
-                <form action="">
-                    <div class="form-group">
-                        <input type="text" id="n_rootnumber" class="form__field" placeholder="Enter the number">
-                        <input type="text" id="n_rootbase" class="form__field" placeholder="Enter the value nth base">
-                    </div><br>
-
-                    <div class="form-group">
-                        <button type="button" class="btn btn-light" onclick="findnthrt()">
-                            Calculate
-                        </button>
-                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
-                            Reset
-                        </button><br>
-                    </div>
-                </form>
-
-                <br>
-                <div class="form-group">
-                    <p id="nrootresult" style="overflow-y:hidden;height:100%;text-align: center;"></p>
-                </div>
-            </div>
           
             <!-- Complex Identities -->
             <div class="collapse" id="complexidentities">
@@ -6715,268 +6688,6 @@
                         result of the multiplication of two complex numbers and its conjugate value should result in a
                         complex number and it should be a positive value.</li>
                 </ol>
-            </div>
-            <div class="collapse" id="squarecube">
-                <h2>Previous perfect square and cube number smaller than number N</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="smallinin" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="smallerscfind()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-
-                <p id="smallcube"></p>
-                <p id="smallsquare"></p>
-                <br><br>
-                <h2>Perfect cube greater than a given number</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="greatinin" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="greatcfind()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-
-                <p id="greatcube"></p>
-                <br><br>
-                <h2>Perfect square greater than given number</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="greatinin1" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="greatsfind()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-
-                <p id="greatsquare"></p>
-                <br><br>
-                <h2>Least number to be added to or subtracted from N to make it a Perfect Cube</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="addsubc" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="addsubcfind()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-
-                <p id="addsubcans"></p>
-                <br><br>
-                <h2>Least number to be added to or subtracted from N to make it a Perfect Square</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="addsubs" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="addsubsfind()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-
-                <p id="addsubsans"></p>
-                <br><br>
-                <br><br>
-                <h2>Count numbers upto N which are both perfect square and perfect cube</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="countsc" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="countscfind()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-
-                <p id="countscans"></p>
-                <br>
-                <h2>Find minimum number to be divided to make a number a perfect square</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="minsquare5" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="minsquarefind1()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-
-                <p id="minsquareans1"></p>
-                <br>
-                <h2>Minimum divisor of a number to make the number perfect cube</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="mincube" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="mincubefind()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-
-                <p id="mincubeans"></p>
-                <br>
-                <h2>Cube Free Numbers smaller than n</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="cubefree" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="cubefreefind()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-
-                <p id="cubefreeans"></p>
-                <br>
-                <h2>Number of times the largest Perfect Cube can be subtracted from N</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="lacube" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="lacubefind()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-                <p id="lacubeans"></p>
-                <br>
-                <h2>Find minimum number to be multiplied to make a number a perfect square</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="lacube1" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="lacube1find()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-                <p id="lacube1ans"></p>
-                <br>
-                <h2>Find minimum number to be divided to make a number a perfect cube</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="lacube2" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="lacube2find()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-                <p id="lacube2ans"></p>
-                <br>
-                <h2>Find minimum number to be multiplied to make a number a perfect cube</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="lacube3" class="form__field" placholder="Enter the number">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="lacube3find()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-                <p id="lacube3ans"></p>
-                <br>
-                <h2>Check if number formed by joining two Numbers is Perfect Cube</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="lacube4" class="form__field" placholder="Enter the number 1">
-                    <input type="text" id="lacube41" class="form__field" placholder="Enter the number 2">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="lacube4find()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-                <p id="lacube4ans"></p>
-                <br>
-                <h2>Difference between Sum of Cubes and Sum of First N Natural Numbers</h2><br>
-                <form action="">
-                    <input type="text" id="lacube5" class="form__field"
-                        placholder="Enter the no. of terms in progression"><br>
-                    <button type="button" class="btn btn-dark" onclick="lacube5find()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
-                </form>
-                <p id="lacube5ans"></p><br>
-                <h2>Difference between Sum of Cubes and Sum of Squares of First N Natural Numbers</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="lacube6" class="form__field"
-                        placholder="Enter the no. of terms in progression">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="lacube6find()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-                <p id="lacube6ans"></p>
-                <br>
-                <h2>Minimum digits to remove to make a number Perfect Square</h2>
-                <br>
-                <input type="text" id="lacube7" class="form__field" placholder="Enter the number">
-                <br>
-                <button type="button" class="btn btn-dark" onclick="lacube7find()">Find</button>
-                <br>
-                <p id="lacube7ans"></p>
-                <br>
-                <h2>Find square root of number upto given precision</h2>
-                <br>
-                <input type="text" id="lacube8" class="form__field" placholder="Enter the number">
-                <input type="text" id="lacube9" class="form__field" placholder="Enter the precision">
-                <br>
-                <button type="button" class="btn btn-dark" onclick="lacube8find()">Find</button>
-                <br>
-                <p class="stopwrap" id="lacube8ans"></p>
-                <br>
-                <h2>Difference between Sum of Squares and Sum of First N Natural Numbers</h2>
-                <br>
-                <form action="">
-                    <input type="text" id="lacube10" class="form__field"
-                        placholder="Enter the no. of terms in progression">
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="lacube9find()">Find</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-                <p id="lacube9ans"></p>
-                <br>
-                <h2>Count square and non-square numbers before n</h2>
-                <br>
-                <input type="text" id="lacube11" class="form__field" placholder="Enter the number">
-                <br>
-                <button type="button" class="btn btn-dark" onclick="lacube10find()">Find</button>
-                <br>
-                <p id="lacube10ans"></p>
-                <p id="lacube10exp"></p>
-                <br>
-                <h2>Check whether a number can be represented by sum of two squares</h2>
-                <br>
-                <input type="text" id="lacube12" class="form__field" placholder="Enter the number">
-                <br>
-                <button type="button" class="btn btn-dark" onclick="lacube11find()">Find</button>
-                <br>
-                <p id="lacube11ans"></p>
-                <p id="lacube11exp"></p>
-                <br>
-                <h2>Check whether a number can be represented by difference of two squares</h2><br>
-                <input type="text" id="lacube13" class="form__field" placholder="Enter the number"><br>
-                <button type="button" class="btn btn-dark" onclick="lacube12find()">Find</button><br>
-                <p id="lacube12ans"></p><br>
-
-                <h2>Check whether a number can be represented by product of two squares</h2>
-                <br>
-                <input type="text" id="lacube14" class="form__field" placholder="Enter the number">
-                <br>
-                <button type="button" class="btn btn-dark" onclick="lacube13find()">Find</button>
-                <br>
-                <p id="lacube13ans"></p>
-                <p id="lacube13exp"></p>
-                <br>
-                <h2>Check whether a number can be represented by sum of two cubes</h2><br>
-                <input type="text" id="lacube15" class="form__field" placholder="Enter the number"> <br>
-                <button type="button" class="btn btn-dark" onclick="lacube14find()">Find</button> <br>
-                <p id="lacube14ans"></p>
-                <p id="lacube14exp"></p><br>
-                <h2>Check whether a number can be represented by difference of two cubes</h2>
-                <br>
-                <input type="text" id="lacube16" class="form__field" placholder="Enter the number">
-                <br>
-                <button type="button" class="btn btn-dark" onclick="lacube15find()">Find</button>
-                <br>
-                <p id="lacube15ans"></p>
-                <p id="lacube15exp"></p>
             </div>
             <!-- Complex Number Calculations Begin-->
             <div class="collapse" id="3d-solid">
@@ -7225,82 +6936,6 @@
                         </tbody>
                     </table>
 
-                </div>
-            </div>
-            <div class="collapse" id="volume">
-                <h2>Volumetric Weight Calculator</h2>
-                <br>
-                <form action="">
-                    <div class="form-group">
-                        <input type="text" class="form__field" name="a" id="length_vol"
-                            placeholder="Enter length in centimeters" />
-                        <br>
-                        <br>
-                        <input type="text" class="form__field" name="w" id="width_vol"
-                            placeholder="Enter width in centimeters" />
-                        <br>
-                        <br>
-                        <input type="text" class="form__field" name="h" id="height_vol"
-                            placeholder="Enter height in centimeters" />
-                        <br>
-                        <br>
-                        <button type="button" class="btn btn-outline-light" onclick="volweight()">Calculate</button>
-                        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
-                        <br><br><br>
-                        <p class="stopwrap" style=" font-size: xx-large; text-decoration: underline; text-align: left;
-                    font-family:mathfont;" id="volweightAns"></p>
-                    </div>
-                </form>
-
-            </div>
-            <div class="collapse" id="per_chng_vol">
-                <h2 >Percentage change in Volume of a Sphere</h2><br>
-                <div class="form-group">
-                    <form action="">
-                        <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="chngsidesphere"
-                            placeholder="Enter the percentage change in the radius of the sphere" /><br><br>
-                        <button class="btn btn-outline-light" type="button" onclick="volofsphere()">Calculate</button>
-                        <button class="btn btn-outline-light" type="button"
-                            onclick="this.form.reset();">Reset</button><br>
-                        <p class="stopwrap" id="sphereAns" style="font-family:mathfont;"></p><br>
-                        <p class="stopwrap" id="sphereAns1" style="font-family:mathfont;"></p><br>
-                        <p class="stopwrap" id="sphereAns2" style="font-family:mathfont;"></p><br>
-                        <p class="stopwrap" id="sphereAns3" style="font-family:mathfont;"></p><br>
-                    </form>
-                </div><br>
-                <h2 >Percentage change in Volume of a Cube</h2><br>
-                <div class="form-group">
-                    <form action="">
-                        <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="chngsidecube"
-                            placeholder="Enter the percentage change in the side of a cube" /><br><br>
-                        <button type="button" class="btn btn-outline-light" onclick="volofcube()">Calculate</button>
-                        <button class="btn btn-outline-light" type="button"
-                            onclick="this.form.reset();">Reset</button><br><br><br>
-                    </form>
-
-                    <p class="stopwrap" id="cubeAns" style="font-family:mathfont;"></p><br>
-                    <p class="stopwrap" id="cubeAns1" style="font-family:mathfont;"></p><br>
-                    <p class="stopwrap" id="cubeAns2" style="font-family:mathfont;"></p><br>
-                    <p class="stopwrap" id="cubeAns3" style="font-family:mathfont;"></p><br>
-                </div><br>
-                <h2 >Percentage change in Volume of a Cuboid</h2><br>
-                <div class="form-group">
-                    <form action="">
-                        <input type="text" class="form__field" name="a" id="chnglengthcuboid"
-                            placeholder="Enter the change in the length of the cuboid" /><br><br>
-                        <input type="text" class="form__field" name="a" id="chngbreadthcuboid"
-                            placeholder="Enter the change in the breadth of the cuboid" /><br><br>
-                        <input type="text" class="form__field" name="a" id="chngheightcuboid"
-                            placeholder="Enter the change in the height of the cuboid" /><br><br>
-                        <button class="btn btn-outline-light" type="button" onclick="volofcuboid()">Calculate</button>
-                        <button class="btn btn-outline-light" type="button"
-                            onclick="this.form.reset();">Reset</button><br><br><br><br>
-                    </form>
-
-                    <p class="stopwrap" id="cuboidAns" style="font-family:mathfont;"></p><br>
-                    <p class="stopwrap" id="cuboidAns1" style="font-family:mathfont;"></p><br>
-                    <p class="stopwrap" id="cuboidAns2" style="font-family:mathfont;"></p><br>
-                    <p class="stopwrap" id="cuboidAns3" style="font-family:mathfont;"></p><br>
                 </div>
             </div>
 
@@ -7657,27 +7292,6 @@
                 <p>\[\frac{d}{dx}sech^{-1}(x)\space =\space \frac{1}{x\sqrt{1-x^{2}}}\]</p>
                 <p>\[\frac{d}{dx}cosech^{-1}(x)\space =\space \frac{1}{x\sqrt{1+x^{2}}}\]</p>
             </div>
-
-            <div class="collapse" id="unitcirc">
-                <h2 style="text-align: center;">Unit Circle</h2>
-                <p>A unit circle is a circle with a radius of 1 (unit radius). This tool will help determine the
-                    coordinates of any point on the unit circle just by entering the angle.</p>
-                <form action="">
-                    <input type="number" id="unitdeg" class="form__field" placeholder="Enter angle in deg"
-                        style="border-bottom:0.375rem solid var(--apppink);">
-                    <br>
-                    <br>
-                    <button type="button" class="btn btn-dark" onclick="unitcircCal()">Calculate</button>
-                    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-                    <br>
-                </form>
-
-                <br>
-                <p id="unitcircxans"></p>
-                <p id="unitcircyans"></p>
-            </div>
-
-
 
             <div class="collapse" id="hyptrigonoiden">
                 <h2 style="text-align: center; margin-bottom:20px;">Hyperbolic Trigonometric Identities</h2>
@@ -13837,20 +13451,6 @@
         </div>
         <!-- Percentage off ends -->
 
-        <!-- Modulo starts -->
-        <div class="collapse" id="modulo">
-            <h2 style="text-align:center;">Modulo Calculator</h2><br>
-            <p>x mod y = r</p><br>
-            <form action="">
-                <input type="text" id="modx" placeholder="Enter dividend(x)" class="form__field"><br><br>
-                <input type="text" id="mody" placeholder="Enter divisor(y)" class="form__field"><br><br>
-                <button type="button" class="btn btn-dark" onclick="moduloCal()">Calculate</button>
-                <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
-            </form>
-            <br><br>
-            <p id="moduloans" style="font-family:mathfont"></p><br>
-        </div>
-        <!-- Modulo ends -->
         <div class="collapse" id="oocs">
             <h1>ORDER OF MAGNITUDE CALCULATOR </h1>
             <p>&nbsp;</p>
@@ -14856,93 +14456,6 @@
 
     </div>
 
-
-
-    <div class="collapse" id="segcals">
-
-
-        <h1 style="font-family:mathfont; text-align:center;">Area of Segment Calculator</h1>
-        <form action="">
-            <input type="number" name="segr" class="form__field" id="segr" placeholder="Enter radius of sector">
-            <p>&nbsp;</p>
-            <input type="number" name="sega" class="form__field" id="sega" placeholder="Enter central angle of sector">
-            <select id="angseg" class="form__field">
-                <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
-                <option class="form__field" value="radian" style="background-color: #232a36;"> radian</option>
-            </select>
-            <p>&nbsp;</p>
-            <button type="button" class="btn btn-outline-light" onclick="segcal()">Calculate</button>
-            <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
-        </form>
-        <p>&nbsp;</p>
-        <p id="segans" style="color: white; text-align: center; font-family:mathfont;"></p>
-        <p>&nbsp;</p>
-
-        <div style="color: white; text-align: center; font-family:mathfont; font-size: 1.3em;"> A segment of a circle
-            can be defined as a region bounded by a chord and a corresponding arc lying between the chord’s
-            endpoints.<br>Area of a Segment in Radians: A = (½) × r x r x (θ – Sin θ)
-            <br>Area of a Segment in Degrees: A = (½) × r x r x [(π/180) θ – sin θ]
-        </div>
-
-    </div>
-
-    <div class="collapse" id="arcs">
-        <h1 style="font-family:mathfont; text-align:center;">ARC LENGTH CALCULATOR </h1>
-        <form action="">
-            <input type="number" name="ang" class="form__field" id="ang12" placeholder="Enter central angle of circle">
-            <select id="angit" class="form__field">
-                <option class="form__field" value="degree" style="background-color: #232a36;"> degree</option>
-                <option class="form__field" value="radian" style="background-color: #232a36;"> radian</option>
-            </select>
-            <p>&nbsp;</p>
-            <input type="number" name="rad" class="form__field" id="rad" placeholder="Enter radius of circle">
-            <select id="radit" class="form__field">
-                <option class="form__field" value="mm" style="background-color: #232a36;"> mm</option>
-                <option class="form__field" value="cm" style="background-color: #232a36;"> cm</option>
-                <option class="form__field" value="m" style="background-color: #232a36;"> m</option>
-                <option class="form__field" value="inch" style="background-color: #232a36;"> inch</option>
-            </select>
-            <p>&nbsp;</p>
-            <button type="button" class="btn btn-outline-light" onclick="arcal()">Calculate</button>
-            <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
-            <p class="stopwrap" id="arcans1" style="font-family:mathfont;"></p><br>
-            <p class="stopwrap" id="arcans2" style="font-family:mathfont;"></p><br>
-            <p class="stopwrap" id="arcans3" style="font-family:mathfont;"></p><br>
-            <p class="stopwrap" id="arcans4" style="font-family:mathfont;"></p><br>
-            <p class="stopwrap" id="arcans5" style="font-family:mathfont;"></p><br>
-            <p class="stopwrap" id="arcans6" style="font-family:mathfont;"></p><br>
-        </form>
-
-        <div id="dt" style="color: white; text-align: center; font-family:mathfont;">The length of an arc depends on the
-            radius of a circle and the central angle θ. <br> L / θ = C / 2π<br>
-            As circumference C = 2πr,<br>
-
-            L / θ = 2πr / 2π<br>
-            L / θ = r<br>
-            We find out the arc length formula when multiplying this equation by θ:<br>
-
-            L = r * θ</div>
-    </div>
-
-    <div class="collapse" id="crescentLune">
-        <h1 style="font-family:mathfont; text-align:center;">AREA OF CRESCENT AND LUNE</h1>
-        <form action="">
-            <input type="number" name="ang" class="form__field" id="cresc_rad1" placeholder="Enter radius of circle 1">
-            <input type="number" name="ang" class="form__field" id="cresc_rad2" placeholder="Enter radius of circle 2">
-            <input type="number" name="ang" class="form__field" id="cresc_dist"
-                placeholder="Enter circle center distance">
-            <p>&nbsp;</p>
-            <button type="button" class="btn btn-outline-light" onclick="cresccal()">Calculate</button>
-            <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
-            <p>&nbsp;</p>
-            <p id="crescans1" style="font-family:mathfont"></p><br>
-            <p id="crescans2" style="font-family:mathfont"></p><br>
-            <p id="crescans3" style="font-family:mathfont"></p><br><br>
-            <p id="crescans5" style="font-family:mathfont"></p><br><br>
-            <p id="crescans6" style="font-family:mathfont"></p><br>
-        </form>
-    </div>
-
     <div class="collapse" id="platonic">
         <div class="stopwrap">
             <div class="coll">
@@ -15276,35 +14789,6 @@
             </div>
         </div>
     </div>
-
-    <div class="collapse" id="sosqs">
-
-
-        <h1 style="font-family:mathfont; text-align:center;">Sum of Square Calculator </h1>
-        <input type="text" name="ssq" class="form__field" id="ssq"
-            placeholder="Enter number whose square's sum you want to find">
-        <p>&nbsp;</p>
-        <button type="button" class="btn btn-outline-light" onclick="ssqcal()">Calculate</button>
-        <p>&nbsp;</p>
-        <p id="ssqans" style="color: white; text-align: center; font-family:mathfont;"></p>
-        <p>&nbsp;</p>
-
-        <div style="color: white; text-align: center; font-family:mathfont;"> Formula for Sum of Square : <br> <br> For
-            two numbers : x2 + y2 = (x + y)2– 2ab ; x and y are real numbers <p>&nbsp;</p> For three numbers : x2 +
-            y2+z2 = (x+y+z)2-2xy-2yz-2xz ; x,y and z are real numbers
-            <p>&nbsp;</p> For n Natural Numbers : Σn2 = [n(n+1)(2n+1)]/6]<p>&nbsp;</p> For first n Even Numbers : Σ(2n)2
-            =[2n(n+1)(2n+1)]/3 <p>&nbsp;</p> For first n Odd Numbers : Σ(2n-1)2 = [n(2n+1)(2n-1)]/3
-        </div>
-
-    </div>
-
-
-
-
-    <!--Binomial PMF starts-->
-  
-
-    <!--Binomial PMF ends-->
    
     <div class="collapse" id="bool">
         <h1 style="text-align: center; text-shadow: 0.0625rem 0.0625rem 0.125rem red; ">Boolean Algebra</h1>
