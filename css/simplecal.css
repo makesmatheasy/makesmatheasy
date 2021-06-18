@@ -66,6 +66,11 @@
     border: none;
 
 }
+.calbtn:active{
+    box-shadow: 0 0 10px whitesmoke inset;
+    border-radius: 10%;
+    border:3px solid white;
+}
 
 .calbtn {
     display: inline-block;
