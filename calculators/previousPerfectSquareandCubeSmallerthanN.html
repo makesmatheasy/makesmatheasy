@@ -1,0 +1,260 @@
+   <h2>Previous perfect square and cube number smaller than number N</h2>
+    <br>
+    <form action="">
+        <input type="text" id="smallinin" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="smallerscfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <p id="smallcube"></p>
+    <p id="smallsquare"></p>
+    <br><br>
+    <h2>Perfect cube greater than a given number</h2>
+    <br>
+    <form action="">
+        <input type="text" id="greatinin" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="greatcfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <p id="greatcube"></p>
+    <br><br>
+    <h2>Perfect square greater than given number</h2>
+    <br>
+    <form action="">
+        <input type="text" id="greatinin1" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="greatsfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <p id="greatsquare"></p>
+    <br><br>
+    <h2>Least number to be added to or subtracted from N to make it a Perfect Cube</h2>
+    <br>
+    <form action="">
+        <input type="text" id="addsubc" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="addsubcfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <p id="addsubcans"></p>
+    <br><br>
+    <h2>Least number to be added to or subtracted from N to make it a Perfect Square</h2>
+    <br>
+    <form action="">
+        <input type="text" id="addsubs" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="addsubsfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <p id="addsubsans"></p>
+    <br><br>
+    <br><br>
+    <h2>Count numbers upto N which are both perfect square and perfect cube</h2>
+    <br>
+    <form action="">
+        <input type="text" id="countsc" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="countscfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <p id="countscans"></p>
+    <br>
+    <h2>Find minimum number to be divided to make a number a perfect square</h2>
+    <br>
+    <form action="">
+        <input type="text" id="minsquare5" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="minsquarefind1()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <p id="minsquareans1"></p>
+    <br>
+    <h2>Minimum divisor of a number to make the number perfect cube</h2>
+    <br>
+    <form action="">
+        <input type="text" id="mincube" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="mincubefind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <p id="mincubeans"></p>
+    <br>
+    <h2>Cube Free Numbers smaller than n</h2>
+    <br>
+    <form action="">
+        <input type="text" id="cubefree" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cubefreefind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <p id="cubefreeans"></p>
+    <br>
+    <h2>Number of times the largest Perfect Cube can be subtracted from N</h2>
+    <br>
+    <form action="">
+        <input type="text" id="lacube" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="lacubefind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    <p id="lacubeans"></p>
+    <br>
+    <h2>Find minimum number to be multiplied to make a number a perfect square</h2>
+    <br>
+    <form action="">
+        <input type="text" id="lacube1" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="lacube1find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    <p id="lacube1ans"></p>
+    <br>
+    <h2>Find minimum number to be divided to make a number a perfect cube</h2>
+    <br>
+    <form action="">
+        <input type="text" id="lacube2" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="lacube2find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    <p id="lacube2ans"></p>
+    <br>
+    <h2>Find minimum number to be multiplied to make a number a perfect cube</h2>
+    <br>
+    <form action="">
+        <input type="text" id="lacube3" class="form__field" placholder="Enter the number">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="lacube3find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    <p id="lacube3ans"></p>
+    <br>
+    <h2>Check if number formed by joining two Numbers is Perfect Cube</h2>
+    <br>
+    <form action="">
+        <input type="text" id="lacube4" class="form__field" placholder="Enter the number 1">
+        <input type="text" id="lacube41" class="form__field" placholder="Enter the number 2">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="lacube4find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    <p id="lacube4ans"></p>
+    <br>
+    <h2>Difference between Sum of Cubes and Sum of First N Natural Numbers</h2><br>
+    <form action="">
+        <input type="text" id="lacube5" class="form__field"
+            placholder="Enter the no. of terms in progression"><br>
+        <button type="button" class="btn btn-dark" onclick="lacube5find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    <p id="lacube5ans"></p><br>
+    <h2>Difference between Sum of Cubes and Sum of Squares of First N Natural Numbers</h2>
+    <br>
+    <form action="">
+        <input type="text" id="lacube6" class="form__field"
+            placholder="Enter the no. of terms in progression">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="lacube6find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    <p id="lacube6ans"></p>
+    <br>
+    <h2>Minimum digits to remove to make a number Perfect Square</h2>
+    <br>
+    <input type="text" id="lacube7" class="form__field" placholder="Enter the number">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="lacube7find()">Find</button>
+    <br>
+    <p id="lacube7ans"></p>
+    <br>
+    <h2>Find square root of number upto given precision</h2>
+    <br>
+    <input type="text" id="lacube8" class="form__field" placholder="Enter the number">
+    <input type="text" id="lacube9" class="form__field" placholder="Enter the precision">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="lacube8find()">Find</button>
+    <br>
+    <p class="stopwrap" id="lacube8ans"></p>
+    <br>
+    <h2>Difference between Sum of Squares and Sum of First N Natural Numbers</h2>
+    <br>
+    <form action="">
+        <input type="text" id="lacube10" class="form__field"
+            placholder="Enter the no. of terms in progression">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="lacube9find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+    <p id="lacube9ans"></p>
+    <br>
+    <h2>Count square and non-square numbers before n</h2>
+    <br>
+    <input type="text" id="lacube11" class="form__field" placholder="Enter the number">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="lacube10find()">Find</button>
+    <br>
+    <p id="lacube10ans"></p>
+    <p id="lacube10exp"></p>
+    <br>
+    <h2>Check whether a number can be represented by sum of two squares</h2>
+    <br>
+    <input type="text" id="lacube12" class="form__field" placholder="Enter the number">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="lacube11find()">Find</button>
+    <br>
+    <p id="lacube11ans"></p>
+    <p id="lacube11exp"></p>
+    <br>
+    <h2>Check whether a number can be represented by difference of two squares</h2><br>
+    <input type="text" id="lacube13" class="form__field" placholder="Enter the number"><br>
+    <button type="button" class="btn btn-dark" onclick="lacube12find()">Find</button><br>
+    <p id="lacube12ans"></p><br>
+
+    <h2>Check whether a number can be represented by product of two squares</h2>
+    <br>
+    <input type="text" id="lacube14" class="form__field" placholder="Enter the number">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="lacube13find()">Find</button>
+    <br>
+    <p id="lacube13ans"></p>
+    <p id="lacube13exp"></p>
+    <br>
+    <h2>Check whether a number can be represented by sum of two cubes</h2><br>
+    <input type="text" id="lacube15" class="form__field" placholder="Enter the number"> <br>
+    <button type="button" class="btn btn-dark" onclick="lacube14find()">Find</button> <br>
+    <p id="lacube14ans"></p>
+    <p id="lacube14exp"></p><br>
+    <h2>Check whether a number can be represented by difference of two cubes</h2>
+    <br>
+    <input type="text" id="lacube16" class="form__field" placholder="Enter the number">
+    <br>
+    <button type="button" class="btn btn-dark" onclick="lacube15find()">Find</button>
+    <br>
+    <p id="lacube15ans"></p>
+    <p id="lacube15exp"></p>
