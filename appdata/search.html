@@ -3,7 +3,7 @@
         width: 90%;
         background-color: var(--appwhite);
         border-radius: 50px;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
     .search {
@@ -16,13 +16,50 @@
 
     img[alt="speech"] {
         height: 1.5rem;
-        margin-top:10px;
+        margin-top: 10px;
     }
-
+    #searchresult{
+        margin-top:10px;                
+    }
+    
+    .searchresult{
+        text-align: center;
+        padding:20px;
+        width: 80%;
+        margin:0 auto;
+        margin-bottom:10px;
+        border-radius: 50px;
+        color:var(--appblack);
+        background-color: var(--appwhite);
+        cursor: pointer;
+    }
 </style>
+
+<script>
+    var calculators = {
+        'calculators/matrix.html': 'Matrix',
+        'calculators/solveFraction.html':'Solve Fraction'
+    }
+    function searchpp(value) {
+        value = value.toLowerCase();
+        var temp='';
+        if (value == '' || value==' ') {
+            
+        }else{
+            for (cal in calculators) {                
+                var calname=calculators[cal];
+                if (calname.toLowerCase().includes(value)) {
+                    temp+=`<div class='searchresult' onclick="loadcalculator('${cal}','${calname}');">${calname}</div>`;
+                }
+            }
+        }        
+            document.getElementById("searchresult").innerHTML=temp;
+    }    
+</script>
+
 <div class="row searchbox">
     <div class="col-9">
-        <input type="text" class="search" placeholder="Start Typing">
+        <input type="text" class="search" placeholder="Start Typing" oninput="searchpp(this.value);">
     </div>
     <div class="col-1">
         <img src="images/speechlogo.png" alt="speech">
@@ -30,5 +67,8 @@
     <div class="col-1">
         <i class="fa fa-search" style="color:var(--appblack);margin-top:15px;"></i>
     </div>
+</div>
+
+<div id="searchresult">
 
 </div>
