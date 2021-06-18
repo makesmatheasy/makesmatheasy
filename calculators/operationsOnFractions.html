@@ -1,0 +1,52 @@
+    <div id="side1" style="display:inline-block; width: 100%; max-width: 450px;">
+        <div class="row">
+            <button id="add_frac" class="carddis" data-toggle="modal"
+                onclick="$('#addition_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                Addition of fractions
+            </button>
+        </div>
+        <div class="row">
+            <button id="sub_frac" class="carddis"
+                onclick="$('#subtraction_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                Subtraction of fractions
+            </button>
+        </div>
+        <div class="row">
+            <button id="div_frac" class="carddis"
+                onclick="$('#division_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                Division of fractions
+            </button>
+        </div>
+    </div>
+    <div id="side2" style="display:inline-block; width:100% ;max-width: 450px;">
+        <div class="row">
+            <button id="mul_frac" class="carddis"
+                onclick="$('#miltiplication_fraction').slideToggle();$('#fractions').slideUp();clearall();">
+                Multiplication of fractions
+            </button>
+        </div>
+        <div class="row">
+            <button id="mix_frac" class="carddis"
+                onclick="$('#mixed_to_improper').slideToggle();$('#fractions').slideUp();clearall();">
+                Conversion of Mixed Fraction to an Improper Fraction
+            </button>
+        </div>
+        <div class="row">
+            <button id="imp_frac" class="carddis"
+                onclick="$('#improper_to_mixed').slideToggle();$('#fractions').slideUp();clearall();">
+                Conversion of an Improper Fraction to Mixed Fraction
+            </button>
+        </div>
+    </div>
+</div>
+<div class="collapse" id="ineqtri">
+    <h2>Inequalities of Triangles</h2><br><br>
+    <form action="">
+        <input type="text" id="ineqtriin1" class="form__field" placeholder="Enter length of side 1">
+        <input type="text" id="ineqtriin2" class="form__field" placeholder="Enter length of side 2">
+        <input type="text" id="ineqtriin3" class="form__field" placeholder="Enter length of side 3"><br>
+        <button type="button" class="btn btn-dark" onclick="ineqtrifind()">Check</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+    </form>
+    <h5 id="ineqtrians"></h5><br>
+
