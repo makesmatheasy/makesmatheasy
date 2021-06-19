@@ -9,8 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google-site-verification" content="9_7VMkUcoP2_vcwxWzm_4VwuJjpefHgTUy2sslkeNzU" />
     <meta name="description" content="Your Answers just a Click Away" />
-    <meta name="keywords"
-        content="makes math easy, make maths easy, calulators, math helper, step wise math calculators, calculator with steps, makesmatheasy, sairish, makemathseasy" />
+    <meta name="keywords" content="makes math easy, make maths easy, calulators, math helper, step wise math calculators, calculator with steps, makesmatheasy, sairish, makemathseasy" />
     <!--    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -262,7 +261,7 @@
             font-size: 1.2rem;
         }
     </style>
-
+    <script src="appjs/index.js"></script>
 
 </head>
 
@@ -362,7 +361,7 @@
         }
 
         function addtofavourites(el) {
-            var data = String(el.previousElementSibling.onclick).split(')')[1].split('(');
+            var data = String(el.nextElementSibling.onclick).split(')')[1].split('(');
             data = data[1].split(',');
             var displayname = data[1].slice(1, -1);
             var filename = data[0].slice(1, -1);
@@ -428,7 +427,7 @@
             $('#mainsection').load(path);
             document.getElementById('maintext').innerHTML = displayname;
         }
-        openOption('appdata/home.html', 'Search')
+        openOption('appdata/home.html', 'Menu')
     </script>
 </body>
 

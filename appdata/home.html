@@ -1,4 +1,20 @@
-<style>
+<style>    
+    .recentlybox {   
+        margin-top: 10px;
+        display: inline-block;        
+        border-left:2px solid pink;
+        color: var(--appwhite);    
+        height: 4rem;
+        width: 12rem;
+        padding-left:5px;
+        font-size: 1rem;
+        transition: 0.2s;
+    }
+    .recentlybox:hover{
+        font-size: 1.1rem;
+        transition: 0.2s;
+        cursor: pointer;
+    }
 
 </style>
 <script>
@@ -6,21 +22,43 @@
         var rulocalqueue = JSON.parse(localStorage.getItem('rulocal'));
         if (rulocalqueue != null) {
             var len = rulocalqueue.length - 1;
-            var temp = '';
+            var temp = '<table><tr>';
             for (var i = len; i >= 0; i--) {
                 var data = rulocalqueue[i];
                 for (key in data)
-                    temp += `<div onclick="loadcalculator('${key}','${data[key]}')">${data[key]}</div>`;
+                    temp += `<td style="border: none;"><div class="recentlybox" onclick="loadcalculator('${key}','${data[key]}')">${data[key]}</div></td>`;
             }
-            document.querySelector('.recentlyused').innerHTML = temp;
-        }else{
-            var temp="Nothing in Recently Used"
+            temp+="</tr></table>"
+            document.getElementById('data').innerHTML = temp;
+        } else {
+            var temp = "Nothing in Recently Used"
             document.querySelector('.recentlyused').innerHTML = temp;
         }
     }
     showRecentlyused();
+    numbersapi();
 </script>
-<button onclick="localStorage.removeItem('rulocal');" type="button">Clear</button>
-<div class="recentlyused">
 
+<div class="factsbox">
+    <table style="margin-left: auto;margin-right: auto;">
+        <tr>
+            <td>
+                <p id="numberfact" style="display: inline-block;"></p>
+            </td>
+            <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg"
+                    alt="refresh"
+                    style="height: 1.25rem;padding-left: 1.25rem;padding-right: 0.625rem;filter:invert(1);">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<br>
+<br>
+<br>
+<h3>Recently Used</h3>
+<div class="recentlyused">
+    <div id="data" class="table-responsive">
+
+    </div>    
 </div>

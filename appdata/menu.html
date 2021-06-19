@@ -1,58 +1,66 @@
-<style>
-    .menu ul {
-        margin: 0;
-        /* To remove default bottom margin */
-        padding: 0;
-        /* To remove default left padding */
-        color:var(--appwhite);
-    }
-
-    .menu ul li {
-        list-style: none;
-        box-shadow: 0 0 10px black;
-        border-radius: 30px;
-        margin-bottom: 1rem;
-    }
-
-    .menu ul li span {
-        padding-left: 0.5rem;            
-    }
-
-    .menu ul li img {
-        height: 1.5rem;
-        filter: invert(1);
-        float: right;
-        padding-right: 0.5rem;
-    }
-
-    .menu ul li {
-        padding: 10px;
-    }
-
-    .menu {            
-        border-radius: 30px;
-        margin-top: 20px;
-    }
-</style>
 <script>
-    function checkFavourites(){        
-        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));        
+    function checkFavourites() {
+        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
         for (filename in imglocal) {
-            document.getElementById(imglocal[filename]).src="icons/favourite.png";            
-        }        
+            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
+        }
     }
     checkFavourites();
 </script>
-<div class="menu">
-    <ul>
-        <li>
-            <span onclick="loadcalculator('calculators/matrix.html','Matrix')">Matrix</span>
-            <img id="matrixfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-        </li>
+<style>
+    .menu img {
+        height: 1.5rem;
+        display: block;
+        margin:0 auto;         
+        margin-right: 0.2rem;
+        filter: invert(1);        
+    }
 
-        <li>
-            <span onclick="loadcalculator('calculators/solveFraction.html','Solve Fraction')">Solve Fraction</span>
-            <img id="solvefractionfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-        </li>
-    </ul>    
+    .menu {
+        text-align: center;
+        border-radius: 30px;
+        margin-top: 20px;
+        padding: 2rem;
+        background-color: var(--appwhite);
+    }
+
+    .option {
+        height: 8rem;
+        width: 8rem;        
+        margin-bottom: 20px !important;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: var(--appblack);
+    }
+    .caltext{
+        margin-top: 3rem;
+        display: block;        
+    }
+    .totalcal{
+        display: block;
+        font-size: 10px;
+    }
+</style>
+
+<div class="menu">
+    <div class="row">
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="matrixfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Matrix</span>                
+                <span class="totalcal">21 Calculators</span>                
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="solvefractionfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/solveFraction.html','Solve Fraction')">Solve Fraction</span>
+                <span class="totalcal">21 Calculators</span>                
+            </div>
+        </div>
+    </div>
 </div>
