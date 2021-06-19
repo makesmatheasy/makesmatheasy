@@ -1,0 +1,26 @@
+<style>
+
+</style>
+<script>
+    function showRecentlyused() {
+        var rulocalqueue = JSON.parse(localStorage.getItem('rulocal'));
+        if (rulocalqueue != null) {
+            var len = rulocalqueue.length - 1;
+            var temp = '';
+            for (var i = len; i >= 0; i--) {
+                var data = rulocalqueue[i];
+                for (key in data)
+                    temp += `<div onclick="loadcalculator('${key}','${data[key]}')">${data[key]}</div>`;
+            }
+            document.querySelector('.recentlyused').innerHTML = temp;
+        }else{
+            var temp="Nothing in Recently Used"
+            document.querySelector('.recentlyused').innerHTML = temp;
+        }
+    }
+    showRecentlyused();
+</script>
+<button onclick="localStorage.removeItem('rulocal');" type="button">Clear</button>
+<div class="recentlyused">
+
+</div>

@@ -376,20 +376,59 @@
                 removeFavourite(filename, displayname, el.id);
             }
         }
-        
-        function loadcalculator(filename, displayname) {            
+        function recentlyUsed(filename, displayname) {
+            var rulocalqueue = JSON.parse(localStorage.getItem('rulocal'));
+            if (rulocalqueue == null) {
+                var rulocalqueue = [];
+            } else {
+                var rulocalqueue = JSON.parse(localStorage.getItem('rulocal'));
+            }
+            var flag = 0;
+            var len = rulocalqueue.length - 1;
+            for (var i = len; i >= 0; i--) {
+                var data = rulocalqueue[i];
+                for (key in data) {
+                    if (filename == key) {
+                        flag = 1;
+                        rulocalqueue.splice(i, 1);
+                        var item = {};
+                        item[filename] = displayname;
+                        rulocalqueue.push(item);
+                        break;
+                    }
+                }
+                if (flag == 1)
+                    break;
+            }
+            if (flag == 0) {
+                if (rulocalqueue.length < 5) {
+                    var item = {};
+                    item[filename] = displayname;
+                    rulocalqueue.push(item);
+                } else {
+                    rulocalqueue.shift();
+                    var item = {};
+                    item[filename] = displayname;
+                    rulocalqueue.push(item);
+                }
+            }
+            localStorage.setItem('rulocal', JSON.stringify(rulocalqueue));
+        }
+
+        function loadcalculator(filename, displayname) {
             $('#mainsection').load(filename);
             document.getElementById('maintext').innerHTML = displayname;
             setTimeout(function () {
                 renderMathInElement(document.getElementById('mainsection'));
             }, 1000)
+            recentlyUsed(filename, displayname);
         }
 
         function openOption(path, displayname) {
             $('#mainsection').load(path);
             document.getElementById('maintext').innerHTML = displayname;
         }
-        openOption('appdata/favourite.html', 'Search')
+        openOption('appdata/home.html', 'Search')
     </script>
 </body>
 
