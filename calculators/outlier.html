@@ -1,0 +1,27 @@
+<script>
+  function calloutlier() {
+	  var num=document.getElementById('numoutlier').value;
+		var q1 = document.getElementById('q1outlier').value;
+	    var q3 = document.getElementById('q3outlier').value;
+
+		var data = outlier(num,q1,q3);
+
+		document.getElementById('outputsteps').innerHTML = data['steps'];
+		document.getElementById('outputresult').innerHTML = data['result'];
+		renderMathInElement(document.getElementById('outputsteps'));
+		renderMathInElement(document.getElementById('outputresult'));
+	}
+</script>
+<div>
+	<input type="number" id="numoutlier" class="form__field">
+	<input type="number" id="q1outlier" class="form__field">
+	<input type="number" id="q3outlier" class="form__field">
+	<button type="button" class="btn btn-outline-light" onclick="calloutlier() ">Solve</button>
+
+	<p id="outputresult" style="text-align: center;">
+
+	</p>
+	<p id="outputsteps" style="text-align: center;">
+
+	</p>
+</div>
