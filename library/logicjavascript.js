@@ -29175,3 +29175,26 @@ function interquartile(q1,q3)
     }
     return{'result':iq,'steps':ans};
 }
+function outlier(num,q1,q3)
+{
+    var ans="";
+    var inter=q3-q1;
+    var re="";
+    num=parseFloat(num);
+    ans+="Step 1: Input the number for which the set of outlier is calculated =>"+num;
+    q1=parseFloat(q1);
+    q3=parseFloat(q3);
+    ans+="Step 2:Take bothe quartile ranges,i.e,upper and lower quartile";
+    ans+="Step 3:Calculate the outlier";
+    if(num<(q1-(1.5*inter)))
+    {
+        re=(q1-(1.5*inter));
+        ans+="The outlier is"+re;
+    }
+    else(num>(q3+(1.5*inter)))
+    {
+        re=(q3+(1.5*inter));
+        ans+="The outlier is"+re;
+    }
+    return{'result':re,'steps':ans};
+}
