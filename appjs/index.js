@@ -526,6 +526,7 @@ function openit(id) {
         "#n_baseroot",
         "#binomial",
         "#interquartile",
+        "#outlier",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
