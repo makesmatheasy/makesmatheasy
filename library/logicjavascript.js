@@ -28786,12 +28786,9 @@ function isDisNum(num) {
     }
     document.getElementById('disans').innerHTML = ans;
 };
-function happyvalue() {
-    var num = document.getElementById("happyno").value;
-    if (num == "") {
-        document.getElementById("happyans").innerHTML = "Please input a no";
-    }
-    else {
+function happyvalue(num) {
+  
+   
         let sum = 0;
         num = parseInt(num);
         number = num;
@@ -28818,15 +28815,14 @@ function happyvalue() {
         if (number == 1) {
             ans += "\\[Since \\space the \\space resultant \\space sum \\space i.e \\space " + number + " \\space is \\space equal \\space to \\space 1 \\]";
             ans += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space Happy \\space number\\]"
-            document.getElementById("happyans").innerHTML = ans;
+           
         }
         else {
             ans += "\\[Since \\space the \\space resulatant \\space sum \\space i.e \\space " + number + " \\space is \\space not \\space equal \\space to \\space 1 \\]";
             ans += "\\[\\therefore \\space " + num + " \\space  is \\space not \\space a \\space Happy \\space number\\]"
-            document.getElementById("happyans").innerHTML = ans;
+           
         }
-        renderMathInElement(document.getElementById("happyans"));
-    }
+        return {'steps': ans }
 }
 // Krishnamurthy Number
 function isKrishnaNum(num) {
