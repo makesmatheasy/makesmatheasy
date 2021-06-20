@@ -1,19 +1,17 @@
-<script>
-    function checkFavourites() {
-        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
-        for (filename in imglocal) {
-            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
-        }
-    }
-    checkFavourites();
-</script>
 <style>
-    .menu img {
-        height: 1.5rem;
+    .op {
+        background-color: pink;
         display: block;
-        margin:0 auto;         
-        margin-right: 0.2rem;
-        filter: invert(1);        
+        margin: 0 auto;
+        height: 3rem;
+        width: 3rem;
+        margin-top: 1rem;
+        border-radius: 10px;
+    }
+
+    .menu img {
+        margin-top: 12px;
+        height: 1.5rem;
     }
 
     .menu {
@@ -26,18 +24,21 @@
 
     .option {
         height: 8rem;
-        width: 8rem;        
+        width: 8rem;
         margin-bottom: 20px !important;
         margin: 0 auto;
         padding: 5px;
         border-radius: 20px;
         background-color: var(--appblack);
+        cursor: pointer;
     }
-    .caltext{
-        margin-top: 3rem;
-        display: block;        
+
+    .caltext {
+        margin-top: 1rem;
+        display: block;
     }
-    .totalcal{
+
+    .totalcal {
         display: block;
         font-size: 10px;
     }
@@ -46,20 +47,134 @@
 <div class="menu">
     <div class="row">
         <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="matrixfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Matrix</span>                
-                <span class="totalcal">21 Calculators</span>                
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Linear Algebra</span>
+                <span class="totalcal">21 Calculators</span>
             </div>
         </div>
 
         <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="solvefractionfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/solveFraction.html','Solve Fraction')">Solve Fraction</span>
-                <span class="totalcal">21 Calculators</span>                
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Conic</span>
+                <span class="totalcal">21 Calculators</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Calculus</span>
+                <span class="totalcal">21 Calculators</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Trigonometry</span>
+                <span class="totalcal">21 Calculators</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">General Maths</span>
+                <span class="totalcal">21 Calculators</span>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Basic
+                    Converters</span>
+                <span class="totalcal">21 Calculators</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Graphs/Shapes</span>
+                <span class="totalcal">21 Calculators</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Equations</span>
+                <span class="totalcal">21 Calculators</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Binary</span>
+                <span class="totalcal">21 Calculators</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Complex</span>
+                <span class="totalcal">21 Calculators</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Probability</span>
+                <span class="totalcal">21 Calculators</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option" onclick="openOption('appdata/menudata/linearAlgebra.html','Linear Algebra')">
+                <span class="op">
+                    <img src="icons/algebra.png" alt="">
+                </span>
+
+                <span class="caltext" onclick="loadcalculator('calculators/matrix.html','Matrix')">Statistics</span>
+                <span class="totalcal">21 Calculators</span>
             </div>
         </div>
     </div>

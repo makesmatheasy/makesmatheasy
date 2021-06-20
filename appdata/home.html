@@ -1,21 +1,21 @@
-<style>    
-    .recentlybox {   
+<style>
+    .recentlybox {
         margin-top: 10px;
-        display: inline-block;        
-        border-left:2px solid pink;
-        color: var(--appwhite);    
+        display: inline-block;
+        border-left: 2px solid pink;
+        color: var(--appwhite);
         height: 4rem;
         width: 12rem;
-        padding-left:5px;
+        padding-left: 5px;
         font-size: 1rem;
         transition: 0.2s;
     }
-    .recentlybox:hover{
+
+    .recentlybox:hover {
         font-size: 1.1rem;
         transition: 0.2s;
         cursor: pointer;
     }
-
 </style>
 <script>
     function showRecentlyused() {
@@ -28,7 +28,7 @@
                 for (key in data)
                     temp += `<td style="border: none;"><div class="recentlybox" onclick="loadcalculator('${key}','${data[key]}')">${data[key]}</div></td>`;
             }
-            temp+="</tr></table>"
+            temp += "</tr></table>"
             document.getElementById('data').innerHTML = temp;
         } else {
             var temp = "Nothing in Recently Used"
@@ -36,21 +36,36 @@
         }
     }
     showRecentlyused();
-    numbersapi();
+    function facts() {
+        var localtodaydate = localStorage.getItem('factdate');
+        var d = new Date();
+        var datetoday = d.getDate();
+        if (localtodaydate == null) {
+            localStorage.setItem('factdate', datetoday);
+            localtodaydate = localStorage.getItem('factdate');
+        }        
+        if (parseInt(localtodaydate) == parseInt(datetoday)) {            
+            localStorage.setItem('todayfact',getfacts());        
+            var tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow=tomorrow.getDate();
+            localStorage.setItem('factdate', tomorrow);
+        }else{
+            document.getElementById("facts").innerHTML=localStorage.getItem('todayfact');
+        }        
+    }    
+    facts();
 </script>
-
+<style>
+    #facts {
+        border-left: 2px solid pink;
+        font-size: 1.2rem;
+        padding-left: 10px;
+    }
+</style>
 <div class="factsbox">
-    <table style="margin-left: auto;margin-right: auto;">
-        <tr>
-            <td>
-                <p id="numberfact" style="display: inline-block;"></p>
-            </td>
-            <td onclick="numbersapi();" style="cursor: pointer;"><img src="icons/refresh.svg"
-                    alt="refresh"
-                    style="height: 1.25rem;padding-left: 1.25rem;padding-right: 0.625rem;filter:invert(1);">
-            </td>
-        </tr>
-    </table>
+    <h3>Fact</h3>
+    <div id="facts"></div>
 </div>
 
 <br>
@@ -60,5 +75,5 @@
 <div class="recentlyused">
     <div id="data" class="table-responsive">
 
-    </div>    
+    </div>
 </div>

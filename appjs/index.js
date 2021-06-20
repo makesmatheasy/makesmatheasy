@@ -651,8 +651,7 @@ function removefavourite() {
     checkfavourite();
 }
 
-function numbersapi() {
-    let el = document.getElementById("numberfact");
+function getfacts() {    
     var facts =
         ["The number 4 is the only number spelled with the same number of letters as itself",
             "8 is the largest cube in the Fibonacci series",
@@ -684,7 +683,7 @@ function numbersapi() {
         ];
     i = Math.floor(Math.random() * 27);
     let val = facts[i];
-    el.innerHTML = val;
+    return val;
 }
 
 $(document).on('click', ' .list_menu_items ', function () {   
