@@ -1,4 +1,18 @@
-<div id="happynum" style="text-align: center;">
+<script>
+    function callhappynumber(){
+        var num = document.getElementById("happyno").value;
+       
+        var data = happyNumber(num);
+
+        document.getElementById("happyans").innerHTML = data['steps'];
+   
+
+        renderMathInElement(document.getElementById('happyans'));
+        
+
+    }
+</script>
+ 
     <div class="container">
         <h1 style="color: white;font-family:mathfont;text-align: center;">Happy Number Checker</h2>
             <br>
@@ -11,7 +25,7 @@
                         placeholder="Enter the input number" class="form__field">
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-light" onclick="happyvalue()">Find</button>
+                    <button type="button" class="btn btn-light" onclick="callhappynumber()">Find</button>
                     <button type="button" class="btn btn-light" onclick="this.form.reset();">
                         Reset
                     </button>
@@ -22,4 +36,3 @@
                 <p class="stopwrap" style="color:white;" id="happyans"></p><br>
             </div>
     </div>
-</div>
