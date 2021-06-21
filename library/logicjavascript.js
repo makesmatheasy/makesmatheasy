@@ -28650,13 +28650,10 @@ function pallindromevalue() {
         renderMathInElement(document.getElementById("pallinans"));
     }
 }
-function perfectvalue() {
-    var num = document.getElementById("perfectno").value;
-    var digits = Math.floor(Math.log10(num) + 1);
-    if (num == "") {
-        document.getElementById("perfectans").innerHTML = "Please input a no";
-    }
-    else {
+function perfectvalue(num) {
+    
+        var digits = Math.floor(Math.log10(num) + 1);
+
         var v = "";
         var ans = "";
         var w = "";
@@ -28679,15 +28676,14 @@ function perfectvalue() {
         if (temp === num && temp !== 0) {
             ans += "\\[Since \\space the \\space sum \\space i.e \\space " + temp + " \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
             ans += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space perfect \\space number\\]"
-            document.getElementById("perfectans").innerHTML = ans;
+           
         }
         else {
             ans += "\\[Since \\space the \\space sum \\space i.e \\space " + temp + " \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
             ans += "\\[\\therefore \\space " + num + " \\space  is \\space not \\space a \\space perfect \\space number\\]"
-            document.getElementById("perfectans").innerHTML = ans;
+            
         }
-        renderMathInElement(document.getElementById("perfectans"))
-    }
+       return {'steps' : ans }
 
 }
 function isPrime(n) {

@@ -1,4 +1,17 @@
-<div id="perfectnum" style="text-align: center;">
+<script>
+    function callperfectvalue(){
+        var num = document.getElementById("perfectnum").value;
+       
+        var data = perfectNumber(num);
+
+        document.getElementById("perfectans").innerHTML = data['steps'];
+   
+
+        renderMathInElement(document.getElementById('perfectans'));
+        
+
+    }
+</script>
     <div class="container">
         <h1 style="color: white;font-family:mathfont;text-align: center;">Perfect Number Checker</h2>
             <br>
@@ -12,7 +25,7 @@
                         placeholder="Enter the input number" class="form__field">
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-light" onclick="perfectvalue()">Find</button>
+                    <button type="button" class="btn btn-light" onclick="callperfectvalue()">Find</button>
                     <button type="button" class="btn btn-light" onclick="this.form.reset();">
                         Reset
                     </button>
@@ -21,4 +34,3 @@
             <br>
             <p class="stopwrap" style="color:white;" id="perfectans"></p><br>
     </div>
-</div>
