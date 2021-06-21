@@ -527,6 +527,7 @@ function openit(id) {
         "#binomial",
         "#interquartile",
         "#outlier",
+        "#proportion",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
