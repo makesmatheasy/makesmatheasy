@@ -8,7 +8,6 @@
 <a href="https://github.com/makesmatheasy/"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103"></a>
 <a href="https://github.com/makesmatheasy/makesmatheasy/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?v=103"></a>
 
-<a href="https://github.com/makesmatheasy/makesmatheasy/watchers"><img src="https://img.shields.io/github/watchers/makesmatheasy/makesmatheasy?style=flat"></a> 
 <a href="https://github.com/makesmatheasy/makesmatheasy/graphs/contributors"><img src="https://img.shields.io/github/contributors/makesmatheasy/makesmatheasy?color=brightgreen"></a>
 <a href="https://github.com/makesmatheasy/makesmatheasy/stargazers"><img src="https://img.shields.io/github/stars/makesmatheasy/makesmatheasy?color=0059b3"></a>
 <a href="https://github.com/makesmatheasy/makesmatheasy/network/members"><img src="https://img.shields.io/github/forks/makesmatheasy/makesmatheasy?color=yellow"></a>
