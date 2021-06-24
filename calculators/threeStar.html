@@ -1,0 +1,26 @@
+<script>
+   function callthreestar() {
+	  var a1=document.getElementById('a1threestar').value;
+	   var b1 = document.getElementById('b1threestar').value
+
+		var data = threestar(a1,b1);
+
+		document.getElementById('outputsteps').innerHTML = data['steps'];
+		document.getElementById('outputresult').innerHTML = data['result'];
+		renderMathInElement(document.getElementById('outputsteps'));
+		renderMathInElement(document.getElementById('outputresult'));
+    }
+ </script>
+<div>
+	<input type="number" id="a1threestar" class="form__field">
+	<input type="number" id="b1threestar" class="form__field">
+	
+	<button type="button" class="btn btn-outline-light" onclick="callthreestar() ">Solve</button>
+
+	<p id="outputresult" style="text-align: center;">
+
+	</p>
+	<p id="outputsteps" style="text-align: center;">
+
+	</p>
+</div> 

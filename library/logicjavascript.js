@@ -29207,6 +29207,29 @@ function proportion(num1,num2,num3)
     return {'result':num4,'steps':ans};
 }
 
+function threestar(a,b)
+{
+    var ans="";
+    var res="";
+    a=parseFloat(a);
+    ans+="Step1: Input the alpha angle"+a;
+    b=parseFloat(b);
+    ans+="Step2:Input the beta angle"+b;
+    ans+="Step3:Checking for the condition of three star.If true then result is 1 else 0";
+    if(a<60 && b==120+a)
+    {
+        res=1;
+        ans+="It is formed by three isosceles triangles";
+    }
+    else
+    {
+        res=0;
+        ans+="It is not formed by three isosceles triangle";
+    }
+    return {'result':res,'steps':ans};
+}
+
+
 
 //speed distance time calculator
 
@@ -29236,6 +29259,5 @@ function calculateSpeed(distance,time) {
         distance.value=temp;
     calculatedSpeedDisplay.innerText = `The calculated distance is ${temp} m.`;
     }
-
 
 

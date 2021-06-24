@@ -548,6 +548,7 @@ function openit(id) {
         "#interquartile",
         "#outlier",
         "#proportion",
+        "#threestar",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
