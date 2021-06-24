@@ -28623,13 +28623,9 @@ function armstrongvalue() {
         renderMathInElement(document.getElementById("armans"));
     }
 }
-// pallindrome no
-function pallindromevalue() {
-    var num = document.getElementById("pallin").value;
-    if (num == "") {
-        document.getElementById("pallinans").innerHTML = "Please input a no";
-    }
-    else {
+// palindrome no
+function checkPalindrome(num) {
+
         var ans = "";
         let final = 0;
         let re = 0;
@@ -28644,16 +28640,16 @@ function pallindromevalue() {
         ans += "\\[" + final + "\\]"
         if (final == num) {
             ans += "\\[Since \\space the \\space reverse \\space number \\space is \\space equal \\space to \\space the \\space original \\space number\\]"
-            ans += "\\[\\therefore \\space " + num + " \\space is \\space a \\space pallindrome \\space number\\]"
-            document.getElementById("pallinans").innerHTML = ans;
+            ans += "\\[\\therefore \\space " + num + " \\space is \\space a \\space palindrome \\space number\\]"
+            
         }
         else {
             ans += "\\[Since \\space the \\space reverse \\space number \\space is \\space not \\space equal \\space to \\space the \\space original \\space number\\]"
-            ans += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space pallindrome \\space number\\]"
-            document.getElementById("pallinans").innerHTML = ans;
+            ans += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space palindrome \\space number\\]"
+           
         }
-        renderMathInElement(document.getElementById("pallinans"));
-    }
+       return {'steps': ans }
+
 }
 function perfectvalue(num) {
     
