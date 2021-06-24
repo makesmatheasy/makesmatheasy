@@ -122,90 +122,101 @@
         .sidenav li > a {
             display: inline-block;
         }
-body img {
-  filter: invert(0%);
-} 
+        body img {
+        filter: invert(0%);
+        } 
 
-#home {
-  position: relative;
-  display: block;
-  z-index: 10;
-  float: right;
-  margin-right:2rem;
-  margin-top:2rem;
-  padding: 0rem 0.625rem 0.125rem 0.625rem;
-  text-transform: uppercase;
-  border-radius: 0.5rem;
-  border-color: white;
-  color: var(--apppink);
-  background-color: var(--appblack);
-  outline: none;
-  transition-duration: 0.4s;
-  font-size:1.5rem;
-}
-#home:hover {
-  background-color: rgba(255, 244, 253, 0.993);
-  font-weight: bolder;
-}
+        #home {
+        position: relative;
+        display: block;
+        z-index: 10;
+        float: right;
+        margin-right:2rem;
+        margin-top:2rem;
+        padding: 0rem 0.625rem 0.125rem 0.625rem;
+        text-transform: uppercase;
+        border-radius: 0.5rem;
+        border-color: white;
+        color: var(--apppink);
+        background-color: var(--appblack);
+        outline: none;
+        transition-duration: 0.4s;
+        font-size:1.5rem;
+        }
+        #home:hover {
+        background-color: rgba(255, 244, 253, 0.993);
+        font-weight: bolder;
+        }
 
-.formmain{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-}
-.formelem1{
-    background-color: transparent;
-    border: 2px solid white;
-    border-radius: 10px;
-    margin: 10px;
+        .formmain{
+            display: flex;            
+            flex-direction: column;
+        }
+        .formelem1{
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 10px;
+            margin: 10px;
 
-}
-.formelem2{
-    background-color: transparent;
-    border: 2px solid white;
-    border-radius: 10px;
-    margin: 20px;
-    padding: 10px;
-    text-align: center;
-    width: 250px;
-    transition-duration: 0.5s;
-}
-.formelem2:hover{
-    width: 350px;
-}
-.formelem3{
-    background-color: transparent;
-    border: 2px solid white;
-    border-radius: 10px;
-    margin: 20px;
-    padding: 10px;
-    width: 250px;
-    transition-duration: 0.5s;
-}
-.formelem3:hover{
-    width: 350px;
-}
-.formelem4{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   margin: 20px;
-   
-}
-.formelem5{
-    background-color: rgb(22, 189, 0);
-    color: white;
-    border-radius: 10px;
-    border: 2px solid white;
-}
-.formelem5:hover{
-    background-color: rgb(223, 238, 221);
-    color:green;
-    border: 2px solid green;
-}
+        }
+        .formelem2{
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 10px;
+            margin-top:10px;
+            margin-bottom:10px;
+            padding: 10px;
+            text-align: center;
+            width: 300px;
+        }
+        .formelem3{
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 10px;
+            margin-top:10px;
+            margin-bottom:10px;
+            padding: 10px;
+            width: 300px;
+        }
+
+        .formelem4{
+            display: flex;
+            flex-direction: column;
+            margin: 20px;        
+        }
+        .formelem5{
+            background-color: rgb(22, 189, 0);
+            color: white;
+            width: 300px;
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+        .formelem5:hover{
+            background-color: rgb(223, 238, 221);
+            color:green;
+            border: 2px solid green;
+        }
+
+        body{
+            background-color: #232A36;
+        }
+        .card {          
+            margin: 3px;
+            padding: 20px 30px;
+            color: #395177;
+            margin-top:50px;
+            background: rgb(25, 30, 36);
+            border: 2px solid;
+            box-shadow: 0 0 33px -10px rgb(5, 5, 5);
+        }
+        .img-responsive {
+            height: auto;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+  
+
     </style>
 </head>
 <body>
@@ -244,39 +255,49 @@ body img {
                                                style="cursor:pointer; height: 2.5rem;padding-left: 0.625rem; filter: invert(100%);"></span>
         <br>
             <div class="container">
-                <div> 
-                    <br>  
-                    <div class="topp">
-                        <div class="row">
-                            <div class="col d-flex justify-content-end">
-                                <img src="images/makesmatheasylogo.png">
-                            </div>
-                            <div class="col d-flex justify-content-start">
-                                <h1>Makes Math Easy</h1>
-                            </div>
-                        </div>
-                    </div>                             
+                <div class="topp">
+                    <img class="logo" src="images/makesmatheasylogo.png" />
+                    <h1>Makes Math Easy</h1>
+                </div>
+                                          
                     <!-- <iframe id="contactform"
                             src="https://docs.google.com/forms/d/e/1FAIpQLSe9iLIoN47Puox50aziGG-f1qZMmYm3tiF861QPZyBcZU-kSg/viewform?embedded=true"
                             width="100%" height="1150" frameborder="0" marginheight="0" marginwidth="0">Loading…
                     </iframe> -->
-                    <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe9iLIoN47Puox50aziGG-f1qZMmYm3tiF861QPZyBcZU-kSg/formResponse?embedded=true" class="formmain">
-
-                        <input type="text" name="entry.2005620554" class="formelem2" placeholder="Your Name">
-                        <textarea name="entry.1065046570" class="formelem3" placeholder="Message..." cols="30" rows="7"></textarea>
-                        <label for="elemId" class="formelem4">
-                            <span>Are you Enjoying Makes Maths Easy ?</span>
-                            <span>YES : <input type="radio" name="entry.1166974658" class="formelem1" id="elemId"></span>                            
-                            <span>NO : <input type="radio" name="entry.1166974658" class="formelem1" id="elemId"></span>                            
-                            <span>MAY BE : <input type="radio" name="entry.1166974658" class="formelem1" id="elemId"></span>
-                        </label>
-                        <button type="submit" class="formelem5">SUBMIT</button>
-                        
-                    </form>
+                <div class="card">
+                    <h3 style="text-align: center;margin-bottom: 20px;">Get in touch with us</h3>
+                    <div class="row">
+                        <div class="col-lg-6 col-12 col-sm-12" >
+                           <img src="images/contact_us.png" class="img-responsive">
+                        </div>
+                        <div class="col-lg-6 col-12 col-sm-12">
+                            <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe9iLIoN47Puox50aziGG-f1qZMmYm3tiF861QPZyBcZU-kSg/formResponse?embedded=true" class="formmain">
+                                
+                                <label for="name" style="text-align: left;">Name</label>
+                                <input type="text" id="name" name="entry.2005620554" class="formelem2" placeholder="Your Name">
+                                <label for="name" style="text-align: left;">Message</label>
+                                <textarea name="entry.1065046570" class="formelem3" placeholder="Message..." cols="30" rows="7"></textarea>
+                                <br><br>
+                                <label for="elemId" style="text-align: left;">
+                                    <span>Are you Enjoying Makes Maths Easy ?</span>
+                                    <br>
+                                    <span>YES : <input type="radio" name="entry.1166974658" class="formelem1" id="elemId"></span>                            
+                                    <br>
+                                    <span>NO : <input type="radio" name="entry.1166974658" class="formelem1" id="elemId"></span>                            
+                                    <br>
+                                    <span>MAY BE : <input type="radio" name="entry.1166974658" class="formelem1" id="elemId"></span>
+                                </label>
+                                <br>
+                                <button type="submit" class="formelem5">SUBMIT</button>
+                            </form>
+                        </div>
+                    </div>  
                 </div>
+                                 
+                
             </div>
-        </div>
     </div>
+</div>
 
     <script src="js/jquery.min.js"></script>
     <script>
