@@ -1,0 +1,49 @@
+
+    <div id="" style="text-align: center; ">
+        <div class="container">
+            <h1 style="font-family:mathfont; ">Speed Calculator
+                </h2>
+                <div class="speedCalculator">
+                    <h2>Speed</h2>
+                    <p>Speed can be thought of as the rate at which an object covers distance. A fast-moving object has
+                        a high speed and covers a relatively large distance in a given amount of time, while a
+                        slow-moving object covers a relatively small amount of distance in the same amount of time.</p>
+                    <br>
+                    <p>Speed is the ratio of Distance travelled by any object to the time taken to travel the distance.
+                    </p>
+                    <h3 style="border:2px solid; width:250px;padding:50px 0px;margin:auto;">Speed= Distance/Time</h3>
+                    <h4>SI unit of speed is m/s.</h4>
+                    <br>
+    
+                    <h2>Distance</h2>
+                    <p>Distance is the measurement of actual path covered byy any object.</p>
+                    <br>
+                    <p>Distance is the product of speed of an object to the time taken.
+                    </p>
+                    <h3 style="border:2px solid; width:250px;padding:50px 0px;margin:auto;">Distance = Speed * Time</h3>
+                    <h4>SI unit of distance is m (metres).</h4>
+                    <br>
+    
+                    <h2>Time</h2>
+                    <p>Time taken by any object to cover a specific distance.</p>
+                    <br>
+                    <p>Time is the ratio of distance of an object to the speed.
+                    </p>
+                    <h3 style="border:2px solid; width:250px;padding:50px 0px;margin:auto;">Time = Distance/Speed</h3>
+                    <h4>SI unit of distance is s (seconds).</h4>
+                    <br>
+    
+                    <h2><em>Fill any two of the fields, the distance(in metres) and time(in seconds) and speed(in m/s) and calculate. </em></h2>
+    
+                    <input type="text" id="distance" placeholder="Enter the Distance(in metres)" style="width:400px; height:20px; padding:20px 10px;"><br><br>
+                    <input type="text" id="time" placeholder="Enter the time(in seconds)" style="width:400px; height:20px; padding:20px 10px;"><br><br>
+                    <input type="text" id="speed" placeholder="Enter the Speed(in m/s)" style="width:400px; height:20px; padding:20px 10px;"><br><br>
+                    <input type="button"   value="Speed" id="speed" onclick="calculateSpeed(document.getElementById('distance'),document.getElementById('time'))">
+                    <input type="button"  value="Distance" id="distance" onclick="calculateDistance(document.getElementById('speed'),document.getElementById('time'))">
+                    <input type="button" value="Time" id="time" onclick="calculateTime(document.getElementById('distance'),document.getElementById('speed'))">
+                    <h3 id="calculatedSpeedDisplay"></h3>
+                </div>
+    
+        </div>
+
+

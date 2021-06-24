@@ -2,12 +2,12 @@
     function callmagicnumber() {
         var num = document.getElementById("magicno").value;
 
-        var data = magicnumber(num);
+        var data = magicvalue(num);
 
         document.getElementById("magicans").innerHTML = data['steps'];
 
 
-        renderMathInElement(document.getElementById('magician'));
+        renderMathInElement(document.getElementById('magicans'));
 
 
     }

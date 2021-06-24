@@ -162,6 +162,11 @@ function expandedformde(input, output) {
     }
 }
 
+
+
+
+
+
 //deroman expanded form
 
 //roman to arabic calulator
@@ -28618,13 +28623,9 @@ function armstrongvalue() {
         renderMathInElement(document.getElementById("armans"));
     }
 }
-// pallindrome no
-function pallindromevalue() {
-    var num = document.getElementById("pallin").value;
-    if (num == "") {
-        document.getElementById("pallinans").innerHTML = "Please input a no";
-    }
-    else {
+// palindrome no
+function checkPalindrome(num) {
+
         var ans = "";
         let final = 0;
         let re = 0;
@@ -28639,16 +28640,16 @@ function pallindromevalue() {
         ans += "\\[" + final + "\\]"
         if (final == num) {
             ans += "\\[Since \\space the \\space reverse \\space number \\space is \\space equal \\space to \\space the \\space original \\space number\\]"
-            ans += "\\[\\therefore \\space " + num + " \\space is \\space a \\space pallindrome \\space number\\]"
-            document.getElementById("pallinans").innerHTML = ans;
+            ans += "\\[\\therefore \\space " + num + " \\space is \\space a \\space palindrome \\space number\\]"
+            
         }
         else {
             ans += "\\[Since \\space the \\space reverse \\space number \\space is \\space not \\space equal \\space to \\space the \\space original \\space number\\]"
-            ans += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space pallindrome \\space number\\]"
-            document.getElementById("pallinans").innerHTML = ans;
+            ans += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space palindrome \\space number\\]"
+           
         }
-        renderMathInElement(document.getElementById("pallinans"));
-    }
+       return {'steps': ans }
+
 }
 function perfectvalue(num) {
     
@@ -29205,6 +29206,7 @@ function proportion(num1,num2,num3)
     ans+="The number for the proportion is "+num4;
     return {'result':num4,'steps':ans};
 }
+
 function threestar(a,b)
 {
     var ans="";
@@ -29226,3 +29228,36 @@ function threestar(a,b)
     }
     return {'result':res,'steps':ans};
 }
+
+
+
+//speed distance time calculator
+
+function calculateSpeed(distance,time) {
+    let speed= document.getElementById("speed");
+    let temp;
+    let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
+        temp = Number(distance.value) / Number(time.value);
+        speed.value=temp;
+    calculatedSpeedDisplay.innerText = `The calculated speed is ${temp} m/s.`;
+    }
+    
+    function calculateTime(distance,speed){
+    let time = document.getElementById("time");
+    let temp;
+    let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
+       temp = Number(distance.value) /Number(speed.value);
+        time.value=temp;
+    calculatedSpeedDisplay.innerText = `The calculated time is ${temp} s.`;
+    }
+    
+    function calculateDistance(speed,time){
+        let distance = document.getElementById("distance");
+    let temp;
+    let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
+         temp = Number(speed.value) * Number(time.value);
+        distance.value=temp;
+    calculatedSpeedDisplay.innerText = `The calculated distance is ${temp} m.`;
+    }
+
+
