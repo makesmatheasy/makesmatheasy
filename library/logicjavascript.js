@@ -29190,3 +29190,18 @@ function outlier(num,q1,q3)
     }
     return{'result':re,'steps':ans};
 }
+function proportion(num1,num2,num3)
+{
+    var ans="";
+    var num4="";
+    num1=parseInt(num1);
+    ans+="Step1 :Input the first value"+num1;
+    num2=parseInt(num2);
+    ans+="Step2 :Input the second value"+num2;
+    num3=parseInt(num3);
+    ans+="Step3: Input the third value"+num3;
+    ans+="Step4 :Calculation of the missing value";
+    num4=(num1*num3)/num2;
+    ans+="The number for the proportion is "+num4;
+    return {'result':num4,'steps':ans};
+}

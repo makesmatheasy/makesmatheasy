@@ -1,12 +1,22 @@
-<img align="center" alt="Makes Math Easy" src="https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png">
+<div align="center">
+	
+<img alt="Makes Math Easy" src="https://user-images.githubusercontent.com/83420185/123138680-f2cfd880-d472-11eb-9dea-f5130e32f273.png" width=200 height=150>
 
-![contributors](https://img.shields.io/github/contributors/sairish2001/makesmatheasy)
-![Issues](https://img.shields.io/github/issues/sairish2001/makesmatheasy)
-![Pull Requests](https://img.shields.io/github/issues-pr/sairish2001/makesmatheasy)
-[![Maintenance](https://img.shields.io/maintenance/yes/2021?color=green&logo=github)](https://github.com/sairish2001/makesmatheasy)
-![GitHub forks](https://img.shields.io/github/forks/sairish2001/makesmatheasy?style=social) 
-![GitHub Repo stars](https://img.shields.io/github/stars/sairish2001/makesmatheasy?style=social)
+<a href="https://github.com/makesmatheasy/makesmatheasy"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy"><img src="https://img.shields.io/badge/Built%20by-developers%20%3C%2F%3E-0059b3"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy"><img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=yellow"></a>
+<a href="https://github.com/makesmatheasy/"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?v=103"></a>
 
+<a href="https://github.com/makesmatheasy/makesmatheasy/graphs/contributors"><img src="https://img.shields.io/github/contributors/makesmatheasy/makesmatheasy?color=brightgreen"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/stargazers"><img src="https://img.shields.io/github/stars/makesmatheasy/makesmatheasy?color=0059b3"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/network/members"><img src="https://img.shields.io/github/forks/makesmatheasy/makesmatheasy?color=yellow"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/issues"><img src="https://img.shields.io/github/issues/makesmatheasy/makesmatheasy?color=0059b3"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed-raw/makesmatheasy/makesmatheasy?color=yellow"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/pulls"><img src="https://img.shields.io/github/issues-pr/makesmatheasy/makesmatheasy?color=brightgreen"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/makesmatheasy/makesmatheasy?color=0059b3"></a> 
+
+</div>
 
 Started on **13 July,2020**
 
