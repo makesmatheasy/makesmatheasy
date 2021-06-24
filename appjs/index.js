@@ -124,6 +124,26 @@ function changeImage10() {
     }
 }
 
+function changeImage11() {
+    k++;
+
+    if (k % 2 == 0) {
+        document.getElementById("imgClickAndChange9").src = 'icons/down-chevron.svg';
+    } else {
+        document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
+    }
+}
+
+function changeImage12() {
+    l++;
+
+    if (l % 2 == 0) {
+        document.getElementById("imgClickAndChange9").src = 'icons/down-chevron.svg';
+    } else {
+        document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
+    }
+}
+
 function collapseit(openit) {
     $(String("#" + openit)).slideToggle();
 }
@@ -527,6 +547,7 @@ function openit(id) {
         "#binomial",
         "#interquartile",
         "#outlier",
+        "#proportion",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
@@ -537,13 +558,13 @@ function openit(id) {
     }
 }
 
-function bodyload() {    
+function bodyload() {
     var displaynamear = JSON.parse(localStorage.getItem("displaynamearray"));
-    var filenamenamear = JSON.parse(localStorage.getItem("filenamearray"));    
+    var filenamenamear = JSON.parse(localStorage.getItem("filenamearray"));
     var imgar = JSON.parse(localStorage.getItem("imgarray"));
     var favar = JSON.parse(localStorage.getItem("favarray"));
-    if (filenamenamear != null) {        
-        filename = filenamenamear;        
+    if (filenamenamear != null) {
+        filename = filenamenamear;
         displayname=displaynamear;
         imgarray = imgar;
         favarray = favar;
@@ -557,8 +578,8 @@ var filename = [];
 var imgarray = [];
 var favarray = [];
 
-function addtofavourite(displaynamear, filenamear, img) {        
-    var filenmar=JSON.parse(localStorage.getItem('filenamearray'));    
+function addtofavourite(displaynamear, filenamear, img) {
+    var filenmar=JSON.parse(localStorage.getItem('filenamearray'));
     var flag = 0;
     if (filename != null) {
         for (i = 0; i < filename.length; i++) {
@@ -567,13 +588,13 @@ function addtofavourite(displaynamear, filenamear, img) {
             }
         }
     }
-    if (flag == 0) {        
+    if (flag == 0) {
         displayname.push(displaynamear);
         filename.push(filenamear);
         imgarray.push(img);
         favarray.push("images/favourite.png");
-        localStorage.setItem("displaynamearray", JSON.stringify(displayname));        
-        localStorage.setItem("filenamearray", JSON.stringify(filename));        
+        localStorage.setItem("displaynamearray", JSON.stringify(displayname));
+        localStorage.setItem("filenamearray", JSON.stringify(filename));
         localStorage.setItem("imgarray", JSON.stringify(imgarray));
         localStorage.setItem("favarray", JSON.stringify(favarray));
         checkfavourite();
@@ -583,10 +604,10 @@ function addtofavourite(displaynamear, filenamear, img) {
         if (index > -1) {
             document.getElementById(imgarray[index]).src = "images/unfavourite.png";
             displayname.splice(index, 1);
-            filename.splice(index, 1);            
+            filename.splice(index, 1);
             imgarray.splice(index, 1);
             favarray.splice(index, 1);
-        }        
+        }
         localStorage.setItem("displaynamearray", JSON.stringify(displayname));
         localStorage.setItem("filenamearray", JSON.stringify(filename));
         localStorage.setItem("imgarray", JSON.stringify(imgarray));
@@ -600,7 +621,7 @@ function checkfavourite(filenamear) {
     var imgar = JSON.parse(localStorage.getItem("imgarray"));
     var favar = JSON.parse(localStorage.getItem("favarray"));
 
-    $("#favourite").addClass("favouritecontainer");    
+    $("#favourite").addClass("favouritecontainer");
     if (filename.length != 0) {
         for (i = 0; i < filename.length; i++) {
             var el = document.createElement("li");
@@ -608,7 +629,7 @@ function checkfavourite(filenamear) {
             el.className = "favourites";
             el.style.color = "white";
 
-            el.setAttribute("onclick", 'loadcalculator("' + String(filename[i]) + '")');            
+            el.setAttribute("onclick", 'loadcalculator("' + String(filename[i]) + '")');
 
             document.getElementById("favourite").appendChild(el);
             document.getElementById(imgar[i]).src = favar[i];
@@ -647,12 +668,12 @@ function removefavourite() {
     localStorage.removeItem("filenamearray");
     localStorage.removeItem("displaynamearray");
     localStorage.removeItem("imgarray");
-    localStorage.removeItem("favarray");    
+    localStorage.removeItem("favarray");
     $("#favourite").removeClass("headingdiv");
     checkfavourite();
 }
 
-function getfacts() {    
+function getfacts() {
     var facts =
         ["The number 4 is the only number spelled with the same number of letters as itself",
             "8 is the largest cube in the Fibonacci series",
@@ -687,7 +708,7 @@ function getfacts() {
     return val;
 }
 
-$(document).on('click', ' .list_menu_items ', function () {   
+$(document).on('click', ' .list_menu_items ', function () {
     $(this).siblings().removeClass('home');
     $(this).addClass('home');
 });

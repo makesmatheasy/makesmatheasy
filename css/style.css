@@ -757,6 +757,13 @@ background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 
 
 }
 
+#particles-js{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
 .pre-heading {
   position: absolute;
   color: rgb(202, 15, 130);

@@ -1,0 +1,28 @@
+<script>
+     function callproportion() {
+		var num1=document.getElementById('num1proportion').value;
+		var num2 = document.getElementById('num2proportion').value;
+		var num3 = document.getElementById('num3proportion').value;
+ 
+		  var data = proportion(num1,num2,num3);
+ 
+		  document.getElementById('outputsteps').innerHTML = data['steps'];
+		  document.getElementById('outputresult').innerHTML = data['result'];
+		  renderMathInElement(document.getElementById('outputsteps'));
+		  renderMathInElement(document.getElementById('outputresult'));
+	  }
+  </script>
+  <div>
+	  <input type="number" id="num1proportion" class="form__field">
+	  <input type="number" id="num2proportion" class="form__field">
+	  <input type="number" id="num3proportion" class="form__field">
+	  <button type="button" class="btn btn-outline-light" onclick="callproportion() ">Solve</button>
+ 
+	  <p id="outputresult" style="text-align: center;">
+ 
+	  </p>
+	  <p id="outputsteps" style="text-align: center;">
+ 
+	  </p>
+  </div> 
+  
