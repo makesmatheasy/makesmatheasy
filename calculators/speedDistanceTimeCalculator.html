@@ -38,13 +38,12 @@
                     <input type="text" id="distance" placeholder="Enter the Distance(in metres)" style="width:400px; height:20px; padding:20px 10px;"><br><br>
                     <input type="text" id="time" placeholder="Enter the time(in seconds)" style="width:400px; height:20px; padding:20px 10px;"><br><br>
                     <input type="text" id="speed" placeholder="Enter the Speed(in m/s)" style="width:400px; height:20px; padding:20px 10px;"><br><br>
-                    <input type="button"   value="Speed" id="speed" onclick="calculateSpeed()">
-                    <input type="button"  value="Distance" id="distance" onclick="calculateDistance()">
-                    <input type="button" value="Time" id="time" onclick="calculateTime()">
+                    <input type="button"   value="Speed" id="speed" onclick="calculateSpeed(document.getElementById('distance'),document.getElementById('time'))">
+                    <input type="button"  value="Distance" id="distance" onclick="calculateDistance(document.getElementById('speed'),document.getElementById('time'))">
+                    <input type="button" value="Time" id="time" onclick="calculateTime(document.getElementById('distance'),document.getElementById('speed'))">
                     <h3 id="calculatedSpeedDisplay"></h3>
                 </div>
     
         </div>
-   
-        
+
 

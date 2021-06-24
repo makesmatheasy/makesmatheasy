@@ -29214,38 +29214,32 @@ function proportion(num1,num2,num3)
 
 //speed distance time calculator
 
+function calculateSpeed(distance,time) {
+    let speed= document.getElementById("speed");
+    let temp;
+    let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
+        temp = Number(distance.value) / Number(time.value);
+        speed.value=temp;
+    calculatedSpeedDisplay.innerText = `The calculated speed is ${temp} m/s.`;
+    }
+    
+    function calculateTime(distance,speed){
+    let time = document.getElementById("time");
+    let temp;
+    let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
+       temp = Number(distance.value) /Number(speed.value);
+        time.value=temp;
+    calculatedSpeedDisplay.innerText = `The calculated time is ${temp} s.`;
+    }
+    
+    function calculateDistance(speed,time){
+        let distance = document.getElementById("distance");
+    let temp;
+    let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
+         temp = Number(speed.value) * Number(time.value);
+        distance.value=temp;
+    calculatedSpeedDisplay.innerText = `The calculated distance is ${temp} m.`;
+    }
 
-function calculateSpeed() {
-    let distance = document.getElementById("distance");
-let time = document.getElementById("time");
-let speed= document.getElementById("speed");
-let temp;
-let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
-     temp = Number(distance.value) / Number(time.value);
-    speed.value=temp;
-calculatedSpeedDisplay.innerText = `The calculated speed is ${temp} m/s.`;
-}
-
-function calculateTime(){
-    let distance = document.getElementById("distance");
-let time = document.getElementById("time");
-let speed= document.getElementById("speed");
-let temp;
-let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
-   temp = Number(distance.value) /Number(speed.value);
-    time.value=temp;
-calculatedSpeedDisplay.innerText = `The calculated time is ${temp} s.`;
-}
-
-function calculateDistance(){
-    let distance = document.getElementById("distance");
-let time = document.getElementById("time");
-let speed= document.getElementById("speed");
-let temp;
-let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
-     temp = Number(speed.value) * Number(time.value);
-    distance.value=temp;
-calculatedSpeedDisplay.innerText = `The calculated distance is ${temp} m.`;
-}
 
 
