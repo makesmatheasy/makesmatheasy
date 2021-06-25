@@ -29260,6 +29260,7 @@ function calculateSpeed(distance,time) {
     calculatedSpeedDisplay.innerText = `The calculated distance is ${temp} m.`;
     }
 
+
 function probability(favourable,out)
 {
     var ans="";
@@ -29272,5 +29273,28 @@ function probability(favourable,out)
     sol = `\\frac{${favourable}}{${out}}`;
     ans+="The result is"+sol;
     return {'result':res,'steps':ans};
+
+function fourstar(x,y)
+{
+    var ans=""
+    var res=""
+    x=parseFloat(x);
+    ans+="Step1:Input the alpha angle"+x;
+    y=parseFloat(y);
+    ans+="Step2:Input the beta angle"+y;
+    ans+="Step3:Checking for the condition of four star.";
+    if(x<90 && y==90+x)
+    {
+        res=1;
+        ans+="It is formed by four isosceles triangle";
+    }
+    else
+    {
+        res=0;
+        ans+="It is not formed by four isosceles triangle";
+    }
+    return {'result':res,'steps':ans};
+
+
 }
 
