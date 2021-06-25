@@ -1,0 +1,28 @@
+<script>
+	function callprobability() {
+	   var favour=document.getElementById('favourprobability').value;
+		var to = document.getElementById('toprobability').value
+ 
+		 var data = probability(favour,to);
+ 
+		 document.getElementById('outputsteps').innerHTML = data['steps'];
+		 document.getElementById('outputresult').innerHTML = data['result'];
+		 renderMathInElement(document.getElementById('outputsteps'));
+		 renderMathInElement(document.getElementById('outputresult'));
+	 }
+  </script>
+ <div>
+	 <input type="number" id="favourprobability" class="form__field">
+	 <input type="number" id="toprobability" class="form__field">
+	 
+	 <button type="button" class="btn btn-outline-light" onclick="callprobability() ">Solve</button>
+ 
+	 <p id="outputresult" style="text-align: center;">
+ 
+	 </p>
+	 <p id="outputsteps" style="text-align: center;">
+ 
+	 </p>
+ </div> 
+
+ 
