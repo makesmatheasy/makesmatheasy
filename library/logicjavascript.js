@@ -29273,6 +29273,7 @@ function probability(favourable,out)
     sol = `\\frac{${favourable}}{${out}}`;
     ans+="The result is"+sol;
     return {'result':res,'steps':ans};
+}
 
 function fourstar(x,y)
 {
