@@ -162,6 +162,11 @@ function expandedformde(input, output) {
     }
 }
 
+
+
+
+
+
 //deroman expanded form
 
 //roman to arabic calulator
@@ -29201,3 +29206,80 @@ function proportion(num1,num2,num3)
     ans+="The number for the proportion is "+num4;
     return {'result':num4,'steps':ans};
 }
+
+function threestar(a,b)
+{
+    var ans="";
+    var res="";
+    a=parseFloat(a);
+    ans+="Step1: Input the alpha angle"+a;
+    b=parseFloat(b);
+    ans+="Step2:Input the beta angle"+b;
+    ans+="Step3:Checking for the condition of three star.If true then result is 1 else 0";
+    if(a<60 && b==120+a)
+    {
+        res=1;
+        ans+="It is formed by three isosceles triangles";
+    }
+    else
+    {
+        res=0;
+        ans+="It is not formed by three isosceles triangle";
+    }
+    return {'result':res,'steps':ans};
+}
+
+
+
+//speed distance time calculator
+
+function calculateSpeed(distance,time) {
+    let speed= document.getElementById("speed");
+    let temp;
+    let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
+        temp = Number(distance.value) / Number(time.value);
+        speed.value=temp;
+    calculatedSpeedDisplay.innerText = `The calculated speed is ${temp} m/s.`;
+    }
+    
+    function calculateTime(distance,speed){
+    let time = document.getElementById("time");
+    let temp;
+    let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
+       temp = Number(distance.value) /Number(speed.value);
+        time.value=temp;
+    calculatedSpeedDisplay.innerText = `The calculated time is ${temp} s.`;
+    }
+    
+    function calculateDistance(speed,time){
+        let distance = document.getElementById("distance");
+    let temp;
+    let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
+         temp = Number(speed.value) * Number(time.value);
+        distance.value=temp;
+    calculatedSpeedDisplay.innerText = `The calculated distance is ${temp} m.`;
+    }
+
+function fourstar(x,y)
+{
+    var ans=""
+    var res=""
+    x=parseFloat(x);
+    ans+="Step1:Input the alpha angle"+x;
+    y=parseFloat(y);
+    ans+="Step2:Input the beta angle"+y;
+    ans+="Step3:Checking for the condition of four star.";
+    if(x<90 && y==90+x)
+    {
+        res=1;
+        ans+="It is formed by four isosceles triangle";
+    }
+    else
+    {
+        res=0;
+        ans+="It is not formed by four isosceles triangle";
+    }
+    return {'result':res,'steps':ans};
+
+}
+

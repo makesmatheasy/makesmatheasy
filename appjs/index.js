@@ -118,9 +118,9 @@ function changeImage10() {
     j++;
 
     if (j % 2 == 0) {
-        document.getElementById("imgClickAndChange9").src = 'icons/down-chevron.svg';
+        document.getElementById("imgClickAndChange10").src = 'icons/down-chevron.svg';
     } else {
-        document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
+        document.getElementById("imgClickAndChange10").src = 'icons/chevron-arrow-up.svg';
     }
 }
 
@@ -128,9 +128,9 @@ function changeImage11() {
     k++;
 
     if (k % 2 == 0) {
-        document.getElementById("imgClickAndChange9").src = 'icons/down-chevron.svg';
+        document.getElementById("imgClickAndChange11").src = 'icons/down-chevron.svg';
     } else {
-        document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
+        document.getElementById("imgClickAndChange11").src = 'icons/chevron-arrow-up.svg';
     }
 }
 
@@ -138,9 +138,19 @@ function changeImage12() {
     l++;
 
     if (l % 2 == 0) {
-        document.getElementById("imgClickAndChange9").src = 'icons/down-chevron.svg';
+        document.getElementById("imgClickAndChange12").src = 'icons/down-chevron.svg';
     } else {
-        document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
+        document.getElementById("imgClickAndChange12").src = 'icons/chevron-arrow-up.svg';
+    }
+}
+
+function changeImage13() {
+    m++;
+
+    if (m % 2 == 0) {
+        document.getElementById("imgClickAndChange13").src = 'icons/down-chevron.svg';
+    } else {
+        document.getElementById("imgClickAndChange13").src = 'icons/chevron-arrow-up.svg';
     }
 }
 
@@ -548,6 +558,8 @@ function openit(id) {
         "#interquartile",
         "#outlier",
         "#proportion",
+        "#threestar",
+        "#fourstar",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
