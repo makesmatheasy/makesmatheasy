@@ -1,0 +1,30 @@
+<script>
+	function callconvolution() {
+	   var n1=document.getElementById('n1convolution').value;
+		var x1 = document.getElementById('x1convolution').value;
+		var h1= document.getElementById(h1convolution).value;
+ 
+		 var data = convolution(n1,x1,y1);
+ 
+		 document.getElementById('outputsteps').innerHTML = data['steps'];
+		 document.getElementById('outputresult').innerHTML = data['result'];
+		 renderMathInElement(document.getElementById('outputsteps'));
+		 renderMathInElement(document.getElementById('outputresult'));
+	 }
+  </script>
+ <div>
+	 <input type="number" id="n1convolution" class="form__field">
+	 <input type="number" id="x1convolution" class="form__field">
+	 <input type="number" id="h1convolution" class="form__field">
+	 
+	 <button type="button" class="btn btn-outline-light" onclick="callconvolution() ">Solve</button>
+ 
+	 <p id="outputresult" style="text-align: center;">
+ 
+	 </p>
+	 <p id="outputsteps" style="text-align: center;">
+ 
+	 </p>
+ </div> 
+
+ 

@@ -29273,6 +29273,7 @@ function probability(favourable,out)
     sol = `\\frac{${favourable}}{${out}}`;
     ans+="The result is"+sol;
     return {'result':res,'steps':ans};
+}
 
 function fourstar(x,y)
 {
@@ -29294,7 +29295,21 @@ function fourstar(x,y)
         ans+="It is not formed by four isosceles triangle";
     }
     return {'result':res,'steps':ans};
-
-
 }
 
+function convolution(n,x,h)
+{
+    var ans="";
+    var y="";
+    ans+="Step1:Input the total number of steps"
+    n=parseInt(n);
+    x=parseFloat(x);
+    ans+="Step2:The first function is "+x;
+    h=parseFloat(h);
+    ans+="Step3:The second function is "+h;
+    ans+="Step4:Run a loop till n and calculate the value of convoulution";
+    for (let index = 0; index < n; index++) {
+        y=y+(x*h);
+    }
+    return {'result':y,'steps':ans};
+}
