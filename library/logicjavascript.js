@@ -29260,6 +29260,20 @@ function calculateSpeed(distance,time) {
     calculatedSpeedDisplay.innerText = `The calculated distance is ${temp} m.`;
     }
 
+
+function probability(favourable,out)
+{
+    var ans="";
+    var sol="";
+    favourable=parseInt(favourable);
+    ans+="Step1: Input the total number of favourable outcomes"+favourable;
+    out=parseInt(out);
+    ans+="Step2:Input the total number of possible outcomes"+out;
+    ans+="Step3:Calculating the probability";
+    sol = `\\frac{${favourable}}{${out}}`;
+    ans+="The result is"+sol;
+    return {'result':res,'steps':ans};
+
 function fourstar(x,y)
 {
     var ans=""
@@ -29280,6 +29294,7 @@ function fourstar(x,y)
         ans+="It is not formed by four isosceles triangle";
     }
     return {'result':res,'steps':ans};
+
 
 }
 

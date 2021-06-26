@@ -559,6 +559,7 @@ function openit(id) {
         "#outlier",
         "#proportion",
         "#threestar",
+        "#probability",
         "#fourstar",
     ];
     for (i = 0; i < ids.length; i++) {
