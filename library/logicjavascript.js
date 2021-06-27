@@ -29313,3 +29313,21 @@ function convolution(n,x,h)
     }
     return {'result':y,'steps':ans};
 }
+
+function incircleoftriangle(p,b,h)
+{
+    var ans="";
+    var res="";
+    p=parseInt(p);
+    ans+="Step1:Take the length of perpendicular"+p;
+    b=parseInt(b);
+    ans+="Step2:Take the length of base"+b;
+    h=parseInt(h);
+    ans+="Step3:Take the length of height"+h;
+    let r=(p+b-h)/2;
+    ans+="Step4:To calculate the inradius which is="+r;
+    res=3.14*r*r;
+    ans+="The area of the incircle is="+res;
+    return{'result':res,'steps':ans};
+}
+

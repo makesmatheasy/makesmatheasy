@@ -1,0 +1,29 @@
+<script>
+	function callincircleoftriangle() {
+	   var p1=document.getElementById('p1incircleoftriangle').value;
+		var b1 = document.getElementById('b1incircleoftriangle').value;
+		var h1=document.getElementById('h1incircleoftriangle').value;
+ 
+		 var data = threestar(p1,b1,h1);
+ 
+		 document.getElementById('outputsteps').innerHTML = data['steps'];
+		 document.getElementById('outputresult').innerHTML = data['result'];
+		 renderMathInElement(document.getElementById('outputsteps'));
+		 renderMathInElement(document.getElementById('outputresult'));
+	 }
+  </script>
+ <div>
+	 <input type="number" id="p1incircleoftriangle" class="form__field">
+	 <input type="number" id="b1incircleoftriangle" class="form__field">
+	 <input type="number" id="h1incircleoftriangle" class="form__field">
+	 
+	 <button type="button" class="btn btn-outline-light" onclick="callincircleoftriangle() ">Solve</button>
+ 
+	 <p id="outputresult" style="text-align: center;">
+ 
+	 </p>
+	 <p id="outputsteps" style="text-align: center;">
+ 
+	 </p>
+ </div> 
+ 

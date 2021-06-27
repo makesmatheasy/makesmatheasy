@@ -562,6 +562,7 @@ function openit(id) {
         "#probability",
         "#fourstar",
         "#convolution",
+        "#incircle",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
