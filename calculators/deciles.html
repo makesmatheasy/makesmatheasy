@@ -1,0 +1,25 @@
+<div id="decl">
+    <h2 style="margin-bottom:2rem;">Deciles</h2>
+    <p style="text-align: center; margin-bottom: 2rem;">In descriptive statistics, the term “decile” refers
+        to the nine values that split the population data into ten equal fragments such that each fragment
+        is representative of 1/10<sup>th</sup> of the population.
+        In other words, each successive decile corresponds to an increase of 10% points such that the
+        1<sup>st</sup> decile or D<sub>1</sub> has 10% of the observations below it, then 2<sup>nd</sup>
+        decile or D<sub>2</sub> has 20% of the observations below it, and so on so forth. N is the number of
+        data points in list.
+        <br>
+        D<sub>i</sub> = i * (n + 1) / 10 th data
+        <br>
+    </p>
+    <form>
+        <input class="form__field" type="text" id="decllist" placeholder="Enter List separated by SPACE">
+        <br><br>
+        <input class="form__field" type="text" id="decldp" placeholder="Enter Number of deciles">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="decl()">Find Deciles</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+    <div id="declans">
+
+    </div>
+</div>

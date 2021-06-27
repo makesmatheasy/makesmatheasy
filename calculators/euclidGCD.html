@@ -1,0 +1,38 @@
+<div id="gcd">
+    <h2 style="text-align:center;">Euclid's GCD</h2>
+    <br>
+    <p>The algorithm is based on the below facts. <br>If we subtract a smaller number from a larger (we reduce a
+        larger number), GCD doesn’t change. So if we keep subtracting repeatedly the larger of two, we end up
+        with GCD.<br>
+        Now instead of subtraction, if we divide the smaller number, the algorithm stops when we find remainder
+        0.</p>
+    <br>
+    <form action="">
+        <input type="text" id="gcdin1" placeholder="Enter number 1" class="form__field">
+        <input type="text" id="gcdin2" placeholder="Enter number 2" class="form__field">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="gcdfind()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick=calcexgcdfind()>
+            Example
+        </button>
+        <button class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <h4 id="gcdans"></h4>
+    <br>
+    <h2>Sum of GCD of all numbers upto N with N itself</h2>
+    <br>
+    <form action="">
+        <input type="text" id="gcdin3" placeholder="Enter number " class="form__field">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="gcd1find()">FInd</button>
+        <button type="button" class="btn btn-dark" onclick=calcexgcd1find()>
+            Example
+        </button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+    </form>
+
+    <h4 id="gcd1ans"></h4>
+</div>

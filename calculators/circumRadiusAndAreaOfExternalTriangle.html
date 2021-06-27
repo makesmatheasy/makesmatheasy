@@ -1,0 +1,34 @@
+<div id="circumradiusarea">
+    <h2>Circum Area and External Radius</h2><br>
+    <p>Area of External Triangle</p><br>
+    <p id="exterarea">\[8R^2cosA/2cosB/2cosC/2\]</p>
+    <form action="">
+
+    </form>
+    <div class="form-group">
+        <input type="text" style="width: 250px;" class="form__field" name="a" id="radius"
+            placeholder="Enter External radius" />
+        <input type="text" name="b" style="width: 250px;" class="form__field" id="angle1"
+            placeholder="Enter angle A " />
+        <input type="text" name="c" style="width: 250px;" class="form__field" id="angle2"
+            placeholder="Enter angle B" />
+        <input type="text" name="d" style="width: 250px;" class="form__field" id="angle3"
+            placeholder="Enter angle C" /><br><br>
+        <button class="btn btn-outline-light" type="button" onclick="external_area()">Find</button>
+        <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button>
+        <br>
+    </div>
+    <p id="externarea"></p><br><br>
+    <p>Circum radius of External Triangle</p><br>
+    <p id="exterarea">\[2R\]</p>
+    <form action="">
+        <div class="form-group">
+            <input type="text" style="width: 250px;" class="form__field" name="a" id="radius1"
+                placeholder="Enter External radius" /> <br><br>
+            <button class="btn btn-outline-light" type="button" onclick="external_radius()">Find</button>
+            <button class="btn btn-outline-light"type="button" onclick="this.form.reset();">Reset</button><br>
+        </div>
+    </form>
+
+    <p id="externradius"></p><br>
+</div>

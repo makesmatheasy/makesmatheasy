@@ -1,0 +1,39 @@
+<div id="pythtriple">
+    <div>
+        <h2 style="text-align: center;">Pythagorean Triplets</h2><br>
+        <p>The integer solutions to the Pythagorean Theorem, a^2 + b^2 = c^2 are called Pythagorean Triples
+            which contains three positive integers a, b, and c.</p>
+        <br>
+        <p>Enter exactly one number</p><br><br>
+        <form action="">
+            <input style="width: 17.1875rem;" type="number" class="form__field" placeholder="Enter a number"
+                id="nom">
+            <button class="btn btn-light" type="button" onclick=pythtriple()>Submit</button>
+            <button class="btn btn-light" type="button" onclick=this.form.reset();>Reset</button>
+        </form>
+
+        <br><br>
+        <p class="stopwrap" id="answ1" style="font-family:mathfont;"></p>
+        <p class="stopwrap" id="answ2" style="font-family:mathfont;"></p>
+        <p class="stopwrap" id="answ3" style="font-family:mathfont;"></p>
+        <br><br>
+        <h4 style="color : white" id="answ4"></h4>
+    </div>
+    <div>
+        <h2 style="text-align: center;">Pythagorean Triplets Checker</h2><br>
+        <p>
+            a : <input type="number" id="pytha" size=3 value=0><br><br>
+            b : <input type="number" id="pythb" size=3 value=0><br><br>
+            c : <input type="number" id="pythc" size=3 value=0><br><br>
+            <button type="button" class="btn btn-light" onclick=pythtriplecheck()>
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick=this.form.reset();>
+                Reset
+            </button>
+        </p>
+    </div><br>
+    <div class="coll" style="text-align: center;">
+        <p id="pythans" style="color: white; font-size: x-large;"></p>
+    </div>
+</div>
