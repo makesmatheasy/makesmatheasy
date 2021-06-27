@@ -6,24 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makes Math Easy Leaderboard LGMSOC'21</title>
-    <script type="text/javascript" src="issues.js"></script>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">    
     <script src="../js/jquery.min.js"></script>
+    <style>
+        :root {
+            --appblack: #25282B;
+            --appwhite: #dddddd;
+        }
+        body{
+            background-color: var(--appblack);
+            color:var(--appwhite);
+        }
+        a{
+            text-decoration: none !important;
+            color:var(--appwhite);
+        }
+        a:hover{
+            color:var(--appwhite);
+            text-shadow:0 0 10px #dddddd;
+        }
+        .table{
+            color:var(--appwhite);            
+        }
+    </style>
     <script>
-
-        // function getdata() {
-        //     var xhttp = new XMLHttpRequest();
-        //     xhttp.onreadystatechange = function () {
-        //         if (this.readyState == 4 && this.status == 200) {
-        //             document.getElementById("demo").innerHTML = this.responseText;
-        //         }
-        //     };
-        //     xhttp.open("GET", "https://api.github.com/search/issues?q=is:pr+is:merged+repo:makesmatheasy/makesmatheasy+label:LGMSOC21", true);
-        //     xhttp.send();
-        // }        
-
-        function getdata() {
-            var d = JSON.parse(JSON.stringify(data));
+        function calculatescore(d) {
+            if(sessionStorage.getItem('datapr')!=null){                                
+                d=JSON.parse(d);
+            }            
             var score = {
                 "🟥 Level4": 45,
                 "🟧 Level3": 30,
@@ -35,7 +45,7 @@
             var user = d["items"];
 
             var pr_with_count = {};
-            for (i of user) {
+            for (i of user) {                
                 var username = JSON.stringify(i['user']['login']).slice(1, -1);
                 try {
                     var scorepoint = score[i['labels'][1]['name']];
@@ -43,22 +53,61 @@
                     var scorepoint = 0;
                 }
                 if (pr_with_count[username] == undefined) {
-                    pr_with_count[username] = scorepoint;
-                } else {
-                    var previousscore = pr_with_count[username];
-                    pr_with_count[username] = eval(String(scorepoint + previousscore));
+                    var ar=[];
+                    ar[0]=1;
+                    ar[1]=scorepoint;
+                    pr_with_count[username] = ar;
+                } else {                    
+                    var ar=[];
+                    ar[0]=eval(String(pr_with_count[username][0] + 1));
+                    ar[1]=eval(String(scorepoint + pr_with_count[username][1]));
+                    pr_with_count[username] = ar;
                 }
-
             }
             displaydata(pr_with_count);
         }
 
+        function getdata() {
+            var d = sessionStorage.getItem('datapr');
+            if (d == null) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var d = JSON.parse(this.responseText);
+                        sessionStorage.setItem('datapr', this.responseText);
+                        calculatescore(d);
+                    }
+                };
+                xhttp.open("GET", "https://api.github.com/search/issues?q=is:pr+is:merged+repo:makesmatheasy/makesmatheasy+label:LGMSOC21", true);
+                xhttp.send();                                
+            } else {                
+                calculatescore(d);
+            }
+        }
+
         function displaydata(datapr) {
-            var data = Object.entries(datapr);
+            var username = Object.keys(datapr);
+            var score = Object.values(datapr);
+
+            for (var i = 0; i < score.length; i++) {
+                for (var j = 0; j < (score.length - i - 1); j++) {
+                    if (score[j][1] < score[j + 1][1]) {
+                        var temp = score[j];
+                        score[j] = score[j + 1]
+                        score[j + 1] = temp;
+
+                        var temp = username[j];
+                        username[j] = username[j + 1]
+                        username[j + 1] = temp;
+                    }
+                }
+            }
+
             var o = document.getElementById('demo');
-            var temp = "<table class='table'>";        
-            for (i of data) {
-                temp += `<tr><td>${i[0]}</td><td>${i[1]}</td></tr>`
+            var temp = "<table class='table'>";
+                temp+="<tr><th>Username</th><th>PR Count</th><th>Score</th></tr>"
+            for (i = 0; i < score.length; i++) {
+                temp += `<tr><td><a href='https://github.com/makesmatheasy/makesmatheasy/commits?author=${username[i]}'>${username[i]}</a></td><td>${score[i][0]}</td></td><td>${score[i][1]}</td></tr>`;
             }
             temp += "</table>";
             o.innerHTML = temp;
@@ -68,6 +117,9 @@
 
 <body onload="getdata();">
     <div class="container">
+        <br>
+        <h3>Leaderboard <i>Makes Math Easy</i> LGMSoC'21</h3>        
+        <br>
         <div id="demo"></div>
     </div>
 </body>
