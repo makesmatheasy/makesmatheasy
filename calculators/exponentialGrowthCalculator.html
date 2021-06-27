@@ -1,0 +1,21 @@
+<div id="expgrwths">
+    <h1>Exponential Growth Calculator </h1>
+    <p>&nbsp;</p>
+    <h3>Formula Used:\[x(t)=x_{0}(1+\frac{r}{100})^t\]</h3>
+    <form action="">
+        <input type="number" name="egc1" class="form__field" id="egc1" width="5em"
+            placeholder="Enter initial value(x₀)">
+        <p>&nbsp;</p>
+        <input type="number" name="egc2" class="form__field" id="egc2" placeholder="Enter rate of change(r)">
+        <p>&nbsp;</p>
+        <input type="number" name="egc3" class="form__field" id="egc3"
+            placeholder="Enter elapsed time( t in years)">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="egccal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p>&nbsp;</p>
+    <p id="egcans"></p>
+    <p id="egcexplain"></p>
+</div>

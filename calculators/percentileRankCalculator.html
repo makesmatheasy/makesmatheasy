@@ -1,0 +1,22 @@
+<div id="rankcals">
+    <h1 style="font-family:mathfont; text-align:center;">PERCENTILE RANK CALCULATOR </h1>
+    <form action="">
+        <input type="text" name="perrank" class="form__field" id="perrank" width="5em"
+            placeholder="Enter all the marks">
+        <p>&nbsp;</p>
+        <input type="text" name="peryour" class="form__field" id="peryour" placeholder="Enter your marks">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="perrankcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    <p id="perrankans1" style="color: white; text-align: center; font-family:mathfont"></p><br>
+    <p id="perrankans2" style="color: white; text-align: center; font-family:mathfont"></p><br>
+    <p id="perrankans3" style="color: white; text-align: center; font-family:mathfont"></p><br>
+    <p id="perrankans" style="color: white; text-align: center; font-family:mathfont"></p><br><br>
+
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont"> PR = L / N * 100<br>
+        where:<br>
+        PR is the percentile rank - It can take values from 0 to 100;<br>
+        L is the number of values from the set A that are lower than or equal to your data value xₘ; and<br>
+        N is the total number of values in the set A.</p>
+</div>

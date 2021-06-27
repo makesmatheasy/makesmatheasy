@@ -1,0 +1,33 @@
+<div id="interest">
+    <h2 >Simple and Compund Interest</h2>
+    <br>
+    <div class="form-group">
+        <input type="text" style="width: 15.625rem;" class="form__field" name="a" id="first"
+            placeholder="Enter principal" />
+        <input type="text" name="b" style="width: 15.625rem;" class="form__field" id="second"
+            placeholder="Enter time period " />
+        <input type="text" name="c" style="width: 15.625rem;" class="form__field" id="third"
+            placeholder="Enter rate of interest(%)" />
+        <br>
+        <br>
+        <div class="form-group">
+            <span >For Compound Interest related calculations:&nbsp;</span>
+            <select id="comp" class="btn btn-outline-light">
+                <option>Compounded Annually</option>
+                <option>Compounded Half-yearly</option>
+                <option>Compounded Quaterly</option>
+                <option>Compounded Monthly</option>
+            </select>
+        </div>
+        <button class="btn btn-outline-light" onclick="simple_interest();">Find</button>
+        <br>
+        <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
+            id="simpleinterstoutput1"></p>
+        <p class="stopwrap" style=" font-size: large; font-family:mathfont;"
+            id="simpleinterstoutput2"></p>
+        <p class="stopwrap" id="compoundinterestoutput1"
+            style=" font-size: large; font-family:mathfont;"></p>
+        <p class="stopwrap" id="compoundinterestoutput2"
+            style=" font-size: large; font-family:mathfont;"></p>
+    </div>
+</div>

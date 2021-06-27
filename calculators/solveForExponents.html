@@ -1,0 +1,40 @@
+<div id="expo">
+    <div class="text-center">
+        <h2><label>Solve for Exponent n</label></h2>
+    </div>
+    <h3>\[x^n \space = \space y\]</h3>
+    <div class="coll">
+        <form class="form-inline text-center">
+            <div class="p-5">
+                <div class="">
+                    <input type="number" id="xval" value='' placeholder="Enter x"
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
+                </div>
+                <div class="">
+                    <input type="number" id="yval" value='' placeholder="Enter y"
+                        style="border: none; background: transparent; border-bottom: 0.0625rem solid white; "><br>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row" style="margin:auto;">
+                <div class="col-6">
+                    <button type="button" class="btn btn-light" onclick="exposol();">
+                        Calculate
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br>
+
+    <h3 class="stopwrap" id="res" style="font-family:mathfont;"></h3>
+    <p class="stopwrap" id="steps1" style="font-family:mathfont;"></p>
+    <br>
+</div>
