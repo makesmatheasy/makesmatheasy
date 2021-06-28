@@ -559,7 +559,10 @@ function openit(id) {
         "#outlier",
         "#proportion",
         "#threestar",
+        "#probability",
         "#fourstar",
+        "#convolution",
+        "#incircle",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

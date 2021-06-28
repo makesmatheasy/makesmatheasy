@@ -29260,6 +29260,21 @@ function calculateSpeed(distance,time) {
     calculatedSpeedDisplay.innerText = `The calculated distance is ${temp} m.`;
     }
 
+
+function probability(favourable,out)
+{
+    var ans="";
+    var sol="";
+    favourable=parseInt(favourable);
+    ans+="Step1: Input the total number of favourable outcomes"+favourable;
+    out=parseInt(out);
+    ans+="Step2:Input the total number of possible outcomes"+out;
+    ans+="Step3:Calculating the probability";
+    sol = `\\frac{${favourable}}{${out}}`;
+    ans+="The result is"+sol;
+    return {'result':res,'steps':ans};
+}
+
 function fourstar(x,y)
 {
     var ans=""
@@ -29280,6 +29295,39 @@ function fourstar(x,y)
         ans+="It is not formed by four isosceles triangle";
     }
     return {'result':res,'steps':ans};
+}
 
+function convolution(n,x,h)
+{
+    var ans="";
+    var y="";
+    ans+="Step1:Input the total number of steps"
+    n=parseInt(n);
+    x=parseFloat(x);
+    ans+="Step2:The first function is "+x;
+    h=parseFloat(h);
+    ans+="Step3:The second function is "+h;
+    ans+="Step4:Run a loop till n and calculate the value of convoulution";
+    for (let index = 0; index < n; index++) {
+        y=y+(x*h);
+    }
+    return {'result':y,'steps':ans};
+}
+
+function incircleoftriangle(p,b,h)
+{
+    var ans="";
+    var res="";
+    p=parseInt(p);
+    ans+="Step1:Take the length of perpendicular"+p;
+    b=parseInt(b);
+    ans+="Step2:Take the length of base"+b;
+    h=parseInt(h);
+    ans+="Step3:Take the length of height"+h;
+    let r=(p+b-h)/2;
+    ans+="Step4:To calculate the inradius which is="+r;
+    res=3.14*r*r;
+    ans+="The area of the incircle is="+res;
+    return{'result':res,'steps':ans};
 }
 

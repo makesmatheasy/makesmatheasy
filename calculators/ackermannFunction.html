@@ -1,0 +1,38 @@
+<div>
+    <div  id="ackermann">
+        <p>The Ackermann function is multi-variable function from the natural numbers to the natural numbers
+            with very fast rate of growth.</p>
+        <br>
+        <br>
+        <form action="">
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the first number : &nbsp; &nbsp; </label>
+                <input type="number" id="ac1-num" class="form__field" placeholder="x"
+                    style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+            </div>
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the second number : &nbsp; &nbsp; </label>
+                <input type="number" id="ac2-num" class="form__field" placeholder="y"
+                    style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                    onclick="ackermannFunction(document.getElementById('ac1-num').value,document.getElementById('ac2-num').value);">
+                    Solve
+                </button>
+                <button type="button" class="btn btn-light"
+                    onclick="calcexackermannFunction(document.getElementById('ac1-num').value,document.getElementById('ac2-num').value);">
+                    Example
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="ackermannResult"></p>
+        </div>
+    </div>
+</div>
+<!-- end of Ackermann function -->

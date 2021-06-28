@@ -1,0 +1,30 @@
+<div id="eirs">
+
+
+    <h1 style="font-family:mathfont; text-align:center;">EFFECTIVE INTEREST RATE CALCULATOR </h1>
+    <p>&nbsp;</p>
+    <form action="">
+        <input type="number" name="air" class="form__field" id="air" width="5em"
+            placeholder="Enter nominal annual interest rate(R)">
+        <p>&nbsp;</p>
+        <input type="number" name="nop" class="form__field" id="nop" placeholder="Enter number of period(t)">
+        <p>&nbsp;</p>
+        <input type="number" name="cprd" class="form__field" id="cprd"
+            placeholder="Enter compounding per period(m)">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="eircal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="eirans"></p>
+    <p>&nbsp;</p>
+    <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;">
+        The effective annual interest rate is the real return on a savings account or any interest-paying
+        investment when the effects of compounding over time are taken into account.
+        <br> It also reveals the real percentage rate owed in interest on a loan, a credit card, or any other
+        debt.<br>
+        It is also called the effective interest rate, the effective rate, or the annual equivalent rate.
+
+    </div>
+
+</div>

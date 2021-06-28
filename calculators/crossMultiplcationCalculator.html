@@ -1,0 +1,22 @@
+<div id="cross">
+    <h1 style="text-align: center; margin-bottom: 4rem;">Cross Multiplication Calculator</h1>
+    <h2 style="margin-bottom: 2rem;" id="cformula">\[\frac{A}{B}=\frac{C}{D}\]</h2>
+    <h4>Enter any 3 fields</h4>
+    <form action="">
+        <input class="form__field" type="number" placeholder="Enter the First Value(A)" id="inputA"
+            oninput="cross()">
+        <br><br>
+        <input class="form__field" type="number" placeholder="Enter the Second Value(B)" id="inputB"
+            oninput="cross()">
+        <br><br>
+        <input class="form__field" type="number" placeholder="Enter the Third Value(C)" id="inputC"
+            oninput="cross()">
+        <br><br>
+        <input class="form__field" type="number" placeholder="Enter the Fourth Value(D)" id="inputD"
+            oninput="cross()">
+        <br><br>
+        <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="cross_explain"></p>
+</div>

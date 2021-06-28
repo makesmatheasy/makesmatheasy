@@ -1,0 +1,61 @@
+<div id="wandt">
+    <h1 style="text-align: center;margin: 4rem auto 4rem auto;">Work And Time Calculator</h1>
+    <h2 style="margin: 2rem auto 2rem auto;">Work, Time, Men</h2>
+    <p><strong>Work</strong> = <strong>Number of days</strong>
+        (<i>Time</i>)(<i>T or D</i>) X <strong>Number of men</strong>(<i>M</i>)</p>
+    <p>Derived Formula from above equation: W<sub>1</sub>/W<sub>2</sub> = (T<sub>1</sub> X N<sub>1</sub>) /
+        (T<sub>2</sub> X N<sub>2</sub>)</p>
+    <p style="margin-top:2rem; text-align: left;">What is the unknown value:</p>
+    <select class="btn btn-light" name="unknown" id="unknown" onchange="getUnknown()">
+        <option>Select</option>
+        <option value="Work">Work</option>
+        <option value="Time">Time</option>
+        <option value="Men">Men</option>
+    </select>
+    <br><br>
+    <div id="unknownWork">
+        <input class="form__field" type="number" id="1work1" placeholder="Enter Work(W1)">
+        <br>
+        <input class="form__field" type="number" id="1time1" placeholder="Enter Time(T1)">
+        <br>
+        <input class="form__field" type="number" id="1men1" placeholder="Enter Number of Men(N1)">
+        <br>
+        <input class="form__field" type="number" id="1time2" placeholder="Enter Time(T2)">
+        <br>
+        <input class="form__field" type="number" id="1men2" placeholder="Enter Number of Men(N2)">
+        <br><br>
+        <button class="btn btn-light" onclick="findWork()">Find Work</button>
+        <p id="workans"></p>
+        <p id="stepswork"></p>
+    </div>
+    <div id="unknownTime">
+        <input class="form__field" type="number" id="2work1" placeholder="Enter Work(W1)">
+        <br>
+        <input class="form__field" type="number" id="2time1" placeholder="Enter Time(T1)">
+        <br>
+        <input class="form__field" type="number" id="2men1" placeholder="Enter Number of Men(N1)">
+        <br>
+        <input class="form__field" type="number" id="2work2" placeholder="Enter Work(W2)">
+        <br>
+        <input class="form__field" type="number" id="2men2" placeholder="Enter Number of Men(N2)">
+        <br><br>
+        <button class="btn btn-light" onclick="findTime()">Find Time</button>
+        <p id="timeans"></p>
+        <p id="stepstime"></p>
+    </div>
+    <div id="unknownMen">
+        <input class="form__field" type="number" id="3work1" placeholder="Enter Work(W1)">
+        <br>
+        <input class="form__field" type="number" id="3time1" placeholder="Enter Time(T1)">
+        <br>
+        <input class="form__field" type="number" id="3men1" placeholder="Enter Number of Men(N1)">
+        <br>
+        <input class="form__field" type="number" id="3work2" placeholder="Enter Work(W2)">
+        <br>
+        <input class="form__field" type="number" id="3time2" placeholder="Enter Time(T2)">
+        <br><br>
+        <button class="btn btn-light" onclick="findMen()">Find Men</button>
+        <p id="menans"></p>
+        <p id="stepsmen"></p>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div id="simpletrignocollapse">
+    <div class="row">
+      <form action="">
+        <div class="col-4">
+            <p class="text-center">Fill atleast any Two</p>
+            <br>
+            <input type="number" id="p" class="form__field" placeholder="Perpendicular">
+            <input type="number" id="base" class="form__field" placeholder="Base">
+            <input type="number" id="h" class="form__field" placeholder="Hypotenuse">
+        </div>
+      </form>
+        <div class="col-4">
+            <img src="images/righttriangle.png" style="height:12.5rem">
+        </div>
+        <div class="col-4">
+            <button type="button" class="btn btn-light" onclick="solvesimpletrigo();checkforusetrigovalue();">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" type="button" onclick="this.form.reset();">
+                Reset
+            </button>
+            <button type="button" class="btn btn-light" onclick=calcexsolvesimpletrigo()>
+                Example
+            </button>
+        </div>
+    </div>
+    <div class="form-group">
+        <p style="font-family:mathfont" class="stopwrap" id="soltri"></p>
+    </div>
+    <div class="form-group">
+        <div class="text-center collapse" id="usetrigovaluesbtn">
+            <button style="margin: 0.125rem;" class="btn btn-outline-light" id="sini"
+                onclick="set(this)">Use
+                sinθ
+                value
+            </button>
+            <button style="margin: 0.125rem;" class="btn btn-outline-light" id="cosi"
+                onclick="set(this)">Use
+                cosθ
+                value
+            </button>
+            <button style="margin: 0.125rem;" class="btn btn-outline-light" id="tani"
+                onclick="set(this)">Use
+                tanθ
+                value
+            </button>
+            <button style="margin: 0.125rem;" class="btn btn-outline-light" id="coseci"
+                onclick="set(this)">Use
+                cosecθ
+                value
+            </button>
+            <button style="margin: 0.125rem;" class="btn btn-outline-light" id="seci"
+                onclick="set(this)">Use
+                secθ
+                value
+            </button>
+            <button style="margin: 0.125rem;" class="btn btn-outline-light" id="coti"
+                onclick="set(this)">Use
+                cotθ
+                value
+            </button>
+        </div>
+    </div>
+</div>
