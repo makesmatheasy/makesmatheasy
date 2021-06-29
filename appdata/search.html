@@ -1,13 +1,16 @@
 <style>
     .searchbox {
-        width: 90%;
+        width: 80%;
         background-color: var(--appwhite);
         border-radius: 50px;
         margin: 0 auto;
     }
+    .searchbox .table td{
+        border: none;
+    }
 
-    .search {
-        width: 100%;
+    .search {      
+        width: 100%;  
         padding: 0.8rem;
         background-color: transparent;
         outline: none !important;
@@ -57,16 +60,14 @@
     }    
 </script>
 
-<div class="row searchbox">
-    <div class="col-9">
-        <input type="text" class="search" placeholder="Start Typing" oninput="searchpp(this.value);">
-    </div>
-    <div class="col-1">
-        <img src="images/speechlogo.png" alt="speech">
-    </div>
-    <div class="col-1">
-        <i class="fa fa-search" style="color:var(--appblack);margin-top:15px;"></i>
-    </div>
+<div class="searchbox">
+    <table class="table">
+        <tr>
+            <td class="col-10"><input type="text" class="search" placeholder="Start Typing" oninput="searchpp(this.value);"></td>
+            <td class="col-1"><img src="images/speechlogo.png" alt="speech"></td>
+            <td class="col-1" onclick="searchgoogle(document.querySelector('.search').value);"><i class="fa fa-search" style="color:var(--appblack);margin-top:15px;cursor:pointer;"></i></td>
+        </tr>
+    </table>    
 </div>
 
 <div id="searchresult">
