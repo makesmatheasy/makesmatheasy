@@ -28573,15 +28573,14 @@ function specialvalue() {
 }
 
 
-function armstrongvalue() {
-    var num = document.getElementById("arm").value;
-    var digits = Math.floor(Math.log10(num) + 1);
-    if (num == "") {
-        document.getElementById("armans").innerHTML = "Please input a no";
-    }
-    else {
+function armstrongvalue(num) {
+    
+        var digitss = Math.floor(Math.log10(num) + 1);
+   
+    
         num = parseInt(num);
         var temp = num;
+        var r = 0;
         var sum = 0;
         while (temp > 0) {
             let d = temp % 10;
@@ -28613,15 +28612,14 @@ function armstrongvalue() {
         if (sum == num) {
             ans2 += "\\[Since \\space the \\space sum \\space i.e \\space " + sum + " \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
             ans2 += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space armstrong \\space number\\]"
-            document.getElementById("armans").innerHTML = ans + ans2;
+            
         }
         else {
             ans2 += "\\[Since \\space the \\space sum \\space i.e \\space " + sum + " \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + "\\]";
             ans2 += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space armstrong \\space number\\]"
-            document.getElementById("armans").innerHTML = ans + ans2;
+          
         }
-        renderMathInElement(document.getElementById("armans"));
-    }
+        return {'steps ' : ans + ans2 }
 }
 // palindrome no
 function checkPalindrome(num) {
