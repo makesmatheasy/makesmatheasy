@@ -29328,4 +29328,24 @@ function incircleoftriangle(p,b,h)
     ans+="The area of the incircle is="+res;
     return{'result':res,'steps':ans};
 }
+function circularsector(r,theta)
+{
+    var ans="";
+    var res="";
+    r=parseFloat(r);
+    ans+="Step1: Input the radius of the circle="+r;
+    theta=parseFloat(theta);
+    ans+="Step2:Input the angle subtended at the center of the circle in radian="+theta;
+    if(theta<360)
+    {
+        res=0.5*(r*r*theta);
+        ans+="The area of the circular sector is="+res;
+    }
+    else
+    {
+        res=0;
+        ans+="The area of sector is not possible";
+    }
+    return {'result':res,'steps':ans};
+}
 
