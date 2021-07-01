@@ -28513,12 +28513,8 @@ function hyperfind() {
     document.getElementById("hyperans").innerHTML = ans;
 }
 // special number
-function specialvalue() {
-    var num = document.getElementById("special").value;
-    if (num == "") {
-        document.getElementById("specialans").innerHTML = "Please input a no";
-    }
-    else {
+function specialvalue(num) {
+    
         var re = 0;
         num = parseInt(num);
         number = num;
@@ -28561,15 +28557,15 @@ function specialvalue() {
         if (num == sum) {
             ans2 += "\\[Since \\space the \\space result \\space i.e \\space " + sum + " \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
             ans2 += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space special \\space number\\]"
-            document.getElementById("specialans").innerHTML = ans + ans2;
+            
         }
         else {
             ans2 += "\\[Since \\space the \\space result \\space i.e \\space " + sum + " \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + "\\]";
             ans2 += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space special\\space number\\]"
-            document.getElementById("specialans").innerHTML = ans + ans2;
+            
         }
-        renderMathInElement(document.getElementById("specialans"));
-    }
+        return {'steps' : ans + ans2}
+    
 }
 
 

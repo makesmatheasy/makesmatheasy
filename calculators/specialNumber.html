@@ -1,4 +1,18 @@
-<div id="specialnum" style="text-align: center;">
+<script>
+    function callspecialnumber() {
+        var num = document.getElementById("special").value;
+
+        var data = specialvalue(num);
+
+        document.getElementById("specialans").innerHTML = data['steps'];
+
+
+        renderMathInElement(document.getElementById('specialans'));
+
+
+    }
+</script>
+
     <div class="container">
         <h1 style="color: white;font-family:mathfont;text-align: center;">Special Number Checker</h2>
             <br>
@@ -12,7 +26,7 @@
                         placeholder="Enter the input number" class="form__field">
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-light" onclick="specialvalue()">Find</button>
+                    <button type="button" class="btn btn-light" onclick="callspecialvalue()">Find</button>
                     <button type="button" class="btn btn-light" onclick="this.form.reset();">
                         Reset
                     </button>
@@ -21,4 +35,4 @@
             <br>
             <p class="stopwrap" style="color:white;" id="specialans"></p><br>
     </div>
-</div>
+
