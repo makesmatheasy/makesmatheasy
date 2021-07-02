@@ -74,7 +74,7 @@
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
-                        var d = JSON.parse(this.responseText);
+                      
                         sessionStorage.setItem('datapr', this.responseText);
                         calculatescore(d);
                     }
