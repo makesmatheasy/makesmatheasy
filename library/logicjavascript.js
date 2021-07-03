@@ -29344,4 +29344,20 @@ function circularsector(r,theta)
     }
     return {'result':res,'steps':ans};
 }
+function ucontrol(u,n)
+{
+    var ans="";
+    var res="";
+    u=parseFloat(u);
+    ans+="Step1:Input the average defect count="+u;
+    n=parseInt(n);
+    ans+="Step2:Input the sample size="+n;
+    let ucl=u+Math.sqrt(u/n);
+    ans+="Step3:Calculate the upper control limit-"+ucl;
+    let lcl=u-Math.sqrt(u/n);
+    ans+="Step4:Calculate the lower control limit-"+lcl;
+    res=ucl-lcl;
+    ans+="The u control chart limit will be="+res;
+    return {'result':res,'steps':ans};
+}
 
