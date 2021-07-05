@@ -563,6 +563,8 @@ function openit(id) {
         "#fourstar",
         "#convolution",
         "#incircle",
+        "#circularsector",
+        "#ucontrol",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

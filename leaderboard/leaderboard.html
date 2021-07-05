@@ -31,14 +31,15 @@
     </style>
     <script>
         function calculatescore(d) {
-            if(sessionStorage.getItem('datapr')!=null){                                
-                d=JSON.parse(d);
-            }            
+                                       
+            d=JSON.parse(d);
+          
             var score = {
                 "🟥 Level4": 45,
                 "🟧 Level3": 30,
                 "🟨 Level2": 15,
                 "🟩 Level1": 10,
+                "🟪 Level0": 5
             }
             var total_PR = d['total_count'];
 
@@ -73,9 +74,9 @@
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
-                        var d = JSON.parse(this.responseText);
+                      
                         sessionStorage.setItem('datapr', this.responseText);
-                        calculatescore(d);
+                        calculatescore(sessionStorage.getItem('datapr'));
                     }
                 };
                 xhttp.open("GET", "https://api.github.com/search/issues?q=is:pr+is:merged+repo:makesmatheasy/makesmatheasy+label:LGMSOC21&per_page=100", true);
