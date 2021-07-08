@@ -1,4 +1,16 @@
-<div id="hypers" style="text-align: center;">
+<script>
+    function callhyperfind() {
+        var num1 = document.getElementById("hypers1").value;
+        var num2 = document.getElementById("hypers2").value
+
+        var data = hyperfind(num1,num2);
+
+        document.getElementById("hyperans").innerHTML = data['steps'];
+    
+        renderMathInElement(document.getElementById('hyperans'));
+    }
+</script>
+    
     <div class="container">
         <h1 style="color: white;font-family:mathfont;text-align: center;">Hyperperfect Number Checker</h2>
             <br>
@@ -13,7 +25,7 @@
                         placeholder="Enter the value of K" class="form__field">
                 </div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-light" onclick="hyperfind()">Check</button>
+                    <button type="button" class="btn btn-light" onclick="callhyperfind()">Check</button>
                     <button type="button" class="btn btn-light" onclick="this.form.reset();">
                         Reset
                     </button>
@@ -24,4 +36,3 @@
                 <p class="stopwrap" style="color:white;" id="hyperans"></p><br>
             </div>
     </div>
-</div>

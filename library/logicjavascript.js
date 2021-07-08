@@ -28492,11 +28492,9 @@ function isHyperPerfect(N, K) {
     else
         return false;
 }
-function hyperfind() {
-    var num1 = document.getElementById("hypers1").value;
-    var num2 = document.getElementById("hypers2").value;
-
-    ans = "";
+function hyperfind(num1,num2){}
+ 
+    var ans = "";
     if (num1 == "" || num2 == "") {
         ans = "Please enter the number";
     }
@@ -28507,10 +28505,10 @@ function hyperfind() {
             ans = num1 + " is " + num2 + "-Hyperperfect number";
         }
         else {
-            ans = num1 + " is not " + num2 + "-Hyperperfect number";;
+            ans = num1 + " is not " + num2 + "-Hyperperfect number";
         }
     }
-    document.getElementById("hyperans").innerHTML = ans;
+    return {'steps' : ans }
 }
 // special number
 function specialvalue(num) {
@@ -28564,7 +28562,7 @@ function specialvalue(num) {
             ans2 += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space special\\space number\\]"
             
         }
-        return {'steps' : ans + ans2}
+        return {'steps' : ans + ans2 }
     
 }
 
@@ -29323,41 +29321,5 @@ function incircleoftriangle(p,b,h)
     res=3.14*r*r;
     ans+="The area of the incircle is="+res;
     return{'result':res,'steps':ans};
-}
-function circularsector(r,theta)
-{
-    var ans="";
-    var res="";
-    r=parseFloat(r);
-    ans+="Step1: Input the radius of the circle="+r;
-    theta=parseFloat(theta);
-    ans+="Step2:Input the angle subtended at the center of the circle in radian="+theta;
-    if(theta<360)
-    {
-        res=0.5*(r*r*theta);
-        ans+="The area of the circular sector is="+res;
-    }
-    else
-    {
-        res=0;
-        ans+="The area of sector is not possible";
-    }
-    return {'result':res,'steps':ans};
-}
-function ucontrol(u,n)
-{
-    var ans="";
-    var res="";
-    u=parseFloat(u);
-    ans+="Step1:Input the average defect count="+u;
-    n=parseInt(n);
-    ans+="Step2:Input the sample size="+n;
-    let ucl=u+Math.sqrt(u/n);
-    ans+="Step3:Calculate the upper control limit-"+ucl;
-    let lcl=u-Math.sqrt(u/n);
-    ans+="Step4:Calculate the lower control limit-"+lcl;
-    res=ucl-lcl;
-    ans+="The u control chart limit will be="+res;
-    return {'result':res,'steps':ans};
 }
 
