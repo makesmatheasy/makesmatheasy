@@ -28492,11 +28492,9 @@ function isHyperPerfect(N, K) {
     else
         return false;
 }
-function hyperfind() {
-    var num1 = document.getElementById("hypers1").value;
-    var num2 = document.getElementById("hypers2").value;
-
-    ans = "";
+function hyperfind(num1,num2){}
+ 
+    var ans = "";
     if (num1 == "" || num2 == "") {
         ans = "Please enter the number";
     }
@@ -28507,10 +28505,10 @@ function hyperfind() {
             ans = num1 + " is " + num2 + "-Hyperperfect number";
         }
         else {
-            ans = num1 + " is not " + num2 + "-Hyperperfect number";;
+            ans = num1 + " is not " + num2 + "-Hyperperfect number";
         }
     }
-    document.getElementById("hyperans").innerHTML = ans;
+    return {'steps' : ans }
 }
 // special number
 function specialvalue(num) {
@@ -28564,7 +28562,7 @@ function specialvalue(num) {
             ans2 += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space special\\space number\\]"
             
         }
-        return {'steps' : ans + ans2}
+        return {'steps' : ans + ans2 }
     
 }
 
@@ -29324,6 +29322,8 @@ function incircleoftriangle(p,b,h)
     ans+="The area of the incircle is="+res;
     return{'result':res,'steps':ans};
 }
+
+
 function circularsector(r,theta)
 {
     var ans="";
@@ -29360,4 +29360,3 @@ function ucontrol(u,n)
     ans+="The u control chart limit will be="+res;
     return {'result':res,'steps':ans};
 }
-
