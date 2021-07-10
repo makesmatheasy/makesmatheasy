@@ -1,0 +1,21 @@
+<div id="hydroz">
+
+
+    <h1>HYDROSTATIC PRESSURE CALCULATOR </h1>
+    <form action="">
+        <input type="number" name="dens" class="form__field" id="dens" width="5em"
+            placeholder="Enter fluid's density(in kg/m^3)[ρ]">
+        <p>&nbsp;</p>
+        <input type="number" name="dept" class="form__field" id="dept"
+            placeholder="Enter fluid's depth (in meter)[h]">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="hydrocal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p class="stopwrap" id="hydroans1" style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="hydroans2" style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="hydroans3" style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="hydroans4" style="font-family:mathfont;"></p><br>
+    <p class="stopwrap" id="hydroans" style="font-family:mathfont;"></p>
+</div>

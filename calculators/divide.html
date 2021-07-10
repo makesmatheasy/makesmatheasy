@@ -1,0 +1,72 @@
+<div id="divide">
+    <div class="dropdown-divider"></div>
+    <div class="form-group text-center">
+        <form action="">
+            <table>
+                <tr>
+                    <td>
+                        <input type="number" id="divisornumwith" class="form__field"
+                            style="width:4.375rem;border-bottom:0.375rem solid var(--apppink);">
+                    </td>
+                    <td>
+                        <input type="number" id="dividendnum" class="form__field"
+                            style="width:7.5rem;border-left:0.375rem solid var(--apppink);border-top:0.375rem solid var(--apppink);">
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-light"
+                            onclick="divisionwithsteps()">Solve</button>
+                        <button type="button" class="btn btn-light"
+                            onclick="this.form.reset();">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <!--                <div class="col-3">-->
+        <p id="resultofdivsteps" class="stopwrap"></p>
+        <!--                </div>-->
+        <p id="resultdivi" class="stopwrap" style="font-family:mathfont;;"></p>
+    </div>
+    <!--            -->
+
+
+    <div class="dropdown-divider"></div>
+    <h5>Check Divisibility</h5>
+    <div id="checkdivisibility">
+        <form class="form-inline">
+            <div class="form-group">
+                <label style="display:inline-block;font-family:mathfont;">Is&nbsp;</label>
+                <input type="number" id="n1" class="form__field" style="display:inline-block;width:20%">
+                <label style="font-family:mathfont;">&nbsp;divisible by&nbsp;</label>
+                <input type="number" id="n2" class="form__field" style="display:inline-block;width:20%">
+                <label style="display:inline-block;font-family:mathfont;">&nbsp;?&nbsp;</label>
+                <button type="button" class="btn btn-light" onclick="checkdivisibility()">Check</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+            </div>
+        </form>
+
+        <div class="form-group">
+            <p id="divisibilitycheckresult" class="stopwrap" style="font-family:mathfont;;"></p>
+            <p id="divisibilitycheckresultexplanation" class="stopwrap" style="font-family:mathfont;;"></p>
+        </div>
+
+        <button class="btn btn-outline-light" id="showcheckdivisibilitysteps"
+            onclick="showdivisionstepsforcheckdivisibility()">Show Division Steps
+        </button>
+    </div>
+    <div class="dropdown-divider"></div>
+    <h5>Variable Divide</h5>
+    <div>
+        <form class="form-inline">
+            <input value="t" type="text" id="withvardivi" class="form__field"
+                style="width:4.375rem;border-bottom:0.375rem solid black;">
+            <input value="2t^2-3t" type="text" id="numvardivi" class="form__field"
+                style="width:7.5rem;border-left:0.375rem solid black;border-top:0.375rem solid black;">
+            <button type="button" id="variabledividebtn" class="btn btn-light">Solve</button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+
+        </form>
+    </div>
+    <div class="row">
+        <p id="resultofvariabledivide" style="font-family:mathfont;;"></p>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div id="gammaDist" style="text-align: center;">
+    <h1>Gamma Distribution Calculator</h1>
+    <form action="">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="inputx" placeholder="Enter the value of x">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="inputa" placeholder="Enter the value of α">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <input type="number" class="form__field" id="inputb" placeholder="Enter the value of β">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-light" onclick="gammaprobability(1)">
+                Solve
+            </button>
+            <button type="button" class="btn btn-light" onclick="gammaprobability(2)">
+                Mean
+            </button>
+            <button type="button" class="btn btn-light" onclick="gammaprobability(3)">
+                Variance
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+    <br>
+    <div class="form-group text-center">
+        <p class="stopwrap" style="color:white;" id="gammaprobAns"></p>
+    </div>
+    <br>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;">
+        <p>\[P.M.F = f(x;\alpha,\beta)
+            = \frac{\beta^\alpha x^{\alpha-1} e^{-\beta x}}{\Gamma(\alpha)}\]</p> where,
+        <br> α = shape parameter <br> x = random variable <br> β = scale parameter <br> Γ(x) = the gamma
+        function
+    </div>
+</div>

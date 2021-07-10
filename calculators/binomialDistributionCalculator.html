@@ -1,0 +1,22 @@
+<div id="bpmfs">
+    <h1 style="font-family:mathfont; text-align:center;"> Binomial Distribution Calculator </h1>
+    <form action="">
+        <input type="number" name="psuc" class="form__field" id="psuc" placeholder="Enter probability of success">
+        <p>&nbsp;</p>
+        <input type="number" name="suc" class="form__field" id="suc" placeholder="Enter number of success">
+        <p>&nbsp;</p>
+        <input type="number" name="tri" class="form__field" id="tri" placeholder="Enter number of trials">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="bpcal(1)">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="bpcal(2)">Mean</button>
+        <button type="button" class="btn btn-outline-light" onclick="bpcal(3)">Variance</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="bpans"></div>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;">
+        <p>\[P.M.F = \, \frac{n!}{(n-r)!r!} p^x (1-p)^y\]</p> where, <br> n= no. of trials <br> r= no. of successful
+        events
+        <br> x= probability of success <br> y= porobability of not being successful(1-x)
+    </div>
+</div>

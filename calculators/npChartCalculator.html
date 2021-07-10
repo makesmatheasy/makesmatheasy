@@ -1,0 +1,26 @@
+<div id="npchart">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">np chart Calculator</h1>
+    <p style="margin-top: 2rem;">
+        NP charts are used to monitor the number of nonconforming units of a process based on samples taken
+        from the process at given times (hours, shifts, days, weeks, months, etc.)
+        .We plot a graph of No defective items vs Sample No.
+        If all the points of the graph lie within the control limits, then the process is under statistial
+        control.
+    </p>
+    <p id="tformula" style="margin-bottom:4rem;"></p>
+    <form action="">
+        <input class="form__field" type="text" id="defective"
+            placeholder="Enter list of defective items separated by SPACE ">
+        <br><br>
+        <input class="form__field" type="number" id="no" placeholder="Number of items/samples (n)">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="npvalue()">Test</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+    <p id="npans"></p>
+    <div id="stepsbox">
+        <p id="cl" style="text-align: left; margin-top: 2rem;"></p>
+        <p id="uppercontrol"></p>
+        <p id="lowercontrol"></p>
+    </div>
+</div>

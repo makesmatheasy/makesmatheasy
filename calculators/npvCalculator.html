@@ -1,0 +1,17 @@
+<div id="npv">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">NPV Calculator</h1>
+
+    <form action="">
+        <input class="form__field" type="text" id="npvsensi" placeholder="Enter Sensitivity">
+        <br><br>
+        <input class="form__field" type="text" id="npvspeci" placeholder="Enter Specificity">
+        <br><br>
+        <input class="form__field" type="text" id="npvprev" placeholder="Enter Prevalence">
+
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="npvCal()">Calculate</button>
+        <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="npvans"></p>
+</div>

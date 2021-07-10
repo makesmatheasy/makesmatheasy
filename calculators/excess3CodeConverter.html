@@ -1,0 +1,130 @@
+<div>
+<div id="ex3">
+    <div class="main" style="padding-top: 2.5rem; padding-left: 2.5rem;">
+        <div class="col-6">
+            <div class="form-group">
+                <h5>Excess-3 Code Converter</h5><br>
+                <h5>From</h5>
+                <select id="ex3-select1" class="form__field" onchange="convertex3()">
+                    <option class="form_field" style="background-color: #232a36;">
+                        Binary
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Octal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Hexa decimal
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Excess-3
+                    </option>
+                </select>
+
+                <input type="number" id="ex3-input" value="0" class="form__field" oninput="convertex3()">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <h5>To</h5>
+                <select id="ex3-select2" class="form__field" onchange="convertex3()">
+                    <option class="form__field" style="background-color: #232a36;">
+                        Excess-3
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Binary
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Decimal
+                    </option>
+                    <option class="form__field" style="background-color: #232a36;">
+                        Octal
+                    </option>
+                    <option class="form_field" style="background-color: #232a36;">
+                        Hexa decimal
+                    </option>
+                </select>
+
+            </div>
+            <label class="form__group" id="ex3-result">0</label>
+            <p class="form__group" id="ex3-work">
+                << /p>
+        </div>
+    </div>
+    <br><br>
+    <div class="main" style="padding-left: 3.125rem;">
+        <h3 style="text-align: center;">Decimal/Excess-3 Table</h3>
+        <table class="table table-bordered table-dark">
+            <tbody style="text-align: center;">
+                <tr>
+                    <th scope="col">Decimal Equivalent</strong></th>
+                    <th scope="col">Excess-3 Code</strong></th>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>0</p>
+                    </th>
+                    <td>0 0 1 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>1</p>
+                    </th>
+                    <td>0 1 0 0</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>2</p>
+                    </th>
+                    <td>0 1 0 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>3</p>
+                    </th>
+                    <td>0 1 1 0</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>4</p>
+                    </th>
+                    <td>0 1 1 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>5</p>
+                    </th>
+                    <td>1 0 0 0</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>6</p>
+                    </th>
+                    <td>1 0 0 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>7</p>
+                    </th>
+                    <td>1 0 1 0</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>8</p>
+                    </th>
+                    <td>1 0 1 1</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <p>9</p>
+                    </th>
+                    <td>1 1 0 0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</div>

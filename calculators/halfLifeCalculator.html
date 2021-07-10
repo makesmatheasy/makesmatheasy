@@ -1,0 +1,21 @@
+<div id="halflife">
+    <h1 style="font-family:mathfont; text-align:center;">Half Life Calculator </h1>
+    <br>
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">In radioactivity, the
+        interval of
+        time required for one-half of the atomic nuclei of a radioactive sample to decay (change spontaneously into
+        other
+        nuclear species by emitting particles and energy), or, equivalently, the time interval
+        required for the number of disintegrations per second of a radioactive material to decrease by one-half is
+        called Half-life.</p>
+    <br><br>
+    <form action="">
+        <input type="text" class="form__field" id="decay" width="5em" placeholder="Enter the decay constant">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="halflifeCalc()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="halflifeAns" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+</div>
+

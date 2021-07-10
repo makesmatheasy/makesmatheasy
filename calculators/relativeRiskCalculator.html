@@ -1,0 +1,39 @@
+<div id="relrisk">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Relative Risk Calculator</h1>
+    <p style="margin-top: 2rem;">
+        Relative risk compares the probability of a disease being developed in a
+        group exposed to a particular factor to the probability of the same disease being developed in a
+        control group
+    </p>
+    <p style="text-align: left; color: white; margin-top:2rem;" id="relriskform"></p>
+    <p style="text-align: left; color: white; margin-top:2rem;">where,</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">a is the number of members of the exposed
+        group who developed the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">b is the number of members of the exposed
+        group who didn't develop the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">c is the number of members of the control
+        group who developed the disease;</p>
+    <p style="text-align: left; color: white; margin-top:2rem;">d is the number of members of the control
+        group who didn't develop the disease;</p>
+
+    <form action="">
+        <p style="text-align: left; color: white; margin-top:2rem;">Exposed Group</p>
+        <input class="form__field" type="text" id="relexp0"
+            placeholder="Enter number of members who developed the disease">
+        <br>
+        <input class="form__field" type="text" id="relexp1"
+            placeholder="Enter number of members who didn't develop the disease">
+        <br><br>
+        <p style="text-align: left; color: white; margin-top:2rem;">Control Group</p>
+        <input class="form__field" type="text" id="relcont0"
+            placeholder="Enter number of members who developed the disease">
+        <br>
+        <input class="form__field" type="text" id="relcont1"
+            placeholder="Enter number of members who didn't develop the disease">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="relrisk()">Calculate</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="relriskans"></p>
+</div>

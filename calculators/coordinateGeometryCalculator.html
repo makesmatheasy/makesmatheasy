@@ -1,0 +1,469 @@
+<div id="analytical">
+    <div class="text-center">
+        <h2><label>Coordinate Geometry Calculator</label></h2>
+    </div>
+    <br><br>
+    <h3 style="text-align: center;">Distance/MidPoint/Endpoint </h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Coordinate 1 = (<input type="text" id="xOne" size=12 value=''
+                    placeholder="                   x1"> ,
+                <input type="text" id="yOne" size=12 value='' placeholder="                   y1">)
+                <br>
+                Coordinate 2 = (<input type="text" id="xTwo" size=12 value=''
+                    placeholder="                   x2"> ,
+                <input type="text" id="yTwo" size=12 value='' placeholder="                   y2">)
+                <br>
+                <br>
+                <button type="button" class="btn btn-light" onclick=ShowDistance()>
+                    Distance
+                </button><button type="button" class="btn btn-light" onclick=midpointsolve()>
+                    Midpoint
+                </button><button type="button" class="btn btn-light" onclick=endpointsolve()>
+                    Endpoint
+                </button><button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p id="dis_formula" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
+    <h4 style="text-align: center;" id="outPut"> </h4> <br><br>
+
+    <h3 style="text-align: center;">3D Distance calculator </h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Coordinate 1 = (<input type="text" id="3dx1" size=12 value=''
+                    placeholder="                   x1"> ,
+                <input type="text" id="3dy1" size=12 value='' placeholder="                   y1">)
+                <input type="text" id="3dz1" size=12 value='' placeholder="                   z1">)
+                <br>
+                Coordinate 2 = (<input type="text" id="3dx2" size=12 value=''
+                    placeholder="                   x2"> ,
+                <input type="text" id="3dy2" size=12 value='' placeholder="                   y2">)
+                <input type="text" id="3dz2" size=12 value='' placeholder="                   z2">)
+                <br>
+                <br>
+                <button type="button" class="btn btn-light" onclick=Show3dDistance()>
+                    Distance
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+                <br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p id="exp3d" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
+    <h4 style="text-align: center;" id="3dans"> </h4> <br><br>
+
+    <h3 style="text-align: center;"> When Two Lines Meet </h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Equation 1 : <input type="text" id="aone" size=3 value='' placeholder="A1"> x +
+                <input type="text" id="bone" size=3 value='' placeholder="B1"> y + <input type="text"
+                    id="cone" size=3 value='' placeholder="C1"> = 0 <br><br>
+                Equation 2 : <input type="text" id="atwo" size=3 value='' placeholder="A2"> x +
+                <input type="text" id="btwo" size=3 value='' placeholder="B2"> y + <input type="text"
+                    id="ctwo" size=3 value='' placeholder="C2"> = 0 <br><br>
+                <button type="button" class="btn btn-light" onclick=interpointsolve()>Intersection
+                    Point</button>
+                <button type="button" class="btn btn-light" onclick=anglesolve()>Angle</button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p class="stopwrap" id="formula" style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="formula1" style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="formula2" style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="formula3" style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="inter_output" style="font-family:mathfont;"></p><br>
+
+
+
+
+    <h3 style="text-align: center;">Distance between point and a line</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Line Equation : <input type="text" id="a" size=3 value='' placeholder="A"> x +
+                <input type="text" id="b" size=3 value='' placeholder="B"> y + <input type="text" id="c"
+                    size=3 value='' placeholder="C"> = 0<br><br>
+                Point = (<input type="text" id="point_one" size=5 value='' placeholder="x1"> ,
+                <input type="text" id="point_two" size=5 value='' placeholder="y1">)<br><br>
+                <button type="button" class="btn btn-light" onclick=dispointsolve()> Calculate Distance
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p class="stopwrap" id="dis_point" style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="dis_point1" style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="dis_point2" style="font-family:mathfont;"></p>
+    <p class="stopwrap" id="dis_op" style="font-family:mathfont;"></p><br>
+
+    <h3 style="text-align: center;">Line Checker</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Coordinate 1 = (<input type="text" id="xone" size=5 value='' placeholder="x1"> ,
+                <input type="text" id="yone" size=5 value='' placeholder="y1">)
+                <br>
+                Coordinate 2 = (<input type="text" id="xtwo" size=5 value='' placeholder="x2"> ,
+                <input type="text" id="ytwo" size=5 value='' placeholder="y2">)
+                <br>
+                Coordinate 3 = (<input type="text" id="xthree" size=5 value='' placeholder="x3"> ,
+                <input type="text" id="ythree" size=5 value='' placeholder="y3">)
+                <br>
+                Coordinate 4 = (<input type="text" id="xfour" size=5 value='' placeholder="x4"> ,
+                <input type="text" id="yfour" size=5 value='' placeholder="y4">)
+                <br><br>
+                <button type="button" class="btn btn-light" onclick=parallelsolve()>
+                    Parallel Check
+                </button>
+                <button type="button" class="btn btn-light" onclick=perpendicularsolve()>
+                    Perpendicular Check
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p class="text-center" id="line1"> </p> <br>
+    <p class="text-center" id="line2"> </p> <br>
+
+    <h3 style="text-align: center;">Section Formula</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Coordinate 1 = (<input type="text" id="x1" size=5 value='' placeholder="x1"> ,
+                <input type="text" id="y1" size=5 value='' placeholder="y1">)
+                <br><br>
+                Coordinate 2 = (<input type="text" id="x2" size=5 value='' placeholder="x2"> ,
+                <input type="text" id="y2" size=5 value='' placeholder="y2">)
+                <br><br>
+                Ratio = (<input type="text" id="m" size=3 value='' placeholder="m"> ,
+                <input type="text" id="n" size=3 value='' placeholder="n">)
+                <br>
+                <br><br>
+                <button type="button" class="btn btn-light" onclick=solvesection()>
+                    Calculate
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p id="sec_formula" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
+    <p id="output"> </p> <br>
+
+    <h3 style="text-align: center;">Collinear Points Checker</h3><br>
+    <form action="">
+        <div class="coll">
+            <p> Coordinate 1 = (<input type="text" id="a1" size=5 value='' placeholder="x1"> ,
+                <input type="text" id="b1" size=5 value='' placeholder="y1">)
+                <br><br>
+                Coordinate 2 = (<input type="text" id="a2" size=5 value='' placeholder="x2"> ,
+                <input type="text" id="b2" size=5 value='' placeholder="y2">)
+                <br><br>
+                Coordinate 3 = (<input type="text" id="a3" size=5 value='' placeholder="x3"> ,
+                <input type="text" id="b3" size=5 value='' placeholder="y3">)
+                <br><br>
+                <button type="button" class="btn btn-light" onclick=collinearsolve()> Calculate</button><br>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </p>
+        </div>
+    </form>
+
+    <h4 id="collop1" class="text-center" style="color:white"></h4><br>
+    <h4 id="collop2" class="text-center" style="color:white"></h4><br><br>
+
+    <h3 style="text-align: center;">Line and one Point</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Line Equation : <input type="text" id="plpa" size=3 value='' placeholder="A"> x +
+                <input type="text" id="plpb" size=3 value='' placeholder="B"> y = <input type="text"
+                    id="plpc" size=3 value='' placeholder="C"><br><br>
+                Point = (<input type="text" id="plpx" size=5 value='' placeholder="x"> ,
+                <input type="text" id="plpy" size=5 value='' placeholder="y">)<br><br>
+                <button type="button" class="btn btn-light" onclick=reflex()>
+                    Reflexation of point by line
+                </button>
+                <button type="button" class="btn btn-light" onclick=plpSolve()>
+                    Find Equation Of Perpendicular Line
+                </button>
+                <button type="button" class="btn btn-light" onclick=pppSolve()>
+                    Find Equation Of Parallel Line
+                </button>
+                <button type="button" class="btn btn-light" onclick=foot()>
+                    Foot of point on line
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p id="dis_point" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap" align="right">
+    </p>
+    <h4 id="plp_op"> </h4><br><br>
+    <p id="plp_work"></p>
+    <p id="ppp_work"></p>
+
+
+
+    <h3 style="text-align: center;">Distance Between Two Parallel Line</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Line Equation A : <input type="text" id="pppdaq1" size=3 value='' placeholder="A"
+                    oninput="document.getElementById('pppdaq2').value = value"> x +
+                <input type="text" id="pppdbq1" size=3 value='' placeholder="B"
+                    oninput="document.getElementById('pppdbq2').value = value"> y = <input type="text"
+                    id="pppdcq1" size=3 value='' placeholder="C">
+                <br><br>
+                Line Equation B : <input type="text" id="pppdaq2" size=3 value='' placeholder="A"
+                    oninput="document.getElementById('pppdaq1').value = value"> x +
+                <input type="text" id="pppdbq2" size=3 value='' placeholder="B"
+                    oninput="document.getElementById('pppdbq1').value = value"> y = <input type="text"
+                    id="pppdcq2" size=3 value='' placeholder="C">
+                <br><br>
+                <button type="button" class="btn btn-light" onclick=pppdSolve()>
+                    Find
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p id="pppdcq1explane" style="font-family:mathfont;;width:auto;" class="stopwrap" align="right"></p>
+    <p id="pppdcq1output"> </p>
+
+    <h3 style="text-align: center;">Perpendiculer Distance From Origin </h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Line Equation A : <input type="text" id="pppdaqo1" size=3 value='' placeholder="A"> x +
+                <input type="text" id="pppdbqo1" size=3 value='' placeholder="B"> y = <input type="text"
+                    id="pppdcqo1" size=3 value='' placeholder="C">
+                <br><br>
+
+                <button type="button" class="btn btn-light" onclick=pppdoSolve()>
+                    Find
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p id="pppdcq1explaneo" style="font-family:mathfont;;width:auto;" class="stopwrap" align="right"></p>
+    <p id="pppdcq1outputo"> </p>
+
+
+
+    <h3 style="text-align: center;">Circle Calculator</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+            <p>\[Equation \space of \space Circle \space : \space \space \space \space \]</p><input
+                type="text" id="qcenterr" size=3 value='' placeholder="A"
+                oninput="document.getElementById('pcenterr').value = value">
+            <p>\[x^2 \space + \space \]</p> <input type="text" id="pcenterr" size=3 value='' placeholder="A"
+                oninput="document.getElementById('qcenterr').value = value">
+            <p>\[y^2 \space + \space \]</p> <input type="text" id="acenterr" size=3 value=''
+                placeholder="g">
+            <p>\[x \space + \space \]</p> +
+            <input type="text" id="bcenterr" size=3 value='' placeholder="h">
+            <p>\[y \space + \space \]</p> + <input type="text" id="ccenterr" size=3 value=''
+                placeholder="C">
+            <p>\[\space = \space 0 \newline \]</p>
+            <br><br>
+            </p>
+
+        </div><br>
+
+        <button type="button" class="btn btn-light" onclick=centersolve()>
+            Center
+        </button>
+        <button type="button" class="btn btn-light" onclick=centerrsolve()>
+            Radius
+        </button>
+        <button type="button" class="btn btn-light" onclick=xintersept()>
+            X Intercept
+        </button>
+        <button type="button" class="btn btn-light" onclick=yintersept()>
+            Y Intercept
+        </button>
+        <button type="button" class="btn btn-light" onclick=director_c()>
+            Director Circle
+        </button>
+        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+            Reset
+        </button><br><br><br>
+    </form>
+
+    <h1 id="centerer"></h1>
+    <h1 id="centerrr"></h1>
+
+    <h3 style="text-align: center;">Angle Bisector </h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Line Equation A : <input type="text" id="aba1" size=3 value='' placeholder="A"> x +
+                <input type="text" id="abb1" size=3 value='' placeholder="B"> y + <input type="text"
+                    id="abc1" size=3 value='' placeholder="C"> = 0
+                <br><br>
+                Line Equation B : <input type="text" id="aba2" size=3 value='' placeholder="A"> x +
+                <input type="text" id="abb2" size=3 value='' placeholder="B"> y + <input type="text"
+                    id="abc2" size=3 value='' placeholder="C"> = 0
+                <br><br>
+                <button type="button" class="btn btn-light" onclick=angleb()>
+                    Find
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br><br>
+            </p>
+        </div>
+        <p id="abr" style="font-family:mathfont;;width:auto;" class="stopwrap" align="right"></p>
+
+    </form>
+    <br>
+
+
+
+    <h3 style="text-align: center;">Circle and a point</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+            <p>\[Equation \space of \space Circle \space : \space \space \space \space \]</p>
+            <p>\[x^2 \space + \space \]</p>
+            <p>\[y^2 \space + \space \]</p> <input type="text" id="acenterrp" size=3 value=''
+                placeholder="g">
+            <p>\[x \space + \space \]</p> +
+            <input type="text" id="bcenterrp" size=3 value='' placeholder="h">
+            <p>\[y \space + \space \]</p> + <input type="text" id="ccenterrp" size=3 value=''
+                placeholder="C">
+            <p>\[\space = \space 0 \newline \]</p>
+            <br><br>
+            </p>
+        </div><br>
+        <p>\[Point \space = \space \](<input type="text" id="bcenterrpx" size=5 value='' placeholder="a"> ,
+            <input type="text" id="bcenterrpy" size=5 value='' placeholder="b">)
+        </p><br><br>
+        <button type="button" class="btn btn-light" onclick=tangeqution()>
+            Tangent Equation
+        </button>
+        <button type="button" class="btn btn-light" onclick=tanglenght()>
+            Tangent length
+        </button>
+        <button type="button" class="btn btn-light" onclick=chordeqution()>
+            Chord Of Equation
+        </button>
+
+        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+            Reset
+        </button><br><br><br>
+    </form>
+
+    <h1 id="centererp"></h1>
+    <h1 id="centerrrp"></h1>
+
+    <h3 style="text-align: center;">Two circle system</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+            <p>\[Equation \space of \space Circle \space A: \space \space \space \space \]</p>
+            <p>\[x^2 \space + \space \]</p>
+            <p>\[y^2 \space + \space \]</p> <input type="text" id="acenterrpr1" size=3 value=''
+                placeholder="g">
+            <p>\[x \space + \space \]</p> +
+            <input type="text" id="bcenterrpr1" size=3 value='' placeholder="h">
+            <p>\[y \space + \space \]</p> + <input type="text" id="ccenterrpr1" size=3 value=''
+                placeholder="C">
+            <p>\[\space = \space 0 \newline \]</p>
+            <br><br>
+            </p>
+        </div><br>
+        <div class="coll">
+            <p>
+            <p>\[Equation \space of \space Circle \space B : \space \space \space \space \]</p>
+            <p>\[x^2 \space + \space \]</p>
+            <p>\[y^2 \space + \space \]</p> <input type="text" id="acenterrpr2" size=3 value=''
+                placeholder="g">
+            <p>\[x \space + \space \]</p> +
+            <input type="text" id="bcenterrpr2" size=3 value='' placeholder="h">
+            <p>\[y \space + \space \]</p> + <input type="text" id="ccenterrpr2" size=3 value=''
+                placeholder="C">
+            <p>\[\space = \space 0 \newline \]</p>
+            <br><br>
+            </p>
+        </div><br><br><br>
+        <button type="button" class="btn btn-light" onclick=radeq()>
+            Radial axis
+        </button>
+        <button type="button" class="btn btn-light" onclick=orthogana()>
+            check Orthogonalty
+        </button>
+        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+            Reset
+        </button><br><br><br>
+    </form>
+
+    <h1 id="centererpr"></h1>
+    <h1 id="centerrrpr"></h1>
+
+    <h3 style="text-align: center;">Common Tangent</h3><br>
+    <form action="">
+        <div class="coll">
+            <p>
+                Center 1 = (<input type="text" id="ctx1" size=5 value='' placeholder="x1"> ,
+                <input type="text" id="cty1" size=5 value='' placeholder="y1">)
+                <br><br>
+                Center 2 = (<input type="text" id="ctx2" size=5 value='' placeholder="x2"> ,
+                <input type="text" id="cty2" size=5 value='' placeholder="y2">)
+                <br><br>
+                Radius 1 = <input type="text" id="ctm1" size=3 value='' placeholder="m"> ,
+                <br>
+                Radius 2 = <input type="text" id="ctm2" size=3 value='' placeholder="m"> ,
+                <br>
+                <br><br>
+                <button type="button" class="btn btn-light" onclick=directl()>
+                    Length of Direct
+                </button>
+                <button type="button" class="btn btn-light" onclick=transl()>
+                    Length of Transverse
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button><br>
+            </p>
+        </div>
+    </form>
+    <br>
+    <p id="comt1" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
+    <p id="comt2"> </p> <br>
+</div>

@@ -1,0 +1,27 @@
+<div id="binoexp">
+    <p>(a₁x + a₀) * (b₁x + b₀) = c₂x² + c₁x + c₀</p>
+    <br>
+    <br>
+    <form>
+        <input type="number" id="binoa1" placeholder="Enter a1"
+            style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
+        <input type="number" id="binoa0" placeholder="Enter a0 "
+            style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
+        <input type="number" id="binob1" placeholder="Enter b1"
+            style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
+        <input type="number" id="binob0" placeholder="Enter b0 "
+            style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
+        <br><br>
+        <div class="form-group">
+            <button type="button" class="btn btn-light" onclick="binoexpCalc()">
+                Multiply
+            </button>
+            <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                Reset
+            </button>
+        </div>
+    </form>
+    <br>
+    <br>
+    <p id="binoexp_ans"></p>
+</div>

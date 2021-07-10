@@ -1,0 +1,20 @@
+<div id="diamond">
+    <h1 style="text-align: center; margin-bottom: 4rem;">Diamond Problem Calculator</h1>
+    <img src="images/diamond.png"
+        style="display: block; margin-left: auto; margin-right: auto; height: 262px;" class="img-fluid">
+    <br><br>
+    <h4>Enter any 2 fields</h4>
+    <form action="">
+        <input class="form__field" type="number" placeholder="Factor A" id="dinputA" oninput="diamond()">
+        <br><br>
+        <input class="form__field" type="number" placeholder="Factor B" id="dinputB" oninput="diamond()">
+        <br><br>
+        <input class="form__field" type="number" placeholder="Product" id="dprod" oninput="diamond()">
+        <br><br>
+        <input class="form__field" type="number" placeholder="Sum" id="dsum" oninput="diamond()">
+        <br><br>
+        <button type="button" class="btn btn-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="diamond_explain"></p>
+</div>

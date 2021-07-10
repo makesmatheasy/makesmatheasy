@@ -1,0 +1,39 @@
+<div id="planeintercept">
+    <h2>Intercept form of Plane</h2>
+    <br>
+    <p id="interceptform">\[ax+by+cz+d=0\]</p>
+    <form action="">
+        <div class="form-group">
+            <input type="text" style="width: 250px;" class="form__field" name="a" id="interplanex1"
+                placeholder="Enter x1" />
+            <input type="text" name="b" style="width: 250px;" class="form__field" id="interplaney1"
+                placeholder="Enter y1 " />
+            <input type="text" name="c" style="width: 250px;" class="form__field" id="interplanez1"
+                placeholder="Enter z1" />
+            <br>
+
+            <br>
+            <input type="text" style="width: 250px;" class="form__field" name="a" id="interplanex2"
+                placeholder="Enter x2" />
+            <input type="text" name="b" style="width: 250px;" class="form__field" id="interplaney2"
+                placeholder="Enter y2 " />
+            <input type="text" name="c" style="width: 250px;" class="form__field" id="interplanez2"
+                placeholder="Enter z2" />
+            <br>
+            <br>
+            <input type="text" style="width: 250px;" class="form__field" name="a" id="interplanex3"
+                placeholder="Enter x3" />
+            <input type="text" name="b" style="width: 250px;" class="form__field" id="interplaney3"
+                placeholder="Enter y3 " />
+            <input type="text" name="c" style="width: 250px;" class="form__field" id="interplanez3"
+                placeholder="Enter z3" />
+            <br>
+            <br>
+            <button class="btn btn-outline-light" type="button" onclick="planeequation()">Find</button>
+            <button class="btn btn-outline-light" type="button" onclick="this.form.reset()">Reset</button>
+            <br>
+        </div>
+    </form>
+
+    <h2 id="interceptresult"></h2>
+</div>

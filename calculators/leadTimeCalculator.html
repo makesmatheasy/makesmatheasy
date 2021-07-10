@@ -1,0 +1,42 @@
+<div id="leadtest">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Lead Time Calculator</h1>
+    <p style="margin-top: 2rem;">Lead Time is the delay that occurs between the initiation and completion of
+        a process.
+        Lead Time is used in manufacturing, supply chain management, and project management.</p>
+    <br>
+
+    <br>
+    <p style="margin-top:2rem; text-align: left;">What is the unknown value:</p>
+    <select class="btn btn-light" name="unknown" id="lead" onchange="getLead()">
+        <option>Select</option>
+
+        <option value="manufacture">Lead Time (manufacturing)</option>
+        <option value="project">Lead Time (project management)</option>
+    </select>
+    <br><br>
+
+    <div id="leadmanufacture" style="display:none;">
+        <input class="form__field" type="number" id="pre" placeholder="Pre Processing Time (in minutes)">
+        <br><br>
+        <input class="form__field" type="number" id="pro" placeholder="Processing Time(in minutes)">
+        <br><br>
+        <input class="form__field" type="number" id="post" placeholder="Post Processing Time (in minutes)">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="leadvalue()">Test</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+        </form>
+
+        <p id="leadans"></p>
+        <br>
+    </div>
+
+    <div id="leadproject" style="display:none;">
+        <input class="form__field" type="number" id="task1" placeholder="Time for Task1 (in days)">
+        <br><br>
+        <input class="form__field" type="number" id="task2" placeholder="Time for Task2 (in days)">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="leadmangement()">Test</button>
+        <p id="leadpro"></p>
+
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div id="errpers">
+    <h1 style="font-family:mathfont; text-align:center;">ERROR PERCENTAGE CALCULATOR </h1>
+    <p>&nbsp;</p>
+    <form>
+        <input type="number" name="expval" class="form__field" id="expval" width="5em"
+            placeholder="Enter experimental value">
+        <p>&nbsp;</p>
+        <input type="number" name="acval" class="form__field" id="acval" placeholder="Enter actual value">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="errpercal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+        <p id="errperans1" style="color: white; text-align: center; font-family:mathfont"></p><br>
+        <p id="errperans2" style="color: white; text-align: center; font-family:mathfont"></p><br>
+        <p id="errperans" style="color: white; text-align: center; font-family:mathfont"></p><br>
+        <p>&nbsp;</p>
+    </form>
+    <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">Percentage error is a
+        measurement of the discrepancy between an observed and a true, or accepted value. <br>
+        When measuring data, the result often varies from the true value.<br>
+        Error can arise due to many different reasons that are often related to human error, but can also be due to
+        estimations and limitations of devices used in measurement.<br>
+        Regardless, in cases such as these, it can be valuable to calculate the percentage error.<br>
+        The computation of percentage error involves the use of the absolute error, which is simply the difference
+        between the observed and the true value. The absolute error is then divided by the true value, resulting in
+        the relative error, which is multiplied by 100 to obtain the percentage error.
+    </div>
+</div>

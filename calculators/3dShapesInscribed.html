@@ -1,0 +1,218 @@
+<div id="shapeinscribed">
+    <h2 style="text-align:center;">3-D Shapes Inscribed</h2>
+    <br><br>
+    <h4>Largest cone that can be inscribed within a cube</h4>
+    <br>
+    <form action="">
+        <input type="text" id="shapeinscribedin" class="form__field"
+            placeholder="Enter the side length of cube">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="coneincubefind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="coneincubeans"></h5>
+    </form>
+    <br>
+    <h4>Largest right circular cone that can be inscribed within a sphere which is inscribed within a cube
+    </h4>
+    <br>
+    <form action="">
+        <input type="text" id="cscu" class="form__field" placeholder="Enter the side length of cube">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cscufind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="cscuans"></h5>
+    </form>
+    <br>
+    <h4>Largest cube that can be inscribed within the sphere</h4>
+    <br>
+    <form action="">
+        <input type="text" id="cubeinsphere" class="form__field" placeholder="Enter radius of the sphere">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cubeinspherefind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
+        <br>
+        <h5 id="cubeinsphereans"></h5>
+    </form>
+    <br>
+    <h4>Largest sphere that can be inscribed within a cube which is in turn inscribed within a right
+        circular cone</h4>
+    <br>
+    <form action="">
+        <input type="text" id="scco" class="form__field" placeholder="Enter the height of cone">
+        <input type="text" id="scco1" class="form__field" placeholder="Enter the radius of cone">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="sccofind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="sccoans"></h5>
+    </form>
+    <br>
+    <h4>Largest Cube that can be inscribed within a Right Circular Cylinder</h4>
+    <br>
+    <form action="">
+        <input type="text" id="cube1" class="form__field" placeholder="Enter the height of cylinder">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cube()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="cubeans"></h5>
+    </form>
+    <br>
+    <h4>Largest cube that can be inscribed within the cone</h4>
+    <br>
+    <form action="">
+        <input type="text" id="cubeincone" class="form__field" placeholder="Enter the height of cone">
+        <input type="text" id="cubeincone1" class="form__field" placeholder="Enter the radius of cone">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cubeinconefind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="cubeinconeans"></h5>
+    </form>
+    <br>
+    <h4>Largest cylinder that can be inscribed within a cube</h4>
+    <br>
+    <form action="">
+        <input type="text" id="cylinderincube" class="form__field"
+            placeholder="Enter the side length of cube">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cylinderincubefind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="cylinderincubeans"></h5>
+    </form>
+    <br>
+    <h4>Largest cylinder that can be inscribed within a sphere</h4><br>
+    <form action="">
+        <input type="text" id="cylinderinsphere" class="form__field"
+            placeholder="Enter the side length of sphere"><br>
+        <button type="button" class="btn btn-dark" onclick="cylinderinspherefind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="cylinderinsphereans"></h5><br>
+    </form>
+    <br>
+    <h4>Largest cube that can be inscribed within a cylinder </h4>
+    <br>
+    <form action="">
+        <input type="text" id="cubeincylinder" class="form__field"
+            placeholder="Enter the radius of cylinder">
+        <input type="text" id="cubeincylinder1" class="form__field"
+            placeholder="Enter the height of cylinder">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cubeincylinderfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="cubeincylinderans"></h5>
+    </form>
+    <br>
+    <h4>Minimum volume of cone that can be circumscribed about a sphere of radius R </h4>
+    <br>
+    <form action="">
+        <input type="text" id="cscu3" class="form__field" placeholder="Enter the radius of sphere(R)">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cscu3find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="cscu3ans"></h5>
+    </form>
+    <br>
+    <h4>Largest sphere that can be inscribed in a right circular cylinder inscribed in a frustum </h4>
+    <br>
+    <form action="">
+        <input type="text" id="scyf" class="form__field" placeholder="Enter the height of cone">
+        <input type="text" id="scyf1" class="form__field" placeholder="Enter the bigger radius of cone">
+        <input type="text" id="scyf2" class="form__field" placeholder="Enter the shorter radius of cone">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="scyffind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="scyfans"></h5>
+        <h5 id="scyfexp"></h5>
+    </form>
+    <br>
+    <h4>Largest right circular cylinder that can be inscribed within a cone which is in turn inscribed
+        within a cube</h4>
+    <br>
+    <form action="">
+        <input type="text" id="cscu1" class="form__field" placeholder="Enter the side length of cube">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cscu1find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="cscu1ans"></h5>
+    </form>
+    <br>
+    <h4>Largest right circular cone that can be inscribed within a sphere</h4>
+    <br>
+    <form action="">
+        <input type="text" id="cscu2" class="form__field" placeholder="Enter the radius of sphere">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cscu2find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="cscu2ans"></h5>
+    </form>
+    <br>
+    <h4>Volume of Largest right circular cylinder that can be inscribed within a sphere</h4>
+    <br>
+    <form action="">
+        <input type="text" id="cscu4" class="form__field" placeholder="Enter the radius of sphere">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cscu4find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="cscu4ans"></h5>
+        <h5 id="cscu4exp"></h5>
+    </form>
+    <br>
+    <h4>Volume of Largest right pyramid that can be inscribed within a sphere</h4>
+    <br>
+    <form action="">
+        <input type="text" id="pyinsph" class="form__field" placeholder="Enter the radius of sphere">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="pyinsphfind()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="pyinsphans"></h5>
+    </form>
+    <br>
+    <h4>Largest sphere that can be inscribed inside a cube</h4>
+    <br>
+    <form action="">
+        <input type="text" id="cscu5" class="form__field" placeholder="Enter the side length of cube">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="cscu5find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="cscu5ans"></h5>
+    </form>
+    <br>
+    <h4>Largest Square that can be inscribed within a hexagon</h4>
+    <br>
+    <form action="">
+        <input type="text" id="hexa131" class="form__field" placeholder="Enter the side length of hexagon">
+        <br>
+        <button type="button" class="btn btn-dark" onclick="hexa121find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="hexa121ans"></h5>
+    </form>
+    <br>
+    <h4>Largest right circular cylinder within a frustum</h4><br>
+    <form action="">
+        <input type="text" id="scyf3" class="form__field" placeholder="Enter the height of cone">
+        <input type="text" id="scyf5" class="form__field"
+            placeholder="Enter the shorter radius of cone"><br>
+        <button type="button" class="btn btn-dark" onclick="scyf1find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="scyf1ans"></h5>
+    </form><br>
+    <h4>Surface area of the square pyramid</h4><br>
+    <form action="">
+        <input type="text" id="scyf6" class="form__field"
+            placeholder="Enter the base length of square pyramid">
+        <input type="text" id="scyf7" class="form__field"
+            placeholder="Enter the slant height of square pyramid"> <br>
+        <button type="button" class="btn btn-dark" onclick="scyf2find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <h5 id="scyf2ans"></h5><br>
+    </form><br>
+    <h4>Find slant height of cone and pyramid</h4><br>
+    <form action="">
+        <input type="text" id="scyf8" class="form__field" placeholder="Enter the  height of  pyramid">
+        <input type="text" id="scyf9" class="form__field"
+            placeholder="Enter the radius of square pyramid"><br>
+        <button type="button" class="btn btn-dark" onclick="scyf3find()">Find</button>
+        <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button><br>
+        <p id="scyf3ans"></p>
+    </form>
+</div>

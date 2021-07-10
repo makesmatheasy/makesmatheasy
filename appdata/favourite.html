@@ -1,0 +1,57 @@
+<script>
+    function resetFavourites() {
+        localStorage.setItem('dislocalmap', JSON.stringify({}));
+        localStorage.setItem('imglocalmap', JSON.stringify({}));
+        displayFavourites();
+    }
+    function removeFavouriteFromFavourites(filename) {
+        var dislocal = JSON.parse(localStorage.getItem('dislocalmap'));
+        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+
+        delete dislocal[filename];
+        delete imglocal[filename];
+
+        localStorage.setItem('dislocalmap', JSON.stringify(dislocal));
+        localStorage.setItem('imglocalmap', JSON.stringify(imglocal));
+        displayFavourites();
+    }
+    function displayFavourites() {
+        var dislocal = JSON.parse(localStorage.getItem('dislocalmap'));
+        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+        var temp = '';
+        for (filename in dislocal) {
+            temp += `<div class="favresult"><span onclick="loadcalculator('${filename}','${dislocal[filename]}')">${dislocal[filename]}</span><img class="imgfav" onclick="removeFavouriteFromFavourites('${filename}')" src='icons/favourite.png'></div>`;
+        }
+        if (temp == '') {
+            temp = "Nothing in favourites";
+        }
+        document.getElementById('favouritesshow').innerHTML = temp;
+    }
+    displayFavourites();
+</script>
+<style>
+    #favouritesshow {
+        margin: 0 auto;
+    }
+
+    .favresult {
+        text-align: center;
+        padding: 20px;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        border-radius: 50px;
+        color: var(--appblack);
+        background-color: var(--appwhite);
+        cursor: pointer;
+    }
+
+    .imgfav {
+        height: 1.5rem;
+        float: right;
+        padding-right: 0.5rem;
+    }
+</style>
+<div id="favouritesshow">
+
+</div>

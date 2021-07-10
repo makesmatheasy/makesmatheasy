@@ -1,0 +1,40 @@
+    <h2 style="text-align:center;margin-bottom: 0px;">Sieve of Eratosthenes</h2>
+    <br>
+    <p style="color:#ababab !important">In mathematics, the sieve of Eratosthenes is an ancient algorithm
+        for finding all prime numbers up to any given limit.</p>
+    <p style="color:#ababab !important">It does so by iteratively marking as composite (i.e., not prime) the
+        multiples of each prime, starting with the first prime number, 2. The multiples of a given prime are
+        generated as a sequence of numbers starting from that prime,
+        with constant difference between them that is equal to that prime.This is the sieve's key
+        distinction from using trial division to sequentially test each candidate number for divisibility by
+        each prime.Once all the multiples of
+        each discovered prime have been marked as composites, the remaining unmarked numbers are primes.
+    </p>
+    <br>
+    <img style=" display:block; margin-left:auto; margin-right:auto; width:80%; filter: grayscale(100%);"
+        src="https://media.geeksforgeeks.org/wp-content/uploads/SieveofEratosthenes5.jpg" class="img-fluid"
+        alt="">
+    <br>
+    <form class="text-center" style="width: 100%;">
+        <input style="margin-bottom:0px;" type="text" id="sievein" class="form__field"
+            placeholder="Enter number upto which you want prime number" style="text-align: center; width: 100%;
+    max-width: 450px;">
+        <br><br>
+        <button type="button" style="margin-top:0px; width:80px" class="btn btn-dark" onclick="sievefind()">
+            Find
+        </button>
+        <button type="button" style="margin-top:0px; width:80px" class="btn btn-dark"
+            onclick="this.form.reset();">
+            Reset
+        </button>
+        <br>
+    </form>
+
+    <h4 id="sieveans"></h4>
+    <h2>Sieve of Atkin</h2>
+    <br>
+    <input type="text" id="sieve2" class="form__field" placeholder="Enter the number"> <br>
+    <button type="button" class="btn btn-dark" onclick="sieve2find()">Find</button>
+    <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button> <br>
+    <h5 id="sieve2ans"></h5>
+    <h5 id="sieve2exp"></h5>

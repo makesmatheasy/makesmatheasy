@@ -1,0 +1,45 @@
+<div id="profitloss">
+    <h2>Profit Loss calculations</h2>
+    <br>
+    <form action="">
+        <input style="width: 17.1875rem;" type="text" class="form__field" placeholder="Enter cost price"
+            id="cp">
+        <input style="width: 17.1875rem;" type="text" class="form__field" placeholder="Enter selling price"
+            id="sp">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick=profitloss()>Submit</button>
+        <button class="btn btn-light" type="button" onclick=this.form.reset();>Reset</button>
+    </form>
+
+    <br><br>
+    <h5 class="stopwrap" id="pol1" style="font-family:mathfont;"></h5>
+    <p class="stopwrap" id="pol2" style="font-family:mathfont;"></p>
+    <br>
+    <h5 class="stopwrap" id="percent1" style="font-family:mathfont;"></h5>
+    <p class="stopwrap" id="percent2" style="font-family:mathfont;"></p>
+    <br><br>
+    <h2>Profit/Loss calculations over Discount</h2>
+    <br>
+    <form action="">
+        <input style="width: 17.1875rem;" type="number" class="form__field" placeholder="Enter Discount"
+            id="dis">
+        <select id="perprice" class="btn btn-outline-light">
+            <option>Percentage</option>
+            <option>Price</option>
+        </select>
+        <br><br>
+        <input style="width: 17.1875rem;" type="number" class="form__field"
+            placeholder="Enter selling price/cost price" id="cpsp">
+        <select id="costsell" class="btn btn-outline-light">
+            <option>Cost Price</option>
+            <option>Selling Price</option>
+        </select>
+        <br><br>
+        <button class="btn btn-light" type="button" onclick=discount()>Submit</button>
+        <button class="btn btn-light" type="button" onclick=this.form.reset();>Reset</button>
+    </form>
+
+    <br><br>
+    <p id="discountresult"></p>
+    <br>
+</div>

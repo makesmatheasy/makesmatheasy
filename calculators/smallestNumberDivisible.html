@@ -1,0 +1,24 @@
+<div>
+    <div id="smNum">
+        <form action="">
+            <div class="form-group" style="display:inline-block">
+                <label>Enter the number : &nbsp; &nbsp; </label>
+                <input type="number" id="sm-num" class="form__field" placeholder="x"
+                    style="width:3rem;display:inline;margin-right: 5rem;"> &nbsp; &nbsp;
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light"
+                    onclick="smallestNumberDiv(document.getElementById('sm-num').value);">
+                    Solve
+                </button>
+                <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                    Reset
+                </button>
+            </div>
+        </form>
+
+        <div class="form-group text-center">
+            <p class="stopwrap" style="color:white;" id="smNumResult"></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div id="throughputtest">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Throughput Time Calculator</h1>
+    <p style="margin-top: 2rem;">Throughput time or cycle time is the amount of time it takes for a
+        manufacturer to make a product including process time,
+        inspection time, move time, and wait time.Notice the process in the throughput time calculation that
+        is considered value-added time is the process time. This is the only step that actually produces a
+        product.
+        The rest of the time is administrative and logistical non-value-added time.</p>
+    <br>
+    <form action="">
+        <input class="form__field" type="number" id="process" placeholder="Process Time(in minutes)">
+        <br><br>
+        <input class="form__field" type="number" id="inspection" placeholder="Inspection Time (in minutes)">
+        <br><br>
+        <input class="form__field" type="number" id="move" placeholder="Move Time(in minutes)">
+        <br><br>
+        <input class="form__field" type="number" id="queue" placeholder="Queue Time(in minutes)">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="throughputvalue()">Test</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="throughputans"></p>
+    <br>
+</div>

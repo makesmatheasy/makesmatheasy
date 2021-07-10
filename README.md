@@ -1,12 +1,22 @@
-<img align="center" alt="Makes Math Easy" src="https://user-images.githubusercontent.com/60106112/110195548-f9a2f300-7e63-11eb-81ff-bc776e86456c.png">
+<div align="center">
+	
+<img alt="Makes Math Easy" src="https://user-images.githubusercontent.com/83420185/123138680-f2cfd880-d472-11eb-9dea-f5130e32f273.png" width=200 height=150>
 
-![contributors](https://img.shields.io/github/contributors/sairish2001/makesmatheasy)
-![Issues](https://img.shields.io/github/issues/sairish2001/makesmatheasy)
-![Pull Requests](https://img.shields.io/github/issues-pr/sairish2001/makesmatheasy)
-[![Maintenance](https://img.shields.io/maintenance/yes/2021?color=green&logo=github)](https://github.com/sairish2001/makesmatheasy)
-![GitHub forks](https://img.shields.io/github/forks/sairish2001/makesmatheasy?style=social) 
-![GitHub Repo stars](https://img.shields.io/github/stars/sairish2001/makesmatheasy?style=social)
+<a href="https://github.com/makesmatheasy/makesmatheasy"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy"><img src="https://img.shields.io/badge/Built%20by-developers%20%3C%2F%3E-0059b3"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy"><img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=yellow"></a>
+<a href="https://github.com/makesmatheasy/"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?v=103"></a>
 
+<a href="https://github.com/makesmatheasy/makesmatheasy/graphs/contributors"><img src="https://img.shields.io/github/contributors/makesmatheasy/makesmatheasy?color=brightgreen"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/stargazers"><img src="https://img.shields.io/github/stars/makesmatheasy/makesmatheasy?color=0059b3"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/network/members"><img src="https://img.shields.io/github/forks/makesmatheasy/makesmatheasy?color=yellow"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/issues"><img src="https://img.shields.io/github/issues/makesmatheasy/makesmatheasy?color=0059b3"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed-raw/makesmatheasy/makesmatheasy?color=yellow"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/pulls"><img src="https://img.shields.io/github/issues-pr/makesmatheasy/makesmatheasy?color=brightgreen"></a>
+<a href="https://github.com/makesmatheasy/makesmatheasy/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/makesmatheasy/makesmatheasy?color=0059b3"></a> 
+
+</div>
 
 Started on **13 July,2020**
 
@@ -55,14 +65,14 @@ Other Tech/Libraries
   - Mathematical Reasoning
   - Euclid Geometry (Axioms and Postulates)
   - Operations on Sets
-  - Sets,Relations and Functions
+  - Sets, Relations and Functions
   - Types of Relations
   - Sets Formulas List
   - Sigma Notation
   - Matrix (with Steps)
     - Transpose
     - Minors and Co-Factors
-    - Determinant with Laplace(Upto 5×5)
+    - Determinant with Laplace(Up to 5×5)
     - Rank
     - Inverse
     - Addition
@@ -74,9 +84,9 @@ Other Tech/Libraries
   - Cayley Hamilton Theorem and Diagonalization
   - Mean Calculator(AM GM & HM)
   - Sequence & Series
-  - Sum of Nterms of an Arithmetic Progression
-  - Sum of Nterms of a Geometric Progression
-  - Sum of Nterms of a Harmonic Progression
+  - Sum of N-terms of an Arithmetic Progression
+  - Sum of N-terms of a Geometric Progression
+  - Sum of N-terms of a Harmonic Progression
   - Important Series and Sequences
   - Aliquot Sums
 
@@ -132,11 +142,11 @@ Other Tech/Libraries
 
 - Trigonometry
 
-  - P/B/H Trigo
-  - Hyperbolic trignometrics ratios calculator
+  - P/B/H Trigonometry
+  - Hyperbolic trigonometric ratios calculator
   - Trigonometric Values
   - Trigonometric Identities
-  - Tigonometric Functions
+  - Trigonometric Functions
   - Inverse Trigonometric Identities
   - Hyperbolic Trigonometric Identities
   - Inverse Hyperbolic Trigonometric Identities
@@ -147,12 +157,12 @@ Other Tech/Libraries
   - Solution of Triangles
     - Law of Sines Calculator
     - Law of Cosines Calculator
-  - Sum and Difference Of Trignometric Function
+  - Sum and Difference Of Trigonometric Function
 
 - General Maths (with Steps)
   - Ackermann Function
   - LCM
-    - Upto 20 numbers
+    - Up to 20 numbers
   - HCF
     - Calculating Factors of each number and picking common out of them
   - Factors
@@ -254,12 +264,12 @@ Other Tech/Libraries
   - Carmichael Number
   
   - Delannoy Number
-- Basic Convertors
+- Basic Converters
 
-  - Currency Convertor
+  - Currency Converter
     - Conversion to words **(eg. '243' to 'two hundred and forty three only')**
   - Conversion to words
-  - Unit Convertor
+  - Unit Converter
     - Length
     - Area
     - Volume
@@ -275,7 +285,7 @@ Other Tech/Libraries
     - Power
   - Improper to Mixed Fraction
   - Percentage and Ratio Converter
-  - SPI/CGPA Convertor
+  - SPI/CGPA Converter
   - Ascending and Descending Order
   - Date
   - Roman/Arabic Numerals
@@ -307,15 +317,15 @@ Other Tech/Libraries
   - Coordinate Geometry Formula and Theorem
   - Segment Area Calculator
   - Curve Tracing
-  - Ceva's and Thale's Theorem
+  - Ceva's and Thales Theorem
   - Important Graph Calculators
   - Properties of Circles
   - Triangle Calculator
-  - Ineqaulities of Triangles
+  - Inequalities of Triangles
   - Properties of Quadrilaterals
   - Segment Area Calculator
   - Arc Length Calculator
-  - Area of Crescent and Lunes
+  - Area of Crescent and Lune
   - Platonic Solids
   - 2-D Shapes Inscribed
   - Name Of 2D Shapes
@@ -402,7 +412,7 @@ Other Tech/Libraries
   - Percentage change in volume of a sphere
   - Percentage change in volume of a Cuboid
   - Congruence and Similarity of Triangles
-  - Faulhaber Formula
+  - Faulhaber's Formula
 
 - Equations
 
@@ -443,7 +453,7 @@ Other Tech/Libraries
   - Milne Thomson Method
   - Contour Integration
   - Residue Methods
-  - Cauchy Integral,Liouville and Rouche Theorem
+  - Cauchy Integral,Liouville's and Rouche's Theorem
   - Operations for 1 complex number
     - Magnitude
     - Argument
@@ -466,7 +476,7 @@ Other Tech/Libraries
   - Conditional Probability
   - Joint Probability
   - Independent And Dependent Event Probability
-  - Probabilty Properties
+  - Probability  Properties
   - Binomial Distribution Calculator
   - Poisson Distribution Calculator
   - Hypergeometric Distribution Calculator
@@ -598,7 +608,7 @@ git add . <\files_that_you_made_changes>
 14. Commit your changes.
 
 ```
-git commit -m "relavant message"
+git commit -m "relevant message"
 ```
 
 15. Push the committed changes in your feature branch to your remote repository.
@@ -609,7 +619,7 @@ git push -u origin <your_branch_name>
 
 16. To create a pull request, click on `compare and pull requests`.
 
-17. Add appropriate title and description to your PR explaining your changes.
+17. Add an appropriate title and description to your PR explaining your changes.
 
 18. Click on `Create pull request`.
 
@@ -622,7 +632,7 @@ If you have any doubts please let us know in the comments.
 
 ---
 
-### This project is a part of following Open Source Program
+### This project is a part of the following Open Source Program
 <table style="width:80%;background-color:white;border-radius:30px;">
   <tr>
   <td>
@@ -644,6 +654,7 @@ If you have any doubts please let us know in the comments.
 ### Project Maintainers
 
 - [Rajinderpal Singh](https://github.com/sairish2001) (Project Admin)
+- [Arpit Jain](https://github.com/arpit456jain) (Mentor)
 
 ## 🌟 Contributors
 

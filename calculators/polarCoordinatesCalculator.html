@@ -1,0 +1,69 @@
+<div id="polar">
+    <h1 style=" text-align: center; font-family:mathfont">Polar Coordinate Calculator</h1>
+    <p>&nbsp;</p>
+    <form action="">
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Cartesian to Polar</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+        <div class="d-flex justify-content-center form-group">
+            <input type="number" style="width: 100%;" class="form-control" id="cartpolarx" width="5em"
+                placeholder="Enter the X coordinate">
+            <input type="number" style="width: 100%;" class="form-control" id="cartpolary" width="5em"
+                placeholder="Enter the Y coordinate">
+        </div>
+        <p>&nbsp;</p>
+        </p>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;"
+            onclick="cartpolarcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;"
+            onclick="this.form.reset();">Reset</button>
+        <p id="cartpolarans1" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
+        </p>
+        <p>&nbsp;</p>
+        <p id="cartpolarans2" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
+        </p>
+        <p>&nbsp;</p>
+    </form>
+
+    <p>&nbsp;</p>
+    <form action="">
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Spherical to Polar</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+            <input type="number" id="sphpolarr" width="5em" placeholder="Enter the radial distance">
+            <input type="number" id="sphtpolaro" width="5em" placeholder="Enter the polar angle">
+        <p>&nbsp;</p>
+        </p>
+        <p>&nbsp;</p>
+        <p id="sphpolarpans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
+        </p>
+        <p>&nbsp;</p>
+        <p id="sphpolaroans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont">
+        </p>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;"
+            onclick="sphpolarcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" style="margin-left:550px;"
+            onclick="this.form.reset();">Reset</button>
+    </form>
+
+
+    <form action="">
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">Polar to Cartesian</p>
+        <p style="color: white; text-align: center; font-size: 1em; font-family:mathfont">
+        <div class="d-flex justify-content-center form-group">
+            <input type="number" style="width: 100%;" class="form-control" id="polarcartr"
+                placeholder="Enter the length of the line (r)">
+            <input type="number" style="width: 100%;" class="form-control" id="polarcarto"
+                placeholder="Enter the polar angle (θ)">
+        </div>
+        <p>&nbsp;</p>
+        </p>
+        <div class="d-flex justify-content-center form-group">
+            <button type="button" class="btn btn-outline-light mr-1" onclick="polarcartcal()">Calculate</button>
+            <button type="button" class="btn btn-outline-light mr-1" onclick="this.form.reset();">Reset</button>
+        </div>
+    </form>
+
+    <p>&nbsp;</p>
+    <p id="polarcartxans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p id="polarcartyans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+</div>

@@ -118,9 +118,39 @@ function changeImage10() {
     j++;
 
     if (j % 2 == 0) {
-        document.getElementById("imgClickAndChange9").src = 'icons/down-chevron.svg';
+        document.getElementById("imgClickAndChange10").src = 'icons/down-chevron.svg';
     } else {
-        document.getElementById("imgClickAndChange9").src = 'icons/chevron-arrow-up.svg';
+        document.getElementById("imgClickAndChange10").src = 'icons/chevron-arrow-up.svg';
+    }
+}
+
+function changeImage11() {
+    k++;
+
+    if (k % 2 == 0) {
+        document.getElementById("imgClickAndChange11").src = 'icons/down-chevron.svg';
+    } else {
+        document.getElementById("imgClickAndChange11").src = 'icons/chevron-arrow-up.svg';
+    }
+}
+
+function changeImage12() {
+    l++;
+
+    if (l % 2 == 0) {
+        document.getElementById("imgClickAndChange12").src = 'icons/down-chevron.svg';
+    } else {
+        document.getElementById("imgClickAndChange12").src = 'icons/chevron-arrow-up.svg';
+    }
+}
+
+function changeImage13() {
+    m++;
+
+    if (m % 2 == 0) {
+        document.getElementById("imgClickAndChange13").src = 'icons/down-chevron.svg';
+    } else {
+        document.getElementById("imgClickAndChange13").src = 'icons/chevron-arrow-up.svg';
     }
 }
 
@@ -524,6 +554,17 @@ function openit(id) {
         "#sqseries",
         "#impse",
         "#n_baseroot",
+        "#binomial",
+        "#interquartile",
+        "#outlier",
+        "#proportion",
+        "#threestar",
+        "#probability",
+        "#fourstar",
+        "#convolution",
+        "#incircle",
+        "#circularsector",
+        "#ucontrol",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {
@@ -535,15 +576,13 @@ function openit(id) {
 }
 
 function bodyload() {
-    var ar = JSON.parse(localStorage.getItem("favouritearray"));
-    var oid = JSON.parse(localStorage.getItem("openingidarray"));
-    var tp = JSON.parse(localStorage.getItem("typearray"));
+    var displaynamear = JSON.parse(localStorage.getItem("displaynamearray"));
+    var filenamenamear = JSON.parse(localStorage.getItem("filenamearray"));
     var imgar = JSON.parse(localStorage.getItem("imgarray"));
     var favar = JSON.parse(localStorage.getItem("favarray"));
-    if (oid != null) {
-        favouritearray = ar;
-        openingid = oid;
-        typearray = tp;
+    if (filenamenamear != null) {
+        filename = filenamenamear;
+        displayname=displaynamear;
         imgarray = imgar;
         favarray = favar;
         checkfavourite();
@@ -551,80 +590,63 @@ function bodyload() {
     numbersapi();
 }
 
-var favouritearray = [];
-var openingid = [];
-var typearray = [];
+var displayname = [];
+var filename = [];
 var imgarray = [];
 var favarray = [];
 
-function addtofavourite(btnid, openid, type, img) {
-    var ar = JSON.parse(localStorage.getItem("favouritearray"));
-    var oid = JSON.parse(localStorage.getItem("openingidarray"));
-    var imgar = JSON.parse(localStorage.getItem("imgarray"));
-    var favar = JSON.parse(localStorage.getItem("favarray"));
+function addtofavourite(displaynamear, filenamear, img) {
+    var filenmar=JSON.parse(localStorage.getItem('filenamearray'));
     var flag = 0;
-    if (oid != null) {
-        for (i = 0; i < oid.length; i++) {
-            if (openid == oid[i]) {
+    if (filename != null) {
+        for (i = 0; i < filename.length; i++) {
+            if (filename == filenmar[i]) {
                 flag = 1;
             }
         }
     }
     if (flag == 0) {
-        favouritearray.push(btnid);
-        openingid.push(openid);
-        typearray.push(type);
+        displayname.push(displaynamear);
+        filename.push(filenamear);
         imgarray.push(img);
         favarray.push("images/favourite.png");
-        localStorage.setItem("favouritearray", JSON.stringify(favouritearray));
-        localStorage.setItem("openingidarray", JSON.stringify(openingid));
-        localStorage.setItem("typearray", JSON.stringify(typearray));
+        localStorage.setItem("displaynamearray", JSON.stringify(displayname));
+        localStorage.setItem("filenamearray", JSON.stringify(filename));
         localStorage.setItem("imgarray", JSON.stringify(imgarray));
         localStorage.setItem("favarray", JSON.stringify(favarray));
         checkfavourite();
     }
     if (flag == 1) {
-        var index = oid.indexOf(openid);
+        var index = filenamear.indexOf(filename);
         if (index > -1) {
             document.getElementById(imgarray[index]).src = "images/unfavourite.png";
-            openingid.splice(index, 1);
-            favouritearray.splice(index, 1);
-            typearray.splice(index, 1);
+            displayname.splice(index, 1);
+            filename.splice(index, 1);
             imgarray.splice(index, 1);
             favarray.splice(index, 1);
         }
-        localStorage.setItem("favouritearray", JSON.stringify(favouritearray));
-        localStorage.setItem("openingidarray", JSON.stringify(openingid));
-        localStorage.setItem("typearray", JSON.stringify(typearray));
+        localStorage.setItem("displaynamearray", JSON.stringify(displayname));
+        localStorage.setItem("filenamearray", JSON.stringify(filename));
         localStorage.setItem("imgarray", JSON.stringify(imgarray));
         localStorage.setItem("favarray", JSON.stringify(favarray));
-        checkfavourite();
+        checkfavourite(filenamear);
     }
 }
 
-function checkfavourite() {
+function checkfavourite(filenamear) {
     removeall("favourite");
-    var ar = JSON.parse(localStorage.getItem("favouritearray"));
-    var oid = JSON.parse(localStorage.getItem("openingidarray"));
-    var tp = JSON.parse(localStorage.getItem("typearray"));
     var imgar = JSON.parse(localStorage.getItem("imgarray"));
     var favar = JSON.parse(localStorage.getItem("favarray"));
 
     $("#favourite").addClass("favouritecontainer");
-
-    if (ar.length != 0) {
-        for (i = 0; i < ar.length; i++) {
+    if (filename.length != 0) {
+        for (i = 0; i < filename.length; i++) {
             var el = document.createElement("li");
-            el.textContent = ar[i];
+            el.textContent = displayname[i];
             el.className = "favourites";
             el.style.color = "white";
-            var idf = oid[i];
-            if (tp[i] == "c") {
-                el.setAttribute("onclick", 'openit("' + String(idf) + '")');
-            } else {
-                el.setAttribute("data-toggle", "modal");
-                el.setAttribute("data-target", idf);
-            }
+
+            el.setAttribute("onclick", 'loadcalculator("' + String(filename[i]) + '")');
 
             document.getElementById("favourite").appendChild(el);
             document.getElementById(imgar[i]).src = favar[i];
@@ -660,17 +682,15 @@ document.querySelector(".container").addEventListener('click', function () {
 })
 
 function removefavourite() {
-    localStorage.removeItem("favouritearray");
-    localStorage.removeItem("openingidarray");
+    localStorage.removeItem("filenamearray");
+    localStorage.removeItem("displaynamearray");
     localStorage.removeItem("imgarray");
     localStorage.removeItem("favarray");
-    localStorage.removeItem("typearray");
     $("#favourite").removeClass("headingdiv");
     checkfavourite();
 }
 
-function numbersapi() {
-    let el = document.getElementById("numberfact");
+function getfacts() {
     var facts =
         ["The number 4 is the only number spelled with the same number of letters as itself",
             "8 is the largest cube in the Fibonacci series",
@@ -702,11 +722,10 @@ function numbersapi() {
         ];
     i = Math.floor(Math.random() * 27);
     let val = facts[i];
-    el.innerHTML = val;
+    return val;
 }
 
 $(document).on('click', ' .list_menu_items ', function () {
-    // $(this).addClass('home').siblings().removeClass('home');
     $(this).siblings().removeClass('home');
     $(this).addClass('home');
 });

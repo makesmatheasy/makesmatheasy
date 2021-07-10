@@ -1,0 +1,30 @@
+<div id="ppmfs">
+    <h1 style="font-family:mathfont; text-align:center;"> PMF of Poisson Distribution Calculator </h1>
+    <p>&nbsp;</p>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;">The Poisson distribution
+        is a discrete probability distribution which results from the Poisson experiment.<br>
+        It classifies the experiment into two different categories, such as success and failure.
+        Generally, the Poisson random variable “x” defines the probability of the success of the experiment.
+        From the average rate of success, the Poisson distribution probability can be easily calculated.
+    </div>
+    <br>
+    <br>
+    <form action="">
+        <input type="number" name="lamb" class="form__field" id="lamb"
+            placeholder="Average number of occurrences for a given time interval lambda, λ:">
+        <p>&nbsp;</p>
+        <input type="number" name="occ" class="form__field" id="occ" placeholder="Number of occurrences x: ">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="ppcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+    <p>&nbsp;</p>
+    <div style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont;">
+        In the given formula below :
+        <br> e = is Euler's number (e = 2.71828...)
+        <br> k = the number of occurrences (k=0,1,2...)
+        <br> λ = parameter such that λ>0
+        <br>\[P.M.F = P(X{=}k)= \frac{\lambda^k e^{-\lambda}}{k!}\]
+    </div>
+    <div style="color: white; text-align: center; font-size: 1.5em; font-family:mathfont;" id="ppans"></div>
+</div>

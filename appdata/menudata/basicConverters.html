@@ -1,0 +1,127 @@
+<script>
+    function checkFavourites() {
+        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+        for (filename in imglocal) {
+            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
+        }
+    }
+    checkFavourites();
+</script>
+<style>
+    .menu .option img {
+        height: 1.5rem;
+        display: block;
+        margin:0 auto;         
+        margin-right: 0.2rem;        
+    }
+
+    .menu {
+        text-align: center;
+        border-radius: 30px;
+        margin-top: 20px;
+        padding: 2rem;
+        background-color: var(--appwhite);
+    }
+
+    .option {
+        height: 8rem;
+        width: 8rem;        
+        margin-bottom: 20px !important;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: var(--appblack);
+    }
+    .caltext{
+        margin-top: 1.5rem;
+        display: block;        
+    }
+
+    .back img{        
+        position: fixed;
+        margin-left: 10px;
+        margin-top: 10px;
+        display: block !important;
+        height: 30px;
+        box-shadow: 0 0 10px black;
+        border-radius: 50%;
+        padding:5px;
+    }
+</style>
+<div class="back" onclick="openOption('appdata/menu.html','Menu')"><img src="icons/back.png" alt=""></div>      
+
+<div class="menu">    
+    <div class="row">
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="curimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/currencyConverter.html','Currency Convertor')">Currency Convertor</span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="ctowordsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" data-toggle="modal" data-target="#internationalnumber">Conversion to Words 🔴 </span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="unitimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/unitRateCalculator.html','Unit Convertor')" >Unit Convertor  </span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="miximgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/improper_to_mixed.html','Improper to Mixed')" >Improper to Mixed Fraction </span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="peratimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/percentageCalculator.html','Percentage and Ratio Converter')">Percentage and Ratio Converter</span>                           
+            </div>
+        </div>        
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="spiimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/spi.html','SPI Convertor')" >SPI/CGPA Convertor  </span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="orderitimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" data-toggle="modal" data-target="#orderit">Ascending/Descending 🔴  </span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="dateimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/date.html','Date Calculator')">Date</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="romanimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" data-toggle="modal" data-target="#roman">Roman/Arabic Numerals 🔴  </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div id="corr">
+    <h1 style="text-align: center; margin: 2rem auto 2rem auto;">Correlaton Coefficient Calculator</h1>
+    <p style="margin-top: 2rem; ">
+        Correlation coefficient is used to find how strong a relationship is between data. The formulas
+        return a value between -1 and 1, where:
+        <li style="color:white;margin-left: 2rem;">1 indicates a strong positive relationship.</li>
+        <li style="color:white;margin-left: 2rem;">-1 indicates a strong negative relationship.</li>
+        <li style="color:white;margin-left: 2rem;">A result of zero indicates no relationship at all.</li>
+    </p>
+    <p style="text-align: left; color: white; margin-top:2rem;">Pearson Formula for Correlation Coefficient:
+    </p>
+    <p style="margin-bottom:4rem;">
+        \[r_{x,y}=\frac{\sum_{i=1}^{n}(X_{i}-M_{x})(Y_{i}-M_{y})}{\sqrt{\sum_{i=1}^{n}(X_{i}-M_{y})^2
+        \sum_{i=1}^{n}(Y_{i}-M_{y})^2}}\]</p>
+    <form action="">
+        <input class="form__field" type="text" id="sam1"
+            placeholder="Enter list of number separated by SPACE(sample x) ">
+        <br><br>
+        <input class="form__field" type="text" id="sam2"
+            placeholder="Enter list of number separated by SPACE(sample y)">
+        <br><br>
+        <button class="btn btn-light" type="button" onclick="corrco()">Calculate</button>
+        <button class="btn btn-light" type="button" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p id="coffans"></p>
+    <div id="coffexplain">
+        <p id="coffx" style="text-align: left; margin-top: 4rem;"></p><br>
+        <p id="coffy" style="text-align: left;"></p><br>
+        <p id="coffxy" style="text-align: left;"></p><br>
+        <p id="coffr" style="text-align: left;"></p><br>
+    </div>
+</div>

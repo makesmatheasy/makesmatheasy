@@ -1,0 +1,87 @@
+<div id="plotbargraph">
+
+    <center>
+        <h3>PLOT BAR GRAPH</h3>
+    </center>
+    <h4>Instructions : </h4>
+    <h5>Seperate Each data with ',' for both the axis</h5>
+    <h5> - Example :</h5>
+    <h5> for Y axis enter ----> a,b,c,d :</h5>
+    <h5> for Y axis enter ----> 10,5,6,4 :</h5>
+
+    <form action="">
+        <input type="text" id="y_axis" placeholder="Enter The Values of Y axis "
+            style="margin-top: 1.25rem;">
+        <br><br>
+        <input type="text" id="x_axis" placeholder="Enter The Values Of X axis ">
+        <br><br>
+        <center>
+            <input name="generate" type="button" value="CREATE GRAPH" onclick='create_graph();' />
+            <input type="button" value="Reset" onclick='this.form.reset();' />
+        </center>
+        <br><br>
+    </form>
+
+    <div id="graph" style="width: 100%; height: 100%"></div>
+
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+
+
+    <script>
+
+        function enterData() {
+            var y = document.getElementById('y_axis').value;
+            var x = document.getElementById('x_axis').value;
+
+            y_axis = y.split(',');
+            x_axis = x.toString().split(',').map(Number)
+
+            list = []
+
+            for (i = 0; i < y_axis.length; i++) {
+                values = []
+                values.push(y_axis[i])
+                values.push((x_axis[i]))
+                list.push(values)
+            }
+
+            return list
+        }
+
+
+
+        function create_graph() {
+            row1 = enterData();
+
+            anychart.onDocumentReady(function () {
+                // the code to create a chart will be here
+                // the data 
+                var data = {
+                    header: ["Y_axis", "X_axis"],
+                    rows: row1
+                };
+
+                // create the chart
+                var chart = anychart.column();
+
+                // add the data
+                chart.data(data);
+                // set the chart title
+                chart.title("The Graph Is :");
+
+                // draw
+                document.getElementById('graph').innerHTML = "";
+                chart.container("graph");
+                chart.draw();
+
+
+            });
+
+        }
+
+    </script>
+
+
+
+
+</div>

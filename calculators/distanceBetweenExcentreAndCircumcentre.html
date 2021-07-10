@@ -1,0 +1,72 @@
+<script>
+    function callexcircum_1() {
+        var R = parseInt(document.getElementById("radius_2").value);
+        var A = parseInt(document.getElementById("ang_1").value);
+        var B = parseInt(document.getElementById("ang_2").value);
+        var C = parseInt(document.getElementById("ang_3").value);
+
+        var data = excircum_1(R, A, B, C);
+
+        document.getElementById('excircum1').innerHTML = data['result'];
+        document.getElementById('excircum1steps').innerHTML = data['steps'];
+
+        renderMathInElement(document.getElementById('excircum1'));
+        renderMathInElement(document.getElementById('excircum1steps'));
+
+    }
+    function callexcircum_2() {
+
+        var R1 = parseInt(document.getElementById("radius_3").value);
+        var A1 = parseInt(document.getElementById("ang_A").value);
+        var B1 = parseInt(document.getElementById("ang_B").value);
+        var C1 = parseInt(document.getElementById("ang_C").value);
+
+        var data=excircum_2(A1,R1,B1,C1);
+
+        document.getElementById("excircum2").innerHTML=data['result'];
+        document.getElementById("excircum2steps").innerHTML=data['steps'];
+        renderMathInElement(document.getElementById('excircum2'));
+        renderMathInElement(document.getElementById('excircum2steps'));
+    }
+</script>
+<h2 class="d-flex justify-content-center">Distance between excentre and circumcentre</h2><br>
+<p>For OI1</p>
+<p id="extcircum">\[R√1+(8*sin(A/2)*sin(B/2)*sin(C/2))\]</p>
+<form action="" class="d-flex justify-content-center">
+    <div class="form-group">
+        <input type="text" style="width: 250px;" class="form__field form-control" name="a" id="radius_2"
+            placeholder="Enter External radius" />
+        <input type="text" name="b" style="width: 250px;" class="form__field form-control p-1" id="ang_1"
+            placeholder="Enter angle A " />
+        <input type="text" name="c" style="width: 250px;" class="form__field form-control p-1" id="ang_2"
+            placeholder="Enter angle B" />
+        <input type="text" name="d" style="width: 250px;" class="form__field form-control p-1" id="ang_3"
+            placeholder="Enter angle C" /><br><br>
+        <button class="btn btn-outline-light" type="button" onclick="callexcircum_1()">Find</button>
+        <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button>
+    </div>
+</form>
+
+<p id="excircum1"></p><br><br>
+<p id="excircum1steps"></p><br><br>
+
+<p>For OI2 and OI3</p>
+<p id="extcircum">\[R√1+(8*cos(A/2)*cos(B/2)*cos(C/2))\]</p>
+<form action="" class="d-flex justify-content-center">
+    <div class="form-group">
+        <input type="text" style="width: 250px;" class="form__field form-control p-1" name="a" id="radius_3"
+            placeholder="Enter External radius" />
+        <input type="text" name="b" style="width: 250px;" class="form__field form-control p-1" id="ang_A"
+            placeholder="Enter angle A " />
+        <input type="text" name="c" style="width: 250px;" class="form__field form-control p-1" id="ang_B"
+            placeholder="Enter angle B" />
+        <input type="text" name="d" style="width: 250px;" class="form__field form-control p-1" id="ang_C"
+            placeholder="Enter angle C" /><br><br>
+        <button class="btn btn-outline-light" type="button" onclick="callexcircum_2()">Find</button>
+        <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button>
+        <br>
+    </div>
+</form>
+
+<p id="excircum2"></p><br><br>
+<p id="excircum2steps"></p><br><br>

@@ -1,0 +1,23 @@
+<div id="skews">
+    <h1 style="font-family:mathfont; text-align:center;">SKEWNESS CALCULATOR </h1>
+    <form action="">
+        <input type="text" name="skewinput" class="form__field" id="skewinput" width="5em"
+            placeholder="Enter data set seperated by space">
+        <p>&nbsp;</p>
+        <button type="button" class="btn btn-outline-light" onclick="skewcal()">Calculate</button>
+        <button type="button" class="btn btn-outline-light" onclick="this.form.reset();">Reset</button>
+    </form>
+
+    <p>&nbsp;</p>
+    <p id="skewans" style="color: white; text-align: center; font-size: 1.7em; font-family:mathfont"></p>
+    <p>&nbsp;</p>
+    <p style="color: white; text-align: center; font-size: 1.3em; font-family:mathfont">
+        How to Calculate Skewness:<br>
+        1. Calculate the mean and standard deviation<br>
+        2. Subtract the mean from each raw score<br>
+        3. Raise each of these deviations from the mean to the third power and sum<br>
+        4. Calculate skewness, which is the sum of the deviations from the mean, raise to the third power,<br>
+        divided by number of cases minus 1, times the standard deviation raised to the third power.</p>
+
+
+</div>
