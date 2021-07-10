@@ -28492,7 +28492,7 @@ function isHyperPerfect(N, K) {
     else
         return false;
 }
-function hyperfind(num1,num2){}
+function hyperfind(num1,num2){
  
     var ans = "";
     if (num1 == "" || num2 == "") {
