@@ -335,6 +335,10 @@ h5, h6 {
   outline: none !important;
 }
 
+.fa-search {
+  cursor: pointer;
+}
+
 #box {
   display: flex;
   flex-direction: row;
