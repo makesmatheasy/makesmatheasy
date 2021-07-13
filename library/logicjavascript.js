@@ -29360,3 +29360,35 @@ function ucontrol(u,n)
     ans+="The u control chart limit will be="+res;
     return {'result':res,'steps':ans};
 }
+
+function amicable(num1,num2)
+{
+    var ans="";
+    var res="";
+    num1=parseInt(num1);
+    ans+="Step1:Input the first number="+num1;
+    num2=parseInt(num2);
+    ans+="Step2:Input the second number="+num2;
+    let div1=0,div2=0;
+    ans+="Step3: Calculate the sum of divisors of 1st number";
+    for (let index = 1; index < num1; index++){
+        if(num1 % index==0)
+        div1=div1+index;
+    }
+    ans+="Step4:The sum of divisors of 1st number is="+div1;
+    ans+="Step5: Calculate the sum of divisors of 2nd number";
+    for (let index1 = 1; index1 < num2; index1++) {
+        if(num2 % index1 ==0)
+        div2=div2+index1;
+    }
+    ans+="Step6:The sum of divisors of 2nd number is="+div2;
+    if(div1==num2 && div2==num1)
+    {
+        res=" They are amicable numbers";
+    }
+    
+    else
+    res="They are not amicable numbers";
+    return {'result':res,'steps':ans};
+}
+
