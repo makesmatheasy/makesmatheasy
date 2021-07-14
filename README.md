@@ -655,7 +655,7 @@ If you have any doubts please let us know in the comments.
 
 <table>
   <tbody><tr>
-    <td align="center"><a href="https://github.com/sairish2001"><img alt="" src="https://avatars.githubusercontent.com/sairish2001" width="130px;"><br><sub><b> Rajinderpal Singh </b></sub></a><br><a href="https://github.com/codeaholic-shub/ALGO-ADDICT/commits?author=codeaholic-shub" title="Code">💻 </a></td> </a></td>
+    <td align="center"><a href="https://github.com/sairish2001"><img alt="" src="https://avatars.githubusercontent.com/sairish2001" width="130px;"><br><sub><b> Rajinderpal Singh </b></sub></a><br></td> </a></td>
 </tbody></table>
 
 <h1 align=center> Project Maintainers 😃 </h1>
@@ -664,6 +664,8 @@ If you have any doubts please let us know in the comments.
 <table>
   <tbody><tr>
     <td align="center"><a href="https://github.com/arpit456jain"><img alt="" src="https://avatars.githubusercontent.com/arpit456jain" width="130px;"><br><sub><b> Arpit Jain </b></sub></a><br></td></a></td>
+     <td align="center"><a href="https://github.com/https://github.com/gnikita432"><img alt="" src="https://avatars.githubusercontent.com/https://github.com/gnikita432" width="130px;"><br><sub><b> Nikita Anil Gupta </b></sub></a><br></td></a></td>
+      <td align="center"><a href="https://github.com/Rizwan-S"><img alt="" src="https://avatars.githubusercontent.com/Rizwan-S" width="130px;"><br><sub><b>Rizwan Shaikh </b></sub></a><br></td></a></td>
   </tr>
 </tbody></table>
 
