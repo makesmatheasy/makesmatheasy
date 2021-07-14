@@ -650,11 +650,22 @@ If you have any doubts please let us know in the comments.
   </tr>
 </table>
 
+<h1 align=center> Project Admin ❤️ </h1>
+<p align="center">
 
-### Project Maintainers
+<table>
+  <tbody><tr>
+    <td align="center"><a href="https://github.com/sairish2001"><img alt="" src="https://avatars.githubusercontent.com/sairish2001" width="130px;"><br><sub><b> Rajinderpal Singh </b></sub></a><br><a href="https://github.com/codeaholic-shub/ALGO-ADDICT/commits?author=codeaholic-shub" title="Code">💻 </a></td> </a></td>
+</tbody></table>
 
-- [Rajinderpal Singh](https://github.com/sairish2001) (Project Admin)
-- [Arpit Jain](https://github.com/arpit456jain) (Mentor)
+<h1 align=center> Project Maintainers 😃 </h1>
+<p align="center">
+
+<table>
+  <tbody><tr>
+    <td align="center"><a href="https://github.com/arpit456jain"><img alt="" src="https://avatars.githubusercontent.com/arpit456jain" width="130px;"><br><sub><b> Arpit Jain </b></sub></a><br></td></a></td>
+  </tr>
+</tbody></table>
 
 ## 🌟 Contributors
 
