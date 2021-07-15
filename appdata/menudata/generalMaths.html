@@ -1,0 +1,64 @@
+<script>
+    function checkFavourites() {
+        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+        for (filename in imglocal) {
+            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
+        }
+    }
+    checkFavourites();
+</script>
+<style>
+    .menu .option img {
+        height: 1.5rem;
+        display: block;
+        margin:0 auto;         
+        margin-right: 0.2rem;        
+    }
+
+    .menu {
+        text-align: center;
+        border-radius: 30px;
+        margin-top: 20px;
+        padding: 2rem;
+        background-color: var(--appwhite);
+    }
+
+    .option {
+        height: 8rem;
+        width: 8rem;        
+        margin-bottom: 20px !important;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: var(--appblack);
+        cursor:pointer;
+    }
+    .caltext{
+        margin-top: 1.5rem;
+        display: block;        
+    }
+
+    .back img{        
+        position: fixed;
+        margin-left: 10px;
+        margin-top: 10px;
+        display: block !important;
+        height: 30px;
+        box-shadow: 0 0 10px black;
+        border-radius: 50%;
+        padding:5px;
+    }
+</style>
+<div class="back" onclick="openOption('appdata/menu.html','Menu')"><img src="icons/back.png" alt=""></div>      
+
+<div class="menu">    
+    <div class="row">
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="amicablenumfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/amicable.html','Amicable number')">Amicable number</span>                           
+            </div>
+        </div>
+    </div>
+</div>

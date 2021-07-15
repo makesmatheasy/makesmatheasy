@@ -1,0 +1,177 @@
+<script>
+    function checkFavourites() {
+        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+        for (filename in imglocal) {
+            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
+        }
+    }
+    checkFavourites();
+</script>
+<style>
+    .menu .option img {
+        height: 1.5rem;
+        display: block;
+        margin:0 auto;         
+        margin-right: 0.2rem;        
+    }
+
+    .menu {
+        text-align: center;
+        border-radius: 30px;
+        margin-top: 20px;
+        padding: 2rem;
+        background-color: var(--appwhite);
+    }
+
+    .option {
+        height: 8rem;
+        width: 8rem;        
+        margin-bottom: 20px !important;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: var(--appblack);
+        cursor:pointer;
+    }
+    .caltext{
+        margin-top: 1.5rem;
+        display: block;        
+    }
+
+    .back img{        
+        position: fixed;
+        margin-left: 10px;
+        margin-top: 10px;
+        display: block !important;
+        height: 30px;
+        box-shadow: 0 0 10px black;
+        border-radius: 50%;
+        padding:5px;
+    }
+</style>
+<div class="back" onclick="openOption('appdata/menu.html','Menu')"><img src="icons/back.png" alt=""></div>      
+
+<div class="menu">    
+    <div class="row">
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="boolimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/bool.html','Boolean Algebra')">Boolean Algebra</span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="anyBase-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/anyBaseToAnyBaseConverter.html','Any Base to Any Base Convertor')">Any Base to Any Base Convertor</span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="binary-hexadecimal-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/binDecOctHexConverterr.html','Binary/Decimal/Hexadecimal Converter')">Bin/Dec/Oct/Hex
+                    Converter</span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="adding-all-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/additionOfAnyNumberSystem.html','Addition Of any Number System')">Addition Of any Number System</span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="subtract-all-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/subtractionOfAnyNumberSystem.html','Subtraction Of any Number System')">Subtraction Of any Number System</span>                           
+            </div>
+        </div>        
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="multiplying-all-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/multiplicationOfAnyNumberSystem.html','Multiplcation Of any Number System')">Multiplcation Of any Number System</span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="divide-all-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/divisionOfAnyNumberSystem.html','Division Of any Number System')">Division Of any Number System</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="bcd-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/bcdCodeConverter.html','BCD Code Converter')">BCD Code Converter</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="ex3-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/excess3CodeConverter.html','Excess-3 Code Converter')">Excess-3 Code Converter</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="dec2421-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/2421CodeConverter.html','Decimal/2421 Code Converter')">2421 Code Converter</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="grey-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/greyCodeConverter.html','Grey Code Converter')">Grey Code Converters</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="bitwise-calc-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/bitwiseCalculator.html','Bitwise Calculator')">Bitwise Calculator</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="onetwocom-calc-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/r-1AndRComplementCalculator.html','1s and 2s Complement Calculator')">1s and 2s Complement Calculator</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="hamming-calc-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/hammingCode.html','Hamming Code')">Hamming Code</span>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="hamming-dist-imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/hammingDistance.html','Hamming Dist')">Hamming Distance</span>
+            </div>
+        </div>
+    </div>
+</div>

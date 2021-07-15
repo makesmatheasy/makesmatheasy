@@ -1,0 +1,98 @@
+<script>
+    function checkFavourites() {
+        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+        for (filename in imglocal) {
+            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
+        }
+    }
+    checkFavourites();
+</script>
+<style>
+    .menu .option img {
+        height: 1.5rem;
+        display: block;
+        margin:0 auto;         
+        margin-right: 0.2rem;        
+    }
+
+    .menu {
+        text-align: center;
+        border-radius: 30px;
+        margin-top: 20px;
+        padding: 2rem;
+        background-color: var(--appwhite);
+    }
+
+    .option {
+        height: 8rem;
+        width: 8rem;        
+        margin-bottom: 20px !important;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: var(--appblack);
+        cursor:pointer;
+    }
+    .caltext{
+        margin-top: 1.5rem;
+        display: block;        
+    }
+
+    .back img{        
+        position: fixed;
+        margin-left: 10px;
+        margin-top: 10px;
+        display: block !important;
+        height: 30px;
+        box-shadow: 0 0 10px black;
+        border-radius: 50%;
+        padding:5px;
+    }
+</style>
+<div class="back" onclick="openOption('appdata/menu.html','Menu')"><img src="icons/back.png" alt=""></div>      
+
+<div class="menu">    
+    <div class="row">
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="formulafav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/formula.html','Algebraic Equations Formulas')">Algebraic Equations Formulas</span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="rootsquadraticeqimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/rootsOfEquation.html','Roots of Equation')">Roots of Equation</span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="equationssolverfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/playWithEquations.html','Play with Equations')">Play with Equations</span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="planeinterceptfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/interceptFormOfPlane.html','Intercept form of Plane')">Intercept form of Plane</span>                           
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="option">
+                <img id="quadeqncalfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                
+                <span class="caltext" onclick="loadcalculator('calculators/quadraticEquationCalculator.html','Quadratic Equation Calculator')">Quadratic Equation Calculator</span>                           
+            </div>
+        </div>        
+
+       
+    </div>
+</div>
