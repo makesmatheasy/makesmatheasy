@@ -1,0 +1,224 @@
+<script>
+    function checkFavourites() {
+        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+        for (filename in imglocal) {
+            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
+        }
+    }
+    checkFavourites();
+</script>
+<style>
+    .menu .option img {
+        height: 1.5rem;
+        display: block;
+        margin:0 auto;
+        margin-right: 0.2rem;
+    }
+
+    .menu {
+        text-align: center;
+        border-radius: 30px;
+        margin-top: 20px;
+        padding: 2rem;
+        background-color: var(--appwhite);
+    }
+
+    .option {
+        height: 8rem;
+        width: 8rem;
+        margin-bottom: 20px !important;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: var(--appblack);
+        cursor:pointer;
+    }
+    .caltext{
+        margin-top: 1.5rem;
+        display: block;
+    }
+
+    .back img{
+        position: fixed;
+        margin-left: 10px;
+        margin-top: 10px;
+        display: block !important;
+        height: 30px;
+        box-shadow: 0 0 10px black;
+        border-radius: 50%;
+        padding:5px;
+    }
+</style>
+<div class="back" onclick="openOption('appdata/menu.html','Menu')"><img src="icons/back.png" alt=""></div>
+
+<div class="menu">
+    <div class="row">
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Trigonometry Basics</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">P/B/H Trigo</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Hyperbolic Trigonometric Ratios Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Distance Series</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Trigonometry Values</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Pentatope Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Lancent Art Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Distance Between Excenter And Circumcenter</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Circum Radius And Area Of External Triangle</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Trigonometry Identities</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Trigonometric Functions</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Inverse Trigonometric Identities</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Hyperbolic Trigonometric Identities</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Inverse Hyperbolic Trigonometric Identities</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Unit Circle</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">General Solution Of Trigonometric Equations</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Height And Distance</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Expansion Of Functions</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Expansion Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Solution Of Triangles</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Sum And Difference Of Trigonometric Function</span>
+          </div>
+      </div>
+    </div>
+</div>
