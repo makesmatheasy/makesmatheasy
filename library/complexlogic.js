@@ -1079,6 +1079,38 @@ function ssoncal()
 }
 
 
+function leap(){
+    try{
+        let yearInput = parseInt(document.getElementById("leapin").value);
+        if(yearInput >= 0 ){
+            if( yearInput%4 == 0){
+                if(yearInput%100 == 0){
+                    if(yearInput%400 == 0){
+                    document.getElementById("leapresult1").innerHTML = "It is a leap year.";
+                    }
+                    else{
+                        document.getElementById("leapresult1").innerHTML = "It's not a leap year.";
+                    }                    
+                }
+                else{
+                document.getElementById("leapresult1").innerHTML = "It is a leap year.";
+                }
+            }
+            else{
+                document.getElementById("leapresult1").innerHTML = "It's not a leap year.";
+            }
+        }
+        else{
+            throw "Input Error!";
+        }
+    }
+    catch(err){
+        //show error message
+        document.getElementById("leapresult1").innerHTML = "Please insert a valid year.";
+    }
+}
+
+
   function numcubesRangecal()
     {
 

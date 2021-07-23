@@ -11,13 +11,22 @@
     <meta name="description" content="Your Answers just a Click Away" />
     <meta name="keywords"
         content="makes math easy, make maths easy, calulators, math helper, step wise math calculators, calculator with steps, makesmatheasy, sairish, makemathseasy" />
-    <!--    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SS5SX1CWFK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-SS5SX1CWFK');
+    </script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/scroll.css">
     
     <link rel="manifest" href="./manifest.json">
     <script defer src="katex/katex.min.js"></script>
@@ -250,7 +259,7 @@
             overflow: hidden;
         }
 
-        .container-fluid {
+        .container-fluid {            
             padding-top: 3.8rem;
             height: 100vh;
             padding-bottom: 4.2rem;
@@ -259,7 +268,7 @@
         }
 
         @media (min-width: 769px) {
-            .container-fluid {
+            .container-fluid {                
                 padding-bottom: 0px;
                 padding-left: 4.5rem;
             }
@@ -271,7 +280,7 @@
             width: 100%;
             height: 3.2rem;
             background-color: #25282B;
-            position: fixed;
+            position: fixed;            
             border-bottom: 1px solid #dddddd;
             z-index: 9999;
             color: var(--appwhite);
@@ -290,6 +299,12 @@
             line-height: 3.2rem;
             font-size: 1.2rem;
         }
+		::-moz-selection {
+    background: #87CFFA;
+}
+::selection {
+    background: #87CEFA;
+}
     </style>
     <script src="appjs/index.js"></script>
 

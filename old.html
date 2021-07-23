@@ -12,15 +12,7 @@
     <meta name="keywords"
         content="makes math easy, make maths easy, calulators, math helper, step wise math calculators, calculator with steps, makesmatheasy, sairish, makemathseasy" />
     <!--    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SS5SX1CWFK"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
 
-        gtag('config', 'G-SS5SX1CWFK');
-    </script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -3469,6 +3461,24 @@
                     <table class="table">
                         <tr>
                             <td style="border-top: none;">
+                                <span onclick="loadcalculator('calculators/amicable.html')"
+                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Amicable
+                                    Number</span>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span
+                                    onclick="addtofavourite('Amicable Number','amicablenum','c','amicablenumfav')"><img
+                                        id="trimornumimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
                                 <span onclick="loadcalculator('calculators/eulerianNumber.html')"
                                     style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">Eulerian
                                     Number</span>
@@ -3938,7 +3948,7 @@
                         </tr>
                     </table>
                 </li>
-                
+
                 <li>
                     <table class="table">
                         <tr>
@@ -5740,6 +5750,23 @@
                         </tr>
                     </table>
                 </li>
+                <li>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top: none;">
+                                <span onclick="loadcalculator('calculators/uControlChart.html')"
+                                    style="font-size:0.9375rem;cursor: pointer;background:transparent;border:none;">U
+                                    control chart Calculator</span>
+                            </td>
+                            <td style="float:right;border-top: none;">
+                                <span onclick="addtofavourite('U control chart Calculator','#ucontrol','c','ucontrolfav')"><img
+                                        id="zscimgfav" src="images/unfavourite.png"
+                                        style="height:1.5625rem;filter: none;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+
                 <li>
                     <table class="table">
                         <tr>
@@ -23423,7 +23450,7 @@
     <script src="appjs/working.js"></script>
     <script src="library/logicjavascript.js"></script>
 
-    <script src="appjs/simplecallogic.js"></script>    
+    <script src="appjs/simplecallogic.js"></script>
     <script src="appjs/speechrecoforall.js"></script>
     <script src="library/complexlogic.js"></script>
     <script src="js/math.min.js"></script>

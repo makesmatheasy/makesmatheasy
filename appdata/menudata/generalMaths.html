@@ -1,0 +1,944 @@
+<script>
+    function checkFavourites() {
+        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
+        for (filename in imglocal) {
+            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
+        }
+    }
+    checkFavourites();
+</script>
+<style>
+    .menu .option img {
+        height: 1.5rem;
+        display: block;
+        margin:0 auto;
+        margin-right: 0.2rem;
+    }
+
+    .menu {
+        text-align: center;
+        border-radius: 30px;
+        margin-top: 20px;
+        padding: 2rem;
+        background-color: var(--appwhite);
+    }
+
+    .option {
+        height: 8rem;
+        width: 8rem;
+        margin-bottom: 20px !important;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: var(--appblack);
+        cursor:pointer;
+    }
+    .caltext{
+        margin-top: 1.5rem;
+        display: block;
+    }
+
+    .back img{
+        position: fixed;
+        margin-left: 10px;
+        margin-top: 10px;
+        display: block !important;
+        height: 30px;
+        box-shadow: 0 0 10px black;
+        border-radius: 50%;
+        padding:5px;
+    }
+</style>
+<div class="back" onclick="openOption('appdata/menu.html','Menu')"><img src="icons/back.png" alt=""></div>
+
+<div class="menu">
+    <div class="row">
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Ackermann Function</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/lcmHcfFactors.html','lcm/hcf/factors')">LCM/HCF/Factors</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/euclidGCD.html','euclidGCD')">Euclid GCD</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/antilogCalculator.html','antilogcalc')">Antilog Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/changeLogBaseCalculator.html','logbasecalc')">Change Log Base Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/doublingTime.html','doublingTime')">Doubling Time</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/percentageChange.html','percentageChange')">Percentage Change</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/percentageOff.html','percentageoff')">Percentage Off</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/moduloCalculator.html','moduloCalc')">Modulo Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/sieveOfEratosthenes.html','sieveOfEratosthenes')">Sieve of Eratosthenes</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/adamNumbers.html','adamnumbers')">Adam Numbers</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/greatestIntegerFunctionFractionalPart.html','greatestIntegerFunctionFractionalPart')">Greatest Integer Function And Fractional Part</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/quartiles.html','quartiles')">Quartiles</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/deciles.html','deciles')">Deciles</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/exponentialGrowthCalculator.html','exponentialGrowthCalculator')">Exponential Growth Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/bmiCalculator.html','bmiCalculator')">B.M.I. Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/percentileRankCalculator.html','percentileRankCalculator')">Percentile Rank Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/halfLifeCalculator.html','halfLifeCalculator')">Half Life Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/directAndIndirectProportion.html','directAndIndirectProportion')">Direct And Indirect Proportion</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/crossMultiplcationCalculator.html','crossMultiplicationCalculator')">Cross Multiplication Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/diamondProblemCalculator.html','diamondProblemCalculator')">Diamond Problem Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/additiveInverse.html','additiveInverse')">Additive Inverse</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/multiplicativeInverse.html','multiplicativeInverse')">Multiplicative Inverse</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/squareRootCalculator.html','squareRootCalculator')">Square Root Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/unitRateCalculator.html','unitRateCalculator')">Unit Rate Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/orderOfMagnitudeCalculator.html','orderOfMagnitudeCalculator')">Order Of Magnitude Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/workAndTimeCalculator.html','workAndTimeCalculator')">Work And Time Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/kaprekarNumber.html','kaprekarNumber')">Kaprekar Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/wagstaffNumber.html','wagstaffNumber')">Wagstaff Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/abundantNumber.html','abundantNumber')">Abundant Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/woodallNumber.html','woodallNumber')">Woodall Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/hyperperfectNumber.html','hyperperfectNumber')">Hyperperfect Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/solveForExponents.html','solveForExponents')">Solve For Exponents</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/sumOfSquaresCalculator.html','sumOfSquaresCalculator')">Sum Of Square Of Given Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/binomialDistributionPmf.html','binomialDistributionPmf')">Binomial Distribution PMF</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/naturalNumbers.html','naturalNumbers')">Natural Numbers</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/clockAngleCalculator.html','clockAngleCalculator')">Clock Angle Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/rootMeanSquare.html','rootMeanSquare')">Root Mean Square</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                <!--Squares and Cubes Calculator cannot be found!-->
+              <span class="caltext" onclick="loadcalculator('calculators/halfLifeCalculator.html','halfLifeCalculator')">Squares And Cubes Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/nthbaserootcalculator.html','nthbaserootcalculator')">n-th Base Root Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/perfectSquaresCubesRange.html','perfectSquaresCubesRange')">Perfect Squares And Cubes In a Range</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/factorization.html','factorization')">Factorization</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/percentageCalculator.html','percentageCalculator')">Percentage Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/errorPercentageCalculator.html','errorPercentageCalculator')">Error Percentage Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/interestSimpleCompound.html','interestSimpleCompound')">Interest(Simple,Compound)</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/costAndSellingPrices.html','costAndSellingPrices')">Cost And Selling Prices</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/effectiveInterestRate.html','effectiveInterestRate')">Effective Interest Rate</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/profitLossCalculations.html','profitLossCalculations')">Profit Loss Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/setCalculator.html','setCalculator')">Set Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/pythagoreanTriplets.html','pythagoreanTriplets')">Pythagorean Triplets</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/rankCalculator.html','rankCalculator')">Rank Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/leapYear.html','leapYear')">Leap Year</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/hydrostaticPressure.html','hydrostaticPressure')">Hydrostatic Pressure</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('study/logarithmProperties.html','logarithmProperties')">Logarithm Properties</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/logarithmCalculator.html','logarithmCalculator')">Logarithm Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/lnCalculator.html','lnCalculator')">Ln Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('study/binomialTheoremProperties.html','binomialTheoremProperties')">Binomial Theorem Properties</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/binomialCoefficientCalculator.html','binomialCoefficientCalculator')">Binomial Coefficient Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/binomialExpressionMultiplication.html','binomialExpressionMultiplication')">Binomial Expression Multiplication</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/foilCalculator.html','foilCalculator')">Foil Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/operationsOnFractions.html','operationsOnFractions')">Operations On Fractions</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/solveFraction.html','solveFraction')">Solve Fraction</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/multiplicationTable.html','multiplicationTable')">Multiplication Table</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/divide.html','divide')">Divide</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/multiplyWithSteps.html','multiplyWithSteps')">Multiply With Steps</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/roundoff.html','roundoff')">Round Off</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/convolution.html','convolution')">Convolution Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/emiCalculator.html','emiCalculator')">E.M.I. Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/gstCalculator.html','gstCalculator')">G.S.T. Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/goldenRatioCalculator.html','goldenRatioCalculator')">Golden Ratio Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/goldenRectangleCalculator.html','goldenRectangleCalculator')">Golden Rectangle Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/polynomialDegree.html','polynomialDegree')">Polynomial Degree</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/factorial.html','factorial')">Factorial</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/permutationAndCombination.html','permutationAndCombination')">Permutation And Combination</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/speedDistanceTimeCalculator.html','speedDistanceTimeCalculator')">Speed Distance Time Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/primeNumbers.html','primeNumbers')">Prime Numbers</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/coprimeCalculator.html','coprimeCalculator')">Co-Prime Calculator </span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('study/coprimeNumbersTheory.html','coprimeNumbersTheory')">Co-Prime Numbers Theory</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/eulerTotientFunction.html','eulerTotientFunction')">Euler Totient Function</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/eulerTotientCalculator.html','eulerTotientCalculator')">Eulent Totient Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/nextPrimeNumber.html','nextPrimeNumber')">Next Prime Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/smallestPrimeFactor.html','smallestPrimeFactor')">Smallest Prime Factor</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/sumOfDivisors.html','sumOfDivisors')">Sum Of Divisors</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/doubleFactorial.html','doubleFactorial')">Double Factorial</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/catalanNumber.html','catalanNumber')">Catalan Numbers Calculator</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/specialNumber.html','specialNumber')">Special number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+                <!--Desargues Theorem cannot be found!-->
+              <span class="caltext" onclick="loadcalculator('study/desarguesTheorem.html','desarguesTheorem')">Desargues Theorem</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/dirichletTheoremOnArithmeticProgressions.html','dirichletTheoremOnArithmeticProgressions')">Dirichlet's theorem on arithmetic progressions</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/smallestNumberDivisible.html','smallestNumberDivisible')">Smallest Number Divisible</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/lucasSeries.html','lucasSeries')">Lucas Series</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/typesOfNumbers.html','typesOfNumbers')">Types Of Numbers</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/duckNumber.html','duckNumber')">Duck Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/armstrongNumber.html','armstrongNumber')">Armstrong Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/palindromeNumber.html','palindromeNumber')">Palindrome Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/perfectNumber.html','perfectNumber')">Perfect Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/emripNumber.html','emripNumber')">Emrip Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/neonNumber.html','neonNumber')">Neon Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/disariumNumber.html','disariumNumber')">Disarium Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/happyNumber.html','happyNumber')">Happy Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/krishnamurthyNumber.html','krishnamurthyNumber')">Krishnamurthy Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/automorphicNumber.html','automorphicNumber')">Automorphic Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/magicNumber.html','magicNumber')">Magic Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/pronicNumber.html','pronicNumber')">Pronic Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/harshadNumber.html','harshadNumber')">Harshad Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/trimorphicNumber.html','trimorphicNumber')">Trimorphic Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/amicable.html','amicable')">Amicable Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/eulerianNumber.html','eulerianNumber')">Eulerian Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/carmichaelNumber.html','carmichaelNumber')">Carmichael Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/delannoyNumber.html','delannoyNumber')">Delannoy Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/cullenNumber.html','cullenNumber')">Cullen Number</span>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-6">
+          <div class="option">
+              <img id="statsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+
+              <span class="caltext" onclick="loadcalculator('calculators/pellNumber.html','pellNumber')">Pell Number</span>
+          </div>
+      </div>
+    </div>
+</div>
