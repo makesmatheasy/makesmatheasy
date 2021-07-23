@@ -1,8 +1,10 @@
 <div id="factorial">
     <form class="form-inline">
-        <input type="number" id="factorialval" placeholder="Enter a Number"
-            style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
-        <button type="button" class="btn btn-light" onclick="factorialsol('factorialval')">
+        <div>
+            <input type="number" id="factorialval" class="form__field" placeholder="Enter a Number"
+                style="border: none; background: transparent; border-bottom: 0.0625rem solid white; ">
+        </div>
+        <button type="button" class="btn btn-light" onclick="factorialsol()">
             Solve
         </button>
         <button type="button" class="btn btn-light" onclick="this.form.reset();">
@@ -11,11 +13,8 @@
     </form>
     <br>
     <div class="form-group">
-        <p id="explain_fact" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
-            align="right"></p>
-        <br>
-        <p id="factorialsolprint" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap"
-            align="right"></p>
+        <p id="factorialsolprint" style="display:flex;font-family:mathfont;;width:auto;" class="stopwrap" align="right">
+        </p>
     </div>
 
 </div>
