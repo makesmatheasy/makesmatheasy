@@ -2758,4 +2758,16 @@ function wagcal()
     renderMathInElement(document.getElementById("wagans"))
 }
 
+function factorialsol() {
+    let factorialVal = document.getElementById("factorialval").value;
+    if (factorialVal != "") {
+        let factorialsolprint = document.getElementById("factorialsolprint");
 
+        let answer = factorial(factorialVal);
+
+        factorialsolprint.innerHTML = factorialVal + " ! = " + answer;
+    }
+    else {
+        factorialsolprint.innerHTML = "Please enter a valid number.";
+    }
+}
