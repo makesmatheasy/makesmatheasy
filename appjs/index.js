@@ -565,7 +565,8 @@ function openit(id) {
         "#incircle",
         "#circularsector",
         "#ucontrol",
-        "#amicable"
+        "#amicable",
+        "#luminosity",
     ];
     for (i = 0; i < ids.length; i++) {
         if (ids[i] != id) {

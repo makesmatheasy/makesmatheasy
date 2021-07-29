@@ -1,0 +1,41 @@
+<script>
+	function callluminosity() {
+	   var num1=document.getElementById('Aluminosity').value;
+		var num2 = document.getElementById('Tluminosity').value;
+ 
+		 var data = luminosity(A,T);
+ 
+		 document.getElementById('outputsteps').innerHTML = data['steps'];
+		 document.getElementById('outputresult').innerHTML = data['result'];
+		 renderMathInElement(document.getElementById('outputsteps'));
+		 renderMathInElement(document.getElementById('outputresult'));
+	 }
+  </script>
+  <div class="back" onclick="openOption('appdata/menudata/generalMaths.html','General Maths')">
+    <img
+        style="       
+            background-color: whitesmoke;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-top: 10px;
+            display: block !important;
+            height: 30px;
+            box-shadow: 0 0 10px white;
+            border-radius: 50%;
+            padding:5px;
+        " src="./icons/back.png" alt=""></div>
+ <div>
+	 <input type="number" id="num1amicable" class="form__field">
+	 <input type="number" id="num2amicable" class="form__field">
+	
+	 
+	 <button type="button" class="btn btn-outline-light" onclick="callluminosity() ">Solve</button>
+ 
+	 <p id="outputresult" style="text-align: center;">
+ 
+	 </p>
+	 <p id="outputsteps" style="text-align: center;">
+ 
+	 </p>
+ </div> 
+ 
