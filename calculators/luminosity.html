@@ -1,9 +1,9 @@
 <script>
 	function callluminosity() {
-	   var num1=document.getElementById('Aluminosity').value;
-		var num2 = document.getElementById('Tluminosity').value;
+	   var num1=document.getElementById('num1').value;
+		var num2 = document.getElementById('num2').value;
  
-		 var data = luminosity(A,T);
+		 var data = luminosity(num1,num2);
  
 		 document.getElementById('outputsteps').innerHTML = data['steps'];
 		 document.getElementById('outputresult').innerHTML = data['result'];
@@ -25,8 +25,8 @@
             padding:5px;
         " src="./icons/back.png" alt=""></div>
  <div>
-	 <input type="number" id="num1amicable" class="form__field">
-	 <input type="number" id="num2amicable" class="form__field">
+	 <input type="number" id="num1" class="form__field">
+	 <input type="number" id="num2" class="form__field">
 	
 	 
 	 <button type="button" class="btn btn-outline-light" onclick="callluminosity() ">Solve</button>
