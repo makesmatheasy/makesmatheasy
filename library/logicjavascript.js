@@ -29366,8 +29366,6 @@ function ucontrol(u,n)
     ans+="The u control chart limit will be="+res;
     return {'result':res,'steps':ans};
 }
-<<<<<<< HEAD
-=======
 
 function amicable(num1,num2)
 {
@@ -29400,4 +29398,20 @@ function amicable(num1,num2)
     return {'result':res,'steps':ans};
 }
 
->>>>>>> main
+function luminosity(A,T)
+{
+    var ans="";
+    var res="";
+    A=parseFloat(A);
+    ans+="Step1:Input the area of cross section="+A;
+    T=parseFloat(T);
+    ans+="Step2:Input the temperature="+T;
+    let P=0.0;
+    ans+="Step3: Calculate the luminosity power";
+    P= A*T*5.670367*Math.pow(10,-8);
+    res=P;
+    ans+="Step4:The luminosity is equal to:"+res;
+    return {'result':res,'steps':ans};
+}
+
+
