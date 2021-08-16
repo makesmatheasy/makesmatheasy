@@ -15,116 +15,131 @@
     <h2><label>Mean Calculator</label></h2>
 </div>
 <br><br>
-<h4 class="d-flex justify-content-center">Arithmetic Mean</h4><br>
-<form class="form-inline d-flex flex-column align-items-center" id="myForm">
-    <input type="number" id="aval" placeholder="Enter the first term (a)" style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
-    <input type="number" id="cval" placeholder="Enter the last term(c) " style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
-    <div class="row">
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick=amsol()>
-                Solve
-            </button>
-        </div>
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick=calcexamsol()>
-                Example
-            </button>
-        </div>
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick="this.form.reset();">
-                Reset
-            </button>
-        </div>
-    </div>
-</form>
-<br>
-<div class="coll1" style="text-align: center;">
-    <p id="am_formula" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
-    <h5 id="am"></h5>
-</div>
-<br><br>
-<h4 class="d-flex justify-content-center">Geometric Mean</h4><br>
-<form class="form-inline d-flex flex-column align-items-center" id="myForm">
-    <input type="number" id="aval1" placeholder="Enter the first term (a)" style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
-
-    <input type="number" id="cval1" placeholder="Enter the last term(c) " style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
-
-    <div class="row">
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick=gmsol()>
-                Solve
-            </button>
-        </div>
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick=calcexgmsol()>
-                Example
-            </button>
-        </div>
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick="this.form.reset();">
-                Reset
-            </button>
+<div class="container">
+    <div class="col-9">
+        <h4 class="d-flex justify-content">Arithmetic Mean</h4><br>
+        <form class="form-inline d-flex flex-column align-items" id="myForm">
+            <input type="number" id="aval" class="form__field" placeholder="Enter the first term (a)" style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
+            <input type="number" id="cval" class="form__field" placeholder="Enter the last term(c) " style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick=amsol()>
+                            Solve
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick=calcexamsol()>
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="coll1" style="text-align: center;">
+            <p id="am_formula" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
+            <h5 id="am"></h5>
         </div>
     </div>
-</form>
-<br>
-<div class="coll1" style="text-align: center;">
-    <p id="gm_formula" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
-    <h5 id="gm"></h5>
-</div>
-<br><br>
-<h4 class="d-flex justify-content-center">Harmonic Mean</h4><br>
-<form class="form-inline d-flex flex-column align-items-center" id="myForm">
-    <input type="number" id="aval2" placeholder="Enter the first term (a)" style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
-
-    <input type="number" id="cval2" placeholder="Enter the last term(c) " style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
-    <div class="row">
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick=hmsol()>
-                Solve
-            </button>
-        </div>
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick="this.form.reset();">
-                Reset
-            </button>
-        </div>
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick=calcexhmsol()>
-                Example
-            </button>
-        </div>
-    </div>
-</form>
-<br>
-<div class="coll1" style="text-align: center;">
-    <p id="hm_formula" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
-    <h5 id="hm"></h5>
-</div>
-<br><br>
-<h4 class="d-flex justify-content-center">To calculate HM when AM and GM are given</h4><br>
-<form class="form-inline d-flex flex-column align-items-center" id="myForm">
-    <input type="number" id="am11" placeholder="Enter Arthimetic Mean (AM)" style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
-    <input type="number" id="gm11" placeholder="Enter Geometric Mean (GM) " style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
-    <div class="row">
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick=hmgm()>
-                Solve
-            </button>
-        </div>
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick="this.form.reset();">
-                Reset
-            </button>
-        </div>
-        <div class="col-4">
-            <button type="button" class="btn btn-light" onclick=calcexhmgm()>
-                Example
-            </button>
+    <br><br>
+    <div class="col-9">
+        <h4 class="d-flex justify-content">Geometric Mean</h4><br>
+        <form class="form-inline d-flex flex-column align-items" id="myForm">
+            <input type="number" id="aval1" class="form__field" placeholder="Enter the first term (a)" style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
+            <input type="number" id="cval1" class="form__field" placeholder="Enter the last term(c) " style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
+            <div class="container">   
+                <div class="row">
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick=gmsol()>
+                            Solve
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick=calcexgmsol()>
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="coll1" style="text-align: center;">
+            <p id="gm_formula" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
+            <h5 id="gm"></h5>
         </div>
     </div>
-</form>
-<br>
-<div class="coll1" style="text-align: center;">
-    <p id="hmgmans" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
+    <br><br>
+    <div class="col-9">
+        <h4 class="d-flex justify-content">Harmonic Mean</h4><br>
+        <form class="form-inline d-flex flex-column align-items" id="myForm">
+            <input type="number" id="aval2" class="form__field" placeholder="Enter the first term (a)" style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
+            <input type="number" id="cval2" class="form__field" placeholder="Enter the last term(c) " style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
+            <div class="container">   
+                <div class="row">
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick=hmsol()>
+                            Solve
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick=calcexhmsol()>
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="coll1" style="text-align: center;">
+            <p id="hm_formula" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
+            <h5 id="hm"></h5>
+        </div>
+    </div>
+    <br><br>
+    <div class="col-9">
+        <h4 class="d-flex justify-content">To calculate HM when AM and GM are given</h4><br>
+        <form class="form-inline d-flex flex-column align-items" id="myForm">
+            <input type="number" id="am11" class="form__field" placeholder="Enter Arthimetic Mean (AM)" style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
+            <input type="number" id="gm11" class="form__field" placeholder="Enter Geometric Mean (GM) " style="border: none; background: transparent; border-bottom: 0.0625rem solid white; color:  white;"><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick=hmgm()>
+                            Solve
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick=calcexhmgm()>
+                            Example
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" class="btn btn-light" onclick="this.form.reset();">
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="coll1" style="text-align: center;">
+            <p id="hmgmans" style="font-family:mathfont;;width:auto;" class="stopwrap"></p>
+        </div>
+    </div>
 </div>
