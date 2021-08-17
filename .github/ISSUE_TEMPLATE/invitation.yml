@@ -21,11 +21,11 @@ body:
     id: Additional
     attributes:
       label: Additional Context
-      description: Where did you meet Eddie? What do you like about this community/Why do you want to join?
+      description: Where did you meet Makes Math Easy Community ? What do you like about this community/Why do you want to join?
     validations:
       required: true
   - type: markdown
     attributes:
       value: |
         You can also join the Discord community [here]
-        Feel free to check out other cool repositories of EddieHub Community [here]
+        Feel free to check out other cool repositories of Makes Math Easy Community [here]
