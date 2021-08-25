@@ -20,6 +20,8 @@
 
 Started on **13 July,2020** by Justin Lemon
 
+Started on **13 July , 2020**
+
 Tagline - **Your answers just a click away**
 Tagline introduction date - **28 April,2021**
 
@@ -27,7 +29,7 @@ Solves various Math Problems along with Steps
 
 ### How it differs from other problem-solving projects?
 
-- Speed
+- Speed fast like Flash
 - No Server-side Interactions
 - Complex Calculations within a few ms(milliseconds)
 
