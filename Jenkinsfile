@@ -11,7 +11,6 @@ pipeline{
           allowMissing: false,
           alwaysLinkToLastBuild: true,
           keepAll: true,
-          reportDir: 'SCCProject',
           reportFiles: 'index.html',
           reportName: 'My Reports',
           reportTitles: 'The Report'])
