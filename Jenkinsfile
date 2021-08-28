@@ -11,8 +11,8 @@ pipeline{
           allowMissing: false,
           alwaysLinkToLastBuild: true,
           keepAll: true,
-          reportDir: 'reports',
-          reportFiles: 'report.html',
+          reportDir: 'calculators',
+          reportFiles: 'leapYear.html',
           reportName: 'My Reports',
           reportTitles: 'The Report'])
       }
