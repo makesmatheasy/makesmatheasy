@@ -6405,7 +6405,7 @@ function vectorcross() {
 function penta_cal() {
     let a = parseInt(document.getElementById("penta_n").value);
     if (!isNaN(parseInt(a))) {
-        var r = n * (n + 1) * (n + 2) * (n + 3) / 24;
+        var r = a * (a + 1) * (a + 2) * (a + 3) / 24;
         document.getElementById("penta_res").innerHTML = a + " th Pentatope number : " + r;
     }
     else {
@@ -18337,15 +18337,6 @@ function phi5(n) {
     return result;
 }
 
-function lance_cal() {
-    let x = parseInt(document.getElementById("lance_x").value);
-    let y = parseInt(document.getElementById("lance_y").value);
-    let z = parseInt(document.getElementById("lance_z").value);
-
-    var area = z * (u - y) / 2 - x * (z - y / 2);
-    var peri = 2 * z * arccos(1 - y / (2 * z)) + y;
-    document.getElementById("lance_res").innerHTML = "Area : " + area + " and perimeter : " + peri;
-}
 function arccos(degrees) {
     var radians = (degrees * Math.PI) / 180;
     return Math.arccos(radians);
@@ -25762,9 +25753,9 @@ function tvalue() {
 }
 
 // t-value formula
-katex.render(String.raw`\bar{X1} - \bar{X2} \atop \sqrt{S1^2/N1 + S2^2/N2}`, document.getElementById('tformula'), {
-    throwOnError: false
-})
+// katex.render('\\bar{X1} - \\bar{X2} \\atop \\sqrt{S1^2/N1 + S2^2/N2}', document.getElementById('tformula'), {
+//     throwOnError: false
+// })
 // Correlation Coefficient function()
 function corr_dec(arr, mean) {
     let diff = arr;
