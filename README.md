@@ -18,8 +18,6 @@
 
 </div>
 
-Started on **13 July,2020** by Justin Lemon
-
 Started on **13 July , 2020**
 
 Tagline - **Your answers just a click away**
