@@ -1,153 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1">
+    <title>Makes Math Easy-Study</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/simplecal.css">
-   
-    <title>Calculator</title>
+
 </head>
-<body>
 
-    
-    <div class="calculator" id="cal">
-        <div class="row">
-            <div class="col-sm-3" id="calpar">
-                <input type="tel" oninput="calsol(this.value);chh(this.value)" id="txt">
-                <input readonly type="text" id="soltxt">
+<body class="readonlybody">
+    <div class="calbody">
+        <div class="topbarparent">
+            <div class="topbar">
+                <span style="cursor: pointer;width: 50%;" id="degrad" onclick="degrad(this.innerText);">RAD</span>
+                <span style="cursor: pointer;width: 50%;text-align: right;">:</span>
             </div>
-
-            <div class="col-sm-5">
-                <div class="table-responsive">
-                    <table class="calgroupbtns table mx-auto w-auto">
-                        <tr>
-                            <td>
-                                <span class="calbtn" onclick="clearc()">C</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" onclick="more()" id="more">More</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">(</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">)</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" id="backspace"
-                                    onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);"><img
-                                class="bk" src="../icons/backspace-arrow.png" style="height:1rem;"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span id="e" class="calbtn">e</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" id="exp()" onclick="document.getElementById('txt').value+='e^';calsol(document.getElementById('txt').value);">e^</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" id="doubleZero"
-                                onclick="document.getElementById('txt').value+='00';calsol(document.getElementById('txt').value);">00</span>
-                            </td>
-                            <td>
-                                <span class="calbtn"
-                                    onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">^</span>
-                            </td>
-                            <td>
-                                <span class="calbtn"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="calbtn" id="seven">7</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" id="eight">8</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" id="nine">9</span>
-                            </td>
-                            <td>
-                                <span class="calbtn"
-                                onclick="document.getElementById('txt').value+='/';calsol(document.getElementById('txt').value);">÷</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" onclick="runSpeechRecognition('txt','txt','slogo','cal')"><img id="slogo"
-                                    src="../images/speechlogo.png" height="13rem" style="filter: none;"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="calbtn" id="four">4</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" id="five">5</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" id="six">6</span>
-                            </td>
-                            <td>
-                                <span class="calbtn"
-                                onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);">x</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" id="percentage">%</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <span class="calbtn" id="one">1</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" id="two">2</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" id="three">3</span>
-                            </td>
-                            <td>
-                                <span class="calbtn"
-                                onclick="document.getElementById('txt').value+='-';calsol(document.getElementById('txt').value);">-</span>
-                            </td>
-                            <td>
-                                <span id="deci" class="calbtn" onclick="todeci()">Deci.</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <span id="zero" class="calbtn"
-                                onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">0</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" id="dot"
-                                onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">.</span>
-
-                            </td>
-                            <td>
-                                <span id="sqrt" class="calbtn">√</span>
-                            </td>
-                            <td>
-                                <span class="calbtn"
-                                onclick="document.getElementById('txt').value+='+';calsol(document.getElementById('txt').value);">+</span>
-                            </td>
-                            <td>
-                                <span class="calbtn" onclick="calsoleq(document.getElementById('txt').value)">=</span>
-                            </td>
-                        </tr>
-
-                    </table>
+            <input type="text" readonly class="calinput" oninput="calsol(this.value);chh(this.value)" id="txt">
+            <input type="text" id="soltxt" class="calsol">
+        </div>
+        <div class="caloptions">
+            <div class="calupper">
+                <div class="row row-cols-5 text-center">
+                    <div class="col calbtn" onclick="clearc()">
+                        C
+                    </div>
+                    <div class="col calbtn" onclick="more()" id="more">
+                        More
+                    </div>
+                    <div class="col calbtn"
+                        onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">
+                        (
+                    </div>
+                    <div class="col calbtn"
+                        onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">
+                        )
+                    </div>
+                    <div class="col calbtn"
+                        onclick="document.getElementById('txt').value+='^';calsol(document.getElementById('txt').value);">
+                        ^
+                    </div>
+                </div>
+                <div class="row row-cols-5 text-center">
+                    <div class="col calbtn" id="e">
+                        e
+                    </div>
+                    <div class="col calbtn" id="exp()"
+                        onclick="document.getElementById('txt').value+='e^';calsol(document.getElementById('txt').value);">
+                        e^
+                    </div>
+                    <div class="col calbtn" id="percentage">
+                        %
+                    </div>
+                    <div class="col calbtn" onclick="runSpeechRecognition('txt','txt','slogo','cal')">
+                        <img id="slogo" src="../images/speechlogo.png" height="13rem" style="filter: none;">
+                    </div>
+                    <div class="col calbtn" id="sqrt">
+                        √
+                    </div>
+                </div>
+                <div class="row row-cols-5 text-center">
+                    <div class="col calbtn"  onclick="todeci()" id="deci">
+                        Deci.
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                </div>
+            </div>
+            <div class="calbottom">
+                <div class="row row-cols-5 text-center">
+                    <div class="col calbtn calnum" id="seven">
+                        7
+                    </div>
+                    <div class="col calnum calbtn" id="eight">
+                        8
+                    </div>
+                    <div class="col calnum calbtn" id="nine">
+                        9
+                    </div>
+                    <div class="col calbtn color-common"
+                        onclick="document.getElementById('txt').value+='/';calsol(document.getElementById('txt').value);">
+                        ÷
+                    </div>
+                    <div class="col calbtn color-common" id="backspace"
+                        onclick="back(document.getElementById('txt').value);calsol(document.getElementById('txt').value);">
+                        <img class="bk" src="../icons/backspace-arrow.png" style="height:2rem;">
+                    </div>
+                </div>
+                <div class="row row-cols-5 text-center">
+                    <div class="col calbtn calnum" id="four">
+                        4
+                    </div>
+                    <div class="col calnum calbtn" id="five">
+                        5
+                    </div>
+                    <div class="col calnum calbtn" id="six">
+                        6
+                    </div>
+                    <div class="col calbtn color-common"
+                        onclick="document.getElementById('txt').value+='*';calsol(document.getElementById('txt').value);">
+                        ×
+                    </div>
+                    <div class="col calbtn color-common" style="pointer-events: none;">
+                        
+                    </div>
+                </div>
+                <div class="row row-cols-5 text-center">
+                    <div class="col calbtn calnum" id="one">
+                        1
+                    </div>
+                    <div class="col calnum calbtn" id="two">
+                        2
+                    </div>
+                    <div class="col calnum calbtn" id="three">
+                        3
+                    </div>
+                    <div class="col calbtn color-common"
+                        onclick="document.getElementById('txt').value+='-';calsol(document.getElementById('txt').value);">
+                        -
+                    </div>
+                    <div class="col calbtn color-common" style="pointer-events: none;">
+                        
+                    </div>
+                </div>
+                <div class="row row-cols-5 text-center">
+                    <div class="col calbtn calnum" id="dot"
+                        onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);">
+                        .
+                    </div>
+                    <div class="col calnum calbtn"
+                        onclick="document.getElementById('txt').value+=this.innerText;calsol(document.getElementById('txt').value);"
+                        id="zero">
+                        0
+                    </div>
+                    <div class="col calnum calbtn" id="doubleZero"
+                        onclick="document.getElementById('txt').value+='00';calsol(document.getElementById('txt').value);">
+                        00
+                    </div>
+                    <div class="col calbtn color-common" style="border-bottom-left-radius: 30px;"
+                        onclick="document.getElementById('txt').value+='+';calsol(document.getElementById('txt').value);">
+                        +
+                    </div>
+                    <div class="col calbtn color-common" onclick="calsoleq(document.getElementById('txt').value)">
+                        =
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    </div>
-    </div>
-
+    <script src="nerdamer/nerdamer.core.js"></script>
+    <script src="appjs/speechreco.js"></script>
+    <script src="appjs/simplecallogic.js"></script>
 </body>
 
-<script src="../appjs/simplecallogic.js"></script>
 </html>

@@ -1,20 +1,6 @@
-var start,
-  end,
-  diff = 0;
-//Backspace button
-var backbtn = document.getElementById("backspace");
-backbtn.addEventListener("mousedown", function () {
-  start = new Date();
-});
-
-backbtn.addEventListener("mouseup", function () {
-  end = new Date();
-});
 function back(vlu) {
   var newstr;
   if (document.getElementById("txt").value == "Invalid Expression") {
-    newStr = "";
-  } else if ((diff = end - start) >= 1000) {
     newStr = "";
   } else {
     newStr = vlu.slice(0, -1);
@@ -40,14 +26,12 @@ function calsol(va) {
     var solution = nerdamer(va).evaluate().toString();
     var soo = (document.getElementById("txt").value = va);
     document.getElementById("soltxt").value = solution;
-    document.getElementById("txt").style.color = 'white';  
-    
+    document.getElementById("txt").style.color = 'white';
+
   } catch (err) {
     document.getElementById("soltxt").value = "";
     document.getElementById("txt").style.color = "red"; //warning color for invalid expression
   }
-  if(document.getElementById("soltxt").value != "")
-    attach.removeChild(btn);
 }
 
 function ans(hj) {
@@ -71,27 +55,18 @@ function chh(value) {
     document.getElementById("soltxt").value = "";
   }
 }
-function clearc(){
-    document.getElementById("txt").value = "";
-    attach.removeChild(btn);
-    document.getElementById("soltxt").value = "";
+function clearc() {
+  document.getElementById("txt").value = "";
+  document.getElementById("soltxt").value = "";
 }
-      
 
-        
+
+
 function calsoleq(va) {
   va = va.replace(/\s+/g, "");
 
   if (document.getElementById("soltxt").value != "") {
     ans(document.getElementById("soltxt").value);
-    attach.removeChild(btn);
-  } else {
-    attach.appendChild(btn);
-    //on clicking button
-    btn.addEventListener("click", function () {  
-        document.getElementById("soltxt").value = "Invalid Expression";
-    });
-    
   }
 }
 
@@ -101,7 +76,6 @@ function more() {
   var three = document.getElementById("three");
   var four = document.getElementById("four");
   var five = document.getElementById("five");
-  var percent = document.getElementById("percentage");
   var six = document.getElementById("six");
   var seven = document.getElementById("seven");
   var eight = document.getElementById("eight");
@@ -176,11 +150,6 @@ function more() {
     dot.innerText = ".";
   }
 
-  if (percent.innerText == "%") {
-    percent.innerText = "DEG";
-  } else {
-    percent.innerText = "%";
-  }
   if (sqrt.innerText == "√") {
     sqrt.innerText = "log10(";
   } else {
@@ -191,12 +160,13 @@ function more() {
   } else {
     more.innerText = "More";
   }
-
-
-
-
 }
-
+function degrad(val){
+  if(val=='DEG')
+  document.getElementById('degrad').innerText='RAD';
+  else
+  document.getElementById('degrad').innerText='DEG';
+}
 function todeci() {
   var el = document.getElementById("deci");
   var val = document.getElementById("soltxt").value;
@@ -215,15 +185,16 @@ function todeci() {
     calsol(document.getElementById("txt").value);
   }
 }
+
 // All on-click EventListener..........................
 document.getElementById("percentage").addEventListener("click", function () {
   if (document.getElementById("percentage").innerText == "%") {
     document.getElementById("txt").value += this.innerText;
     calsol(document.getElementById("txt").value);
-  } else if (document.getElementById("percentage").innerText == "RAD") {
-    document.getElementById("percentage").innerText = "DEG";
+  } else if (document.getElementById("degrad").innerText == "RAD") {
+    document.getElementById("degrad").innerText = "DEG";
   } else {
-    document.getElementById("percentage").innerText = "RAD";
+    document.getElementById("degrad").innerText = "RAD";
   }
 });
 document.getElementById("seven").addEventListener("click", function () {
@@ -231,7 +202,7 @@ document.getElementById("seven").addEventListener("click", function () {
   calsol(document.getElementById("txt").value);
   if (
     document.getElementById("seven").innerText != "7" &&
-    document.getElementById("percentage").innerText == "RAD"
+    document.getElementById("degrad").innerText == "RAD"
   ) {
     document.getElementById("txt").value += "(pi/180)";
     calsol(document.getElementById("txt").value);
@@ -242,7 +213,7 @@ document.getElementById("eight").addEventListener("click", function () {
   calsol(document.getElementById("txt").value);
   if (
     document.getElementById("eight").innerText != "8" &&
-    document.getElementById("percentage").innerText == "RAD"
+    document.getElementById("degrad").innerText == "RAD"
   ) {
     document.getElementById("txt").value += "(pi/180)";
     calsol(document.getElementById("txt").value);
@@ -253,8 +224,8 @@ document.getElementById("nine").addEventListener("click", function () {
   calsol(document.getElementById("txt").value);
   if (
     document.getElementById("nine").innerText != "9" &&
-    document.getElementById("percent").innerText == "RAD"
-  ) {
+    document.getElementById("degrad").innerText == "RAD"
+  ){
     document.getElementById("txt").value += "(pi/180)";
     calsol(document.getElementById("txt").value);
   }
@@ -264,7 +235,7 @@ document.getElementById("four").addEventListener("click", function () {
   calsol(document.getElementById("txt").value);
   if (
     document.getElementById("four").innerText != "4" &&
-    document.getElementById("percentage").innerText == "RAD"
+    document.getElementById("degrad").innerText == "RAD"
   ) {
     document.getElementById("txt").value += "(pi/180)";
     calsol(document.getElementById("txt").value);
@@ -275,7 +246,7 @@ document.getElementById("five").addEventListener("click", function () {
   calsol(document.getElementById("txt").value);
   if (
     document.getElementById("five").innerText != "5" &&
-    document.getElementById("percentage").innerText == "RAD"
+    document.getElementById("degrad").innerText == "RAD"
   ) {
     document.getElementById("txt").value += "(pi/180)";
     calsol(document.getElementById("txt").value);
@@ -286,7 +257,7 @@ document.getElementById("six").addEventListener("click", function () {
   calsol(document.getElementById("txt").value);
   if (
     document.getElementById("six").innerText != "6" &&
-    document.getElementById("percent").innerText == "RAD"
+    document.getElementById("degrad").innerText == "RAD"
   ) {
     document.getElementById("txt").value += "(pi/180)";
     calsol(document.getElementById("txt").value);
@@ -295,7 +266,7 @@ document.getElementById("six").addEventListener("click", function () {
 document.getElementById("one").addEventListener("click", function () {
   if (
     document.getElementById("one").innerText != "1" &&
-    document.getElementById("percentage").innerText == "RAD"
+    document.getElementById("degrad").innerText == "RAD"
   ) {
     document.getElementById("txt").value += "(180/pi)";
     calsol(document.getElementById("txt").value);
@@ -306,7 +277,7 @@ document.getElementById("one").addEventListener("click", function () {
 document.getElementById("two").addEventListener("click", function () {
   if (
     document.getElementById("two").innerText != "2" &&
-    document.getElementById("percentage").innerText == "RAD"
+    document.getElementById("degrad").innerText == "RAD"
   ) {
     document.getElementById("txt").value += "(180/pi)";
     calsol(document.getElementById("txt").value);
@@ -317,7 +288,7 @@ document.getElementById("two").addEventListener("click", function () {
 document.getElementById("three").addEventListener("click", function () {
   if (
     document.getElementById("three").innerText != "3" &&
-    document.getElementById("percentage").innerText == "RAD"
+    document.getElementById("degrad").innerText == "RAD"
   ) {
     document.getElementById("txt").value += "(180/pi)";
     calsol(document.getElementById("txt").value);
@@ -330,7 +301,7 @@ document.getElementById("sqrt").addEventListener("click", function () {
     this.innerText == "log10(" ? "log10(" : "sqrt(";
 });
 document.getElementById("e").addEventListener("click", function () {
-  
-  document.getElementById("txt").value +=this.innerText;
+
+  document.getElementById("txt").value += this.innerText;
   calsol(document.getElementById("txt").value);
 });
