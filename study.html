@@ -3,32 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1">
     <title>Makes Math Easy-Study</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
-        body {
-            background-color: rgb(32, 31, 31);
+        :root {
+            --bl: rgb(58, 57, 56);
         }
 
         .calbody {
+            position: fixed;
+            top: 0;
+            bottom: 0;
             width: 100%;
-            height: 100vh;
-            background-color: rgb(58, 57, 56);
+            background-color: var(--bl);
         }
 
         .calinput {
             width: 100%;
+            background-color: var(--bl);
+            color: whitesmoke;
+            outline: none;
             padding-right: 10px;
             overflow-wrap: break-word;
             word-wrap: break-word;
             hyphens: auto;
             text-align: right;
             font-size: 2rem;
-            height: 4rem;
+            height: 5.5rem;
             border: none;
         }
 
         .calsol {
+            background-color: var(--bl);
+            color: whitesmoke;
+            outline: none;
             border: none;
             width: 100%;
             padding-right: 10px;
@@ -36,165 +45,203 @@
             word-wrap: break-word;
             hyphens: auto;
             text-align: right;
-            font-size: 1rem;
+            font-size: 1.5rem;
             height: 4rem;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-        }
-
-        .caloptions {
-            background-color: rgb(43, 42, 42);
-            margin: 0.5rem;
-            border-radius: 30px;
         }
 
         .calbtn {
             color: whitesmoke;
             display: inline-block;
-            font-size: 1.5rem;
+            font-size: 2rem;
             text-align: center;
-
             line-height: 70px;
-            height: 70px;
-            width: 85px;
-            border-radius: 10px;
             cursor: pointer;
-            margin-bottom: 1rem;
+            transition: 0.2s;
         }
 
-        .calfunc {
-            background-color: black;
+        .calbtn:active {
+            border-radius: 100px;
+            background-color: red;
+            transition: 0.2s;
         }
 
+        .caloptions {
+            position: inherit;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--bl);
+        }
+
+        .calupper {
+            border-bottom-left-radius: 30px;
+            background-color: red;
+            border-bottom: 1px solid var(--bl);
+        }
+
+        .calbottom {
+            
+        }
+        .color-common{
+            background-color: red;
+        }
         .calnum {
-            background: rgb(77, 52, 52);
+            background-color: var(--bl);
+        }
+
+        .topbarparent {
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+
+        .topbar {
+            color: whitesmoke;
+            width: 100%;
+            font-size: 1.2rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
 
 <body>
     <div class="calbody">
-        <input type="number" class="calinput">
-        <input type="number" class="calsol">
-
+        <div class="topbarparent">
+            <div class="topbar">
+                <span>RAD</span>
+                <span>:</span>
+            </div>
+            <input type="number" class="calinput">
+            <input type="number" class="calsol">
+        </div>
         <div class="caloptions">
-            <div class="row" style="margin: 10px;">
-                <div class="col-2">
-                    <span class="calbtn">e</span>
+            <div class="calupper">
+                <div class="row row-cols-5 text-center">
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
                 </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
+                <div class="row row-cols-5 text-center">
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
                 </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
+                <div class="row row-cols-5 text-center">
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e
+                    </div>
+                    <div class="col calbtn">
+                        e 
+                    </div>
                 </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
+            </div>
+            <div class="calbottom">
+                <div class="row row-cols-5 text-center">
+                    <div class="col calbtn calnum">
+                        7
+                    </div>
+                    <div class="col calnum calbtn">
+                        8
+                    </div>
+                    <div class="col calnum calbtn">
+                        9
+                    </div>
+                    <div class="col calbtn color-common">
+                        ÷
+                    </div>
+                    <div class="col calbtn color-common">
+                        <- </div>
+                    </div>
+                    <div class="row row-cols-5 text-center">
+                        <div class="col calbtn calnum">
+                            4
+                        </div>
+                        <div class="col calnum calbtn">
+                            5
+                        </div>
+                        <div class="col calnum calbtn">
+                            6
+                        </div>
+                        <div class="col calbtn color-common">
+                            ×
+                        </div>
+                        <div class="col calbtn color-common">
+                            e
+                        </div>
+                    </div>
+                    <div class="row row-cols-5 text-center">
+                        <div class="col calbtn calnum">
+                            1
+                        </div>
+                        <div class="col calnum calbtn">
+                            2
+                        </div>
+                        <div class="col calnum calbtn">
+                            3
+                        </div>
+                        <div class="col calbtn color-common">
+                            -
+                        </div>
+                        <div class="col calbtn color-common">
+                            e
+                        </div>
+                    </div>
+                    <div class="row row-cols-5 text-center">
+                        <div class="col calbtn calnum">
+                            .
+                        </div>
+                        <div class="col calnum calbtn">
+                            0
+                        </div>
+                        <div class="col calnum calbtn">
+                            00
+                        </div>
+                        <div class="col calbtn color-common" style="border-bottom-left-radius: 30px;">
+                            +
+                        </div>
+                        <div class="col calbtn color-common">
+                            =
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="calfunc">
-            <div class="row" style="margin: 10px;">
-                <div class="col-2 calnum">
-                    <span class="calbtn">7</span>
-                </div>
-                <div class="col-2 calnum">
-                    <span class="calbtn">8</span>
-                </div>
-                <div class="col-2 calnum">
-                    <span class="calbtn">9</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2 calnum">
-                    <span class="calbtn">4</span>
-                </div>
-                <div class="col-2 calnum">
-                    <span class="calbtn">5</span>
-                </div>
-                <div class="col-2 calnum">
-                    <span class="calbtn">6</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2 calnum">
-                    <span class="calbtn">1</span>
-                </div>
-                <div class="col-2 calnum">
-                    <span class="calbtn">2</span>
-                </div>
-                <div class="col-2 calnum">
-                    <span class="calbtn">3</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2 calnum">
-                    <span class="calbtn">.</span>
-                </div>
-                <div class="col-2 calnum">
-                    <span class="calbtn">0</span>
-                </div>
-                <div class="col-2 calnum">
-                    <span class="calbtn">00</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-                <div class="col-2">
-                    <span class="calbtn">e</span>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
