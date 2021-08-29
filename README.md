@@ -520,9 +520,9 @@ Other Tech/Libraries
 
 ## Documentation
 
-[Makes Math Easy Documentation](https://github.com/sairish2001/Makes-Math-Easy-Documentation)
+[Makes Math Easy Documentation](https://github.com/makesmatheasy/makesmatheasy-documentation/blob/main/README.md)
 
-Documentation Website :- [Link](https://sairish2001.github.io/makesmatheasy-documentation//)
+Documentation Page :- [Link](https://github.com/makesmatheasy/makesmatheasy-documentation/blob/main/README.md)
 
 ### Future Scope
 
