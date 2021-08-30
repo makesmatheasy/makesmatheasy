@@ -3,7 +3,7 @@
 }
 
 .calbody {
-    z-index: 100;
+    z-index: 100000;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -88,6 +88,7 @@
     width: 100%;
     position: fixed;
     top: 0;
+    left: 0;
 }
 
 .topbar {
