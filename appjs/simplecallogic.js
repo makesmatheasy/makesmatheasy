@@ -188,14 +188,9 @@ function todeci() {
 
 // All on-click EventListener..........................
 document.getElementById("percentage").addEventListener("click", function () {
-  if (document.getElementById("percentage").innerText == "%") {
+ 
     document.getElementById("txt").value += this.innerText;
-    calsol(document.getElementById("txt").value);
-  } else if (document.getElementById("degrad").innerText == "RAD") {
-    document.getElementById("degrad").innerText = "DEG";
-  } else {
-    document.getElementById("degrad").innerText = "RAD";
-  }
+    calsol(document.getElementById("txt").value); 
 });
 document.getElementById("seven").addEventListener("click", function () {
   document.getElementById("txt").value += this.innerText;

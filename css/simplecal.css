@@ -3,6 +3,7 @@
 }
 
 .calbody {
+    z-index: 100;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -21,7 +22,7 @@
     hyphens: auto;
     text-align: right;
     font-size: 2rem;
-    height: 5.5rem;
+    height: 5.2rem;
     border: none;
 }
 
@@ -42,12 +43,16 @@
 
 .calbtn {          
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
-    line-height: 70px;
+    line-height: 50px;
     cursor: pointer;
 }
-
+@media screen and (max-width: 600px) {
+    .calbtn{
+        line-height: 70px;
+    }
+}
 .calbtn:active {
     font-size: 1.3rem;
 }
@@ -101,8 +106,5 @@
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     -ms-user-select: none;
-    touch-action: auto;
-    /* overflow-y: auto; */
-    /* !important; */
-    /*position: relative !important;*/
+    touch-action: auto;    
 }
