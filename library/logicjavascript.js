@@ -92,7 +92,7 @@ function romanize(input) {
 
 //Distance between excentre and circumcentre
 
-function excircum_1(R,A,B,C) {
+function excircum_1(R, A, B, C) {
     var excirtemp = "";
     var result = R * Math.sqrt(1 + (8 * sin(A / 2) * sin(B / 2) * sin(C / 2)));
 
@@ -106,7 +106,7 @@ function excircum_1(R,A,B,C) {
         excirtemp += "\\[ \\space = \\space " + R + " \\times \\sqrt{" + (1 + (8 * sin(A / 2) * sin(B / 2) * sin(C / 2))).toFixed(2) + "} \\space \\]";
         excirtemp += "\\[\\space = \\space " + result.toFixed(3) + " \\space \\]";
     }
-    return {'result':result, 'steps':excirtemp}
+    return { 'result': result, 'steps': excirtemp }
 }
 
 function sin(degrees) {
@@ -118,7 +118,7 @@ function cos(degrees) {
     var radians = (degrees * Math.PI) / 180;
     return Math.cos(radians);
 }
-function excircum_2(A1,R1,B1,C1) {
+function excircum_2(A1, R1, B1, C1) {
 
     var excirtemp = "";
 
@@ -134,7 +134,7 @@ function excircum_2(A1,R1,B1,C1) {
         excirtemp += "\\[\\space = \\space " + result1.toFixed(3) + " \\space \\]";
     }
 
-    return {'result':result1,'steps':excirtemp};
+    return { 'result': result1, 'steps': excirtemp };
 }
 
 
@@ -236,31 +236,29 @@ function callr() {
 
 //call romanize
 //-----------------------------------------------------
-function binomialpmf()
-{
-    var n=parseFloat(document.getElementById("n").value);
-    var r=parseFloat(document.getElementById("r").value);
-    var x=parseFloat(document.getElementById("x"));
-    let y=1-x;
-    let p=(r/n);
-    var vi=""
-    if(n=="" || r=="" || x=="")
-   {
-     document.getElementById("binopmf").innerHTML = "Please enter all the values to obtain required answer";}
-    else
-    {
-        let pmf=0;
-        vi+="\\[N=\\{${n}!}";
-        let N=factorialsol(n);
-        vi+="\\[R=\\{${r}!}";
-        let R= factorialsol(r);
-        vi+="\\[R=\\{${n-r}!}";
-        let NR=factorialsol((n-r));
-        let P=power(p,x);
-        let P1=power((1-p),y);
-        vi+="\\[pmf =\\frac{${N} \\${P} \\${P1}}{${R} \\${NR}]";
-        pmf=(N*P*P1)/(R*NR);
-        document.getElementById("binoans").innerHTML=pmf;
+function binomialpmf() {
+    var n = parseFloat(document.getElementById("n").value);
+    var r = parseFloat(document.getElementById("r").value);
+    var x = parseFloat(document.getElementById("x"));
+    let y = 1 - x;
+    let p = (r / n);
+    var vi = ""
+    if (n == "" || r == "" || x == "") {
+        document.getElementById("binopmf").innerHTML = "Please enter all the values to obtain required answer";
+    }
+    else {
+        let pmf = 0;
+        vi += "\\[N=\\{${n}!}";
+        let N = factorialsol(n);
+        vi += "\\[R=\\{${r}!}";
+        let R = factorialsol(r);
+        vi += "\\[R=\\{${n-r}!}";
+        let NR = factorialsol((n - r));
+        let P = power(p, x);
+        let P1 = power((1 - p), y);
+        vi += "\\[pmf =\\frac{${N} \\${P} \\${P1}}{${R} \\${NR}]";
+        pmf = (N * P * P1) / (R * NR);
+        document.getElementById("binoans").innerHTML = pmf;
 
     }
 }
@@ -306,7 +304,7 @@ function performdivide() {
 //simple divide result
 
 //divide steps
-function divisionwithsteps(dividend,divisor) {
+function divisionwithsteps(dividend, divisor) {
     performdivide();
 
     var resultContainer = $("#resultofdivsteps");
@@ -2033,7 +2031,7 @@ function glomefind() {
 
 //solve trigonometry values from right triangle
 
-function calcexsolvesimpletrigo(){
+function calcexsolvesimpletrigo() {
     var pp = document.getElementById("p").value = 3;
     var base = document.getElementById("base").value;
     var hyp = document.getElementById("h").value = 5;
@@ -19747,11 +19745,16 @@ function polycirclefind() {
     var n = parseInt(document.getElementById("polycirclen").value);
     var r = parseInt(document.getElementById("polycircler").value);
     var polyside = 2 * r * math.tan(math.pi / n);
-    var polyarea = 0.5 * n * a * r;
+    var polyarea = 0.5 * n * r * r;
     var circlearea = math.pi * r * r;
-    document.getElementById("polycircleans1").innerHTML = "Polygon side: " + polyside.toFixed(2)
-    document.getElementById("polycircleans2").innerHTML = "Polygon area: " + polyarea.toFixed(2)
-    document.getElementById("polycircleans3").innerHTML = "Circle area: " + circlearea.toFixed(2)
+    if (!isNaN(n) && !isNaN(r)) {
+        document.getElementById("polycircleans1").innerHTML = "\\[Polygon \\space side: \\space 2 \\times " + r + " \\times tan(\\frac{\\pi}{" + n + "}) \\space = \\space " + polyside.toFixed(2) + "\\]"
+        document.getElementById("polycircleans2").innerHTML = "\\[Polygon \\space area: \\space \\frac{1}{2} \\times " + n + " \\times " + r + " \\times " + r + " \\space = \\space " + polyarea.toFixed(2) + "\\]"
+        document.getElementById("polycircleans3").innerHTML = "\\[Circle \\space area: \\space \\pi \\times " + r + "^2 \\space = \\space" + circlearea.toFixed(2) + "\\]"
+        renderMathInElement(document.getElementById("polycircleans1"));
+        renderMathInElement(document.getElementById("polycircleans2"));
+        renderMathInElement(document.getElementById("polycircleans3"));
+    }
 }
 
 //Minimum side of square embedded in Regular polygon with N sides
@@ -21453,18 +21456,19 @@ function minsquare1find() {
     let a = parseInt(document.getElementById("minsquare1").value)
     var R = a * (2.0 - Math.sqrt(2));
     var area = 3.14 * R * R / 2.0;
+    var temp = " "
     if (!isNaN(a)) {
-        document.getElementById("minsquare1exp").innerHTML = "\\[Given a square of side a, the task is to find the area of the largest semi-circle that can be drawn inside the square.\\]"
-        document.getElementById("minsquare1exp").innerHTML = "\\[The semicircle of maximal area inscribed in the square has its diameter parallel to a diagonal, and its radius rmax is given as:\\]"
-        document.getElementById("minsquare1exp").innerHTML = "\\[OY = r cos 45 = r/ √2\\]"
-        document.getElementById("minsquare1exp").innerHTML = "\\[r = a*2 - a √2 = a*(2-√2)\\]"
-        document.getElementById("minsquare1exp").innerHTML = "\\[Area of the required semicircle = pi * r2/2\\]"
-        document.getElementById("minsquare1exp").innerHTML = "\\[= 3.14*(a*(2-√2))2 / 2\\]"
-        document.getElementById("minsquare1ans").innerHTML = area;
+        temp += "\\[" + a + " \\times (2 - \\sqrt{2}) \\space = \\space " + R.toFixed(2) + "\\]"
+        temp += "\\[Area \\space of \\space semicircle \\space = \\space \\pi \\times " + R.toFixed(2) + " \\times \\frac{" + R.toFixed(2) + "}{2}\\]"
+        temp += "\\[\\space = \\space 3.14 \\times " + (R.toFixed(2) * R.toFixed(2) / 2.0) + " \\space = \\space " + area.toFixed(2) + "\\]"
+        document.getElementById("minsquare1exp").innerHTML = temp;
+        renderMathInElement(document.getElementById("minsquare1exp"));
     }
     else {
-        document.getElementById("minsquare1ans").innerHTML = "Please enter valid input"
+        document.getElementById("minsquare1ans").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
+        renderMathInElement(document.getElementById("minsquare1ans"));
     }
+
 }
 
 //Area of a triangle with two vertices at midpoints of opposite sides of a square and the other vertex lying on vertex of a square
@@ -24917,14 +24921,14 @@ function cscu4find() {
     var output = document.getElementById("cscu4ans")
     var ans = "";
     if (R < 0) {
-      // ans += "\[Radius \\can \\not \\be \\negative \]"
-      ans += "\\[Radius \\space cannot \\space be \\space negative \\]"
-      output.innerHTML = ans;
+        // ans += "\[Radius \\can \\not \\be \\negative \]"
+        ans += "\\[Radius \\space cannot \\space be \\space negative \\]"
+        output.innerHTML = ans;
     }
     else if (!isNaN(R)) {
-      let v= ((2)*(3.14)* (Math.pow(R,3))) / (3 * Math.sqrt(3))
-        ans += "\\[Vmax \\space = \\space \\frac{2 π \\times R^{3}}{3 \\sqrt{3}} \\space = \\space \\frac{2 \\times{3.14} \\times "+ R +"^{3}}{3 \\sqrt{3}} \\]"
-        ans += "\\[Vmax \\space = \\space "+ v +"\\]"
+        let v = ((2) * (3.14) * (Math.pow(R, 3))) / (3 * Math.sqrt(3))
+        ans += "\\[Vmax \\space = \\space \\frac{2 π \\times R^{3}}{3 \\sqrt{3}} \\space = \\space \\frac{2 \\times{3.14} \\times " + R + "^{3}}{3 \\sqrt{3}} \\]"
+        ans += "\\[Vmax \\space = \\space " + v + "\\]"
         output.innerHTML = ans;
     }
     else {
@@ -26613,20 +26617,23 @@ function ratpercal() {
 }
 //2-D Shapes Inscribed
 function triinsemifind() {
+    var temp = " "
     let r = parseInt(document.getElementById("triinsemiin").value)
     if (!isNaN(r)) {
-        document.getElementById("triinsemiexp").innerHTML = "\\[Given a semicircle with radius r, we have to find the largest triangle that can be inscribed in the semicircle, with base lying on the diameter.\\]"
-        document.getElementById("triinsemiexp").innerHTML = "\\[From the figure, we can clearly understand the biggest triangle that can be inscribed in the semicircle has height r.\\]"
-        document.getElementById("triinsemiexp").innerHTML = "\\[Also, we know the base has length 2r. So the triangle is an isosceles triangle.\\]"
-        document.getElementById("triinsemiexp").innerHTML = "\\[So, Area A: = (base * height)/2 = (2r * r)/2 = r^2\\]"
-        if (r < 0)
-            document.getElementById("triinsemians").innerHTML = "Not triangle can be formed"
-        else
-            document.getElementById("triinsemians").innerHTML = r * r
-        renderMathInElement(document.getElementById("triinsemiexp"));
+        if (r < 0) {
+            document.getElementById("triinsemians").innerHTML = "\\[Not \\space triangle \\space can \\space be \\space formed\\]"
+            document.getElementById("triinsemiexp").innerHTML = " "
+            renderMathInElement(document.getElementById("triinsemians"));
+        } else {
+            temp += "\\[So, \\space Area \\space A: = \\space \\frac{base \\times height}{2} \\space = \\space \\frac{(2r \\times r)}{2} \\space = \\space r^2 \\space = " + r + "^2 \\space = \\space " + (r * r) + "\\]"
+            document.getElementById("triinsemiexp").innerHTML = temp
+            renderMathInElement(document.getElementById("triinsemiexp"));
+        }
     }
     else {
-        document.getElementById("triinsemians").innerHTML = "Please enter valid input"
+        document.getElementById("triinsemians").innerHTML = "\\[Please \\space enter \\space valid \\space input\\]"
+        document.getElementById("triinsemiexp").innerHTML = " "
+        renderMathInElement(document.getElementById("triinsemians"));
     }
 }
 
@@ -26680,12 +26687,18 @@ function ininpolyfind() {
     var n = parseInt(document.getElementById("ininpolyn").value);
     var a = parseInt(document.getElementById("ininpolyr").value);
     var inrad = a / (2 * math.tan(math.pi / n));
-    var incirarea = math.pi * r * r;
+    var incirarea = math.pi * a * a;
     var circlearea = 0.5 * n * a * a;
-    document.getElementById("ininpolynans1").innerHTML = "Inradius: " + inrad.toFixed(2)
-    document.getElementById("ininpolynans1").innerHTML = "Incircle area: " + incirarea.toFixed(2)
-    document.getElementById("ininpolynans1").innerHTML = "Circle area: " + circlearea.toFixed(2)
+    if (!isNaN(n) && !isNaN(a)) {
+        document.getElementById("ininpolynans1").innerHTML = "\\[Inradius: \\space \\frac{" + a + "}{2 \\times tan(\\frac{\\pi}{" + n + "})} \\space = \\space " + inrad.toFixed(2) + "\\]"
+        document.getElementById("ininpolynans2").innerHTML = "\\[Incircle \\space area: \\space \\pi \\times " + a + "^2 \\space = \\space " + incirarea.toFixed(2) + "\\]"
+        document.getElementById("ininpolynans3").innerHTML = "\\[Circle \\space area: \\space \\frac{1}{2} \\times " + n + " \\times " + a + "^2 \\space = \\space " + circlearea.toFixed(2) + "\\]"
+        renderMathInElement(document.getElementById("ininpolynans1"));
+        renderMathInElement(document.getElementById("ininpolynans2"));
+        renderMathInElement(document.getElementById("ininpolynans3"));
+    }
 }
+
 
 function cirrecfind() {
     let r = parseInt(document.getElementById("cirrec").value)
@@ -28489,7 +28502,7 @@ function isHyperPerfect(N, K) {
     else
         return false;
 }
-function hyperfind(num1,num2){
+function hyperfind(num1, num2) {
 
     var ans = "";
     if (num1 == "" || num2 == "") {
@@ -28505,175 +28518,175 @@ function hyperfind(num1,num2){
             ans = num1 + " is not " + num2 + "-Hyperperfect number";
         }
     }
-    return {'steps' : ans }
+    return { 'steps': ans }
 }
 // special number
 function specialvalue(num) {
 
-        var re = 0;
-        num = parseInt(num);
-        number = num;
-        var sum = 0;
-        while (number > 0) {
-            var digit = parseInt(number % 10);
-            var fact = 1;
-            re = (re * 10) + digit;
-            for (var i = 1; i <= digit; i++) {
-                fact = fact * i;
-            }
-            sum = parseInt(sum + fact);
-            number = parseInt(number / 10);
+    var re = 0;
+    num = parseInt(num);
+    number = num;
+    var sum = 0;
+    while (number > 0) {
+        var digit = parseInt(number % 10);
+        var fact = 1;
+        re = (re * 10) + digit;
+        for (var i = 1; i <= digit; i++) {
+            fact = fact * i;
         }
-        var facto = 1;
-        var ans = "\\[";
-        var ans2 = "\\[";
-        while (re > 0) {
-            let d = parseInt(re % 10);
-            re = parseInt(re / 10);
-            for (var i = 1; i <= d; i++) {
-                facto = facto * i;
-            }
-            if (re > 0) {
-                ans += " " + d + "! +  ";
-                ans2 += " " + facto + " + ";
-            }
-            else {
-                ans += " " + d + "!  ";
-                ans2 += " " + facto + " ";
-
-            }
-
+        sum = parseInt(sum + fact);
+        number = parseInt(number / 10);
+    }
+    var facto = 1;
+    var ans = "\\[";
+    var ans2 = "\\[";
+    while (re > 0) {
+        let d = parseInt(re % 10);
+        re = parseInt(re / 10);
+        for (var i = 1; i <= d; i++) {
+            facto = facto * i;
         }
-
-        ans += "\\]";
-        ans2 += "\\]";
-        ans2 += "\\[" + sum + "\\]"
-
-        if (num == sum) {
-            ans2 += "\\[Since \\space the \\space result \\space i.e \\space " + sum + " \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
-            ans2 += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space special \\space number\\]"
-
+        if (re > 0) {
+            ans += " " + d + "! +  ";
+            ans2 += " " + facto + " + ";
         }
         else {
-            ans2 += "\\[Since \\space the \\space result \\space i.e \\space " + sum + " \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + "\\]";
-            ans2 += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space special\\space number\\]"
+            ans += " " + d + "!  ";
+            ans2 += " " + facto + " ";
 
         }
-        return {'steps' : ans + ans2 }
+
+    }
+
+    ans += "\\]";
+    ans2 += "\\]";
+    ans2 += "\\[" + sum + "\\]"
+
+    if (num == sum) {
+        ans2 += "\\[Since \\space the \\space result \\space i.e \\space " + sum + " \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
+        ans2 += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space special \\space number\\]"
+
+    }
+    else {
+        ans2 += "\\[Since \\space the \\space result \\space i.e \\space " + sum + " \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + "\\]";
+        ans2 += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space special\\space number\\]"
+
+    }
+    return { 'steps': ans + ans2 }
 
 }
 
 
 function armstrongvalue(num) {
 
-        var digitss = Math.floor(Math.log10(num) + 1);
+    var digitss = Math.floor(Math.log10(num) + 1);
 
 
-        num = parseInt(num);
-        var temp = num;
-        var r = 0;
-        var sum = 0;
-        while (temp > 0) {
-            let d = temp % 10;
-            sum = sum + parseInt(Math.pow(d, digits));
-            temp = parseInt(temp / 10);
-            r = (r * 10) + d;
+    num = parseInt(num);
+    var temp = num;
+    var r = 0;
+    var sum = 0;
+    while (temp > 0) {
+        let d = temp % 10;
+        sum = sum + parseInt(Math.pow(d, digits));
+        temp = parseInt(temp / 10);
+        r = (r * 10) + d;
 
-        }
-        //working steps for armstrong no
-        while (r > 0) {
-            let d = r % 10;
-            r = parseInt(r / 10);
-            if (r > 0) {
-                ans += " " + d + "^{" + digits + "} +  ";
-                ans2 += " " + parseInt(Math.pow(d, digits)) + " + ";
-            }
-            else {
-                ans += " " + d + "^{" + digits + "}  ";
-                ans2 += " " + parseInt(Math.pow(d, digits)) + " ";
-
-            }
-        }
-
-        ans += "\\]";
-        ans2 += "\\]";
-        ans2 += "\\[" + sum + "\\]"
-
-
-        if (sum == num) {
-            ans2 += "\\[Since \\space the \\space sum \\space i.e \\space " + sum + " \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
-            ans2 += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space armstrong \\space number\\]"
-
+    }
+    //working steps for armstrong no
+    while (r > 0) {
+        let d = r % 10;
+        r = parseInt(r / 10);
+        if (r > 0) {
+            ans += " " + d + "^{" + digits + "} +  ";
+            ans2 += " " + parseInt(Math.pow(d, digits)) + " + ";
         }
         else {
-            ans2 += "\\[Since \\space the \\space sum \\space i.e \\space " + sum + " \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + "\\]";
-            ans2 += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space armstrong \\space number\\]"
+            ans += " " + d + "^{" + digits + "}  ";
+            ans2 += " " + parseInt(Math.pow(d, digits)) + " ";
 
         }
-        return {'steps ' : ans + ans2 }
+    }
+
+    ans += "\\]";
+    ans2 += "\\]";
+    ans2 += "\\[" + sum + "\\]"
+
+
+    if (sum == num) {
+        ans2 += "\\[Since \\space the \\space sum \\space i.e \\space " + sum + " \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
+        ans2 += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space armstrong \\space number\\]"
+
+    }
+    else {
+        ans2 += "\\[Since \\space the \\space sum \\space i.e \\space " + sum + " \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + "\\]";
+        ans2 += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space armstrong \\space number\\]"
+
+    }
+    return { 'steps ': ans + ans2 }
 }
 // palindrome no
 function checkPalindrome(num) {
 
-        var ans = "";
-        let final = 0;
-        let re = 0;
-        num = parseInt(num);
-        number = num;
-        while (number > 0) {
-            re = number % 10;
-            number = parseInt(number / 10);
-            final = (final * 10) + re;
-        }
-        ans += "\\[The \\space reverse \\space of \\space " + num + " \\space is\\]"
-        ans += "\\[" + final + "\\]"
-        if (final == num) {
-            ans += "\\[Since \\space the \\space reverse \\space number \\space is \\space equal \\space to \\space the \\space original \\space number\\]"
-            ans += "\\[\\therefore \\space " + num + " \\space is \\space a \\space palindrome \\space number\\]"
+    var ans = "";
+    let final = 0;
+    let re = 0;
+    num = parseInt(num);
+    number = num;
+    while (number > 0) {
+        re = number % 10;
+        number = parseInt(number / 10);
+        final = (final * 10) + re;
+    }
+    ans += "\\[The \\space reverse \\space of \\space " + num + " \\space is\\]"
+    ans += "\\[" + final + "\\]"
+    if (final == num) {
+        ans += "\\[Since \\space the \\space reverse \\space number \\space is \\space equal \\space to \\space the \\space original \\space number\\]"
+        ans += "\\[\\therefore \\space " + num + " \\space is \\space a \\space palindrome \\space number\\]"
 
-        }
-        else {
-            ans += "\\[Since \\space the \\space reverse \\space number \\space is \\space not \\space equal \\space to \\space the \\space original \\space number\\]"
-            ans += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space palindrome \\space number\\]"
+    }
+    else {
+        ans += "\\[Since \\space the \\space reverse \\space number \\space is \\space not \\space equal \\space to \\space the \\space original \\space number\\]"
+        ans += "\\[\\therefore \\space " + num + " \\space is \\space not \\space a \\space palindrome \\space number\\]"
 
-        }
-       return {'steps': ans }
+    }
+    return { 'steps': ans }
 
 }
 function perfectvalue(num) {
 
-        var digits = Math.floor(Math.log10(num) + 1);
+    var digits = Math.floor(Math.log10(num) + 1);
 
-        var v = "";
-        var ans = "";
-        var w = "";
-        num = parseInt(num);
-        var temp = 0;
-        ans = "\\[The \\space positive \\space diviors \\space of \\space the \\space number \\space excluding \\space itself \\space are:\\]"
-        for (var i = 1; i <= num / 2; i++) {
-            if (num % i === 0) {
-                temp += i;
-                w = w + i + ",";
-                v = v + i + "+"
-            }
+    var v = "";
+    var ans = "";
+    var w = "";
+    num = parseInt(num);
+    var temp = 0;
+    ans = "\\[The \\space positive \\space diviors \\space of \\space the \\space number \\space excluding \\space itself \\space are:\\]"
+    for (var i = 1; i <= num / 2; i++) {
+        if (num % i === 0) {
+            temp += i;
+            w = w + i + ",";
+            v = v + i + "+"
         }
-        w = w.slice(0, -1);
-        v = v.slice(0, -1)
-        ans += "\\[" + w + "\\]"
-        ans += "\\[Taking \\space the \\space sum \\space of \\space the \\space divisors \\]"
-        ans += "\\[" + v + "\\]"
-        ans += "\\[" + temp + "\\]"
-        if (temp === num && temp !== 0) {
-            ans += "\\[Since \\space the \\space sum \\space i.e \\space " + temp + " \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
-            ans += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space perfect \\space number\\]"
+    }
+    w = w.slice(0, -1);
+    v = v.slice(0, -1)
+    ans += "\\[" + w + "\\]"
+    ans += "\\[Taking \\space the \\space sum \\space of \\space the \\space divisors \\]"
+    ans += "\\[" + v + "\\]"
+    ans += "\\[" + temp + "\\]"
+    if (temp === num && temp !== 0) {
+        ans += "\\[Since \\space the \\space sum \\space i.e \\space " + temp + " \\space is \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
+        ans += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space perfect \\space number\\]"
 
-        }
-        else {
-            ans += "\\[Since \\space the \\space sum \\space i.e \\space " + temp + " \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
-            ans += "\\[\\therefore \\space " + num + " \\space  is \\space not \\space a \\space perfect \\space number\\]"
+    }
+    else {
+        ans += "\\[Since \\space the \\space sum \\space i.e \\space " + temp + " \\space is \\space not \\space equal \\space to \\space the \\space inputted \\space number \\space i.e \\space " + num + " \\]";
+        ans += "\\[\\therefore \\space " + num + " \\space  is \\space not \\space a \\space perfect \\space number\\]"
 
-        }
-       return {'steps' : ans }
+    }
+    return { 'steps': ans }
 
 }
 function isPrime(n) {
@@ -28775,40 +28788,40 @@ function isDisNum(num) {
 function happyvalue(num) {
 
 
-        let sum = 0;
-        num = parseInt(num);
-        number = num;
-        var ans = "";
-        while (number > 9) {
-            ans += "\\[";
-            while (number > 0) {
-                var remainder = parseInt(number % 10);
-                sum = sum + parseInt(Math.pow(remainder, 2));
-                number = parseInt(number / 10);
+    let sum = 0;
+    num = parseInt(num);
+    number = num;
+    var ans = "";
+    while (number > 9) {
+        ans += "\\[";
+        while (number > 0) {
+            var remainder = parseInt(number % 10);
+            sum = sum + parseInt(Math.pow(remainder, 2));
+            number = parseInt(number / 10);
 
-                if (number > 0) {
-                    ans += "  " + Math.pow(remainder, 2) + " + ";
-                }
-                else {
-                    ans += "  " + Math.pow(remainder, 2) + " ";
-                }
+            if (number > 0) {
+                ans += "  " + Math.pow(remainder, 2) + " + ";
             }
-            ans += "\\]";
-            ans += "\\[" + sum + "\\]";
-            number = sum;
-            sum = 0;
+            else {
+                ans += "  " + Math.pow(remainder, 2) + " ";
+            }
         }
-        if (number == 1) {
-            ans += "\\[Since \\space the \\space resultant \\space sum \\space i.e \\space " + number + " \\space is \\space equal \\space to \\space 1 \\]";
-            ans += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space Happy \\space number\\]"
+        ans += "\\]";
+        ans += "\\[" + sum + "\\]";
+        number = sum;
+        sum = 0;
+    }
+    if (number == 1) {
+        ans += "\\[Since \\space the \\space resultant \\space sum \\space i.e \\space " + number + " \\space is \\space equal \\space to \\space 1 \\]";
+        ans += "\\[\\therefore \\space " + num + " \\space  is \\space a \\space Happy \\space number\\]"
 
-        }
-        else {
-            ans += "\\[Since \\space the \\space resulatant \\space sum \\space i.e \\space " + number + " \\space is \\space not \\space equal \\space to \\space 1 \\]";
-            ans += "\\[\\therefore \\space " + num + " \\space  is \\space not \\space a \\space Happy \\space number\\]"
+    }
+    else {
+        ans += "\\[Since \\space the \\space resulatant \\space sum \\space i.e \\space " + number + " \\space is \\space not \\space equal \\space to \\space 1 \\]";
+        ans += "\\[\\therefore \\space " + num + " \\space  is \\space not \\space a \\space Happy \\space number\\]"
 
-        }
-        return {'steps': ans }
+    }
+    return { 'steps': ans }
 }
 // Krishnamurthy Number
 function isKrishnaNum(num) {
@@ -28859,31 +28872,31 @@ function magicvalue(num) {
     var digits = Math.floor(Math.log10(num) + 1);
 
 
-        var sum = 0;
+    var sum = 0;
 
-        var ans2 = "\\[";
-        num = parseInt(num);
-        number = num;
-        var ans = "";
-        while (number > 9) {
-            ans += "\\[";
-            while (number > 0) {
-                var remainder = parseInt(number % 10);
-                sum = sum + remainder;
-                number = parseInt(number / 10);
-                if (number > 0) {
-                    ans += "  " + remainder + " + ";
-                }
-                else {
-                    ans += "  " + remainder + " ";
-                }
+    var ans2 = "\\[";
+    num = parseInt(num);
+    number = num;
+    var ans = "";
+    while (number > 9) {
+        ans += "\\[";
+        while (number > 0) {
+            var remainder = parseInt(number % 10);
+            sum = sum + remainder;
+            number = parseInt(number / 10);
+            if (number > 0) {
+                ans += "  " + remainder + " + ";
             }
+            else {
+                ans += "  " + remainder + " ";
+            }
+        }
 
-            ans += "\\]";
-            ans += "\\[" + sum + "\\]";
+        ans += "\\]";
+        ans += "\\[" + sum + "\\]";
 
-            number = sum;
-            sum = 0;
+        number = sum;
+        sum = 0;
 
         if (number == 1) {
             ans += "\\[Since \\space the \\space sum \\space i.e \\space " + number + " \\space is \\space equal \\space to \\space 1 \\]";
@@ -28894,7 +28907,7 @@ function magicvalue(num) {
             ans += "\\[\\therefore \\space " + num + " \\space  is \\space not \\space a \\space magic \\space number\\]"
 
         }
-       return {'steps' : ans }
+        return { 'steps': ans }
     }
 
 }
@@ -29135,274 +29148,253 @@ function solveFraction(num1, num2) {
     }
     return { 'result': result, 'steps': temp };
 }
-function interquartile(q1,q3)
-{
-    var ans="";
-    var iq="";
-    q1=parseFloat(q1);
+function interquartile(q1, q3) {
+    var ans = "";
+    var iq = "";
+    q1 = parseFloat(q1);
     ans += "Step 1: Input the lower quartile range => " + q1;
-    var q3=parseFloat(q3);
+    var q3 = parseFloat(q3);
     ans += "Step 2: Input the upper quartile range => " + q3;
 
-    if(q1=="" || q2=="")
-    {
-    ans+="Enter all values";}
-    else
-    {
-        ans+="Step3: Calculate the inter quartile range";
+    if (q1 == "" || q2 == "") {
+        ans += "Enter all values";
+    }
+    else {
+        ans += "Step3: Calculate the inter quartile range";
 
-        iq=q3-q1;
-        ans+="The Interquartile range of"+$q3$-$q1$;
-        ans+=iq;
+        iq = q3 - q1;
+        ans += "The Interquartile range of" + $q3$ - $q1$;
+        ans += iq;
     }
-    return{'result':iq,'steps':ans};
+    return { 'result': iq, 'steps': ans };
 }
-function outlier(num,q1,q3)
-{
-    var ans="";
-    var inter=q3-q1;
-    var re="";
-    num=parseFloat(num);
-    ans+="Step 1: Input the number for which the set of outlier is calculated =>"+num;
-    q1=parseFloat(q1);
-    q3=parseFloat(q3);
-    ans+="Step 2:Take bothe quartile ranges,i.e,upper and lower quartile";
-    ans+="Step 3:Calculate the outlier";
-    if(num<(q1-(1.5*inter)))
-    {
-        re=(q1-(1.5*inter));
-        ans+="The outlier is"+re;
+function outlier(num, q1, q3) {
+    var ans = "";
+    var inter = q3 - q1;
+    var re = "";
+    num = parseFloat(num);
+    ans += "Step 1: Input the number for which the set of outlier is calculated =>" + num;
+    q1 = parseFloat(q1);
+    q3 = parseFloat(q3);
+    ans += "Step 2:Take bothe quartile ranges,i.e,upper and lower quartile";
+    ans += "Step 3:Calculate the outlier";
+    if (num < (q1 - (1.5 * inter))) {
+        re = (q1 - (1.5 * inter));
+        ans += "The outlier is" + re;
     }
-    else(num>(q3+(1.5*inter)))
+    else (num > (q3 + (1.5 * inter)))
     {
-        re=(q3+(1.5*inter));
-        ans+="The outlier is"+re;
+        re = (q3 + (1.5 * inter));
+        ans += "The outlier is" + re;
     }
-    return{'result':re,'steps':ans};
+    return { 'result': re, 'steps': ans };
 }
-function proportion(num1,num2,num3)
-{
-    var ans="";
-    var num4="";
-    num1=parseInt(num1);
-    ans+="Step1 :Input the first value"+num1;
-    num2=parseInt(num2);
-    ans+="Step2 :Input the second value"+num2;
-    num3=parseInt(num3);
-    ans+="Step3: Input the third value"+num3;
-    ans+="Step4 :Calculation of the missing value";
-    num4=(num1*num3)/num2;
-    ans+="The number for the proportion is "+num4;
-    return {'result':num4,'steps':ans};
+function proportion(num1, num2, num3) {
+    var ans = "";
+    var num4 = "";
+    num1 = parseInt(num1);
+    ans += "Step1 :Input the first value" + num1;
+    num2 = parseInt(num2);
+    ans += "Step2 :Input the second value" + num2;
+    num3 = parseInt(num3);
+    ans += "Step3: Input the third value" + num3;
+    ans += "Step4 :Calculation of the missing value";
+    num4 = (num1 * num3) / num2;
+    ans += "The number for the proportion is " + num4;
+    return { 'result': num4, 'steps': ans };
 }
 
-function threestar(a,b)
-{
-    var ans="";
-    var res="";
-    a=parseFloat(a);
-    ans+="Step1: Input the alpha angle"+a;
-    b=parseFloat(b);
-    ans+="Step2:Input the beta angle"+b;
-    ans+="Step3:Checking for the condition of three star.If true then result is 1 else 0";
-    if(a<60 && b==120+a)
-    {
-        res=1;
-        ans+="It is formed by three isosceles triangles";
+function threestar(a, b) {
+    var ans = "";
+    var res = "";
+    a = parseFloat(a);
+    ans += "Step1: Input the alpha angle" + a;
+    b = parseFloat(b);
+    ans += "Step2:Input the beta angle" + b;
+    ans += "Step3:Checking for the condition of three star.If true then result is 1 else 0";
+    if (a < 60 && b == 120 + a) {
+        res = 1;
+        ans += "It is formed by three isosceles triangles";
     }
-    else
-    {
-        res=0;
-        ans+="It is not formed by three isosceles triangle";
+    else {
+        res = 0;
+        ans += "It is not formed by three isosceles triangle";
     }
-    return {'result':res,'steps':ans};
+    return { 'result': res, 'steps': ans };
 }
 
 
 
 //speed distance time calculator
 
-function calculateSpeed(distance,time) {
-    let speed= document.getElementById("speed");
+function calculateSpeed(distance, time) {
+    let speed = document.getElementById("speed");
     let temp;
     let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
-        temp = Number(distance.value) / Number(time.value);
-        speed.value=temp;
+    temp = Number(distance.value) / Number(time.value);
+    speed.value = temp;
     calculatedSpeedDisplay.innerText = `The calculated speed is ${temp} m/s.`;
-    }
+}
 
-    function calculateTime(distance,speed){
+function calculateTime(distance, speed) {
     let time = document.getElementById("time");
     let temp;
     let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
-       temp = Number(distance.value) /Number(speed.value);
-        time.value=temp;
+    temp = Number(distance.value) / Number(speed.value);
+    time.value = temp;
     calculatedSpeedDisplay.innerText = `The calculated time is ${temp} s.`;
-    }
+}
 
-    function calculateDistance(speed,time){
-        let distance = document.getElementById("distance");
+function calculateDistance(speed, time) {
+    let distance = document.getElementById("distance");
     let temp;
     let calculatedSpeedDisplay = document.getElementById("calculatedSpeedDisplay");
-         temp = Number(speed.value) * Number(time.value);
-        distance.value=temp;
+    temp = Number(speed.value) * Number(time.value);
+    distance.value = temp;
     calculatedSpeedDisplay.innerText = `The calculated distance is ${temp} m.`;
-    }
+}
 
 
-function probability(favourable,out)
-{
-    var ans="";
-    var sol="";
-    favourable=parseInt(favourable);
-    ans+="Step1: Input the total number of favourable outcomes"+favourable;
-    out=parseInt(out);
-    ans+="Step2:Input the total number of possible outcomes"+out;
-    ans+="Step3:Calculating the probability";
+function probability(favourable, out) {
+    var ans = "";
+    var sol = "";
+    favourable = parseInt(favourable);
+    ans += "Step1: Input the total number of favourable outcomes" + favourable;
+    out = parseInt(out);
+    ans += "Step2:Input the total number of possible outcomes" + out;
+    ans += "Step3:Calculating the probability";
     sol = `\\frac{${favourable}}{${out}}`;
-    ans+="The result is"+sol;
-    return {'result':res,'steps':ans};
+    ans += "The result is" + sol;
+    return { 'result': res, 'steps': ans };
 }
 
-function fourstar(x,y)
-{
-    var ans=""
-    var res=""
-    x=parseFloat(x);
-    ans+="Step1:Input the alpha angle"+x;
-    y=parseFloat(y);
-    ans+="Step2:Input the beta angle"+y;
-    ans+="Step3:Checking for the condition of four star.";
-    if(x<90 && y==90+x)
-    {
-        res=1;
-        ans+="It is formed by four isosceles triangle";
+function fourstar(x, y) {
+    var ans = ""
+    var res = ""
+    x = parseFloat(x);
+    ans += "Step1:Input the alpha angle" + x;
+    y = parseFloat(y);
+    ans += "Step2:Input the beta angle" + y;
+    ans += "Step3:Checking for the condition of four star.";
+    if (x < 90 && y == 90 + x) {
+        res = 1;
+        ans += "It is formed by four isosceles triangle";
     }
-    else
-    {
-        res=0;
-        ans+="It is not formed by four isosceles triangle";
+    else {
+        res = 0;
+        ans += "It is not formed by four isosceles triangle";
     }
-    return {'result':res,'steps':ans};
+    return { 'result': res, 'steps': ans };
 }
 
-function convolution(n,x,h)
-{
-    var ans="";
-    var y="";
-    ans+="Step1:Input the total number of steps"
-    n=parseInt(n);
-    x=parseFloat(x);
-    ans+="Step2:The first function is "+x;
-    h=parseFloat(h);
-    ans+="Step3:The second function is "+h;
-    ans+="Step4:Run a loop till n and calculate the value of convoulution";
+function convolution(n, x, h) {
+    var ans = "";
+    var y = "";
+    ans += "Step1:Input the total number of steps"
+    n = parseInt(n);
+    x = parseFloat(x);
+    ans += "Step2:The first function is " + x;
+    h = parseFloat(h);
+    ans += "Step3:The second function is " + h;
+    ans += "Step4:Run a loop till n and calculate the value of convoulution";
     for (let index = 0; index < n; index++) {
-        y=y+(x*h);
+        y = y + (x * h);
     }
-    return {'result':y,'steps':ans};
+    return { 'result': y, 'steps': ans };
 }
 
-function incircleoftriangle(p,b,h)
-{
-    var ans="";
-    var res="";
-    p=parseInt(p);
-    ans+="Step1:Take the length of perpendicular"+p;
-    b=parseInt(b);
-    ans+="Step2:Take the length of base"+b;
-    h=parseInt(h);
-    ans+="Step3:Take the length of height"+h;
-    let r=(p+b-h)/2;
-    ans+="Step4:To calculate the inradius which is="+r;
-    res=3.14*r*r;
-    ans+="The area of the incircle is="+res;
-    return{'result':res,'steps':ans};
+function incircleoftriangle(p, b, h) {
+    var ans = "";
+    var res = "";
+    p = parseInt(p);
+    ans += "Step1:Take the length of perpendicular" + p;
+    b = parseInt(b);
+    ans += "Step2:Take the length of base" + b;
+    h = parseInt(h);
+    ans += "Step3:Take the length of height" + h;
+    let r = (p + b - h) / 2;
+    ans += "Step4:To calculate the inradius which is=" + r;
+    res = 3.14 * r * r;
+    ans += "The area of the incircle is=" + res;
+    return { 'result': res, 'steps': ans };
 }
 
 
-function circularsector(r,theta)
-{
-    var ans="";
-    var res="";
-    r=parseFloat(r);
-    ans+="Step1: Input the radius of the circle="+r;
-    theta=parseFloat(theta);
-    ans+="Step2:Input the angle subtended at the center of the circle in radian="+theta;
-    if(theta<360)
-    {
-        res=0.5*(r*r*theta);
-        ans+="The area of the circular sector is="+res;
+function circularsector(r, theta) {
+    var ans = "";
+    var res = "";
+    r = parseFloat(r);
+    ans += "Step1: Input the radius of the circle=" + r;
+    theta = parseFloat(theta);
+    ans += "Step2:Input the angle subtended at the center of the circle in radian=" + theta;
+    if (theta < 360) {
+        res = 0.5 * (r * r * theta);
+        ans += "The area of the circular sector is=" + res;
     }
-    else
-    {
-        res=0;
-        ans+="The area of sector is not possible";
+    else {
+        res = 0;
+        ans += "The area of sector is not possible";
     }
-    return {'result':res,'steps':ans};
+    return { 'result': res, 'steps': ans };
 }
-function ucontrol(u,n)
-{
-    var ans="";
-    var res="";
-    u=parseFloat(u);
-    ans+="Step1:Input the average defect count="+u;
-    n=parseInt(n);
-    ans+="Step2:Input the sample size="+n;
-    let ucl=u+Math.sqrt(u/n);
-    ans+="Step3:Calculate the upper control limit-"+ucl;
-    let lcl=u-Math.sqrt(u/n);
-    ans+="Step4:Calculate the lower control limit-"+lcl;
-    res=ucl-lcl;
-    ans+="The u control chart limit will be="+res;
-    return {'result':res,'steps':ans};
+function ucontrol(u, n) {
+    var ans = "";
+    var res = "";
+    u = parseFloat(u);
+    ans += "Step1:Input the average defect count=" + u;
+    n = parseInt(n);
+    ans += "Step2:Input the sample size=" + n;
+    let ucl = u + Math.sqrt(u / n);
+    ans += "Step3:Calculate the upper control limit-" + ucl;
+    let lcl = u - Math.sqrt(u / n);
+    ans += "Step4:Calculate the lower control limit-" + lcl;
+    res = ucl - lcl;
+    ans += "The u control chart limit will be=" + res;
+    return { 'result': res, 'steps': ans };
 }
 
-function amicable(num1,num2)
-{
-    var ans="";
-    var res="";
-    num1=parseInt(num1);
-    ans+="Step1:Input the first number="+num1;
-    num2=parseInt(num2);
-    ans+="Step2:Input the second number="+num2;
-    let div1=0,div2=0;
-    ans+="Step3: Calculate the sum of divisors of 1st number";
-    for (let index = 1; index < num1; index++){
-        if(num1 % index==0)
-        div1=div1+index;
+function amicable(num1, num2) {
+    var ans = "";
+    var res = "";
+    num1 = parseInt(num1);
+    ans += "Step1:Input the first number=" + num1;
+    num2 = parseInt(num2);
+    ans += "Step2:Input the second number=" + num2;
+    let div1 = 0, div2 = 0;
+    ans += "Step3: Calculate the sum of divisors of 1st number";
+    for (let index = 1; index < num1; index++) {
+        if (num1 % index == 0)
+            div1 = div1 + index;
     }
-    ans+="Step4:The sum of divisors of 1st number is="+div1;
-    ans+="Step5: Calculate the sum of divisors of 2nd number";
+    ans += "Step4:The sum of divisors of 1st number is=" + div1;
+    ans += "Step5: Calculate the sum of divisors of 2nd number";
     for (let index1 = 1; index1 < num2; index1++) {
-        if(num2 % index1 ==0)
-        div2=div2+index1;
+        if (num2 % index1 == 0)
+            div2 = div2 + index1;
     }
-    ans+="Step6:The sum of divisors of 2nd number is="+div2;
-    if(div1==num2 && div2==num1)
-    {
-        res=" They are amicable numbers";
+    ans += "Step6:The sum of divisors of 2nd number is=" + div2;
+    if (div1 == num2 && div2 == num1) {
+        res = " They are amicable numbers";
     }
-    
+
     else
-    res="They are not amicable numbers";
-    return {'result':res,'steps':ans};
+        res = "They are not amicable numbers";
+    return { 'result': res, 'steps': ans };
 }
 
-function luminosity(A,T)
-{
-    var ans="";
-    var res="";
-    A=parseFloat(A);
-    ans+="Step1:Input the area of cross section="+A;
-    T=parseFloat(T);
-    ans+="Step2:Input the temperature="+T;
-    let P=0.0;
-    ans+="Step3: Calculate the luminosity power";
-    P= A*T*5.670367*Math.pow(10,-8);
-    res=P;
-    ans+="Step4:The luminosity is equal to:"+res;
-    return {'result':res,'steps':ans};
+function luminosity(A, T) {
+    var ans = "";
+    var res = "";
+    A = parseFloat(A);
+    ans += "Step1:Input the area of cross section=" + A;
+    T = parseFloat(T);
+    ans += "Step2:Input the temperature=" + T;
+    let P = 0.0;
+    ans += "Step3: Calculate the luminosity power";
+    P = A * T * 5.670367 * Math.pow(10, -8);
+    res = P;
+    ans += "Step4:The luminosity is equal to:" + res;
+    return { 'result': res, 'steps': ans };
 }
 
 
