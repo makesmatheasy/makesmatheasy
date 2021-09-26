@@ -271,7 +271,9 @@
         function openOption(path, displayname) {
             $("#mainsection").hide().load(path, function (response, status, xhttp) {
                 if (xhttp.status == 200) {
-
+                    $("nav").parent().css('z-index', 1e5);
+                    $("nav").css('z-index', 1e5);
+                    $(".uppernav").css('z-index', 1e6)
                 }
             }).fadeIn('1000');
             document.getElementById('maintext').innerHTML = displayname;
