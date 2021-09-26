@@ -6,8 +6,8 @@ function Complex(real, imaginary) {
 }
 Complex.transform = function(num) {
   var complex;
-  complex = (num instanceof Complex) ? num : complex;
   complex = (typeof num === 'number') ? new Complex(num, 0) : num;
+  complex = (num instanceof Complex) ? num : complex;
   return complex;
 };
 function display(re, im) {
@@ -334,13 +334,12 @@ function samvar()
     else
     {
         var outputstring="";
-        var s=0;
         num=num.trim();
         num = num.split(" ");
         var len=parseInt(num.length);
        
         var number=[]
-        for (i = 0; i < len; i++) {
+        for (var i = 0; i < len; i++) {
             number[i] = parseFloat(num[i].trim());
         }
 
@@ -403,7 +402,7 @@ function popvar()
         var len=parseInt(num.length);
        
         var number=[]
-        for (i = 0; i < len; i++) {
+        for (var i = 0; i < len; i++) {
             number[i] = parseFloat(num[i].trim());
         }
 
@@ -802,7 +801,7 @@ function ssqcal()
     var len=parseInt(num.length);
    
     var number=[]
-    for (i = 0; i < len; i++) {
+    for (var i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
     }
 
@@ -1281,9 +1280,9 @@ function factorial(n){
   }
 
  function calcexhpcal(){
-    var x = document.getElementById("ath").value = 5;
-    var y = document.getElementById("differ").value = 2;
-    var z = document.getElementById("totno").value = 3;
+    document.getElementById("ath").value = 5;
+    document.getElementById("differ").value = 2;
+    document.getElementById("totno").value = 3;
     hpcal();
 }
 function hpcal()
@@ -1318,9 +1317,9 @@ function hpcal()
 
 
 function calcexhpcal11(){
-    var x = document.getElementById("lterm1").value = 5;
-    var y = document.getElementById("cdiffer1").value = 2;
-    var z = document.getElementById("totnum1").value = 3;
+    document.getElementById("lterm1").value = 5;
+    document.getElementById("cdiffer1").value = 2;
+    document.getElementById("totnum1").value = 3;
     hpcal11();
 }
 function hpcal11()
@@ -1443,10 +1442,10 @@ function confidence() {
     var ans1 = 0;
     var ans2 = 0;
     var s = "";
-    if (z = "Select Z value") {
+    if (z === "Select Z value") {
         s = "Please select a Z value";
     }
-    if (n == "" || mean == "" || deviation == "") {
+    else if (n == "" || mean == "" || deviation == "") {
         s = "Please enter number";
     } else if (!valid.test(n)) {
         s = "Use of alphabets and special character is not allowed for calculation purpose";
@@ -1460,17 +1459,11 @@ function confidence() {
         else if (z === "90%") {
             zval = 1.645;
         }
-        else if (z === "80%") {
+        else if (z === "95%") {
             zval = 1.960;
         }
-        else if (z === "80%") {
+        else if (z === "100%") {
             zval = 2.576;
-        }
-        else if (z === "80%") {
-            zval = 2.807;
-        }
-        else if (z === "80%") {
-            zval = 3.291;
         }
         console.log(z);
         var ans = zval * (deviation / Math.sqrt(n));
@@ -1515,7 +1508,7 @@ function wmccal()
     num1 = num1.split(" ");
     var len1=parseInt(num1.length);
     var number1=[]
-    for (i = 0; i < len1; i++) 
+    for (var i = 0; i < len1; i++) 
     {
         number1[i] = parseFloat(num1[i].trim());
     }
@@ -1646,7 +1639,6 @@ function peroffCal(){
     } else{
         temp1 = "\\[Please \\space enter \\space valid \\space input\\]"
         output1.innerHTML = temp1;
-        temp2 = "";
     }
     renderMathInElement(output1);
     renderMathInElement(output2);
@@ -1693,7 +1685,7 @@ function covcalcu(){
         num1 = num1.split(" ");
         var len1=parseInt(num1.length);
         var number1=[], sum1=0, sum2=0;
-        for (i = 0; i < len1; i++){
+        for (var i = 0; i < len1; i++){
             number1[i] = parseFloat(num1[i].trim());
             sum1+=number1[i];
         }
@@ -1760,7 +1752,7 @@ function covcal() {
         return;
     }
     var number=[]
-    for (i = 0; i < len; i++) {
+    for (var i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
     }
     var sum=0;
@@ -1806,15 +1798,12 @@ function rmscal()
     }
     else
     {
-        var outputstring="";
-        var s=0;
-        
         num=num.trim();
         num = num.split(" ");
         var len=parseInt(num.length);
        
         var number=[]
-        for (i = 0; i < len; i++) {
+        for (var i = 0; i < len; i++) {
             number[i] = parseFloat(num[i].trim());
         }
         var sum=0;
@@ -2111,7 +2100,7 @@ else{
     var sum=0;
     var number=[]
     let steps = "";
-    for (i = 0; i < len; i++) {
+    for (var i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
         sum+=number[i];
     }
@@ -2309,14 +2298,14 @@ function perrankcal(){
     num = num.split(" ");
     var len=parseInt(num.length);
     var number=[]
-    for (i = 0; i < len; i++) {
+    for (var i = 0; i < len; i++) {
         number[i] = parseFloat(num[i].trim());
     }
     num2=parseFloat(num2);
     var count=0;
     document.getElementById("perrankans1").innerHTML="\\[Here \\space we \\space count \\space the \\space cases \\newline when \\space your \\space marks \\space becomes \\space > \\space or \\space = \\space any \\space marks \\space form \\space dataset\\]";
     renderMathInElement(document.getElementById("perrankans1"));
-    for(var i=0; i<len;i++){
+    for(i=0; i<len;i++){
         if(number[i]<=num2){
             count++;}
     }
@@ -2696,14 +2685,12 @@ function Ranges()
     }
     else
     {
-        var outputstring="";
-        var s=0;
         num=num.trim();
         num = num.split(" ");
         var len=parseInt(num.length);
        
         var number=[]
-        for (i = 0; i < len; i++) {
+        for (var i = 0; i < len; i++) {
             number[i] = parseFloat(num[i].trim());
         }
 
