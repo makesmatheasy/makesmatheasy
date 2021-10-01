@@ -648,6 +648,12 @@ If you have any doubts please let us know in the comments.
   ![Lets Grow More Summer of Code](https://user-images.githubusercontent.com/60106112/121303829-28c07900-c919-11eb-8cf2-afd39b5c54ab.png)
   </td>
   </tr>
+<tr>
+  <td>
+
+  ![Hacktoberfest-2021](https://user-images.githubusercontent.com/60106112/135565291-3c98348f-36f8-4b9a-b7b4-e365c72718d2.png)
+  </td>
+  </tr>
 </table>
 
 <h1 align=center> Project Admin ❤️ </h1>
@@ -656,17 +662,6 @@ If you have any doubts please let us know in the comments.
 <table>
   <tbody><tr>
     <td align="center"><a href="https://github.com/sairish2001"><img alt="" src="https://avatars.githubusercontent.com/sairish2001" width="130px;"><br><sub><b> Rajinderpal Singh </b></sub></a><br></td> </a></td>
-</tbody></table>
-
-<h1 align=center> Project Maintainers 😃 </h1>
-<p align="center">
-
-<table>
-  <tbody><tr>
-    <td align="center"><a href="https://github.com/arpit456jain"><img alt="" src="https://avatars.githubusercontent.com/arpit456jain" width="130px;"><br><sub><b> Arpit Jain </b></sub></a><br></td></a></td>
-     <td align="center"><a href="https://github.com/https://github.com/gnikita432"><img alt="" src="https://avatars.githubusercontent.com/gnikita432" width="130px;"><br><sub><b> Nikita Anil Gupta </b></sub></a><br></td></a></td>
-      <td align="center"><a href="https://github.com/Rizwan-S"><img alt="" src="https://avatars.githubusercontent.com/Rizwan-S" width="130px;"><br><sub><b>Rizwan Shaikh </b></sub></a><br></td></a></td>
-  </tr>
 </tbody></table>
 
 ## 🌟 Contributors
