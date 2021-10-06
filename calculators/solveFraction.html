@@ -6,9 +6,16 @@
 
         var data = solveFraction(num1, num2);
 
-        document.getElementById('outputsteps').innerHTML = data['steps'];
+		if(num2==0)
+			{
+				document.getElementById('outputsteps').innerHTML = "Invalid Operation , Denominator can't be zero of a Fraction";
+		        document.getElementById('outputresult').innerHTML = " "	;	
+			}
+        else{
+		document.getElementById('outputsteps').innerHTML = data['steps'];
         document.getElementById('outputresult').innerHTML = data['result'];
-        renderMathInElement(document.getElementById('outputsteps'));
+		}
+		renderMathInElement(document.getElementById('outputsteps'));
         renderMathInElement(document.getElementById('outputresult'));
     }
 </script>
