@@ -16,8 +16,22 @@
     <form action="">
         <input type="text" id="modx" placeholder="Enter dividend(x)" class="form__field"><br><br>
         <input type="text" id="mody" placeholder="Enter divisor(y)" class="form__field"><br><br>
-        <button type="button" class="btn btn-dark" onclick="moduloCal()">Calculate</button>
+        <button type="button" class="btn btn-dark" onclick="calculate()">Calculate</button>
         <button type="button" class="btn btn-dark" onclick="this.form.reset();">Reset</button>
     </form>
     <br><br>
     <p id="moduloans" style="font-family:mathfont"></p><br>
+<script>
+	function calculate(){
+            // Selecting the input element and get its value 
+            var inputVal = document.getElementById("mody").value;
+            if(inputVal==0)
+				{
+					document.getElementById('moduloans').innerHTML = "Can't divide by zero ";
+				}
+		else
+			{
+				moduloCal();
+			}
+	}
+</script>
