@@ -1,40 +1,73 @@
+<style>
+  .option {
+    cursor: pointer;
+  }
+</style>
 <script>
-    function checkFavourites() {
-        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
-        for (filename in imglocal) {
-            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
-        }
+  function checkFavourites() {
+    var imglocal = JSON.parse(localStorage.getItem("imglocalmap"));
+    for (filename in imglocal) {
+      document.getElementById(imglocal[filename]).src = "icons/favourite.png";
     }
-    checkFavourites();
+  }
+  checkFavourites();
 </script>
-<link rel="stylesheet" href="css/menuCommon.css">
-<div class="back" onclick="openOption('appdata/menu.html','Menu')"><img src="icons/back.png" alt=""></div>
+<link rel="stylesheet" href="css/menuCommon.css" />
+<div class="back" onclick="openOption('appdata/menu.html','Menu')">
+  <img src="icons/back.png" alt="" />
+</div>
 
 <div class="menu">
-    <div class="row">
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="circlefav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+  <div class="row">
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="circlefav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
 
-                <span class="caltext" onclick="loadcalculator('study/intro_mens.html','intro_mens')">Introduction</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="circlefav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-                <span class="caltext" onclick="loadcalculator('calculators/2Dshapes.html','2D_Shapes')">2D Shapes</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="circlefav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-                <span class="caltext" onclick="loadcalculator('calculators/3Dshapes.html','3D_Shapes')">3D Shapes</span>
-            </div>
-        </div>
-
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/intro_mens.html','intro_mens')"
+          >Introduction</span
+        >
+      </div>
     </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="circlefav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/2Dshapes.html','2D_Shapes')"
+          >2D Shapes</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="circlefav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/3Dshapes.html','3D_Shapes')"
+          >3D Shapes</span
+        >
+      </div>
+    </div>
+  </div>
 </div>

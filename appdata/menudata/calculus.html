@@ -1,149 +1,277 @@
+<style>
+  .option {
+    cursor: pointer;
+  }
+</style>
 <script>
-    function checkFavourites() {
-        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
-        for (filename in imglocal) {
-            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
-        }
+  function checkFavourites() {
+    var imglocal = JSON.parse(localStorage.getItem("imglocalmap"));
+    for (filename in imglocal) {
+      document.getElementById(imglocal[filename]).src = "icons/favourite.png";
     }
-    checkFavourites();
+  }
+  checkFavourites();
 </script>
-<link rel="stylesheet" href="css/menuCommon.css">
-<div class="back" onclick="openOption('appdata/menu.html','Menu')"><img src="icons/back.png" alt=""></div>      
+<link rel="stylesheet" href="css/menuCommon.css" />
+<div class="back" onclick="openOption('appdata/menu.html','Menu')">
+  <img src="icons/back.png" alt="" />
+</div>
 
-<div class="menu">    
-    <div class="row">
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="ipimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('study/inverseAndPeriodicityOfFunctions.html','Inverse and Periodicity of Functions')">Inverse and Periodicity of Functions</span>                           
-            </div>
-        </div>
-        
+<div class="menu">
+  <div class="row">
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ipimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
 
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="intimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/integration.html','Integration')">Integration</span>                           
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="integration-idenfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('study/integrationFormulas.html','Integration Formulae')">Integration Formulae</span>                           
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="defintegration-idenfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('study/definiteIntegrationFormulas.html','Definite Integration Formulae')">Definite Integration Formulae</span>                           
-            </div>
-        </div>        
-        
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="diffimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/differentiation.html','Differentiation')">Differentiation</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="differentiate-ruleimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('study/differentiationFormulas.html','Differentiation Formulae')">Differentiation Formulae</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="pardiffimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/partialDifferentiation.html','Partial Differentiate')">Partial Differentiation</span>
-            </div>
-        </div>
-
-
-       
-    
-
-   
-
-        
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="gammaimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/gammaFunctionCalculator.html','Gamma Function Calculator')">Gamma Function Calculator</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="betaimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/betaFunctionCalculator.html','Beta Function Calculator')">Beta Function Calculator</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="laplaceimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/laplace.html','Laplace')">Laplace</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="lapproimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('study/laplaceTransformsAndProperties.html','Laplace Transforms and Properties')">Laplace Transforms and Properties</span>
-            </div>
-        </div>
-
-
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="vectorcalimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/vectorCalculator.html','Vector Calculator')">Vector Calculator</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="vectsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/vectorMagnitudeCalculator.html','Vector Mangnitude Calculator')">Vector Mangnitude Calculator</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="threeimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/threeStar.html','Three Star Calculator')">Three Star Calculator</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="fourimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/fourStar.html','Four Star Calculator')">Four Star Calculator</span>
-            </div>
-        </div>
-
-        
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/inverseAndPeriodicityOfFunctions.html','Inverse and Periodicity of Functions')"
+          >Inverse and Periodicity of Functions</span
+        >
+      </div>
     </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="intimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/integration.html','Integration')"
+          >Integration</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="integration-idenfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/integrationFormulas.html','Integration Formulae')"
+          >Integration Formulae</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="defintegration-idenfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/definiteIntegrationFormulas.html','Definite Integration Formulae')"
+          >Definite Integration Formulae</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="diffimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/differentiation.html','Differentiation')"
+          >Differentiation</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="differentiate-ruleimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/differentiationFormulas.html','Differentiation Formulae')"
+          >Differentiation Formulae</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="pardiffimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/partialDifferentiation.html','Partial Differentiate')"
+          >Partial Differentiation</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="gammaimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/gammaFunctionCalculator.html','Gamma Function Calculator')"
+          >Gamma Function Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="betaimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/betaFunctionCalculator.html','Beta Function Calculator')"
+          >Beta Function Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="laplaceimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/laplace.html','Laplace')"
+          >Laplace</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="lapproimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/laplaceTransformsAndProperties.html','Laplace Transforms and Properties')"
+          >Laplace Transforms and Properties</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="vectorcalimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/vectorCalculator.html','Vector Calculator')"
+          >Vector Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="vectsimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/vectorMagnitudeCalculator.html','Vector Mangnitude Calculator')"
+          >Vector Mangnitude Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="threeimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/threeStar.html','Three Star Calculator')"
+          >Three Star Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="fourimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/fourStar.html','Four Star Calculator')"
+          >Four Star Calculator</span
+        >
+      </div>
+    </div>
+  </div>
 </div>

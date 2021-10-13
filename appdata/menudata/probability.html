@@ -1,169 +1,337 @@
+<style>
+  .option {
+    cursor: pointer;
+  }
+</style>
 <script>
-    function checkFavourites() {
-        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
-        for (filename in imglocal) {
-            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
-        }
+  function checkFavourites() {
+    var imglocal = JSON.parse(localStorage.getItem("imglocalmap"));
+    for (filename in imglocal) {
+      document.getElementById(imglocal[filename]).src = "icons/favourite.png";
     }
-    checkFavourites();
+  }
+  checkFavourites();
 </script>
-<link rel="stylesheet" href="css/menuCommon.css">
-<div class="back" onclick="openOption('appdata/menu.html','Menu')"><img src="icons/back.png" alt=""></div>      
+<link rel="stylesheet" href="css/menuCommon.css" />
+<div class="back" onclick="openOption('appdata/menu.html','Menu')">
+  <img src="icons/back.png" alt="" />
+</div>
 
-<div class="menu">    
-    <div class="row">
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="probabilityfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('study/empiricalProbability.html','Empirical Probability')">Empirical Probability</span>                           
-            </div>
-        </div>
+<div class="menu">
+  <div class="row">
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="probabilityfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
 
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="geoprobabilityfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('study/geometricProbabilityDistribution.html','Geometric Probability Distribution')">Geometric Probability Distribution
-                </span>                           
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="condprobabilityfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('study/conditionalProbability.html','Conditional Probability')">Conditional Probability</span>                           
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="randommeanfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('study/meanAndVarianceOfRandomVariable.html','Mean and Variance of Random Variable')">
-                    Mean and Variance of Random Variable</span>                           
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="joint-probailityfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/jointProbability.html','Joint Probability')">Joint Probability</span>                           
-            </div>
-        </div>        
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="relriskfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/relativeRiskCalculator.html','Relative Risk Calculator')">
-                    Relative Risk Calculator</span>                           
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="ideventfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/independentAndDependentEventProbability.html','Independent And Dependent Event Probability')">
-                    Independent And Dependent Event Probability</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="btprop1imgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/probabilityProperties.html','Probability Properties')">Probability Properties</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="bpmfimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/binomialDistributionCalculator.html','Binomial Distribution')">Binomial Distribution Calculator</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="ppmfimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/poissonDistributionP.M.FCalculator.html','Poisson Distribution')">Poisson Distribution P.M.F Calculator</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="hypergeosimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/hypergeometricDistributionP.M.FCalculator.html','Hypergeometric Distribution')">Hypergeometric Distribution
-                P.M.F Calculator</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="bayes-probailityfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/gbayesProbabilityTheorem.html','Bayes Theorem')">Bayes Probability Theorem</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="vpdfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/poissonDistributionStatistics.html','Poisson Distribution Statistics')">
-                    Poisson Distribution Statistics</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="hypergeomeansimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/hypergeometricDistributionStatistics.html','Hypergeometric Distribution')">
-                    Hypergeometric Distribution Statistics</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="expoDistimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/exponentialDistributionCalculator.html','Exponential distribution calculator')">
-                    Exponential distribution Calculator</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="madcsimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/meanAbsoluteDeviationCalculator.html','Mean Absolute Deviation Calculator')">
-                    Mean Absolute Deviation Calculator</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="probabilityimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/probability.html','Probability Calculator')"> Probability Calculator</span>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-6">
-            <div class="option">
-                <img id="gammaDistimgfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-                
-                <span class="caltext" onclick="loadcalculator('calculators/gammaDistributionCalculator.html','Gamma distribution calculator')">
-                    Gamma Distribution Calculator</span>
-            </div>
-        </div>
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/empiricalProbability.html','Empirical Probability')"
+          >Empirical Probability</span
+        >
+      </div>
     </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="geoprobabilityfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/geometricProbabilityDistribution.html','Geometric Probability Distribution')"
+          >Geometric Probability Distribution
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="condprobabilityfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/conditionalProbability.html','Conditional Probability')"
+          >Conditional Probability</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="randommeanfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/meanAndVarianceOfRandomVariable.html','Mean and Variance of Random Variable')"
+        >
+          Mean and Variance of Random Variable</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="joint-probailityfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/jointProbability.html','Joint Probability')"
+          >Joint Probability</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="relriskfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/relativeRiskCalculator.html','Relative Risk Calculator')"
+        >
+          Relative Risk Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ideventfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/independentAndDependentEventProbability.html','Independent And Dependent Event Probability')"
+        >
+          Independent And Dependent Event Probability</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="btprop1imgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/probabilityProperties.html','Probability Properties')"
+          >Probability Properties</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="bpmfimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/binomialDistributionCalculator.html','Binomial Distribution')"
+          >Binomial Distribution Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ppmfimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/poissonDistributionP.M.FCalculator.html','Poisson Distribution')"
+          >Poisson Distribution P.M.F Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="hypergeosimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/hypergeometricDistributionP.M.FCalculator.html','Hypergeometric Distribution')"
+          >Hypergeometric Distribution P.M.F Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="bayes-probailityfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/gbayesProbabilityTheorem.html','Bayes Theorem')"
+          >Bayes Probability Theorem</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="vpdfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/poissonDistributionStatistics.html','Poisson Distribution Statistics')"
+        >
+          Poisson Distribution Statistics</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="hypergeomeansimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/hypergeometricDistributionStatistics.html','Hypergeometric Distribution')"
+        >
+          Hypergeometric Distribution Statistics</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="expoDistimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/exponentialDistributionCalculator.html','Exponential distribution calculator')"
+        >
+          Exponential distribution Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="madcsimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/meanAbsoluteDeviationCalculator.html','Mean Absolute Deviation Calculator')"
+        >
+          Mean Absolute Deviation Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="probabilityimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/probability.html','Probability Calculator')"
+        >
+          Probability Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="gammaDistimgfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/gammaDistributionCalculator.html','Gamma distribution calculator')"
+        >
+          Gamma Distribution Calculator</span
+        >
+      </div>
+    </div>
+  </div>
 </div>
