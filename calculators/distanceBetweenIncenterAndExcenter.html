@@ -1,12 +1,22 @@
+<div class="back" onclick="openOption('appdata/menudata/trigonometry.html','Trigonometry')">
+    <img style="       
+            background-color: whitesmoke;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-top: 10px;
+            display: block !important;
+            height: 30px;
+            box-shadow: 0 0 10px white;
+            border-radius: 50%;
+            padding:5px;
+        " src="./icons/back.png" alt=""></div>
 <div id="incenterexcenter">
     <h2>Distance between Incenter and Excenter of a Triangle</h2><br>
     <p id="incenex">\[4RsinA/2\]</p>
     <form action="">
         <div class="form-group">
-            <input type="text" style="width: 250px;" class="form__field" name="a" id="ex_rad"
-                placeholder="Enter External radius" />
-            <input type="text" name="b" style="width: 250px;" class="form__field" id="angle_1"
-                placeholder="Enter angle A " /> <br> <br>
+            <input type="text" style="width: 250px;" class="form__field" name="a" id="ex_rad" placeholder="Enter External radius" />
+            <input type="text" name="b" style="width: 250px;" class="form__field" id="angle_1" placeholder="Enter angle A " /> <br> <br>
             <button class="btn btn-outline-light" type="button" onclick="dist_incenex()">Find</button>
             <button class="btn btn-outline-light" type="button" onclick="this.form.reset();">Reset</button>
             <br>
