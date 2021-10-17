@@ -1,176 +1,362 @@
+<style>
+  .option {
+    cursor: pointer;
+  }
+</style>
 <script>
-    function checkFavourites() {
-        var imglocal = JSON.parse(localStorage.getItem('imglocalmap'));
-        for (filename in imglocal) {
-            document.getElementById(imglocal[filename]).src = "icons/favourite.png";
-        }
+  function checkFavourites() {
+    var imglocal = JSON.parse(localStorage.getItem("imglocalmap"));
+    for (filename in imglocal) {
+      document.getElementById(imglocal[filename]).src = "icons/favourite.png";
     }
-    checkFavourites();
+  }
+  checkFavourites();
 </script>
-<link rel="stylesheet" href="css/menuCommon.css">
-<div class="back" onclick="openOption('appdata/menu.html','Menu')"><img src="icons/back.png" alt=""></div>
+<link rel="stylesheet" href="css/menuCommon.css" />
+<div class="back" onclick="openOption('appdata/menu.html','Menu')">
+  <img src="icons/back.png" alt="" />
+</div>
 
 <div class="menu">
-    <div class="row">
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
+  <div class="row">
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
 
-              <span class="caltext" onclick="loadcalculator('study/trigonometry.html','Trigonometry')">Trigonometry Basics</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('calculators/pbhTrigo.html','P/B/H Trigonometry')">P/B/H Trigo</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('calculators/hyperbolicTrigonometricRatios.html','Hyperbolic Trigonometric Ratios')">Hyperbolic Trigonometric Ratios Calculator</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('calculators/distanceBetweenIncenterAndExcenter.html','Distance Between Incenter and Excenter')">Distance Between Incenter and Excenter</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('study/trigonometryValues.html','Trigonometry Values')">Trigonometry Values</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('calculators/pentopeCalculator.html','Pentatope Calculator')">Pentatope Calculator</span>
-          </div>
-      </div>
-
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('calculators/distanceBetweenExcentreAndCircumcentre.html','Distance between excentre and circumcentre')">Distance Between Excenter And Circumcenter</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('calculators/circumRadiusAndAreaOfExternalTriangle.html','circumRadiusAndAreaOfExternalTriangle')">Circum Radius And Area Of External Triangle</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('study/trigonometryIdentities.html','Trigonometry Identities')">Trigonometry Identities</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('study/trigonometryFunctions.html','Trigonometry Functions')">Trigonometric Functions</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('study/inverseTrigonometryIdentities.html','Inverse Trigonometry Identities')">Inverse Trigonometric Identities</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('study/hyperbolicIdentities.html','Hyperbolic Trigonometry Identities')">Hyperbolic Trigonometric Identities</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('study/inverseHyperbolicIdentities.html','ackermannfunc')">Inverse Hyperbolic Trigonometric Identities</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('calculators/unitCircle.html','unit Circle')">Unit Circle</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('study/generalSolutionOfTrigonometryEquation.html','General Solution Of Trigonometric Equations')">General Solution Of Trigonometric Equations</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('calculators/heightAndDistance.html','heightAndDistance')">Height And Distance</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('study/expansionOfFunctions.html','expansionOfFunctions')">Expansion Of Functions</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('calculators/expansionCalculator.html','expansionCalculator')">Expansion Calculator</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')">Solution Of Triangles</span>
-          </div>
-      </div>
-
-      <div class="col-md-3 col-6">
-          <div class="option">
-              <img id="ucontrolfav" src="icons/unfavourite.png" alt="" onclick="addtofavourites(this)">
-
-              <span class="caltext" onclick="loadcalculator('calculators/sumAndDifferenceOfTrignometricFunction.html','sumAndDifferenceOfTrignometricFunction')">Sum And Difference Of Trigonometric Function</span>
-          </div>
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/trigonometry.html','Trigonometry')"
+          >Trigonometry Basics</span
+        >
       </div>
     </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/pbhTrigo.html','P/B/H Trigonometry')"
+          >P/B/H Trigo</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/hyperbolicTrigonometricRatios.html','Hyperbolic Trigonometric Ratios')"
+          >Hyperbolic Trigonometric Ratios Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/distanceBetweenIncenterAndExcenter.html','Distance Between Incenter and Excenter')"
+          >Distance Between Incenter and Excenter</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/trigonometryValues.html','Trigonometry Values')"
+          >Trigonometry Values</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/pentopeCalculator.html','Pentatope Calculator')"
+          >Pentatope Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/distanceBetweenExcentreAndCircumcentre.html','Distance between excentre and circumcentre')"
+          >Distance Between Excenter And Circumcenter</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/circumRadiusAndAreaOfExternalTriangle.html','circumRadiusAndAreaOfExternalTriangle')"
+          >Circum Radius And Area Of External Triangle</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/trigonometryIdentities.html','Trigonometry Identities')"
+          >Trigonometry Identities</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/trigonometryFunctions.html','Trigonometry Functions')"
+          >Trigonometric Functions</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/inverseTrigonometryIdentities.html','Inverse Trigonometry Identities')"
+          >Inverse Trigonometric Identities</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/hyperbolicIdentities.html','Hyperbolic Trigonometry Identities')"
+          >Hyperbolic Trigonometric Identities</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/inverseHyperbolicIdentities.html','ackermannfunc')"
+          >Inverse Hyperbolic Trigonometric Identities</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/unitCircle.html','unit Circle')"
+          >Unit Circle</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/generalSolutionOfTrigonometryEquation.html','General Solution Of Trigonometric Equations')"
+          >General Solution Of Trigonometric Equations</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/heightAndDistance.html','heightAndDistance')"
+          >Height And Distance</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('study/expansionOfFunctions.html','expansionOfFunctions')"
+          >Expansion Of Functions</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/expansionCalculator.html','expansionCalculator')"
+          >Expansion Calculator</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/ackermannFunction.html','ackermannfunc')"
+          >Solution Of Triangles</span
+        >
+      </div>
+    </div>
+
+    <div class="col-md-3 col-6">
+      <div class="option">
+        <img
+          id="ucontrolfav"
+          src="icons/unfavourite.png"
+          alt=""
+          onclick="addtofavourites(this)"
+        />
+
+        <span
+          class="caltext"
+          onclick="loadcalculator('calculators/sumAndDifferenceOfTrignometricFunction.html','sumAndDifferenceOfTrignometricFunction')"
+          >Sum And Difference Of Trigonometric Function</span
+        >
+      </div>
+    </div>
+  </div>
 </div>
